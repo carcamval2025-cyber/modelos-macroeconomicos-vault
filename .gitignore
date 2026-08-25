@@ -11,3 +11,6 @@
 .obsidian/plugins/*/main.js
 .obsidian/plugins/*/styles.css
 .obsidian/plugins/*/manifest.json
+
+# artefacto temporal usado para el primer push
+vault.bundle
