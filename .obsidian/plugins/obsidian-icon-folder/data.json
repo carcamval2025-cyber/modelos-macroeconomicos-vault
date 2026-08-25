@@ -1,0 +1,57 @@
+{
+  "settings": {
+    "migrated": 6,
+    "iconPacksPath": ".obsidian/icons",
+    "fontSize": 16,
+    "emojiStyle": "native",
+    "iconColor": null,
+    "recentlyUsedIcons": [
+      "LiFileCode",
+      "LiLaptopMinimalCheck",
+      "LiSwatchBook",
+      "LiGoal",
+      "LiHouse"
+    ],
+    "recentlyUsedIconsSize": 5,
+    "rules": [],
+    "extraMargin": {
+      "top": 0,
+      "right": 4,
+      "bottom": 0,
+      "left": 0
+    },
+    "iconInTabsEnabled": false,
+    "iconInTitleEnabled": false,
+    "iconInTitlePosition": "above",
+    "iconInFrontmatterEnabled": false,
+    "iconInFrontmatterFieldName": "icon",
+    "iconColorInFrontmatterFieldName": "iconColor",
+    "iconsBackgroundCheckEnabled": false,
+    "iconsInNotesEnabled": true,
+    "iconsInLinksEnabled": true,
+    "iconIdentifier": ":",
+    "lucideIconPackType": "native",
+    "debugMode": false,
+    "useInternalPlugins": false
+  },
+  "00 Inicio": {
+    "iconName": "LiHouse",
+    "iconColor": "#ff0000"
+  },
+  "01 Meta - Aprendizaje": {
+    "iconName": "LiGoal",
+    "iconColor": "#0400ff"
+  },
+  "02 Curso": {
+    "iconName": "LiSwatchBook",
+    "iconColor": "#fff700"
+  },
+  "03 Temas": {
+    "iconName": "LiLaptopMinimalCheck",
+    "iconColor": "#bb00ff"
+  },
+  "04 Materiales Generados": {
+    "iconName": "LiFileCode",
+    "iconColor": "#00ff33"
+  }
+}
