@@ -71,12 +71,9 @@ RESTRICCIONES: [extensión, nivel, etc. — si aplica, sino omitir]
   redirige ahí (no borrado porque el puente de archivos no tiene permiso de borrar en
   esta carpeta).
 - `01 Meta - Aprendizaje/` — `Protocolo de Sesión.md` (formato de solicitud y
-  checklist previo a generar), `Bitácora de Retroalimentación.md` (índice Dataview
-  sobre `Bitácora/Entradas/`, una nota por sesión — ver
-  `Bitácora/Plantilla - Entrada de Bitácora.md`), `Errores Comunes a Evitar.md` y
-  `Patrones que Funcionan Bien.md` (reemplazan a `Lecciones Aprendidas.md`, que ahora
-  es un stub que redirige ahí), `Feedback de Navas.md` (preferencias transversales
-  expresadas directamente por el estudiante, distinto de la bitácora por material).
+  checklist previo a generar), `Bitácora de Retroalimentación.md` (registro de qué
+  funcionó/falló en cada entrega — vacía por ahora), `Lecciones Aprendidas.md`
+  (patrones promovidos desde la bitácora — vacía por ahora).
 - `02 Curso/` — `Cronograma.md` (calendario oficial de 12 semanas con Tareas,
   Controles y Parciales), `Sistema de Evaluación.md` (ponderación: Tareas 10%,
   Controles 20%, Parcial 35%, Final 35%), `Fuentes y Bibliografía.md` (jerarquía de
@@ -90,29 +87,84 @@ RESTRICCIONES: [extensión, nivel, etc. — si aplica, sino omitir]
 - `_Plantilla de Material.md` — plantilla para registrar un material nuevo en
   `04 Materiales Generados/`.
 - `README.md` — una línea, identificación del repositorio.
+- `docs/` — sitio estático publicado en GitHub Pages (índice único + una carpeta por
+  Tema disponible, mismo patrón que los otros vaults del usuario). Repo:
+  `github.com/carcamval2025-cyber/modelos-macroeconomicos-vault` (público desde
+  2026-08-26), Pages sirve desde `main` / `docs`. Ver sección de Pages más abajo.
 
 ## Sistema de diseño HTML (solo para Guía / Actividad / Repaso — no aplica a Tarea/Control/Pauta, que son Word/PDF)
 
-Tipografía: Inter (400/600) + JetBrains Mono (500, para ecuaciones como
-`Y = C + I + G + X − M`). Paleta: `#1E3A5F` azul pizarra (headers, acentos, ejes de
-curvas IS-LM/Phillips/Solow, barras de progreso), `#3A6EA5` azul medio (hover/bordes
-activos/badges/curva secundaria), `#E8F1F8` celeste neblina (fondos de íconos,
-retroalimentación correcta), `#F6F4EF` hueso (texto sobre fondo oscuro / fondo general
-de página), `#B84A3E` sobre `#FBEDEA` terracota alerta (errores, respuestas
-incorrectas). Esta identidad es intencionalmente distinta a la de Macro I (verde), tal
-como está documentado en `02 Curso/Sistema de Diseño HTML.md` — ajustable solo si
-Navas lo pide.
+**Actualización 2026-08-26 (rediseño completo — leer esto, no una versión en caché):**
+Navas pidió una pasada de diseño (`/impeccable` `/design-system` `/design-critique`
+`/frontend-design`) porque la identidad anterior ("azul pizarra" sobre fondo claro) se
+sentía sosa. Se reemplazó **toda la paleta y tipografía**, para el sitio de `docs/` y
+para todo material nuevo de Guía/Actividad/Repaso — detalle completo en
+`02 Curso/Sistema de Diseño HTML.md`.
 
-**Nota para el agente**: el 2026-08-26 Navas confirmó unificar el criterio con
-Contabilidad Financiera — `02 Curso/Sistema de Diseño HTML.md` ya usa borde completo +
-tinte de fondo en vez de la franja de 4px en el borde izquierdo. Ver el checklist de
-curación anti-AI-slop al final de ese mismo documento antes de dar un HTML por
-terminado.
+Tipografía: **Fraunces** (títulos, serif de carácter) + **Inter** (400–700, cuerpo) +
+**JetBrains Mono** (500/600, ecuaciones como `Y = C + I + G + X − M`, metadatos).
+
+Paleta — **Índigo profundo + coral**, tema oscuro (antes era claro): `#080C1C` fondo
+general, `#10172D`/`#1B223C` superficies elevadas, `#2A324A` bordes, `#EFF2F9` texto
+principal, `#A3AABE` texto secundario, `#667FDA` índigo medio (acento secundario, curva
+LM), `#FF6F4A` coral (acento principal, curva IS, énfasis), `#FFB188` coral claro
+(enlaces), `#55C975` éxito/disponible, `#FB5668` error. Todos los pares texto/fondo
+verificados en WCAG AA (≥6:1 en los casos usados). Esta identidad sigue siendo
+intencionalmente distinta a la de Macro I (verde) y ahora también distinta a la propia
+paleta clara anterior de este curso — ajustable solo si Navas lo pide.
+
+El side-stripe de retroalimentación sigue siendo borde completo + tinte de fondo (no
+franja de 4px en el borde izquierdo) — eso no cambió con el rediseño de color.
+
+**Estructura modular ("bandejas"/"nichos")**: el mismo día, Navas pidió que el sitio fuera
+modular, con el sitio de un cliente de Velkor ("Retablo") como referencia de layout — menú como
+mueble que se recorre, contenido en módulos numerados que contienen "nichos" en cuadrícula con
+bordes compartidos, en vez de secciones sueltas o grilla de tarjetas idénticas. `docs/index.html`
+ya sigue este patrón (`02 Curso/Sistema de Diseño HTML.md`, sección "Estructura modular") — es el
+layout de referencia para cualquier página nueva de `docs/` o de un Tema.
+
+**Pedidos de imagen a otro agente (Antigravity/Codex)**: `02 Curso/Sistema de Diseño
+HTML.md` tiene ahora una sección "Protocolo — pedir ilustraciones a otro agente" —
+úsala para cualquier pieza de identidad visual (favicon, marca del sitio,
+ilustraciones decorativas). Los diagramas de modelos con datos (IS-LM, Phillips,
+Solow) los sigue construyendo la sesión de Claude directamente, nunca se delegan.
 
 Reglas técnicas: sin `<form>` (usar eventos JS), sin gradientes/sombras
 decorativas/colores fuera de paleta, debe abrir directo en navegador sin servidor,
 responsive para escritorio, diagramas de modelos (IS-LM, Phillips, Solow) siempre como
 SVG inline etiquetado, nunca imágenes externas ni capturas de libro.
+
+## GitHub Pages (`docs/`) — establecido 2026-08-26
+
+El repo ya es público, así que Pages funciona directo: en GitHub, Settings → Pages →
+"Deploy from a branch" → rama `main`, carpeta `/docs` (si aún no está activado,
+activarlo ahí una sola vez).
+
+`docs/index.html` es un índice único con una tarjeta por cada uno de los 7 Temas del
+curso (nombre, capítulo de Blanchard, semana, estado). Como a la fecha de creación de
+este sitio `04 Materiales Generados/` seguía vacío, las 7 tarjetas arrancan en estado
+"Pendiente" y sin enlace — es un armazón (*scaffold*), no un sitio con contenido todavía.
+
+**Convención para agregar una página cuando se genere el primer material real de un
+Tema** (Guía HTML / Actividad HTML / Repaso — nunca Tarea/Control/Pauta, ver regla 5
+de arriba):
+1. Publicar el HTML del material en `docs/tema-0N/index.html` (mismo contenido que se
+   entrega al usuario, sin cambios de fondo).
+2. En `docs/index.html`, dentro del arreglo `TEMAS` del `<script>`, cambiar
+   `disponible:false` a `disponible:true` para ese Tema — la tarjeta se activa sola.
+3. Registrar la publicación en `04 Materiales Generados/` como con cualquier entrega.
+
+**Regla que no se negocia sobre este sitio**: `docs/` es público en internet. Nunca
+publicar ahí una Tarea, un Control o su Pauta, ni borradores dirigidos al profesor —
+esas rutas de trabajo terminan en Word/PDF entregado directamente a Navas o al
+profesor, jamás en `docs/`.
+
+Diseño del índice: mismas tipografías y paleta Índigo profundo + coral de
+`02 Curso/Sistema de Diseño HTML.md` (rediseño 2026-08-26) — ya no usa colores fuera de
+la paleta documentada; el badge "Disponible" usa el token semántico `--success`
+(`#55C975`) definido ahí mismo, no un verde ad-hoc como en la versión anterior. El
+índice se reconstruyó como timeline vertical numerada (los 7 Temas son una secuencia
+real del cronograma) en vez de una grilla de tarjetas idénticas.
 
 ## Cómo trabajar aquí
 
@@ -127,7 +179,9 @@ SVG inline etiquetado, nunca imágenes externas ni capturas de libro.
    en `01 Meta - Aprendizaje/Bitácora de Retroalimentación.md`; promover patrones
    repetidos a `Lecciones Aprendidas.md`.
 5. Si el material es Tarea, Control o Pauta: recordar que es un borrador para el
-   profesor, nunca material final para los estudiantes.
+   profesor, nunca material final para los estudiantes — nunca se publica en `docs/`.
+6. Si el material es Guía/Actividad/Repaso: además de entregarlo a Navas, seguir la
+   convención de la sección "GitHub Pages" de arriba para publicarlo en `docs/`.
 
 ## Ver también (rutas de archivo, no wikilinks)
 
@@ -136,3 +190,4 @@ SVG inline etiquetado, nunca imágenes externas ni capturas de libro.
 - `02 Curso/Cronograma.md`
 - `02 Curso/Fuentes y Bibliografía.md`
 - `02 Curso/Sistema de Diseño HTML.md`
+- `docs/index.html` — sitio publicado en GitHub Pages.
