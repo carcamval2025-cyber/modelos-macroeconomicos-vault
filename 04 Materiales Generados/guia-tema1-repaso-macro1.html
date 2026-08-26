@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía — Tema 1: Repaso de Macro I</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --azul-pizarra:#1E3A5F;
+    --azul-medio:#3A6EA5;
+    --celeste:#E8F1F8;
+    --hueso:#F6F4EF;
+    --terracota:#B84A3E;
+    --terracota-bg:#FBEDEA;
+    --texto:#1b2733;
+    --borde:#c9d6e3;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Inter',Arial,sans-serif;
+    background:var(--hueso);
+    color:var(--texto);
+    line-height:1.55;
+    font-size:16px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+  .mono{font-family:'JetBrains Mono',monospace; font-weight:500;}
+  a{color:var(--azul-medio);}
+  header.curso{
+    background:var(--azul-pizarra);
+    color:var(--hueso);
+    padding:1.75rem clamp(1rem,4vw,3rem);
+  }
+  header.curso .kicker{
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    font-size:.78rem;
+    opacity:.85;
+    margin:0 0 .35rem 0;
+  }
+  header.curso h1{
+    margin:0 0 .4rem 0;
+    font-size:clamp(1.5rem,3vw,2.1rem);
+  }
+  header.curso p.meta{
+    margin:0;
+    font-size:.95rem;
+    opacity:.9;
+  }
+  main{
+    max-width:920px;
+    margin:0 auto;
+    padding:2rem clamp(1rem,4vw,3rem) 4rem;
+  }
+  .panel-metricas{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:.9rem;
+    margin:0 0 2rem 0;
+  }
+  .metrica{
+    background:#fff;
+    border:1px solid var(--borde);
+    border-radius:10px;
+    padding:1rem 1.1rem;
+  }
+  .metrica .valor{
+    font-family:'JetBrains Mono',monospace;
+    font-weight:500;
+    font-size:1.6rem;
+    color:var(--azul-pizarra);
+    display:block;
+  }
+  .metrica .etiqueta{
+    font-size:.85rem;
+    color:#4a5b6b;
+  }
+  section{margin-bottom:2.4rem;}
+  h2{
+    color:var(--azul-pizarra);
+    font-size:1.3rem;
+    border-bottom:2px solid var(--celeste);
+    padding-bottom:.4rem;
+  }
+  h3{
+    color:var(--azul-pizarra);
+    font-size:1.05rem;
+    margin-bottom:.5rem;
+  }
+  .tarjeta{
+    background:#fff;
+    border:1px solid var(--borde);
+    border-radius:10px;
+    padding:1.2rem 1.3rem;
+    margin-bottom:1rem;
+  }
+  .tarjeta-icono{
+    display:flex;
+    gap:.7rem;
+    align-items:flex-start;
+  }
+  .tarjeta-icono svg{flex-shrink:0; margin-top:.15rem;}
+  .recuadro{
+    background:var(--celeste);
+    border:1px solid var(--azul-medio);
+    border-radius:10px;
+    padding:1.1rem 1.3rem;
+    margin:1.1rem 0;
+  }
+  .recuadro h4{
+    margin:0 0 .5rem 0;
+    color:var(--azul-pizarra);
+    font-size:.95rem;
+    text-transform:uppercase;
+    letter-spacing:.03em;
+  }
+  .ecuacion{
+    background:var(--hueso);
+    border:1px solid var(--borde);
+    border-radius:8px;
+    padding:.7rem 1rem;
+    margin:.6rem 0;
+    font-family:'JetBrains Mono',monospace;
+    font-weight:500;
+    font-size:1rem;
+    overflow-x:auto;
+  }
+  .glosario{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:.35rem 1rem;
+    font-size:.92rem;
+  }
+  .glosario dt{
+    font-family:'JetBrains Mono',monospace;
+    font-weight:500;
+    color:var(--azul-pizarra);
+  }
+  .glosario dd{margin:0;}
+  .aviso-fuente{
+    background:var(--terracota-bg);
+    border:1px solid var(--terracota);
+    border-radius:10px;
+    padding:1.1rem 1.3rem;
+    margin:1.1rem 0;
+  }
+  .aviso-fuente h4{
+    margin:0 0 .5rem 0;
+    color:var(--terracota);
+    font-size:.95rem;
+  }
+  figure{
+    margin:1rem 0;
+    text-align:center;
+  }
+  figure svg{max-width:100%; height:auto;}
+  figcaption{
+    font-size:.85rem;
+    color:#4a5b6b;
+    margin-top:.4rem;
+  }
+  .pregunta{
+    border:1px solid var(--borde);
+    border-radius:10px;
+    margin-bottom:.8rem;
+    overflow:hidden;
+    background:#fff;
+  }
+  .pregunta button.disparador{
+    width:100%;
+    text-align:left;
+    background:var(--celeste);
+    border:none;
+    padding:.9rem 1.1rem;
+    font-family:inherit;
+    font-size:1rem;
+    font-weight:600;
+    color:var(--azul-pizarra);
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:1rem;
+  }
+  .pregunta button.disparador:focus-visible{
+    outline:3px solid var(--azul-pizarra);
+    outline-offset:-3px;
+  }
+  .pregunta button.disparador .flecha{
+    transition:transform .15s ease;
+    flex-shrink:0;
+  }
+  .pregunta button.disparador[aria-expanded="true"] .flecha{
+    transform:rotate(180deg);
+  }
+  .pregunta .respuesta{
+    padding:1rem 1.1rem;
+    border-top:1px solid var(--borde);
+    background:var(--celeste);
+  }
+  .pregunta .respuesta.correcta{border-top-color:var(--azul-medio);}
+  .pregunta[data-abierta="false"] .respuesta{display:none;}
+  footer.fuente{
+    border-top:2px solid var(--azul-pizarra);
+    margin-top:2.5rem;
+    padding-top:1.2rem;
+    font-size:.85rem;
+    color:#4a5b6b;
+  }
+  .icono-svg{color:var(--azul-medio);}
+  .badge{
+    display:inline-block;
+    background:var(--azul-medio);
+    color:#fff;
+    font-size:.72rem;
+    font-weight:600;
+    padding:.15rem .55rem;
+    border-radius:999px;
+    letter-spacing:.03em;
+    text-transform:uppercase;
+  }
+</style>
+</head>
+<body>
+
+<header class="curso">
+  <p class="kicker">Modelos Macroeconómicos — Macroeconomía II · ESEN 2026</p>
+  <h1>Tema 1 — Repaso de Macro I</h1>
+  <p class="meta">Semana 1 (24–28 de agosto) · Guía de estudio HTML · Prof. Luis Morera</p>
+</header>
+
+<main>
+
+  <section class="panel-metricas" aria-label="Resumen del material">
+    <div class="metrica">
+      <span class="valor">2</span>
+      <span class="etiqueta">secciones de Blanchard (4-3 y 4-4)</span>
+    </div>
+    <div class="metrica">
+      <span class="valor">3</span>
+      <span class="etiqueta">recuadros del capítulo 4</span>
+    </div>
+    <div class="metrica">
+      <span class="valor">6</span>
+      <span class="etiqueta">ecuaciones clave (4.1–4.6)</span>
+    </div>
+    <div class="metrica">
+      <span class="valor">1</span>
+      <span class="etiqueta">lectura pendiente por tu cuenta (cap. amarillo)</span>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-alcance">
+    <h2 id="h-alcance">Qué cubre esta guía y qué no</h2>
+    <div class="tarjeta">
+      <p>Esta guía sigue el alcance de la Semana 1 según el <strong>Cronograma</strong> y el <strong>Programa</strong> del curso: terminar el capítulo 4 de Blanchard (sección 4-3 en adelante, y los recuadros del capítulo) y leer el capítulo amarillo de Sala i Martín. No se repite aquí la teoría de la demanda de dinero ni la determinación básica de la tasa de interés (secciones 4-1 y 4-2), porque eso corresponde al repaso de Macro I que el Programa da por dominado — solo se recuerdan las dos ecuaciones que hacen falta como punto de partida.</p>
+      <p>Sobre "los pendientes del curso anterior" que menciona el Programa: el curso asume que ya dominas los 3 indicadores macroeconómicos (PIB, desempleo, inflación) y los métodos de cálculo del PIB de <em>Contabilidad Nacional e Indicadores Macroeconómicos</em>. Esta guía no repite ese contenido — si tienes dudas puntuales sobre esos indicadores, conviene resolverlas por separado antes del Control 1, ya que el Programa no detalla más allá de esa mención general.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-marco">
+    <h2 id="h-marco">Marco de referencia (recordatorio de 4-1 y 4-2)</h2>
+    <div class="tarjeta">
+      <p>Para entender la sección 4-3 hace falta recordar dos cosas de las secciones anteriores del capítulo 4:</p>
+      <div class="ecuacion">M<sup>d</sup> = $Y · L(i)&nbsp;&nbsp;&nbsp;(4.1) — la demanda de dinero depende positivamente del ingreso nominal $Y y negativamente de la tasa de interés i.</div>
+      <div class="ecuacion">M<sup>s</sup> = M<sup>d</sup>&nbsp;&nbsp;&nbsp;(4.2) — el equilibrio en el mercado de dinero exige que la oferta de dinero (fijada por el banco central) sea igual a la demanda.</div>
+      <p>Hasta la sección 4-2, Blanchard supone que el único dinero es el efectivo (dinero del banco central). La sección 4-3 corrige esa simplificación e introduce a los bancos.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-43">
+    <h2 id="h-43">4-3 · Determinación de la tasa de interés: II — el papel de los bancos</h2>
+
+    <div class="tarjeta tarjeta-icono">
+      <svg class="icono-svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <path d="M3 10l9-6 9 6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M4 10v9M9 10v9M15 10v9M20 10v9" stroke-linecap="round"/>
+        <path d="M2 21h20" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <h3>Qué hacen los bancos</h3>
+        <p>En el mundo real, no todo el dinero es efectivo: la mayor parte son <strong>depósitos a la vista</strong> (checkable deposits) emitidos por bancos. Los bancos reciben esos depósitos y los usan para: mantener una parte como <strong>reservas</strong> (en efectivo o en su cuenta en el banco central), y destinar el resto a préstamos (~70% de los activos no-reserva) y bonos (~30%).</p>
+        <p>Los bancos mantienen reservas por tres razones: (1) las entradas y salidas de efectivo de un día a otro no son iguales, así que necesitan efectivo disponible; (2) lo que el banco debe a otros bancos por cheques cruzados no siempre coincide con lo que le deben a él; (3) en la mayoría de países existen <strong>encajes legales</strong> (reserve requirements) que exigen mantener reservas como proporción de los depósitos — en Estados Unidos, la Fed bajó ese encaje legal de 10% a 0% en 2020, aunque en la mayoría de otros países sigue siendo positivo.</p>
+      </div>
+    </div>
+
+    <figure>
+      <svg viewBox="0 0 520 190" width="100%" height="auto" role="img" aria-labelledby="fig1-title fig1-desc">
+        <title id="fig1-title">Balance del banco y del banco central</title>
+        <desc id="fig1-desc">Dos balances lado a lado: el del banco, con reservas, préstamos y bonos como activos y depósitos a la vista como pasivo; y el del banco central, con bonos como activo y dinero del banco central (reservas + efectivo) como pasivo.</desc>
+        <rect x="10" y="10" width="230" height="170" rx="8" fill="#fff" stroke="#1E3A5F" stroke-width="1.5"/>
+        <text x="125" y="32" text-anchor="middle" font-family="Inter" font-weight="600" font-size="14" fill="#1E3A5F">Banco</text>
+        <line x1="125" y1="42" x2="125" y2="170" stroke="#c9d6e3"/>
+        <text x="65" y="58" text-anchor="middle" font-family="Inter" font-size="11" fill="#4a5b6b">Activos</text>
+        <text x="185" y="58" text-anchor="middle" font-family="Inter" font-size="11" fill="#4a5b6b">Pasivos</text>
+        <text x="65" y="80" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#1b2733">Reservas</text>
+        <text x="65" y="100" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#1b2733">Préstamos</text>
+        <text x="65" y="120" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#1b2733">Bonos</text>
+        <text x="185" y="80" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#1b2733">Depósitos a</text>
+        <text x="185" y="94" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#1b2733">la vista</text>
+        <rect x="270" y="10" width="240" height="170" rx="8" fill="#fff" stroke="#1E3A5F" stroke-width="1.5"/>
+        <text x="390" y="32" text-anchor="middle" font-family="Inter" font-weight="600" font-size="14" fill="#1E3A5F">Banco Central</text>
+        <line x1="390" y1="42" x2="390" y2="170" stroke="#c9d6e3"/>
+        <text x="330" y="58" text-anchor="middle" font-family="Inter" font-size="11" fill="#4a5b6b">Activos</text>
+        <text x="450" y="58" text-anchor="middle" font-family="Inter" font-size="11" fill="#4a5b6b">Pasivos</text>
+        <text x="330" y="90" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#1b2733">Bonos</text>
+        <text x="450" y="80" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#1b2733">Dinero del</text>
+        <text x="450" y="94" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#1b2733">banco central (H)</text>
+        <text x="450" y="112" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#4a5b6b">= Reservas + Efectivo</text>
+      </svg>
+      <figcaption>Balance del banco y balance del banco central (Blanchard, Fig. 4-6).</figcaption>
+    </figure>
+
+    <div class="tarjeta">
+      <h3>La demanda y la oferta de dinero del banco central</h3>
+      <p>Sea <span class="mono">θ</span> (theta) el <strong>encaje o ratio de reservas</strong>: la cantidad de reservas que los bancos quieren mantener por cada dólar de depósitos a la vista. Si las personas solo mantienen depósitos a la vista (no efectivo), entonces:</p>
+      <div class="ecuacion">Depósitos a la vista demandados = M<sup>d</sup> = $Y · L(i)&nbsp;&nbsp;&nbsp;(4.3)</div>
+      <div class="ecuacion">H<sup>d</sup> = θ · M<sup>d</sup> = θ · $Y · L(i)&nbsp;&nbsp;&nbsp;(4.4)</div>
+      <p>H<sup>d</sup> es la demanda de dinero del banco central (equivalente a la demanda de reservas de los bancos). La oferta de dinero del banco central, H, sigue bajo control del banco central, vía <strong>operaciones de mercado abierto</strong>.</p>
+      <div class="ecuacion">H = H<sup>d</sup>&nbsp;&nbsp;&nbsp;(4.5)</div>
+      <div class="ecuacion">H = θ · $Y · L(i)&nbsp;&nbsp;&nbsp;(4.6)</div>
+      <p>La conclusión es la misma que en la sección 4-2: controlando la oferta de dinero del banco central, el banco central determina la tasa de interés de los bonos.</p>
+    </div>
+
+    <figure>
+      <svg viewBox="0 0 460 260" width="100%" height="auto" role="img" aria-labelledby="fig2-title fig2-desc">
+        <title id="fig2-title">Equilibrio en el mercado de dinero del banco central</title>
+        <desc id="fig2-desc">Eje horizontal H (dinero del banco central), eje vertical i (tasa de interés). Curva de demanda H-d con pendiente negativa. Línea de oferta vertical en H. El equilibrio está en el punto A, donde ambas se cruzan, con tasa de interés i.</desc>
+        <line x1="60" y1="20" x2="60" y2="220" stroke="#1E3A5F" stroke-width="1.5"/>
+        <line x1="60" y1="220" x2="420" y2="220" stroke="#1E3A5F" stroke-width="1.5"/>
+        <text x="30" y="24" font-family="Inter" font-size="12" fill="#1E3A5F">i</text>
+        <text x="410" y="240" font-family="Inter" font-size="12" fill="#1E3A5F">H</text>
+        <line x1="240" y1="20" x2="240" y2="220" stroke="#3A6EA5" stroke-width="2"/>
+        <text x="248" y="35" font-family="JetBrains Mono" font-size="11" fill="#3A6EA5">Oferta de H</text>
+        <path d="M 90 40 Q 200 110 380 200" fill="none" stroke="#1E3A5F" stroke-width="2"/>
+        <text x="300" y="185" font-family="JetBrains Mono" font-size="11" fill="#1E3A5F">Demanda H<tspan baseline-shift="sub" font-size="8">d</tspan></text>
+        <circle cx="240" cy="112" r="4" fill="#B84A3E"/>
+        <line x1="60" y1="112" x2="240" y2="112" stroke="#B84A3E" stroke-width="1" stroke-dasharray="4 3"/>
+        <line x1="240" y1="112" x2="240" y2="220" stroke="#B84A3E" stroke-width="1" stroke-dasharray="4 3"/>
+        <text x="248" y="108" font-family="Inter" font-weight="600" font-size="12" fill="#B84A3E">A</text>
+        <text x="20" y="116" font-family="JetBrains Mono" font-size="11" fill="#B84A3E">i</text>
+        <text x="230" y="238" font-family="JetBrains Mono" font-size="11" fill="#B84A3E">H</text>
+      </svg>
+      <figcaption>Equilibrio en el mercado de dinero del banco central (Blanchard, Fig. 4-7). Un aumento de H desplaza la oferta a la derecha y baja i; una caída de H la sube.</figcaption>
+    </figure>
+
+    <div class="recuadro">
+      <h4>Recuadro — El mercado de fondos federales</h4>
+      <p>En Estados Unidos existe un mercado real donde la oferta y demanda de reservas determinan la tasa de interés: el <strong>mercado de fondos federales</strong> (federal funds market). La tasa que allí se determina es la <strong>tasa de fondos federales</strong> (federal funds rate) — como la Fed puede en efecto elegirla cambiando la oferta de dinero del banco central (H), esta tasa se considera el principal indicador de la política monetaria de EE. UU., y por eso ocupa titulares cuando cambia.</p>
+    </div>
+
+    <div class="recuadro">
+      <h4>Recuadro — ¿Reemplazarán los bitcoins al dólar?</h4>
+      <p>Si los bitcoins llegaran a reemplazar al dólar como medio de transacción, la oferta de "efectivo" ya no la determinaría la Fed sino la regla mecánica que rige la creación de nuevos bitcoins — la política monetaria, tal como se conoce, dejaría de existir. Blanchard argumenta que esto es poco probable por tres razones: (1) <em>económicas</em> — mientras los precios se coticen en dólares, transar en bitcoins implica un "riesgo de precio" (el precio del bitcoin ha fluctuado ampliamente: de unos $3,600 a comienzos de 2019 a $67,000 en noviembre de 2021, y de vuelta a unos $16,600 a fines de 2022); (2) <em>técnicas</em> — verificar y crear bitcoins consume mucha electricidad (más que el consumo total de Finlandia); (3) <em>políticas</em> — los países no están dispuestos a ceder el control de su política monetaria a actores privados.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-44">
+    <h2 id="h-44">4-4 · La trampa de liquidez</h2>
+
+    <div class="tarjeta tarjeta-icono">
+      <svg class="icono-svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <rect x="5" y="11" width="14" height="10" rx="2"/>
+        <path d="M8 11V7a4 4 0 0 1 8 0v4" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <h3>El límite inferior de cero (zero lower bound)</h3>
+        <p>La conclusión de las secciones 4-2 y 4-3 fue que, eligiendo la oferta de dinero del banco central, el banco central puede fijar la tasa de interés que quiera. Pero esa conclusión tiene una salvedad importante: la tasa de interés <strong>no puede bajar de cero</strong>. Cuando la tasa llega a cero, la política monetaria deja de funcionar — la economía está en lo que se llama una <strong>trampa de liquidez</strong> (liquidity trap).</p>
+        <p>El concepto de trampa de liquidez fue desarrollado por John Maynard Keynes en la década de 1930, aunque la expresión en sí es posterior.</p>
+      </div>
+    </div>
+
+    <div class="tarjeta">
+      <p>Cuando la tasa de interés de los bonos llega a cero, y una vez que las personas ya tienen suficiente dinero para fines transaccionales, se vuelven <strong>indiferentes</strong> entre mantener su riqueza financiera en dinero o en bonos — ambos pagan la misma tasa: cero. Por eso, más allá de cierto punto, la demanda de dinero se vuelve <strong>horizontal</strong>.</p>
+      <p>Lo mismo aplica a los bancos: si la tasa de interés es cero, también son indiferentes entre mantener reservas o comprar bonos, porque ambos pagan cero. Entonces, cuando la tasa está en cero y el banco central aumenta la oferta de dinero, es probable que veamos un aumento de los depósitos a la vista y de las reservas bancarias, sin ningún cambio en la tasa de interés.</p>
+    </div>
+
+    <figure>
+      <svg viewBox="0 0 460 260" width="100%" height="auto" role="img" aria-labelledby="fig3-title fig3-desc">
+        <title id="fig3-title">Demanda de dinero, oferta de dinero y la trampa de liquidez</title>
+        <desc id="fig3-desc">Eje horizontal M (dinero), eje vertical i. La curva de demanda de dinero desciende y luego se vuelve horizontal en i=0 más allá de cierto punto. Tres líneas verticales de oferta de dinero Ms, Ms' y Ms'' — las dos últimas intersectan la curva de demanda en su tramo horizontal, ambas con tasa de interés cero.</desc>
+        <line x1="55" y1="20" x2="55" y2="220" stroke="#1E3A5F" stroke-width="1.5"/>
+        <line x1="55" y1="220" x2="420" y2="220" stroke="#1E3A5F" stroke-width="1.5"/>
+        <text x="28" y="24" font-family="Inter" font-size="12" fill="#1E3A5F">i</text>
+        <text x="408" y="240" font-family="Inter" font-size="12" fill="#1E3A5F">M</text>
+        <path d="M 90 30 C 150 90 190 160 220 190 L 400 190" fill="none" stroke="#1E3A5F" stroke-width="2"/>
+        <text x="330" y="180" font-family="JetBrains Mono" font-size="11" fill="#1E3A5F">M<tspan baseline-shift="super" font-size="8">d</tspan></text>
+        <line x1="150" y1="20" x2="150" y2="220" stroke="#3A6EA5" stroke-width="2"/>
+        <line x1="260" y1="20" x2="260" y2="190" stroke="#3A6EA5" stroke-width="2"/>
+        <line x1="340" y1="20" x2="340" y2="190" stroke="#3A6EA5" stroke-width="2"/>
+        <text x="140" y="14" font-family="JetBrains Mono" font-size="10" fill="#3A6EA5">M<tspan baseline-shift="super" font-size="7">s</tspan></text>
+        <text x="252" y="14" font-family="JetBrains Mono" font-size="10" fill="#3A6EA5">M<tspan baseline-shift="super" font-size="7">s'</tspan></text>
+        <text x="332" y="14" font-family="JetBrains Mono" font-size="10" fill="#3A6EA5">M<tspan baseline-shift="super" font-size="7">s''</tspan></text>
+        <circle cx="150" cy="95" r="4" fill="#B84A3E"/>
+        <circle cx="260" cy="190" r="4" fill="#B84A3E"/>
+        <circle cx="340" cy="190" r="4" fill="#B84A3E"/>
+        <text x="158" y="90" font-family="Inter" font-weight="600" font-size="11" fill="#B84A3E">A</text>
+        <text x="266" y="185" font-family="Inter" font-weight="600" font-size="11" fill="#B84A3E">B</text>
+        <text x="346" y="185" font-family="Inter" font-weight="600" font-size="11" fill="#B84A3E">C</text>
+        <line x1="55" y1="190" x2="220" y2="190" stroke="#c9d6e3" stroke-dasharray="4 3"/>
+        <text x="20" y="194" font-family="JetBrains Mono" font-size="11" fill="#4a5b6b">0</text>
+      </svg>
+      <figcaption>En A, con oferta M<span class="mono">s</span>, la tasa de interés es positiva. En B y C, la tasa ya está en cero y aumentar la oferta de dinero no la baja más (Blanchard, Fig. 4-8).</figcaption>
+    </figure>
+
+    <div class="recuadro">
+      <h4>Recuadro — La trampa de liquidez en acción</h4>
+      <p>Hasta 2008, la Fed nunca había necesitado bajar la tasa hasta cero. Cuando comenzó la Crisis Financiera Global en 2008, la Fed bajó la tasa progresivamente hasta tocar el límite de cero hacia fines de ese año, y ahí se mantuvo hasta 2016. Desde fines de 2008, la Fed siguió aumentando la oferta de dinero mediante operaciones de mercado abierto (comprando bonos a cambio de dinero). Según lo que predice el análisis: aunque la tasa de interés se mantuvo en cero, sí hubo un aumento de los depósitos a la vista de hogares y empresas, y un aumento de las reservas bancarias.</p>
+      <p>En cifras: los depósitos a la vista de hogares y empresas —que venían bajando antes de 2008, por el uso creciente de tarjetas de crédito— subieron de $620 mil millones a mediados de 2008 a $1,700 mil millones a fines de 2015. Las reservas bancarias subieron de forma aún más dramática: de $10 mil millones a mediados de 2008, a $700 mil millones a fines de 2008, y a $2,500 mil millones a fines de 2015. Es decir: el enorme aumento en la oferta de dinero del banco central fue absorbido voluntariamente por hogares y bancos, sin ningún cambio en la tasa de interés, que se mantuvo en cero.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-glosario">
+    <h2 id="h-glosario">Glosario de variables (capítulo 4)</h2>
+    <div class="tarjeta">
+      <dl class="glosario">
+        <dt>θ</dt><dd>Encaje o ratio de reservas de los bancos (reserve ratio).</dd>
+        <dt>H</dt><dd>Dinero del banco central / dinero de alto poder / base monetaria (high-powered money, monetary base).</dd>
+        <dt>H<sup>d</sup></dt><dd>Demanda de dinero del banco central (= demanda de reservas de los bancos).</dd>
+        <dt>i</dt><dd>Tasa de interés nominal.</dd>
+        <dt>$Y</dt><dd>Ingreso nominal.</dd>
+        <dt>L(i)</dt><dd>Función de liquidez: qué tan atractivo es mantener dinero según la tasa de interés.</dd>
+        <dt>M<sup>d</sup>, M<sup>s</sup></dt><dd>Demanda y oferta de dinero (depósitos a la vista, en este contexto).</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-resumen">
+    <h2 id="h-resumen">Resumen — lo que hay que poder explicar</h2>
+    <div class="tarjeta">
+      <p>Al terminar esta guía deberías poder explicar, sin ver el libro:</p>
+      <p>Cuando el dinero incluye tanto efectivo como depósitos a la vista, la tasa de interés queda determinada por la condición de que la oferta de dinero del banco central sea igual a la demanda de dinero del banco central. La oferta de dinero del banco central está bajo control del banco central; en el caso especial en que las personas solo mantienen depósitos a la vista, la demanda de dinero del banco central es igual a la demanda de reservas de los bancos, que a su vez es igual a la demanda total de dinero multiplicada por el ratio de reservas que eligen los bancos. El mercado de reservas bancarias se llama mercado de fondos federales, y la tasa que allí se determina es la tasa de fondos federales. La tasa de interés elegida por el banco central no puede bajar de cero: cuando la tasa es cero, las personas y los bancos se vuelven indiferentes entre mantener dinero o bonos, y un aumento en la oferta de dinero ya no cambia la tasa de interés. Este caso se conoce como trampa de liquidez.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-lectura-amarillo">
+    <h2 id="h-lectura-amarillo">Lectura pendiente por tu cuenta: capítulo amarillo (Sala i Martín)</h2>
+    <div class="aviso-fuente">
+      <h4>Nota de fuentes — por qué esta guía no cubre el capítulo amarillo</h4>
+      <p>El Programa y el Cronograma asignan, además del capítulo 4, la lectura del <strong>capítulo amarillo</strong> del libro <em>Economía en Colores</em> de Xavier Sala i Martín (2016) como parte del repaso del Tema 1. El archivo de ese capítulo está cargado en el proyecto, pero su contenido no se pudo extraer como texto legible (parece ser un PDF escaneado o basado en imágenes), así que esta guía <strong>no incluye ni resume su contenido</strong>, para no arriesgarse a inventar lo que dice. Por favor lee ese capítulo directamente del PDF — si después quieres, puedo generar una guía complementaria a partir de fragmentos puntuales que tú me compartas de esa lectura.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-autoeval">
+    <h2 id="h-autoeval">Autoevaluación rápida</h2>
+    <p>Haz clic en cada pregunta para ver la respuesta. Intenta responder antes de abrir.</p>
+
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false">
+        <span>1. Si el banco central aumenta H (dinero de alto poder), ¿qué pasa con la tasa de interés de equilibrio, según la ecuación 4.6?</span>
+        <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="respuesta correcta">
+        <p>Baja. Un aumento de H desplaza la oferta de dinero del banco central hacia la derecha (Figura 4-7); al nivel de ingreso nominal dado, hace falta una tasa i menor para que la demanda de reservas (θ · $Y · L(i)) vuelva a igualar la nueva oferta, mayor.</p>
+      </div>
+    </div>
+
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false">
+        <span>2. ¿Por qué necesita un banco mantener reservas, incluso sin un encaje legal que se lo exija?</span>
+        <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="respuesta correcta">
+        <p>Porque las entradas y salidas de efectivo no coinciden día a día, y porque lo que el banco debe a otros bancos por cheques cruzados tampoco coincide exactamente con lo que le deben a él. Necesita liquidez disponible por razones precautorias, no solo regulatorias.</p>
+      </div>
+    </div>
+
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false">
+        <span>3. La tasa de fondos federales en EE. UU. llegó a cero en dos periodos distintos según el capítulo. ¿Cuáles fueron?</span>
+        <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="respuesta correcta">
+        <p>A fines de 2008 (por la Crisis Financiera Global), manteniéndose así hasta 2016; y de nuevo a partir de 2020, con el inicio de la crisis del Covid.</p>
+      </div>
+    </div>
+
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false">
+        <span>4. En la trampa de liquidez, si el banco central sigue aumentando la oferta de dinero, ¿a dónde va a parar ese dinero adicional?</span>
+        <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="respuesta correcta">
+        <p>Es absorbido voluntariamente por hogares (más depósitos a la vista) y por bancos (más reservas), sin que la tasa de interés cambie — como ocurrió entre 2008 y 2015 en EE. UU.</p>
+      </div>
+    </div>
+
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false">
+        <span>5. ¿Qué es θ (theta) y en qué ecuación aparece por primera vez?</span>
+        <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="respuesta correcta">
+        <p>θ es el ratio de reservas: la cantidad de reservas que los bancos quieren mantener por cada dólar de depósitos a la vista. Aparece en la ecuación (4.4): H<sup>d</sup> = θ · M<sup>d</sup> = θ · $Y · L(i).</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="fuente">
+    <p><span class="badge">Fuente</span> Blanchard, Olivier (2023). <em>Macroeconomics</em>, 9ª ed., Pearson — Capítulo 4 "Financial Markets I", secciones 4-3 y 4-4 (pp. 74–82) y recuadros del capítulo ("Who Holds US Currency?", "Will Bitcoins Replace Dollars?", "The Liquidity Trap in Action"). Sala i Martín, Xavier (2016). <em>Economía en Colores</em>, capítulo amarillo — lectura asignada por el Programa, no incluida en el contenido de esta guía por no estar disponible como texto extraíble en el proyecto (ver nota más arriba).</p>
+    <p>Material generado para apoyo de estudio — Semana 1, Tema 1. Borrador de trabajo del propio material de repaso del estudiante (no es Tarea ni Control).</p>
+  </footer>
+
+</main>
+
+<script>
+(function(){
+  var botones = document.querySelectorAll('.pregunta .disparador');
+  botones.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var pregunta = btn.closest('.pregunta');
+      var abierta = pregunta.getAttribute('data-abierta') === 'true';
+      pregunta.setAttribute('data-abierta', abierta ? 'false' : 'true');
+      btn.setAttribute('aria-expanded', abierta ? 'false' : 'true');
+    });
+    btn.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        btn.click();
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
