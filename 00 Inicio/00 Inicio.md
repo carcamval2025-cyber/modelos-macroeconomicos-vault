@@ -6,6 +6,9 @@ tags: [inicio, indice]
 
 Este vault es la memoria persistente del curso **Modelos Macroeconómicos** (Luis Morera, ESEN, Tercer Ciclo 2026), pensado para usarse junto con el Proyecto de Claude del mismo nombre.
 
+> [!info] ¿Usas Antigravity, Codex u otro agente que no sea Claude?
+> Este vault también tiene [`AGENTS.md`](AGENTS.md) en la raíz — la misma orientación que esta nota, pero en markdown plano sin wikilinks ni Dataview, para que cualquier agente de IA la lea sin depender de plugins de Obsidian.
+
 ## ¿Para qué sirve?
 
 Dos cosas que el chat de Claude por sí solo no resuelve bien:

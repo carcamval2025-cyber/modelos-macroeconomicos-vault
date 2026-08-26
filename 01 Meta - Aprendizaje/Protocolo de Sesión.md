@@ -30,6 +30,6 @@ RESTRICCIONES: [extensión, nivel, etc. — si aplica, sino omitir]
 ## Después de entregar un material
 
 1. Preguntar o esperar la retroalimentación de Navas (¿sirvió tal cual? ¿hubo que corregir algo? ¿cómo reaccionaron los estudiantes si ya se usó en clase?).
-2. Registrar una entrada en [[Bitácora de Retroalimentación]].
+2. Crear una nota nueva en `Bitácora/Entradas/` usando [[Plantilla - Entrada de Bitácora]] — aparece sola en [[Bitácora de Retroalimentación]].
 3. Si aplica, actualizar [[Lecciones Aprendidas]] con la regla general detrás del caso puntual.
 4. Crear una nota nueva en [[04 Materiales Generados]] usando [[_Plantilla de Material]] — aparece sola en la tabla del índice y en la de su Tema.
