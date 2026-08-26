@@ -103,14 +103,11 @@ incorrectas). Esta identidad es intencionalmente distinta a la de Macro I (verde
 como está documentado en `02 Curso/Sistema de Diseño HTML.md` — ajustable solo si
 Navas lo pide.
 
-**Nota para el agente**: `02 Curso/Sistema de Diseño HTML.md` especifica
-"retroalimentación con borde izquierdo de color" (side-stripe) como componente de
-layout. Esto es tal como está escrito en ese documento — no se ha modificado ni
-armonizado con el checklist de curación anti-AI-slop que se aplicó en otros vaults de
-este usuario (Contabilidad Financiera, que reemplazó ese mismo patrón por borde
-completo + fondo con tinte). No asumir una u otra convención por tu cuenta: seguir lo
-que dice `Sistema de Diseño HTML.md` de este vault tal cual, y preguntar a Navas si
-quiere unificar el criterio antes de cambiarlo.
+**Nota para el agente**: el 2026-08-26 Navas confirmó unificar el criterio con
+Contabilidad Financiera — `02 Curso/Sistema de Diseño HTML.md` ya usa borde completo +
+tinte de fondo en vez de la franja de 4px en el borde izquierdo. Ver el checklist de
+curación anti-AI-slop al final de ese mismo documento antes de dar un HTML por
+terminado.
 
 Reglas técnicas: sin `<form>` (usar eventos JS), sin gradientes/sombras
 decorativas/colores fuera de paleta, debe abrir directo en navegador sin servidor,

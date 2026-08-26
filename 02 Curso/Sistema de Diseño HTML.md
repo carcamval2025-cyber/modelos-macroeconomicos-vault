@@ -28,7 +28,7 @@ Aplica a Guías, Actividades y Repasos en HTML (no a Tarea/Control/Pauta, que se
 - Encabezado con nombre del curso, tema y semana.
 - Paneles de métricas o progreso visible.
 - Tarjetas con íconos SVG (nunca emoji).
-- Retroalimentación con borde izquierdo de color.
+- Retroalimentación con borde completo + tinte de fondo del color correspondiente (no una franja de 4px solo en el borde izquierdo — decisión de Navas del 2026-08-26, para unificar criterio con Contabilidad Financiera; ver [[Errores Comunes a Evitar]]).
 - Diagramas de modelos (IS-LM, Phillips, Solow) como SVG con ejes rotulados y la paleta definida — nunca imágenes externas ni capturas del libro.
 
 ## Reglas técnicas
@@ -39,3 +39,16 @@ Aplica a Guías, Actividades y Repasos en HTML (no a Tarea/Control/Pauta, que se
 - Responsive para pantalla de computadora.
 
 Ver [[Lecciones Aprendidas]] por ajustes de diseño que hayan surgido de retroalimentación real (por ejemplo, si algún diagrama SVG resultó confuso o un color no se leyó bien).
+
+
+## Checklist de curación (anti-AI-slop)
+
+- [ ] Ningún elemento usa franja de acento de 4px solo en el borde izquierdo —
+  borde completo + tinte en su lugar.
+- [ ] Elementos interactivos (tabs, acordeón, quiz) con `role`/`tabindex`/`aria-*`
+  y respuesta a teclado, no solo a clic.
+- [ ] Estado `:focus-visible` visible.
+- [ ] Bloque `@media (prefers-reduced-motion: reduce)` si hay animaciones.
+- [ ] Contraste WCAG AA verificado, no asumido.
+- [ ] Cero librerías JS externas, cero emojis funcionales.
+- [ ] Abre y funciona directo en el navegador, sin servidor.
