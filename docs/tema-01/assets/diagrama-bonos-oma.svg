@@ -25,11 +25,11 @@
   <!-- Puntos A (tasa baja, precio alto) y B (tasa alta, precio bajo) -->
   <circle cx="105" cy="100" r="6" fill="#10172D" stroke="#EFF2F9" stroke-width="2"/>
   <circle cx="105" cy="100" r="2.5" fill="#FF6F4A"/>
-  <text x="115" y="98" font-family="JetBrains Mono" font-size="9.5" fill="#EFF2F9">P<tspan baseline-shift="sub" font-size="7">B</tspan>=95.2 &rarr; i=5%</text>
+  <text x="115" y="98" font-family="JetBrains Mono" font-size="9.5" fill="#EFF2F9">P<tspan baseline-shift="sub" font-size="7">B</tspan>=95.2 &#8594; i=5%</text>
 
   <circle cx="175" cy="150" r="6" fill="#10172D" stroke="#667FDA" stroke-width="2"/>
   <circle cx="175" cy="150" r="2.5" fill="#FFB188"/>
-  <text x="135" y="172" font-family="JetBrains Mono" font-size="9.5" fill="#A3AABE">P<tspan baseline-shift="sub" font-size="7">B</tspan>=90.9 &rarr; i=10%</text>
+  <text x="135" y="172" font-family="JetBrains Mono" font-size="9.5" fill="#A3AABE">P<tspan baseline-shift="sub" font-size="7">B</tspan>=90.9 &#8594; i=10%</text>
 
   <!-- Fórmula base -->
   <rect x="52" y="216" width="162" height="24" rx="5" fill="#1B223C" stroke="#2A324A" stroke-width="1"/>
@@ -51,7 +51,7 @@
   <!-- Paso 2 -->
   <rect x="280" y="96" width="218" height="36" rx="6" fill="#1B223C" stroke="#FFB188" stroke-width="1"/>
   <text x="292" y="112" font-family="JetBrains Mono" font-size="9.5" font-weight="600" fill="#FFB188">2. PRECIO SUBE</text>
-  <text x="292" y="124" font-family="Inter" font-size="9.5" fill="#EFF2F9">Demanda de bonos &uarr; &rArr; P<tspan baseline-shift="sub" font-size="7">B</tspan> sube</text>
+  <text x="292" y="124" font-family="Inter" font-size="9.5" fill="#EFF2F9">Demanda de bonos &#8593; &#8658; P<tspan baseline-shift="sub" font-size="7">B</tspan> sube</text>
 
   <!-- Flecha 2 a 3 -->
   <path d="M389 132V144" fill="none" stroke="#FF6F4A" stroke-width="1.5"/>
@@ -64,6 +64,6 @@
 
   <!-- Badge resultado inferior -->
   <rect x="280" y="200" width="218" height="40" rx="6" fill="#080C1C" stroke="#2A324A" stroke-width="1"/>
-  <text x="389" y="217" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="600" fill="#55C975">&Delta; H &gt; 0 &rArr; &Delta; P<tspan baseline-shift="sub" font-size="8">B</tspan> &gt; 0 &rArr; &Delta; i &lt; 0</text>
+  <text x="389" y="217" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="600" fill="#55C975">&#916; H &gt; 0 &#8658; &#916; P<tspan baseline-shift="sub" font-size="8">B</tspan> &gt; 0 &#8658; &#916; i &lt; 0</text>
   <text x="389" y="231" text-anchor="middle" font-family="Inter" font-size="8.5" fill="#A3AABE">Operación de mercado abierto expansiva</text>
 </svg>
