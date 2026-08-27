@@ -32,8 +32,8 @@ Esta nota documenta el trabajo de enriquecimiento teórico, matemático, visual 
    - Evidencia empírica de EE. UU. 2008–2016: compras masivas de bonos por la Fed (QE), crecimiento de depósitos de $\$620\text{B} \to \$1,700\text{B}$ y explosión de reservas de $\$10\text{B} \to \$2,500\text{B}$ (250x) sin modificación de la tasa de interés ($i=0$).
 5. **Módulo 05 · Síntesis y Glosario:**
    - Glosario formal de 10 variables ($\theta, c, H, H^d, i, \$Y, P_B, L(i), M^d, mm$) y resumen ejecutivo para exámenes.
-6. **Módulo 06 · Autoevaluación Intensiva:**
-   - 10 preguntas y ejercicios interactivos con acordeón: 6 conceptuales profundas + 4 ejercicios numéricos resueltos con álgebra detallada paso a paso.
+6. **Módulo 06 · Quiz Interactivo de Opción Múltiple (10 Preguntas):**
+   - 10 preguntas y ejercicios interactivos con 4 opciones (A, B, C, D): 6 conceptuales profundas + 4 ejercicios numéricos resueltos, con retroalimentación inmediata (verde/rojo), score tracker, barra de progreso y desarrollo matemático paso a paso.
 
 ---
 

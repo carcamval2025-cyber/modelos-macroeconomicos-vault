@@ -17,9 +17,10 @@
   --ease:cubic-bezier(0.16,1,0.3,1);
 }
 *{box-sizing:border-box; margin:0; padding:0;}
-html{background:var(--bg);}
+html{background:var(--bg); color-scheme: dark;}
 body{
   font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.7; font-weight:400;
+  accent-color: var(--coral);
 }
 h1,h2,h3,h4{font-family:'Fraunces',serif; color:var(--text); letter-spacing:-0.02em;}
 em{font-style:italic; color:var(--coral);}
@@ -210,28 +211,88 @@ figcaption{font-size:0.86rem; color:var(--text-dim); margin-top:12px; text-align
 .glosario dt{font-family:'JetBrains Mono',monospace; font-weight:600; color:var(--indigo-mid); display:flex; align-items:center;}
 .glosario dd{color:var(--text); line-height:1.55;}
 
-/* ---------- Autoevaluación ---------- */
-.pregunta{border:1px solid var(--border); border-radius:12px; margin-bottom:16px; overflow:hidden; background:var(--bg-elev); transition:border-color .2s var(--ease);}
-.pregunta:hover{border-color:rgba(102,127,218,0.4);}
-.pregunta button.disparador{
-  width:100%; text-align:left; background:transparent; border:none; padding:18px 22px;
-  font-family:'Inter',sans-serif; font-size:0.98rem; font-weight:600; color:var(--text); cursor:pointer;
-  display:flex; justify-content:space-between; align-items:center; gap:16px;
+/* ---------- QUIZ INTERACTIVO DE OPCIÓN MÚLTIPLE ---------- */
+.quiz-tracker{
+  background:var(--bg-elev); border:1px solid var(--border); border-radius:12px;
+  padding:20px 24px; margin-bottom:28px; display:flex; justify-content:space-between;
+  align-items:center; flex-wrap:wrap; gap:16px;
 }
-.pregunta button.disparador:hover{background:var(--bg-elev2);}
-.pregunta button.disparador .flecha{color:var(--text-dim); transition:transform .2s var(--ease); flex-shrink:0;}
-.pregunta button.disparador[aria-expanded="true"] .flecha{transform:rotate(180deg);}
-.pregunta .respuesta{
-  padding:18px 22px; margin:0 18px 18px; border:1px solid rgba(85,201,117,0.35);
-  background:rgba(85,201,117,0.10); border-radius:10px;
+.quiz-tracker-info{display:flex; flex-direction:column; gap:4px;}
+.quiz-score-val{font-family:'JetBrains Mono',monospace; font-size:1.25rem; font-weight:700; color:var(--coral);}
+.quiz-progress-text{font-size:0.85rem; color:var(--text-dim);}
+.quiz-progress-bar-wrap{width:100%; height:6px; background:var(--bg-elev2); border-radius:999px; overflow:hidden; margin-top:6px;}
+.quiz-progress-bar{height:100%; width:0%; background:var(--coral); transition:width .3s var(--ease);}
+.quiz-btn-reset{
+  font-family:'JetBrains Mono',monospace; font-size:0.78rem; font-weight:600;
+  padding:8px 16px; border-radius:8px; background:var(--bg-elev2); color:var(--text);
+  border:1px solid var(--border); cursor:pointer; transition:all .2s var(--ease);
 }
-.pregunta .respuesta p{font-size:0.94rem;}
-.pregunta .respuesta p + p{margin-top:10px;}
-.respuesta-tag{
-  font-family:'JetBrains Mono',monospace; font-size:0.70rem; letter-spacing:0.06em; text-transform:uppercase;
-  color:var(--success); font-weight:600; margin-bottom:8px; display:block;
+.quiz-btn-reset:hover{background:var(--bg); border-color:var(--coral-2); color:var(--coral-2);}
+
+.quiz-card{
+  background:var(--bg-elev); border:1px solid var(--border); border-radius:14px;
+  padding:24px 28px; margin-bottom:24px; transition:border-color .2s var(--ease);
 }
-.pregunta[data-abierta="false"] .respuesta{display:none;}
+.quiz-card-head{
+  display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;
+}
+.quiz-q-tag{
+  font-family:'JetBrains Mono',monospace; font-size:0.72rem; letter-spacing:0.05em;
+  text-transform:uppercase; color:var(--indigo-mid); font-weight:600;
+}
+.quiz-card h3{font-size:1.05rem; font-weight:600; line-height:1.55; margin-bottom:18px;}
+
+.quiz-opciones{display:flex; flex-direction:column; gap:10px;}
+.quiz-opcion{
+  display:flex; align-items:flex-start; gap:14px; padding:14px 18px;
+  background:var(--bg); border:1px solid var(--border); border-radius:10px;
+  cursor:pointer; text-align:left; font-family:'Inter',sans-serif; font-size:0.92rem;
+  color:var(--text); width:100%; transition:all .2s var(--ease);
+}
+.quiz-opcion:hover:not(:disabled){
+  background:var(--bg-elev2); border-color:rgba(102,127,218,0.5); transform:translateX(3px);
+}
+.quiz-opcion:disabled{cursor:default;}
+.quiz-opt-letter{
+  font-family:'JetBrains Mono',monospace; font-weight:700; font-size:0.80rem;
+  padding:3px 8px; border-radius:6px; background:var(--bg-elev2);
+  border:1px solid var(--border); color:var(--text-dim); flex-shrink:0;
+}
+
+/* Estados de feedback interactivo */
+.quiz-opcion.correct{
+  background:rgba(85,201,117,0.12) !important; border-color:var(--success) !important; color:#EFF2F9 !important;
+}
+.quiz-opcion.correct .quiz-opt-letter{
+  background:var(--success); color:#080C1C; border-color:var(--success);
+}
+.quiz-opcion.incorrect{
+  background:rgba(251,86,104,0.12) !important; border-color:var(--danger) !important; color:#EFF2F9 !important;
+}
+.quiz-opcion.incorrect .quiz-opt-letter{
+  background:var(--danger); color:#080C1C; border-color:var(--danger);
+}
+.quiz-opcion.revealed-correct{
+  border-color:var(--success) !important; background:rgba(85,201,117,0.06) !important;
+}
+.quiz-opcion.revealed-correct .quiz-opt-letter{
+  border-color:var(--success); color:var(--success);
+}
+
+.quiz-explicacion{
+  margin-top:18px; padding:18px 20px; border-radius:10px;
+  background:rgba(85,201,117,0.08); border:1px solid rgba(85,201,117,0.3);
+  display:none; animation:fadeIn .3s var(--ease);
+}
+.quiz-explicacion.visible{display:block;}
+.quiz-exp-tag{
+  font-family:'JetBrains Mono',monospace; font-size:0.72rem; letter-spacing:0.06em;
+  text-transform:uppercase; color:var(--success); font-weight:600; margin-bottom:8px; display:block;
+}
+.quiz-explicacion p{font-size:0.92rem; line-height:1.6;}
+.quiz-explicacion p + p{margin-top:8px;}
+
+@keyframes fadeIn{from{opacity:0; transform:translateY(-4px);} to{opacity:1; transform:none;}}
 
 /* ---------- Banner hero ---------- */
 .hero-banner{margin:0 0 16px; border:1px solid var(--border); border-radius:12px; overflow:hidden; background:var(--bg);}
@@ -256,6 +317,7 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
   .modulo-num{font-size:1.8rem;}
   .bloque-icono{flex-direction:column;}
   .grid-2, .grid-3{grid-template-columns:1fr;}
+  .quiz-tracker{flex-direction:column; align-items:flex-start;}
 }
 @media (prefers-reduced-motion: reduce){
   *, *::before, *::after{
@@ -384,7 +446,7 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
     <a href="#bancos">03 · Bancos y Dinero Central</a>
     <a href="#trampa">04 · Trampa de Liquidez</a>
     <a href="#sintesis">05 · Síntesis y Glosario</a>
-    <a href="#autoeval">06 · Autoevaluación</a>
+    <a href="#quiz">06 · Quiz Interactivo</a>
   </nav>
 
   <!-- ==================== MÓDULO 01 ==================== -->
@@ -479,80 +541,73 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
       </div>
     </div>
 
-    <!-- FIGURA 5: Mecánica de Bonos y OMA -->
+    <!-- FIGURA 5: Mecánica de Bonos y OMA (Con pastillas protectoras de texto) -->
     <figure>
       <div class="diagrama-wrap">
         <div class="diagrama">
           <svg viewBox="0 0 520 260" role="img" aria-labelledby="fig-bonos-title fig-bonos-desc" xmlns="http://www.w3.org/2000/svg">
-  <title id="fig-bonos-title">Determinación del Precio del Bono y Operaciones de Mercado Abierto</title>
-  <desc id="fig-bonos-desc">Panel izquierdo con la curva hiperbólica inversa entre el precio del bono PB y la tasa de interés i. Panel derecho con el flujo de transmisión de una operación de mercado abierto expansiva donde la compra de bonos eleva PB y reduce la tasa de interés.</desc>
+            <title id="fig-bonos-title">Determinación del Precio del Bono y Operaciones de Mercado Abierto</title>
+            <desc id="fig-bonos-desc">Panel izquierdo con la curva hiperbólica inversa entre el precio del bono PB y la tasa de interés i, con pastillas de protección de texto. Panel derecho con el flujo de transmisión de una operación de mercado abierto expansiva.</desc>
 
-  <!-- Panel Izquierdo: Curva PB vs i -->
-  <rect x="8" y="8" width="250" height="244" rx="10" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
-  <text x="133" y="28" text-anchor="middle" font-family="Inter" font-weight="600" font-size="12" fill="#EFF2F9">Relación Inversa: Precio y Tasa</text>
-  
-  <!-- Ejes panel izquierdo -->
-  <line x1="45" y1="42" x2="45" y2="205" stroke="#A3AABE" stroke-width="1.2" stroke-linecap="round"/>
-  <line x1="45" y1="205" x2="235" y2="205" stroke="#A3AABE" stroke-width="1.2" stroke-linecap="round"/>
-  <path d="M42 48L45 42L48 48" fill="none" stroke="#A3AABE" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M229 202L235 205L229 208" fill="none" stroke="#A3AABE" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-  
-  <text x="24" y="48" font-family="Inter" font-weight="600" font-size="11" fill="#A3AABE">P<tspan baseline-shift="sub" font-size="8">B</tspan></text>
-  <text x="228" y="222" font-family="Inter" font-weight="600" font-size="11" fill="#A3AABE">i</text>
+            <rect x="8" y="8" width="250" height="244" rx="10" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+            <rect x="24" y="16" width="218" height="22" rx="5" fill="#1B223C"/>
+            <text x="133" y="31" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#EFF2F9">Relación Inversa: Precio y Tasa</text>
+            
+            <line x1="45" y1="48" x2="45" y2="200" stroke="#A3AABE" stroke-width="1.2" stroke-linecap="round"/>
+            <line x1="45" y1="200" x2="235" y2="200" stroke="#A3AABE" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M42 54L45 48L48 54" fill="none" stroke="#A3AABE" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M229 197L235 200L229 203" fill="none" stroke="#A3AABE" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            
+            <rect x="16" y="44" width="24" height="18" rx="4" fill="#10172D"/>
+            <text x="28" y="57" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#A3AABE">P<tspan baseline-shift="sub" font-size="8">B</tspan></text>
 
-  <!-- Retícula tenue -->
-  <path d="M45 85H225M45 145H225M105 45V205M175 45V205" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="3 4" opacity=".4"/>
+            <rect x="226" y="204" width="18" height="16" rx="4" fill="#10172D"/>
+            <text x="235" y="216" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#A3AABE">i</text>
 
-  <!-- Curva hiperbólica PB = 100 / (1 + i) -->
-  <path d="M 60 70 C 85 95, 125 135, 215 175" fill="none" stroke="#FF6F4A" stroke-width="3" stroke-linecap="round"/>
-  <path d="M 60 70 C 85 95, 125 135, 215 175" fill="none" stroke="#FFB188" stroke-width="1" stroke-dasharray="3 3" opacity=".4"/>
+            <path d="M45 85H225M45 145H225M105 48V200M175 48V200" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="3 4" opacity=".35"/>
 
-  <!-- Puntos A (tasa baja, precio alto) y B (tasa alta, precio bajo) -->
-  <circle cx="105" cy="100" r="6" fill="#10172D" stroke="#EFF2F9" stroke-width="2"/>
-  <circle cx="105" cy="100" r="2.5" fill="#FF6F4A"/>
-  <text x="115" y="98" font-family="JetBrains Mono" font-size="9.5" fill="#EFF2F9">P<tspan baseline-shift="sub" font-size="7">B</tspan>=95.2 &#8594; i=5%</text>
+            <path d="M 60 70 C 85 95, 125 135, 215 175" fill="none" stroke="#FF6F4A" stroke-width="3" stroke-linecap="round"/>
+            <path d="M 60 70 C 85 95, 125 135, 215 175" fill="none" stroke="#FFB188" stroke-width="1" stroke-dasharray="3 3" opacity=".4"/>
 
-  <circle cx="175" cy="150" r="6" fill="#10172D" stroke="#667FDA" stroke-width="2"/>
-  <circle cx="175" cy="150" r="2.5" fill="#FFB188"/>
-  <text x="135" y="172" font-family="JetBrains Mono" font-size="9.5" fill="#A3AABE">P<tspan baseline-shift="sub" font-size="7">B</tspan>=90.9 &#8594; i=10%</text>
+            <circle cx="105" cy="100" r="6" fill="#10172D" stroke="#EFF2F9" stroke-width="2"/>
+            <circle cx="105" cy="100" r="2.5" fill="#FF6F4A"/>
+            <rect x="114" y="86" width="112" height="18" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+            <text x="170" y="99" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#EFF2F9">P<tspan baseline-shift="sub" font-size="7">B</tspan>=95.2 &#8594; i=5%</text>
 
-  <!-- Fórmula base -->
-  <rect x="52" y="216" width="162" height="24" rx="5" fill="#1B223C" stroke="#2A324A" stroke-width="1"/>
-  <text x="133" y="232" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="600" fill="#FFB188">i = (100 - P<tspan baseline-shift="sub" font-size="8">B</tspan>) / P<tspan baseline-shift="sub" font-size="8">B</tspan></text>
+            <circle cx="175" cy="150" r="6" fill="#10172D" stroke="#667FDA" stroke-width="2"/>
+            <circle cx="175" cy="150" r="2.5" fill="#FFB188"/>
+            <rect x="114" y="156" width="112" height="18" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+            <text x="170" y="169" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#A3AABE">P<tspan baseline-shift="sub" font-size="7">B</tspan>=90.9 &#8594; i=10%</text>
 
-  <!-- Panel Derecho: Flujo de Operación de Mercado Abierto -->
-  <rect x="266" y="8" width="246" height="244" rx="10" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
-  <text x="389" y="28" text-anchor="middle" font-family="Inter" font-weight="600" font-size="12" fill="#EFF2F9">Mecánica OMA Expansiva</text>
+            <rect x="45" y="218" width="176" height="22" rx="5" fill="#1B223C" stroke="#2A324A" stroke-width="1"/>
+            <text x="133" y="233" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="600" fill="#FFB188">i = (100 - P<tspan baseline-shift="sub" font-size="8">B</tspan>) / P<tspan baseline-shift="sub" font-size="8">B</tspan></text>
 
-  <!-- Paso 1 -->
-  <rect x="280" y="44" width="218" height="36" rx="6" fill="#1B223C" stroke="#667FDA" stroke-width="1"/>
-  <text x="292" y="60" font-family="JetBrains Mono" font-size="9.5" font-weight="600" fill="#667FDA">1. INYECCIÓN</text>
-  <text x="292" y="72" font-family="Inter" font-size="9.5" fill="#EFF2F9">Banco Central compra bonos</text>
+            <rect x="266" y="8" width="246" height="244" rx="10" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+            <rect x="280" y="16" width="218" height="22" rx="5" fill="#1B223C"/>
+            <text x="389" y="31" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#EFF2F9">Mecánica OMA Expansiva</text>
 
-  <!-- Flecha 1 a 2 -->
-  <path d="M389 80V92" fill="none" stroke="#FF6F4A" stroke-width="1.5"/>
-  <path d="M386 89L389 94L392 89" fill="none" stroke="#FF6F4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="280" y="46" width="218" height="34" rx="6" fill="#1B223C" stroke="#667FDA" stroke-width="1"/>
+            <text x="292" y="61" font-family="JetBrains Mono" font-size="9" font-weight="600" fill="#667FDA">1. INYECCIÓN</text>
+            <text x="292" y="73" font-family="Inter" font-size="9" fill="#EFF2F9">Banco Central compra bonos</text>
 
-  <!-- Paso 2 -->
-  <rect x="280" y="96" width="218" height="36" rx="6" fill="#1B223C" stroke="#FFB188" stroke-width="1"/>
-  <text x="292" y="112" font-family="JetBrains Mono" font-size="9.5" font-weight="600" fill="#FFB188">2. PRECIO SUBE</text>
-  <text x="292" y="124" font-family="Inter" font-size="9.5" fill="#EFF2F9">Demanda de bonos &#8593; &#8658; P<tspan baseline-shift="sub" font-size="7">B</tspan> sube</text>
+            <path d="M389 80V90" fill="none" stroke="#FF6F4A" stroke-width="1.5"/>
+            <path d="M386 87L389 92L392 87" fill="none" stroke="#FF6F4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 
-  <!-- Flecha 2 a 3 -->
-  <path d="M389 132V144" fill="none" stroke="#FF6F4A" stroke-width="1.5"/>
-  <path d="M386 141L389 146L392 141" fill="none" stroke="#FF6F4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="280" y="94" width="218" height="34" rx="6" fill="#1B223C" stroke="#FFB188" stroke-width="1"/>
+            <text x="292" y="109" font-family="JetBrains Mono" font-size="9" font-weight="600" fill="#FFB188">2. PRECIO SUBE</text>
+            <text x="292" y="121" font-family="Inter" font-size="9" fill="#EFF2F9">Demanda de bonos &#8593; &#8658; P<tspan baseline-shift="sub" font-size="7">B</tspan> sube</text>
 
-  <!-- Paso 3 -->
-  <rect x="280" y="148" width="218" height="36" rx="6" fill="#1B223C" stroke="#55C975" stroke-width="1"/>
-  <text x="292" y="164" font-family="JetBrains Mono" font-size="9.5" font-weight="600" fill="#55C975">3. TASA CAE</text>
-  <text x="292" y="176" font-family="Inter" font-size="9.5" fill="#EFF2F9">Rendimiento efectivo i baja</text>
+            <path d="M389 128V138" fill="none" stroke="#FF6F4A" stroke-width="1.5"/>
+            <path d="M386 135L389 140L392 135" fill="none" stroke="#FF6F4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 
-  <!-- Badge resultado inferior -->
-  <rect x="280" y="200" width="218" height="40" rx="6" fill="#080C1C" stroke="#2A324A" stroke-width="1"/>
-  <text x="389" y="217" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="600" fill="#55C975">&#916; H &gt; 0 &#8658; &#916; P<tspan baseline-shift="sub" font-size="8">B</tspan> &gt; 0 &#8658; &#916; i &lt; 0</text>
-  <text x="389" y="231" text-anchor="middle" font-family="Inter" font-size="8.5" fill="#A3AABE">Operación de mercado abierto expansiva</text>
-</svg>
+            <rect x="280" y="142" width="218" height="34" rx="6" fill="#1B223C" stroke="#55C975" stroke-width="1"/>
+            <text x="292" y="157" font-family="JetBrains Mono" font-size="9" font-weight="600" fill="#55C975">3. TASA CAE</text>
+            <text x="292" y="169" font-family="Inter" font-size="9" fill="#EFF2F9">Rendimiento efectivo i baja</text>
 
+            <rect x="280" y="194" width="218" height="46" rx="6" fill="#080C1C" stroke="#2A324A" stroke-width="1"/>
+            <text x="389" y="213" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="600" fill="#55C975">&#916; H &gt; 0 &#8658; &#916; P<tspan baseline-shift="sub" font-size="8">B</tspan> &gt; 0 &#8658; &#916; i &lt; 0</text>
+            <text x="389" y="228" text-anchor="middle" font-family="Inter" font-size="8.5" fill="#A3AABE">Operación de mercado abierto expansiva</text>
+          </svg>
         </div>
       </div>
       <figcaption>Figura 4-5: Relación inversa entre el precio del bono P<sub>B</sub> y la tasa de interés i, y canal de transmisión de las Operaciones de Mercado Abierto (OMA).</figcaption>
@@ -592,7 +647,7 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
     <div class="grid-3">
       <div class="mini-card">
         <h4><span class="tag-pill tag-coral">1</span> Descalce de flujos diarios</h4>
-        <p>Las entradas por depósitos no coinciden sincrónicamente con las salidas por retiros de ventanilla o cajeros.</p>
+        <p>Las entradas diarias por depósitos no coinciden sincrónicamente con las salidas por retiros de ventanilla o cajeros.</p>
       </div>
       <div class="mini-card">
         <h4><span class="tag-pill tag-indigo">2</span> Compensación interbancaria</h4>
@@ -722,68 +777,63 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
       </div>
     </div>
 
-    <!-- FIGURA 6: Multiplicador Monetario y Flujo -->
+    <!-- FIGURA 6: Multiplicador Monetario y Flujo (Con pastillas protectoras) -->
     <figure>
       <div class="diagrama-wrap">
         <div class="diagrama">
           <svg viewBox="0 0 540 280" role="img" aria-labelledby="fig-mult-title fig-mult-desc" xmlns="http://www.w3.org/2000/svg">
-  <title id="fig-mult-title">Flujo del Multiplicador Monetario y Demanda de Dinero Central</title>
-  <desc id="fig-mult-desc">Diagrama de árbol de decisiones financieras que desglosa la demanda agregada de dinero Md en efectivo c*Md y depósitos (1-c)*Md. Los depósitos generan demanda de reservas theta*(1-c)*Md. Ambas ramas convergen en la demanda de dinero central Hd = [c + theta(1-c)]Md, originando el multiplicador monetario.</desc>
+            <title id="fig-mult-title">Flujo del Multiplicador Monetario y Demanda de Dinero Central</title>
+            <desc id="fig-mult-desc">Diagrama de árbol de decisiones financieras que desglosa la demanda agregada de dinero Md en efectivo c*Md y depósitos (1-c)*Md. Los depósitos generan demanda de reservas theta*(1-c)*Md. Ambas ramas convergen en la demanda de dinero central Hd = [c + theta(1-c)]Md, originando el multiplicador monetario.</desc>
 
-  <!-- Contenedor Principal -->
-  <rect x="8" y="8" width="524" height="264" rx="12" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+            <rect x="8" y="8" width="524" height="264" rx="12" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
 
-  <!-- Nivel 1: Demanda Total de Dinero Md -->
-  <rect x="24" y="24" width="160" height="52" rx="8" fill="#1B223C" stroke="#FF6F4A" stroke-width="1.4"/>
-  <text x="104" y="44" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#EFF2F9">Demanda de Dinero</text>
-  <text x="104" y="62" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="12" fill="#FF6F4A">M<tspan baseline-shift="super" font-size="8">d</tspan> = $Y &#183; L(i)</text>
+            <rect x="20" y="24" width="168" height="52" rx="8" fill="#1B223C" stroke="#FF6F4A" stroke-width="1.4"/>
+            <text x="104" y="44" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#EFF2F9">Demanda de Dinero</text>
+            <text x="104" y="62" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="12" fill="#FF6F4A">M<tspan baseline-shift="super" font-size="8">d</tspan> = $Y &#183; L(i)</text>
 
-  <!-- Bifurcación: Flechas hacia Efectivo y Depósitos -->
-  <path d="M 184 42 H 224 V 95 H 250" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-dasharray="3 3"/>
-  <path d="M 244 92 L 250 95 L 244 98" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="210" y="78" font-family="JetBrains Mono" font-size="9" fill="#A3AABE">c</text>
+            <path d="M 188 42 H 224 V 95 H 250" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-dasharray="3 3"/>
+            <path d="M 244 92 L 250 95 L 244 98" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            
+            <rect x="206" y="66" width="18" height="18" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+            <text x="215" y="79" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="600" fill="#FFB188">c</text>
 
-  <path d="M 184 58 H 224 V 165 H 250" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-dasharray="3 3"/>
-  <path d="M 244 162 L 250 165 L 244 168" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="202" y="148" font-family="JetBrains Mono" font-size="9" fill="#A3AABE">1 - c</text>
+            <path d="M 188 58 H 224 V 165 H 250" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-dasharray="3 3"/>
+            <path d="M 244 162 L 250 165 L 244 168" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            
+            <rect x="195" y="136" width="38" height="18" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+            <text x="214" y="149" text-anchor="middle" font-family="JetBrains Mono" font-size="9" font-weight="600" fill="#EFF2F9">1 - c</text>
 
-  <!-- Nivel 2A: Demanda de Efectivo CUd -->
-  <rect x="250" y="72" width="140" height="46" rx="6" fill="#1B223C" stroke="#667FDA" stroke-width="1.2"/>
-  <text x="320" y="89" text-anchor="middle" font-family="Inter" font-size="10" fill="#A3AABE">Efectivo del público</text>
-  <text x="320" y="105" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="11" fill="#667FDA">CU<tspan baseline-shift="super" font-size="7">d</tspan> = c &#183; M<tspan baseline-shift="super" font-size="7">d</tspan></text>
+            <rect x="250" y="72" width="144" height="46" rx="6" fill="#1B223C" stroke="#667FDA" stroke-width="1.2"/>
+            <text x="322" y="89" text-anchor="middle" font-family="Inter" font-size="10" fill="#A3AABE">Efectivo del público</text>
+            <text x="322" y="105" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="11" fill="#667FDA">CU<tspan baseline-shift="super" font-size="7">d</tspan> = c &#183; M<tspan baseline-shift="super" font-size="7">d</tspan></text>
 
-  <!-- Nivel 2B: Demanda de Depósitos Dd -->
-  <rect x="250" y="142" width="140" height="46" rx="6" fill="#1B223C" stroke="#2A324A" stroke-width="1.2"/>
-  <text x="320" y="159" text-anchor="middle" font-family="Inter" font-size="10" fill="#A3AABE">Depósitos a la vista</text>
-  <text x="320" y="175" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="11" fill="#EFF2F9">D<tspan baseline-shift="super" font-size="7">d</tspan> = (1-c)M<tspan baseline-shift="super" font-size="7">d</tspan></text>
+            <rect x="250" y="142" width="144" height="46" rx="6" fill="#1B223C" stroke="#2A324A" stroke-width="1.2"/>
+            <text x="322" y="159" text-anchor="middle" font-family="Inter" font-size="10" fill="#A3AABE">Depósitos a la vista</text>
+            <text x="322" y="175" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="11" fill="#EFF2F9">D<tspan baseline-shift="super" font-size="7">d</tspan> = (1-c)M<tspan baseline-shift="super" font-size="7">d</tspan></text>
 
-  <!-- Flecha de Depósitos a Reservas Bancarias -->
-  <path d="M 320 188 V 206" fill="none" stroke="#FFB188" stroke-width="1.4"/>
-  <path d="M 317 202 L 320 206 L 323 202" fill="none" stroke="#FFB188" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="330" y="200" font-family="JetBrains Mono" font-size="8.5" fill="#FFB188">&#215; &#952; (encaje)</text>
+            <path d="M 322 188 V 208" fill="none" stroke="#FFB188" stroke-width="1.4"/>
+            <path d="M 319 204 L 322 208 L 325 204" fill="none" stroke="#FFB188" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            
+            <rect x="330" y="188" width="70" height="18" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+            <text x="365" y="201" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="#FFB188">&#215; &#952; (encaje)</text>
 
-  <!-- Nivel 3: Demanda de Reservas Rd -->
-  <rect x="240" y="210" width="160" height="46" rx="6" fill="#1B223C" stroke="#FFB188" stroke-width="1.2"/>
-  <text x="320" y="227" text-anchor="middle" font-family="Inter" font-size="10" fill="#A3AABE">Reservas de los bancos</text>
-  <text x="320" y="243" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="10.5" fill="#FFB188">R<tspan baseline-shift="super" font-size="7">d</tspan> = &#952;(1-c)M<tspan baseline-shift="super" font-size="7">d</tspan></text>
+            <rect x="240" y="210" width="164" height="46" rx="6" fill="#1B223C" stroke="#FFB188" stroke-width="1.2"/>
+            <text x="322" y="227" text-anchor="middle" font-family="Inter" font-size="10" fill="#A3AABE">Reservas de los bancos</text>
+            <text x="322" y="243" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="10.5" fill="#FFB188">R<tspan baseline-shift="super" font-size="7">d</tspan> = &#952;(1-c)M<tspan baseline-shift="super" font-size="7">d</tspan></text>
 
-  <!-- Convergencia a Demanda de Dinero Central Hd -->
-  <path d="M 390 95 H 415 V 130 H 425" fill="none" stroke="#FF6F4A" stroke-width="1.5"/>
-  <path d="M 400 233 H 415 V 150 H 425" fill="none" stroke="#FF6F4A" stroke-width="1.5"/>
-  <path d="M 420 137 L 426 140 L 420 143" fill="none" stroke="#FF6F4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M 394 95 H 418 V 130 H 426" fill="none" stroke="#FF6F4A" stroke-width="1.5"/>
+            <path d="M 404 233 H 418 V 150 H 426" fill="none" stroke="#FF6F4A" stroke-width="1.5"/>
+            <path d="M 421 137 L 427 140 L 421 143" fill="none" stroke="#FF6F4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 
-  <!-- Nivel Final: Demanda de Dinero del Banco Central Hd -->
-  <rect x="426" y="105" width="94" height="70" rx="8" fill="#080C1C" stroke="#FF6F4A" stroke-width="1.5"/>
-  <text x="473" y="124" text-anchor="middle" font-family="Inter" font-weight="600" font-size="9.5" fill="#EFF2F9">Demanda de H</text>
-  <text x="473" y="142" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="12" fill="#FF6F4A">H<tspan baseline-shift="super" font-size="8">d</tspan></text>
-  <text x="473" y="160" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">= CU<tspan baseline-shift="super" font-size="6">d</tspan> + R<tspan baseline-shift="super" font-size="6">d</tspan></text>
+            <rect x="428" y="105" width="94" height="70" rx="8" fill="#080C1C" stroke="#FF6F4A" stroke-width="1.5"/>
+            <text x="475" y="124" text-anchor="middle" font-family="Inter" font-weight="600" font-size="9.5" fill="#EFF2F9">Demanda de H</text>
+            <text x="475" y="142" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="12" fill="#FF6F4A">H<tspan baseline-shift="super" font-size="8">d</tspan></text>
+            <text x="475" y="160" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">= CU<tspan baseline-shift="super" font-size="6">d</tspan> + R<tspan baseline-shift="super" font-size="6">d</tspan></text>
 
-  <!-- Fórmula Resumen Inferior Izquierda: Multiplicador Monetario -->
-  <rect x="24" y="210" width="195" height="46" rx="6" fill="#080C1C" stroke="#2A324A" stroke-width="1"/>
-  <text x="121" y="226" text-anchor="middle" font-family="Inter" font-size="9" fill="#A3AABE">Multiplicador del dinero (M / H):</text>
-  <text x="121" y="244" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="10.5" fill="#55C975">M = [ 1 / (c + &#952;(1-c)) ] &#183; H</text>
-</svg>
-
+            <rect x="20" y="210" width="202" height="46" rx="6" fill="#080C1C" stroke="#2A324A" stroke-width="1"/>
+            <text x="121" y="226" text-anchor="middle" font-family="Inter" font-size="9" fill="#A3AABE">Multiplicador del dinero (M / H):</text>
+            <text x="121" y="244" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="10.5" fill="#55C975">M = [ 1 / (c + &#952;(1-c)) ] &#183; H</text>
+          </svg>
         </div>
       </div>
       <figcaption>Figura 4-6B: Estructura analítica de la demanda agregada de dinero central y formulación del multiplicador monetario.</figcaption>
@@ -801,7 +851,7 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
       </div>
     </div>
 
-    <!-- FIGURA 2: Equilibrio en el mercado de dinero central -->
+    <!-- FIGURA 2: Equilibrio en el mercado de dinero central (Con pastillas protectoras) -->
     <figure>
       <div class="diagrama-wrap">
         <div class="diagrama">
@@ -814,6 +864,11 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
 
             <path d="M 240 220 V 112 C 280 138, 300 152, 320 165 V 220 Z" fill="#667FDA" opacity=".08"/>
 
+            <line x1="60" y1="112" x2="240" y2="112" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="4 3"/>
+            <line x1="240" y1="112" x2="240" y2="220" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="4 3"/>
+            <line x1="60" y1="165" x2="320" y2="165" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="4 3"/>
+            <line x1="320" y1="165" x2="320" y2="220" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="4 3"/>
+
             <line x1="60" y1="20" x2="60" y2="220" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
             <line x1="60" y1="220" x2="420" y2="220" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
             <path d="M56 26L60 18L64 26" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -821,42 +876,54 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
 
             <path d="M60 70H66M60 112H66M60 165H66" fill="none" stroke="#A3AABE" stroke-width="1.2" opacity=".6"/>
             <path d="M140 220V226M240 220V226M320 220V226" fill="none" stroke="#A3AABE" stroke-width="1.2" opacity=".6"/>
-            <text x="30" y="24" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">i</text>
-            <text x="410" y="240" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">H</text>
+            
+            <rect x="24" y="16" width="18" height="16" rx="4" fill="#10172D"/>
+            <text x="33" y="28" text-anchor="middle" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">i</text>
+
+            <rect x="412" y="228" width="18" height="16" rx="4" fill="#10172D"/>
+            <text x="421" y="240" text-anchor="middle" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">H</text>
 
             <line x1="240" y1="20" x2="240" y2="220" stroke="#667FDA" stroke-width="2.4" stroke-linecap="round"/>
-            <text x="200" y="35" font-family="JetBrains Mono" font-weight="500" font-size="11" fill="#667FDA">Oferta H</text>
+            <rect x="174" y="22" width="62" height="18" rx="4" fill="#10172D" stroke="#667FDA" stroke-width="0.8"/>
+            <text x="205" y="35" text-anchor="middle" font-family="JetBrains Mono" font-weight="500" font-size="10" fill="#667FDA">Oferta H</text>
 
             <line x1="320" y1="20" x2="320" y2="220" stroke="#667FDA" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="6 4" opacity=".9"/>
-            <text x="326" y="35" font-family="JetBrains Mono" font-weight="500" font-size="11" fill="#667FDA">Oferta H&#8242;</text>
+            <rect x="326" y="22" width="66" height="18" rx="4" fill="#10172D" stroke="#667FDA" stroke-width="0.8"/>
+            <text x="359" y="35" text-anchor="middle" font-family="JetBrains Mono" font-weight="500" font-size="10" fill="#667FDA">Oferta H&#8242;</text>
 
             <path d="M 90 40 C 140 55, 180 73, 240 112 C 280 138, 349 189, 390 200" fill="none" stroke="#FF6F4A" stroke-width="3.2" stroke-linecap="round"/>
             <path d="M 90 40 C 140 55, 180 73, 240 112 C 280 138, 349 189, 390 200" fill="none" stroke="#FFB188" stroke-width="1.2" stroke-dasharray="4 4" opacity=".35"/>
-            <text x="300" y="195" font-family="JetBrains Mono" font-weight="500" font-size="11" fill="#FF6F4A">Demanda H<tspan baseline-shift="sub" font-size="8">d</tspan></text>
-
-            <line x1="60" y1="112" x2="240" y2="112" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="4 3"/>
-            <line x1="240" y1="112" x2="240" y2="220" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="4 3"/>
-            <line x1="60" y1="165" x2="320" y2="165" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="4 3"/>
-            <line x1="320" y1="165" x2="320" y2="220" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="4 3"/>
+            
+            <rect x="300" y="194" width="86" height="18" rx="4" fill="#10172D" stroke="#FF6F4A" stroke-width="0.8"/>
+            <text x="343" y="207" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="10.5" fill="#FF6F4A">Demanda H<tspan baseline-shift="sub" font-size="7.5">d</tspan></text>
 
             <path d="M 252 120 C 270 132, 288 144, 306 156" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-dasharray="3 3" opacity=".9"/>
             <path d="M 298 152 L 306 156 L 301 146" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".95"/>
 
             <circle cx="240" cy="112" r="9.5" fill="#10172D" stroke="#EFF2F9" stroke-width="2.5"/>
             <circle cx="240" cy="112" r="4" fill="#FF6F4A"/>
-            <text x="252" y="108" font-family="Inter" font-weight="600" font-size="12" fill="#EFF2F9">A</text>
+            <rect x="252" y="98" width="18" height="16" rx="4" fill="#10172D"/>
+            <text x="261" y="110" text-anchor="middle" font-family="Inter" font-weight="600" font-size="12" fill="#EFF2F9">A</text>
 
             <circle cx="320" cy="165" r="8.5" fill="#10172D" stroke="#FFB188" stroke-width="2.2" opacity=".98"/>
             <circle cx="320" cy="165" r="3.5" fill="#FF6F4A" opacity=".95"/>
-            <text x="332" y="162" font-family="Inter" font-weight="600" font-size="12" fill="#EFF2F9">A&#8242;</text>
+            <rect x="332" y="152" width="22" height="16" rx="4" fill="#10172D"/>
+            <text x="343" y="164" text-anchor="middle" font-family="Inter" font-weight="600" font-size="12" fill="#EFF2F9">A&#8242;</text>
 
-            <text x="20" y="116" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">i</text>
-            <text x="20" y="169" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">i&#8242;</text>
-            <text x="230" y="238" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">H</text>
-            <text x="310" y="238" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">H&#8242;</text>
+            <rect x="24" y="104" width="28" height="16" rx="3" fill="#10172D"/>
+            <text x="38" y="116" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">i</text>
 
-            <rect x="72" y="140" width="148" height="24" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="1"/>
-            <text x="146" y="156" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#A3AABE">H&#8593; &#8658; i&#8595; (ec. 4.6)</text>
+            <rect x="24" y="157" width="28" height="16" rx="3" fill="#10172D"/>
+            <text x="38" y="169" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">i&#8242;</text>
+
+            <rect x="226" y="228" width="28" height="16" rx="3" fill="#10172D"/>
+            <text x="240" y="240" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">H</text>
+
+            <rect x="306" y="228" width="28" height="16" rx="3" fill="#10172D"/>
+            <text x="320" y="240" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">H&#8242;</text>
+
+            <rect x="72" y="136" width="148" height="24" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="1"/>
+            <text x="146" y="152" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#A3AABE">H&#8593; &#8658; i&#8595; (ec. 4.6)</text>
           </svg>
         </div>
       </div>
@@ -915,7 +982,7 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
       </div>
     </div>
 
-    <!-- FIGURA 3: Demanda, Oferta y Trampa de Liquidez -->
+    <!-- FIGURA 3: Demanda, Oferta y Trampa de Liquidez (Con pastillas protectoras) -->
     <figure>
       <div class="diagrama-wrap">
         <div class="diagrama">
@@ -928,6 +995,8 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
 
             <path d="M75 60H400M75 130H400" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".3"/>
 
+            <line x1="55" y1="190" x2="220" y2="190" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="4 3"/>
+
             <line x1="55" y1="20" x2="55" y2="220" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
             <line x1="55" y1="220" x2="420" y2="220" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
             <path d="M51 26L55 18L59 26" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -935,40 +1004,55 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
 
             <path d="M55 60H61M55 95H61M55 130H61" fill="none" stroke="#A3AABE" stroke-width="1" opacity=".5"/>
             <path d="M150 220V226M260 220V226M340 220V226" fill="none" stroke="#A3AABE" stroke-width="1" opacity=".5"/>
-            <text x="28" y="24" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">i</text>
-            <text x="408" y="240" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">M</text>
+            
+            <rect x="22" y="16" width="18" height="16" rx="4" fill="#10172D"/>
+            <text x="31" y="28" text-anchor="middle" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">i</text>
+
+            <rect x="410" y="228" width="18" height="16" rx="4" fill="#10172D"/>
+            <text x="419" y="240" text-anchor="middle" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">M</text>
+
+            <rect x="20" y="182" width="18" height="16" rx="3" fill="#10172D"/>
+            <text x="29" y="194" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">0</text>
 
             <path d="M 90 30 C 120 50, 135 70, 150 95 C 168 125, 192 165, 220 190 L 400 190" fill="none" stroke="#FF6F4A" stroke-width="3.2" stroke-linecap="round"/>
             <path d="M 90 30 C 120 50, 135 70, 150 95 C 168 125, 192 165, 220 190 L 400 190" fill="none" stroke="#FFB188" stroke-width="1.2" stroke-dasharray="4 4" opacity=".35"/>
-            <text x="395" y="178" font-family="JetBrains Mono" font-weight="600" font-size="11" fill="#FF6F4A">M<tspan baseline-shift="super" font-size="8">d</tspan></text>
+            
+            <rect x="382" y="166" width="30" height="18" rx="4" fill="#10172D" stroke="#FF6F4A" stroke-width="0.8"/>
+            <text x="397" y="179" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="10.5" fill="#FF6F4A">M<tspan baseline-shift="super" font-size="7.5">d</tspan></text>
 
             <line x1="150" y1="20" x2="150" y2="220" stroke="#667FDA" stroke-width="2.4" stroke-linecap="round"/>
             <line x1="260" y1="20" x2="260" y2="190" stroke="#667FDA" stroke-width="2.2" stroke-linecap="round"/>
             <line x1="340" y1="20" x2="340" y2="190" stroke="#667FDA" stroke-width="2.2" stroke-linecap="round"/>
 
-            <text x="140" y="14" font-family="JetBrains Mono" font-size="10" fill="#667FDA">M<tspan baseline-shift="super" font-size="7">s</tspan></text>
-            <text x="252" y="14" font-family="JetBrains Mono" font-size="10" fill="#667FDA">M<tspan baseline-shift="super" font-size="7">s'</tspan></text>
-            <text x="332" y="14" font-family="JetBrains Mono" font-size="10" fill="#667FDA">M<tspan baseline-shift="super" font-size="7">s''</tspan></text>
+            <rect x="135" y="4" width="30" height="15" rx="3" fill="#10172D" stroke="#667FDA" stroke-width="0.8"/>
+            <text x="150" y="15" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#667FDA">M<tspan baseline-shift="super" font-size="6.5">s</tspan></text>
 
-            <path d="M155 30H335" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-dasharray="4 3" opacity=".85"/>
-            <path d="M327 26L335 30L327 34" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <text x="180" y="24" font-family="JetBrains Mono" font-size="9" fill="#FFB188">banco central sigue inyectando dinero</text>
+            <rect x="245" y="4" width="30" height="15" rx="3" fill="#10172D" stroke="#667FDA" stroke-width="0.8"/>
+            <text x="260" y="15" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#667FDA">M<tspan baseline-shift="super" font-size="6.5">s&#8242;</tspan></text>
+
+            <rect x="325" y="4" width="32" height="15" rx="3" fill="#10172D" stroke="#667FDA" stroke-width="0.8"/>
+            <text x="341" y="15" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#667FDA">M<tspan baseline-shift="super" font-size="6.5">s&#8242;&#8242;</tspan></text>
+
+            <path d="M155 34H335" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-dasharray="4 3" opacity=".85"/>
+            <path d="M327 30L335 34L327 38" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+            <rect x="160" y="24" width="168" height="16" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+            <text x="244" y="36" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="#FFB188">inyección monetaria continua</text>
 
             <circle cx="150" cy="95" r="8" fill="#10172D" stroke="#EFF2F9" stroke-width="2.4"/>
             <circle cx="150" cy="95" r="3.5" fill="#FF6F4A"/>
-            <text x="162" y="90" font-family="Inter" font-weight="600" font-size="11" fill="#EFF2F9">A</text>
-            <text x="162" y="108" font-family="JetBrains Mono" font-size="9" fill="#A3AABE">i &gt; 0</text>
+            <rect x="162" y="82" width="38" height="26" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+            <text x="181" y="94" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#EFF2F9">A</text>
+            <text x="181" y="104" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">i &gt; 0</text>
 
             <circle cx="260" cy="190" r="8" fill="#10172D" stroke="#FFB188" stroke-width="2.2"/>
             <circle cx="260" cy="190" r="3.5" fill="#667FDA"/>
-            <text x="272" y="185" font-family="Inter" font-weight="600" font-size="11" fill="#EFF2F9">B</text>
+            <rect x="272" y="174" width="16" height="16" rx="3" fill="#10172D"/>
+            <text x="280" y="186" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#EFF2F9">B</text>
 
             <circle cx="340" cy="190" r="8" fill="#10172D" stroke="#FFB188" stroke-width="2.2"/>
             <circle cx="340" cy="190" r="3.5" fill="#667FDA"/>
-            <text x="352" y="185" font-family="Inter" font-weight="600" font-size="11" fill="#EFF2F9">C</text>
-
-            <line x1="55" y1="190" x2="220" y2="190" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="4 3"/>
-            <text x="20" y="194" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">0</text>
+            <rect x="352" y="174" width="16" height="16" rx="3" fill="#10172D"/>
+            <text x="360" y="186" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#EFF2F9">C</text>
 
             <rect x="225" y="196" width="170" height="20" rx="5" fill="#10172D" stroke="#2A324A" stroke-width="1"/>
             <text x="310" y="209.5" text-anchor="middle" font-family="JetBrains Mono" font-weight="500" font-size="10" fill="#667FDA">trampa de liquidez (i = 0)</text>
@@ -978,45 +1062,57 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
       <figcaption>Figura 4-8: Demanda y oferta de dinero en la trampa de liquidez (Blanchard). Al llegar al punto B (i = 0), incrementos posteriores de oferta monetaria (de M<sup>s'</sup> a M<sup>s''</sup>) no reducen más la tasa de interés.</figcaption>
     </figure>
 
-    <!-- FIGURA 7: Evidencia Empírica de la Trampa de Liquidez -->
+    <!-- FIGURA 7: Evidencia Empírica de la Trampa de Liquidez (Con pastillas protectoras) -->
     <figure>
       <div class="diagrama-wrap">
         <div class="diagrama">
           <svg viewBox="0 0 540 270" role="img" aria-labelledby="fig-evid-title fig-evid-desc" xmlns="http://www.w3.org/2000/svg">
             <title id="fig-evid-title">La Trampa de Liquidez en Acción: Tasa de Interés y Reservas Bancarias (2008–2016)</title>
-            <desc id="fig-evid-desc">Gráfico comparativo empírico de EE. UU. entre 2008 y 2016. La tasa de fondos federales cae abruptamente al 0% a fines de 2008 y permanece en el límite inferior cero hasta 2016. Paralelamente, las reservas bancarias explotan de 10 mil millones a 2,500 mil millones de dólares por compras de bonos de la Fed (QE), siendo absorbidas pasivamente sin mover la tasa de interés.</desc>
+            <desc id="fig-evid-desc">Gráfico comparativo empírico de EE. UU. entre 2008 y 2016 con pastillas protectoras de texto. La tasa de fondos federales cae al 0% y permanece en el límite cero. Las reservas bancarias explotan de 10 mil millones a 2,500 mil millones de dólares sin mover la tasa.</desc>
 
             <rect x="8" y="8" width="524" height="254" rx="12" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
-            <text x="270" y="28" text-anchor="middle" font-family="Inter" font-weight="600" font-size="12" fill="#EFF2F9">Evidencia Empírica de EE. UU. (Crisis Financiera 2008–2016)</text>
+            <rect x="120" y="16" width="300" height="22" rx="5" fill="#1B223C"/>
+            <text x="270" y="31" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11.5" fill="#EFF2F9">Evidencia Empírica de EE. UU. (Crisis Financiera 2008–2016)</text>
 
-            <rect x="22" y="42" width="240" height="206" rx="8" fill="#1B223C" stroke="#2A324A" stroke-width="1"/>
-            <text x="142" y="60" text-anchor="middle" font-family="Inter" font-weight="600" font-size="10.5" fill="#667FDA">Tasa de Fondos Federales (i)</text>
+            <rect x="22" y="44" width="240" height="204" rx="8" fill="#1B223C" stroke="#2A324A" stroke-width="1"/>
+            <text x="142" y="62" text-anchor="middle" font-family="Inter" font-weight="600" font-size="10.5" fill="#667FDA">Tasa de Fondos Federales (i)</text>
 
             <line x1="50" y1="72" x2="50" y2="195" stroke="#A3AABE" stroke-width="1.2" stroke-linecap="round"/>
             <line x1="50" y1="195" x2="245" y2="195" stroke="#A3AABE" stroke-width="1.2" stroke-linecap="round"/>
             
-            <text x="32" y="78" font-family="JetBrains Mono" font-size="8.5" fill="#A3AABE">5%</text>
-            <text x="32" y="198" font-family="JetBrains Mono" font-size="8.5" fill="#A3AABE">0%</text>
+            <rect x="28" y="70" width="20" height="14" rx="3" fill="#10172D"/>
+            <text x="38" y="81" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="#A3AABE">5%</text>
+
+            <rect x="28" y="188" width="20" height="14" rx="3" fill="#10172D"/>
+            <text x="38" y="199" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="#A3AABE">0%</text>
+
             <text x="50" y="210" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">'07</text>
             <text x="100" y="210" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">'08</text>
             <text x="170" y="210" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">'12</text>
             <text x="230" y="210" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">'16</text>
 
             <rect x="100" y="185" width="145" height="10" fill="#667FDA" opacity=".2"/>
-            <text x="172" y="178" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#667FDA">Límite Cero (ZLB)</text>
+            <rect x="125" y="168" width="94" height="15" rx="3" fill="#10172D" stroke="#667FDA" stroke-width="0.8"/>
+            <text x="172" y="179" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#667FDA">Límite Cero (ZLB)</text>
 
             <path d="M 50 80 L 80 110 L 100 195 L 245 195" fill="none" stroke="#667FDA" stroke-width="2.5" stroke-linecap="round"/>
             <circle cx="100" cy="195" r="4" fill="#FF6F4A"/>
-            <text x="106" y="190" font-family="JetBrains Mono" font-size="8" fill="#FF6F4A">fines 2008: i = 0</text>
+            
+            <rect x="94" y="142" width="86" height="16" rx="3" fill="#10172D" stroke="#FF6F4A" stroke-width="0.8"/>
+            <text x="137" y="153" text-anchor="middle" font-family="JetBrains Mono" font-size="7.5" fill="#FF6F4A">fines 2008: i = 0</text>
 
-            <rect x="278" y="42" width="240" height="206" rx="8" fill="#1B223C" stroke="#2A324A" stroke-width="1"/>
-            <text x="398" y="60" text-anchor="middle" font-family="Inter" font-weight="600" font-size="10.5" fill="#FF6F4A">Reservas Bancarias en la Fed ($B)</text>
+            <rect x="278" y="44" width="240" height="204" rx="8" fill="#1B223C" stroke="#2A324A" stroke-width="1"/>
+            <text x="398" y="62" text-anchor="middle" font-family="Inter" font-weight="600" font-size="10.5" fill="#FF6F4A">Reservas Bancarias en la Fed ($B)</text>
 
             <line x1="305" y1="72" x2="305" y2="195" stroke="#A3AABE" stroke-width="1.2" stroke-linecap="round"/>
             <line x1="305" y1="195" x2="500" y2="195" stroke="#A3AABE" stroke-width="1.2" stroke-linecap="round"/>
 
-            <text x="282" y="78" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">$2.5T</text>
-            <text x="288" y="198" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">$10B</text>
+            <rect x="276" y="70" width="28" height="14" rx="3" fill="#10172D"/>
+            <text x="290" y="81" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">$2.5T</text>
+
+            <rect x="276" y="188" width="28" height="14" rx="3" fill="#10172D"/>
+            <text x="290" y="199" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">$10B</text>
+
             <text x="305" y="210" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">'07</text>
             <text x="350" y="210" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">'08</text>
             <text x="420" y="210" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">'12</text>
@@ -1026,11 +1122,13 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
             <path d="M 305 194 L 350 193 C 360 160, 390 110, 480 78 L 480 195 L 305 195 Z" fill="#FF6F4A" opacity=".10"/>
 
             <circle cx="350" cy="193" r="3.5" fill="#FFB188"/>
-            <text x="356" y="185" font-family="JetBrains Mono" font-size="7.5" fill="#FFB188">$10B (2008)</text>
+            <rect x="330" y="166" width="70" height="15" rx="3" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+            <text x="365" y="177" text-anchor="middle" font-family="JetBrains Mono" font-size="7.5" fill="#FFB188">$10B (2008)</text>
 
             <circle cx="480" cy="78" r="4.5" fill="#10172D" stroke="#EFF2F9" stroke-width="2"/>
             <circle cx="480" cy="78" r="2" fill="#FF6F4A"/>
-            <text x="420" y="74" font-family="JetBrains Mono" font-weight="600" font-size="8" fill="#EFF2F9">$2,500B (2015)</text>
+            <rect x="400" y="68" width="74" height="18" rx="4" fill="#10172D" stroke="#EFF2F9" stroke-width="0.8"/>
+            <text x="437" y="80" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="8" fill="#EFF2F9">$2,500B (2015)</text>
 
             <rect x="22" y="222" width="496" height="20" rx="4" fill="#080C1C" stroke="#2A324A" stroke-width="1"/>
             <text x="270" y="236" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="#55C975">Conclusión: A tasa cero, la inyección masiva de H se acumula en reservas sin alterar la tasa i.</text>
@@ -1093,145 +1191,340 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
     </div>
   </section>
 
-  <!-- ==================== MÓDULO 06 ==================== -->
-  <section class="modulo reveal" id="autoeval">
-    <div class="modulo-head"><span class="modulo-num">06</span><h2>Autoevaluación intensiva (10 Preguntas y Ejercicios)</h2></div>
-    <p class="modulo-text">Haz clic en cada tarjeta para desplegar la solución razonada y el desarrollo algebraico paso a paso.</p>
+  <!-- ==================== MÓDULO 06: QUIZ INTERACTIVO ==================== -->
+  <section class="modulo reveal" id="quiz">
+    <div class="modulo-head"><span class="modulo-num">06</span><h2>Quiz de Opción Múltiple (10 Preguntas y Ejercicios)</h2></div>
+    <p class="modulo-text">Pon a prueba tu dominio del Tema 1. Selecciona la opción que consideres correcta para recibir retroalimentación inmediata, desglose conceptual y desarrollo matemático paso a paso.</p>
 
-    <!-- P1 -->
-    <div class="pregunta" data-abierta="false">
-      <button class="disparador" aria-expanded="false">
-        <span>1. ¿Qué efecto tiene una operación de mercado abierto expansiva sobre el precio de los bonos y la tasa de interés?</span>
-        <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-      <div class="respuesta">
-        <span class="respuesta-tag">Respuesta Conceptual</span>
-        <p>En una OMA expansiva, el banco central compra bonos en el mercado abierto pagando con nuevo dinero central. Esto aumenta la demanda de bonos, empujando al alza su precio de mercado ($P_B \uparrow$). Dado que $i = (100 - P_B)/P_B$, el aumento en el precio abarata el rendimiento efectivo, <strong>reduciendo la tasa de interés ($i \downarrow$)</strong>.</p>
+    <!-- Score & Progress Tracker -->
+    <div class="quiz-tracker" id="quiz-tracker">
+      <div class="quiz-tracker-info">
+        <div class="quiz-score-val" id="quiz-score-display">Puntaje: 0 / 10</div>
+        <div class="quiz-progress-text" id="quiz-progress-display">0% completado (0 de 10 respondidas)</div>
+        <div class="quiz-progress-bar-wrap">
+          <div class="quiz-progress-bar" id="quiz-progress-bar"></div>
+        </div>
       </div>
+      <button class="quiz-btn-reset" id="quiz-reset-btn" type="button">Reiniciar Quiz</button>
     </div>
 
-    <!-- P2 (Numérica) -->
-    <div class="pregunta" data-abierta="false">
-      <button class="disparador" aria-expanded="false">
-        <span>2. [Ejercicio Numérico] Si un bono cupón cero paga $100 dentro de un año y cotiza hoy a $P_B = $93.46, ¿cuál es su tasa de interés? Si luego el precio sube a $96.15, ¿cuál es la nueva tasa?</span>
-        <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-      <div class="respuesta">
-        <span class="respuesta-tag">Solución Numérica Paso a Paso</span>
-        <p>Aplicando la fórmula $i = (100 - P_B) / P_B$:</p>
-        <p>1. Para $P_B = \$93.46$:<br>
-        <span class="mono">i = (100 - 93.46) / 93.46 = 6.54 / 93.46 = 0.06998 &approx; <strong>7.0%</strong></span></p>
-        <p>2. Para $P_B = \$96.15$:<br>
-        <span class="mono">i' = (100 - 96.15) / 96.15 = 3.85 / 96.15 = 0.04004 &approx; <strong>4.0%</strong></span></p>
-        <p>Se comprueba que el aumento en el precio del bono ($+2.88\%$) reduce la tasa de interés en 3 puntos porcentuales.</p>
+    <div id="quiz-container">
+      <!-- P1 -->
+      <div class="quiz-card" data-pregunta="1">
+        <div class="quiz-card-head">
+          <span class="quiz-q-tag">Pregunta 01 · Mecánica OMA</span>
+          <span class="tag-pill">Blanchard 4-2</span>
+        </div>
+        <h3>¿Qué efecto genera una operación de mercado abierto expansiva sobre el mercado de bonos y la tasa de interés?</h3>
+        <div class="quiz-opciones">
+          <button class="quiz-opcion" type="button" data-opt="A">
+            <span class="quiz-opt-letter">A</span>
+            <span>El banco central vende bonos, reduce su precio y la tasa de interés sube.</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="B" data-correct="true">
+            <span class="quiz-opt-letter">B</span>
+            <span>El banco central compra bonos, aumenta la demanda de bonos, su precio sube y la tasa de interés baja.</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="C">
+            <span class="quiz-opt-letter">C</span>
+            <span>El banco central fija directamente la tasa de interés por decreto sin alterar la oferta de dinero central.</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="D">
+            <span class="quiz-opt-letter">D</span>
+            <span>El precio de los bonos y la tasa de interés aumentan simultáneamente en la misma proporción.</span>
+          </button>
+        </div>
+        <div class="quiz-explicacion">
+          <span class="quiz-exp-tag">Explicación y Razonamiento</span>
+          <p><strong>Opción B Correcta.</strong> En una OMA expansiva, el banco central inyecta dinero comprando bonos en el mercado. Al aumentar la demanda de bonos, su precio de mercado sube ($P_B \uparrow$). Dado que el rendimiento está dado por $i = (100 - P_B)/P_B$, un mayor precio de adquisición abarata el rendimiento efectivo, <strong>reduciendo la tasa de interés ($i \downarrow$)</strong>.</p>
+        </div>
       </div>
-    </div>
 
-    <!-- P3 -->
-    <div class="pregunta" data-abierta="false">
-      <button class="disparador" aria-expanded="false">
-        <span>3. ¿Por qué los bancos comerciales necesitan reservas incluso en ausencia de un encaje legal obligatorio?</span>
-        <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-      <div class="respuesta">
-        <span class="respuesta-tag">Respuesta Conceptual</span>
-        <p>Por <strong>motivos precautorios y operativos</strong>: (1) Las entradas diarias de efectivo por nuevos depósitos no coinciden sincrónicamente con los retiros de los clientes en ventanillas o cajeros; (2) Los saldos netos adeudados a otros bancos por compensación de cheques y pagos electrónicos interbancarios exigen liquidación inmediata en dinero emitido por el banco central.</p>
+      <!-- P2 (Numérica) -->
+      <div class="quiz-card" data-pregunta="2">
+        <div class="quiz-card-head">
+          <span class="quiz-q-tag">Pregunta 02 · Cálculo de Precio y Tasa de Bono</span>
+          <span class="tag-pill tag-coral">Ejercicio Numérico</span>
+        </div>
+        <h3>Un bono cupón cero promete pagar $100 dentro de un año. Si su precio de cotización hoy es $P_B = $93.46, ¿cuál es su tasa de interés nominal aproximada?</h3>
+        <div class="quiz-opciones">
+          <button class="quiz-opcion" type="button" data-opt="A">
+            <span class="quiz-opt-letter">A</span>
+            <span>i = 6.54%</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="B" data-correct="true">
+            <span class="quiz-opt-letter">B</span>
+            <span>i = 7.00%</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="C">
+            <span class="quiz-opt-letter">C</span>
+            <span>i = 9.35%</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="D">
+            <span class="quiz-opt-letter">D</span>
+            <span>i = 4.00%</span>
+          </button>
+        </div>
+        <div class="quiz-explicacion">
+          <span class="quiz-exp-tag">Desarrollo Matemático</span>
+          <p><strong>Opción B Correcta.</strong> Aplicamos la fórmula del rendimiento del bono de Blanchard:</p>
+          <p class="mono">i = (100 - P<sub>B</sub>) / P<sub>B</sub> = (100 - 93.46) / 93.46 = 6.54 / 93.46 &approx; <strong>0.06998 &approx; 7.0%</strong></p>
+          <p><em>Nota técnica:</em> El error común (Opción A) consiste en dividir la ganancia ($6.54) entre $100 en lugar del precio de costo ($93.46).</p>
+        </div>
       </div>
-    </div>
 
-    <!-- P4 (Numérica) -->
-    <div class="pregunta" data-abierta="false">
-      <button class="disparador" aria-expanded="false">
-        <span>4. [Ejercicio Numérico] Sea una economía donde el público mantiene el 20% de su dinero en efectivo ($c = 0.2$) y los bancos tienen un encaje de reservas del 10% ($\theta = 0.1$). Calcula el multiplicador monetario y la masa total de dinero $M$ si el banco central emite $H = $500 mil millones.</span>
-        <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-      <div class="respuesta">
-        <span class="respuesta-tag">Solución Numérica Paso a Paso</span>
-        <p>1. Calculamos el multiplicador monetario $mm = \frac{1}{c + \theta(1 - c)}$:<br>
-        <span class="mono">mm = 1 / [ 0.2 + 0.1 &middot; (1 - 0.2) ] = 1 / [ 0.2 + 0.08 ] = 1 / 0.28 &approx; <strong>3.5714</strong></span></p>
-        <p>2. Calculamos la oferta total de dinero $M = mm \cdot H$:<br>
-        <span class="mono">M = 3.5714 &times; $500B = <strong>$1,785.71 mil millones</strong></span></p>
-        <p>De este total: Efectivo $CU = 0.2 \times \$1,785.71\text{B} = \$357.14\text{B}$, Depósitos $D = 0.8 \times \$1,785.71\text{B} = \$1,428.57\text{B}$, y Reservas $R = 0.1 \times \$1,428.57\text{B} = \$142.86\text{B}$. Comprobación: $H = CU + R = \$357.14\text{B} + \$142.86\text{B} = \$500\text{B}$.</p>
+      <!-- P3 -->
+      <div class="quiz-card" data-pregunta="3">
+        <div class="quiz-card-head">
+          <span class="quiz-q-tag">Pregunta 03 · Reservas Bancarias</span>
+          <span class="tag-pill">Blanchard 4-3</span>
+        </div>
+        <h3>¿Por qué un banco comercial mantiene reservas en el banco central incluso si la regulación no le impone un encaje legal obligatorio ($\theta = 0$)?</h3>
+        <div class="quiz-opciones">
+          <button class="quiz-opcion" type="button" data-opt="A">
+            <span class="quiz-opt-letter">A</span>
+            <span>Para maximizar la rentabilidad de su activo, ya que las reservas pagan la tasa más alta del mercado.</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="B">
+            <span class="quiz-opt-letter">B</span>
+            <span>Porque los bancos comerciales tienen prohibido por ley conceder préstamos a empresas privadas.</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="C" data-correct="true">
+            <span class="quiz-opt-letter">C</span>
+            <span>Por motivos precautorios ante descalces de retiros diarios y para liquidar pagos netos en compensaciones interbancarias.</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="D">
+            <span class="quiz-opt-letter">D</span>
+            <span>Únicamente para cumplir con las órdenes de compra de bonos del gobierno.</span>
+          </button>
+        </div>
+        <div class="quiz-explicacion">
+          <span class="quiz-exp-tag">Explicación y Razonamiento</span>
+          <p><strong>Opción C Correcta.</strong> Incluso sin encaje obligatorio (como en EE. UU. desde 2020), los bancos retienen reservas líquidas por dos razones fundamentales: (1) Las entradas de depósitos y las salidas por retiros de clientes no coinciden sincrónicamente día a día; (2) Los saldos netos entre bancos por cheques cruzados y transferencias electrónicas exigen liquidación inmediata en dinero central.</p>
+        </div>
       </div>
-    </div>
 
-    <!-- P5 -->
-    <div class="pregunta" data-abierta="false">
-      <button class="disparador" aria-expanded="false">
-        <span>5. ¿Qué es el mercado de fondos federales y qué representa la tasa de fondos federales (Fed Funds Rate)?</span>
-        <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-      <div class="respuesta">
-        <span class="respuesta-tag">Respuesta Conceptual</span>
-        <p>Es el mercado interbancario no garantizado de EE. UU. donde los bancos con excedentes de reservas prestan fondos a un día (<em>overnight</em>) a bancos con déficit de reservas. La <strong>tasa de fondos federales</strong> es la tasa de interés pactada en esas transacciones y constituye el principal instrumento operativo de política monetaria de la Reserva Federal.</p>
+      <!-- P4 (Numérica) -->
+      <div class="quiz-card" data-pregunta="4">
+        <div class="quiz-card-head">
+          <span class="quiz-q-tag">Pregunta 04 · Multiplicador Monetario</span>
+          <span class="tag-pill tag-coral">Ejercicio Numérico</span>
+        </div>
+        <h3>Si el público mantiene el 20% de su dinero en efectivo ($c = 0.2$) y el coeficiente de encaje bancario es del 10% ($\theta = 0.1$), ¿cuál es el multiplicador monetario y la oferta total de dinero $M$ si la base monetaria es $H = $500 mil millones?</h3>
+        <div class="quiz-opciones">
+          <button class="quiz-opcion" type="button" data-opt="A">
+            <span class="quiz-opt-letter">A</span>
+            <span>Multiplicador = 5.00 | M = $2,500B</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="B">
+            <span class="quiz-opt-letter">B</span>
+            <span>Multiplicador = 1.25 | M = $625B</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="C" data-correct="true">
+            <span class="quiz-opt-letter">C</span>
+            <span>Multiplicador &approx; 3.57 | M &approx; $1,785.71B</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="D">
+            <span class="quiz-opt-letter">D</span>
+            <span>Multiplicador = 10.0 | M = $5,000B</span>
+          </button>
+        </div>
+        <div class="quiz-explicacion">
+          <span class="quiz-exp-tag">Desarrollo Matemático</span>
+          <p><strong>Opción C Correcta.</strong> Aplicamos la fórmula del multiplicador monetario general:</p>
+          <p class="mono">mm = 1 / [ c + &theta;(1 - c) ] = 1 / [ 0.2 + 0.1 &times; 0.8 ] = 1 / [ 0.2 + 0.08 ] = 1 / 0.28 &approx; <strong>3.5714</strong></p>
+          <p>Oferta monetaria total:</p>
+          <p class="mono">M = mm &times; H = 3.5714 &times; $500B = <strong>$1,785.71 mil millones</strong></p>
+        </div>
       </div>
-    </div>
 
-    <!-- P6 (Numérica) -->
-    <div class="pregunta" data-abierta="false">
-      <button class="disparador" aria-expanded="false">
-        <span>6. [Ejercicio Numérico] Supón que $M^d = \$Y(0.35 - i)$, con $\$Y = 10,000$, $\theta = 0.1$ y el público solo mantiene depósitos ($c = 0$). Si el banco central fija una oferta de dinero central $H = 250$, halla la tasa de interés de equilibrio $i^*$. ¿Qué pasa con $i$ si el banco central incrementa $H$ a 300?</span>
-        <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-      <div class="respuesta">
-        <span class="respuesta-tag">Solución Numérica Paso a Paso</span>
-        <p>1. Condición de equilibrio: $H = H^d = \theta \cdot \$Y(0.35 - i)$<br>
-        <span class="mono">250 = 0.1 &times; 10,000 &times; (0.35 - i)</span><br>
-        <span class="mono">250 = 1,000 &times; (0.35 - i)</span><br>
-        <span class="mono">0.25 = 0.35 - i &rArr; i^* = 0.35 - 0.25 = <strong>0.10 (10%)</strong></span></p>
-        <p>2. Con $H' = 300$:<br>
-        <span class="mono">300 = 1,000 &times; (0.35 - i) &rArr; 0.30 = 0.35 - i &rArr; i' = <strong>0.05 (5%)</strong></span></p>
-        <p>La inyección monetaria de 50 unidades de $H$ redujo la tasa de interés a la mitad (de 10% a 5%).</p>
+      <!-- P5 -->
+      <div class="quiz-card" data-pregunta="5">
+        <div class="quiz-card-head">
+          <span class="quiz-q-tag">Pregunta 05 · Mercados Monetarios</span>
+          <span class="tag-pill">Blanchard 4-3</span>
+        </div>
+        <h3>¿Qué es el mercado de fondos federales en EE. UU. y qué determina su tasa?</h3>
+        <div class="quiz-opciones">
+          <button class="quiz-opcion" type="button" data-opt="A">
+            <span class="quiz-opt-letter">A</span>
+            <span>Es el mercado de acciones de Wall Street donde el Tesoro coloca deuda pública a 30 años.</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="B" data-correct="true">
+            <span class="quiz-opt-letter">B</span>
+            <span>Es el mercado interbancario de préstamos de reservas a un día, cuya tasa de equilibrio es el principal objetivo operativo de la Fed.</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="C">
+            <span class="quiz-opt-letter">C</span>
+            <span>Es el mercado minorista de préstamos hipotecarios para familias estadounidenses.</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="D">
+            <span class="quiz-opt-letter">D</span>
+            <span>Es un mercado exclusivo para el intercambio de monedas extranjeras entre bancos comerciales.</span>
+          </button>
+        </div>
+        <div class="quiz-explicacion">
+          <span class="quiz-exp-tag">Explicación y Razonamiento</span>
+          <p><strong>Opción B Correcta.</strong> El mercado de fondos federales (<em>federal funds market</em>) es el mercado no garantizado a un día (<em>overnight</em>) donde los bancos con excedentes prestan reservas a bancos con déficits de liquidez. La <em>federal funds rate</em> es la tasa de referencia clave de la política monetaria estadounidense.</p>
+        </div>
       </div>
-    </div>
 
-    <!-- P7 -->
-    <div class="pregunta" data-abierta="false">
-      <button class="disparador" aria-expanded="false">
-        <span>7. ¿Por qué la demanda de dinero se vuelve perfectamente horizontal cuando la tasa de interés llega a cero (trampa de liquidez)?</span>
-        <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-      <div class="respuesta">
-        <span class="respuesta-tag">Respuesta Conceptual</span>
-        <p>Porque a $i = 0$, el costo de oportunidad de mantener dinero desaparece por completo: <strong>el dinero y los bonos ofrecen exactamente el mismo rendimiento (cero)</strong>. Una vez satisfechas las necesidades transaccionales, las personas y los bancos son totalmente indiferentes entre conservar su riqueza en efectivo/reservas o en bonos. Por ende, cualquier inyección adicional de dinero es absorbida pasivamente sin presionar las tasas más abajo.</p>
+      <!-- P6 (Numérica) -->
+      <div class="quiz-card" data-pregunta="6">
+        <div class="quiz-card-head">
+          <span class="quiz-q-tag">Pregunta 06 · Equilibrio del Mercado de Dinero Central</span>
+          <span class="tag-pill tag-coral">Ejercicio Numérico</span>
+        </div>
+        <h3>Supón que $M^d = \$Y(0.35 - i)$, con $\$Y = 10,000$, encaje $\theta = 0.1$ y el público solo usa depósitos ($c = 0$). Si el banco central emite $H = 250$, ¿cuál es la tasa de interés de equilibrio $i^*$?</h3>
+        <div class="quiz-opciones">
+          <button class="quiz-opcion" type="button" data-opt="A">
+            <span class="quiz-opt-letter">A</span>
+            <span>i* = 2.5%</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="B">
+            <span class="quiz-opt-letter">B</span>
+            <span>i* = 5.0%</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="C" data-correct="true">
+            <span class="quiz-opt-letter">C</span>
+            <span>i* = 10.0%</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="D">
+            <span class="quiz-opt-letter">D</span>
+            <span>i* = 15.0%</span>
+          </button>
+        </div>
+        <div class="quiz-explicacion">
+          <span class="quiz-exp-tag">Desarrollo Matemático</span>
+          <p><strong>Opción C Correcta.</strong> Planteamos la condición de equilibrio $H = H^d = \theta \cdot \$Y(0.35 - i)$:</p>
+          <p class="mono">250 = 0.1 &times; 10,000 &times; (0.35 - i)</p>
+          <p class="mono">250 = 1,000 &times; (0.35 - i)</p>
+          <p class="mono">0.25 = 0.35 - i &rArr; i^* = 0.35 - 0.25 = <strong>0.10 (10.0%)</strong></p>
+        </div>
       </div>
-    </div>
 
-    <!-- P8 (Numérica / Empírica) -->
-    <div class="pregunta" data-abierta="false">
-      <button class="disparador" aria-expanded="false">
-        <span>8. [Ejercicio de Análisis Empírico] Durante la crisis 2008–2015 en EE. UU., las reservas bancarias aumentaron de $10 mil millones a $2.5 billones ($2,500B), mientras que la tasa de interés permaneció en 0%. ¿Contradice este resultado la relación habitual $H \uparrow \implies i \downarrow$? Justifica con el modelo.</span>
-        <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-      <div class="respuesta">
-        <span class="respuesta-tag">Solución Razonada</span>
-        <p><strong>No lo contradice; confirma con exactitud la predicción de la trampa de liquidez (sección 4-4).</strong> La derivada $di/dH < 0$ opera únicamente en el tramo con pendiente negativa ($i > 0$). Una vez que la economía alcanza el Límite Inferior Cero ($i = 0$, punto B de la Figura 4-8), la curva de demanda se vuelve plana ($L'(i) \to \infty$). Las compras de bonos por parte de la Fed (QE) aumentaron $H$, pero como los bancos ya no obtenían ventaja comprando bonos a tasa cero, retuvieron voluntariamente el nuevo dinero central como exceso de reservas, manteniendo la tasa fija en 0%.</p>
+      <!-- P7 -->
+      <div class="quiz-card" data-pregunta="7">
+        <div class="quiz-card-head">
+          <span class="quiz-q-tag">Pregunta 07 · Trampa de Liquidez</span>
+          <span class="tag-pill">Blanchard 4-4</span>
+        </div>
+        <h3>¿Por qué la curva de demanda de dinero se vuelve horizontal cuando la tasa de interés nominal llega a cero ($i = 0$)?</h3>
+        <div class="quiz-opciones">
+          <button class="quiz-opcion" type="button" data-opt="A">
+            <span class="quiz-opt-letter">A</span>
+            <span>Porque el gobierno prohíbe las transacciones financieras a tasa cero.</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="B" data-correct="true">
+            <span class="quiz-opt-letter">B</span>
+            <span>Porque a tasa cero, el dinero y los bonos ofrecen el mismo rendimiento (cero), volviendo a los agentes indiferentes entre ambos activos.</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="C">
+            <span class="quiz-opt-letter">C</span>
+            <span>Porque los bancos comerciales quiebran automáticamente cuando la tasa llega a cero.</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="D">
+            <span class="quiz-opt-letter">D</span>
+            <span>Porque el ingreso nominal $Y se reduce a cero en toda la economía.</span>
+          </button>
+        </div>
+        <div class="quiz-explicacion">
+          <span class="quiz-exp-tag">Explicación y Razonamiento</span>
+          <p><strong>Opción B Correcta.</strong> A $i = 0$, el costo de oportunidad de tener dinero desaparece. Una vez satisfechas las necesidades transaccionales, las personas y los bancos están dispuestos a retener cualquier cantidad adicional de dinero en lugar de bonos, porque ambos pagan 0%. Por ello, la demanda es perfectamente elástica (horizontal) y la política monetaria convencional deja de mover la tasa.</p>
+        </div>
       </div>
-    </div>
 
-    <!-- P9 -->
-    <div class="pregunta" data-abierta="false">
-      <button class="disparador" aria-expanded="false">
-        <span>9. ¿Cuáles son los tres argumentos principales de Blanchard contra la hipótesis de que Bitcoin reemplazará al dinero soberano?</span>
-        <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-      <div class="respuesta">
-        <span class="respuesta-tag">Respuesta Conceptual</span>
-        <p>1. <strong>Riesgo de precio y volatilidad:</strong> Mientras los precios y contratos estén denominados en moneda nacional, fijar precios en bitcoin impone un riesgo cambiario inmanejable.<br>
-        2. <strong>Consumo técnico y escalabilidad:</strong> Los mecanismos de consenso tipo Proof-of-Work consumen una cantidad desmedida de energía y presentan baja velocidad transaccional.<br>
-        3. <strong>Soberanía política:</strong> Los gobiernos y bancos centrales no permitirán perder el control de su política monetaria, la regulación crediticia ni el rol de prestamista de última instancia ante crisis financieras.</p>
+      <!-- P8 -->
+      <div class="quiz-card" data-pregunta="8">
+        <div class="quiz-card-head">
+          <span class="quiz-q-tag">Pregunta 08 · Evidencia Empírica 2008–2016</span>
+          <span class="tag-pill tag-indigo">Caso Histórico</span>
+        </div>
+        <h3>Durante la Crisis 2008–2016 en EE. UU., las reservas bancarias aumentaron de $10 mil millones a $2.5 billones ($2,500B) mientras la tasa se mantuvo en 0%. ¿Qué explica este fenómeno según el modelo de Blanchard?</h3>
+        <div class="quiz-opciones">
+          <button class="quiz-opcion" type="button" data-opt="A">
+            <span class="quiz-opt-letter">A</span>
+            <span>Un error de medición del balance de la Reserva Federal que fue corregido en 2016.</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="B">
+            <span class="quiz-opt-letter">B</span>
+            <span>Una contracción severa de la oferta de dinero central $H por parte de la Fed.</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="C" data-correct="true">
+            <span class="quiz-opt-letter">C</span>
+            <span>La trampa de liquidez: en el ZLB, las inyecciones de H por expansión cuantitativa (QE) fueron absorbidas voluntariamente como reservas excedentes sin presionar la tasa a la baja.</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="D">
+            <span class="quiz-opt-letter">D</span>
+            <span>Una caída súbita en la preferencia por depósitos a la vista a favor del efectivo físico.</span>
+          </button>
+        </div>
+        <div class="quiz-explicacion">
+          <span class="quiz-exp-tag">Explicación y Razonamiento</span>
+          <p><strong>Opción C Correcta.</strong> En la trampa de liquidez, comprar bonos no puede bajar la tasa más allá de cero. Los bancos vendieron bonos a la Fed y acumularon el dinero resultante en forma de reservas excedentes en sus cuentas del banco central, confirmando empíricamente el tramo horizontal de la demanda de dinero predicho por Blanchard.</p>
+        </div>
       </div>
-    </div>
 
-    <!-- P10 -->
-    <div class="pregunta" data-abierta="false">
-      <button class="disparador" aria-expanded="false">
-        <span>10. Según Sala i Martín en el Capítulo Amarillo, ¿qué sostiene el valor del dinero fiduciario en las sociedades modernas?</span>
-        <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
-      <div class="respuesta">
-        <span class="respuesta-tag">Respuesta Conceptual</span>
-        <p>El valor del dinero fiduciario está sostenido por una <strong>convención social basada en la confianza</strong> (<em>fiat</em>). No depende del respaldo de oro ni del costo de impresión del papel, sino de la expectativa compartida de que todos los miembros de la sociedad continuarán aceptándolo en el futuro como medio de cambio legal. Cuando esa confianza institucional se rompe (por ejemplo, debido a una emisión desmedida para financiar gasto público), el dinero fiduciario colapsa en hiperinflación.</p>
+      <!-- P9 -->
+      <div class="quiz-card" data-pregunta="9">
+        <div class="quiz-card-head">
+          <span class="quiz-q-tag">Pregunta 09 · Criptomonedas vs Dinero Soberano</span>
+          <span class="tag-pill">Recuadro Blanchard</span>
+        </div>
+        <h3>¿Cuáles son los tres límites que señala Blanchard para fundamentar que Bitcoin no sustituirá al dólar?</h3>
+        <div class="quiz-opciones">
+          <button class="quiz-opcion" type="button" data-opt="A" data-correct="true">
+            <span class="quiz-opt-letter">A</span>
+            <span>Riesgo de precio por extrema volatilidad (económico), alto consumo energético/lentitud (técnico) y negativa de los Estados a ceder el monopolio monetario (político).</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="B">
+            <span class="quiz-opt-letter">B</span>
+            <span>La falta de computadoras en los bancos comerciales y la prohibición global de usar internet.</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="C">
+            <span class="quiz-opt-letter">C</span>
+            <span>Que Bitcoin paga una tasa de interés nominal demasiado alta fijada por el FMI.</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="D">
+            <span class="quiz-opt-letter">D</span>
+            <span>Que el precio de Bitcoin es totalmente fijo y no permite realizar ganancias de capital.</span>
+          </button>
+        </div>
+        <div class="quiz-explicacion">
+          <span class="quiz-exp-tag">Explicación y Razonamiento</span>
+          <p><strong>Opción A Correcta.</strong> Blanchard argumenta que: (1) La volatilidad de precios impide a Bitcoin ser unidad de cuenta estable; (2) La minería y validación descentralizada consumen energía masiva y no escalan a millones de pagos instantáneos; (3) Los gobiernos no renunciarán al control de la política monetaria ni a su rol de prestamista de última instancia ante crisis financieras.</p>
+        </div>
+      </div>
+
+      <!-- P10 -->
+      <div class="quiz-card" data-pregunta="10">
+        <div class="quiz-card-head">
+          <span class="quiz-q-tag">Pregunta 10 · Confianza y Dinero Fiduciario</span>
+          <span class="tag-pill tag-green">Sala i Martín</span>
+        </div>
+        <h3>Según Xavier Sala i Martín en el Capítulo Amarillo, ¿en qué se fundamenta el valor del dinero fiduciario contemporáneo?</h3>
+        <div class="quiz-opciones">
+          <button class="quiz-opcion" type="button" data-opt="A">
+            <span class="quiz-opt-letter">A</span>
+            <span>En las reservas de oro y plata resguardadas físicamente en las bóvedas de Fort Knox.</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="B" data-correct="true">
+            <span class="quiz-opt-letter">B</span>
+            <span>En una convención social fiduciaria: la confianza compartida de que los demás agentes económicos aceptarán el papel moneda como medio de pago legal.</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="C">
+            <span class="quiz-opt-letter">C</span>
+            <span>En el costo intrínseco de fabricación de la tinta y el papel de seguridad de alta tecnología.</span>
+          </button>
+          <button class="quiz-opcion" type="button" data-opt="D">
+            <span class="quiz-opt-letter">D</span>
+            <span>En la cantidad de horas de trabajo invertidas por el presidente del banco central.</span>
+          </button>
+        </div>
+        <div class="quiz-explicacion">
+          <span class="quiz-exp-tag">Explicación y Razonamiento</span>
+          <p><strong>Opción B Correcta.</strong> El dinero fiduciario no tiene respaldo en mercancías preciosas. Su valor subsiste exclusivamente por la convención social y la confianza institucional en el banco central. Si esa confianza se destruye por sobreemisión monetaria (señoreaje desmedido), el dinero pierde su poder adquisitivo en procesos de hiperinflación.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -1246,21 +1539,79 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
 
 <script>
 (function(){
-  var botones = document.querySelectorAll('.pregunta .disparador');
-  botones.forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var pregunta = btn.closest('.pregunta');
-      var abierta = pregunta.getAttribute('data-abierta') === 'true';
-      pregunta.setAttribute('data-abierta', abierta ? 'false' : 'true');
-      btn.setAttribute('aria-expanded', abierta ? 'false' : 'true');
-    });
-    btn.addEventListener('keydown', function(e){
-      if(e.key === 'Enter' || e.key === ' '){
-        e.preventDefault();
-        btn.click();
-      }
+  // Sistema de Quiz Interactivo de Opción Múltiple
+  var quizCards = document.querySelectorAll('.quiz-card');
+  var totalQuestions = quizCards.length;
+  var answeredCount = 0;
+  var correctCount = 0;
+
+  var scoreDisplay = document.getElementById('quiz-score-display');
+  var progressDisplay = document.getElementById('quiz-progress-display');
+  var progressBar = document.getElementById('quiz-progress-bar');
+  var resetBtn = document.getElementById('quiz-reset-btn');
+
+  function updateTracker(){
+    if(scoreDisplay) scoreDisplay.textContent = 'Puntaje: ' + correctCount + ' / ' + totalQuestions;
+    var pct = Math.round((answeredCount / totalQuestions) * 100);
+    if(progressDisplay) progressDisplay.textContent = pct + '% completado (' + answeredCount + ' de ' + totalQuestions + ' respondidas)';
+    if(progressBar) progressBar.style.width = pct + '%';
+  }
+
+  quizCards.forEach(function(card){
+    var options = card.querySelectorAll('.quiz-opcion');
+    var explicacion = card.querySelector('.quiz-explicacion');
+
+    options.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        if(card.getAttribute('data-answered') === 'true') return;
+        card.setAttribute('data-answered', 'true');
+        answeredCount++;
+
+        var isCorrect = btn.getAttribute('data-correct') === 'true';
+
+        if(isCorrect){
+          btn.classList.add('correct');
+          correctCount++;
+        } else {
+          btn.classList.add('incorrect');
+          // Revelar la opción correcta en verde
+          options.forEach(function(otherBtn){
+            if(otherBtn.getAttribute('data-correct') === 'true'){
+              otherBtn.classList.add('revealed-correct');
+            }
+          });
+        }
+
+        // Deshabilitar botones de esta pregunta
+        options.forEach(function(b){ b.disabled = true; });
+
+        // Mostrar explicación
+        if(explicacion) explicacion.classList.add('visible');
+
+        updateTracker();
+      });
     });
   });
+
+  if(resetBtn){
+    resetBtn.addEventListener('click', function(){
+      answeredCount = 0;
+      correctCount = 0;
+      quizCards.forEach(function(card){
+        card.removeAttribute('data-answered');
+        var options = card.querySelectorAll('.quiz-opcion');
+        options.forEach(function(b){
+          b.disabled = false;
+          b.classList.remove('correct', 'incorrect', 'revealed-correct');
+        });
+        var explicacion = card.querySelector('.quiz-explicacion');
+        if(explicacion) explicacion.classList.remove('visible');
+      });
+      updateTracker();
+    });
+  }
+
+  updateTracker();
 })();
 
 if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
@@ -1273,7 +1624,7 @@ if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-moti
         io.unobserve(entry.target);
       }
     });
-  }, {threshold:0.10});
+  }, {threshold:0.08});
   targets.forEach(function(el){ io.observe(el); });
 }
 </script>
