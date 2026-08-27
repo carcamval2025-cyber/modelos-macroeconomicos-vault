@@ -37,6 +37,14 @@ sin motivo. Tampoco se importó React/Tailwind/GSAP: esas guías asumen ese stac
 es HTML/CSS/JS plano a propósito (debe abrir sin servidor ni build) — se tradujeron los principios
 de composición y acabado a CSS vanilla en vez de adoptar el stack completo.
 
+**Actualización 2026-08-27 (textura de fondo técnica para todo el vault):** Navas pidió mejorar el
+fondo general de la página para que no se sienta plano ni vacío. **Decisión permanente de diseño:**
+el fondo base `--bg` (`#080C1C`) se complementa con un patrón reticular técnico de ingeniería
+macroeconómica (cuadrícula sutil de 48px con trazos tenues `#2A324A` y micro-nodos `#667FDA` en las
+intersecciones vía data-URI SVG con `background-attachment: fixed`). Esto aporta textura táctil de
+mesa de trabajo analítica y profundidad tridimensional sin recurrir a gradientes difusos,
+manteniendo total legibilidad y contraste WCAG AA.
+
 ## Tipografía
 
 - **Fraunces** (Google Fonts, variable — ejes `ital`/`opsz`/`wght`, pesos 500–700) — títulos

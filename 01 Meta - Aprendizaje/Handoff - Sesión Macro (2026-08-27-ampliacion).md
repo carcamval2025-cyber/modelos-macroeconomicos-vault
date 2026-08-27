@@ -54,3 +54,9 @@ Todas las piezas cumplen con la regla de **cero funciones `gradient()`**, paleta
 - La guía está publicada y desplegada en producción en GitHub Pages: `docs/tema-01/index.html`.
 - Ficha de material actualizada en `04 Materiales Generados/Guía Tema 1 - Repaso de Macro I.md`.
 - Registro de piezas visuales actualizado en `04 Materiales Generados/Pedidos de Imagen - Tema 1.md`.
+
+---
+
+### D. Decisión de Diseño Permanente — Textura Reticular Técnica de Fondo
+- Se eliminó la sensación de plano uniforme del fondo oscuro mediante una **cuadrícula reticular técnica SVG de 48px** con trazos `#2A324A` (opacidad 0.35) y micro-nodos `#667FDA` (opacidad 0.4) con `background-attachment: fixed`.
+- Esta decisión quedó formalizada en `02 Curso/Sistema de Diseño HTML.md` y aplicada a `docs/index.html` y `docs/tema-01/index.html` como estándar para todo el vault.
