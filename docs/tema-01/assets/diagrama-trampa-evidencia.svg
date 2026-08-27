@@ -1,0 +1,62 @@
+<svg viewBox="0 0 540 270" role="img" aria-labelledby="fig-evid-title fig-evid-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-evid-title">La Trampa de Liquidez en Acción: Tasa de Interés y Reservas Bancarias (2008–2016)</title>
+  <desc id="fig-evid-desc">Gráfico comparativo empírico de EE. UU. entre 2008 y 2016. La tasa de fondos federales cae abruptamente al 0% a fines de 2008 y permanece en el límite inferior cero hasta 2016. Paralelamente, las reservas bancarias explotan de 10 mil millones a 2,500 mil millones de dólares por compras de bonos de la Fed (QE), siendo absorbidas pasivamente sin mover la tasa de interés.</desc>
+
+  <!-- Fondo General -->
+  <rect x="8" y="8" width="524" height="254" rx="12" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+  <text x="270" y="28" text-anchor="middle" font-family="Inter" font-weight="600" font-size="12" fill="#EFF2F9">Evidencia Empírica de EE. UU. (Crisis Financiera 2008–2016)</text>
+
+  <!-- Panel Izquierdo: Tasa de Fondos Federales (ZLB) -->
+  <rect x="22" y="42" width="240" height="206" rx="8" fill="#1B223C" stroke="#2A324A" stroke-width="1"/>
+  <text x="142" y="60" text-anchor="middle" font-family="Inter" font-weight="600" font-size="10.5" fill="#667FDA">Tasa de Fondos Federales (i)</text>
+
+  <!-- Ejes Tasa -->
+  <line x1="50" y1="72" x2="50" y2="195" stroke="#A3AABE" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="50" y1="195" x2="245" y2="195" stroke="#A3AABE" stroke-width="1.2" stroke-linecap="round"/>
+  
+  <text x="32" y="78" font-family="JetBrains Mono" font-size="8.5" fill="#A3AABE">5%</text>
+  <text x="32" y="198" font-family="JetBrains Mono" font-size="8.5" fill="#A3AABE">0%</text>
+  <text x="50" y="210" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">'07</text>
+  <text x="100" y="210" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">'08</text>
+  <text x="170" y="210" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">'12</text>
+  <text x="230" y="210" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">'16</text>
+
+  <!-- Zona sombreada ZLB -->
+  <rect x="100" y="185" width="145" height="10" fill="#667FDA" opacity=".2"/>
+  <text x="172" y="178" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#667FDA">Límite Cero (ZLB)</text>
+
+  <!-- Trayectoria de la tasa: cae de 5.25% en 2007 a 0% a fines de 2008 y se queda plana -->
+  <path d="M 50 80 L 80 110 L 100 195 L 245 195" fill="none" stroke="#667FDA" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="100" cy="195" r="4" fill="#FF6F4A"/>
+  <text x="106" y="190" font-family="JetBrains Mono" font-size="8" fill="#FF6F4A">fines 2008: i = 0</text>
+
+  <!-- Panel Derecho: Reservas Bancarias (Explosión QE) -->
+  <rect x="278" y="42" width="240" height="206" rx="8" fill="#1B223C" stroke="#2A324A" stroke-width="1"/>
+  <text x="398" y="60" text-anchor="middle" font-family="Inter" font-weight="600" font-size="10.5" fill="#FF6F4A">Reservas Bancarias en la Fed ($B)</text>
+
+  <!-- Ejes Reservas -->
+  <line x1="305" y1="72" x2="305" y2="195" stroke="#A3AABE" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="305" y1="195" x2="500" y2="195" stroke="#A3AABE" stroke-width="1.2" stroke-linecap="round"/>
+
+  <text x="282" y="78" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">$2.5T</text>
+  <text x="288" y="198" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">$10B</text>
+  <text x="305" y="210" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">'07</text>
+  <text x="350" y="210" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">'08</text>
+  <text x="420" y="210" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">'12</text>
+  <text x="480" y="210" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">'16</text>
+
+  <!-- Curva de Reservas: plana en $10B, luego sube verticalmente a $700B en 2008 y a $2,500B en 2015 -->
+  <path d="M 305 194 L 350 193 C 360 160, 390 110, 480 78" fill="none" stroke="#FF6F4A" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 305 194 L 350 193 C 360 160, 390 110, 480 78 L 480 195 L 305 195 Z" fill="#FF6F4A" opacity=".10"/>
+
+  <circle cx="350" cy="193" r="3.5" fill="#FFB188"/>
+  <text x="356" y="185" font-family="JetBrains Mono" font-size="7.5" fill="#FFB188">$10B (2008)</text>
+
+  <circle cx="480" cy="78" r="4.5" fill="#10172D" stroke="#EFF2F9" stroke-width="2"/>
+  <circle cx="480" cy="78" r="2" fill="#FF6F4A"/>
+  <text x="420" y="74" font-family="JetBrains Mono" font-weight="600" font-size="8" fill="#EFF2F9">$2,500B (2015)</text>
+
+  <!-- Conclusión inferior -->
+  <rect x="22" y="222" width="496" height="20" rx="4" fill="#080C1C" stroke="#2A324A" stroke-width="1"/>
+  <text x="270" y="236" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="#55C975">Conclusión: A tasa cero, la inyección masiva de H se acumula en reservas sin alterar la tasa i.</text>
+</svg>

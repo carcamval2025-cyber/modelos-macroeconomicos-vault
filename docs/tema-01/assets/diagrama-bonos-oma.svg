@@ -1,0 +1,69 @@
+<svg viewBox="0 0 520 260" role="img" aria-labelledby="fig-bonos-title fig-bonos-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-bonos-title">Determinación del Precio del Bono y Operaciones de Mercado Abierto</title>
+  <desc id="fig-bonos-desc">Panel izquierdo con la curva hiperbólica inversa entre el precio del bono PB y la tasa de interés i. Panel derecho con el flujo de transmisión de una operación de mercado abierto expansiva donde la compra de bonos eleva PB y reduce la tasa de interés.</desc>
+
+  <!-- Panel Izquierdo: Curva PB vs i -->
+  <rect x="8" y="8" width="250" height="244" rx="10" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+  <text x="133" y="28" text-anchor="middle" font-family="Inter" font-weight="600" font-size="12" fill="#EFF2F9">Relación Inversa: Precio y Tasa</text>
+  
+  <!-- Ejes panel izquierdo -->
+  <line x1="45" y1="42" x2="45" y2="205" stroke="#A3AABE" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="45" y1="205" x2="235" y2="205" stroke="#A3AABE" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M42 48L45 42L48 48" fill="none" stroke="#A3AABE" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M229 202L235 205L229 208" fill="none" stroke="#A3AABE" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <text x="24" y="48" font-family="Inter" font-weight="600" font-size="11" fill="#A3AABE">P<tspan baseline-shift="sub" font-size="8">B</tspan></text>
+  <text x="228" y="222" font-family="Inter" font-weight="600" font-size="11" fill="#A3AABE">i</text>
+
+  <!-- Retícula tenue -->
+  <path d="M45 85H225M45 145H225M105 45V205M175 45V205" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="3 4" opacity=".4"/>
+
+  <!-- Curva hiperbólica PB = 100 / (1 + i) -->
+  <path d="M 60 70 C 85 95, 125 135, 215 175" fill="none" stroke="#FF6F4A" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 60 70 C 85 95, 125 135, 215 175" fill="none" stroke="#FFB188" stroke-width="1" stroke-dasharray="3 3" opacity=".4"/>
+
+  <!-- Puntos A (tasa baja, precio alto) y B (tasa alta, precio bajo) -->
+  <circle cx="105" cy="100" r="6" fill="#10172D" stroke="#EFF2F9" stroke-width="2"/>
+  <circle cx="105" cy="100" r="2.5" fill="#FF6F4A"/>
+  <text x="115" y="98" font-family="JetBrains Mono" font-size="9.5" fill="#EFF2F9">P<tspan baseline-shift="sub" font-size="7">B</tspan>=95.2 &rarr; i=5%</text>
+
+  <circle cx="175" cy="150" r="6" fill="#10172D" stroke="#667FDA" stroke-width="2"/>
+  <circle cx="175" cy="150" r="2.5" fill="#FFB188"/>
+  <text x="135" y="172" font-family="JetBrains Mono" font-size="9.5" fill="#A3AABE">P<tspan baseline-shift="sub" font-size="7">B</tspan>=90.9 &rarr; i=10%</text>
+
+  <!-- Fórmula base -->
+  <rect x="52" y="216" width="162" height="24" rx="5" fill="#1B223C" stroke="#2A324A" stroke-width="1"/>
+  <text x="133" y="232" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="600" fill="#FFB188">i = (100 - P<tspan baseline-shift="sub" font-size="8">B</tspan>) / P<tspan baseline-shift="sub" font-size="8">B</tspan></text>
+
+  <!-- Panel Derecho: Flujo de Operación de Mercado Abierto -->
+  <rect x="266" y="8" width="246" height="244" rx="10" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+  <text x="389" y="28" text-anchor="middle" font-family="Inter" font-weight="600" font-size="12" fill="#EFF2F9">Mecánica OMA Expansiva</text>
+
+  <!-- Paso 1 -->
+  <rect x="280" y="44" width="218" height="36" rx="6" fill="#1B223C" stroke="#667FDA" stroke-width="1"/>
+  <text x="292" y="60" font-family="JetBrains Mono" font-size="9.5" font-weight="600" fill="#667FDA">1. INYECCIÓN</text>
+  <text x="292" y="72" font-family="Inter" font-size="9.5" fill="#EFF2F9">Banco Central compra bonos</text>
+
+  <!-- Flecha 1 a 2 -->
+  <path d="M389 80V92" fill="none" stroke="#FF6F4A" stroke-width="1.5"/>
+  <path d="M386 89L389 94L392 89" fill="none" stroke="#FF6F4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Paso 2 -->
+  <rect x="280" y="96" width="218" height="36" rx="6" fill="#1B223C" stroke="#FFB188" stroke-width="1"/>
+  <text x="292" y="112" font-family="JetBrains Mono" font-size="9.5" font-weight="600" fill="#FFB188">2. PRECIO SUBE</text>
+  <text x="292" y="124" font-family="Inter" font-size="9.5" fill="#EFF2F9">Demanda de bonos &uarr; &rArr; P<tspan baseline-shift="sub" font-size="7">B</tspan> sube</text>
+
+  <!-- Flecha 2 a 3 -->
+  <path d="M389 132V144" fill="none" stroke="#FF6F4A" stroke-width="1.5"/>
+  <path d="M386 141L389 146L392 141" fill="none" stroke="#FF6F4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Paso 3 -->
+  <rect x="280" y="148" width="218" height="36" rx="6" fill="#1B223C" stroke="#55C975" stroke-width="1"/>
+  <text x="292" y="164" font-family="JetBrains Mono" font-size="9.5" font-weight="600" fill="#55C975">3. TASA CAE</text>
+  <text x="292" y="176" font-family="Inter" font-size="9.5" fill="#EFF2F9">Rendimiento efectivo i baja</text>
+
+  <!-- Badge resultado inferior -->
+  <rect x="280" y="200" width="218" height="40" rx="6" fill="#080C1C" stroke="#2A324A" stroke-width="1"/>
+  <text x="389" y="217" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="600" fill="#55C975">&Delta; H &gt; 0 &rArr; &Delta; P<tspan baseline-shift="sub" font-size="8">B</tspan> &gt; 0 &rArr; &Delta; i &lt; 0</text>
+  <text x="389" y="231" text-anchor="middle" font-family="Inter" font-size="8.5" fill="#A3AABE">Operación de mercado abierto expansiva</text>
+</svg>
