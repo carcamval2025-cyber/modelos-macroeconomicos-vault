@@ -202,15 +202,29 @@ Ver [[Lecciones Aprendidas]] por ajustes de diseño que hayan surgido de retroal
 
 Establecido 2026-08-26 (primero se aplicó, sin documentarlo, a Contabilidad Financiera; luego a
 favicon/marca del sitio de este vault tras corrección de Navas). Repetir en toda pieza visual
-futura que no sea un diagrama de modelo con datos.
+futura, incluidos ahora los diagramas de modelos (ver actualización de abajo).
 
-**Cuándo pedir una ilustración a otro agente en vez de que la sesión de Claude construya el SVG
-directamente:** los diagramas de modelos con ejes rotulados y datos reales (IS-LM, Phillips,
-Solow, cualquier gráfico que dependa de valores del PDF del curso) los sigue construyendo Claude,
-porque su precisión depende de las fuentes verificadas. Se delega a otro agente todo lo que sea
-**identidad visual o ambientación** — favicon, marca/logo del sitio, ilustraciones decorativas de
-header, escenas editoriales — donde el valor está en la ejecución artística, no en la exactitud
-de un dato.
+**Actualización 2026-08-27 — los diagramas de modelos también se delegan:** Navas pidió
+explícitamente que los diagramas de modelos con ejes y datos reales (IS-LM, Phillips, Solow,
+balances, cualquier gráfico basado en valores de Blanchard) dejen de ser una excepción — se ven y
+se entienden mejor con ejecución artística real, y construirlos a mano le cuesta tiempo/tokens a
+Claude sin necesidad. Regla nueva: **Claude sigue construyendo la geometría/datos exactos en un SVG
+base** (ejes, curvas, puntos de equilibrio, etiquetas — la parte que depende de la fuente
+verificada), y ese SVG base se entrega como parte del brief a Antigravity/Codex, quien solo hace el
+**pulido visual** (acabado, sombreado, iconografía, textura) sin mover geometría ni cambiar
+valores/etiquetas. Esto reemplaza la distinción anterior de este documento (que decía que Claude
+construye los diagramas de datos "directamente", sin pasar por un brief) — ver `docs/Pedidos de
+Imagen - Sitio.md` y `04 Materiales Generados/Pedidos de Imagen - Tema 1.md` (img-t1-02/03/04) como
+ejemplo del formato de brief con línea base incluida.
+
+**Qué sigue sin delegarse:** la geometría/datos en sí (Claude calcula y ubica curvas, puntos y
+ejes a partir de las fuentes verificadas) y cualquier corrección posterior a esos datos si
+Antigravity/Codex se desvía sin querer del SVG base — eso Claude lo revisa y corrige antes de
+integrar, nunca lo deja pasar sin verificar contra el checklist.
+
+**Identidad visual/ambientación (favicon, marca/logo, banners de header, escenas editoriales):**
+sigue igual que antes de la actualización — se delega por completo, sin línea base de datos porque
+no representan un dato real.
 
 **Cómo estructurar el pedido:**
 1. Dejar en el HTML una tarjeta placeholder `.img-request` (borde punteado coral, integrada al

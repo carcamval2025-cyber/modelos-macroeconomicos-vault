@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 320" role="img" aria-label="Banner panorámico del Tema 1 — Mercado de dinero, balances bancarios y trampa de liquidez">
+  <!-- Fondo estructural plano -->
+  <rect width="1600" height="320" fill="#080C1C"/>
+
+  <!-- Retícula estructural y horizontes técnicos -->
+  <path d="M0 40H1600M0 280H1600" fill="none" stroke="#2A324A" stroke-width="1.2" opacity=".4"/>
+  <path d="M0 240H1600" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="6 6" opacity=".35"/>
+  <path d="M220 30V290M520 30V290M840 30V290M1160 30V290M1440 30V290" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="3 6" opacity=".3"/>
+
+  <!-- Marcas de calibración a lo largo de los horizontes -->
+  <path d="M100 276V284M220 274V286M340 276V284M460 276V284M520 274V286M640 276V284M760 276V284M840 274V286M960 276V284M1060 276V284M1160 274V286M1280 276V284M1360 276V284M1440 274V286M1540 276V284" fill="none" stroke="#A3AABE" stroke-width="1.2" opacity=".3"/>
+  <path d="M100 36V44M220 34V46M340 36V44M460 36V44M520 34V46M640 36V44M760 36V44M840 34V46M960 36V44M1060 36V44M1160 34V46M1280 36V44M1360 36V44M1440 34V46M1540 36V44" fill="none" stroke="#A3AABE" stroke-width="1" opacity=".2"/>
+
+  <!-- Corrientes de liquidez y flujos de reservas bancarias (Fondo) -->
+  <path d="M-20 60C300 110 500 50 820 120S1320 200 1620 180" fill="none" stroke="#667FDA" stroke-width="1.2" opacity=".10"/>
+  <path d="M-20 90C320 140 520 80 840 150S1340 230 1620 210" fill="none" stroke="#667FDA" stroke-width="1" opacity=".14"/>
+  <path d="M-20 150C340 190 540 130 860 180S1360 250 1620 240" fill="none" stroke="#FFB188" stroke-width="1" stroke-dasharray="6 8" opacity=".12"/>
+  <path d="M-20 210C360 240 560 180 880 220S1380 270 1620 260" fill="none" stroke="#FF6F4A" stroke-width="1.2" opacity=".10"/>
+
+  <!-- Estructura geométrica de balances contables (T-accounts abstractas) en Zona Izquierda -->
+  <path d="M120 70H320M220 70V210M120 140H320" fill="none" stroke="#2A324A" stroke-width="1.2" opacity=".6"/>
+  <path d="M140 95H195M245 95H300M140 120H180M245 120H290M140 165H200M245 165H285M140 185H175M245 185H305" fill="none" stroke="#667FDA" stroke-width="2" stroke-linecap="round" opacity=".35"/>
+  <path d="M280 110H460M370 110V250M280 180H460" fill="none" stroke="#2A324A" stroke-width="1.2" opacity=".5"/>
+  <path d="M300 135H355M395 135H445M300 160H340M395 160H430M300 205H350M395 205H440M300 225H335M395 225H450" fill="none" stroke="#FFB188" stroke-width="2" stroke-linecap="round" opacity=".30"/>
+
+  <!-- Vectores de intermediación y multiplicación monetaria -->
+  <path d="M220 140C270 100 320 100 370 145" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-dasharray="3 4" opacity=".7"/>
+  <path d="M362 138L370 145L363 152" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
+  <path d="M370 180C420 200 460 170 510 120" fill="none" stroke="#667FDA" stroke-width="1.8" stroke-dasharray="3 4" opacity=".7"/>
+  <path d="M502 124L510 120L507 132" fill="none" stroke="#667FDA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
+
+  <!-- Curva de Demanda de Dinero del Banco Central (H^d) con aplanamiento en Trampa de Liquidez -->
+  <!-- Curva principal Md / Hd -->
+  <path d="M480 50C560 90 640 150 780 205C880 232 980 240 1580 240" fill="none" stroke="#FF6F4A" stroke-width="4.5" stroke-linecap="round" opacity=".92"/>
+  <!-- Curva secundaria de mayor ingreso Y' -->
+  <path d="M540 40C620 80 700 138 840 192C940 222 1040 240 1580 240" fill="none" stroke="#FFB188" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="8 6" opacity=".65"/>
+  <!-- Resonancia superior tenue -->
+  <path d="M600 35C680 70 760 128 900 180C1000 212 1100 240 1580 240" fill="none" stroke="#FFB188" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 6" opacity=".35"/>
+
+  <!-- Ofertas de Dinero del Banco Central (Operaciones de Mercado Abierto H^s_0, H^s_1, H^s_2, H^s_3) -->
+  <!-- H^s_0: Tasa alta normal -->
+  <path d="M640 40V280" fill="none" stroke="#667FDA" stroke-width="3.5" stroke-linecap="round" opacity=".85"/>
+  <!-- H^s_1: Expansión OMO -->
+  <path d="M780 40V280" fill="none" stroke="#667FDA" stroke-width="3.5" stroke-linecap="round" opacity=".85"/>
+  <!-- H^s_2: Entrada en zona de baja tasa -->
+  <path d="M980 40V280" fill="none" stroke="#667FDA" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 5" opacity=".70"/>
+  <!-- H^s_3: Expansión dentro de la trampa de liquidez (inútil para bajar tasa) -->
+  <path d="M1240 40V280" fill="none" stroke="#667FDA" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 5" opacity=".70"/>
+  <!-- H^s_4: Máxima inyección cuantitativa -->
+  <path d="M1440 40V280" fill="none" stroke="#667FDA" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 4" opacity=".50"/>
+
+  <!-- Vectores de OMO (Compras de bonos / inyección de reservas) -->
+  <path d="M640 90H770" fill="none" stroke="#FFB188" stroke-width="2" stroke-dasharray="4 3" opacity=".85"/>
+  <path d="M762 85L770 90L762 95" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+  <path d="M780 90H970" fill="none" stroke="#FFB188" stroke-width="2" stroke-dasharray="4 3" opacity=".85"/>
+  <path d="M962 85L970 90L962 95" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+  <path d="M980 90H1230" fill="none" stroke="#667FDA" stroke-width="1.8" stroke-dasharray="4 4" opacity=".70"/>
+  <path d="M1222 85L1230 90L1222 95" fill="none" stroke="#667FDA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
+  <path d="M1240 90H1430" fill="none" stroke="#667FDA" stroke-width="1.5" stroke-dasharray="4 4" opacity=".50"/>
+  <path d="M1422 85L1430 90L1422 95" fill="none" stroke="#667FDA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".6"/>
+
+  <!-- Proyecciones ortogonales de tasa de interés hacia el eje vertical -->
+  <path d="M640 145H480" fill="none" stroke="#FF6F4A" stroke-width="1.2" stroke-dasharray="3 4" opacity=".45"/>
+  <path d="M780 205H480" fill="none" stroke="#FFB188" stroke-width="1.2" stroke-dasharray="3 4" opacity=".45"/>
+  <path d="M980 240H480" fill="none" stroke="#EFF2F9" stroke-width="1.2" stroke-dasharray="4 4" opacity=".35"/>
+
+  <!-- Nodos de Equilibrio del Mercado de Dinero -->
+  <!-- 1. Nodo Balance Banco Central E_CB en (220, 140) -->
+  <circle cx="220" cy="140" r="8" fill="#10172D" stroke="#667FDA" stroke-width="2" opacity=".9"/>
+  <circle cx="220" cy="140" r="3" fill="#EFF2F9"/>
+
+  <!-- 2. Nodo Banco Comercial E_Bancos en (370, 145) -->
+  <circle cx="370" cy="145" r="8" fill="#10172D" stroke="#FFB188" stroke-width="2" opacity=".9"/>
+  <circle cx="370" cy="145" r="3" fill="#FF6F4A"/>
+
+  <!-- 3. Equilibrio Normal E_0 en (640, 145) -->
+  <circle cx="640" cy="145" r="12" fill="#10172D" stroke="#EFF2F9" stroke-width="3.5" opacity=".98"/>
+  <circle cx="640" cy="145" r="5.5" fill="#FF6F4A"/>
+  <circle cx="640" cy="145" r="2.2" fill="#EFF2F9"/>
+
+  <!-- 4. Equilibrio de Expansión E_1 en (780, 205) -->
+  <circle cx="780" cy="205" r="10" fill="#10172D" stroke="#667FDA" stroke-width="2.5" opacity=".95"/>
+  <circle cx="780" cy="205" r="4.5" fill="#FFB188" opacity=".95"/>
+
+  <!-- 5. Entrada en Trampa de Liquidez E_trap en (980, 240) -->
+  <circle cx="980" cy="240" r="11" fill="#10172D" stroke="#EFF2F9" stroke-width="3" opacity=".98"/>
+  <circle cx="980" cy="240" r="5" fill="#FF6F4A"/>
+  <circle cx="980" cy="240" r="2" fill="#EFF2F9"/>
+
+  <!-- 6. Inyección en Zona Plana (Zero Lower Bound) E_ZLB1 en (1240, 240) -->
+  <circle cx="1240" cy="240" r="9.5" fill="#10172D" stroke="#667FDA" stroke-width="2.5" opacity=".95"/>
+  <circle cx="1240" cy="240" r="4" fill="#EFF2F9" opacity=".9"/>
+
+  <!-- 7. Inyección Máxima Cuantitativa E_ZLB2 en (1440, 240) -->
+  <circle cx="1440" cy="240" r="8" fill="#10172D" stroke="#A3AABE" stroke-width="2" opacity=".85"/>
+  <circle cx="1440" cy="240" r="3" fill="#667FDA"/>
+
+  <!-- Micro nodos de coordenadas y cruces (+) -->
+  <circle cx="520" cy="50" r="3.5" fill="#FF6F4A" opacity=".6"/>
+  <circle cx="640" cy="40" r="3.5" fill="#667FDA" opacity=".6"/>
+  <circle cx="780" cy="40" r="3.5" fill="#667FDA" opacity=".6"/>
+  <circle cx="980" cy="40" r="3.5" fill="#667FDA" opacity=".6"/>
+  <circle cx="1240" cy="40" r="3.5" fill="#667FDA" opacity=".6"/>
+  <circle cx="1540" cy="240" r="3.5" fill="#FF6F4A" opacity=".6"/>
+
+  <path d="M516 50H524M520 46V54" fill="none" stroke="#2A324A" stroke-width="1.5" opacity=".8"/>
+  <path d="M636 40H644M640 36V44" fill="none" stroke="#2A324A" stroke-width="1.5" opacity=".8"/>
+  <path d="M776 40H784M780 36V44" fill="none" stroke="#2A324A" stroke-width="1.5" opacity=".8"/>
+  <path d="M976 40H984M980 36V44" fill="none" stroke="#2A324A" stroke-width="1.5" opacity=".8"/>
+  <path d="M1236 40H1244M1240 36V44" fill="none" stroke="#2A324A" stroke-width="1.5" opacity=".8"/>
+  <path d="M1536 240H1544M1540 236V244" fill="none" stroke="#2A324A" stroke-width="1.5" opacity=".8"/>
+</svg>
