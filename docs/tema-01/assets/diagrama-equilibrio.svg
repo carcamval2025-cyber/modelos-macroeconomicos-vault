@@ -1,0 +1,68 @@
+<svg viewBox="0 0 460 270" role="img" aria-labelledby="fig2-title fig2-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig2-title">Equilibrio en el mercado de dinero del banco central</title>
+  <desc id="fig2-desc">Eje horizontal H (dinero del banco central), eje vertical i (tasa de interés). Curva de demanda H-d con pendiente negativa en coral que corta exactamente por los puntos de equilibrio A y A'. Dos líneas de oferta verticales en índigo: la oferta original en H y una oferta mayor en H' tras una operación de mercado abierto. El equilibrio se mueve del punto A al punto A', con una tasa de interés menor, mostrando que un aumento de H baja i.</desc>
+
+  <!-- Retícula de referencia -->
+  <path d="M60 70H420M60 112H420M60 165H420" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".3"/>
+  <path d="M140 20V220M240 20V220M320 20V220" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="3 5" opacity=".2"/>
+
+  <!-- Área sombreada de desplazamiento de oferta siguiendo la curva exacta de A a A' -->
+  <path d="M 240 220 V 112 C 280 138, 300 152, 320 165 V 220 Z" fill="#667FDA" opacity=".08"/>
+
+  <!-- Ejes cartesianos -->
+  <line x1="60" y1="20" x2="60" y2="220" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="60" y1="220" x2="420" y2="220" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Puntas de flecha en ejes -->
+  <path d="M56 26L60 18L64 26" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M414 216L422 220L414 224" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Marcas en los ejes -->
+  <path d="M60 70H66M60 112H66M60 165H66" fill="none" stroke="#A3AABE" stroke-width="1.2" opacity=".6"/>
+  <path d="M140 220V226M240 220V226M320 220V226" fill="none" stroke="#A3AABE" stroke-width="1.2" opacity=".6"/>
+  <text x="30" y="24" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">i</text>
+  <text x="410" y="240" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">H</text>
+
+  <!-- Líneas de Oferta Verticales -->
+  <!-- Oferta original H -->
+  <line x1="240" y1="20" x2="240" y2="220" stroke="#667FDA" stroke-width="2.4" stroke-linecap="round"/>
+  <text x="200" y="35" font-family="JetBrains Mono" font-weight="500" font-size="11" fill="#667FDA">Oferta H</text>
+
+  <!-- Oferta expandida H' -->
+  <line x1="320" y1="20" x2="320" y2="220" stroke="#667FDA" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="6 4" opacity=".9"/>
+  <text x="326" y="35" font-family="JetBrains Mono" font-weight="500" font-size="11" fill="#667FDA">Oferta H&#8242;</text>
+
+  <!-- Curva de Demanda H^d: Pasa exactamente por A(240, 112) y A'(320, 165) -->
+  <path d="M 90 40 C 140 55, 180 73, 240 112 C 280 138, 349 189, 390 200" fill="none" stroke="#FF6F4A" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M 90 40 C 140 55, 180 73, 240 112 C 280 138, 349 189, 390 200" fill="none" stroke="#FFB188" stroke-width="1.2" stroke-dasharray="4 4" opacity=".35"/>
+  <text x="300" y="195" font-family="JetBrains Mono" font-weight="500" font-size="11" fill="#FF6F4A">Demanda H<tspan baseline-shift="sub" font-size="8">d</tspan></text>
+
+  <!-- Proyecciones ortogonales a los ejes -->
+  <line x1="60" y1="112" x2="240" y2="112" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="240" y1="112" x2="240" y2="220" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="60" y1="165" x2="320" y2="165" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="320" y1="165" x2="320" y2="220" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="4 3"/>
+
+  <!-- Vector de transición dinámica de A a A' siguiendo la curva -->
+  <path d="M 252 120 C 270 132, 288 144, 306 156" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-dasharray="3 3" opacity=".9"/>
+  <path d="M 298 152 L 306 156 L 301 146" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".95"/>
+
+  <!-- Nodo de Equilibrio A en (240, 112) -->
+  <circle cx="240" cy="112" r="9.5" fill="#10172D" stroke="#EFF2F9" stroke-width="2.5"/>
+  <circle cx="240" cy="112" r="4" fill="#FF6F4A"/>
+  <text x="252" y="108" font-family="Inter" font-weight="600" font-size="12" fill="#EFF2F9">A</text>
+
+  <!-- Nodo de Equilibrio A' en (320, 165) -->
+  <circle cx="320" cy="165" r="8.5" fill="#10172D" stroke="#FFB188" stroke-width="2.2" opacity=".98"/>
+  <circle cx="320" cy="165" r="3.5" fill="#FF6F4A" opacity=".95"/>
+  <text x="332" y="162" font-family="Inter" font-weight="600" font-size="12" fill="#EFF2F9">A&#8242;</text>
+
+  <!-- Etiquetas de coordenadas en ejes -->
+  <text x="20" y="116" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">i</text>
+  <text x="20" y="169" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">i&#8242;</text>
+  <text x="230" y="238" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">H</text>
+  <text x="310" y="238" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">H&#8242;</text>
+
+  <!-- Badge de síntesis económica -->
+  <rect x="72" y="140" width="148" height="24" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="1"/>
+  <text x="146" y="156" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#A3AABE">H&#8593; &#8658; i&#8595; (ec. 4.6)</text>
+</svg>

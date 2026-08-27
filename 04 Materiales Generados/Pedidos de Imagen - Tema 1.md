@@ -73,6 +73,8 @@ la tarjeta `.img-request`.
 
 ## img-t1-02 — Balance del banco y del banco central (Blanchard, Fig. 4-6)
 
+**Estado: ✅ completado 2026-08-27.** Entregado en `docs/tema-01/assets/diagrama-balance.svg` e integrado en `docs/tema-01/index.html`.
+
 **Ubicación:** primer `<figure>` del módulo "03 · 4-3 — El papel de los bancos", dentro de
 `<div class="diagrama">`.
 
@@ -139,6 +141,8 @@ este balance, así que las proporciones deben ser ilustrativas, no pretender ser
 
 ## img-t1-03 — Equilibrio en el mercado de dinero del banco central (Blanchard, Fig. 4-7)
 
+**Estado: ✅ completado 2026-08-27.** Entregado en `docs/tema-01/assets/diagrama-equilibrio.svg` e integrado en `docs/tema-01/index.html`.
+
 **Ubicación:** segundo `<figure>` del módulo "03 · 4-3", dentro de `<div class="diagrama">`.
 
 **Qué representa (no cambiar):** eje horizontal H, eje vertical i. Curva de demanda H&#0100;
@@ -198,6 +202,8 @@ trabajadas), el desplazamiento de la oferta podría llevar una flecha más expre
 ---
 
 ## img-t1-04 — Demanda de dinero, oferta de dinero y la trampa de liquidez (Blanchard, Fig. 4-8)
+
+**Estado: ✅ completado 2026-08-27.** Entregado en `docs/tema-01/assets/diagrama-trampa.svg` e integrado en `docs/tema-01/index.html`.
 
 **Ubicación:** `<figure>` del módulo "04 · 4-4 — La trampa de liquidez", dentro de
 `<div class="diagrama">`.
@@ -260,13 +266,13 @@ trazo más expresivo en el quiebre, y los tres puntos A/B/C pueden diferenciarse
 
 ## Checklist antes de entregar (img-t1-02, 03, 04)
 
-- [ ] Es un bloque `<svg>` de código, no un PNG/JPG adjunto.
-- [ ] Usa únicamente los colores hexadecimales de la paleta de arriba.
-- [ ] Usa únicamente Fraunces/Inter/JetBrains Mono.
-- [ ] Cero funciones `gradient()` en cualquier parte.
-- [ ] Ninguna sombra ancha + borde combinados, ni `border-radius` mayor a 16px.
-- [ ] `role="img"` + `<title>`/`<desc>` (o `aria-label`) descriptivos.
-- [ ] **Ningún punto de equilibrio, curva o etiqueta se movió o cambió de valor** respecto a la
+- [x] Es un bloque `<svg>` de código, no un PNG/JPG adjunto.
+- [x] Usa únicamente los colores hexadecimales de la paleta de arriba.
+- [x] Usa únicamente Fraunces/Inter/JetBrains Mono.
+- [x] Cero funciones `gradient()` en cualquier parte.
+- [x] Ninguna sombra ancha + borde combinados, ni `border-radius` mayor a 16px.
+- [x] `role="img"` + `<title>`/`<desc>` (o `aria-label`) descriptivos.
+- [x] **Ningún punto de equilibrio, curva o etiqueta se movió o cambió de valor** respecto a la
   línea base entregada arriba — solo cambió el acabado visual.
 
 ---

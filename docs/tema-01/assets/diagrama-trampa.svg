@@ -1,0 +1,72 @@
+<svg viewBox="0 0 460 280" role="img" aria-labelledby="fig3-title fig3-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig3-title">Demanda de dinero, oferta de dinero y la trampa de liquidez</title>
+  <desc id="fig3-desc">Eje horizontal M (dinero), eje vertical i. La curva de demanda de dinero, en coral, desciende y luego se vuelve horizontal en i=0 más allá de cierto punto — esa zona horizontal está sombreada y rotulada como la trampa de liquidez. Tres líneas verticales de oferta de dinero Ms, Ms' y Ms'', en índigo — las dos últimas intersectan la curva de demanda en su tramo horizontal, ambas con tasa de interés cero. Una flecha indica que la oferta de dinero sigue aumentando de Ms a Ms'' sin que la tasa de interés cambie.</desc>
+
+  <!-- Zona de Trampa de Liquidez (Tramo horizontal ZLB) -->
+  <rect x="220" y="190" width="180" height="30" fill="#667FDA" opacity=".09"/>
+  <!-- Trazos sutiles de patrón en la zona atrapada -->
+  <path d="M240 190V220M270 190V220M300 190V220M330 190V220M360 190V220M390 190V220" fill="none" stroke="#667FDA" stroke-width="1" stroke-dasharray="2 4" opacity=".2"/>
+
+  <!-- Retícula de referencia -->
+  <path d="M75 60H400M75 130H400" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".3"/>
+
+  <!-- Ejes principales -->
+  <line x1="55" y1="20" x2="55" y2="220" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="55" y1="220" x2="420" y2="220" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Puntas de flecha -->
+  <path d="M51 26L55 18L59 26" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M414 216L422 220L414 224" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Marcas de calibración en ejes -->
+  <path d="M55 60H61M55 95H61M55 130H61" fill="none" stroke="#A3AABE" stroke-width="1" opacity=".5"/>
+  <path d="M150 220V226M260 220V226M340 220V226" fill="none" stroke="#A3AABE" stroke-width="1" opacity=".5"/>
+  <text x="28" y="24" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">i</text>
+  <text x="408" y="240" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">M</text>
+
+  <!-- Curva de Demanda de Dinero M^d: pasa exactamente por A(150, 95) y se vuelve horizontal en i=0 -->
+  <path d="M 90 30 C 120 50, 135 70, 150 95 C 168 125, 192 165, 220 190 L 400 190" fill="none" stroke="#FF6F4A" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M 90 30 C 120 50, 135 70, 150 95 C 168 125, 192 165, 220 190 L 400 190" fill="none" stroke="#FFB188" stroke-width="1.2" stroke-dasharray="4 4" opacity=".35"/>
+  <text x="330" y="180" font-family="JetBrains Mono" font-weight="500" font-size="11" fill="#FF6F4A">M<tspan baseline-shift="super" font-size="8">d</tspan></text>
+
+  <!-- Ofertas de Dinero Verticales -->
+  <!-- M^s (Régimen normal con i > 0) -->
+  <line x1="150" y1="20" x2="150" y2="220" stroke="#667FDA" stroke-width="2.4" stroke-linecap="round"/>
+  <!-- M^s' (Entrada en la trampa en B) -->
+  <line x1="260" y1="20" x2="260" y2="190" stroke="#667FDA" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- M^s'' (Inyección estéril en C) -->
+  <line x1="340" y1="20" x2="340" y2="190" stroke="#667FDA" stroke-width="2.2" stroke-linecap="round"/>
+
+  <text x="140" y="14" font-family="JetBrains Mono" font-size="10" fill="#667FDA">M<tspan baseline-shift="super" font-size="7">s</tspan></text>
+  <text x="252" y="14" font-family="JetBrains Mono" font-size="10" fill="#667FDA">M<tspan baseline-shift="super" font-size="7">s'</tspan></text>
+  <text x="332" y="14" font-family="JetBrains Mono" font-size="10" fill="#667FDA">M<tspan baseline-shift="super" font-size="7">s''</tspan></text>
+
+  <!-- Vector de inyección monetaria continua -->
+  <path d="M155 30H335" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-dasharray="4 3" opacity=".85"/>
+  <path d="M327 26L335 30L327 34" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+  <text x="180" y="24" font-family="JetBrains Mono" font-size="9" fill="#FFB188">banco central sigue inyectando dinero</text>
+
+  <!-- Nodos de Equilibrio A, B, C -->
+  <!-- Nodo A: Tasa positiva en (150, 95) -->
+  <circle cx="150" cy="95" r="8" fill="#10172D" stroke="#EFF2F9" stroke-width="2.4"/>
+  <circle cx="150" cy="95" r="3.5" fill="#FF6F4A"/>
+  <text x="162" y="90" font-family="Inter" font-weight="600" font-size="11" fill="#EFF2F9">A</text>
+  <text x="162" y="108" font-family="JetBrains Mono" font-size="9" fill="#A3AABE">i &gt; 0</text>
+
+  <!-- Nodo B: Límite ZLB en (260, 190) -->
+  <circle cx="260" cy="190" r="8" fill="#10172D" stroke="#FFB188" stroke-width="2.2"/>
+  <circle cx="260" cy="190" r="3.5" fill="#667FDA"/>
+  <text x="272" y="185" font-family="Inter" font-weight="600" font-size="11" fill="#EFF2F9">B</text>
+
+  <!-- Nodo C: Inyección cuantitativa saturada en (340, 190) -->
+  <circle cx="340" cy="190" r="8" fill="#10172D" stroke="#FFB188" stroke-width="2.2"/>
+  <circle cx="340" cy="190" r="3.5" fill="#667FDA"/>
+  <text x="352" y="185" font-family="Inter" font-weight="600" font-size="11" fill="#EFF2F9">C</text>
+
+  <!-- Cota horizontal en i=0 -->
+  <line x1="55" y1="190" x2="220" y2="190" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="20" y="194" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">0</text>
+
+  <!-- Rótulo de la trampa -->
+  <rect x="225" y="196" width="170" height="20" rx="5" fill="#10172D" stroke="#2A324A" stroke-width="1"/>
+  <text x="310" y="209.5" text-anchor="middle" font-family="JetBrains Mono" font-weight="500" font-size="10" fill="#667FDA">trampa de liquidez (i = 0)</text>
+</svg>

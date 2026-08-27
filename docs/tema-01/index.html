@@ -366,48 +366,90 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
 
     <figure>
       <div class="diagrama">
-        <svg viewBox="0 0 520 210" role="img" aria-labelledby="fig1-title fig1-desc">
+        <svg viewBox="0 0 520 220" role="img" aria-labelledby="fig1-title fig1-desc" xmlns="http://www.w3.org/2000/svg">
           <title id="fig1-title">Balance del banco y del banco central</title>
-          <desc id="fig1-desc">Dos balances lado a lado: el del banco, con reservas, préstamos y bonos como activos y depósitos a la vista como pasivo; y el del banco central, con bonos como activo y dinero del banco central (reservas + efectivo) como pasivo. Una línea punteada conecta las reservas del banco con el dinero del banco central, mostrando que las reservas son parte de H.</desc>
-          <rect x="10" y="10" width="230" height="170" rx="10" fill="#1B223C" stroke="#2A324A" stroke-width="1.5"/>
-          <rect x="11" y="43" width="113.5" height="136" fill="#667FDA" opacity=".05"/>
-          <rect x="124.5" y="43" width="114.5" height="136" fill="#FF6F4A" opacity=".05"/>
-          <svg x="16" y="16" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#667FDA" stroke-width="2" opacity=".9">
-            <path d="M3 10l9-6 9 6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M4 10v9M9 10v9M15 10v9M20 10v9" stroke-linecap="round"/>
-            <path d="M2 21h20" stroke-linecap="round"/>
-          </svg>
-          <text x="135" y="32" text-anchor="middle" font-family="Inter" font-weight="600" font-size="14" fill="#EFF2F9">Banco</text>
-          <line x1="125" y1="42" x2="125" y2="170" stroke="#2A324A"/>
-          <text x="65" y="58" text-anchor="middle" font-family="Inter" font-size="11" fill="#A3AABE">Activos</text>
-          <text x="185" y="58" text-anchor="middle" font-family="Inter" font-size="11" fill="#A3AABE">Pasivos</text>
-          <text x="65" y="80" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#EFF2F9">Reservas</text>
-          <text x="65" y="100" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#EFF2F9">Préstamos</text>
-          <text x="65" y="120" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#EFF2F9">Bonos</text>
-          <text x="185" y="80" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#EFF2F9">Depósitos a</text>
-          <text x="185" y="94" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#EFF2F9">la vista</text>
+          <desc id="fig1-desc">Dos balances contables lado a lado: el del banco comercial, con reservas, préstamos y bonos como activos y depósitos a la vista como pasivo; y el del banco central, con bonos como activo y dinero del banco central (reservas + efectivo) como pasivo. Una línea conectora sin obstrucciones une las reservas del banco comercial con el dinero del banco central (H).</desc>
 
-          <rect x="270" y="10" width="240" height="170" rx="10" fill="#1B223C" stroke="#2A324A" stroke-width="1.5"/>
-          <rect x="271" y="43" width="118.5" height="136" fill="#667FDA" opacity=".05"/>
-          <rect x="389.5" y="43" width="119.5" height="136" fill="#FF6F4A" opacity=".05"/>
-          <svg x="276" y="16" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF6F4A" stroke-width="2" opacity=".9">
-            <path d="M3 10l9-6 9 6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M4 10v9M9 10v9M15 10v9M20 10v9" stroke-linecap="round"/>
-            <path d="M2 21h20" stroke-linecap="round"/>
-          </svg>
-          <text x="400" y="32" text-anchor="middle" font-family="Inter" font-weight="600" font-size="14" fill="#EFF2F9">Banco Central</text>
-          <line x1="390" y1="42" x2="390" y2="170" stroke="#2A324A"/>
-          <text x="330" y="58" text-anchor="middle" font-family="Inter" font-size="11" fill="#A3AABE">Activos</text>
-          <text x="450" y="58" text-anchor="middle" font-family="Inter" font-size="11" fill="#A3AABE">Pasivos</text>
-          <text x="330" y="90" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#EFF2F9">Bonos</text>
-          <text x="450" y="80" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#EFF2F9">Dinero del</text>
-          <text x="450" y="94" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#EFF2F9">banco central (H)</text>
-          <text x="450" y="112" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#A3AABE">= Reservas + Efectivo</text>
+          <!-- Tarjeta 1: Banco Comercial -->
+          <rect x="10" y="10" width="230" height="165" rx="12" fill="#10172D" stroke="#2A324A" stroke-width="1.5"/>
+          <rect x="11" y="11" width="228" height="34" rx="11" fill="#1B223C" opacity=".6"/>
+          <!-- Ícono banco comercial -->
+          <g transform="translate(20, 19)">
+            <path d="M2 8L10 2L18 8" fill="none" stroke="#667FDA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 8V15M7 8V15M13 8V15M17 8V15" fill="none" stroke="#667FDA" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M1 17H19" fill="none" stroke="#667FDA" stroke-width="1.8" stroke-linecap="round"/>
+          </g>
+          <text x="130" y="33" text-anchor="middle" font-family="Inter" font-weight="600" font-size="14" fill="#EFF2F9">Banco</text>
+          <line x1="10" y1="45" x2="240" y2="45" stroke="#2A324A" stroke-width="1"/>
+          <line x1="125" y1="45" x2="125" y2="175" stroke="#2A324A" stroke-width="1"/>
 
-          <path d="M100 80C230 80 320 80 405 82" fill="none" stroke="#FF6F4A" stroke-width="1.5" stroke-dasharray="3 3" opacity=".65"/>
-          <path d="M396 78L405 82L396 87" fill="none" stroke="#FF6F4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".7"/>
-          <rect x="150" y="190" width="220" height="18" rx="6" fill="#10172D" stroke="#2A324A"/>
-          <text x="260" y="202.5" text-anchor="middle" font-family="JetBrains Mono" font-size="9.5" fill="#FF6F4A">las reservas del banco son parte de H</text>
+          <!-- Fondos de columnas Activo / Pasivo -->
+          <rect x="16" y="66" width="102" height="98" rx="6" fill="#1B223C" opacity=".4"/>
+          <rect x="131" y="66" width="102" height="98" rx="6" fill="#1B223C" opacity=".4"/>
+
+          <!-- Encabezados columnas -->
+          <text x="67" y="58" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#A3AABE">Activos</text>
+          <text x="182" y="58" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#A3AABE">Pasivos</text>
+
+          <!-- Fila 1 Activo: Reservas (destacada) -->
+          <rect x="22" y="72" width="90" height="22" rx="5" fill="#FF6F4A" fill-opacity=".12" stroke="#FF6F4A" stroke-width="1" stroke-opacity=".6"/>
+          <circle cx="32" cy="83" r="3" fill="#FF6F4A"/>
+          <text x="42" y="86" font-family="JetBrains Mono" font-weight="500" font-size="11" fill="#EFF2F9">Reservas</text>
+          
+          <!-- Fila 2 Activo: Préstamos -->
+          <circle cx="32" cy="109" r="2.5" fill="#667FDA" opacity=".7"/>
+          <text x="42" y="112" font-family="JetBrains Mono" font-size="11" fill="#EFF2F9">Préstamos</text>
+
+          <!-- Fila 3 Activo: Bonos -->
+          <circle cx="32" cy="135" r="2.5" fill="#667FDA" opacity=".7"/>
+          <text x="42" y="138" font-family="JetBrains Mono" font-size="11" fill="#EFF2F9">Bonos</text>
+
+          <!-- Fila 1 Pasivo: Depósitos a la vista -->
+          <circle cx="141" cy="83" r="2.5" fill="#FFB188"/>
+          <text x="149" y="86" font-family="JetBrains Mono" font-size="11" fill="#EFF2F9">Depósitos a</text>
+          <text x="149" y="100" font-family="JetBrains Mono" font-size="11" fill="#EFF2F9">la vista</text>
+
+          <!-- Tarjeta 2: Banco Central -->
+          <rect x="270" y="10" width="240" height="165" rx="12" fill="#10172D" stroke="#2A324A" stroke-width="1.5"/>
+          <rect x="271" y="11" width="238" height="34" rx="11" fill="#1B223C" opacity=".6"/>
+          <!-- Ícono banco central -->
+          <g transform="translate(280, 19)">
+            <path d="M2 8L10 2L18 8" fill="none" stroke="#FF6F4A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 8V15M7 8V15M13 8V15M17 8V15" fill="none" stroke="#FF6F4A" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M1 17H19" fill="none" stroke="#FF6F4A" stroke-width="1.8" stroke-linecap="round"/>
+          </g>
+          <text x="400" y="33" text-anchor="middle" font-family="Inter" font-weight="600" font-size="14" fill="#EFF2F9">Banco Central</text>
+          <line x1="270" y1="45" x2="510" y2="45" stroke="#2A324A" stroke-width="1"/>
+          <line x1="390" y1="45" x2="390" y2="175" stroke="#2A324A" stroke-width="1"/>
+
+          <!-- Fondos de columnas Activo / Pasivo -->
+          <rect x="276" y="66" width="108" height="98" rx="6" fill="#1B223C" opacity=".4"/>
+          <rect x="396" y="66" width="108" height="98" rx="6" fill="#1B223C" opacity=".4"/>
+
+          <!-- Encabezados columnas -->
+          <text x="330" y="58" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#A3AABE">Activos</text>
+          <text x="450" y="58" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#A3AABE">Pasivos</text>
+
+          <!-- Fila 1 Activo: Bonos -->
+          <circle cx="286" cy="95" r="2.5" fill="#667FDA" opacity=".7"/>
+          <text x="294" y="98" font-family="JetBrains Mono" font-size="11" fill="#EFF2F9">Bonos</text>
+
+          <!-- Fila 1 Pasivo: Dinero del banco central H (destacada) -->
+          <rect x="402" y="72" width="96" height="36" rx="5" fill="#FF6F4A" fill-opacity=".12" stroke="#FF6F4A" stroke-width="1" stroke-opacity=".6"/>
+          <circle cx="412" cy="83" r="3" fill="#FF6F4A"/>
+          <text x="422" y="84" font-family="JetBrains Mono" font-weight="500" font-size="10.5" fill="#EFF2F9">Dinero del</text>
+          <text x="422" y="97" font-family="JetBrains Mono" font-weight="500" font-size="10.5" fill="#EFF2F9">banco central (H)</text>
+          <text x="450" y="122" text-anchor="middle" font-family="JetBrains Mono" font-size="9.5" fill="#A3AABE">= Reservas + Efectivo</text>
+
+          <!-- Línea conectora sin obstrucción: Canal exterior inferior -->
+          <path d="M 22 83 H 14 Q 8 83 8 91 V 185 Q 8 198 22 198 H 120" fill="none" stroke="#FF6F4A" stroke-width="1.5" stroke-dasharray="3 3" opacity=".75"/>
+          <path d="M 400 198 H 498 Q 512 198 512 185 V 91 Q 512 83 504 83 H 498" fill="none" stroke="#FF6F4A" stroke-width="1.5" stroke-dasharray="3 3" opacity=".75"/>
+          <path d="M 504 80 L 498 83 L 504 86" fill="none" stroke="#FF6F4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+
+          <!-- Badge explicativo inferior central -->
+          <rect x="120" y="187" width="280" height="22" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+          <circle cx="135" cy="198" r="3" fill="#FF6F4A"/>
+          <text x="262" y="201.5" text-anchor="middle" font-family="JetBrains Mono" font-weight="500" font-size="9.5" fill="#FF6F4A">las reservas del banco son parte de H</text>
         </svg>
       </div>
       <figcaption>Balance del banco y balance del banco central (Blanchard, Fig. 4-6).</figcaption>
@@ -426,51 +468,72 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
 
     <figure>
       <div class="diagrama">
-        <svg viewBox="0 0 460 270" role="img" aria-labelledby="fig2-title fig2-desc">
+        <svg viewBox="0 0 460 270" role="img" aria-labelledby="fig2-title fig2-desc" xmlns="http://www.w3.org/2000/svg">
           <title id="fig2-title">Equilibrio en el mercado de dinero del banco central</title>
-          <desc id="fig2-desc">Eje horizontal H (dinero del banco central), eje vertical i (tasa de interés). Curva de demanda H-d con pendiente negativa en coral. Dos líneas de oferta verticales en índigo: la oferta original en H y una oferta mayor en H' tras una operación de mercado abierto. El equilibrio se mueve del punto A al punto A', con una tasa de interés menor, mostrando que un aumento de H baja i.</desc>
+          <desc id="fig2-desc">Eje horizontal H (dinero del banco central), eje vertical i (tasa de interés). Curva de demanda H-d con pendiente negativa en coral que corta exactamente por los puntos de equilibrio A y A'. Dos líneas de oferta verticales en índigo: la oferta original en H y una oferta mayor en H' tras una operación de mercado abierto. El equilibrio se mueve del punto A al punto A', con una tasa de interés menor, mostrando que un aumento de H baja i.</desc>
 
-          <path d="M60 70H420M60 165H420" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".3"/>
-          <path d="M140 20V220M320 20V220" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="3 5" opacity=".25"/>
+          <!-- Retícula de referencia -->
+          <path d="M60 70H420M60 112H420M60 165H420" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".3"/>
+          <path d="M140 20V220M240 20V220M320 20V220" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="3 5" opacity=".2"/>
 
-          <line x1="60" y1="20" x2="60" y2="220" stroke="#A3AABE" stroke-width="1.5"/>
-          <line x1="60" y1="220" x2="420" y2="220" stroke="#A3AABE" stroke-width="1.5"/>
-          <path d="M60 70H66M60 112H66M60 165H66" fill="none" stroke="#A3AABE" stroke-width="1" opacity=".5"/>
-          <path d="M140 220V226M240 220V226M320 220V226" fill="none" stroke="#A3AABE" stroke-width="1" opacity=".5"/>
-          <text x="30" y="24" font-family="Inter" font-size="12" fill="#A3AABE">i</text>
-          <text x="410" y="240" font-family="Inter" font-size="12" fill="#A3AABE">H</text>
+          <!-- Área sombreada de desplazamiento de oferta siguiendo la curva exacta de A a A' -->
+          <path d="M 240 220 V 112 C 280 138, 300 152, 320 165 V 220 Z" fill="#667FDA" opacity=".08"/>
 
-          <path d="M240 20V220L320 220V112Z" fill="#667FDA" opacity=".05"/>
+          <!-- Ejes cartesianos -->
+          <line x1="60" y1="20" x2="60" y2="220" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="60" y1="220" x2="420" y2="220" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Puntas de flecha en ejes -->
+          <path d="M56 26L60 18L64 26" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M414 216L422 220L414 224" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 
-          <line x1="240" y1="20" x2="240" y2="220" stroke="#667FDA" stroke-width="2.2"/>
-          <text x="200" y="35" font-family="JetBrains Mono" font-size="11" fill="#667FDA">Oferta H</text>
-          <line x1="320" y1="20" x2="320" y2="220" stroke="#667FDA" stroke-width="2.2" stroke-dasharray="6 4" opacity=".85"/>
-          <text x="326" y="35" font-family="JetBrains Mono" font-size="11" fill="#667FDA">Oferta H&#8242;</text>
+          <!-- Marcas en los ejes -->
+          <path d="M60 70H66M60 112H66M60 165H66" fill="none" stroke="#A3AABE" stroke-width="1.2" opacity=".6"/>
+          <path d="M140 220V226M240 220V226M320 220V226" fill="none" stroke="#A3AABE" stroke-width="1.2" opacity=".6"/>
+          <text x="30" y="24" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">i</text>
+          <text x="410" y="240" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">H</text>
 
-          <path d="M 90 40 Q 200 110 380 200" fill="none" stroke="#FF6F4A" stroke-width="2.5" stroke-linecap="round"/>
-          <text x="300" y="195" font-family="JetBrains Mono" font-size="11" fill="#FF6F4A">Demanda H<tspan baseline-shift="sub" font-size="8">d</tspan></text>
+          <!-- Líneas de Oferta Verticales -->
+          <!-- Oferta original H -->
+          <line x1="240" y1="20" x2="240" y2="220" stroke="#667FDA" stroke-width="2.4" stroke-linecap="round"/>
+          <text x="200" y="35" font-family="JetBrains Mono" font-weight="500" font-size="11" fill="#667FDA">Oferta H</text>
 
-          <line x1="60" y1="112" x2="240" y2="112" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 3"/>
-          <line x1="240" y1="112" x2="240" y2="220" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 3"/>
-          <line x1="60" y1="165" x2="320" y2="165" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 3"/>
-          <line x1="320" y1="165" x2="320" y2="220" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 3"/>
+          <!-- Oferta expandida H' -->
+          <line x1="320" y1="20" x2="320" y2="220" stroke="#667FDA" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="6 4" opacity=".9"/>
+          <text x="326" y="35" font-family="JetBrains Mono" font-weight="500" font-size="11" fill="#667FDA">Oferta H&#8242;</text>
 
-          <path d="M255 122C270 132 285 142 300 152" fill="none" stroke="#FFB188" stroke-width="1.6" stroke-dasharray="2 3" opacity=".8"/>
-          <path d="M292 148L300 152L294 143" fill="none" stroke="#FFB188" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/>
+          <!-- Curva de Demanda H^d: Pasa exactamente por A(240, 112) y A'(320, 165) -->
+          <path d="M 90 40 C 140 55, 180 73, 240 112 C 280 138, 349 189, 390 200" fill="none" stroke="#FF6F4A" stroke-width="3.2" stroke-linecap="round"/>
+          <path d="M 90 40 C 140 55, 180 73, 240 112 C 280 138, 349 189, 390 200" fill="none" stroke="#FFB188" stroke-width="1.2" stroke-dasharray="4 4" opacity=".35"/>
+          <text x="300" y="195" font-family="JetBrains Mono" font-weight="500" font-size="11" fill="#FF6F4A">Demanda H<tspan baseline-shift="sub" font-size="8">d</tspan></text>
 
-          <circle cx="240" cy="112" r="9" fill="#10172D" stroke="#EFF2F9" stroke-width="2.5"/>
-          <circle cx="240" cy="112" r="3.5" fill="#FF6F4A"/>
-          <text x="250" y="108" font-family="Inter" font-weight="600" font-size="12" fill="#EFF2F9">A</text>
-          <circle cx="320" cy="165" r="8" fill="#10172D" stroke="#FFB188" stroke-width="2.2" opacity=".95"/>
-          <circle cx="320" cy="165" r="3" fill="#FF6F4A" opacity=".95"/>
-          <text x="330" y="162" font-family="Inter" font-weight="600" font-size="12" fill="#EFF2F9">A&#8242;</text>
+          <!-- Proyecciones ortogonales a los ejes -->
+          <line x1="60" y1="112" x2="240" y2="112" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <line x1="240" y1="112" x2="240" y2="220" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <line x1="60" y1="165" x2="320" y2="165" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <line x1="320" y1="165" x2="320" y2="220" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="4 3"/>
 
+          <!-- Vector de transición dinámica de A a A' siguiendo la curva -->
+          <path d="M 252 120 C 270 132, 288 144, 306 156" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-dasharray="3 3" opacity=".9"/>
+          <path d="M 298 152 L 306 156 L 301 146" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".95"/>
+
+          <!-- Nodo de Equilibrio A en (240, 112) -->
+          <circle cx="240" cy="112" r="9.5" fill="#10172D" stroke="#EFF2F9" stroke-width="2.5"/>
+          <circle cx="240" cy="112" r="4" fill="#FF6F4A"/>
+          <text x="252" y="108" font-family="Inter" font-weight="600" font-size="12" fill="#EFF2F9">A</text>
+
+          <!-- Nodo de Equilibrio A' en (320, 165) -->
+          <circle cx="320" cy="165" r="8.5" fill="#10172D" stroke="#FFB188" stroke-width="2.2" opacity=".98"/>
+          <circle cx="320" cy="165" r="3.5" fill="#FF6F4A" opacity=".95"/>
+          <text x="332" y="162" font-family="Inter" font-weight="600" font-size="12" fill="#EFF2F9">A&#8242;</text>
+
+          <!-- Etiquetas de coordenadas en ejes -->
           <text x="20" y="116" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">i</text>
           <text x="20" y="169" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">i&#8242;</text>
           <text x="230" y="238" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">H</text>
           <text x="310" y="238" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">H&#8242;</text>
 
-          <rect x="72" y="140" width="148" height="24" rx="6" fill="#10172D" stroke="#2A324A"/>
+          <!-- Badge de síntesis económica -->
+          <rect x="72" y="140" width="148" height="24" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="1"/>
           <text x="146" y="156" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#A3AABE">H&#8593; &#8658; i&#8595; (ec. 4.6)</text>
         </svg>
       </div>
@@ -512,49 +575,77 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
 
     <figure>
       <div class="diagrama">
-        <svg viewBox="0 0 460 280" role="img" aria-labelledby="fig3-title fig3-desc">
+        <svg viewBox="0 0 460 280" role="img" aria-labelledby="fig3-title fig3-desc" xmlns="http://www.w3.org/2000/svg">
           <title id="fig3-title">Demanda de dinero, oferta de dinero y la trampa de liquidez</title>
           <desc id="fig3-desc">Eje horizontal M (dinero), eje vertical i. La curva de demanda de dinero, en coral, desciende y luego se vuelve horizontal en i=0 más allá de cierto punto — esa zona horizontal está sombreada y rotulada como la trampa de liquidez. Tres líneas verticales de oferta de dinero Ms, Ms' y Ms'', en índigo — las dos últimas intersectan la curva de demanda en su tramo horizontal, ambas con tasa de interés cero. Una flecha indica que la oferta de dinero sigue aumentando de Ms a Ms'' sin que la tasa de interés cambie.</desc>
 
-          <rect x="220" y="190" width="180" height="30" fill="#667FDA" opacity=".07"/>
+          <!-- Zona de Trampa de Liquidez (Tramo horizontal ZLB) -->
+          <rect x="220" y="190" width="180" height="30" fill="#667FDA" opacity=".09"/>
+          <!-- Trazos sutiles de patrón en la zona atrapada -->
+          <path d="M240 190V220M270 190V220M300 190V220M330 190V220M360 190V220M390 190V220" fill="none" stroke="#667FDA" stroke-width="1" stroke-dasharray="2 4" opacity=".2"/>
+
+          <!-- Retícula de referencia -->
           <path d="M75 60H400M75 130H400" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".3"/>
 
-          <line x1="55" y1="20" x2="55" y2="220" stroke="#A3AABE" stroke-width="1.5"/>
-          <line x1="55" y1="220" x2="420" y2="220" stroke="#A3AABE" stroke-width="1.5"/>
+          <!-- Ejes principales -->
+          <line x1="55" y1="20" x2="55" y2="220" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="55" y1="220" x2="420" y2="220" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Puntas de flecha -->
+          <path d="M51 26L55 18L59 26" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M414 216L422 220L414 224" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <!-- Marcas de calibración en ejes -->
           <path d="M55 60H61M55 95H61M55 130H61" fill="none" stroke="#A3AABE" stroke-width="1" opacity=".5"/>
           <path d="M150 220V226M260 220V226M340 220V226" fill="none" stroke="#A3AABE" stroke-width="1" opacity=".5"/>
-          <text x="28" y="24" font-family="Inter" font-size="12" fill="#A3AABE">i</text>
-          <text x="408" y="240" font-family="Inter" font-size="12" fill="#A3AABE">M</text>
+          <text x="28" y="24" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">i</text>
+          <text x="408" y="240" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">M</text>
 
-          <path d="M 90 30 C 150 90 190 160 220 190 L 400 190" fill="none" stroke="#FF6F4A" stroke-width="2.5" stroke-linecap="round"/>
-          <text x="330" y="180" font-family="JetBrains Mono" font-size="11" fill="#FF6F4A">M<tspan baseline-shift="super" font-size="8">d</tspan></text>
+          <!-- Curva de Demanda de Dinero M^d: pasa exactamente por A(150, 95) y se vuelve horizontal en i=0 -->
+          <path d="M 90 30 C 120 50, 135 70, 150 95 C 168 125, 192 165, 220 190 L 400 190" fill="none" stroke="#FF6F4A" stroke-width="3.2" stroke-linecap="round"/>
+          <path d="M 90 30 C 120 50, 135 70, 150 95 C 168 125, 192 165, 220 190 L 400 190" fill="none" stroke="#FFB188" stroke-width="1.2" stroke-dasharray="4 4" opacity=".35"/>
+          <text x="330" y="180" font-family="JetBrains Mono" font-weight="500" font-size="11" fill="#FF6F4A">M<tspan baseline-shift="super" font-size="8">d</tspan></text>
 
-          <line x1="150" y1="20" x2="150" y2="220" stroke="#667FDA" stroke-width="2.2"/>
-          <line x1="260" y1="20" x2="260" y2="190" stroke="#667FDA" stroke-width="2.2"/>
-          <line x1="340" y1="20" x2="340" y2="190" stroke="#667FDA" stroke-width="2.2"/>
+          <!-- Ofertas de Dinero Verticales -->
+          <!-- M^s (Régimen normal con i > 0) -->
+          <line x1="150" y1="20" x2="150" y2="220" stroke="#667FDA" stroke-width="2.4" stroke-linecap="round"/>
+          <!-- M^s' (Entrada en la trampa en B) -->
+          <line x1="260" y1="20" x2="260" y2="190" stroke="#667FDA" stroke-width="2.2" stroke-linecap="round"/>
+          <!-- M^s'' (Inyección estéril en C) -->
+          <line x1="340" y1="20" x2="340" y2="190" stroke="#667FDA" stroke-width="2.2" stroke-linecap="round"/>
+
           <text x="140" y="14" font-family="JetBrains Mono" font-size="10" fill="#667FDA">M<tspan baseline-shift="super" font-size="7">s</tspan></text>
           <text x="252" y="14" font-family="JetBrains Mono" font-size="10" fill="#667FDA">M<tspan baseline-shift="super" font-size="7">s'</tspan></text>
           <text x="332" y="14" font-family="JetBrains Mono" font-size="10" fill="#667FDA">M<tspan baseline-shift="super" font-size="7">s''</tspan></text>
 
-          <path d="M155 30H335" fill="none" stroke="#FFB188" stroke-width="1.6" opacity=".75"/>
-          <path d="M327 26L335 30L327 34" fill="none" stroke="#FFB188" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
+          <!-- Vector de inyección monetaria continua -->
+          <path d="M155 30H335" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-dasharray="4 3" opacity=".85"/>
+          <path d="M327 26L335 30L327 34" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
           <text x="180" y="24" font-family="JetBrains Mono" font-size="9" fill="#FFB188">banco central sigue inyectando dinero</text>
 
-          <circle cx="150" cy="95" r="7" fill="#10172D" stroke="#EFF2F9" stroke-width="2"/>
-          <circle cx="150" cy="95" r="2.8" fill="#FF6F4A"/>
-          <circle cx="260" cy="190" r="7" fill="#10172D" stroke="#EFF2F9" stroke-width="2"/>
-          <circle cx="260" cy="190" r="2.8" fill="#FFB188"/>
-          <circle cx="340" cy="190" r="7" fill="#10172D" stroke="#EFF2F9" stroke-width="2"/>
-          <circle cx="340" cy="190" r="2.8" fill="#FFB188"/>
-          <text x="160" y="90" font-family="Inter" font-weight="600" font-size="11" fill="#EFF2F9">A</text>
-          <text x="270" y="185" font-family="Inter" font-weight="600" font-size="11" fill="#EFF2F9">B</text>
-          <text x="350" y="185" font-family="Inter" font-weight="600" font-size="11" fill="#EFF2F9">C</text>
-          <text x="160" y="108" font-family="JetBrains Mono" font-size="9" fill="#A3AABE">i &gt; 0</text>
+          <!-- Nodos de Equilibrio A, B, C -->
+          <!-- Nodo A: Tasa positiva en (150, 95) -->
+          <circle cx="150" cy="95" r="8" fill="#10172D" stroke="#EFF2F9" stroke-width="2.4"/>
+          <circle cx="150" cy="95" r="3.5" fill="#FF6F4A"/>
+          <text x="162" y="90" font-family="Inter" font-weight="600" font-size="11" fill="#EFF2F9">A</text>
+          <text x="162" y="108" font-family="JetBrains Mono" font-size="9" fill="#A3AABE">i &gt; 0</text>
 
-          <line x1="55" y1="190" x2="220" y2="190" stroke="#2A324A" stroke-dasharray="4 3"/>
+          <!-- Nodo B: Límite ZLB en (260, 190) -->
+          <circle cx="260" cy="190" r="8" fill="#10172D" stroke="#FFB188" stroke-width="2.2"/>
+          <circle cx="260" cy="190" r="3.5" fill="#667FDA"/>
+          <text x="272" y="185" font-family="Inter" font-weight="600" font-size="11" fill="#EFF2F9">B</text>
+
+          <!-- Nodo C: Inyección cuantitativa saturada en (340, 190) -->
+          <circle cx="340" cy="190" r="8" fill="#10172D" stroke="#FFB188" stroke-width="2.2"/>
+          <circle cx="340" cy="190" r="3.5" fill="#667FDA"/>
+          <text x="352" y="185" font-family="Inter" font-weight="600" font-size="11" fill="#EFF2F9">C</text>
+
+          <!-- Cota horizontal en i=0 -->
+          <line x1="55" y1="190" x2="220" y2="190" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="4 3"/>
           <text x="20" y="194" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">0</text>
 
-          <text x="310" y="208" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#667FDA">trampa de liquidez (i = 0)</text>
+          <!-- Rótulo de la trampa -->
+          <rect x="225" y="196" width="170" height="20" rx="5" fill="#10172D" stroke="#2A324A" stroke-width="1"/>
+          <text x="310" y="209.5" text-anchor="middle" font-family="JetBrains Mono" font-weight="500" font-size="10" fill="#667FDA">trampa de liquidez (i = 0)</text>
         </svg>
       </div>
       <figcaption>En A, con oferta M<span class="mono">s</span>, la tasa de interés es positiva. En B y C, la tasa ya está en cero y aumentar la oferta de dinero no la baja más (Blanchard, Fig. 4-8).</figcaption>
