@@ -120,3 +120,20 @@ modular" más arriba en el mismo archivo.
 
 `02 Curso/Sistema de Diseño HTML.md` · `docs/Pedidos de Imagen - Sitio.md` ·
 `AGENTS.md` · bitácora del 2026-08-26 en `01 Meta - Aprendizaje/Bitácora/Entradas/`
+
+
+## Adenda — resuelto 2026-08-27 (sesión correcta de Modelos Macroeconómicos)
+
+Se preguntó a Navas directamente por los dos pendientes del punto 4, en vez de asumir:
+
+- **"Aplastada"** → contestó: espaciado general, los nichos de los 7 Temas, y el header/hero.
+  Se corrigió en `docs/index.html` (más padding vertical en el header, más separación entre
+  módulos vía `.modulo`, más padding interno en `.nicho`) sin tocar paleta ni estructura modular.
+- **"Banner"** → contestó: imagen grande tipo hero debajo del header. Se agregó la sección
+  `.hero-banner` con marcador `.img-request` en `docs/index.html`, y el brief `img-docs-03` en
+  `docs/Pedidos de Imagen - Sitio.md`, siguiendo el mismo protocolo de delegar ilustraciones a
+  Antigravity/Codex que ya se usó para `favicon.svg` y `header-mark.svg`. Pendiente: que
+  Antigravity/Codex entregue `docs/assets/hero-banner.svg`.
+
+El punto 3 (estado de git) ya estaba resuelto: el commit `7f0c3a3` del rediseño completo sí
+quedó registrado y pusheado — no quedó nada del rediseño sin comitear.

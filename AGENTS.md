@@ -7,12 +7,20 @@ primero. A diferencia de `00 Inicio/00 Inicio.md` (pensado para Obsidian: usa
 documento usa únicamente markdown plano y rutas de archivo relativas, para que
 funcione igual sin Obsidian.
 
-## ⚠️ Handoff pendiente (2026-08-26) — leer antes de tocar `docs/`
+## Handoff del 2026-08-26 — resuelto 2026-08-27
 
-Hay una nota de handoff sin resolver en
-`01 Meta - Aprendizaje/Handoff - Sesión Macro (2026-08-26).md` — la dejó una sesión de
-Claude que trabajó aquí por error (estaba adjunta al Project de Contabilidad Financiera,
-no al de este vault). Resume el rediseño completo del sitio hecho ese día (paleta, tipografía, estructura modular, sin gradientes) y dos pedidos explícitos de Navas sin resolver: la página se ve "aplastada" y quiere un banner en el sitio publicado. **Leer esa nota completa antes de generar o modificar nada en `docs/`.**
+Nota completa en `01 Meta - Aprendizaje/Handoff - Sesión Macro (2026-08-26).md` (la dejó una
+sesión de Claude que trabajó aquí por error, adjunta al Project de Contabilidad Financiera).
+Los dos pedidos pendientes de Navas ya se resolvieron:
+
+- **"Se ve aplastada"** → confirmado con Navas: espaciado general, los nichos de los 7 Temas, y
+  el header/hero. Corregido directamente en `docs/index.html` (más padding en header, más
+  separación entre módulos, más padding interno en cada nicho) — sin tocar la paleta ni la
+  estructura modular.
+- **"Banner"** → confirmado con Navas: imagen grande tipo hero debajo del header. Se agregó la
+  sección `.hero-banner` en `docs/index.html` con un marcador `.img-request`, y el brief
+  `img-docs-03` en `docs/Pedidos de Imagen - Sitio.md` — pendiente de que Antigravity/Codex
+  entregue el SVG (Claude no construye ilustraciones de marca directamente, ver protocolo abajo).
 
 ## Qué es esto
 

@@ -13,6 +13,13 @@ cero `gradient()`, `viewBox`, `role`/`aria-label`, balance de tags) antes de dar
 documento se conserva como referencia histórica del proceso y como plantilla para el próximo
 pedido de imagen de este sitio (ej. cuando se publique el primer Tema y haga falta una pieza nueva).
 
+**Actualización 2026-08-27 — nuevo pedido pendiente (img-docs-03).** Navas pidió un banner tipo
+hero para el sitio publicado (confirmado explícitamente: imagen grande debajo del header, no una
+franja de aviso ni algo dentro de un módulo). Se agregó el brief más abajo y un marcador
+`.img-request` en `docs/index.html` (sección `.hero-banner`, entre `</header>` y `<main>`) para que
+Antigravity/Codex lo reemplace igual que se hizo con los dos pedidos anteriores. img-docs-01 y
+img-docs-02 siguen completados y no requieren nada nuevo.
+
 Este documento es para **Antigravity o Codex** (u otro agente de código con capacidad de generar
 gráficos/ilustraciones), no para Claude. Corrige un error del pase anterior: el favicon y la
 ilustración del header del sitio de GitHub Pages los construyó Claude directamente en vez de
@@ -157,6 +164,56 @@ curvas con ejes punteados y puntos de equilibrio también funcionó bien; solo r
 - [x] Cero funciones `gradient()` en cualquier parte (CSS o `<linearGradient>`/`<radialGradient>`
   dentro del SVG) — solo color plano y capas de trazos con opacidad.
 - [x] Ninguna sombra ancha + borde combinados, ni radios >16px.
+
+---
+
+## img-docs-03 — Banner hero del sitio (pendiente, pedido 2026-08-27)
+
+**Ubicación:** sección `.hero-banner` en `docs/index.html`, entre `</header>` y `<main>` —
+ahora mismo contiene una tarjeta `.img-request` de marcador. Reemplazar **toda la sección**
+`<section class="hero-banner">...</section>` (incluida la tarjeta) por el markup final con el SVG.
+
+**Propósito:** Navas pidió explícitamente un banner para el sitio publicado; al preguntarle qué
+tipo, confirmó: una **imagen grande tipo hero**, debajo del header actual, a modo de portada visual
+del sitio — no una franja de aviso angosta ni algo metido dentro de un módulo existente.
+
+**Contenido sugerido:** una composición más amplia y horizontal que la del `header-mark.svg`
+(que es pequeña y vive detrás del título) — pensada para ocupar una franja de ancho completo por sí
+sola. Puede ampliar la misma idea visual del header (curvas de un modelo macro, puntos de
+equilibrio) a mayor escala y con más presencia, o proponer una composición distinta que funcione a
+lo ancho de toda la pantalla — evitar que se vea como una repetición recortada del `header-mark`
+existente. Sigue sin ser un diagrama técnico con ejes rotulados ni cifras (eso son los diagramas de
+contenido de cada Guía, que Claude construye directamente) — es una pieza de marca/ambientación.
+
+**Estilo:** mismas reglas que img-docs-01 y img-docs-02 — SVG de código (no PNG/JPG), solo la
+paleta Índigo profundo + coral de este documento, cero funciones `gradient()` en cualquier parte
+(ni CSS ni `<linearGradient>`/`<radialGradient>` como `fill` dentro del SVG) — profundidad con capas
+de trazos a distinta opacidad. Si lleva texto, solo Fraunces/Inter/JetBrains Mono. Debe verse bien
+sobre el fondo plano `#080C1C`/`#10172D` del sitio.
+
+**Dimensiones:** `viewBox` ancho y bajo, pensado para una franja de ancho completo (ej.
+`0 0 1600 400` o proporción similar) — a diferencia de `header-mark.svg`, este SVG no se recorta ni
+se posiciona en una esquina, ocupa el espacio horizontal completo de la sección.
+
+**Archivo:** `docs/assets/hero-banner.svg` (nuevo — no reemplaza ningún archivo existente).
+
+**Integración:** al recibir el SVG, quitar la tarjeta `.img-request` completa de `docs/index.html`
+dentro de `<section class="hero-banner">`, dejando el `<svg>` entregado en su lugar; conservar la
+sección `<section class="hero-banner">` como contenedor. La clase CSS `.img-request` y su badge
+pueden quedarse en el `<style>` sin usarse (ya sirvieron de plantilla para dos pedidos anteriores) o
+quitarse si Antigravity/Codex prefiere limpiar el archivo — no es obligatorio.
+
+### Checklist antes de entregar (img-docs-03)
+
+- [ ] Es un bloque `<svg>` de código, no un PNG/JPG adjunto.
+- [ ] Usa únicamente los colores hexadecimales de la paleta Índigo profundo + coral de arriba.
+- [ ] Usa únicamente Fraunces/Inter/JetBrains Mono si lleva texto.
+- [ ] `viewBox` ancho y bajo, pensado para ancho completo de pantalla, no para una esquina.
+- [ ] Cero funciones `gradient()` en cualquier parte — solo color plano y capas de trazos con opacidad.
+- [ ] Ninguna sombra ancha + borde combinados, ni `border-radius` mayor a 16px.
+- [ ] No se ve como un diagrama técnico con ejes/cifras — es pieza de marca, no un gráfico de datos.
+
+---
 
 ## Ver también
 

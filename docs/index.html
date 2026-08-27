@@ -33,7 +33,7 @@ a:focus-visible, button:focus-visible, .modnav a:focus-visible, .nicho-link:focu
 header{
   background:var(--bg-elev);
   border-bottom:1px solid var(--border);
-  padding:84px 24px 64px; position:relative; overflow:hidden;
+  padding:120px 24px 100px; position:relative; overflow:hidden;
 }
 header .wrap{max-width:700px; margin:0 auto; position:relative; z-index:1;}
 .header-mark{position:absolute; width:min(42vw, 400px); height:auto; right:max(-36px, calc(50% - 570px)); bottom:-48px; pointer-events:none;}
@@ -57,7 +57,7 @@ header p.sub{color:var(--text-dim); max-width:52ch; font-size:1.02rem;}
 .chip a.chip-in{color:var(--text-dim); text-decoration:none; transition:color .2s var(--ease), border-color .2s var(--ease);}
 .chip a.chip-in:hover{color:var(--coral-2); border-color:var(--coral-2);}
 
-main{max-width:700px; margin:0 auto; padding:48px 24px 96px;}
+main{max-width:700px; margin:0 auto; padding:72px 24px 120px;}
 
 /* ---------- Navegación de módulos (menú tipo "mueble", no lista larga) ---------- */
 .modnav{
@@ -71,12 +71,12 @@ main{max-width:700px; margin:0 auto; padding:48px 24px 96px;}
 .modnav a:hover{background:var(--bg-elev2); color:var(--text);}
 
 /* ---------- Módulos numerados (estructura tipo "bandeja") ---------- */
-.modulo{padding-top:40px; border-top:1px solid var(--border); margin-top:64px; scroll-margin-top:20px;}
+.modulo{padding-top:56px; border-top:1px solid var(--border); margin-top:96px; scroll-margin-top:20px;}
 .modulo:first-of-type{margin-top:0;}
 .modulo-head{display:flex; align-items:flex-end; gap:18px; margin-bottom:18px;}
 .modulo-num{font-family:'Fraunces',serif; font-style:italic; font-weight:500; font-size:2.3rem; line-height:1; color:var(--text-dim);}
 .modulo-head h2{font-size:1.45rem; font-weight:600;}
-.modulo-text{color:var(--text-dim); font-size:0.92rem; max-width:56ch; margin-bottom:28px;}
+.modulo-text{color:var(--text-dim); font-size:0.92rem; max-width:56ch; margin-bottom:36px;}
 
 /* Contenido que entra al hacer scroll — visible por defecto; JS solo agrega la clase que anima si hay soporte y sin prefers-reduced-motion */
 .reveal.reveal-play{opacity:0; transform:translateY(14px);}
@@ -95,7 +95,7 @@ main{max-width:700px; margin:0 auto; padding:48px 24px 96px;}
   gap:1px; background:var(--border);
 }
 .nicho{
-  background:var(--bg-elev); padding:22px 20px; display:flex; flex-direction:column; gap:10px;
+  background:var(--bg-elev); padding:32px 26px; display:flex; flex-direction:column; gap:14px;
   transition:background .2s var(--ease), transform .2s var(--ease);
 }
 .nicho .n-top{display:flex; justify-content:space-between; align-items:flex-start; gap:8px;}
@@ -126,11 +126,27 @@ footer{
   font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--text-dim);
 }
 
+/* ---------- Banner hero: sección de ancho completo entre el header y los módulos, en espera del SVG de Antigravity (img-docs-03) ---------- */
+.hero-banner{padding:56px 24px; border-bottom:1px solid var(--border);}
+.img-request{
+  max-width:700px; margin:0 auto; padding:40px 24px;
+  border:1px dashed var(--coral); border-radius:12px;
+  background:var(--bg-elev); text-align:center;
+}
+.img-request-badge{
+  display:inline-block; font-family:'JetBrains Mono',monospace; font-size:0.72rem; text-transform:uppercase;
+  letter-spacing:0.05em; color:var(--coral); border:1px solid var(--coral); border-radius:999px;
+  padding:4px 12px; margin-bottom:12px;
+}
+.img-request p{color:var(--text-dim); font-size:0.88rem; max-width:56ch; margin:0 auto;}
+.img-request code{font-family:'JetBrains Mono',monospace; font-size:0.82rem; color:var(--text);}
+
 @media (max-width:600px){
-  header{padding:56px 20px 44px;}
+  header{padding:76px 20px 60px;}
   .header-mark{width:300px; right:-128px; bottom:-64px; opacity:.5;}
   .recurso-row dt{width:100%;}
   .modulo-num{font-size:1.9rem;}
+  .hero-banner{padding:36px 20px;}
 }
 @media (prefers-reduced-motion: reduce){
   *, *::before, *::after{
@@ -179,6 +195,14 @@ footer{
     </div>
   </div>
 </header>
+
+<section class="hero-banner" aria-label="Banner del sitio (pendiente)">
+  <!-- PEDIDO DE IMAGEN: img-docs-03 -- banner hero del sitio, ver docs/Pedidos de Imagen - Sitio.md -->
+  <div class="img-request">
+    <span class="img-request-badge">Pedido de imagen pendiente</span>
+    <p>Banner hero horizontal para el sitio -- brief completo en <code>img-docs-03</code>, dentro de <code>Pedidos de Imagen - Sitio.md</code>. Reemplazar este bloque <code>.hero-banner</code> completo por el SVG entregado.</p>
+  </div>
+</section>
 
 <main>
   <nav class="modnav" aria-label="Módulos del sitio">
