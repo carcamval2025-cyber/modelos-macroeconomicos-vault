@@ -191,16 +191,22 @@ paleta Índigo profundo + coral de este documento, cero funciones `gradient()` e
 de trazos a distinta opacidad. Si lleva texto, solo Fraunces/Inter/JetBrains Mono. Debe verse bien
 sobre el fondo plano `#080C1C`/`#10172D` del sitio.
 
-**Dimensiones:** `viewBox` ancho y bajo, pensado para una franja de ancho completo (ej.
-`0 0 1600 400` o proporción similar) — a diferencia de `header-mark.svg`, este SVG no se recorta ni
-se posiciona en una esquina, ocupa el espacio horizontal completo de la sección.
+**Dimensiones — distinción importante:** esto es un banner que se extiende **a lo ancho, no a lo
+largo**. Es una franja horizontal de proporción muy ancha y baja — `viewBox="0 0 1600 320"` o
+similar (ancho:alto ≈ 4:1 o 5:1) — nunca una imagen alta/vertical. A diferencia de
+`header-mark.svg` (pequeña, vive detrás del título, se recorta en una esquina), este SVG ocupa el
+100% del ancho de la pantalla dentro de `.hero-banner` y debe verse bien tanto muy ancho (desktop)
+como angosto (móvil) sin perder su franja horizontal — el contenido interno debe poder recortarse
+por los lados en pantallas angostas sin que la composición dependa de ver los bordes completos.
 
 **Archivo:** `docs/assets/hero-banner.svg` (nuevo — no reemplaza ningún archivo existente).
 
 **Integración:** al recibir el SVG, quitar la tarjeta `.img-request` completa de `docs/index.html`
-dentro de `<section class="hero-banner">`, dejando el `<svg>` entregado en su lugar; conservar la
-sección `<section class="hero-banner">` como contenedor. La clase CSS `.img-request` y su badge
-pueden quedarse en el `<style>` sin usarse (ya sirvieron de plantilla para dos pedidos anteriores) o
+dentro de `<section class="hero-banner">` y poner el `<svg>` entregado en su lugar, con
+`width:100%; height:auto; display:block;` y **sin** `max-width` — debe llenar el ancho completo de
+la sección, que ya no tiene límite de 700px (a diferencia de `<main>`). Conservar
+`<section class="hero-banner">` como contenedor. La clase CSS `.img-request` y su badge pueden
+quedarse en el `<style>` sin usarse (ya sirvieron de plantilla para dos pedidos anteriores) o
 quitarse si Antigravity/Codex prefiere limpiar el archivo — no es obligatorio.
 
 ### Checklist antes de entregar (img-docs-03)
