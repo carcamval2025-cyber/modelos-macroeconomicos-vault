@@ -7,6 +7,13 @@ primero. A diferencia de `00 Inicio/00 Inicio.md` (pensado para Obsidian: usa
 documento usa únicamente markdown plano y rutas de archivo relativas, para que
 funcione igual sin Obsidian.
 
+## ⚠️ Handoff pendiente (2026-08-26) — leer antes de tocar `docs/`
+
+Hay una nota de handoff sin resolver en
+`01 Meta - Aprendizaje/Handoff - Sesión Macro (2026-08-26).md` — la dejó una sesión de
+Claude que trabajó aquí por error (estaba adjunta al Project de Contabilidad Financiera,
+no al de este vault). Resume el rediseño completo del sitio hecho ese día (paleta, tipografía, estructura modular, sin gradientes) y dos pedidos explícitos de Navas sin resolver: la página se ve "aplastada" y quiere un banner en el sitio publicado. **Leer esa nota completa antes de generar o modificar nada en `docs/`.**
+
 ## Qué es esto
 
 Base de conocimiento persistente para **Modelos Macroeconómicos** (Macro II, ESEN,
@@ -163,8 +170,9 @@ Diseño del índice: mismas tipografías y paleta Índigo profundo + coral de
 `02 Curso/Sistema de Diseño HTML.md` (rediseño 2026-08-26) — ya no usa colores fuera de
 la paleta documentada; el badge "Disponible" usa el token semántico `--success`
 (`#55C975`) definido ahí mismo, no un verde ad-hoc como en la versión anterior. El
-índice se reconstruyó como timeline vertical numerada (los 7 Temas son una secuencia
-real del cronograma) en vez de una grilla de tarjetas idénticas.
+índice sigue la estructura modular ("bandejas"/"nichos") descrita más arriba: los 7
+Temas viven como nichos en cuadrícula de bordes compartidos dentro del módulo "02 Ruta
+del curso", no como timeline ni como grilla de tarjetas idénticas.
 
 ## Cómo trabajar aquí
 
