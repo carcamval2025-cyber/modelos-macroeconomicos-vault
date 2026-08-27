@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 320" role="img" aria-label="Banner panorámico del espacio de fases y equilibrios macroeconómicos">
+  <!-- Fondo estructural plano -->
+  <rect width="1600" height="320" fill="#080C1C"/>
+
+  <!-- Retícula y líneas estructurales de regímenes -->
+  <path d="M0 40H1600M0 280H1600" fill="none" stroke="#2A324A" stroke-width="1.2" opacity=".4"/>
+  <path d="M0 160H1600" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 8" opacity=".25"/>
+  <path d="M240 30V290M680 30V290M1080 30V290M1420 30V290" fill="none" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="3 6" opacity=".4"/>
+
+  <!-- Marcas de calibración a lo largo de los horizontes -->
+  <path d="M80 276V284M160 276V284M240 274V286M320 276V284M400 276V284M480 276V284M560 276V284M640 276V284M680 274V286M760 276V284M840 276V284M920 276V284M1000 276V284M1080 274V286M1160 276V284M1240 276V284M1320 276V284M1420 274V286M1500 276V284M1560 276V284" fill="none" stroke="#A3AABE" stroke-width="1.2" opacity=".3"/>
+  <path d="M80 36V44M240 34V46M400 36V44M560 36V44M680 34V46M840 36V44M1000 36V44M1080 34V46M1240 36V44M1420 34V46M1560 36V44" fill="none" stroke="#A3AABE" stroke-width="1" opacity=".2"/>
+
+  <!-- Corrientes y campos vectoriales de fondo (Flujo dinámico macroeconómico) -->
+  <path d="M-20 80C350 40 700 130 1100 90S1620 50 1650 50" fill="none" stroke="#667FDA" stroke-width="1.2" opacity=".10"/>
+  <path d="M-20 110C380 70 730 160 1130 120S1620 80 1650 80" fill="none" stroke="#667FDA" stroke-width="1.2" opacity=".14"/>
+  <path d="M-20 150C420 110 770 200 1170 160S1620 120 1650 120" fill="none" stroke="#FFB188" stroke-width="1" stroke-dasharray="6 8" opacity=".12"/>
+  <path d="M-20 190C450 160 800 240 1200 190S1620 160 1650 160" fill="none" stroke="#FF6F4A" stroke-width="1.2" opacity=".14"/>
+  <path d="M-20 230C480 210 830 270 1230 230S1620 200 1650 200" fill="none" stroke="#667FDA" stroke-width="1" opacity=".10"/>
+
+  <!-- Arcos orbitales y conos de atracción -->
+  <path d="M520 280A220 220 0 0 1 920 60" fill="none" stroke="#667FDA" stroke-width="1.2" stroke-dasharray="4 6" opacity=".18"/>
+  <path d="M580 280A160 160 0 0 1 880 90" fill="none" stroke="#FFB188" stroke-width="1" opacity=".15"/>
+  <path d="M920 280A180 180 0 0 1 1280 100" fill="none" stroke="#667FDA" stroke-width="1.2" stroke-dasharray="3 5" opacity=".15"/>
+  <path d="M1240 280A190 190 0 0 1 1580 80" fill="none" stroke="#EFF2F9" stroke-width="1" opacity=".10"/>
+
+  <!-- Curvas del Modelo IS-LM (Mercado de Bienes y Financiero) -->
+  <!-- Curva IS base -->
+  <path d="M120 60C380 100 560 145 960 220" fill="none" stroke="#FF6F4A" stroke-width="4.5" stroke-linecap="round" opacity=".88"/>
+  <!-- Curva IS' multiplicador fiscal -->
+  <path d="M200 40C460 80 640 125 1040 200" fill="none" stroke="#FFB188" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="8 5" opacity=".60"/>
+  <!-- Traza IS'' tenue -->
+  <path d="M280 25C540 65 720 110 1120 185" fill="none" stroke="#FFB188" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 6" opacity=".30"/>
+
+  <!-- Curva LM base (Mercado monetario / Regla de política) -->
+  <path d="M140 265C380 230 560 185 960 85" fill="none" stroke="#667FDA" stroke-width="4.5" stroke-linecap="round" opacity=".92"/>
+  <!-- Curva LM' ajuste de tasas -->
+  <path d="M220 280C460 245 640 200 1040 100" fill="none" stroke="#667FDA" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="7 6" opacity=".55"/>
+
+  <!-- Curva de Phillips / Oferta Agregada (Mercado Laboral & Precios) en Régimen III -->
+  <path d="M920 65C1000 100 1060 140 1260 240" fill="none" stroke="#FF6F4A" stroke-width="3.5" stroke-linecap="round" opacity=".80"/>
+  <path d="M980 48C1060 83 1120 123 1320 223" fill="none" stroke="#FFB188" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 5" opacity=".50"/>
+
+  <!-- Frontera de Oferta Agregada a Largo Plazo (LRAS / Y_n) -->
+  <path d="M1080 45V275" fill="none" stroke="#EFF2F9" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 6" opacity=".65"/>
+
+  <!-- Función de Producción / Crecimiento de Solow (Senda de Estado Estacionario) en Régimen IV -->
+  <path d="M1180 235C1300 135 1420 105 1580 95" fill="none" stroke="#EFF2F9" stroke-width="3.5" stroke-linecap="round" opacity=".85"/>
+  <path d="M1180 260L1580 125" fill="none" stroke="#667FDA" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6 5" opacity=".70"/>
+  <path d="M1240 270L1580 155" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-dasharray="4 5" opacity=".45"/>
+
+  <!-- Proyecciones ortogonales y cotas de equilibrio -->
+  <path d="M680 40V280M120 165H960" fill="none" stroke="#FF6F4A" stroke-width="1.2" stroke-dasharray="3 5" opacity=".35"/>
+  <path d="M760 40V280M200 135H1040" fill="none" stroke="#FFB188" stroke-width="1.2" stroke-dasharray="3 5" opacity=".35"/>
+  <path d="M1080 150H920M1080 150H1260" fill="none" stroke="#667FDA" stroke-width="1.2" stroke-dasharray="3 5" opacity=".35"/>
+  <path d="M1420 40V280M1180 105H1580" fill="none" stroke="#EFF2F9" stroke-width="1.2" stroke-dasharray="3 5" opacity=".30"/>
+  <path d="M240 40V280M0 195H400" fill="none" stroke="#A3AABE" stroke-width="1" stroke-dasharray="2 4" opacity=".25"/>
+
+  <!-- Vectores de Transición Dinámica con cabezas de flecha -->
+  <!-- Vector E_0 -> E_1 (Ajuste de corto plazo) -->
+  <path d="M680 165C710 155 735 145 755 138" fill="none" stroke="#FFB188" stroke-width="2" stroke-dasharray="3 3" opacity=".85"/>
+  <path d="M747 144L755 138L750 150" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+
+  <!-- Vector E_1 -> E_2 (Ajuste salarial y de precios hacia LRAS) -->
+  <path d="M775 133C870 120 980 130 1065 147" fill="none" stroke="#667FDA" stroke-width="1.8" stroke-dasharray="4 4" opacity=".75"/>
+  <path d="M1054 142L1065 147L1057 154" fill="none" stroke="#667FDA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/>
+
+  <!-- Vector E_2 -> E* (Acumulación de capital y progreso tecnológico a largo plazo) -->
+  <path d="M1100 148C1190 135 1300 115 1405 106" fill="none" stroke="#EFF2F9" stroke-width="1.8" stroke-dasharray="4 6" opacity=".70"/>
+  <path d="M1394 102L1405 106L1396 114" fill="none" stroke="#EFF2F9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/>
+
+  <!-- Nodos de Equilibrio (Constelación Macro de 5 fases) -->
+  <!-- 1. Nodo Precursor E_-1 en Régimen I (x: 240, y: 195) -->
+  <circle cx="240" cy="195" r="8" fill="#10172D" stroke="#A3AABE" stroke-width="2" opacity=".85"/>
+  <circle cx="240" cy="195" r="2.5" fill="#EFF2F9"/>
+
+  <!-- 2. Nodo Central Principal E_0 en Régimen II (x: 680, y: 165) -->
+  <circle cx="680" cy="165" r="12.5" fill="#10172D" stroke="#EFF2F9" stroke-width="3.5" opacity=".98"/>
+  <circle cx="680" cy="165" r="6" fill="#FF6F4A"/>
+  <circle cx="680" cy="165" r="2.5" fill="#EFF2F9"/>
+
+  <!-- 3. Nodo Desplazado E_1 (x: 760, y: 135) -->
+  <circle cx="760" cy="135" r="9.5" fill="#10172D" stroke="#667FDA" stroke-width="2.5" opacity=".95"/>
+  <circle cx="760" cy="135" r="4" fill="#FFB188" opacity=".95"/>
+
+  <!-- 4. Nodo de Ajuste de Precios E_2 en Régimen III (x: 1080, y: 150) -->
+  <circle cx="1080" cy="150" r="10" fill="#10172D" stroke="#FF6F4A" stroke-width="2.5" opacity=".95"/>
+  <circle cx="1080" cy="150" r="4" fill="#667FDA" opacity=".95"/>
+
+  <!-- 5. Nodo de Estado Estacionario E* en Régimen IV (x: 1420, y: 105) -->
+  <circle cx="1420" cy="105" r="12" fill="#10172D" stroke="#EFF2F9" stroke-width="3" opacity=".98"/>
+  <circle cx="1420" cy="105" r="5.5" fill="#667FDA"/>
+  <circle cx="1420" cy="105" r="2.2" fill="#EFF2F9"/>
+
+  <!-- Micro nodos de articulación sectorial y coordenadas -->
+  <circle cx="440" cy="125" r="3.5" fill="#667FDA" opacity=".6"/>
+  <circle cx="960" cy="85" r="3.5" fill="#667FDA" opacity=".6"/>
+  <circle cx="960" cy="220" r="3.5" fill="#FF6F4A" opacity=".6"/>
+  <circle cx="1260" cy="240" r="3.5" fill="#FFB188" opacity=".6"/>
+  <circle cx="1520" cy="100" r="3.5" fill="#EFF2F9" opacity=".6"/>
+
+  <!-- Indicadores de cruz técnica (+) en intersecciones clave -->
+  <path d="M436 125H444M440 121V129" fill="none" stroke="#2A324A" stroke-width="1.5" opacity=".8"/>
+  <path d="M956 85H964M960 81V89" fill="none" stroke="#2A324A" stroke-width="1.5" opacity=".8"/>
+  <path d="M956 220H964M960 216V224" fill="none" stroke="#2A324A" stroke-width="1.5" opacity=".8"/>
+  <path d="M1256 240H1264M1260 236V244" fill="none" stroke="#2A324A" stroke-width="1.5" opacity=".8"/>
+</svg>

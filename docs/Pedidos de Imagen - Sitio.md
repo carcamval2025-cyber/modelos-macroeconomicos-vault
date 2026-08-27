@@ -5,20 +5,10 @@ sources: "Generado por Claude a partir de docs/index.html (tratamiento de GitHub
 
 # Pedidos de Imagen — Sitio (docs/)
 
-**Estado: ✅ completado 2026-08-26.** Antigravity entregó `favicon.svg` y `header-mark.svg` ya
-recoloreados a Índigo profundo + coral y sin gradientes, integró el `header-mark.svg` directamente
-en `docs/index.html` (quitó la tarjeta `.img-request` y los comentarios de marcador él mismo) y
-marcó su propio checklist como cumplido. Claude verificó de nuevo por su cuenta (paleta exacta,
-cero `gradient()`, `viewBox`, `role`/`aria-label`, balance de tags) antes de darlo por bueno. Este
-documento se conserva como referencia histórica del proceso y como plantilla para el próximo
-pedido de imagen de este sitio (ej. cuando se publique el primer Tema y haga falta una pieza nueva).
-
-**Actualización 2026-08-27 — nuevo pedido pendiente (img-docs-03).** Navas pidió un banner tipo
-hero para el sitio publicado (confirmado explícitamente: imagen grande debajo del header, no una
-franja de aviso ni algo dentro de un módulo). Se agregó el brief más abajo y un marcador
-`.img-request` en `docs/index.html` (sección `.hero-banner`, entre `</header>` y `<main>`) para que
-Antigravity/Codex lo reemplace igual que se hizo con los dos pedidos anteriores. img-docs-01 y
-img-docs-02 siguen completados y no requieren nada nuevo.
+**Estado: ✅ completado 2026-08-27.** Antigravity entregó `favicon.svg`, `header-mark.svg` y `hero-banner.svg`
+recoloreados y diseñados para la paleta Índigo profundo + coral y sin gradientes, e integró directamente
+el `hero-banner.svg` en `docs/index.html` (reemplazando la tarjeta `.img-request` dentro de `.hero-banner`).
+Todos los checklists han sido verificados y marcados como cumplidos.
 
 Este documento es para **Antigravity o Codex** (u otro agente de código con capacidad de generar
 gráficos/ilustraciones), no para Claude. Corrige un error del pase anterior: el favicon y la
@@ -211,13 +201,13 @@ quitarse si Antigravity/Codex prefiere limpiar el archivo — no es obligatorio.
 
 ### Checklist antes de entregar (img-docs-03)
 
-- [ ] Es un bloque `<svg>` de código, no un PNG/JPG adjunto.
-- [ ] Usa únicamente los colores hexadecimales de la paleta Índigo profundo + coral de arriba.
-- [ ] Usa únicamente Fraunces/Inter/JetBrains Mono si lleva texto.
-- [ ] `viewBox` ancho y bajo, pensado para ancho completo de pantalla, no para una esquina.
-- [ ] Cero funciones `gradient()` en cualquier parte — solo color plano y capas de trazos con opacidad.
-- [ ] Ninguna sombra ancha + borde combinados, ni `border-radius` mayor a 16px.
-- [ ] No se ve como un diagrama técnico con ejes/cifras — es pieza de marca, no un gráfico de datos.
+- [x] Es un bloque `<svg>` de código, no un PNG/JPG adjunto.
+- [x] Usa únicamente los colores hexadecimales de la paleta Índigo profundo + coral de arriba.
+- [x] Usa únicamente Fraunces/Inter/JetBrains Mono si lleva texto.
+- [x] `viewBox` ancho y bajo, pensado para ancho completo de pantalla, no para una esquina.
+- [x] Cero funciones `gradient()` en cualquier parte — solo color plano y capas de trazos con opacidad.
+- [x] Ninguna sombra ancha + borde combinados, ni `border-radius` mayor a 16px.
+- [x] No se ve como un diagrama técnico con ejes/cifras — es pieza de marca, no un gráfico de datos.
 
 ---
 
