@@ -26,7 +26,7 @@
   <!-- Curva de Demanda de Dinero M^d: pasa exactamente por A(150, 95) y se vuelve horizontal en i=0 -->
   <path d="M 90 30 C 120 50, 135 70, 150 95 C 168 125, 192 165, 220 190 L 400 190" fill="none" stroke="#FF6F4A" stroke-width="3.2" stroke-linecap="round"/>
   <path d="M 90 30 C 120 50, 135 70, 150 95 C 168 125, 192 165, 220 190 L 400 190" fill="none" stroke="#FFB188" stroke-width="1.2" stroke-dasharray="4 4" opacity=".35"/>
-  <text x="330" y="180" font-family="JetBrains Mono" font-weight="500" font-size="11" fill="#FF6F4A">M<tspan baseline-shift="super" font-size="8">d</tspan></text>
+  <text x="395" y="178" font-family="JetBrains Mono" font-weight="600" font-size="11" fill="#FF6F4A">M<tspan baseline-shift="super" font-size="8">d</tspan></text>
 
   <!-- Ofertas de Dinero Verticales -->
   <!-- M^s (Régimen normal con i > 0) -->
