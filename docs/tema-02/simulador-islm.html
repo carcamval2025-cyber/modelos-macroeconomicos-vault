@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulador de choques — IS-LM (repaso Control 1)</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080C1C; --bg-elev:#10172D; --bg-elev2:#1B223C; --border:#2A324A;
+  --text:#EFF2F9; --text-dim:#A3AABE;
+  --indigo-mid:#667FDA; --coral:#FF6F4A; --coral-2:#FFB188;
+  --success:#55C975; --danger:#FB5668;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{background:var(--bg); color-scheme:dark;}
+body{
+  font-family:'Inter',sans-serif;
+  background-color:var(--bg);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M 48 0 L 0 0 0 48' fill='none' stroke='%232A324A' stroke-width='0.75' stroke-opacity='0.35'/%3E%3Ccircle cx='48' cy='48' r='1.2' fill='%23667FDA' fill-opacity='0.4'/%3E%3C/svg%3E");
+  background-attachment:fixed;
+  color:var(--text); line-height:1.65; font-weight:400;
+}
+h1,h2,h3{font-family:'Fraunces',serif; color:var(--text); letter-spacing:-0.02em;}
+em{font-style:italic; color:var(--coral);}
+.mono{font-family:'JetBrains Mono',monospace; font-variant-numeric:tabular-nums;}
+a{color:var(--coral-2);}
+button{font-family:inherit; cursor:pointer;}
+a:focus-visible, button:focus-visible{
+  outline:2px solid var(--coral); outline-offset:3px; border-radius:4px;
+}
+
+header{
+  background:var(--bg-elev); border-bottom:1px solid var(--border);
+  padding:72px 24px 48px;
+}
+header .wrap{max-width:820px; margin:0 auto;}
+.volver{
+  display:inline-flex; align-items:center; gap:6px; font-family:'JetBrains Mono',monospace; font-size:0.76rem;
+  color:var(--text-dim); text-decoration:none; margin-bottom:28px;
+}
+.volver:hover{color:var(--coral-2);}
+.eyebrow{
+  font-family:'JetBrains Mono',monospace; font-size:0.76rem; letter-spacing:0.09em; text-transform:uppercase;
+  color:var(--coral); font-weight:600; margin-bottom:16px;
+}
+h1{font-size:clamp(2rem, 4.5vw, 3rem); font-weight:600; margin-bottom:14px;}
+header p.sub{color:var(--text-dim); max-width:62ch; font-size:1rem;}
+.meta-row{display:flex; gap:8px; flex-wrap:wrap; margin-top:22px;}
+.chip{padding:2px; border-radius:9px; background:rgba(239,242,249,0.04);}
+.chip-in{
+  display:block; font-family:'JetBrains Mono',monospace; font-size:0.76rem; color:var(--text-dim);
+  background:var(--bg); border:1px solid var(--border); border-radius:7px; padding:6px 12px;
+}
+
+main{max-width:820px; margin:0 auto; padding:56px 24px 120px;}
+
+/* ---------- Marcador (panel de progreso/métricas requerido por el sistema de diseño) ---------- */
+.marcador{
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;
+  padding:20px 24px; border:1px solid var(--border); border-radius:14px; background:var(--bg-elev);
+  margin-bottom:40px;
+}
+.marcador-stats{display:flex; gap:28px; flex-wrap:wrap;}
+.stat{display:flex; flex-direction:column; gap:2px;}
+.stat .num{font-family:'JetBrains Mono',monospace; font-weight:600; font-size:1.5rem; color:var(--text);}
+.stat .lbl{font-family:'JetBrains Mono',monospace; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-dim);}
+.btn-reset{
+  font-family:'JetBrains Mono',monospace; font-size:0.76rem; color:var(--text-dim);
+  background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:8px 14px;
+  transition:color .2s var(--ease), border-color .2s var(--ease);
+}
+.btn-reset:hover{color:var(--coral-2); border-color:var(--coral-2);}
+
+/* ---------- Selector de choque ---------- */
+h2.seccion{font-size:1.1rem; font-weight:600; margin-bottom:14px;}
+.choques-grid{
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:1px;
+  background:var(--border); border:1px solid var(--border); border-radius:12px; overflow:hidden; margin-bottom:36px;
+}
+.choque-btn{
+  background:var(--bg-elev); border:none; padding:18px 20px; text-align:left; display:flex; gap:12px; align-items:flex-start;
+  transition:background .2s var(--ease);
+}
+.choque-btn:hover{background:var(--bg-elev2);}
+.choque-btn.activo{background:var(--bg-elev2); box-shadow:inset 3px 0 0 var(--coral);}
+.choque-badge{
+  flex-shrink:0; width:28px; height:28px; border-radius:8px; display:flex; align-items:center; justify-content:center;
+  font-family:'JetBrains Mono',monospace; font-weight:700; font-size:0.8rem;
+}
+.choque-badge.f{background:rgba(255,111,74,0.14); color:var(--coral);}
+.choque-badge.m{background:rgba(102,127,218,0.16); color:var(--indigo-mid);}
+.choque-badge.x{background:rgba(163,170,190,0.14); color:var(--text-dim);}
+.choque-btn h3{font-size:0.92rem; font-weight:600; color:var(--text); margin-bottom:3px; font-family:'Inter',sans-serif;}
+.choque-btn p{font-size:0.78rem; color:var(--text-dim); line-height:1.4;}
+
+/* ---------- Enunciado del escenario ---------- */
+.enunciado{
+  border:1px solid var(--border); border-radius:14px; padding:22px 24px; margin-bottom:32px; background:var(--bg-elev);
+  border-left:3px solid var(--coral);
+}
+.enunciado p{font-size:0.95rem;}
+
+/* ---------- Tabla de predicción ---------- */
+.tabla-prediccion{display:flex; flex-direction:column; border-top:1px solid var(--border); margin-bottom:24px;}
+.fila-var{
+  display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 4px;
+  border-bottom:1px solid var(--border); flex-wrap:wrap;
+}
+.fila-var .nombre-var{font-size:0.9rem; color:var(--text); min-width:220px;}
+.opciones{display:flex; gap:6px;}
+.opcion-btn{
+  font-family:'JetBrains Mono',monospace; font-size:0.76rem; padding:7px 12px; border-radius:8px;
+  background:var(--bg); border:1px solid var(--border); color:var(--text-dim);
+  transition:border-color .2s var(--ease), color .2s var(--ease), background .2s var(--ease);
+}
+.opcion-btn:hover{border-color:var(--coral-2); color:var(--text);}
+.opcion-btn[aria-pressed="true"]{background:var(--bg-elev2); border-color:var(--indigo-mid); color:var(--text); font-weight:600;}
+.fila-var.correcta .opcion-btn[aria-pressed="true"]{background:rgba(85,201,117,0.14); border-color:var(--success); color:var(--success);}
+.fila-var.incorrecta .opcion-btn[aria-pressed="true"]{background:rgba(251,86,104,0.12); border-color:var(--danger); color:var(--danger);}
+.fila-var.incorrecta .opcion-btn.era-correcta{background:rgba(85,201,117,0.14); border-color:var(--success); color:var(--success);}
+
+.btn-verificar{
+  display:block; width:100%; font-family:'JetBrains Mono',monospace; font-size:0.9rem; font-weight:600;
+  padding:14px; border-radius:10px; border:1px solid var(--coral); background:rgba(255,111,74,0.08); color:var(--coral);
+  margin-bottom:40px; transition:background .2s var(--ease);
+}
+.btn-verificar:hover:not(:disabled){background:rgba(255,111,74,0.16);}
+.btn-verificar:disabled{opacity:0.4; cursor:not-allowed;}
+
+/* ---------- Diagrama ---------- */
+.diagrama-wrap{border:1px solid var(--border); border-radius:14px; overflow:hidden; margin-bottom:32px; background:var(--bg-elev);}
+.diagrama-wrap svg{width:100%; height:auto; display:block;}
+.fade{opacity:0; transition:opacity .7s var(--ease);}
+.fade.mostrar{opacity:1;}
+.curva-fantasma{transition:opacity .7s var(--ease), stroke-dasharray .01s;}
+
+/* ---------- Explicación ---------- */
+.explicacion{
+  border:1px solid var(--border); border-radius:14px; padding:22px 24px; background:var(--bg-elev);
+  border-left:3px solid var(--indigo-mid); margin-bottom:32px;
+}
+.explicacion h3{font-size:0.95rem; margin-bottom:10px; font-family:'Inter',sans-serif; font-weight:600;}
+.explicacion p{font-size:0.9rem; margin-bottom:10px; color:var(--text-dim);}
+.explicacion p strong{color:var(--text);}
+
+.btn-siguiente{
+  display:inline-flex; align-items:center; gap:8px; font-family:'JetBrains Mono',monospace; font-size:0.85rem; font-weight:600;
+  padding:12px 20px; border-radius:10px; border:1px solid var(--indigo-mid); background:rgba(102,127,218,0.1); color:var(--indigo-mid);
+}
+.btn-siguiente:hover{background:rgba(102,127,218,0.18);}
+
+footer{
+  border-top:1px solid var(--border); padding:32px 24px; text-align:center;
+  font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--text-dim);
+}
+
+@media (max-width:600px){
+  header{padding:56px 20px 40px;}
+  .fila-var{flex-direction:column; align-items:flex-start;}
+}
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    animation-duration:0.01ms !important; animation-iteration-count:1 !important;
+    transition-duration:0.01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="volver" href="index.html">&larr; Repaso Tema 2 — Modelo IS-LM</a>
+    <div class="eyebrow">ESEN · Macro II · Tema 2 · Actividad interactiva</div>
+    <h1>Simulador de <em>choques</em> IS-LM</h1>
+    <p class="sub">Elige un choque de política fiscal, monetaria o exógeno. Antes de ver el gráfico, predice qué pasa con cada variable — igual que tendrías que razonarlo en el Control 1, sin la curva ya dibujada.</p>
+    <div class="meta-row">
+      <span class="chip"><span class="chip-in">Blanchard, cap. 5 (secc. 5-1 a 5-4)</span></span>
+      <span class="chip"><span class="chip-in">Práctica ilimitada — no es el Control 1</span></span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <div class="marcador">
+    <div class="marcador-stats">
+      <div class="stat"><span class="num mono" id="statAciertos">0</span><span class="lbl">Aciertos</span></div>
+      <div class="stat"><span class="num mono" id="statTotal">0</span><span class="lbl">Filas evaluadas</span></div>
+      <div class="stat"><span class="num mono" id="statRondas">0</span><span class="lbl">Choques resueltos</span></div>
+    </div>
+    <button class="btn-reset" id="btnReiniciarMarcador">Reiniciar marcador</button>
+  </div>
+
+  <h2 class="seccion">1 · Elige el choque</h2>
+  <div class="choques-grid" id="choquesGrid" role="group" aria-label="Selector de choque económico"></div>
+
+  <h2 class="seccion">2 · Predice cada variable</h2>
+  <div class="enunciado" id="enunciado"></div>
+
+  <div class="tabla-prediccion" id="tablaPrediccion"></div>
+
+  <button class="btn-verificar" id="btnVerificar" disabled>Verificar respuestas (responde las 11 filas)</button>
+
+  <div id="resultado" hidden>
+    <h2 class="seccion">3 · Qué pasó realmente</h2>
+    <div class="diagrama-wrap">
+      <svg viewBox="0 0 460 270" role="img" aria-labelledby="fig-sim-title" xmlns="http://www.w3.org/2000/svg">
+        <title id="fig-sim-title">Diagrama IS-LM del choque simulado</title>
+        <rect width="100%" height="100%" fill="#10172D"/>
+
+        <!-- Ejes -->
+        <line x1="60" y1="25" x2="60" y2="225" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="60" y1="225" x2="425" y2="225" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M56 31L60 23L64 31" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M419 221L427 225L419 229" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="48" y="27" text-anchor="end" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">i</text>
+        <text x="428" y="240" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">Y</text>
+
+        <!-- Curvas originales (siempre visibles al inicio) -->
+        <path id="isOriginal" d="M136 45 Q225.1 125, 337.5 205" fill="none" stroke="#FF6F4A" stroke-width="2.4" stroke-linecap="round"/>
+        <text id="isOriginalLbl" x="345" y="211" font-family="JetBrains Mono" font-weight="700" font-size="12" fill="#FF6F4A">IS</text>
+        <path id="lmOriginal" d="M75 140 L405 140" fill="none" stroke="#667FDA" stroke-width="2.2" stroke-linecap="round"/>
+        <text id="lmOriginalLbl" x="410" y="136" font-family="JetBrains Mono" font-weight="700" font-size="12" fill="#667FDA">LM</text>
+
+        <!-- Curvas desplazadas (ocultas hasta verificar) -->
+        <path id="isNueva" class="fade" d="M136 45 Q225.1 125, 337.5 205" fill="none" stroke="#FF6F4A" stroke-width="2.4" stroke-linecap="round"/>
+        <text id="isNuevaLbl" class="fade" x="0" y="0" font-family="JetBrains Mono" font-weight="700" font-size="11.5" fill="#FF6F4A">IS&#8242;</text>
+        <path id="lmNueva" class="fade" d="M75 140 L405 140" fill="none" stroke="#667FDA" stroke-width="2.2" stroke-linecap="round"/>
+        <text id="lmNuevaLbl" class="fade" x="0" y="0" font-family="JetBrains Mono" font-weight="700" font-size="11.5" fill="#667FDA">LM&#8242;</text>
+
+        <!-- Flecha de movimiento (oculta hasta verificar) -->
+        <line id="flechaMov" class="fade" x1="250" y1="140" x2="250" y2="140" stroke="#A3AABE" stroke-width="1.4" stroke-dasharray="3 2"/>
+
+        <!-- Punto A (original, siempre visible) -->
+        <circle cx="250" cy="140" r="4.5" fill="#10172D" stroke="#EFF2F9" stroke-width="1.8"/>
+        <text x="238" y="156" font-family="Inter" font-weight="800" font-size="13" fill="#EFF2F9">A</text>
+
+        <!-- Punto A' (oculto hasta verificar) -->
+        <circle id="puntoNuevo" class="fade" cx="250" cy="140" r="4.5" fill="#10172D" stroke="#FFB188" stroke-width="1.8"/>
+        <text id="puntoNuevoLbl" class="fade" x="250" y="140" font-family="Inter" font-weight="800" font-size="13" fill="#FFB188">A&#8242;</text>
+      </svg>
+    </div>
+    <div class="explicacion" id="explicacion"></div>
+    <button class="btn-siguiente" id="btnSiguiente">Elegir otro choque &rarr;</button>
+  </div>
+
+</main>
+
+<footer>
+  Herramienta de práctica construida junto con Claude — no sustituye la Guía de ejercicios 1 ni es el Control 1 real. Fuente: Blanchard, <em>Macroeconomics</em> 9e, cap. 5 (secc. 5-1 a 5-4). ·
+  <a href="index.html">Volver al Repaso — Tema 2</a>
+</footer>
+
+<script>
+const VARIABLES = [
+  "Tasa de interés (i)",
+  "Nivel de producto (Y)",
+  "Consumo privado",
+  "Inversión privada",
+  "Ahorro privado",
+  "Importaciones",
+  "Exportaciones",
+  "Balanza comercial (X&minus;M)",
+  "Demanda de dinero real",
+  "Oferta de dinero real",
+  "Tasa de desempleo"
+];
+
+const ISO = "M136 45 Q225.1 125, 337.5 205"; // IS original
+const LMO = "M75 140 L405 140"; // LM original
+
+const ESCENARIOS = [
+  {
+    id: "fiscal-exp", cat: "f", nombre: "Política fiscal expansiva (↑G)",
+    resumen: "El gasto público sube.",
+    enunciado: "El gobierno anuncia un aumento del gasto público (↑G) para estimular la economía. Los impuestos y la tasa de política monetaria no cambian.",
+    isAfter: "M186 45 Q275.1 125, 387.5 205", lmAfter: null, eq: [300, 140],
+    signos: ["igual","sube","sube","sube","sube","sube","igual","baja","sube","sube","baja"],
+    explicacion: [
+      "<strong>Paso 1 — ¿qué curva se mueve?</strong> G entra directo en la demanda de bienes (Y = C + I + G), así que la IS se desplaza a la derecha. La LM no se mueve: el banco central no cambió su tasa.",
+      "<strong>Paso 2 — ¿cómo se mueve el equilibrio?</strong> Se mueve a lo largo de la LM (que sigue siendo la misma recta horizontal): mayor Y, la misma i.",
+      "<strong>Paso 3 — componente por componente.</strong> Con Y mayor y T constante, el ingreso disponible sube → consumo sube. La inversión sube porque depende positivamente de Y (i no cambió). El ahorro privado sube junto con el ingreso disponible. Las importaciones suben con el mayor Y; las exportaciones no cambian, así que la balanza comercial empeora. La demanda de dinero real sube (más Y, misma i) y el banco central debe dejar subir la oferta de dinero real en la misma medida para sostener la tasa fija. Con más producto, el desempleo baja (Ley de Okun)."
+    ]
+  },
+  {
+    id: "fiscal-con", cat: "f", nombre: "Política fiscal contractiva (↑T)",
+    resumen: "Suben los impuestos.",
+    enunciado: "El gobierno sube los impuestos (↑T) para reducir el déficit fiscal. El banco central no cambia su tasa de política.",
+    isAfter: "M86 45 Q175.1 125, 287.5 205", lmAfter: null, eq: [200, 140],
+    signos: ["igual","baja","baja","baja","baja","baja","igual","sube","baja","baja","sube"],
+    explicacion: [
+      "<strong>Paso 1.</strong> T no entra directo en Y = C + I + G, pero reduce el ingreso disponible y por tanto el consumo — la IS se desplaza a la izquierda. La LM no se mueve.",
+      "<strong>Paso 2.</strong> El equilibrio se mueve a lo largo de la LM: menor Y, la misma i.",
+      "<strong>Paso 3.</strong> Con Y menor y T mayor, el ingreso disponible cae por partida doble → consumo cae. La inversión cae porque depende positivamente de Y. El ahorro cae junto con el ingreso disponible. Las importaciones caen con el menor Y; las exportaciones no cambian, así que la balanza comercial mejora. La demanda de dinero real cae (menos Y, misma i) y la oferta de dinero real debe caer en la misma medida. El desempleo sube."
+    ]
+  },
+  {
+    id: "presupuesto-equilibrado", cat: "f", nombre: "Presupuesto equilibrado (ΔG = ΔT)",
+    resumen: "G y T suben lo mismo.",
+    enunciado: "El gobierno sube el gasto público y los impuestos exactamente en el mismo monto (ΔG = ΔT), buscando no ampliar su déficit. Antes de contestar: recuerda que \"como se cancelan, nada cambia\" es la respuesta que casi siempre está mal en este tipo de pregunta.",
+    isAfter: "M161 45 Q250.1 125, 362.5 205", lmAfter: null, eq: [275, 140],
+    signos: ["igual","sube","igual","sube","igual","sube","igual","baja","sube","sube","baja"],
+    explicacion: [
+      "<strong>Paso 1.</strong> G entra completo en la demanda de bienes, pero T solo afecta indirectamente (a través del consumo, con peso c1 &lt; 1). Por eso el efecto expansivo de ↑G es más fuerte que el efecto contractivo de ↑T del mismo monto: la IS se desplaza a la derecha (el \"multiplicador del presupuesto equilibrado\" es exactamente 1). La LM no se mueve.",
+      "<strong>Paso 2.</strong> El equilibrio se mueve a lo largo de la LM: Y sube en la misma cantidad que subió G, la tasa i no cambia.",
+      "<strong>Paso 3 — el resultado que sorprende.</strong> El ingreso disponible (Y − T) <strong>no cambia</strong>, porque Y y T subieron exactamente igual — por eso el consumo privado tampoco cambia, y el ahorro tampoco. La inversión sí sube, porque depende de Y (no del ingreso disponible) y Y aumentó. Las importaciones suben con el mayor Y; la balanza comercial empeora. La demanda y oferta de dinero real suben junto con Y. El desempleo baja. Moraleja: \"se cancelan\" es correcto para C y S, pero es falso que \"nada cambia\" en la economía — Y sí sube."
+    ]
+  },
+  {
+    id: "inversion-autonoma", cat: "x", nombre: "Caída de la inversión autónoma",
+    resumen: "Cae la confianza empresarial.",
+    enunciado: "Una caída en la confianza empresarial reduce la inversión autónoma (la parte de la inversión que no depende de Y ni de i). Ni el gobierno ni el banco central reaccionan.",
+    isAfter: "M86 45 Q175.1 125, 287.5 205", lmAfter: null, eq: [200, 140],
+    signos: ["igual","baja","baja","baja","baja","baja","igual","sube","baja","baja","sube"],
+    explicacion: [
+      "<strong>Paso 1.</strong> La caída de la inversión autónoma reduce directo la demanda de bienes, así que la IS se desplaza a la izquierda. La LM no se mueve.",
+      "<strong>Paso 2.</strong> El equilibrio se mueve a lo largo de la LM: menor Y, la misma i.",
+      "<strong>Paso 3.</strong> Con Y menor y T constante, el ingreso disponible cae → consumo cae. La inversión cae por partida doble: la caída autónoma inicial, más la caída inducida por el menor Y. El ahorro cae junto con el ingreso disponible. Las importaciones caen; la balanza comercial mejora. La demanda y oferta de dinero real caen. El desempleo sube."
+    ]
+  },
+  {
+    id: "monetaria-exp", cat: "m", nombre: "Política monetaria expansiva (↓i*)",
+    resumen: "El banco central baja la tasa.",
+    enunciado: "El banco central baja su tasa de política monetaria (↓i*) para estimular la economía. El gobierno no cambia ni el gasto ni los impuestos.",
+    isAfter: null, lmAfter: "M75 180 L405 180", eq: [302, 180],
+    signos: ["baja","sube","sube","sube","sube","sube","igual","baja","sube","sube","baja"],
+    explicacion: [
+      "<strong>Paso 1.</strong> El banco central baja la tasa de política, así que la LM (horizontal a esa tasa) se desplaza hacia abajo. La IS no se mueve: nada cambió en G, T ni en la inversión autónoma.",
+      "<strong>Paso 2.</strong> Ahora el equilibrio se mueve a lo largo de la IS original (pendiente negativa): menor i, mayor Y.",
+      "<strong>Paso 3.</strong> Con Y mayor y T constante, el ingreso disponible sube → consumo sube. La inversión sube por partida doble: el efecto directo de la tasa más baja, más el efecto inducido del mayor Y. El ahorro sube junto con el ingreso disponible. Las importaciones suben con el mayor Y; la balanza comercial empeora. La demanda de dinero real sube (Y sube e i baja, ambos empujan hacia arriba) — y esta vez es el banco central quien aumenta activamente la oferta de dinero real para lograr la tasa más baja. El desempleo baja."
+    ]
+  },
+  {
+    id: "monetaria-con", cat: "m", nombre: "Política monetaria restrictiva (↑i*)",
+    resumen: "El banco central sube la tasa (ej. encaje legal).",
+    enunciado: "El banco central sube su tasa de política monetaria (↑i*, por ejemplo subiendo el encaje legal) para enfriar la economía. El gobierno no cambia su política fiscal.",
+    isAfter: null, lmAfter: "M75 100 L405 100", eq: [200, 100],
+    signos: ["sube","baja","baja","baja","baja","baja","igual","sube","baja","baja","sube"],
+    explicacion: [
+      "<strong>Paso 1.</strong> El banco central sube la tasa de política, así que la LM se desplaza hacia arriba. La IS no se mueve.",
+      "<strong>Paso 2.</strong> El equilibrio se mueve a lo largo de la IS original: mayor i, menor Y.",
+      "<strong>Paso 3.</strong> Con Y menor y T constante, el ingreso disponible cae → consumo cae. La inversión cae por partida doble: el efecto directo de la tasa más alta, más el efecto inducido del menor Y. El ahorro cae junto con el ingreso disponible. Las importaciones caen; la balanza comercial mejora. La demanda de dinero real cae (Y cae e i sube, ambos empujan hacia abajo) — y es el banco central quien reduce activamente la oferta de dinero real para lograr la tasa más alta. El desempleo sube."
+    ]
+  }
+];
+
+const OPCIONES = [
+  {v:"sube", l:"Aumenta"},
+  {v:"baja", l:"Disminuye"},
+  {v:"igual", l:"No cambia"}
+];
+
+let escenarioActual = null;
+let respuestas = new Array(VARIABLES.length).fill(null);
+let verificado = false;
+
+let marcador = {aciertos:0, total:0, rondas:0};
+
+function pintarMarcador(){
+  document.getElementById('statAciertos').textContent = marcador.aciertos;
+  document.getElementById('statTotal').textContent = marcador.total;
+  document.getElementById('statRondas').textContent = marcador.rondas;
+}
+
+function construirGrid(){
+  const grid = document.getElementById('choquesGrid');
+  grid.innerHTML = '';
+  ESCENARIOS.forEach(esc=>{
+    const btn = document.createElement('button');
+    btn.className = 'choque-btn';
+    btn.dataset.id = esc.id;
+    btn.innerHTML = `<span class="choque-badge ${esc.cat}">${esc.cat.toUpperCase()}</span>
+      <span><h3>${esc.nombre}</h3><p>${esc.resumen}</p></span>`;
+    btn.addEventListener('click', ()=> elegirEscenario(esc.id));
+    grid.appendChild(btn);
+  });
+}
+
+function construirTabla(){
+  const tabla = document.getElementById('tablaPrediccion');
+  tabla.innerHTML = '';
+  VARIABLES.forEach((nombre, i)=>{
+    const fila = document.createElement('div');
+    fila.className = 'fila-var';
+    fila.dataset.idx = i;
+    const grupo = document.createElement('div');
+    grupo.className = 'opciones';
+    grupo.setAttribute('role','group');
+    grupo.setAttribute('aria-label', nombre.replace(/<[^>]*>/g,''));
+    OPCIONES.forEach(op=>{
+      const b = document.createElement('button');
+      b.className = 'opcion-btn';
+      b.textContent = op.l;
+      b.dataset.valor = op.v;
+      b.setAttribute('aria-pressed','false');
+      b.addEventListener('click', ()=> seleccionar(i, op.v));
+      grupo.appendChild(b);
+    });
+    fila.innerHTML = `<span class="nombre-var">${nombre}</span>`;
+    fila.appendChild(grupo);
+    tabla.appendChild(fila);
+  });
+}
+
+function seleccionar(idx, valor){
+  if(verificado) return;
+  respuestas[idx] = valor;
+  const fila = document.querySelector(`.fila-var[data-idx="${idx}"]`);
+  fila.querySelectorAll('.opcion-btn').forEach(b=>{
+    b.setAttribute('aria-pressed', b.dataset.valor === valor ? 'true' : 'false');
+  });
+  actualizarBotonVerificar();
+}
+
+function actualizarBotonVerificar(){
+  const completo = respuestas.every(r => r !== null);
+  const btn = document.getElementById('btnVerificar');
+  btn.disabled = !completo;
+  btn.textContent = completo ? 'Verificar respuestas' : `Verificar respuestas (responde las ${VARIABLES.length} filas)`;
+}
+
+function elegirEscenario(id){
+  escenarioActual = ESCENARIOS.find(e=>e.id===id);
+  respuestas = new Array(VARIABLES.length).fill(null);
+  verificado = false;
+  document.querySelectorAll('.choque-btn').forEach(b=> b.classList.toggle('activo', b.dataset.id === id));
+  document.getElementById('enunciado').innerHTML = `<p>${escenarioActual.enunciado}</p>`;
+  construirTabla();
+  actualizarBotonVerificar();
+  document.getElementById('resultado').hidden = true;
+  resetDiagrama();
+  document.getElementById('tablaPrediccion').scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+function resetDiagrama(){
+  ['isNueva','isNuevaLbl','lmNueva','lmNuevaLbl','flechaMov','puntoNuevo','puntoNuevoLbl'].forEach(id=>{
+    document.getElementById(id).classList.remove('mostrar');
+  });
+  document.getElementById('isOriginal').style.opacity = 1;
+  document.getElementById('isOriginal').setAttribute('stroke-dasharray','');
+  document.getElementById('lmOriginal').style.opacity = 1;
+  document.getElementById('lmOriginal').setAttribute('stroke-dasharray','');
+}
+
+function verificarRespuestas(){
+  if(!escenarioActual || verificado) return;
+  verificado = true;
+  let aciertosRonda = 0;
+  VARIABLES.forEach((_, i)=>{
+    const fila = document.querySelector(`.fila-var[data-idx="${i}"]`);
+    const correcto = escenarioActual.signos[i];
+    const dado = respuestas[i];
+    if(dado === correcto){
+      fila.classList.add('correcta');
+      aciertosRonda++;
+    } else {
+      fila.classList.add('incorrecta');
+      fila.querySelector(`.opcion-btn[data-valor="${correcto}"]`).classList.add('era-correcta');
+    }
+    fila.querySelectorAll('.opcion-btn').forEach(b=> b.disabled = true);
+  });
+
+  marcador.aciertos += aciertosRonda;
+  marcador.total += VARIABLES.length;
+  marcador.rondas += 1;
+  pintarMarcador();
+
+  // Actualizar diagrama
+  if(escenarioActual.isAfter){
+    document.getElementById('isOriginal').setAttribute('stroke-dasharray','5 5');
+    document.getElementById('isOriginal').style.opacity = 0.35;
+    document.getElementById('isNueva').setAttribute('d', escenarioActual.isAfter);
+    document.getElementById('isNuevaLbl').setAttribute('x', escenarioActual.eq[0] + 45);
+    document.getElementById('isNuevaLbl').setAttribute('y', 211);
+    document.getElementById('isNueva').classList.add('mostrar');
+    document.getElementById('isNuevaLbl').classList.add('mostrar');
+  }
+  if(escenarioActual.lmAfter){
+    document.getElementById('lmOriginal').setAttribute('stroke-dasharray','5 5');
+    document.getElementById('lmOriginal').style.opacity = 0.35;
+    document.getElementById('lmNueva').setAttribute('d', escenarioActual.lmAfter);
+    const lmY = escenarioActual.eq[1];
+    document.getElementById('lmNuevaLbl').setAttribute('x', 410);
+    document.getElementById('lmNuevaLbl').setAttribute('y', lmY - 4);
+    document.getElementById('lmNueva').classList.add('mostrar');
+    document.getElementById('lmNuevaLbl').classList.add('mostrar');
+  }
+
+  const [ex, ey] = escenarioActual.eq;
+  document.getElementById('flechaMov').setAttribute('x2', ex);
+  document.getElementById('flechaMov').setAttribute('y2', ey);
+  document.getElementById('flechaMov').classList.add('mostrar');
+  document.getElementById('puntoNuevo').setAttribute('cx', ex);
+  document.getElementById('puntoNuevo').setAttribute('cy', ey);
+  document.getElementById('puntoNuevo').classList.add('mostrar');
+  document.getElementById('puntoNuevoLbl').setAttribute('x', ex - 12);
+  document.getElementById('puntoNuevoLbl').setAttribute('y', ey - 12);
+  document.getElementById('puntoNuevoLbl').classList.add('mostrar');
+
+  document.getElementById('explicacion').innerHTML = `<h3>Puntaje de esta ronda: ${aciertosRonda}/${VARIABLES.length}</h3>` +
+    escenarioActual.explicacion.map(p=>`<p>${p}</p>`).join('');
+  document.getElementById('resultado').hidden = false;
+  document.getElementById('resultado').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+document.getElementById('btnVerificar').addEventListener('click', verificarRespuestas);
+document.getElementById('btnSiguiente').addEventListener('click', ()=>{
+  document.getElementById('choquesGrid').scrollIntoView({behavior:'smooth', block:'start'});
+});
+document.getElementById('btnReiniciarMarcador').addEventListener('click', ()=>{
+  marcador = {aciertos:0, total:0, rondas:0};
+  pintarMarcador();
+});
+
+construirGrid();
+pintarMarcador();
+elegirEscenario(ESCENARIOS[0].id);
+</script>
+
+</body>
+</html>

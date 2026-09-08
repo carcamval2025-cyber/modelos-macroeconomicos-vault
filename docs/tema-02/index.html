@@ -135,6 +135,15 @@ main{max-width:820px; margin:0 auto; padding:64px 24px 100px;}
 }
 .aviso p{font-size:0.94rem; color:var(--text);}
 
+.herramientas-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin:18px 0 28px;}
+.herramienta-link{
+  display:block; padding:16px 18px; border-radius:12px; border:1px solid var(--border); background:var(--bg-elev);
+  text-decoration:none; transition:border-color .2s var(--ease), background .2s var(--ease);
+}
+.herramienta-link:hover{background:var(--bg-elev2); border-color:var(--coral-2);}
+.herramienta-link .h-titulo{display:block; font-family:'Inter',sans-serif; font-weight:600; font-size:0.95rem; color:var(--text); margin-bottom:4px;}
+.herramienta-link .h-sub{display:block; font-family:'JetBrains Mono',monospace; font-size:0.74rem; color:var(--text-dim);}
+
 figure{margin:20px 0;}
 .diagrama{
   background:var(--bg-elev); border:1px solid var(--border); border-radius:12px;
@@ -612,6 +621,17 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
   <section class="modulo reveal" id="practica">
     <div class="modulo-head"><span class="modulo-num">05</span><h2>Práctica — los ejercicios de tu Guía de ejercicios 1</h2></div>
     <p class="modulo-text">La IS presenta pendiente negativa y la LM es horizontal (el intercepto es la tasa de política monetaria) en los tres ejercicios de choques — igual que en los diagramas de arriba.</p>
+
+    <div class="herramientas-grid">
+      <a class="herramienta-link" href="simulador-islm.html">
+        <span class="h-titulo">Simulador de choques IS-LM &rarr;</span>
+        <span class="h-sub">Práctica interactiva ilimitada, con predicción y retroalimentación</span>
+      </a>
+      <a class="herramienta-link" href="simulacro-control1.html">
+        <span class="h-titulo">Simulacro — Control 1 &rarr;</span>
+        <span class="h-sub">10 preguntas con cronómetro, al estilo del Control</span>
+      </a>
+    </div>
 
     <div class="bezel">
       <div class="bezel-in">
