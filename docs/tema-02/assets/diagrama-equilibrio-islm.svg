@@ -1,0 +1,90 @@
+<svg viewBox="0 0 460 270" role="img" aria-labelledby="fig-eq-title fig-eq-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-eq-title">Equilibrio conjunto IS-LM y efectos de política</title>
+  <desc id="fig-eq-desc">Eje vertical i, eje horizontal Y. La curva IS en coral y la línea LM horizontal en índigo se cruzan en el punto A, el equilibrio conjunto. Una curva IS' desplazada a la derecha, en coral claro, ilustra una política fiscal expansiva: el equilibrio se mueve a lo largo de la LM hasta A', con mayor Y y la misma i. Una línea LM' desplazada hacia arriba, en índigo punteado, ilustra una política monetaria restrictiva: el equilibrio se mueve a lo largo de la IS hasta A'', con menor Y y mayor i.</desc>
+
+  <!-- Fondo estructurado unificado -->
+  <rect width="100%" height="100%" fill="#10172D"/>
+
+  <!-- Guías de política en cabecera (limpias y sin saturar) -->
+  <text x="75" y="32" font-family="Inter" font-size="9" fill="#667FDA" font-weight="600">&#8593; Pol&#237;tica monetaria: <tspan font-family="JetBrains Mono" font-weight="400" fill="#A3AABE">&#8593;i* &#8594; LM&#8242; (&#8595;Y)</tspan></text>
+  <text x="410" y="32" text-anchor="end" font-family="Inter" font-size="9" fill="#FFB188" font-weight="600">&#8594; Pol&#237;tica fiscal: <tspan font-family="JetBrains Mono" font-weight="400" fill="#A3AABE">&#8593;G, &#8595;T &#8594; IS&#8242; (&#8593;Y)</tspan></text>
+
+  <!-- Proyecciones ortogonales a los ejes (solo entre puntos y ejes) -->
+  <line x1="250" y1="140" x2="250" y2="225" stroke="#A3AABE" stroke-width="1" stroke-dasharray="3 3" opacity=".35"/>
+  <line x1="60" y1="140" x2="250" y2="140" stroke="#A3AABE" stroke-width="1" stroke-dasharray="3 3" opacity=".25"/>
+  <line x1="300" y1="140" x2="300" y2="225" stroke="#FFB188" stroke-width="1" stroke-dasharray="3 3" opacity=".35"/>
+  <line x1="200" y1="100" x2="200" y2="225" stroke="#667FDA" stroke-width="1" stroke-dasharray="3 3" opacity=".35"/>
+  <line x1="60" y1="100" x2="200" y2="100" stroke="#667FDA" stroke-width="1" stroke-dasharray="3 3" opacity=".25"/>
+
+  <!-- Ejes cartesianos y flechas -->
+  <line x1="60" y1="25" x2="60" y2="225" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="60" y1="225" x2="425" y2="225" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M56 31L60 23L64 31" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M419 221L427 225L419 229" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Marcas de calibración en los ejes (ticks) -->
+  <line x1="55" y1="100" x2="60" y2="100" stroke="#A3AABE" stroke-width="1.2"/>
+  <line x1="55" y1="140" x2="60" y2="140" stroke="#A3AABE" stroke-width="1.2"/>
+  <line x1="200" y1="225" x2="200" y2="230" stroke="#A3AABE" stroke-width="1.2"/>
+  <line x1="250" y1="225" x2="250" y2="230" stroke="#A3AABE" stroke-width="1.2"/>
+  <line x1="300" y1="225" x2="300" y2="230" stroke="#A3AABE" stroke-width="1.2"/>
+
+  <!-- Títulos de ejes -->
+  <text x="48" y="27" text-anchor="end" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">i</text>
+  <text x="428" y="240" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">Y</text>
+
+  <!-- Coordenadas en los ejes -->
+  <text x="50" y="104" text-anchor="end" font-family="JetBrains Mono" font-size="11" fill="#667FDA">i*&#8242;</text>
+  <text x="50" y="144" text-anchor="end" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">i*</text>
+  <text x="200" y="242" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#667FDA">Y&#8243;</text>
+  <text x="250" y="242" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="11" fill="#EFF2F9">Y*</text>
+  <text x="300" y="242" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#FFB188">Y&#8242;</text>
+
+  <!-- Curva LM original -->
+  <line x1="75" y1="140" x2="405" y2="140" stroke="#667FDA" stroke-width="2.2" stroke-linecap="round"/>
+  <text x="410" y="136" font-family="JetBrains Mono" font-weight="700" font-size="12" fill="#667FDA">LM</text>
+
+  <!-- Curva LM' desplazada (política monetaria restrictiva) -->
+  <line x1="75" y1="100" x2="405" y2="100" stroke="#667FDA" stroke-width="1.8" stroke-dasharray="6 4" opacity=".8"/>
+  <text x="410" y="96" font-family="JetBrains Mono" font-weight="600" font-size="11" fill="#667FDA" opacity=".85">LM&#8242;</text>
+
+  <!-- Curva IS desplazada (IS', política fiscal expansiva por Δx = +50) -->
+  <path d="M186 45 Q275.1 125, 387.5 205" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-dasharray="6 4" opacity=".85"/>
+  <text x="395" y="211" font-family="JetBrains Mono" font-weight="700" font-size="11.5" fill="#FFB188">IS&#8242;</text>
+
+  <!-- Curva IS original -->
+  <path d="M136 45 Q225.1 125, 337.5 205" fill="none" stroke="#FF6F4A" stroke-width="2.4" stroke-linecap="round"/>
+  <text x="345" y="211" font-family="JetBrains Mono" font-weight="700" font-size="12" fill="#FF6F4A">IS</text>
+
+  <!-- Flecha A -> A' (política fiscal sobre LM) -->
+  <line x1="262" y1="134" x2="288" y2="134" stroke="#FFB188" stroke-width="1.4" stroke-dasharray="3 2"/>
+  <path d="M282 131L288 134L282 137" fill="none" stroke="#FFB188" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Flecha A -> A'' (política monetaria sobre IS, paralela y desplazada) -->
+  <line x1="238" y1="126" x2="214" y2="106" stroke="#667FDA" stroke-width="1.4" stroke-dasharray="3 2"/>
+  <path d="M221 107L214 106L216 113" fill="none" stroke="#667FDA" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Nodo A (equilibrio conjunto inicial) -->
+  <circle cx="250" cy="140" r="4.5" fill="#10172D" stroke="#EFF2F9" stroke-width="1.8"/>
+  <circle cx="250" cy="140" r="2" fill="#FF6F4A"/>
+  <text x="238" y="156" font-family="Inter" font-weight="800" font-size="13" fill="#EFF2F9">A</text>
+
+  <!-- Nodo A' (equilibrio tras política fiscal) -->
+  <circle cx="300" cy="140" r="4.5" fill="#10172D" stroke="#FFB188" stroke-width="1.8"/>
+  <circle cx="300" cy="140" r="2" fill="#FFB188"/>
+  <text x="312" y="122">
+    <tspan font-family="Inter" font-weight="800" font-size="12" fill="#FFB188">A&#8242;</tspan>
+    <tspan font-family="Inter" font-size="8.5" font-weight="500" fill="#A3AABE" dx="4">(fiscal)</tspan>
+  </text>
+
+  <!-- Nodo A'' (equilibrio tras política monetaria) -->
+  <circle cx="200" cy="100" r="4.5" fill="#10172D" stroke="#667FDA" stroke-width="1.8"/>
+  <circle cx="200" cy="100" r="2" fill="#667FDA"/>
+  <text x="188" y="86" text-anchor="end">
+    <tspan font-family="Inter" font-size="8.5" font-weight="500" fill="#A3AABE">(monetaria)</tspan>
+    <tspan font-family="Inter" font-weight="800" font-size="12" fill="#667FDA" dx="3">A&#8243;</tspan>
+  </text>
+
+  <!-- Resumen pedagógico inferior -->
+  <text x="240" y="260" text-anchor="middle" font-family="Inter" font-size="8.5" fill="#A3AABE">En <tspan fill="#EFF2F9" font-weight="600">A</tspan>, bienes y dinero en equilibrio &#160;&#183;&#160; <tspan fill="#FFB188" font-weight="600">Fiscal</tspan> mueve la econom&#237;a sobre la LM &#160;&#183;&#160; <tspan fill="#667FDA" font-weight="600">Monetaria</tspan> sobre la IS</text>
+</svg>

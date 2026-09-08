@@ -1,0 +1,55 @@
+<svg viewBox="0 0 460 230" role="img" aria-labelledby="fig-lm-title fig-lm-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-lm-title">La curva LM</title>
+  <desc id="fig-lm-desc">Eje vertical i, eje horizontal Y. La curva LM es una línea horizontal en índigo, a la altura de la tasa de interés fijada por el banco central — no depende del nivel de producto. Una línea LM' punteada, más arriba, ilustra una política monetaria restrictiva que sube la tasa objetivo.</desc>
+
+  <!-- Fondo estructurado unificado -->
+  <rect width="100%" height="100%" fill="#10172D"/>
+
+  <!-- Ejes cartesianos y flechas -->
+  <line x1="60" y1="20" x2="60" y2="200" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="60" y1="200" x2="425" y2="200" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M56 26L60 18L64 26" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M419 196L427 200L419 204" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Marcas de calibración en los ejes -->
+  <line x1="55" y1="80" x2="60" y2="80" stroke="#A3AABE" stroke-width="1.2"/>
+  <line x1="55" y1="130" x2="60" y2="130" stroke="#A3AABE" stroke-width="1.2"/>
+  <line x1="240" y1="200" x2="240" y2="205" stroke="#A3AABE" stroke-width="1.2"/>
+
+  <!-- Títulos de ejes -->
+  <text x="48" y="24" text-anchor="end" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">i</text>
+  <text x="430" y="215" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">Y</text>
+
+  <!-- Coordenadas en los ejes -->
+  <text x="50" y="84" text-anchor="end" font-family="JetBrains Mono" font-size="11" fill="#667FDA">i*&#8242;</text>
+  <text x="50" y="134" text-anchor="end" font-family="JetBrains Mono" font-size="11" fill="#EFF2F9">i*</text>
+  <text x="240" y="215" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">Y</text>
+
+  <!-- Ecuación de la curva LM en la esquina superior izquierda -->
+  <text x="80" y="36" font-family="JetBrains Mono" font-size="9.5" fill="#667FDA">LM: i = i* (horizontal)</text>
+
+  <!-- Proyección ortogonal de referencia para el producto Y -->
+  <line x1="240" y1="130" x2="240" y2="200" stroke="#A3AABE" stroke-width="1" stroke-dasharray="3 3" opacity=".35"/>
+
+  <!-- Curva LM original (horizontal a la tasa i*) -->
+  <line x1="75" y1="130" x2="405" y2="130" stroke="#667FDA" stroke-width="2.2" stroke-linecap="round"/>
+  <text x="410" y="126" font-family="JetBrains Mono" font-weight="700" font-size="12" fill="#667FDA">LM</text>
+
+  <!-- Curva LM' desplazada (política restrictiva a tasa i*') -->
+  <line x1="75" y1="80" x2="405" y2="80" stroke="#667FDA" stroke-width="1.8" stroke-dasharray="6 4" opacity=".8"/>
+  <text x="410" y="76" font-family="JetBrains Mono" font-weight="600" font-size="11" fill="#667FDA" opacity=".85">LM&#8242;</text>
+
+  <!-- Vector de desplazamiento vertical hacia arriba (alza de tasa) -->
+  <line x1="250" y1="120" x2="250" y2="92" stroke="#FFB188" stroke-width="1.5" stroke-dasharray="3 2"/>
+  <path d="M246 98L250 91L254 98" fill="none" stroke="#FFB188" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Etiqueta de política monetaria restrictiva -->
+  <text x="264" y="108" font-family="Inter" font-weight="600" font-size="9.5" fill="#FFB188">pol&#237;tica monetaria restrictiva</text>
+
+  <!-- Nodo de referencia sobre LM -->
+  <circle cx="240" cy="130" r="4.5" fill="#10172D" stroke="#EFF2F9" stroke-width="1.8"/>
+  <circle cx="240" cy="130" r="2" fill="#667FDA"/>
+
+  <!-- Resumen pedagógico inferior -->
+  <text x="240" y="180" text-anchor="middle" font-family="Inter" font-size="8.5" fill="#A3AABE">para cualquier <tspan fill="#EFF2F9" font-weight="600">Y</tspan>, la <tspan fill="#667FDA" font-weight="600">LM</tspan> se mantiene en la tasa que fija el banco central</text>
+</svg>

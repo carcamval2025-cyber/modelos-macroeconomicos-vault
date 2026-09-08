@@ -13,9 +13,9 @@ otras_lecturas: "—"
 
 ## Subtemas cubiertos (ALCANCE real reportado por Navas)
 
-_(Actualizar conforme avanza la semana.)_
-
-- [ ]
+- [x] Derivación de la curva IS (5.1) y de la curva LM (5.2) — "Clase 1 modelo IS LM.pdf"
+- [x] Equilibrio conjunto IS-LM y método de los 3 pasos (5.3)
+- [x] Efectos de política fiscal y monetaria (5.4) — confirmado por Navas 2026-09-07, usado en [[Repaso Control 1 - Tema 2 IS-LM]] antes del Control 1
 
 ## Materiales generados para este tema
 
