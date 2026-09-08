@@ -257,7 +257,8 @@ footer{
   <nav class="modnav" aria-label="Módulos del sitio">
     <a href="#sitio">01 · Sitio</a>
     <a href="#ruta">02 · Ruta del curso</a>
-    <a href="#recursos">03 · Recursos</a>
+    <a href="#herramientas">03 · Herramientas de práctica</a>
+    <a href="#recursos">04 · Recursos</a>
   </nav>
 
   <section class="modulo reveal" id="sitio">
@@ -275,8 +276,18 @@ footer{
     </div>
   </section>
 
+  <section class="modulo reveal" id="herramientas">
+    <div class="modulo-head"><span class="modulo-num">03</span><h2>Herramientas de práctica</h2></div>
+    <p class="modulo-text">Simuladores y simulacros interactivos para repasar a fondo antes de un Control o Parcial, organizados por Tema. Se van agregando conforme cada Tema los tiene listos.</p>
+    <div class="bezel">
+      <div class="bezel-in">
+        <div class="nichos-in" id="herramientasNichos"></div>
+      </div>
+    </div>
+  </section>
+
   <section class="modulo reveal" id="recursos">
-    <div class="modulo-head"><span class="modulo-num">03</span><h2>Recursos</h2></div>
+    <div class="modulo-head"><span class="modulo-num">04</span><h2>Recursos</h2></div>
     <dl class="recursos-list">
       <div class="recurso-row"><dt>Bibliografía</dt><dd>Blanchard, <em>Macroeconomics</em>, 9e</dd></div>
       <div class="recurso-row"><dt>Duración</dt><dd>12 semanas, calendario oficial en <span class="mono">02 Curso/Cronograma.md</span></dd></div>
@@ -323,6 +334,28 @@ TEMAS.forEach((t)=>{
     wrap.innerHTML = inner;
     grid.appendChild(wrap.firstElementChild);
   }
+});
+
+const HERRAMIENTAS = [
+  {tema:'Tema 2', nombre:'Simulador de choques IS-LM', descripcion:'Elige un choque fiscal, monetario o exógeno, predice el efecto en 11 variables y verifica contra el gráfico.', href:'tema-02/simulador-islm.html'},
+  {tema:'Tema 2', nombre:'Simulacro — Control 1', descripcion:'10 preguntas con cronómetro de 25 min, al estilo del Control (no es el Control real).', href:'tema-02/simulacro-control1.html'},
+];
+
+const gridH = document.getElementById('herramientasNichos');
+HERRAMIENTAS.forEach((h)=>{
+  const a = document.createElement('a');
+  a.className = 'nicho-link';
+  a.href = h.href;
+  a.innerHTML = `
+    <div class="nicho disponible">
+      <div class="n-top">
+        <span class="n-num">${h.tema.replace('Tema ', 'T')}</span>
+        <span class="status disponible">Disponible</span>
+      </div>
+      <h3>${h.nombre}</h3>
+      <div class="n-meta"><span>${h.descripcion}</span></div>
+    </div>`;
+  gridH.appendChild(a);
 });
 
 /* Entrada al hacer scroll: el contenido ya es visible por defecto (ver CSS .reveal sin .reveal-play);
