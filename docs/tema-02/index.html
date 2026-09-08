@@ -17,9 +17,14 @@
   --ease:cubic-bezier(0.16,1,0.3,1);
 }
 *{box-sizing:border-box; margin:0; padding:0;}
-html{background:var(--bg);}
+html{background:var(--bg); color-scheme: dark;}
 body{
-  font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.65; font-weight:400;
+  font-family:'Inter',sans-serif;
+  background-color:var(--bg);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M 48 0 L 0 0 0 48' fill='none' stroke='%232A324A' stroke-width='0.75' stroke-opacity='0.35'/%3E%3Ccircle cx='48' cy='48' r='1.2' fill='%23667FDA' fill-opacity='0.4'/%3E%3C/svg%3E");
+  background-attachment:fixed;
+  color:var(--text); line-height:1.65; font-weight:400;
+  accent-color: var(--coral);
 }
 h1,h2,h3{font-family:'Fraunces',serif; color:var(--text); letter-spacing:-0.02em;}
 em{font-style:italic; color:var(--coral);}
@@ -28,6 +33,10 @@ a{color:var(--coral-2);}
 a:focus-visible, button:focus-visible{
   outline:2px solid var(--coral); outline-offset:3px; border-radius:4px;
 }
+
+/* ---------- Barra de progreso de lectura (panel de progreso visible, requerido por el sistema de diseño) ---------- */
+.scroll-progreso{position:fixed; top:0; left:0; width:100%; height:3px; background:var(--border); z-index:50;}
+.scroll-progreso-fill{height:100%; width:0%; background:var(--coral);}
 
 header{
   background:var(--bg-elev);
@@ -213,6 +222,8 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
 </style>
 </head>
 <body>
+
+<div class="scroll-progreso" aria-hidden="true"><div class="scroll-progreso-fill" id="progresoFill"></div></div>
 
 <header>
   <svg class="header-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" role="img" aria-label="Curvas IS y LM abstractas cruzándose en un punto de equilibrio">
@@ -858,6 +869,19 @@ if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-moti
   }, {threshold:0.12});
   targets.forEach(function(el){ io.observe(el); });
 }
+
+/* Barra de progreso de lectura: ancho = % de scroll vertical recorrido */
+(function(){
+  var fill = document.getElementById('progresoFill');
+  function actualizarProgreso(){
+    var alto = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = alto > 0 ? (window.scrollY / alto) * 100 : 0;
+    if(fill){ fill.style.width = pct + '%'; }
+  }
+  window.addEventListener('scroll', actualizarProgreso, {passive:true});
+  window.addEventListener('resize', actualizarProgreso);
+  actualizarProgreso();
+})();
 </script>
 
 </body>

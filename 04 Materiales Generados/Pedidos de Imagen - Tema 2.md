@@ -11,9 +11,11 @@ Este documento registra la suite de diagramas de modelo pendientes para el **Tem
 
 | ID | Nombre | Archivo destino sugerido | Estado |
 |---|---|---|---|
-| `img-t2-01` | La curva IS (derivación y desplazamiento) | `docs/tema-02/assets/diagrama-curva-is.svg` | ✅ Completado e integrado |
-| `img-t2-02` | La curva LM (horizontal, y su desplazamiento) | `docs/tema-02/assets/diagrama-curva-lm.svg` | ✅ Completado e integrado |
-| `img-t2-03` | Equilibrio conjunto IS-LM y efectos de política | `docs/tema-02/assets/diagrama-equilibrio-islm.svg` | ✅ Completado e integrado |
+| `img-t2-01` | La curva IS (derivación y desplazamiento) | `docs/tema-02/assets/diagrama-curva-is.svg` | 🟡 Integrado, pero es la línea base de Claude sin cambios — ver nota |
+| `img-t2-02` | La curva LM (horizontal, y su desplazamiento) | `docs/tema-02/assets/diagrama-curva-lm.svg` | 🟡 Integrado, pero es la línea base de Claude sin cambios — ver nota |
+| `img-t2-03` | Equilibrio conjunto IS-LM y efectos de política | `docs/tema-02/assets/diagrama-equilibrio-islm.svg` | 🟡 Integrado, pero es la línea base de Claude sin cambios — ver nota |
+
+> **Nota de verificación (2026-09-08):** al evaluar el Tema 2 se comparó cada SVG en `docs/tema-02/assets/` contra la línea base incluida en este documento y son idénticos, byte a byte, al código de más abajo. No hay evidencia de que Antigravity/Codex haya aplicado el pulido visual (acabado, sombreado, iconografía, textura) descrito en el protocolo — lo que está publicado es la línea base de precisión de Claude, integrada directamente. Los diagramas ya pasaron el checklist de diseño y una verificación visual con Playwright (sin superposiciones ni recortes), así que son funcionales tal cual, pero si el pulido real sigue siendo la intención, los briefs de abajo siguen vigentes y pueden reenviarse tal cual a Antigravity/Codex.
 
 ---
 
