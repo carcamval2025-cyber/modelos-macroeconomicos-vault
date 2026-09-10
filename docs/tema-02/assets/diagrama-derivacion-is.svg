@@ -1,175 +1,202 @@
-<svg viewBox="0 0 600 525" role="img" aria-labelledby="fig-deriv-title fig-deriv-desc" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 660 670" role="img" aria-labelledby="fig-deriv-title fig-deriv-desc" xmlns="http://www.w3.org/2000/svg">
   <title id="fig-deriv-title">Derivación pedagógica de la curva IS a partir del equilibrio en el mercado de bienes</title>
-  <desc id="fig-deriv-desc">Diagrama de dos paneles con guía de proyección vertical directa. Panel superior: Mercado de bienes donde una subida de la tasa de interés de i a i' reduce la inversión y desplaza la demanda agregada hacia abajo de ZZ a ZZ', contrayendo la producción de equilibrio de Y a Y'. Panel inferior: Espacio (Y, i) donde se proyectan verticalmente los equilibrios A y A' para construir la curva IS con pendiente negativa.</desc>
+  <desc id="fig-deriv-desc">Diagrama ampliado de dos paneles con guía de proyección vertical directa y pasos numerados. Panel superior: Mercado de bienes donde una subida de la tasa de interés de i a i' reduce la inversión y desplaza la demanda agregada hacia abajo de ZZ a ZZ', contrayendo la producción de equilibrio de Y a Y' vía el multiplicador. Panel inferior: Espacio (Y, i) donde se proyectan verticalmente los equilibrios A y A' para construir la curva IS con pendiente negativa.</desc>
 
   <!-- Marco de contención y fondo técnico elevado -->
-  <rect x="6" y="6" width="588" height="513" rx="12" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+  <rect x="6" y="6" width="648" height="658" rx="12" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
 
-  <!-- ========================================== -->
-  <!-- PANEL SUPERIOR: MERCADO DE BIENES (Z = Y)  -->
-  <!-- ========================================== -->
-  <rect x="16" y="16" width="310" height="22" rx="5" fill="#1B223C"/>
-  <text x="171" y="31" text-anchor="middle" font-family="Inter" font-weight="700" font-size="10.5" fill="#EFF2F9">1. MERCADO DE BIENES: DEMANDA Z Y EQUILIBRIO Y = Z</text>
+  <!-- ======================================================== -->
+  <!-- PANEL SUPERIOR: MERCADO DE BIENES (Z = Y, CRUCE KEYNESIANO) -->
+  <!-- ======================================================== -->
+  <rect x="16" y="16" width="350" height="22" rx="5" fill="#1B223C"/>
+  <text x="191" y="31" text-anchor="middle" font-family="Inter" font-weight="700" font-size="10.5" fill="#EFF2F9">1. MERCADO DE BIENES: DEMANDA Z Y EQUILIBRIO Y = Z</text>
 
-  <rect x="336" y="16" width="248" height="22" rx="5" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
-  <text x="460" y="31" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="10" fill="#FFB188">Z = C(Y−T) + I(Y, i) + G</text>
+  <rect x="376" y="16" width="268" height="22" rx="5" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+  <text x="510" y="31" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="10" fill="#FFB188">Z = C(Y−T) + I(Y, i) + G</text>
 
   <!-- Retícula tenue panel superior -->
-  <path d="M70 108H550M70 155H550" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".3"/>
-  <path d="M230 45V205M380 45V205" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".2"/>
+  <path d="M75 70H610M75 180H610" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".25"/>
+  <path d="M230 45V270M420 45V270" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".2"/>
 
-  <!-- Sombreado de contracción entre ZZ y ZZ' -->
-  <path d="M 70 158 L 70 186 L 540 112 L 540 84 Z" fill="#FF6F4A" fill-opacity="0.06"/>
+  <!-- Área sombreada de contracción de demanda entre ZZ y ZZ' -->
+  <path d="M 75 167 L 75 223 L 560 129 L 560 73 Z" fill="#FF6F4A" fill-opacity="0.07"/>
 
   <!-- Ejes cartesianos panel superior -->
-  <line x1="70" y1="46" x2="70" y2="205" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
-  <line x1="70" y1="205" x2="560" y2="205" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
-  <path d="M66 52L70 44L74 52" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M552 201L560 205L552 209" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="75" y1="46" x2="75" y2="270" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="75" y1="270" x2="620" y2="270" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M71 52L75 44L79 52" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M612 266L620 270L612 274" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 
   <!-- Títulos ejes superior -->
-  <rect x="36" y="44" width="26" height="20" rx="4" fill="#10172D"/>
-  <text x="49" y="58" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#EFF2F9">Z</text>
-  <rect x="550" y="210" width="26" height="20" rx="4" fill="#10172D"/>
-  <text x="563" y="224" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#EFF2F9">Y</text>
+  <rect x="38" y="44" width="28" height="20" rx="4" fill="#10172D"/>
+  <text x="52" y="58" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#EFF2F9">Z</text>
+  <rect x="608" y="276" width="28" height="20" rx="4" fill="#10172D"/>
+  <text x="622" y="290" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#EFF2F9">Y</text>
 
-  <!-- Recta de 45 grados (Y = Z) -->
-  <line x1="70" y1="205" x2="490" y2="74" stroke="#A3AABE" stroke-width="1.6" stroke-dasharray="6 4" opacity=".55"/>
-  <rect x="430" y="58" width="94" height="20" rx="4" fill="#10172D" stroke="#A3AABE" stroke-width="0.8"/>
-  <text x="477" y="72" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#A3AABE">Y = Z (recta 45&#176;)</text>
+  <!-- Recta de 45 grados (Y = Z: Condición de equilibrio) -->
+  <line x1="75" y1="270" x2="490" y2="29" stroke="#A3AABE" stroke-width="1.8" stroke-dasharray="6 4" opacity=".6"/>
+  <rect x="375" y="36" width="168" height="20" rx="4" fill="#10172D" stroke="#A3AABE" stroke-width="0.8"/>
+  <text x="459" y="50" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#A3AABE">Y = Z (recta 45&#176; / Oferta = Demanda)</text>
 
   <!-- Demanda ZZ' (tasa mayor i', menor inversión) -->
-  <line x1="70" y1="186" x2="540" y2="112" stroke="#FFB188" stroke-width="2.4" stroke-dasharray="6 4" opacity=".95"/>
-  <rect x="460" y="112" width="94" height="20" rx="4" fill="#10172D" stroke="#FFB188" stroke-width="0.9"/>
-  <text x="507" y="126" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="10" fill="#FFB188">ZZ&#8242; (tasa i&#8242;)</text>
+  <line x1="75" y1="223" x2="560" y2="129" stroke="#FFB188" stroke-width="2.5" stroke-dasharray="6 4" opacity=".95"/>
+  <rect x="495" y="128" width="138" height="20" rx="4" fill="#10172D" stroke="#FFB188" stroke-width="0.9"/>
+  <text x="564" y="142" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="10" fill="#FFB188">ZZ&#8242; (demanda a tasa i&#8242;)</text>
 
   <!-- Demanda ZZ (tasa base i, mayor inversión) -->
-  <line x1="70" y1="158" x2="540" y2="84" stroke="#FF6F4A" stroke-width="3.4" stroke-linecap="round"/>
-  <line x1="70" y1="158" x2="540" y2="84" stroke="#FFB188" stroke-width="1.2" stroke-dasharray="4 4" opacity=".4"/>
-  <rect x="460" y="84" width="86" height="20" rx="4" fill="#10172D" stroke="#FF6F4A" stroke-width="1"/>
-  <text x="503" y="98" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="10.5" fill="#FF6F4A">ZZ (tasa i)</text>
+  <line x1="75" y1="167" x2="560" y2="73" stroke="#FF6F4A" stroke-width="3.4" stroke-linecap="round"/>
+  <line x1="75" y1="167" x2="560" y2="73" stroke="#FFB188" stroke-width="1.2" stroke-dasharray="4 4" opacity=".4"/>
+  <rect x="495" y="72" width="138" height="20" rx="4" fill="#10172D" stroke="#FF6F4A" stroke-width="1"/>
+  <text x="564" y="86" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="10.5" fill="#FF6F4A">ZZ (demanda a tasa i)</text>
 
-  <!-- Flecha de desplazamiento vertical de demanda (caída por tasa de interés) -->
-  <line x1="310" y1="120" x2="310" y2="142" stroke="#FFB188" stroke-width="1.8" stroke-dasharray="3 2"/>
-  <path d="M306 136L310 143L314 136" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="318" y="124" width="128" height="20" rx="4" fill="#10172D" stroke="#FFB188" stroke-width="0.8"/>
-  <text x="382" y="138" text-anchor="middle" font-family="Inter" font-weight="600" font-size="9" fill="#FFB188">&#8595; Inversi&#243;n ante &#8593;i (tasa)</text>
+  <!-- Interceptos verticales en eje Z (Gasto Autónomo) -->
+  <!-- Intercepto ZZ inicial -->
+  <circle cx="75" cy="167" r="3.5" fill="#FF6F4A"/>
+  <rect x="14" y="158" width="56" height="17" rx="3" fill="#10172D"/>
+  <text x="42" y="170" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="#FF6F4A">Z&#8320;(i)</text>
+
+  <!-- Intercepto ZZ' desplazado -->
+  <circle cx="75" cy="223" r="3.5" fill="#FFB188"/>
+  <rect x="14" y="215" width="56" height="17" rx="3" fill="#10172D"/>
+  <text x="42" y="227" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="#FFB188">Z&#8320;&#8242;(i&#8242;)</text>
+
+  <!-- Vector de caída de intercepto en el eje Z -->
+  <line x1="50" y1="178" x2="50" y2="208" stroke="#FFB188" stroke-width="1.5"/>
+  <path d="M47 202L50 209L53 202" fill="none" stroke="#FFB188" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Flecha vertical de desplazamiento de demanda (caída de inversión por tasa de interés) -->
+  <line x1="325" y1="102" x2="325" y2="145" stroke="#FFB188" stroke-width="2"/>
+  <path d="M320 138L325 146L330 138" fill="none" stroke="#FFB188" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="235" y="114" width="180" height="20" rx="4" fill="#10172D" stroke="#FFB188" stroke-width="0.9"/>
+  <text x="325" y="128" text-anchor="middle" font-family="Inter" font-weight="600" font-size="9" fill="#FFB188">&#9660; PASO 2: &#8593;i &#8658; &#8595;I (ZZ baja en &#916;I)</text>
 
   <!-- Nodos panel superior -->
-  <!-- Nodo A' (230, 155): cruce ZZ' con 45° -->
-  <circle cx="230" cy="155" r="8.5" fill="#10172D" stroke="#667FDA" stroke-width="2.4"/>
-  <circle cx="230" cy="155" r="3.5" fill="#FF6F4A"/>
-  <rect x="174" y="142" width="50" height="20" rx="4" fill="#10172D" stroke="#667FDA" stroke-width="0.9"/>
-  <text x="199" y="156" text-anchor="middle" font-family="Inter" font-weight="700" font-size="10.5" fill="#EFF2F9">Nodo A&#8242;</text>
+  <!-- Nodo A inicial: cruce ZZ con 45° -->
+  <circle cx="420" cy="70" r="9" fill="#10172D" stroke="#EFF2F9" stroke-width="2.4"/>
+  <circle cx="420" cy="70" r="3.8" fill="#FF6F4A"/>
+  <rect x="432" y="58" width="58" height="22" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.9"/>
+  <text x="461" y="73" text-anchor="middle" font-family="Inter" font-weight="700" font-size="10.5" fill="#EFF2F9">Nodo A</text>
+  <!-- Pastilla de estado Paso 1 -->
+  <rect x="330" y="80" width="86" height="18" rx="3" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+  <text x="373" y="93" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="#EFF2F9">&#9312; Eq. inicial</text>
 
-  <!-- Nodo A (380, 108): cruce ZZ con 45° -->
-  <circle cx="380" cy="108" r="8.5" fill="#10172D" stroke="#EFF2F9" stroke-width="2.4"/>
-  <circle cx="380" cy="108" r="3.5" fill="#FF6F4A"/>
-  <rect x="390" y="96" width="48" height="20" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.9"/>
-  <text x="414" y="110" text-anchor="middle" font-family="Inter" font-weight="700" font-size="10.5" fill="#EFF2F9">Nodo A</text>
+  <!-- Nodo A' nuevo: cruce ZZ' con 45° -->
+  <circle cx="230" cy="180" r="9" fill="#10172D" stroke="#667FDA" stroke-width="2.4"/>
+  <circle cx="230" cy="180" r="3.8" fill="#FF6F4A"/>
+  <rect x="156" y="168" width="64" height="22" rx="4" fill="#10172D" stroke="#667FDA" stroke-width="0.9"/>
+  <text x="188" y="183" text-anchor="middle" font-family="Inter" font-weight="700" font-size="10.5" fill="#EFF2F9">Nodo A&#8242;</text>
+  <!-- Pastilla de estado Paso 3 -->
+  <rect x="144" y="196" width="82" height="18" rx="3" fill="#1B223C" stroke="#667FDA" stroke-width="0.8"/>
+  <text x="185" y="209" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="#667FDA">&#9314; Nuevo eq.</text>
+
+  <!-- Vector horizontal en eje Y: Contracción de producción (Paso 4) -->
+  <line x1="390" y1="250" x2="260" y2="250" stroke="#FF6F4A" stroke-width="2"/>
+  <path d="M268 245L258 250L268 255" fill="none" stroke="#FF6F4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="250" y="235" width="150" height="18" rx="3" fill="#10172D" stroke="#FF6F4A" stroke-width="0.8"/>
+  <text x="325" y="247" text-anchor="middle" font-family="Inter" font-weight="600" font-size="8.5" fill="#FF6F4A">&#9668; PASO 4: Y cae por multiplicador</text>
 
   <!-- Coordenadas en eje horizontal panel superior -->
-  <line x1="230" y1="205" x2="230" y2="210" stroke="#667FDA" stroke-width="1.5"/>
-  <rect x="214" y="212" width="32" height="17" rx="3" fill="#10172D"/>
-  <text x="230" y="225" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" fill="#667FDA">Y&#8242;</text>
+  <line x1="230" y1="270" x2="230" y2="276" stroke="#667FDA" stroke-width="1.5"/>
+  <rect x="210" y="278" width="40" height="18" rx="3" fill="#10172D"/>
+  <text x="230" y="291" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" fill="#667FDA">Y&#8242; (menor)</text>
 
-  <line x1="380" y1="205" x2="380" y2="210" stroke="#A3AABE" stroke-width="1.5"/>
-  <rect x="366" y="212" width="28" height="17" rx="3" fill="#10172D"/>
-  <text x="380" y="225" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" fill="#A3AABE">Y</text>
+  <line x1="420" y1="270" x2="420" y2="276" stroke="#A3AABE" stroke-width="1.5"/>
+  <rect x="406" y="278" width="28" height="18" rx="3" fill="#10172D"/>
+  <text x="420" y="291" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" fill="#A3AABE">Y</text>
 
-  <!-- ========================================== -->
-  <!-- FRANJA PUENTE DE PROYECCIÓN INTER-PANEL    -->
-  <!-- ========================================== -->
-  <!-- Guías de proyección vertical que descienden desde el panel superior al inferior -->
-  <line x1="230" y1="155" x2="230" y2="235" stroke="#667FDA" stroke-width="1.4" stroke-dasharray="3 3" opacity=".85"/>
-  <line x1="380" y1="108" x2="380" y2="235" stroke="#A3AABE" stroke-width="1.4" stroke-dasharray="3 3" opacity=".75"/>
+  <!-- ======================================================== -->
+  <!-- FRANJA PUENTE DE PROYECCIÓN INTER-PANEL                  -->
+  <!-- ======================================================== -->
+  <!-- Guías de proyección vertical que descienden desde el panel superior -->
+  <line x1="230" y1="180" x2="230" y2="305" stroke="#667FDA" stroke-width="1.4" stroke-dasharray="3 3" opacity=".85"/>
+  <line x1="420" y1="70" x2="420" y2="305" stroke="#A3AABE" stroke-width="1.4" stroke-dasharray="3 3" opacity=".75"/>
 
   <!-- Barra central de enlace pedagógico -->
-  <rect x="16" y="235" width="568" height="24" rx="5" fill="#1B223C" stroke="#2A324A" stroke-width="0.9"/>
-  <text x="300" y="251" text-anchor="middle" font-family="Inter" font-weight="600" font-size="9.5" fill="#EFF2F9">&#9660; PROYECCI&#211;N VERTICAL DIRECTA: CADA EQUILIBRIO Y=Z FIJA EL PRODUCTO EN LA CURVA IS &#9660;</text>
+  <rect x="16" y="305" width="628" height="26" rx="5" fill="#1B223C" stroke="#2A324A" stroke-width="0.9"/>
+  <text x="330" y="322" text-anchor="middle" font-family="Inter" font-weight="600" font-size="9.5" fill="#EFF2F9">&#9660; PROYECCI&#211;N DIRECTA: EL NIVEL DE PRODUCTO Y DE CADA EQUILIBRIO FIJA LA CURVA IS &#9660;</text>
 
   <!-- Continuación de las guías verticales hacia el panel inferior -->
-  <line x1="230" y1="259" x2="230" y2="340" stroke="#667FDA" stroke-width="1.4" stroke-dasharray="3 3" opacity=".85"/>
-  <path d="M226 330L230 338L234 330" fill="none" stroke="#667FDA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="230" y1="331" x2="230" y2="445" stroke="#667FDA" stroke-width="1.4" stroke-dasharray="3 3" opacity=".85"/>
+  <path d="M226 435L230 443L234 435" fill="none" stroke="#667FDA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 
-  <line x1="380" y1="259" x2="380" y2="410" stroke="#A3AABE" stroke-width="1.4" stroke-dasharray="3 3" opacity=".75"/>
-  <path d="M376 400L380 408L384 400" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="420" y1="331" x2="420" y2="535" stroke="#A3AABE" stroke-width="1.4" stroke-dasharray="3 3" opacity=".75"/>
+  <path d="M416 525L420 533L424 525" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 
-  <!-- ========================================== -->
-  <!-- PANEL INFERIOR: RELACIÓN IS (Y, i)         -->
-  <!-- ========================================== -->
-  <rect x="16" y="268" width="310" height="22" rx="5" fill="#1B223C"/>
-  <text x="171" y="283" text-anchor="middle" font-family="Inter" font-weight="700" font-size="10.5" fill="#EFF2F9">2. RELACIÓN IS: ESPACIO DE TASA Y PRODUCTO (Y, i)</text>
+  <!-- ======================================================== -->
+  <!-- PANEL INFERIOR: RELACIÓN IS (Y, i)                       -->
+  <!-- ======================================================== -->
+  <rect x="16" y="342" width="350" height="22" rx="5" fill="#1B223C"/>
+  <text x="191" y="357" text-anchor="middle" font-family="Inter" font-weight="700" font-size="10.5" fill="#EFF2F9">2. RELACIÓN IS: ESPACIO DE TASA Y PRODUCTO (Y, i)</text>
 
-  <rect x="336" y="268" width="248" height="22" rx="5" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
-  <text x="460" y="283" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="10" fill="#667FDA">&#8593;i &#8658; &#8595;I &#8658; &#8595;Y (Pendiente negativa)</text>
+  <rect x="376" y="342" width="268" height="22" rx="5" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+  <text x="510" y="357" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="10" fill="#667FDA">&#8593;i &#8658; &#8595;I &#8658; &#8595;Y (Pendiente negativa de la IS)</text>
 
   <!-- Retícula tenue panel inferior -->
-  <path d="M70 340H550M70 410H550" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".3"/>
+  <path d="M75 445H610M75 535H610" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".25"/>
 
   <!-- Proyecciones horizontales al eje de tasa de interés -->
-  <line x1="70" y1="340" x2="230" y2="340" stroke="#667FDA" stroke-width="1.3" stroke-dasharray="3 3" opacity=".85"/>
-  <line x1="70" y1="410" x2="380" y2="410" stroke="#A3AABE" stroke-width="1.3" stroke-dasharray="3 3" opacity=".75"/>
+  <line x1="75" y1="445" x2="230" y2="445" stroke="#667FDA" stroke-width="1.3" stroke-dasharray="3 3" opacity=".85"/>
+  <line x1="75" y1="535" x2="420" y2="535" stroke="#A3AABE" stroke-width="1.3" stroke-dasharray="3 3" opacity=".75"/>
 
   <!-- Ejes panel inferior -->
-  <line x1="70" y1="298" x2="70" y2="465" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
-  <line x1="70" y1="465" x2="560" y2="465" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
-  <path d="M66 304L70 296L74 304" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M552 461L560 465L552 469" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="75" y1="380" x2="75" y2="590" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="75" y1="590" x2="620" y2="590" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M71 386L75 378L79 386" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M612 586L620 590L612 594" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 
   <!-- Títulos ejes inferior -->
-  <rect x="36" y="294" width="26" height="20" rx="4" fill="#10172D"/>
-  <text x="49" y="308" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#EFF2F9">i</text>
-  <rect x="550" y="470" width="26" height="20" rx="4" fill="#10172D"/>
-  <text x="563" y="484" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#EFF2F9">Y</text>
+  <rect x="38" y="376" width="28" height="20" rx="4" fill="#10172D"/>
+  <text x="52" y="390" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#EFF2F9">i</text>
+  <rect x="608" y="596" width="28" height="20" rx="4" fill="#10172D"/>
+  <text x="622" y="610" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#EFF2F9">Y</text>
 
   <!-- Marcas y valores en los ejes del panel inferior -->
   <!-- Eje i -->
-  <line x1="65" y1="340" x2="70" y2="340" stroke="#667FDA" stroke-width="1.5"/>
-  <rect x="18" y="332" width="48" height="17" rx="3" fill="#10172D"/>
-  <text x="42" y="345" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" fill="#667FDA">i&#8242; (alta)</text>
+  <line x1="70" y1="445" x2="75" y2="445" stroke="#667FDA" stroke-width="1.5"/>
+  <rect x="14" y="437" width="56" height="17" rx="3" fill="#10172D"/>
+  <text x="42" y="450" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#667FDA">i&#8242; (alta)</text>
 
-  <line x1="65" y1="410" x2="70" y2="410" stroke="#A3AABE" stroke-width="1.5"/>
-  <rect x="18" y="402" width="48" height="17" rx="3" fill="#10172D"/>
-  <text x="42" y="415" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" fill="#A3AABE">i (baja)</text>
+  <line x1="70" y1="535" x2="75" y2="535" stroke="#A3AABE" stroke-width="1.5"/>
+  <rect x="14" y="527" width="56" height="17" rx="3" fill="#10172D"/>
+  <text x="42" y="540" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#A3AABE">i (baja)</text>
 
   <!-- Eje Y inferior -->
-  <line x1="230" y1="465" x2="230" y2="470" stroke="#667FDA" stroke-width="1.5"/>
-  <rect x="214" y="472" width="32" height="17" rx="3" fill="#10172D"/>
-  <text x="230" y="485" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" fill="#667FDA">Y&#8242;</text>
+  <line x1="230" y1="590" x2="230" y2="596" stroke="#667FDA" stroke-width="1.5"/>
+  <rect x="210" y="598" width="40" height="18" rx="3" fill="#10172D"/>
+  <text x="230" y="611" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" fill="#667FDA">Y&#8242;</text>
 
-  <line x1="380" y1="465" x2="380" y2="470" stroke="#A3AABE" stroke-width="1.5"/>
-  <rect x="366" y="472" width="28" height="17" rx="3" fill="#10172D"/>
-  <text x="380" y="485" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" fill="#A3AABE">Y</text>
+  <line x1="420" y1="590" x2="420" y2="596" stroke="#A3AABE" stroke-width="1.5"/>
+  <rect x="406" y="598" width="28" height="18" rx="3" fill="#10172D"/>
+  <text x="420" y="611" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" fill="#A3AABE">Y</text>
 
   <!-- Curva IS construida uniendo A' y A -->
-  <path d="M 140 300 C 210 334, 290 376, 490 450" fill="none" stroke="#FF6F4A" stroke-width="3.6" stroke-linecap="round"/>
-  <path d="M 140 300 C 210 334, 290 376, 490 450" fill="none" stroke="#FFB188" stroke-width="1.2" stroke-dasharray="4 4" opacity=".4"/>
-  <rect x="496" y="438" width="36" height="22" rx="4" fill="#10172D" stroke="#FF6F4A" stroke-width="1"/>
-  <text x="514" y="453" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="12" fill="#FF6F4A">IS</text>
+  <path d="M 140 395 C 220 440, 320 495, 520 570" fill="none" stroke="#FF6F4A" stroke-width="3.6" stroke-linecap="round"/>
+  <path d="M 140 395 C 220 440, 320 495, 520 570" fill="none" stroke="#FFB188" stroke-width="1.2" stroke-dasharray="4 4" opacity=".4"/>
+  <rect x="526" y="558" width="38" height="22" rx="4" fill="#10172D" stroke="#FF6F4A" stroke-width="1"/>
+  <text x="545" y="573" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="12" fill="#FF6F4A">IS</text>
 
   <!-- Nodos panel inferior -->
-  <!-- Nodo A' (230, 340): Tasa alta i', menor producto Y' -->
-  <circle cx="230" cy="340" r="8.5" fill="#10172D" stroke="#667FDA" stroke-width="2.4"/>
-  <circle cx="230" cy="340" r="3.5" fill="#FF6F4A"/>
-  <rect x="242" y="328" width="94" height="22" rx="4" fill="#10172D" stroke="#667FDA" stroke-width="0.9"/>
-  <text x="289" y="343" text-anchor="middle" font-family="Inter" font-weight="700" font-size="10.5" fill="#EFF2F9">A&#8242; (Y&#8242;, i&#8242; alta)</text>
+  <!-- Nodo A' (230, 445): Tasa alta i', menor producto Y' -->
+  <circle cx="230" cy="445" r="9" fill="#10172D" stroke="#667FDA" stroke-width="2.4"/>
+  <circle cx="230" cy="445" r="3.8" fill="#FF6F4A"/>
+  <rect x="242" y="433" width="102" height="22" rx="4" fill="#10172D" stroke="#667FDA" stroke-width="0.9"/>
+  <text x="293" y="448" text-anchor="middle" font-family="Inter" font-weight="700" font-size="10.5" fill="#EFF2F9">A&#8242; (Y&#8242;, i&#8242; alta)</text>
 
-  <!-- Nodo A (380, 410): Tasa baja i, mayor producto Y -->
-  <circle cx="380" cy="410" r="8.5" fill="#10172D" stroke="#EFF2F9" stroke-width="2.4"/>
-  <circle cx="380" cy="410" r="3.5" fill="#FF6F4A"/>
-  <rect x="392" y="398" width="88" height="22" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.9"/>
-  <text x="436" y="413" text-anchor="middle" font-family="Inter" font-weight="700" font-size="10.5" fill="#EFF2F9">A (Y, i baja)</text>
+  <!-- Nodo A (420, 535): Tasa baja i, mayor producto Y -->
+  <circle cx="420" cy="535" r="9" fill="#10172D" stroke="#EFF2F9" stroke-width="2.4"/>
+  <circle cx="420" cy="535" r="3.8" fill="#FF6F4A"/>
+  <rect x="432" y="523" width="96" height="22" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.9"/>
+  <text x="480" y="538" text-anchor="middle" font-family="Inter" font-weight="700" font-size="10.5" fill="#EFF2F9">A (Y, i baja)</text>
 
-  <!-- ========================================== -->
-  <!-- ZÓCALO PEDAGÓGICO: SECUENCIA DE 4 PASOS    -->
-  <!-- ========================================== -->
-  <rect x="16" y="492" width="568" height="24" rx="4" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
-  <text x="24" y="508" font-family="JetBrains Mono" font-weight="700" font-size="9" fill="#667FDA">&#9312; Tasa sube a i&#8242;</text>
-  <text x="135" y="508" font-family="Inter" font-size="9" fill="#A3AABE">&#8594;</text>
-  <text x="150" y="508" font-family="JetBrains Mono" font-weight="700" font-size="9" fill="#FFB188">&#9313; Inversi&#243;n cae (ZZ baja)</text>
-  <text x="295" y="508" font-family="Inter" font-size="9" fill="#A3AABE">&#8594;</text>
-  <text x="310" y="508" font-family="JetBrains Mono" font-weight="700" font-size="9" fill="#FF6F4A">&#9314; Producto cae a Y&#8242;</text>
-  <text x="430" y="508" font-family="Inter" font-size="9" fill="#A3AABE">&#8594;</text>
-  <text x="445" y="508" font-family="JetBrains Mono" font-weight="700" font-size="9" fill="#55C975">&#9315; Curva IS (i &#8593; &#8658; Y &#8595;)</text>
+  <!-- ======================================================== -->
+  <!-- ZÓCALO PEDAGÓGICO: SECUENCIA COMPLETA DE 4 PASOS         -->
+  <!-- ======================================================== -->
+  <rect x="16" y="626" width="628" height="28" rx="5" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+  <text x="26" y="644" font-family="JetBrains Mono" font-weight="700" font-size="9" fill="#EFF2F9">&#9312; Eq. A (i, Y)</text>
+  <text x="125" y="644" font-family="Inter" font-size="9" fill="#A3AABE">&#8594;</text>
+  <text x="140" y="644" font-family="JetBrains Mono" font-weight="700" font-size="9" fill="#FFB188">&#9313; Tasa &#8593;i&#8242; &#8658; &#8595;I (ZZ baja)</text>
+  <text x="315" y="644" font-family="Inter" font-size="9" fill="#A3AABE">&#8594;</text>
+  <text x="330" y="644" font-family="JetBrains Mono" font-weight="700" font-size="9" fill="#667FDA">&#9314; Nuevo Eq. A&#8242; (Y&#8242; &lt; Y)</text>
+  <text x="495" y="644" font-family="Inter" font-size="9" fill="#A3AABE">&#8594;</text>
+  <text x="510" y="644" font-family="JetBrains Mono" font-weight="700" font-size="9" fill="#55C975">&#9315; Curva IS: &#8593;i &#8658; &#8595;Y</text>
 </svg>

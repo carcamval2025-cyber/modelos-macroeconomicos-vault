@@ -52,8 +52,10 @@ Este documento registra la suite completa de ilustraciones técnicas y diagramas
 - Tarjetas técnicas inferiores con las reglas canónicas de Blanchard y pastillas de protección de texto en todos los nodos y coordenadas.
 
 ### img-t2-04 — Derivación de la Curva IS a partir de $Z=Y$ (`diagrama-derivacion-is.svg`)
-- **Panel superior:** Cruce keynesiano con recta de 45° ($Y=Z$) y curvas de demanda $ZZ(i)$ y $ZZ'(i')$. Muestra cómo un alza de la tasa de interés de $i$ a $i'$ contrae la inversión y desplaza la demanda hacia abajo, reduciendo el producto de $Y$ a $Y'$.
-- **Panel inferior:** Espacio $(Y, i)$ alineado verticalmente donde las proyecciones ortogonales de $A$ y $A'$ trazan la curva $IS$ con pendiente negativa.
+- **Panel superior (Mercado de bienes — Cruce Keynesiano):** Cruce con pendiente real clara de la recta de 45° ($Y=Z$, condición de equilibrio) y dos curvas de demanda agregada: $ZZ(i)$ en coral sólido (equilibrio inicial $A$ en $Y$) y $ZZ'(i')$ en trazo punteado (equilibrio $A'$ en $Y'$). Incluye interceptos en el eje vertical de gasto autónomo $Z_0(i) \to Z_0'(i')$, vector vertical de caída de inversión (Paso 2), vector horizontal de contracción del producto por multiplicador (Paso 4) y pastillas con los pasos numerados del ① al ④.
+- **Franja central de enlace (Puente de Proyección):** Guías verticales punteadas coloreadas (azul para $Y'$ y gris para $Y$) con flechas directas que conectan inequívocamente cada producción del mercado de bienes con el gráfico inferior.
+- **Panel inferior (Espacio Y-i):** Las guías proyectan los nodos $A'(Y', i')$ y $A(Y, i)$, sobre los cuales se dibuja la curva $IS$ con pendiente negativa en doble trazo.
+- **Zócalo pedagógico inferior:** Secuencia canónica de 4 pasos desglosada y legible.
 
 ### img-t2-02 — La Curva LM Moderna (`diagrama-curva-lm.svg`)
 - Recta horizontal en la tasa de interés de política monetaria fijada por el banco central ($i = i^*$).
