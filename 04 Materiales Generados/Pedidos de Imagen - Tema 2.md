@@ -52,10 +52,10 @@ Este documento registra la suite completa de ilustraciones técnicas y diagramas
 - Tarjetas técnicas inferiores con las reglas canónicas de Blanchard y pastillas de protección de texto en todos los nodos y coordenadas.
 
 ### img-t2-04 — Derivación de la Curva IS a partir de $Z=Y$ (`diagrama-derivacion-is.svg`)
-- **Panel superior (Mercado de bienes — Cruce Keynesiano):** Cruce con pendiente real clara de la recta de 45° ($Y=Z$, condición de equilibrio) y dos curvas de demanda agregada: $ZZ(i)$ en coral sólido (equilibrio inicial $A$ en $Y$) y $ZZ'(i')$ en trazo punteado (equilibrio $A'$ en $Y'$). Incluye interceptos en el eje vertical de gasto autónomo $Z_0(i) \to Z_0'(i')$, vector vertical de caída de inversión (Paso 2), vector horizontal de contracción del producto por multiplicador (Paso 4) y pastillas con los pasos numerados del ① al ④.
-- **Franja central de enlace (Puente de Proyección):** Guías verticales punteadas coloreadas (azul para $Y'$ y gris para $Y$) con flechas directas que conectan inequívocamente cada producción del mercado de bienes con el gráfico inferior.
-- **Panel inferior (Espacio Y-i):** Las guías proyectan los nodos $A'(Y', i')$ y $A(Y, i)$, sobre los cuales se dibuja la curva $IS$ con pendiente negativa en doble trazo.
-- **Zócalo pedagógico inferior:** Secuencia canónica de 4 pasos desglosada y legible.
+- **Panel superior (Mercado de bienes — Cruce Keynesiano canónico):** Diseño limpio de libro de texto (Blanchard). Ejes $(Z, Y)$, recta de 45° ($Y=Z$), dos curvas de demanda $ZZ$ y $ZZ'$, equilibrio inicial $A$, nuevo equilibrio $A'$, y una flecha pequeña y discreta $\downarrow I (\uparrow i)$ entre ambas curvas. Sin pastillas ni textos intermedios que saturen el espacio.
+- **Enlace inter-panel directo:** Guías verticales punteadas sutiles que descienden directamente desde los nodos $A'$ y $A$ hacia el panel inferior sin bloques de texto intermedios.
+- **Panel inferior (Relación IS):** Ejes $(Y, i)$, curva $IS$ en coral limpio con pendiente negativa conectando los equilibrios proyectados $A'(Y', i')$ y $A(Y, i)$.
+- **Pie sobrio:** Una única línea técnica discreta resumiendo la derivación macroeconómica canónica.
 
 ### img-t2-02 — La Curva LM Moderna (`diagrama-curva-lm.svg`)
 - Recta horizontal en la tasa de interés de política monetaria fijada por el banco central ($i = i^*$).
