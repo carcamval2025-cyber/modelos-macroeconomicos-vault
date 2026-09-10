@@ -1459,122 +1459,130 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
         <figure style="margin:20px 0 24px 0;">
           <div class="diagrama-wrap">
             <div class="diagrama">
-              <svg viewBox="0 0 760 380" role="img" aria-labelledby="fig-ej4-title fig-ej4-desc" xmlns="http://www.w3.org/2000/svg">
-                <title id="fig-ej4-title">Condición de estabilidad y colapso de la curva IS (c1 + d1 = 1.0)</title>
-                <desc id="fig-ej4-desc">Comparativa técnica en dos paneles del caso límite de inestabilidad macroeconómica donde la propensión marginal a gastar es 1.0. Panel izquierdo: En la Cruz Keynesiana la recta de demanda agregada es estrictamente paralela a la recta de 45 grados, impidiendo un punto de corte único. Panel derecho: En el plano (Y, i), la curva IS colapsa en una línea completamente horizontal a la tasa de interés i*, perdiéndose la relación negativa estándar.</desc>
+              <svg viewBox="0 0 860 420" role="img" aria-labelledby="fig-ej4-title fig-ej4-desc" xmlns="http://www.w3.org/2000/svg">
+                <title id="fig-ej4-title">Estabilidad del equilibrio y colapso de la curva IS (c1 + d1 = 1.0)</title>
+                <desc id="fig-ej4-desc">Comparativa técnica en dos paneles del caso límite de inestabilidad macroeconómica donde la propensión marginal a gastar es exactamente 1.0. Panel izquierdo: En la Cruz Keynesiana la recta de demanda agregada DA es estrictamente paralela a la recta de 45 grados, impidiendo un punto de corte único. Panel derecho: En el plano IS (Y, i), la curva IS colapsa en una línea completamente horizontal a la tasa de interés i*, perdiéndose la relación negativa estándar entre producto y tasa de interés.</desc>
 
                 <!-- ======================================================== -->
-                <!-- PANEL IZQUIERDO: CRUZ KEYNESIANA DEGENERADA (DA vs Y)    -->
+                <!-- PANEL IZQUIERDO: CRUZ KEYNESIANA (PLANO DA vs Y)         -->
                 <!-- ======================================================== -->
-                <rect x="6" y="6" width="368" height="368" rx="12" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+                <rect x="6" y="6" width="414" height="408" rx="10" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
 
                 <!-- Encabezado panel izquierdo -->
-                <rect x="20" y="18" width="340" height="24" rx="5" fill="#1B223C"/>
-                <text x="190" y="35" text-anchor="middle" font-family="Inter" font-weight="700" font-size="11" fill="#FFB188">1. CRUZ KEYNESIANA // RECTAS PARALELAS</text>
+                <rect x="18" y="16" width="390" height="26" rx="5" fill="#1B223C"/>
+                <text x="213" y="33" text-anchor="middle" font-family="Inter" font-weight="700" font-size="11.5" fill="#FFB188">1. CRUZ KEYNESIANA // RECTAS PARALELAS</text>
 
-                <rect x="20" y="46" width="340" height="20" rx="4" fill="#10172D" stroke="#FB5668" stroke-width="0.8"/>
-                <text x="190" y="60" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#FB5668">&#8706;DA/&#8706;Y = 0.7 + 0.3 = 1.0 &#8658; Multiplicador &#945; &#8594; &#8734;</text>
+                <rect x="18" y="46" width="390" height="22" rx="4" fill="#10172D" stroke="#FB5668" stroke-width="0.8"/>
+                <text x="213" y="61" text-anchor="middle" font-family="JetBrains Mono" font-size="9.5" fill="#FB5668">&#8706;DA/&#8706;Y = 0.7 + 0.3 = 1.0 &#8658; Multiplicador &#945; &#8594; &#8734;</text>
 
-                <!-- Retícula cartesiana -->
-                <path d="M55 110H345M55 180H345M55 250H345" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".2"/>
-                <path d="M125 70V265M210 70V265M295 70V265" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".2"/>
+                <!-- Retícula cartesiana tenue -->
+                <path d="M65 130H375M65 190H375M65 250H375" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".2"/>
+                <path d="M145 75V330M225 75V330M305 75V330" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".2"/>
 
-                <!-- Área sombreada entre las rectas paralelas -->
-                <polygon points="55,185 55,265 245,75 165,75" fill="#FB5668" fill-opacity="0.06"/>
+                <!-- Área sombreada entre las dos rectas paralelas -->
+                <polygon points="65,230 205,90 305,90 165,230" fill="#FB5668" fill-opacity="0.05"/>
 
                 <!-- Ejes panel izquierdo -->
-                <line x1="55" y1="70" x2="55" y2="265" stroke="#A3AABE" stroke-width="1.6" stroke-linecap="round"/>
-                <line x1="55" y1="265" x2="350" y2="265" stroke="#A3AABE" stroke-width="1.6" stroke-linecap="round"/>
-                <path d="M50 78L55 68L60 78" fill="none" stroke="#A3AABE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M342 260L350 265L342 270" fill="none" stroke="#A3AABE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="65" y1="75" x2="65" y2="330" stroke="#A3AABE" stroke-width="1.8" stroke-linecap="round"/>
+                <line x1="65" y1="330" x2="385" y2="330" stroke="#A3AABE" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M60 83L65 73L70 83" fill="none" stroke="#A3AABE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M377 325L385 330L377 335" fill="none" stroke="#A3AABE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 
-                <!-- Títulos ejes izquierdo -->
-                <rect x="24" y="66" width="28" height="18" rx="3" fill="#10172D"/>
-                <text x="38" y="79" text-anchor="middle" font-family="Inter" font-weight="700" font-size="11.5" fill="#EFF2F9">DA</text>
-                <rect x="342" y="270" width="22" height="18" rx="3" fill="#10172D"/>
-                <text x="353" y="283" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#EFF2F9">Y</text>
+                <!-- Títulos de ejes izquierdo -->
+                <rect x="28" y="70" width="30" height="20" rx="3" fill="#10172D"/>
+                <text x="43" y="85" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#EFF2F9">DA</text>
+                <rect x="376" y="336" width="24" height="20" rx="3" fill="#10172D"/>
+                <text x="388" y="351" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12.5" fill="#EFF2F9">Y</text>
+
+                <!-- Origen (0,0) -->
+                <rect x="42" y="334" width="18" height="16" rx="2" fill="#10172D"/>
+                <text x="51" y="346" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#A3AABE">0</text>
 
                 <!-- Recta de 45 grados (Y = DA, pendiente = 1.0) -->
-                <line x1="55" y1="265" x2="250" y2="70" stroke="#A3AABE" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
-                <rect x="180" y="76" width="138" height="20" rx="3" fill="#10172D" stroke="#A3AABE" stroke-width="0.8"/>
-                <text x="249" y="90" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#A3AABE">Recta 45&#176; (pendiente = 1)</text>
+                <line x1="65" y1="330" x2="305" y2="90" stroke="#A3AABE" stroke-width="2.2" stroke-dasharray="6 4" opacity=".75"/>
+                <rect x="235" y="85" width="140" height="22" rx="4" fill="#10172D" stroke="#A3AABE" stroke-width="0.8"/>
+                <text x="305" y="100" text-anchor="middle" font-family="JetBrains Mono" font-size="9.5" fill="#A3AABE">L&#237;nea de 45&#176; (Pendiente = 1)</text>
 
                 <!-- Recta de Demanda Agregada DA = A(i) + 1.0*Y (pendiente = 1.0, paralela) -->
-                <line x1="55" y1="185" x2="245" y2="-5" stroke="#FB5668" stroke-width="3.8" stroke-linecap="round"/>
-                <line x1="55" y1="185" x2="245" y2="-5" stroke="#FF6F4A" stroke-width="1.2" stroke-dasharray="4 4" opacity=".4"/>
-                <rect x="80" y="118" width="158" height="22" rx="4" fill="#10172D" stroke="#FB5668" stroke-width="1"/>
-                <text x="159" y="133" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="9.5" fill="#FB5668">DA = A(i) + 1.0&#183;Y (pendiente = 1)</text>
+                <line x1="65" y1="230" x2="205" y2="90" stroke="#FB5668" stroke-width="3.8" stroke-linecap="round"/>
+                <line x1="65" y1="230" x2="205" y2="90" stroke="#FF6F4A" stroke-width="1.3" stroke-dasharray="4 4" opacity=".5"/>
 
-                <!-- Intercepto en eje DA: A(i) -->
-                <circle cx="55" cy="185" r="4.5" fill="#FB5668"/>
-                <rect x="16" y="176" width="36" height="18" rx="3" fill="#10172D"/>
-                <text x="34" y="189" text-anchor="middle" font-family="JetBrains Mono" font-size="9.5" fill="#FB5668">A(i)</text>
+                <!-- Intercepto A(i) en el eje vertical -->
+                <circle cx="65" cy="230" r="5" fill="#FB5668"/>
+                <rect x="18" y="219" width="42" height="22" rx="4" fill="#10172D" stroke="#FB5668" stroke-width="1"/>
+                <text x="39" y="234" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="10" fill="#FB5668">A(i)</text>
 
-                <!-- Anotación gráfica de paralelismo -->
-                <rect x="160" y="195" width="175" height="22" rx="4" fill="#1B223C" stroke="#FB5668" stroke-width="0.8"/>
-                <text x="247" y="210" text-anchor="middle" font-family="Inter" font-weight="700" font-size="9.5" fill="#FB5668">&#9888; Rectas Paralelas (Sin corte)</text>
+                <!-- Etiqueta de la curva DA -->
+                <rect x="68" y="112" width="168" height="24" rx="4" fill="#10172D" stroke="#FB5668" stroke-width="1.1"/>
+                <text x="152" y="128" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="9.5" fill="#FB5668">DA = A(i) + 1.0&#183;Y (Pendiente = 1)</text>
 
-                <!-- Tarjeta explicativa panel izquierdo -->
-                <rect x="18" y="296" width="344" height="66" rx="6" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
-                <text x="28" y="315" font-family="JetBrains Mono" font-size="9.5" font-weight="700" fill="#FB5668">&#9679; INESTABILIDAD DINÁMICA:</text>
-                <text x="28" y="333" font-family="Inter" font-size="9.5" fill="#EFF2F9">Al ser c1 + d1 = 1.0, el gasto crece igual que la renta.</text>
-                <text x="28" y="350" font-family="Inter" font-size="9.5" fill="#A3AABE">Si A(i) &#8800; 0 nunca se cruzan; no existe equilibrio estático.</text>
+                <!-- Anotación de paralelismo -->
+                <rect x="156" y="196" width="180" height="22" rx="4" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+                <text x="246" y="211" text-anchor="middle" font-family="Inter" font-weight="600" font-size="9.5" fill="#FFB188">Rectas paralelas // Sin corte &#250;nico</text>
+
+                <!-- Tarjeta explicativa inferior panel izquierdo -->
+                <rect x="18" y="352" width="390" height="52" rx="6" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+                <text x="28" y="371" font-family="JetBrains Mono" font-size="9.5" font-weight="700" fill="#FB5668">&#9679; INESTABILIDAD DIN&#193;MICA (&#945; &#8594; &#8734;):</text>
+                <text x="28" y="390" font-family="Inter" font-size="9.5" fill="#EFF2F9">Al ser c1 + d1 = 1.0, el gasto crece igual que la renta; no existe convergencia.</text>
 
                 <!-- ======================================================== -->
-                <!-- PANEL DERECHO: PLANO IS (Y, i) - CURVA IS COLAPSADA      -->
+                <!-- PANEL DERECHO: PLANO IS (Y, i) - CURVA COLAPSADA         -->
                 <!-- ======================================================== -->
-                <rect x="386" y="6" width="368" height="368" rx="12" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+                <rect x="440" y="6" width="414" height="408" rx="10" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
 
                 <!-- Encabezado panel derecho -->
-                <rect x="400" y="18" width="340" height="24" rx="5" fill="#1B223C"/>
-                <text x="570" y="35" text-anchor="middle" font-family="Inter" font-weight="700" font-size="11" fill="#667FDA">2. PLANO IS // CURVA HORIZONTAL COLAPSADA</text>
+                <rect x="452" y="16" width="390" height="26" rx="5" fill="#1B223C"/>
+                <text x="647" y="33" text-anchor="middle" font-family="Inter" font-weight="700" font-size="11.5" fill="#667FDA">2. PLANO IS // CURVA HORIZONTAL COLAPSADA</text>
 
-                <rect x="400" y="46" width="340" height="20" rx="4" fill="#10172D" stroke="#667FDA" stroke-width="0.8"/>
-                <text x="570" y="60" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#667FDA">di/dY = (1 &#8722; 1.0) / (&#8722;2000) = 0 &#8658; Pendiente nula</text>
+                <rect x="452" y="46" width="390" height="22" rx="4" fill="#10172D" stroke="#667FDA" stroke-width="0.8"/>
+                <text x="647" y="61" text-anchor="middle" font-family="JetBrains Mono" font-size="9.5" fill="#667FDA">di/dY = (1 &#8722; 1.0) / (&#8722;2000) = 0 &#8658; Pendiente nula</text>
 
                 <!-- Retícula tenue panel derecho -->
-                <path d="M435 110H725M435 170H725M435 230H725" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".2"/>
-                <path d="M505 70V265M595 70V265M685 70V265" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".2"/>
+                <path d="M490 130H805M490 195H805M490 260H805" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".2"/>
+                <path d="M570 75V330M650 75V330M730 75V330" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".2"/>
 
                 <!-- Ejes panel derecho -->
-                <line x1="435" y1="70" x2="435" y2="265" stroke="#A3AABE" stroke-width="1.6" stroke-linecap="round"/>
-                <line x1="435" y1="265" x2="730" y2="265" stroke="#A3AABE" stroke-width="1.6" stroke-linecap="round"/>
-                <path d="M430 78L435 68L440 78" fill="none" stroke="#A3AABE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M722 260L730 265L722 270" fill="none" stroke="#A3AABE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="490" y1="75" x2="490" y2="330" stroke="#A3AABE" stroke-width="1.8" stroke-linecap="round"/>
+                <line x1="490" y1="330" x2="815" y2="330" stroke="#A3AABE" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M485 83L490 73L495 83" fill="none" stroke="#A3AABE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M807 325L815 330L807 335" fill="none" stroke="#A3AABE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 
-                <!-- Títulos ejes derecho -->
-                <rect x="410" y="66" width="22" height="18" rx="3" fill="#10172D"/>
-                <text x="421" y="79" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#EFF2F9">i</text>
-                <rect x="722" y="270" width="22" height="18" rx="3" fill="#10172D"/>
-                <text x="733" y="283" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#EFF2F9">Y</text>
+                <!-- Títulos de ejes derecho -->
+                <rect x="460" y="70" width="24" height="20" rx="3" fill="#10172D"/>
+                <text x="472" y="85" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12.5" fill="#EFF2F9">i</text>
+                <rect x="806" y="336" width="24" height="20" rx="3" fill="#10172D"/>
+                <text x="818" y="351" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12.5" fill="#EFF2F9">Y</text>
 
-                <!-- Curva IS horizontal en i* -->
-                <line x1="435" y1="170" x2="715" y2="170" stroke="#667FDA" stroke-width="4.2" stroke-linecap="round"/>
-                <line x1="435" y1="170" x2="715" y2="170" stroke="#FF6F4A" stroke-width="1.4" stroke-dasharray="4 4" opacity=".4"/>
-                <rect x="520" y="142" width="195" height="22" rx="4" fill="#10172D" stroke="#667FDA" stroke-width="1"/>
-                <text x="617" y="157" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="10" fill="#667FDA">Curva IS (Horizontal en i*)</text>
+                <!-- Origen (0,0) -->
+                <rect x="468" y="334" width="18" height="16" rx="2" fill="#10172D"/>
+                <text x="477" y="346" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#A3AABE">0</text>
 
-                <!-- Valor i* en el eje vertical -->
-                <circle cx="435" cy="170" r="5" fill="#667FDA"/>
-                <rect x="390" y="160" width="42" height="20" rx="3" fill="#10172D"/>
-                <text x="411" y="174" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="11" fill="#667FDA">i*</text>
+                <!-- Curva IS horizontal colapsada en i* -->
+                <line x1="490" y1="195" x2="795" y2="195" stroke="#667FDA" stroke-width="4" stroke-linecap="round"/>
+                <line x1="490" y1="195" x2="795" y2="195" stroke="#FF6F4A" stroke-width="1.3" stroke-dasharray="4 4" opacity=".4"/>
 
-                <!-- Badge con la fórmula de i* -->
-                <rect x="475" y="185" width="235" height="24" rx="4" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
-                <text x="592" y="201" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#EFF2F9">i* = (450 &#8722; 0.7T + G) / 2,000</text>
+                <!-- Nodo en i* sobre el eje vertical -->
+                <circle cx="490" cy="195" r="7.5" fill="#10172D" stroke="#667FDA" stroke-width="2.4"/>
+                <circle cx="490" cy="195" r="3.4" fill="#FF6F4A"/>
+                <rect x="448" y="184" width="36" height="22" rx="4" fill="#10172D" stroke="#667FDA" stroke-width="1"/>
+                <text x="466" y="199" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="11" fill="#667FDA">i*</text>
 
-                <!-- Regiones de desequilibrio para i != i* -->
-                <rect x="450" y="95" width="260" height="20" rx="3" fill="#10172D" stroke="#FB5668" stroke-width="0.8"/>
-                <text x="580" y="109" text-anchor="middle" font-family="Inter" font-size="9" fill="#FB5668">Si i &gt; i* &#8658; A(i) &lt; 0 &#8658; No existe equilibrio en bienes</text>
+                <!-- Etiqueta de la curva IS -->
+                <rect x="540" y="152" width="230" height="24" rx="4" fill="#10172D" stroke="#667FDA" stroke-width="1.1"/>
+                <text x="655" y="168" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="10.5" fill="#667FDA">Curva IS (Horizontal a tasa i*)</text>
 
-                <rect x="450" y="225" width="260" height="20" rx="3" fill="#10172D" stroke="#FB5668" stroke-width="0.8"/>
-                <text x="580" y="239" text-anchor="middle" font-family="Inter" font-size="9" fill="#FB5668">Si i &lt; i* &#8658; A(i) &gt; 0 &#8658; No existe equilibrio en bienes</text>
+                <!-- Badge de la ecuación de i* -->
+                <rect x="525" y="210" width="260" height="26" rx="4" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+                <text x="655" y="227" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#EFF2F9">i* = (450 &#8722; 0.7T + G) / 2,000</text>
 
-                <!-- Tarjeta explicativa panel derecho -->
-                <rect x="398" y="296" width="344" height="66" rx="6" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
-                <text x="408" y="315" font-family="JetBrains Mono" font-size="9.5" font-weight="700" fill="#667FDA">&#9679; COLAPSO DE LA RELACIÓN IS:</text>
-                <text x="408" y="333" font-family="Inter" font-size="9.5" fill="#EFF2F9">La variable Y desaparece de la ecuación: 0 = A(i).</text>
-                <text x="408" y="350" font-family="Inter" font-size="9.5" fill="#A3AABE">No existe la curva IS estándar con pendiente negativa.</text>
+                <!-- Nota sobre desequilibrio para i != i* -->
+                <rect x="515" y="260" width="280" height="22" rx="4" fill="#10172D" stroke="#FB5668" stroke-width="0.8"/>
+                <text x="655" y="275" text-anchor="middle" font-family="Inter" font-size="9.5" fill="#FB5668">Si i &#8800; i* &#8658; Ning&#250;n nivel de Y equilibra el mercado</text>
+
+                <!-- Tarjeta explicativa inferior panel derecho -->
+                <rect x="452" y="352" width="390" height="52" rx="6" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+                <text x="462" y="371" font-family="JetBrains Mono" font-size="9.5" font-weight="700" fill="#667FDA">&#9679; COLAPSO DE LA IS (di/dY = 0):</text>
+                <text x="462" y="390" font-family="Inter" font-size="9.5" fill="#EFF2F9">La variable Y desaparece de la relaci&#243;n; se pierde la pendiente negativa habitual.</text>
               </svg>
             </div>
           </div>
