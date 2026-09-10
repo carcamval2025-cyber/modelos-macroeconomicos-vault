@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guía Completa — Tema 1: Repaso de Macro I</title>
+<title>Guía Completa — Tema 1: Repaso de Macro I | Macro-Cybernetics</title>
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,8 +31,18 @@ em{font-style:italic; color:var(--coral);}
 .mono{font-family:'JetBrains Mono',monospace; font-variant-numeric:tabular-nums;}
 a{color:var(--coral-2);}
 a:focus-visible, button:focus-visible{
-  outline:2px solid var(--coral); outline-offset:3px; border-radius:4px;
+  outline:2px solid var(--coral); outline-offset:3px; border-radius:2px;
 }
+
+/* ---------- Barra de progreso HUD ultra-fina ---------- */
+.scroll-progreso{position:fixed; top:0; left:0; width:100%; height:3px; background:var(--border); z-index:999;}
+.scroll-progreso-fill{height:100%; width:0%; background:var(--coral); transition:width .1s linear;}
+
+/* ---------- Scrollbar técnica ---------- */
+::-webkit-scrollbar{width:7px; height:7px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--border); border-radius:2px;}
+::-webkit-scrollbar-thumb:hover{background:var(--coral);}
 
 /* ---------- Header ---------- */
 header{
@@ -335,6 +345,8 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
 </head>
 <body>
 
+<div class="scroll-progreso" aria-hidden="true"><div class="scroll-progreso-fill" id="scrollFill"></div></div>
+
 <header>
   <svg class="header-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" role="img" aria-label="Curvas macroeconómicas abstractas con puntos de equilibrio">
     <path d="M190 260A170 170 0 0 1 370 70" fill="none" stroke="#667FDA" stroke-width="1" opacity=".10"/>
@@ -362,14 +374,14 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
   </svg>
   <div class="wrap">
     <a class="volver" href="../index.html">&larr; Modelos Macroeconómicos</a>
-    <div class="eyebrow">ESEN · Macro II · Tema 1 · Semana 1</div>
+    <div class="eyebrow">[SYS.TEMA_01 // REPASO_MACRO_I // SEMANA_01]</div>
     <h1>Repaso de <em>Macro I</em></h1>
     <p class="sub">Guía de estudio exhaustiva: determinación de la tasa de interés, el papel de los bancos comerciales, el multiplicador monetario y la trampa de liquidez (Blanchard, cap. 4 y Sala i Martín).</p>
     <div class="meta-row">
-      <span class="chip"><span class="chip-in">Blanchard, cap. 4 completo</span></span>
-      <span class="chip"><span class="chip-in">Sala i Martín (Cap. Amarillo)</span></span>
-      <span class="chip"><span class="chip-in">Semana 1 · 24–28 ago</span></span>
-      <span class="chip"><span class="chip-in">Prof. Luis Morera</span></span>
+      <span class="chip"><span class="chip-in">[BLANCHARD_CAP_4_COMPLETO]</span></span>
+      <span class="chip"><span class="chip-in">[SALA_I_MARTÍN · CAP_AMARILLO]</span></span>
+      <span class="chip"><span class="chip-in">[SEMANA_01 · 24–28_AGO]</span></span>
+      <span class="chip"><span class="chip-in">[CÁTEDRA · PROF.LUIS_MORERA]</span></span>
     </div>
   </div>
 </header>
@@ -456,7 +468,7 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
 
   <!-- ==================== MÓDULO 01 ==================== -->
   <section class="modulo reveal" id="alcance">
-    <div class="modulo-head"><span class="modulo-num">01</span><h2>Alcance del curso y lectura complementaria</h2></div>
+    <div class="modulo-head"><span class="modulo-num">// 01</span><h2>Alcance del curso y lectura complementaria</h2></div>
     
     <div class="bloque">
       <h3>Objetivo de Aprendizaje y Cobertura</h3>
@@ -492,7 +504,7 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
 
   <!-- ==================== MÓDULO 02 ==================== -->
   <section class="modulo reveal" id="marco">
-    <div class="modulo-head"><span class="modulo-num">02</span><h2>4-1 y 4-2 · Demanda de dinero, precios de bonos y OMA</h2></div>
+    <div class="modulo-head"><span class="modulo-num">// 02</span><h2>4-1 y 4-2 · Demanda de dinero, precios de bonos y OMA</h2></div>
 
     <div class="bloque">
       <h3>1. La decisión de portafolio: Dinero vs Bonos</h3>
@@ -671,7 +683,7 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
 
   <!-- ==================== MÓDULO 03 ==================== -->
   <section class="modulo reveal" id="bancos">
-    <div class="modulo-head"><span class="modulo-num">03</span><h2>4-3 · El papel de los intermediarios bancarios y el dinero central</h2></div>
+    <div class="modulo-head"><span class="modulo-num">// 03</span><h2>4-3 · El papel de los intermediarios bancarios y el dinero central</h2></div>
 
     <div class="bloque bloque-icono">
       <span class="icono" style="color:var(--coral)">
@@ -999,7 +1011,7 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
 
   <!-- ==================== MÓDULO 04 ==================== -->
   <section class="modulo reveal" id="trampa">
-    <div class="modulo-head"><span class="modulo-num">04</span><h2>4-4 · La trampa de liquidez y el límite inferior cero (ZLB)</h2></div>
+    <div class="modulo-head"><span class="modulo-num">// 04</span><h2>4-4 · La trampa de liquidez y el límite inferior cero (ZLB)</h2></div>
 
     <div class="bloque bloque-icono">
       <span class="icono" style="color:var(--indigo-mid)">
@@ -1199,7 +1211,7 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
 
   <!-- ==================== MÓDULO 05 ==================== -->
   <section class="modulo reveal" id="sintesis">
-    <div class="modulo-head"><span class="modulo-num">05</span><h2>Síntesis analítica y glosario de variables</h2></div>
+    <div class="modulo-head"><span class="modulo-num">// 05</span><h2>Síntesis analítica y glosario de variables</h2></div>
 
     <div class="grid-2">
       <div class="bezel">
@@ -1237,7 +1249,7 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
 
   <!-- ==================== MÓDULO 06: QUIZ INTERACTIVO ==================== -->
   <section class="modulo reveal" id="quiz">
-    <div class="modulo-head"><span class="modulo-num">06</span><h2>Quiz de Opción Múltiple (10 Preguntas y Ejercicios)</h2></div>
+    <div class="modulo-head"><span class="modulo-num">// 06</span><h2>Quiz de Opción Múltiple (10 Preguntas y Ejercicios)</h2></div>
     <p class="modulo-text">Pon a prueba tu dominio del Tema 1. Selecciona la opción que consideres correcta para recibir retroalimentación inmediata, desglose conceptual y desarrollo matemático paso a paso.</p>
 
     <!-- Score & Progress Tracker -->
@@ -1657,6 +1669,17 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
 
   updateTracker();
 })();
+
+/* Control de barra de progreso superior */
+window.addEventListener('scroll', function(){
+  var h = document.documentElement,
+      b = document.body,
+      st = 'scrollTop',
+      sh = 'scrollHeight';
+  var percent = ((h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight)) * 100;
+  var fill = document.getElementById('scrollFill');
+  if(fill) fill.style.width = Math.min(100, Math.max(0, percent)) + '%';
+}, {passive:true});
 
 if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
   var targets = document.querySelectorAll('.reveal');
