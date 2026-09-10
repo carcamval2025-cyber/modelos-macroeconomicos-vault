@@ -101,10 +101,7 @@ main{max-width:1100px; margin:0 auto; padding:52px 32px 100px;}
 .modulo-head h2{font-size:1.32rem; font-weight:600;}
 .modulo-text{color:var(--text-dim); font-size:0.95rem; max-width:76ch; margin-bottom:28px;}
 
-/* Garantía de visibilidad técnica absoluta: el contenido de cátedra nunca se oculta */
-.reveal{opacity:1; transform:none;}
-.reveal.reveal-play{opacity:1; transform:none;}
-.reveal.reveal-play.reveal-in{opacity:1; transform:none;}
+
 
 /* ---------- Chasis y biseles de hardware ---------- */
 .bezel{
@@ -292,7 +289,6 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
     animation-duration:0.01ms !important; animation-iteration-count:1 !important;
     transition-duration:0.01ms !important; scroll-behavior:auto !important;
   }
-  .reveal.reveal-play{opacity:1; transform:none;}
 }
 </style>
 </head>
@@ -372,7 +368,7 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
     <a href="#autoeval">[ 07 // AUTOEVALUACIÓN ]</a>
   </nav>
 
-  <section class="modulo reveal" id="alcance">
+  <section class="modulo" id="alcance">
     <div class="modulo-head"><span class="modulo-num">// 01</span><h2>Qué cubre este repaso y de dónde sale</h2></div>
     <div class="bloque">
       <p>Este repaso sigue el alcance real de la Semana 2 (Tema 2, Cap. 5 de Blanchard): la derivación de la curva IS (5.1) y de la curva LM (5.2) a partir de "Clase 1 modelo IS LM", más el equilibrio conjunto de ambas curvas y los efectos de la política fiscal y monetaria — el resto del capítulo, ya visto en clase según confirmaste. No se incluye el modelo IS-LM aumentado por temas financieros (tasa real vs. nominal, riesgo, intermediación) porque eso es el Tema 3 (Cap. 6), que empieza esta misma semana y todavía no corresponde adelantar.</p>
@@ -384,7 +380,7 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
     </div>
   </section>
 
-  <section class="modulo reveal" id="curva-is">
+  <section class="modulo" id="curva-is">
     <div class="modulo-head"><span class="modulo-num">// 02</span><h2>5-1 · De Y=Z a la curva IS</h2></div>
 
     <div class="bloque bloque-icono">
@@ -755,7 +751,7 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
     </figure>
   </section>
 
-  <section class="modulo reveal" id="curva-lm">
+  <section class="modulo" id="curva-lm">
     <div class="modulo-head"><span class="modulo-num">// 03</span><h2>5-2 · Del equilibrio monetario a la curva LM</h2></div>
 
     <div class="bloque">
@@ -856,7 +852,7 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
     </figure>
   </section>
 
-  <section class="modulo reveal" id="equilibrio">
+  <section class="modulo" id="equilibrio">
     <div class="modulo-head"><span class="modulo-num">// 04</span><h2>5-3 y 5-4 · El equilibrio conjunto y el método de los 3 pasos</h2></div>
 
     <div class="bloque">
@@ -1143,7 +1139,7 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
     </figure>
   </section>
 
-  <section class="modulo reveal" id="practica">
+  <section class="modulo" id="practica">
     <div class="modulo-head"><span class="modulo-num">// 05</span><h2>Práctica — los ejercicios de tu Guía de ejercicios 1</h2></div>
     <p class="modulo-text">La IS presenta pendiente negativa y la LM es horizontal (el intercepto es la tasa de política monetaria) en los tres ejercicios de choques — igual que en los diagramas de arriba.</p>
 
@@ -1301,20 +1297,11 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
             </tbody>
           </table>
         </div>
-        <div class="pregunta" data-abierta="false">
-          <button class="disparador" aria-expanded="false">
-            <span>Ver el razonamiento completo (3 pasos)</span>
-            <span style="display:flex; align-items:center; gap:8px;">
-              <span class="pregunta-tag">[DESPLEGAR]</span>
-              <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-            </span>
-          </button>
-          <div class="respuesta">
-            <span class="respuesta-tag">Razonamiento verificado</span>
-            <p><strong>Paso 1:</strong> a cualquier i, menos inversión autónoma significa menos demanda — la IS se desplaza a la izquierda. La LM no se mueve.</p>
-            <p><strong>Paso 2:</strong> el equilibrio se mueve a lo largo de la LM: Y cae, i no cambia (la LM sigue siendo la misma línea horizontal).</p>
-            <p><strong>Paso 3, componente por componente:</strong> con Y menor y T constante, el ingreso disponible Yd cae → consumo privado cae. La inversión cae por partida doble: el choque autónomo y el efecto de un Y menor. El ahorro privado (S = Yd − C) se mueve en la misma dirección que Yd, así que también cae. Con Y menor, las importaciones caen (dependen positivamente de Y); las exportaciones no cambian (dependen del ingreso extranjero, no del doméstico) — con menos importaciones y las mismas exportaciones, la balanza comercial mejora. La demanda de dinero real (= Y·L(i)) cae porque Y cayó e i no cambió; como el banco central mantiene la misma i, debe reducir la oferta de dinero real en la misma medida para que el mercado monetario siga en equilibrio. Y con menor producto, por la ley de Okun, la tasa de desempleo aumenta.</p>
-          </div>
+        <div class="respuesta" style="margin:16px 0 0 0;">
+          <span class="respuesta-tag">Razonamiento verificado // Algoritmo de 3 pasos</span>
+          <p><strong>Paso 1:</strong> a cualquier i, menos inversión autónoma significa menos demanda — la IS se desplaza a la izquierda. La LM no se mueve.</p>
+          <p><strong>Paso 2:</strong> el equilibrio se mueve a lo largo de la LM: Y cae, i no cambia (la LM sigue siendo la misma línea horizontal).</p>
+          <p><strong>Paso 3, componente por componente:</strong> con Y menor y T constante, el ingreso disponible Yd cae → consumo privado cae. La inversión cae por partida doble: el choque autónomo y el efecto de un Y menor. El ahorro privado (S = Yd − C) se mueve en la misma dirección que Yd, así que también cae. Con Y menor, las importaciones caen (dependen positivamente de Y); las exportaciones no cambian (dependen del ingreso extranjero, no del doméstico) — con menos importaciones y las mismas exportaciones, la balanza comercial mejora. La demanda de dinero real (= Y·L(i)) cae porque Y cayó e i no cambió; como el banco central mantiene la misma i, debe reducir la oferta de dinero real en la misma medida para que el mercado monetario siga en equilibrio. Y con menor producto, por la ley de Okun, la tasa de desempleo aumenta.</p>
         </div>
       </div>
     </div>
@@ -1340,19 +1327,10 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
             </tbody>
           </table>
         </div>
-        <div class="pregunta pista" data-abierta="false">
-          <button class="disparador" aria-expanded="false">
-            <span>Pista — por qué NO es "no cambia nada"</span>
-            <span style="display:flex; align-items:center; gap:8px;">
-              <span class="pregunta-tag">[DESPLEGAR_PISTA]</span>
-              <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-            </span>
-          </button>
-          <div class="respuesta">
-            <span class="respuesta-tag">Vector de análisis</span>
-            <p>Es tentador pensar que, como el presupuesto sigue equilibrado, nada se mueve — <strong>eso es exactamente el error</strong> que el propio Blanchard usa como pregunta de auto-evaluación en este capítulo ("si G y T aumentan en el mismo monto, la IS no se desplaza" — falso). El gasto público entra directo a la demanda; el alza de impuestos solo entra de forma indirecta, reduciendo el ingreso disponible y por tanto el consumo en una fracción (c1 &lt; 1) de lo que subió T. Como el efecto directo de G es más fuerte que el efecto indirecto (y amortiguado) de T, la IS termina desplazándose <strong>a la derecha</strong>, no quedándose quieta.</p>
-            <p>A partir de ahí: Paso 1 (IS a la derecha, LM no se mueve) y Paso 2 (Y aumenta, i no cambia) ya están dados. Te toca el Paso 3: razona qué pasa con Yd (compara cuánto sube Y contra cuánto subió T), y de ahí el consumo, la inversión, el ahorro, el comercio exterior, el dinero real y el desempleo — con la misma lógica del ejercicio 1, pero en sentido contrario.</p>
-          </div>
+        <div class="respuesta" style="border-color:rgba(102,127,218,0.4); background:rgba(102,127,218,0.08); border-left:3px solid var(--indigo-mid); margin:16px 0 0 0;">
+          <span class="respuesta-tag" style="color:var(--indigo-mid);">Pista técnica verificada // Vector de análisis</span>
+          <p>Es tentador pensar que, como el presupuesto sigue equilibrado, nada se mueve — <strong>eso es exactamente el error</strong> que el propio Blanchard usa como pregunta de auto-evaluación en este capítulo ("si G y T aumentan en el mismo monto, la IS no se desplaza" — falso). El gasto público entra directo a la demanda; el alza de impuestos solo entra de forma indirecta, reduciendo el ingreso disponible y por tanto el consumo en una fracción (c1 &lt; 1) de lo que subió T. Como el efecto directo de G es más fuerte que el efecto indirecto (y amortiguado) de T, la IS termina desplazándose <strong>a la derecha</strong>, no quedándose quieta.</p>
+          <p>A partir de ahí: Paso 1 (IS a la derecha, LM no se mueve) y Paso 2 (Y aumenta, i no cambia) ya están dados. Te toca el Paso 3: razona qué pasa con Yd (compara cuánto sube Y contra cuánto subió T), y de ahí el consumo, la inversión, el ahorro, el comercio exterior, el dinero real y el desempleo — con la misma lógica del ejercicio 1, pero en sentido contrario.</p>
         </div>
       </div>
     </div>
@@ -1378,19 +1356,10 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
             </tbody>
           </table>
         </div>
-        <div class="pregunta pista" data-abierta="false">
-          <button class="disparador" aria-expanded="false">
-            <span>Pista — qué curva se mueve y hacia dónde</span>
-            <span style="display:flex; align-items:center; gap:8px;">
-              <span class="pregunta-tag">[DESPLEGAR_PISTA]</span>
-              <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
-            </span>
-          </button>
-          <div class="respuesta">
-            <span class="respuesta-tag">Vector de análisis</span>
-            <p>Un encaje legal más alto es una forma de que el banco central endurezca la política monetaria — el resultado es equivalente a "subir la tasa de política monetaria": la LM se desplaza hacia arriba (como la LM&#8242; del diagrama del módulo 03). La IS no se mueve (ningún componente de su propia ecuación cambió directamente).</p>
-            <p>Con eso: la economía se mueve a lo largo de la IS hacia arriba y a la izquierda — i sube, Y baja. Aplica el mismo razonamiento del Ejercicio 1 para el resto de la tabla (consumo, inversión, ahorro, comercio exterior, desempleo), y para el dinero recuerda que ahora i sube <em>y</em> Y baja: ambos efectos empujan la demanda de dinero real en la misma dirección.</p>
-          </div>
+        <div class="respuesta" style="border-color:rgba(102,127,218,0.4); background:rgba(102,127,218,0.08); border-left:3px solid var(--indigo-mid); margin:16px 0 0 0;">
+          <span class="respuesta-tag" style="color:var(--indigo-mid);">Pista técnica verificada // Qué curva se mueve y hacia dónde</span>
+          <p>Un encaje legal más alto es una forma de que el banco central endurezca la política monetaria — el resultado es equivalente a "subir la tasa de política monetaria": la LM se desplaza hacia arriba (como la LM&#8242; del diagrama del módulo 03). La IS no se mueve (ningún componente de su propia ecuación cambió directamente).</p>
+          <p>Con eso: la economía se mueve a lo largo de la IS hacia arriba y a la izquierda — i sube, Y baja. Aplica el mismo razonamiento del Ejercicio 1 para el resto de la tabla (consumo, inversión, ahorro, comercio exterior, desempleo), y para el dinero recuerda que ahora i sube <em>y</em> Y baja: ambos efectos empujan la demanda de dinero real en la misma dirección.</p>
         </div>
       </div>
     </div>
@@ -1609,7 +1578,7 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
     </div>
   </section>
 
-  <section class="modulo reveal" id="sintesis">
+  <section class="modulo" id="sintesis">
     <div class="modulo-head"><span class="modulo-num">// 06</span><h2>Síntesis — glosario y resumen</h2></div>
 
     <div class="bezel">
@@ -1635,7 +1604,7 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
     </div>
   </section>
 
-  <section class="modulo reveal" id="autoeval">
+  <section class="modulo" id="autoeval">
     <div class="modulo-head"><span class="modulo-num">// 07</span><h2>Autoevaluación rápida</h2></div>
     <p class="modulo-text">Haz clic en cada pregunta para desplegar el diagnóstico resuelto. Intenta formular tu respuesta antes de abrir.</p>
 
@@ -1770,11 +1739,6 @@ window.addEventListener('scroll', function(){
     });
   });
 })();
-
-/* Garantía de visibilidad permanente de todos los módulos */
-document.querySelectorAll('.reveal').forEach(function(el){
-  el.classList.add('reveal-in');
-});
 </script>
 
 </body>
