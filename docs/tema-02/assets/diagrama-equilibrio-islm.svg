@@ -1,90 +1,74 @@
-<svg viewBox="0 0 460 270" role="img" aria-labelledby="fig-eq-title fig-eq-desc" xmlns="http://www.w3.org/2000/svg">
-  <title id="fig-eq-title">Equilibrio conjunto IS-LM y efectos de política</title>
-  <desc id="fig-eq-desc">Eje vertical i, eje horizontal Y. La curva IS en coral y la línea LM horizontal en índigo se cruzan en el punto A, el equilibrio conjunto. Una curva IS' desplazada a la derecha, en coral claro, ilustra una política fiscal expansiva: el equilibrio se mueve a lo largo de la LM hasta A', con mayor Y y la misma i. Una línea LM' desplazada hacia arriba, en índigo punteado, ilustra una política monetaria restrictiva: el equilibrio se mueve a lo largo de la IS hasta A'', con menor Y y mayor i.</desc>
+<svg viewBox="0 0 520 290" role="img" aria-labelledby="fig-eq-title fig-eq-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-eq-title">Equilibrio conjunto IS-LM en el punto A</title>
+  <desc id="fig-eq-desc">Eje vertical i, eje horizontal Y. La curva IS en coral con pendiente negativa y la curva LM horizontal en índigo se cortan en el punto A, determinando simultáneamente el producto de equilibrio Y* y la tasa de interés de política monetaria i*.</desc>
 
-  <!-- Fondo estructurado unificado -->
-  <rect width="100%" height="100%" fill="#10172D"/>
+  <!-- Marco de contención y fondo técnico elevado -->
+  <rect x="6" y="6" width="508" height="278" rx="10" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
 
-  <!-- Guías de política en cabecera (limpias y sin saturar) -->
-  <text x="75" y="32" font-family="Inter" font-size="9" fill="#667FDA" font-weight="600">&#8593; Pol&#237;tica monetaria: <tspan font-family="JetBrains Mono" font-weight="400" fill="#A3AABE">&#8593;i* &#8594; LM&#8242; (&#8595;Y)</tspan></text>
-  <text x="410" y="32" text-anchor="end" font-family="Inter" font-size="9" fill="#FFB188" font-weight="600">&#8594; Pol&#237;tica fiscal: <tspan font-family="JetBrains Mono" font-weight="400" fill="#A3AABE">&#8593;G, &#8595;T &#8594; IS&#8242; (&#8593;Y)</tspan></text>
+  <!-- Encabezado técnico -->
+  <rect x="20" y="16" width="225" height="22" rx="5" fill="#1B223C"/>
+  <text x="132" y="31" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#EFF2F9">Equilibrio Conjunto IS-LM</text>
+  <rect x="255" y="16" width="245" height="22" rx="5" fill="#1B223C" stroke="#2A324A" stroke-width="1"/>
+  <text x="377" y="31" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="10.5" fill="#FFB188">Y* = C(Y*−T) + I(Y*, i*) + G</text>
 
-  <!-- Proyecciones ortogonales a los ejes (solo entre puntos y ejes) -->
-  <line x1="250" y1="140" x2="250" y2="225" stroke="#A3AABE" stroke-width="1" stroke-dasharray="3 3" opacity=".35"/>
-  <line x1="60" y1="140" x2="250" y2="140" stroke="#A3AABE" stroke-width="1" stroke-dasharray="3 3" opacity=".25"/>
-  <line x1="300" y1="140" x2="300" y2="225" stroke="#FFB188" stroke-width="1" stroke-dasharray="3 3" opacity=".35"/>
-  <line x1="200" y1="100" x2="200" y2="225" stroke="#667FDA" stroke-width="1" stroke-dasharray="3 3" opacity=".35"/>
-  <line x1="60" y1="100" x2="200" y2="100" stroke="#667FDA" stroke-width="1" stroke-dasharray="3 3" opacity=".25"/>
+  <!-- Retícula cartesiana discontinua técnica -->
+  <path d="M65 90H475M65 145H475M65 200H475" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".35"/>
+  <path d="M140 50V235M210 50V235M280 50V235M350 50V235M420 50V235" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".25"/>
 
-  <!-- Ejes cartesianos y flechas -->
-  <line x1="60" y1="25" x2="60" y2="225" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round"/>
-  <line x1="60" y1="225" x2="425" y2="225" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round"/>
-  <path d="M56 31L60 23L64 31" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M419 221L427 225L419 229" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Proyecciones ortogonales al equilibrio A (280, 145) -->
+  <line x1="65" y1="145" x2="280" y2="145" stroke="#667FDA" stroke-width="1.3" stroke-dasharray="3 3" opacity=".75"/>
+  <line x1="280" y1="145" x2="280" y2="235" stroke="#FF6F4A" stroke-width="1.3" stroke-dasharray="3 3" opacity=".75"/>
 
-  <!-- Marcas de calibración en los ejes (ticks) -->
-  <line x1="55" y1="100" x2="60" y2="100" stroke="#A3AABE" stroke-width="1.2"/>
-  <line x1="55" y1="140" x2="60" y2="140" stroke="#A3AABE" stroke-width="1.2"/>
-  <line x1="200" y1="225" x2="200" y2="230" stroke="#A3AABE" stroke-width="1.2"/>
-  <line x1="250" y1="225" x2="250" y2="230" stroke="#A3AABE" stroke-width="1.2"/>
-  <line x1="300" y1="225" x2="300" y2="230" stroke="#A3AABE" stroke-width="1.2"/>
+  <!-- Ejes cartesianos con puntas de flecha sólidas -->
+  <line x1="65" y1="46" x2="65" y2="235" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="65" y1="235" x2="485" y2="235" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M61 52L65 44L69 52" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M477 231L485 235L477 239" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 
-  <!-- Títulos de ejes -->
-  <text x="48" y="27" text-anchor="end" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">i</text>
-  <text x="428" y="240" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">Y</text>
+  <!-- Marcas de calibración (ticks) en los ejes -->
+  <line x1="60" y1="145" x2="65" y2="145" stroke="#667FDA" stroke-width="1.5"/>
+  <line x1="280" y1="235" x2="280" y2="240" stroke="#FF6F4A" stroke-width="1.5"/>
 
-  <!-- Coordenadas en los ejes -->
-  <text x="50" y="104" text-anchor="end" font-family="JetBrains Mono" font-size="11" fill="#667FDA">i*&#8242;</text>
-  <text x="50" y="144" text-anchor="end" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">i*</text>
-  <text x="200" y="242" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#667FDA">Y&#8243;</text>
-  <text x="250" y="242" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="11" fill="#EFF2F9">Y*</text>
-  <text x="300" y="242" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#FFB188">Y&#8242;</text>
+  <!-- Títulos de ejes protegidos con pastillas -->
+  <rect x="34" y="42" width="24" height="18" rx="4" fill="#10172D"/>
+  <text x="46" y="55" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#EFF2F9">i</text>
+  <rect x="475" y="240" width="24" height="18" rx="4" fill="#10172D"/>
+  <text x="487" y="253" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#EFF2F9">Y</text>
 
-  <!-- Curva LM original -->
-  <line x1="75" y1="140" x2="405" y2="140" stroke="#667FDA" stroke-width="2.2" stroke-linecap="round"/>
-  <text x="410" y="136" font-family="JetBrains Mono" font-weight="700" font-size="12" fill="#667FDA">LM</text>
+  <!-- Coordenadas del equilibrio A en los ejes protegidas por pastillas -->
+  <rect x="24" y="137" width="36" height="17" rx="3" fill="#10172D"/>
+  <text x="42" y="150" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" fill="#667FDA">i*</text>
 
-  <!-- Curva LM' desplazada (política monetaria restrictiva) -->
-  <line x1="75" y1="100" x2="405" y2="100" stroke="#667FDA" stroke-width="1.8" stroke-dasharray="6 4" opacity=".8"/>
-  <text x="410" y="96" font-family="JetBrains Mono" font-weight="600" font-size="11" fill="#667FDA" opacity=".85">LM&#8242;</text>
+  <rect x="264" y="242" width="32" height="17" rx="3" fill="#10172D"/>
+  <text x="280" y="255" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" fill="#FF6F4A">Y*</text>
 
-  <!-- Curva IS desplazada (IS', política fiscal expansiva por Δx = +50) -->
-  <path d="M186 45 Q275.1 125, 387.5 205" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-dasharray="6 4" opacity=".85"/>
-  <text x="395" y="211" font-family="JetBrains Mono" font-weight="700" font-size="11.5" fill="#FFB188">IS&#8242;</text>
+  <!-- Curva LM (horizontal en i*) -->
+  <line x1="75" y1="145" x2="440" y2="145" stroke="#667FDA" stroke-width="3.4" stroke-linecap="round"/>
+  <line x1="75" y1="145" x2="440" y2="145" stroke="#667FDA" stroke-width="1.2" stroke-dasharray="4 4" opacity=".4"/>
+  <rect x="444" y="135" width="38" height="20" rx="4" fill="#10172D" stroke="#667FDA" stroke-width="1"/>
+  <text x="463" y="149" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="11.5" fill="#667FDA">LM</text>
 
-  <!-- Curva IS original -->
-  <path d="M136 45 Q225.1 125, 337.5 205" fill="none" stroke="#FF6F4A" stroke-width="2.4" stroke-linecap="round"/>
-  <text x="345" y="211" font-family="JetBrains Mono" font-weight="700" font-size="12" fill="#FF6F4A">IS</text>
+  <!-- Curva IS (pendiente negativa) pasando exactamente por (280, 145) -->
+  <path d="M 140 55 C 210 95, 280 145, 430 215" fill="none" stroke="#FF6F4A" stroke-width="3.4" stroke-linecap="round"/>
+  <path d="M 140 55 C 210 95, 280 145, 430 215" fill="none" stroke="#FFB188" stroke-width="1.2" stroke-dasharray="4 4" opacity=".4"/>
+  <rect x="434" y="206" width="34" height="20" rx="4" fill="#10172D" stroke="#FF6F4A" stroke-width="1"/>
+  <text x="451" y="220" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="11.5" fill="#FF6F4A">IS</text>
 
-  <!-- Flecha A -> A' (política fiscal sobre LM) -->
-  <line x1="262" y1="134" x2="288" y2="134" stroke="#FFB188" stroke-width="1.4" stroke-dasharray="3 2"/>
-  <path d="M282 131L288 134L282 137" fill="none" stroke="#FFB188" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Zonas pedagógicas de desequilibrio de mercado -->
+  <rect x="300" y="72" width="168" height="20" rx="4" fill="#1B223C" stroke="#2A324A" stroke-width="0.8" opacity=".85"/>
+  <text x="384" y="86" text-anchor="middle" font-family="Inter" font-size="8.5" fill="#A3AABE">Y &gt; Z : Exceso de oferta de bienes</text>
 
-  <!-- Flecha A -> A'' (política monetaria sobre IS, paralela y desplazada) -->
-  <line x1="238" y1="126" x2="214" y2="106" stroke="#667FDA" stroke-width="1.4" stroke-dasharray="3 2"/>
-  <path d="M221 107L214 106L216 113" fill="none" stroke="#667FDA" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="80" y="176" width="176" height="20" rx="4" fill="#1B223C" stroke="#2A324A" stroke-width="0.8" opacity=".85"/>
+  <text x="168" y="190" text-anchor="middle" font-family="Inter" font-size="8.5" fill="#A3AABE">Z &gt; Y : Exceso de demanda de bienes</text>
 
-  <!-- Nodo A (equilibrio conjunto inicial) -->
-  <circle cx="250" cy="140" r="4.5" fill="#10172D" stroke="#EFF2F9" stroke-width="1.8"/>
-  <circle cx="250" cy="140" r="2" fill="#FF6F4A"/>
-  <text x="238" y="156" font-family="Inter" font-weight="800" font-size="13" fill="#EFF2F9">A</text>
+  <!-- Nodo A (Equilibrio Conjunto en (280, 145)) -->
+  <circle cx="280" cy="145" r="9.5" fill="#10172D" stroke="#EFF2F9" stroke-width="2.5"/>
+  <circle cx="280" cy="145" r="4" fill="#FF6F4A"/>
+  <!-- Badge de nodo A -->
+  <rect x="296" y="125" width="138" height="24" rx="5" fill="#10172D" stroke="#EFF2F9" stroke-width="1"/>
+  <text x="365" y="141" text-anchor="middle" font-family="Inter" font-weight="700" font-size="10.5" fill="#EFF2F9">Nodo A // Equilibrio</text>
 
-  <!-- Nodo A' (equilibrio tras política fiscal) -->
-  <circle cx="300" cy="140" r="4.5" fill="#10172D" stroke="#FFB188" stroke-width="1.8"/>
-  <circle cx="300" cy="140" r="2" fill="#FFB188"/>
-  <text x="312" y="122">
-    <tspan font-family="Inter" font-weight="800" font-size="12" fill="#FFB188">A&#8242;</tspan>
-    <tspan font-family="Inter" font-size="8.5" font-weight="500" fill="#A3AABE" dx="4">(fiscal)</tspan>
-  </text>
-
-  <!-- Nodo A'' (equilibrio tras política monetaria) -->
-  <circle cx="200" cy="100" r="4.5" fill="#10172D" stroke="#667FDA" stroke-width="1.8"/>
-  <circle cx="200" cy="100" r="2" fill="#667FDA"/>
-  <text x="188" y="86" text-anchor="end">
-    <tspan font-family="Inter" font-size="8.5" font-weight="500" fill="#A3AABE">(monetaria)</tspan>
-    <tspan font-family="Inter" font-weight="800" font-size="12" fill="#667FDA" dx="3">A&#8243;</tspan>
-  </text>
-
-  <!-- Resumen pedagógico inferior -->
-  <text x="240" y="260" text-anchor="middle" font-family="Inter" font-size="8.5" fill="#A3AABE">En <tspan fill="#EFF2F9" font-weight="600">A</tspan>, bienes y dinero en equilibrio &#160;&#183;&#160; <tspan fill="#FFB188" font-weight="600">Fiscal</tspan> mueve la econom&#237;a sobre la LM &#160;&#183;&#160; <tspan fill="#667FDA" font-weight="600">Monetaria</tspan> sobre la IS</text>
+  <!-- Resumen pedagógico en franja inferior protegida -->
+  <rect x="20" y="263" width="480" height="20" rx="4" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+  <text x="260" y="277" text-anchor="middle" font-family="Inter" font-size="9" fill="#A3AABE">En el punto <tspan fill="#EFF2F9" font-weight="600">A</tspan>, mercado de bienes y mercados financieros están en equilibrio simultáneo</text>
 </svg>

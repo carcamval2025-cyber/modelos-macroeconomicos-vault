@@ -1,0 +1,128 @@
+<svg viewBox="0 0 680 300" role="img" aria-labelledby="fig-ej1-title fig-ej1-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-ej1-title">Ejercicio 1 Resuelto: Impacto macroeconómico de una caída en la inversión autónoma</title>
+  <desc id="fig-ej1-desc">Panel izquierdo con el modelo IS-LM mostrando el desplazamiento de la curva IS a la izquierda ante una caída en la inversión autónoma, llevando el equilibrio de A a A' sobre la LM horizontal. Panel derecho con el diagrama de flujo y la cadena de transmisión a las variables macroeconómicas del modelo.</desc>
+
+  <!-- Panel Izquierdo: Ajuste IS-LM -->
+  <rect x="6" y="6" width="328" height="288" rx="10" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+  <rect x="18" y="16" width="304" height="22" rx="5" fill="#1B223C"/>
+  <text x="170" y="31" text-anchor="middle" font-family="Inter" font-weight="600" font-size="10.5" fill="#FFB188">AJUSTE IS-LM // CHOQUE: &#8595;I aut&#243;noma</text>
+
+  <!-- Retícula cartesiana -->
+  <path d="M45 85H305M45 130H305M45 175H305" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".25"/>
+  <path d="M125 48V210M205 48V210" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".2"/>
+
+  <!-- Sombreado de contracción -->
+  <path d="M 65 65 C 95 95, 125 130, 190 190 L 270 190 C 205 130, 155 95, 110 65 Z" fill="#FF6F4A" fill-opacity="0.08"/>
+
+  <!-- Proyecciones ortogonales -->
+  <line x1="45" y1="130" x2="205" y2="130" stroke="#667FDA" stroke-width="1.2" stroke-dasharray="3 3" opacity=".6"/>
+  <line x1="125" y1="130" x2="125" y2="210" stroke="#FFB188" stroke-width="1.2" stroke-dasharray="3 3" opacity=".7"/>
+  <line x1="205" y1="130" x2="205" y2="210" stroke="#A3AABE" stroke-width="1.2" stroke-dasharray="3 3" opacity=".6"/>
+
+  <!-- Ejes -->
+  <line x1="45" y1="46" x2="45" y2="210" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="45" y1="210" x2="310" y2="210" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M41 52L45 44L49 52" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M302 206L310 210L302 214" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Títulos y valores ejes -->
+  <rect x="22" y="42" width="20" height="16" rx="3" fill="#10172D"/>
+  <text x="32" y="54" text-anchor="middle" font-family="Inter" font-weight="700" font-size="11" fill="#EFF2F9">i</text>
+  <rect x="302" y="214" width="20" height="16" rx="3" fill="#10172D"/>
+  <text x="312" y="226" text-anchor="middle" font-family="Inter" font-weight="700" font-size="11" fill="#EFF2F9">Y</text>
+
+  <rect x="14" y="122" width="28" height="16" rx="3" fill="#10172D"/>
+  <text x="28" y="134" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#667FDA">i*</text>
+
+  <rect x="112" y="214" width="26" height="16" rx="3" fill="#10172D"/>
+  <text x="125" y="226" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#FFB188">Y&#8242;</text>
+
+  <rect x="193" y="214" width="24" height="16" rx="3" fill="#10172D"/>
+  <text x="205" y="226" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#A3AABE">Y</text>
+
+  <!-- Curva LM -->
+  <line x1="52" y1="130" x2="275" y2="130" stroke="#667FDA" stroke-width="2.8" stroke-linecap="round"/>
+  <rect x="280" y="121" width="30" height="18" rx="4" fill="#10172D" stroke="#667FDA" stroke-width="0.8"/>
+  <text x="295" y="134" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="10" fill="#667FDA">LM</text>
+
+  <!-- Curvas IS e IS' -->
+  <path d="M 65 65 C 95 95, 125 130, 190 190" fill="none" stroke="#FFB188" stroke-width="2" stroke-dasharray="5 4" opacity=".9"/>
+  <rect x="52" y="52" width="26" height="18" rx="3" fill="#10172D" stroke="#FFB188" stroke-width="0.8"/>
+  <text x="65" y="65" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="9" fill="#FFB188">IS&#8242;</text>
+
+  <path d="M 110 65 C 155 95, 205 130, 270 190" fill="none" stroke="#FF6F4A" stroke-width="2.8" stroke-linecap="round"/>
+  <rect x="268" y="180" width="24" height="18" rx="3" fill="#10172D" stroke="#FF6F4A" stroke-width="0.8"/>
+  <text x="280" y="193" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="9.5" fill="#FF6F4A">IS</text>
+
+  <!-- Vector A -> A' -->
+  <line x1="190" y1="130" x2="140" y2="130" stroke="#FFB188" stroke-width="1.8" stroke-dasharray="3 2"/>
+  <path d="M146 126L139 130L146 134" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Nodos -->
+  <circle cx="205" cy="130" r="7.5" fill="#10172D" stroke="#EFF2F9" stroke-width="2.2"/>
+  <circle cx="205" cy="130" r="3" fill="#FF6F4A"/>
+  <rect x="211" y="112" width="20" height="17" rx="3" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+  <text x="221" y="124" text-anchor="middle" font-family="Inter" font-weight="700" font-size="10" fill="#EFF2F9">A</text>
+
+  <circle cx="125" cy="130" r="7.5" fill="#10172D" stroke="#FFB188" stroke-width="2.2"/>
+  <circle cx="125" cy="130" r="3" fill="#FFB188"/>
+  <rect x="95" y="112" width="22" height="17" rx="3" fill="#10172D" stroke="#FFB188" stroke-width="0.8"/>
+  <text x="106" y="124" text-anchor="middle" font-family="Inter" font-weight="700" font-size="10" fill="#FFB188">A&#8242;</text>
+
+  <!-- Pie del panel izquierdo -->
+  <rect x="18" y="248" width="304" height="34" rx="5" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+  <text x="28" y="263" font-family="JetBrains Mono" font-size="8.5" font-weight="600" fill="#FFB188">&#916;I aut &lt; 0 &#8658;</text>
+  <text x="110" y="263" font-family="Inter" font-size="8.5" fill="#EFF2F9">Contrae la demanda aut&#243;noma</text>
+  <text x="28" y="275" font-family="Inter" font-size="8" fill="#A3AABE">El equilibrio pasa de A a A&#8242; sobre la LM (Y cae, i inalterada)</text>
+
+  <!-- Panel Derecho: Cadena de Transmisión -->
+  <rect x="346" y="6" width="328" height="288" rx="10" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+  <rect x="358" y="16" width="304" height="22" rx="5" fill="#1B223C"/>
+  <text x="510" y="31" text-anchor="middle" font-family="Inter" font-weight="600" font-size="10.5" fill="#667FDA">CADENA DE EFECTOS // 10 VARIABLES</text>
+
+  <!-- Bloques de variables 1 a 4 -->
+  <rect x="358" y="46" width="146" height="34" rx="5" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+  <text x="368" y="60" font-family="JetBrains Mono" font-size="9" fill="#EFF2F9">Producto (Y)</text>
+  <text x="368" y="73" font-family="Inter" font-weight="700" font-size="9" fill="#FB5668">[&#9660; DISMINUY&#211;]</text>
+
+  <rect x="516" y="46" width="146" height="34" rx="5" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+  <text x="526" y="60" font-family="JetBrains Mono" font-size="9" fill="#EFF2F9">Consumo (C)</text>
+  <text x="526" y="73" font-family="Inter" font-weight="700" font-size="9" fill="#FB5668">[&#9660; DISMINUY&#211;]</text>
+
+  <!-- Bloques de variables 2 a 4 -->
+  <rect x="358" y="86" width="146" height="34" rx="5" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+  <text x="368" y="100" font-family="JetBrains Mono" font-size="9" fill="#EFF2F9">Inversi&#243;n (I)</text>
+  <text x="368" y="113" font-family="Inter" font-weight="700" font-size="9" fill="#FB5668">[&#9660; DISMINUY&#211;]</text>
+
+  <rect x="516" y="86" width="146" height="34" rx="5" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+  <text x="526" y="100" font-family="JetBrains Mono" font-size="9" fill="#EFF2F9">Ahorro (S)</text>
+  <text x="526" y="113" font-family="Inter" font-weight="700" font-size="9" fill="#FB5668">[&#9660; DISMINUY&#211;]</text>
+
+  <!-- Bloques de variables 3 -->
+  <rect x="358" y="126" width="146" height="34" rx="5" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+  <text x="368" y="140" font-family="JetBrains Mono" font-size="9" fill="#EFF2F9">Importac. (IM)</text>
+  <text x="368" y="153" font-family="Inter" font-weight="700" font-size="9" fill="#FB5668">[&#9660; DISMINUY&#211;]</text>
+
+  <rect x="516" y="126" width="146" height="34" rx="5" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+  <text x="526" y="140" font-family="JetBrains Mono" font-size="9" fill="#EFF2F9">Exportac. (X)</text>
+  <text x="526" y="153" font-family="Inter" font-weight="700" font-size="9" fill="#A3AABE">[&#8213; NO CAMBI&#211;]</text>
+
+  <!-- Bloques de variables 4 -->
+  <rect x="358" y="166" width="146" height="34" rx="5" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+  <text x="368" y="180" font-family="JetBrains Mono" font-size="9" fill="#EFF2F9">Balanza (NX)</text>
+  <text x="368" y="193" font-family="Inter" font-weight="700" font-size="9" fill="#55C975">[&#9650; MEJOR&#211;]</text>
+
+  <rect x="516" y="166" width="146" height="34" rx="5" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+  <text x="526" y="180" font-family="JetBrains Mono" font-size="9" fill="#EFF2F9">Desempleo (u)</text>
+  <text x="526" y="193" font-family="Inter" font-weight="700" font-size="9" fill="#FB5668">[&#9650; AUMENT&#211;]</text>
+
+  <!-- Bloque inferior de dinero M^d y M^s -->
+  <rect x="358" y="206" width="304" height="38" rx="5" fill="#1B223C" stroke="#667FDA" stroke-width="0.8"/>
+  <text x="368" y="221" font-family="JetBrains Mono" font-size="8.5" font-weight="600" fill="#667FDA">Mercado Monetario:</text>
+  <text x="475" y="221" font-family="Inter" font-size="8.5" fill="#EFF2F9">M<tspan baseline-shift="super" font-size="6.5">d</tspan>/P = Y&#183;L(i*) cae &#8658; BC reduce M<tspan baseline-shift="super" font-size="6.5">s</tspan>/P</text>
+  <text x="368" y="235" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">Oferta y Demanda de dinero caen en igual proporci&#243;n para mantener i*</text>
+
+  <!-- Pie del panel derecho -->
+  <rect x="358" y="252" width="304" height="30" rx="5" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+  <text x="510" y="270" text-anchor="middle" font-family="Inter" font-size="8.5" fill="#A3AABE">La balanza comercial mejora porque <tspan fill="#55C975" font-weight="600">NX = X &#8722; IM(Y)</tspan> y las importaciones caen</text>
+</svg>

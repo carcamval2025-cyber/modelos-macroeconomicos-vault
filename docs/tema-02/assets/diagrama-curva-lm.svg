@@ -1,55 +1,80 @@
-<svg viewBox="0 0 460 230" role="img" aria-labelledby="fig-lm-title fig-lm-desc" xmlns="http://www.w3.org/2000/svg">
-  <title id="fig-lm-title">La curva LM</title>
-  <desc id="fig-lm-desc">Eje vertical i, eje horizontal Y. La curva LM es una línea horizontal en índigo, a la altura de la tasa de interés fijada por el banco central — no depende del nivel de producto. Una línea LM' punteada, más arriba, ilustra una política monetaria restrictiva que sube la tasa objetivo.</desc>
+<svg viewBox="0 0 520 290" role="img" aria-labelledby="fig-lm-title fig-lm-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="fig-lm-title">La curva LM moderna y su desplazamiento</title>
+  <desc id="fig-lm-desc">Eje vertical i, eje horizontal Y. La curva LM es una recta horizontal en color índigo, a la altura de la tasa de política monetaria fijada por el banco central, independiente del nivel de producto. Una recta LM' discontinua, situada más arriba, ilustra una política monetaria restrictiva que eleva la tasa de interés objetivo.</desc>
 
-  <!-- Fondo estructurado unificado -->
-  <rect width="100%" height="100%" fill="#10172D"/>
+  <!-- Marco de contención y fondo técnico elevado -->
+  <rect x="6" y="6" width="508" height="278" rx="10" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
 
-  <!-- Ejes cartesianos y flechas -->
-  <line x1="60" y1="20" x2="60" y2="200" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round"/>
-  <line x1="60" y1="200" x2="425" y2="200" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round"/>
-  <path d="M56 26L60 18L64 26" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M419 196L427 200L419 204" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Encabezado técnico -->
+  <rect x="20" y="16" width="230" height="22" rx="5" fill="#1B223C"/>
+  <text x="135" y="31" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#EFF2F9">Mercados Financieros: Curva LM</text>
+  <rect x="260" y="16" width="240" height="22" rx="5" fill="#1B223C" stroke="#2A324A" stroke-width="1"/>
+  <text x="380" y="31" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="10.5" fill="#667FDA">LM: i = i* (Tasa de Política)</text>
 
-  <!-- Marcas de calibración en los ejes -->
-  <line x1="55" y1="80" x2="60" y2="80" stroke="#A3AABE" stroke-width="1.2"/>
-  <line x1="55" y1="130" x2="60" y2="130" stroke="#A3AABE" stroke-width="1.2"/>
-  <line x1="240" y1="200" x2="240" y2="205" stroke="#A3AABE" stroke-width="1.2"/>
+  <!-- Retícula cartesiana discontinua técnica -->
+  <path d="M65 90H475M65 150H475M65 200H475" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".35"/>
+  <path d="M140 50V235M210 50V235M280 50V235M350 50V235M420 50V235" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".25"/>
 
-  <!-- Títulos de ejes -->
-  <text x="48" y="24" text-anchor="end" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">i</text>
-  <text x="430" y="215" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">Y</text>
-
-  <!-- Coordenadas en los ejes -->
-  <text x="50" y="84" text-anchor="end" font-family="JetBrains Mono" font-size="11" fill="#667FDA">i*&#8242;</text>
-  <text x="50" y="134" text-anchor="end" font-family="JetBrains Mono" font-size="11" fill="#EFF2F9">i*</text>
-  <text x="240" y="215" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">Y</text>
-
-  <!-- Ecuación de la curva LM en la esquina superior izquierda -->
-  <text x="80" y="36" font-family="JetBrains Mono" font-size="9.5" fill="#667FDA">LM: i = i* (horizontal)</text>
+  <!-- Sombreado de ajuste monetario entre LM y LM' -->
+  <rect x="65" y="90" width="375" height="60" fill="#667FDA" fill-opacity="0.06"/>
 
   <!-- Proyección ortogonal de referencia para el producto Y -->
-  <line x1="240" y1="130" x2="240" y2="200" stroke="#A3AABE" stroke-width="1" stroke-dasharray="3 3" opacity=".35"/>
+  <line x1="210" y1="150" x2="210" y2="235" stroke="#A3AABE" stroke-width="1.2" stroke-dasharray="3 3" opacity=".6"/>
 
-  <!-- Curva LM original (horizontal a la tasa i*) -->
-  <line x1="75" y1="130" x2="405" y2="130" stroke="#667FDA" stroke-width="2.2" stroke-linecap="round"/>
-  <text x="410" y="126" font-family="JetBrains Mono" font-weight="700" font-size="12" fill="#667FDA">LM</text>
+  <!-- Ejes cartesianos con puntas de flecha sólidas -->
+  <line x1="65" y1="46" x2="65" y2="235" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="65" y1="235" x2="485" y2="235" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M61 52L65 44L69 52" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M477 231L485 235L477 239" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Marcas de calibración (ticks) en los ejes -->
+  <line x1="60" y1="90" x2="65" y2="90" stroke="#667FDA" stroke-width="1.5"/>
+  <line x1="60" y1="150" x2="65" y2="150" stroke="#EFF2F9" stroke-width="1.5"/>
+  <line x1="210" y1="235" x2="210" y2="240" stroke="#A3AABE" stroke-width="1.5"/>
+
+  <!-- Títulos de ejes protegidos con pastillas -->
+  <rect x="34" y="42" width="24" height="18" rx="4" fill="#10172D"/>
+  <text x="46" y="55" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#EFF2F9">i</text>
+  <rect x="475" y="240" width="24" height="18" rx="4" fill="#10172D"/>
+  <text x="487" y="253" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#EFF2F9">Y</text>
+
+  <!-- Coordenadas en los ejes protegidas por pastillas -->
+  <rect x="22" y="82" width="38" height="17" rx="3" fill="#10172D"/>
+  <text x="41" y="95" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" fill="#667FDA">i*&#8242;</text>
+
+  <rect x="24" y="142" width="36" height="17" rx="3" fill="#10172D"/>
+  <text x="42" y="155" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" fill="#EFF2F9">i*</text>
+
+  <rect x="196" y="242" width="28" height="17" rx="3" fill="#10172D"/>
+  <text x="210" y="255" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" fill="#A3AABE">Y</text>
+
+  <!-- Curva LM original con doble trazo (horizontal a la tasa i*) -->
+  <line x1="75" y1="150" x2="440" y2="150" stroke="#667FDA" stroke-width="3.4" stroke-linecap="round"/>
+  <line x1="75" y1="150" x2="440" y2="150" stroke="#667FDA" stroke-width="1.2" stroke-dasharray="4 4" opacity=".4"/>
+  <!-- Etiqueta de curva LM -->
+  <rect x="444" y="140" width="38" height="20" rx="4" fill="#10172D" stroke="#667FDA" stroke-width="1"/>
+  <text x="463" y="154" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="11.5" fill="#667FDA">LM</text>
 
   <!-- Curva LM' desplazada (política restrictiva a tasa i*') -->
-  <line x1="75" y1="80" x2="405" y2="80" stroke="#667FDA" stroke-width="1.8" stroke-dasharray="6 4" opacity=".8"/>
-  <text x="410" y="76" font-family="JetBrains Mono" font-weight="600" font-size="11" fill="#667FDA" opacity=".85">LM&#8242;</text>
+  <line x1="75" y1="90" x2="440" y2="90" stroke="#667FDA" stroke-width="2.2" stroke-dasharray="6 4" opacity=".9"/>
+  <!-- Etiqueta de curva LM' -->
+  <rect x="444" y="80" width="44" height="20" rx="4" fill="#10172D" stroke="#667FDA" stroke-width="0.9"/>
+  <text x="466" y="94" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="11" fill="#667FDA">LM&#8242;</text>
 
-  <!-- Vector de desplazamiento vertical hacia arriba (alza de tasa) -->
-  <line x1="250" y1="120" x2="250" y2="92" stroke="#FFB188" stroke-width="1.5" stroke-dasharray="3 2"/>
-  <path d="M246 98L250 91L254 98" fill="none" stroke="#FFB188" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Vector dinámico de desplazamiento vertical hacia arriba -->
+  <line x1="260" y1="140" x2="260" y2="100" stroke="#FFB188" stroke-width="1.6" stroke-dasharray="3 2"/>
+  <path d="M256 106L260 99L264 106" fill="none" stroke="#FFB188" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Badge de política restrictiva -->
+  <rect x="272" y="108" width="168" height="22" rx="4" fill="#10172D" stroke="#FFB188" stroke-width="0.8"/>
+  <text x="356" y="123" text-anchor="middle" font-family="Inter" font-weight="600" font-size="9.5" fill="#FFB188">&#8593; Pol&#237;tica monetaria restrictiva</text>
 
-  <!-- Etiqueta de política monetaria restrictiva -->
-  <text x="264" y="108" font-family="Inter" font-weight="600" font-size="9.5" fill="#FFB188">pol&#237;tica monetaria restrictiva</text>
+  <!-- Nodo de referencia sobre la LM -->
+  <circle cx="210" cy="150" r="8.5" fill="#10172D" stroke="#EFF2F9" stroke-width="2.4"/>
+  <circle cx="210" cy="150" r="3.5" fill="#667FDA"/>
+  <rect x="184" y="165" width="52" height="18" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+  <text x="210" y="178" text-anchor="middle" font-family="Inter" font-weight="700" font-size="10" fill="#EFF2F9">Nodo A</text>
 
-  <!-- Nodo de referencia sobre LM -->
-  <circle cx="240" cy="130" r="4.5" fill="#10172D" stroke="#EFF2F9" stroke-width="1.8"/>
-  <circle cx="240" cy="130" r="2" fill="#667FDA"/>
-
-  <!-- Resumen pedagógico inferior -->
-  <text x="240" y="180" text-anchor="middle" font-family="Inter" font-size="8.5" fill="#A3AABE">para cualquier <tspan fill="#EFF2F9" font-weight="600">Y</tspan>, la <tspan fill="#667FDA" font-weight="600">LM</tspan> se mantiene en la tasa que fija el banco central</text>
+  <!-- Resumen pedagógico en franja inferior protegida -->
+  <rect x="20" y="263" width="480" height="20" rx="4" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+  <text x="260" y="277" text-anchor="middle" font-family="Inter" font-size="9" fill="#A3AABE">Para cualquier <tspan fill="#EFF2F9" font-weight="600">Y</tspan>, la <tspan fill="#667FDA" font-weight="600">LM</tspan> se mantiene en la tasa que fija el banco central</text>
 </svg>
