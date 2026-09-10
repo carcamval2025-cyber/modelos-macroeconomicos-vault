@@ -1396,17 +1396,194 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
       </div>
     </div>
 
-    <div class="bezel">
+    <div class="bezel" id="ejercicio-4">
       <div class="bezel-in">
-        <h3 style="margin-bottom:14px;">Ejercicio 4 (resuelto) — ¿es estable el equilibrio?</h3>
-        <p style="font-size:0.95rem; margin-bottom:10px;">Con C = 250 + 0.7·Yd e I = 200 + 0.3·Y − 2000·i, verifica la condición de estabilidad del módulo 02: <span class="mono" style="color:var(--indigo-mid); font-weight:600;">0 &lt; c1 + b1 &lt; 1</span>.</p>
+        <h3 style="margin-bottom:14px;">Ejercicio 4 (resuelto) — Condición de estabilidad y colapso de la curva IS</h3>
+        <p style="font-size:0.95rem; margin-bottom:16px;">Para determinar la estabilidad del equilibrio macroeconómico y la existencia de la curva IS a partir de <span class="mono">C = 250 + 0.7(Y &minus; T)</span> e <span class="mono">I = 200 + 0.3&middot;Y &minus; 2000&middot;i</span>, analizamos paso a paso la condición de equilibrio en el mercado de bienes (<span class="mono">Y = DA</span>):</p>
+
+        <!-- Bloque 1: Demanda Agregada y Estabilidad -->
+        <h4 style="font-size:1.05rem; font-weight:600; color:var(--text); margin:20px 0 10px 0;">1. Demanda agregada y condición de estabilidad</h4>
+        <p style="font-size:0.94rem; margin-bottom:10px;">Asumiendo impuestos fijos (<span class="mono">T</span>) y gasto público autónomo (<span class="mono">G</span>):</p>
         <div class="ecuacion">
-          <div class="ecuacion-bar"><span>VERIFICACIÓN MECÁNICA // MULTIPLICADOR ESTÁTICO</span><span>LÍMITE FINITO</span></div>
-          c1 + b1 = 0.7 + 0.3 = 1.0 &nbsp;&nbsp;&rArr;&nbsp;&nbsp; 1 / (1 &minus; (c1 + b1)) &rarr; &infin;
+          <div class="ecuacion-bar"><span>TERMINAL DA // MERCADO DE BIENES</span><span>ÁLGEBRA ESTRUCTURAL</span></div>
+          DA = C + I + G<br>
+          DA = [250 + 0.7&middot;(Y &minus; T)] + [200 + 0.3&middot;Y &minus; 2000&middot;i] + G<br>
+          DA = (450 &minus; 0.7&middot;T + G &minus; 2000&middot;i) + (0.7 + 0.3)&middot;Y<br>
+          DA = A(i) + 1.0&middot;Y &nbsp;&nbsp;&nbsp;&nbsp;[donde A(i) = 450 &minus; 0.7&middot;T + G &minus; 2000&middot;i representa el gasto aut&oacute;nomo]
         </div>
-        <div class="recuadro" style="margin-top:4px;">
-          <span class="recuadro-tag">Diagnóstico de estabilidad</span>
-          <p>La suma da <strong>exactamente 1.0</strong>, no un valor estrictamente menor que 1 — el caso límite en el que el multiplicador 1/(1 − (c1+b1)) se vuelve infinito. Con estos parámetros el equilibrio <strong>no es estable</strong>: cualquier cambio en la demanda autónoma generaría un ajuste de producto sin límite, y no es posible trazar una curva IS con pendiente bien definida a partir de estas ecuaciones. Para que el ejercicio tenga una IS válida, c1 + b1 tendría que ser estrictamente menor que 1 (por ejemplo, si b1 fuera 0.15 en vez de 0.3).</p>
+
+        <ul style="margin:12px 0 16px 20px; line-height:1.7; font-size:0.94rem;">
+          <li><strong>Propensión marginal a gastar:</strong> la pendiente de la demanda agregada respecto a la renta es la suma de las propensiones marginales a consumir e invertir:
+            <br><span class="mono" style="color:var(--coral); font-weight:600;">&part;DA / &part;Y = c1 + d1 = 0.7 + 0.3 = 1.0</span>
+          </li>
+          <li><strong>Condición de estabilidad:</strong> para que un mercado de bienes presente un equilibrio dinámicamente estable (convergente), un incremento en el ingreso debe inducir un incremento estrictamente menor en la demanda agregada:
+            <br><span class="mono" style="color:var(--indigo-mid); font-weight:600;">&part;DA / &part;Y &lt; 1</span>
+          </li>
+          <li><strong>Conclusión de estabilidad:</strong> como la propensión marginal a gastar es exactamente <span class="mono">1.0</span>, el multiplicador keynesiano del gasto se vuelve infinito:
+            <br><span class="mono" style="color:var(--danger); font-weight:600;">&alpha; = 1 / [1 &minus; (c1 + d1)] = 1 / (1 &minus; 1) = 1 / 0 &rarr; &infin;</span>
+          </li>
+        </ul>
+
+        <div class="recuadro" style="margin:16px 0;">
+          <span class="recuadro-tag">Diagnóstico de inestabilidad dinámica</span>
+          <p>El equilibrio <strong>no es estable</strong> (es neutro o marginalmente inestable). Ante cualquier perturbación fuera del punto de equilibrio, la producción no converge a ningún valor definido porque el gasto inducido crece en la misma proporción exacta que el ingreso generado. No existe mecanismo autoregulador en el mercado de bienes.</p>
+        </div>
+
+        <!-- Bloque 2: ¿Es posible construir la curva IS? -->
+        <h4 style="font-size:1.05rem; font-weight:600; color:var(--text); margin:26px 0 10px 0;">2. ¿Es posible construir la curva IS?</h4>
+        <p style="font-size:0.94rem; margin-bottom:10px;">Planteamos formalmente la condición de equilibrio del mercado de bienes (<span class="mono">Y = DA</span>):</p>
+        <div class="ecuacion">
+          <div class="ecuacion-bar"><span>CONDICIÓN IS // DESPEJE MATEMÁTICO</span><span>RESOLUCIÓN ANALÍTICA</span></div>
+          Y = A(i) + 1.0&middot;Y<br>
+          Y&middot;(1 &minus; 1) = A(i)<br>
+          0 = 450 &minus; 0.7&middot;T + G &minus; 2000&middot;i<br>
+          &rArr;&nbsp;&nbsp; i* = (450 &minus; 0.7&middot;T + G) / 2000
+        </div>
+
+        <ul style="margin:12px 0 16px 20px; line-height:1.7; font-size:0.94rem;">
+          <li><strong>La variable Y desaparece de la relación:</strong> el producto se cancela idénticamente de la ecuación, dejando una condición que sólo vincula a la tasa de interés con los componentes autónomos.</li>
+          <li><strong>Pendiente de la curva IS en el plano (Y, i):</strong>
+            <br><span class="mono" style="color:var(--indigo-mid); font-weight:600;">di / dY = [1 &minus; (c1 + d1)] / (&minus;2000) = 0 / (&minus;2000) = 0</span>
+          </li>
+          <li><strong>Conclusión sobre la IS:</strong> no existe una curva IS estándar con pendiente negativa. Matemáticamente solo es posible graficar una <strong>línea completamente horizontal</strong> en el nivel de tasa de interés <span class="mono">i*</span> que anula exactamente el gasto autónomo. Para cualquier otra tasa de interés (<span class="mono">i &ne; i*</span>), no existe ningún nivel de producto <span class="mono">Y</span> que vacíe el mercado de bienes.</li>
+        </ul>
+
+        <!-- Bloque 3: Representación Gráfica -->
+        <h4 style="font-size:1.05rem; font-weight:600; color:var(--text); margin:26px 0 10px 0;">3. Representación gráfica del caso límite</h4>
+        <p style="font-size:0.94rem; margin-bottom:12px;">Comparamos en dos paneles el comportamiento en la Cruz Keynesiana y en el plano IS:</p>
+        <ul style="margin:8px 0 18px 20px; line-height:1.7; font-size:0.94rem;">
+          <li><strong>En la Cruz Keynesiana (panel izquierdo):</strong> la recta de demanda agregada tiene pendiente <span class="mono">1.0</span> y es estrictamente paralela a la recta de 45&deg;. Por tanto, no existe un punto de corte &uacute;nico (nunca se cruzan si <span class="mono">A(i) &ne; 0</span>, o coinciden en todos sus puntos si <span class="mono">A(i) = 0</span>).</li>
+          <li><strong>En el plano IS (panel derecho):</strong> la curva es una recta completamente horizontal fijada a la altura de <span class="mono">i* = (450 &minus; 0.7T + G) / 2000</span>.</li>
+        </ul>
+
+        <figure style="margin:20px 0 24px 0;">
+          <div class="diagrama-wrap">
+            <div class="diagrama">
+              <svg viewBox="0 0 760 380" role="img" aria-labelledby="fig-ej4-title fig-ej4-desc" xmlns="http://www.w3.org/2000/svg">
+                <title id="fig-ej4-title">Condición de estabilidad y colapso de la curva IS (c1 + d1 = 1.0)</title>
+                <desc id="fig-ej4-desc">Comparativa técnica en dos paneles del caso límite de inestabilidad macroeconómica donde la propensión marginal a gastar es 1.0. Panel izquierdo: En la Cruz Keynesiana la recta de demanda agregada es estrictamente paralela a la recta de 45 grados, impidiendo un punto de corte único. Panel derecho: En el plano (Y, i), la curva IS colapsa en una línea completamente horizontal a la tasa de interés i*, perdiéndose la relación negativa estándar.</desc>
+
+                <!-- ======================================================== -->
+                <!-- PANEL IZQUIERDO: CRUZ KEYNESIANA DEGENERADA (DA vs Y)    -->
+                <!-- ======================================================== -->
+                <rect x="6" y="6" width="368" height="368" rx="12" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+
+                <!-- Encabezado panel izquierdo -->
+                <rect x="20" y="18" width="340" height="24" rx="5" fill="#1B223C"/>
+                <text x="190" y="35" text-anchor="middle" font-family="Inter" font-weight="700" font-size="11" fill="#FFB188">1. CRUZ KEYNESIANA // RECTAS PARALELAS</text>
+
+                <rect x="20" y="46" width="340" height="20" rx="4" fill="#10172D" stroke="#FB5668" stroke-width="0.8"/>
+                <text x="190" y="60" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#FB5668">&#8706;DA/&#8706;Y = 0.7 + 0.3 = 1.0 &#8658; Multiplicador &#945; &#8594; &#8734;</text>
+
+                <!-- Retícula cartesiana -->
+                <path d="M55 110H345M55 180H345M55 250H345" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".2"/>
+                <path d="M125 70V265M210 70V265M295 70V265" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".2"/>
+
+                <!-- Área sombreada entre las rectas paralelas -->
+                <polygon points="55,185 55,265 245,75 165,75" fill="#FB5668" fill-opacity="0.06"/>
+
+                <!-- Ejes panel izquierdo -->
+                <line x1="55" y1="70" x2="55" y2="265" stroke="#A3AABE" stroke-width="1.6" stroke-linecap="round"/>
+                <line x1="55" y1="265" x2="350" y2="265" stroke="#A3AABE" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M50 78L55 68L60 78" fill="none" stroke="#A3AABE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M342 260L350 265L342 270" fill="none" stroke="#A3AABE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+
+                <!-- Títulos ejes izquierdo -->
+                <rect x="24" y="66" width="28" height="18" rx="3" fill="#10172D"/>
+                <text x="38" y="79" text-anchor="middle" font-family="Inter" font-weight="700" font-size="11.5" fill="#EFF2F9">DA</text>
+                <rect x="342" y="270" width="22" height="18" rx="3" fill="#10172D"/>
+                <text x="353" y="283" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#EFF2F9">Y</text>
+
+                <!-- Recta de 45 grados (Y = DA, pendiente = 1.0) -->
+                <line x1="55" y1="265" x2="250" y2="70" stroke="#A3AABE" stroke-width="2" stroke-dasharray="6 4" opacity=".7"/>
+                <rect x="180" y="76" width="138" height="20" rx="3" fill="#10172D" stroke="#A3AABE" stroke-width="0.8"/>
+                <text x="249" y="90" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#A3AABE">Recta 45&#176; (pendiente = 1)</text>
+
+                <!-- Recta de Demanda Agregada DA = A(i) + 1.0*Y (pendiente = 1.0, paralela) -->
+                <line x1="55" y1="185" x2="245" y2="-5" stroke="#FB5668" stroke-width="3.8" stroke-linecap="round"/>
+                <line x1="55" y1="185" x2="245" y2="-5" stroke="#FF6F4A" stroke-width="1.2" stroke-dasharray="4 4" opacity=".4"/>
+                <rect x="80" y="118" width="158" height="22" rx="4" fill="#10172D" stroke="#FB5668" stroke-width="1"/>
+                <text x="159" y="133" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="9.5" fill="#FB5668">DA = A(i) + 1.0&#183;Y (pendiente = 1)</text>
+
+                <!-- Intercepto en eje DA: A(i) -->
+                <circle cx="55" cy="185" r="4.5" fill="#FB5668"/>
+                <rect x="16" y="176" width="36" height="18" rx="3" fill="#10172D"/>
+                <text x="34" y="189" text-anchor="middle" font-family="JetBrains Mono" font-size="9.5" fill="#FB5668">A(i)</text>
+
+                <!-- Anotación gráfica de paralelismo -->
+                <rect x="160" y="195" width="175" height="22" rx="4" fill="#1B223C" stroke="#FB5668" stroke-width="0.8"/>
+                <text x="247" y="210" text-anchor="middle" font-family="Inter" font-weight="700" font-size="9.5" fill="#FB5668">&#9888; Rectas Paralelas (Sin corte)</text>
+
+                <!-- Tarjeta explicativa panel izquierdo -->
+                <rect x="18" y="296" width="344" height="66" rx="6" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+                <text x="28" y="315" font-family="JetBrains Mono" font-size="9.5" font-weight="700" fill="#FB5668">&#9679; INESTABILIDAD DINÁMICA:</text>
+                <text x="28" y="333" font-family="Inter" font-size="9.5" fill="#EFF2F9">Al ser c1 + d1 = 1.0, el gasto crece igual que la renta.</text>
+                <text x="28" y="350" font-family="Inter" font-size="9.5" fill="#A3AABE">Si A(i) &#8800; 0 nunca se cruzan; no existe equilibrio estático.</text>
+
+                <!-- ======================================================== -->
+                <!-- PANEL DERECHO: PLANO IS (Y, i) - CURVA IS COLAPSADA      -->
+                <!-- ======================================================== -->
+                <rect x="386" y="6" width="368" height="368" rx="12" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+
+                <!-- Encabezado panel derecho -->
+                <rect x="400" y="18" width="340" height="24" rx="5" fill="#1B223C"/>
+                <text x="570" y="35" text-anchor="middle" font-family="Inter" font-weight="700" font-size="11" fill="#667FDA">2. PLANO IS // CURVA HORIZONTAL COLAPSADA</text>
+
+                <rect x="400" y="46" width="340" height="20" rx="4" fill="#10172D" stroke="#667FDA" stroke-width="0.8"/>
+                <text x="570" y="60" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#667FDA">di/dY = (1 &#8722; 1.0) / (&#8722;2000) = 0 &#8658; Pendiente nula</text>
+
+                <!-- Retícula tenue panel derecho -->
+                <path d="M435 110H725M435 170H725M435 230H725" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".2"/>
+                <path d="M505 70V265M595 70V265M685 70V265" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".2"/>
+
+                <!-- Ejes panel derecho -->
+                <line x1="435" y1="70" x2="435" y2="265" stroke="#A3AABE" stroke-width="1.6" stroke-linecap="round"/>
+                <line x1="435" y1="265" x2="730" y2="265" stroke="#A3AABE" stroke-width="1.6" stroke-linecap="round"/>
+                <path d="M430 78L435 68L440 78" fill="none" stroke="#A3AABE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M722 260L730 265L722 270" fill="none" stroke="#A3AABE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+
+                <!-- Títulos ejes derecho -->
+                <rect x="410" y="66" width="22" height="18" rx="3" fill="#10172D"/>
+                <text x="421" y="79" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#EFF2F9">i</text>
+                <rect x="722" y="270" width="22" height="18" rx="3" fill="#10172D"/>
+                <text x="733" y="283" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#EFF2F9">Y</text>
+
+                <!-- Curva IS horizontal en i* -->
+                <line x1="435" y1="170" x2="715" y2="170" stroke="#667FDA" stroke-width="4.2" stroke-linecap="round"/>
+                <line x1="435" y1="170" x2="715" y2="170" stroke="#FF6F4A" stroke-width="1.4" stroke-dasharray="4 4" opacity=".4"/>
+                <rect x="520" y="142" width="195" height="22" rx="4" fill="#10172D" stroke="#667FDA" stroke-width="1"/>
+                <text x="617" y="157" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="10" fill="#667FDA">Curva IS (Horizontal en i*)</text>
+
+                <!-- Valor i* en el eje vertical -->
+                <circle cx="435" cy="170" r="5" fill="#667FDA"/>
+                <rect x="390" y="160" width="42" height="20" rx="3" fill="#10172D"/>
+                <text x="411" y="174" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="11" fill="#667FDA">i*</text>
+
+                <!-- Badge con la fórmula de i* -->
+                <rect x="475" y="185" width="235" height="24" rx="4" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+                <text x="592" y="201" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#EFF2F9">i* = (450 &#8722; 0.7T + G) / 2,000</text>
+
+                <!-- Regiones de desequilibrio para i != i* -->
+                <rect x="450" y="95" width="260" height="20" rx="3" fill="#10172D" stroke="#FB5668" stroke-width="0.8"/>
+                <text x="580" y="109" text-anchor="middle" font-family="Inter" font-size="9" fill="#FB5668">Si i &gt; i* &#8658; A(i) &lt; 0 &#8658; No existe equilibrio en bienes</text>
+
+                <rect x="450" y="225" width="260" height="20" rx="3" fill="#10172D" stroke="#FB5668" stroke-width="0.8"/>
+                <text x="580" y="239" text-anchor="middle" font-family="Inter" font-size="9" fill="#FB5668">Si i &lt; i* &#8658; A(i) &gt; 0 &#8658; No existe equilibrio en bienes</text>
+
+                <!-- Tarjeta explicativa panel derecho -->
+                <rect x="398" y="296" width="344" height="66" rx="6" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+                <text x="408" y="315" font-family="JetBrains Mono" font-size="9.5" font-weight="700" fill="#667FDA">&#9679; COLAPSO DE LA RELACIÓN IS:</text>
+                <text x="408" y="333" font-family="Inter" font-size="9.5" fill="#EFF2F9">La variable Y desaparece de la ecuación: 0 = A(i).</text>
+                <text x="408" y="350" font-family="Inter" font-size="9.5" fill="#A3AABE">No existe la curva IS estándar con pendiente negativa.</text>
+              </svg>
+            </div>
+          </div>
+          <figcaption>[FIG.5-10] Condici&oacute;n de estabilidad y colapso de la curva IS: rectas paralelas en la Cruz Keynesiana y colapso horizontal a la tasa i* cuando c1 + d1 = 1.0.</figcaption>
+        </figure>
+
+        <div class="recuadro info" style="margin-top:12px;">
+          <span class="recuadro-tag">Relevancia teórica y de examen</span>
+          <p>Este ejercicio ilustra la frontera de validez del modelo IS-LM: si la propensión marginal a gastar alcanza o supera la unidad (<span class="mono">c1 + d1 &ge; 1</span>), el mercado de bienes pierde su capacidad de convergencia y la curva IS pierde su significado económico habitual (pendiente negativa derivada del multiplicador finito).</p>
         </div>
       </div>
     </div>

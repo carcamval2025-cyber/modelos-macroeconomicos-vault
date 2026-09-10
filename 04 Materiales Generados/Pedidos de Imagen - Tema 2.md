@@ -18,6 +18,7 @@ Este documento registra la suite completa de ilustraciones técnicas y diagramas
 | `img-t2-03` | Equilibrio conjunto IS-LM en nodo A (Fig. 5-6) | `docs/tema-02/assets/diagrama-equilibrio-islm.svg` | ✅ Completado |
 | `img-t2-05` | Protocolo Blanchard: Choque Fiscal vs Monetario (Fig. 5-7 / 5-8) | `docs/tema-02/assets/diagrama-politicas-blanchard.svg` | ✅ Completado |
 | `img-t2-06` | Ejercicio 1: Choque de inversión y cadena de efectos (Fig. 5-9) | `docs/tema-02/assets/diagrama-ejercicio1-inversion.svg` | ✅ Completado |
+| `img-t2-07` | Ejercicio 4: Estabilidad del equilibrio y colapso de la curva IS (Fig. 5-10) | `docs/tema-02/assets/diagrama-ejercicio4-estabilidad.svg` | ✅ Completado |
 
 ---
 
@@ -74,3 +75,9 @@ Este documento registra la suite completa de ilustraciones técnicas y diagramas
 ### img-t2-06 — Ejercicio 1 Resuelto: Choque de Inversión (`diagrama-ejercicio1-inversion.svg`)
 - **Panel izquierdo:** Gráfico $IS-LM$ mostrando la contracción de la inversión autónoma ($\downarrow I_{aut}$) y el nuevo equilibrio $A'$.
 - **Panel derecho:** Matriz de las 10 variables macroeconómicas con etiquetas de estado (`[▼ DISMINUYÓ]`, `[▲ MEJORÓ]`, etc.) y explicación de la respuesta monetaria para mantener $i^*$.
+
+### img-t2-07 — Ejercicio 4 Resuelto: Estabilidad del Equilibrio y Colapso de la Curva IS (`diagrama-ejercicio4-estabilidad.svg`)
+- **Panel izquierdo (1. Cruz Keynesiana // Rectas Paralelas):** Ejes $(Y, DA)$ ilustrando el caso límite donde la propensión marginal a gastar es exactamente $\frac{\partial DA}{\partial Y} = c_1 + d_1 = 0.7 + 0.3 = 1.0$. La recta de demanda agregada $DA = A(i) + 1.0\cdot Y$ es estrictamente paralela a la recta de 45°, impidiendo un punto de corte único y provocando que el multiplicador keynesiano tienda a infinito ($\alpha \to \infty$). Demuestra gráficamente la inestabilidad dinámica del equilibrio.
+- **Panel derecho (2. Plano IS // Curva Horizontal Colapsada):** Ejes $(Y, i)$ demostrando que la variable $Y$ se cancela de la condición de equilibrio en el mercado de bienes ($Y = DA$), fijando la pendiente $di/dY = 0$. La relación IS colapsa en una línea completamente horizontal a la tasa $i^* = (450 - 0.7T + G) / 2{,}000$, perdiéndose la relación negativa estándar entre producto y tasa de interés.
+- Pastillas protectoras en todos los textos, fórmulas, badges de advertencia de desequilibrio y tarjetas explicativas inferiores.
+
