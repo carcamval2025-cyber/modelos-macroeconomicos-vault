@@ -46,11 +46,10 @@ Este documento registra la suite completa de ilustraciones técnicas y diagramas
 
 ## Detalles de los Diagramas Incorporados
 
-### img-t2-01 — La Curva IS y su Desplazamiento (`diagrama-curva-is.svg`)
-- Eje vertical $i$, horizontal $Y$. Curva $IS$ con doble trazo (coral `#FF6F4A` de `3.4px` + aura punteada `#FFB188`).
-- Curva $IS'$ desplazada a la izquierda por choque contractivo ($\Delta I_{aut} < 0, \Delta G < 0, \Delta T > 0$).
-- Nodos concéntricos $A$ y $A'$ protegidos con pastillas, vector de movimiento a lo largo y vector de desplazamiento.
-- Zócalo técnico con la ecuación $IS: Y = C(Y-T) + I(Y, i) + G$.
+### img-t2-01 — La Curva IS: Movimiento a lo Largo vs Desplazamiento (`diagrama-curva-is.svg`)
+- **Panel izquierdo (1. Movimiento a lo largo):** Ejes $(Y, i)$, curva $IS$ fija única. Muestra el efecto de un cambio en la tasa de interés ($\Delta i \implies \downarrow I \implies \downarrow Y$), moviendo la economía del nodo $A$ al nodo $A'$ sobre la misma curva (la curva NO se mueve).
+- **Panel derecho (2. Desplazamiento de la curva):** Ejes $(Y, i)$, tasa de interés fija $i^*$. Muestra cómo cambios en variables exógenas ($\downarrow G, \uparrow T$ o $\downarrow I_{aut}$) desplazan **toda** la curva hacia la izquierda a $IS'$, trasladando el equilibrio horizontalmente del nodo $A$ al nodo $B$.
+- Tarjetas técnicas inferiores con las reglas canónicas de Blanchard y pastillas de protección de texto en todos los nodos y coordenadas.
 
 ### img-t2-04 — Derivación de la Curva IS a partir de $Z=Y$ (`diagrama-derivacion-is.svg`)
 - **Panel superior:** Cruce keynesiano con recta de 45° ($Y=Z$) y curvas de demanda $ZZ(i)$ y $ZZ'(i')$. Muestra cómo un alza de la tasa de interés de $i$ a $i'$ contrae la inversión y desplaza la demanda hacia abajo, reduciendo el producto de $Y$ a $Y'$.
