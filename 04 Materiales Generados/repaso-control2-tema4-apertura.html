@@ -131,6 +131,11 @@ main{max-width:820px; margin:0 auto; padding:64px 24px 100px;}
 
 .badge{ display:inline-block; background:var(--bg-elev2); color:var(--text-dim); font-family:'JetBrains Mono',monospace; font-size:0.7rem; font-weight:600; padding:3px 10px; border-radius:999px; letter-spacing:0.03em; text-transform:uppercase; margin-right:6px; }
 
+figure{margin:18px 0 14px;}
+.diagrama{background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:12px; overflow:hidden;}
+.diagrama svg{width:100%; height:auto; display:block;}
+figcaption{font-size:0.78rem; color:var(--text-dim); margin-top:8px; line-height:1.45; font-family:'JetBrains Mono',monospace;}
+
 footer{ border-top:1px solid var(--border); padding:32px 24px; text-align:center; font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--text-dim); }
 footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; font-family:'Inter',sans-serif; font-size:0.82rem;}
 
@@ -324,6 +329,76 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
         <p><strong>Paso 1 — depreciación esperada:</strong> (4.86 − 4.50)/4.50 = 0.36/4.50 = 0.08 = 8%.</p>
         <p><strong>Paso 2 — despejar i*:</strong> i ≈ i* − (depreciación esperada) → i* ≈ i + (depreciación esperada) = 8% + 8% = <strong>16%</strong>.</p>
         <p><strong>Interpretación:</strong> la tasa extranjera debe ser considerablemente mayor porque el inversionista que compra el activo extranjero espera además "perder" 8% al reconvertir su dinero a la moneda doméstica al final del período — necesita esa tasa alta para que el arbitraje se mantenga.</p>
+        <figure>
+          <div class="diagrama">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 310" role="img" aria-label="Comparador visual de retornos esperados para el Problema 2: arbitraje entre bono doméstico y bono extranjero">
+              <title>Problema 2: Arbitraje y Paridad de Tasas de Interés</title>
+              <desc>Comparación visual de retornos esperados que demuestra por qué la tasa extranjera i* debe ser 16% cuando la tasa doméstica es 8% y se espera una depreciación del 8%, logrando la igualdad de rendimientos netos esperados.</desc>
+              <rect width="740" height="310" rx="12" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+              <path d="M40 45H700M40 265H700" fill="none" stroke="#2A324A" stroke-width="0.8" stroke-dasharray="4 6" opacity=".4"/>
+              <line x1="315" y1="35" x2="315" y2="265" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 6" opacity=".3"/>
+              <g transform="translate(40, 40)">
+                <rect width="250" height="215" rx="9" fill="#080C1C" stroke="#FF6F4A" stroke-width="1.8"/>
+                <rect x="15" y="-12" width="160" height="24" rx="5" fill="#1B223C" stroke="#FF6F4A" stroke-width="1.2"/>
+                <text x="95" y="4" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#EFF2F9">BONO DOMÉSTICO (X)</text>
+                <text x="18" y="28" font-family="Inter" font-size="10" fill="#A3AABE">Rendimiento directo en moneda local</text>
+                <g transform="translate(18, 48)">
+                  <rect width="214" height="48" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+                  <rect x="0" y="0" width="107" height="48" rx="6" fill="#1B223C" stroke="#FF6F4A" stroke-width="1"/>
+                  <text x="14" y="22" font-family="Inter" font-size="10" font-weight="600" fill="#EFF2F9">Tasa de interés:</text>
+                  <text x="14" y="38" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="#FF6F4A">i = 8.0%</text>
+                  <text x="135" y="30" font-family="Inter" font-size="9" fill="#A3AABE">Pago fijo</text>
+                </g>
+                <g transform="translate(18, 115)">
+                  <rect width="214" height="52" rx="7" fill="#10172D" stroke="#FF6F4A" stroke-width="1.4"/>
+                  <text x="14" y="22" font-family="Inter" font-size="10.5" font-weight="700" fill="#EFF2F9">RETORNO NETO ESPERADO</text>
+                  <text x="14" y="40" font-family="JetBrains Mono" font-size="18" font-weight="700" fill="#FF6F4A">8.0%</text>
+                  <text x="110" y="40" font-family="Inter" font-size="9" fill="#55C975">Sin pérdida cambiaria</text>
+                </g>
+                <text x="125" y="194" text-anchor="middle" font-family="Inter" font-size="9" fill="#A3AABE">Inversionista recibe (1 + 0.08) USD</text>
+              </g>
+              <g transform="translate(302, 125)">
+                <circle cx="14" cy="20" r="18" fill="#1B223C" stroke="#FFB188" stroke-width="1.6"/>
+                <text x="14" y="27" text-anchor="middle" font-family="JetBrains Mono" font-size="20" font-weight="700" fill="#EFF2F9">=</text>
+                <rect x="-35" y="46" width="98" height="18" rx="4" fill="#080C1C" stroke="#2A324A" stroke-width="0.8"/>
+                <text x="14" y="58" text-anchor="middle" font-family="Inter" font-size="8.5" font-weight="600" fill="#FFB188">ARBITRAJE</text>
+              </g>
+              <g transform="translate(345, 40)">
+                <rect width="355" height="215" rx="9" fill="#080C1C" stroke="#667FDA" stroke-width="1.8"/>
+                <rect x="15" y="-12" width="180" height="24" rx="5" fill="#1B223C" stroke="#667FDA" stroke-width="1.2"/>
+                <text x="105" y="4" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#EFF2F9">BONO EXTRANJERO (*)</text>
+                <text x="18" y="28" font-family="Inter" font-size="10" fill="#A3AABE">Ruta internacional: tasa foránea menos depreciación</text>
+                <g transform="translate(18, 42)">
+                  <rect width="319" height="34" rx="5" fill="#10172D"/>
+                  <text x="12" y="21" font-family="Inter" font-size="10" fill="#EFF2F9">Tasa de interés extranjera:</text>
+                  <text x="195" y="22" font-family="JetBrains Mono" font-size="13" font-weight="700" fill="#55C975">i* = 16.0%</text>
+                  <text x="270" y="21" font-family="Inter" font-size="9" fill="#55C975">(Ganancia)</text>
+                </g>
+                <g transform="translate(18, 82)">
+                  <rect width="319" height="34" rx="5" fill="#10172D"/>
+                  <text x="12" y="16" font-family="Inter" font-size="10" fill="#A3AABE">Depreciación esperada (ΔE<tspan font-size="8" dy="-2">e</tspan><tspan font-size="10" dy="2">/E):</tspan></text>
+                  <text x="12" y="28" font-family="JetBrains Mono" font-size="8.5" fill="#A3AABE">(4.86 − 4.50) / 4.50 =</text>
+                  <text x="195" y="22" font-family="JetBrains Mono" font-size="13" font-weight="700" fill="#FB5668">− 8.0%</text>
+                  <text x="270" y="21" font-family="Inter" font-size="9" fill="#FB5668">(Pérdida)</text>
+                </g>
+                <g transform="translate(18, 126)">
+                  <rect width="319" height="42" rx="7" fill="#10172D" stroke="#667FDA" stroke-width="1.4"/>
+                  <text x="12" y="18" font-family="Inter" font-size="10" font-weight="700" fill="#EFF2F9">RETORNO NETO ESPERADO</text>
+                  <text x="12" y="32" font-family="JetBrains Mono" font-size="10" fill="#667FDA">16.0% − 8.0% =</text>
+                  <text x="140" y="29" font-family="JetBrains Mono" font-size="18" font-weight="700" fill="#667FDA">8.0%</text>
+                  <text x="210" y="26" font-family="Inter" font-size="9" fill="#55C975">¡Iguala a la ruta doméstica!</text>
+                </g>
+                <text x="177" y="194" text-anchor="middle" font-family="Inter" font-size="9" fill="#A3AABE">El inversionista exige 16% para tolerar la pérdida cambiaria del 8%</text>
+              </g>
+              <g transform="translate(40, 268)">
+                <rect width="660" height="30" rx="6" fill="#080C1C" stroke="#2A324A" stroke-width="1"/>
+                <text x="15" y="19" font-family="Inter" font-size="10" font-weight="700" fill="#FFB188">FÓRMULA DESPEJADA:</text>
+                <text x="160" y="19" font-family="JetBrains Mono" font-size="11" fill="#EFF2F9">i ≈ i* − %ΔE<tspan font-size="8" dy="-2">e</tspan><tspan font-size="11" dy="2"> ⇒ i* ≈ i + %ΔE</tspan><tspan font-size="8" dy="-2">e</tspan><tspan font-size="11" dy="2"> = 8% + 8% = <tspan font-weight="700" fill="#667FDA">16%</tspan></tspan></text>
+              </g>
+            </svg>
+          </div>
+          <figcaption>Fig. propia — comparador de retornos esperados y arbitraje para el Problema 2 (Blanchard, secc. 17-2). El mayor i* neutraliza exactamente la depreciación esperada.</figcaption>
+        </figure>
       </div>
     </div>
   </section>

@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 370" role="img" aria-label="Diagrama de la balanza de pagos: flujo acoplado entre cuenta corriente deficitaria y cuenta financiera superavitaria con datos de Blanchard">
+  <title>Estructura de la Balanza de Pagos (Blanchard Tabla 17-3)</title>
+  <desc>Doble balanza acoplada que muestra cómo el déficit por cuenta corriente de EE. UU. (-993 mil millones de dólares) se financia necesariamente mediante una entrada neta de capitales en la cuenta financiera (+804 mil millones) satisfaciendo la identidad contable fundamental.</desc>
+
+  <!-- Contenedor base -->
+  <rect width="780" height="370" rx="12" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+
+  <!-- Trama reticular de fondo -->
+  <path d="M40 50H740M40 310H740" fill="none" stroke="#2A324A" stroke-width="0.8" stroke-dasharray="4 6" opacity=".4"/>
+  <line x1="390" y1="30" x2="390" y2="310" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 6" opacity=".3"/>
+
+  <!-- ==================== PANEL IZQUIERDO: CUENTA CORRIENTE ==================== -->
+  <g transform="translate(40, 45)">
+    <!-- Marco del panel -->
+    <rect width="320" height="250" rx="10" fill="#080C1C" stroke="#FF6F4A" stroke-width="1.8"/>
+
+    <!-- Cabecera de Cuenta Corriente -->
+    <rect x="15" y="-12" width="190" height="24" rx="5" fill="#1B223C" stroke="#FF6F4A" stroke-width="1.2"/>
+    <text x="110" y="4" text-anchor="middle" font-family="Inter" font-size="11.5" font-weight="700" fill="#EFF2F9">CUENTA CORRIENTE (CC)</text>
+
+    <!-- Subtítulo pedagógico -->
+    <text x="18" y="28" font-family="Inter" font-size="10" fill="#A3AABE">Transacciones de bienes, servicios e ingresos</text>
+
+    <!-- Fila 1: Exportaciones -->
+    <g transform="translate(18, 42)">
+      <rect width="284" height="26" rx="4" fill="#10172D"/>
+      <text x="12" y="17" font-family="Inter" font-size="11" fill="#EFF2F9">Exportaciones (X)</text>
+      <text x="272" y="17" text-anchor="end" font-family="JetBrains Mono" font-size="11.5" font-weight="600" fill="#55C975">+$4,424B</text>
+    </g>
+
+    <!-- Fila 2: Importaciones -->
+    <g transform="translate(18, 73)">
+      <rect width="284" height="26" rx="4" fill="#10172D"/>
+      <text x="12" y="17" font-family="Inter" font-size="11" fill="#EFF2F9">Importaciones (IM)</text>
+      <text x="272" y="17" text-anchor="end" font-family="JetBrains Mono" font-size="11.5" font-weight="600" fill="#FB5668">-$5,396B</text>
+    </g>
+
+    <!-- Fila 3: Saldo Comercial -->
+    <g transform="translate(18, 104)">
+      <rect width="284" height="24" rx="4" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+      <text x="12" y="16" font-family="Inter" font-size="10.5" font-weight="600" fill="#FFB188">Balanza Comercial (X − IM)</text>
+      <text x="272" y="16" text-anchor="end" font-family="JetBrains Mono" font-size="11" font-weight="700" fill="#FF6F4A">-$972B</text>
+    </g>
+
+    <!-- Fila 4: Renta neta -->
+    <g transform="translate(18, 133)">
+      <rect width="284" height="24" rx="4" fill="#10172D"/>
+      <text x="12" y="16" font-family="Inter" font-size="10" fill="#A3AABE">Renta neta de inversiones</text>
+      <text x="272" y="16" text-anchor="end" font-family="JetBrains Mono" font-size="10.5" fill="#FB5668">-$21B</text>
+    </g>
+
+    <!-- Saldo final de Cuenta Corriente (Tarjeta destacada) -->
+    <g transform="translate(18, 168)">
+      <rect width="284" height="42" rx="7" fill="#10172D" stroke="#FF6F4A" stroke-width="1.4"/>
+      <text x="14" y="20" font-family="Inter" font-size="11" font-weight="700" fill="#EFF2F9">SALDO CUENTA CORRIENTE</text>
+      <text x="14" y="34" font-family="Inter" font-size="9" fill="#FFB188">Déficit: salida neta de divisas</text>
+      <text x="270" y="27" text-anchor="end" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="#FB5668">-$993B</text>
+    </g>
+
+    <text x="160" y="234" text-anchor="middle" font-family="Inter" font-size="9.5" fill="#A3AABE">EE. UU. gasta más de lo que produce</text>
+  </g>
+
+  <!-- ==================== CONECTOR CENTRAL DE FINANCIAMIENTO ==================== -->
+  <g transform="translate(365, 135)">
+    <!-- Flecha de transferencia obligatoria -->
+    <path d="M0 35H50" fill="none" stroke="#FFB188" stroke-width="2.6" stroke-dasharray="4 3"/>
+    <path d="M42 29L50 35L42 41" fill="none" stroke="#FFB188" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <circle cx="25" cy="35" r="14" fill="#1B223C" stroke="#2A324A" stroke-width="1.2"/>
+    <text x="25" y="39" text-anchor="middle" font-family="JetBrains Mono" font-size="9" font-weight="700" fill="#55C975">FIN</text>
+    <text x="25" y="10" text-anchor="middle" font-family="Inter" font-size="8.5" font-weight="600" fill="#FFB188">EXIGE</text>
+    <text x="25" y="62" text-anchor="middle" font-family="Inter" font-size="8" fill="#A3AABE">Deuda neta</text>
+  </g>
+
+  <!-- ==================== PANEL DERECHO: CUENTA FINANCIERA ==================== -->
+  <g transform="translate(420, 45)">
+    <!-- Marco del panel -->
+    <rect width="320" height="250" rx="10" fill="#080C1C" stroke="#667FDA" stroke-width="1.8"/>
+
+    <!-- Cabecera de Cuenta Financiera -->
+    <rect x="15" y="-12" width="190" height="24" rx="5" fill="#1B223C" stroke="#667FDA" stroke-width="1.2"/>
+    <text x="110" y="4" text-anchor="middle" font-family="Inter" font-size="11.5" font-weight="700" fill="#EFF2F9">CUENTA FINANCIERA (CF)</text>
+
+    <!-- Subtítulo pedagógico -->
+    <text x="18" y="28" font-family="Inter" font-size="10" fill="#A3AABE">Flujos de activos financieros y endeudamiento</text>
+
+    <!-- Fila 1: Activos domésticos en manos foráneas -->
+    <g transform="translate(18, 42)">
+      <rect width="284" height="26" rx="4" fill="#10172D"/>
+      <text x="12" y="17" font-family="Inter" font-size="10.5" fill="#EFF2F9">Entrada capital (extranjeros compran activos)</text>
+      <text x="272" y="17" text-anchor="end" font-family="JetBrains Mono" font-size="11.5" font-weight="600" fill="#55C975">+$1,564B</text>
+    </g>
+
+    <!-- Fila 2: Activos extranjeros en manos domésticas -->
+    <g transform="translate(18, 73)">
+      <rect width="284" height="26" rx="4" fill="#10172D"/>
+      <text x="12" y="17" font-family="Inter" font-size="10.5" fill="#EFF2F9">Salida capital (compra de activos foráneos)</text>
+      <text x="272" y="17" text-anchor="end" font-family="JetBrains Mono" font-size="11.5" font-weight="600" fill="#FB5668">-$760B</text>
+    </g>
+
+    <!-- Fila 3: Saldo Cuenta Financiera -->
+    <g transform="translate(18, 104)">
+      <rect width="284" height="24" rx="4" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+      <text x="12" y="16" font-family="Inter" font-size="10.5" font-weight="600" fill="#667FDA">Entrada Neta de Capitales</text>
+      <text x="272" y="16" text-anchor="end" font-family="JetBrains Mono" font-size="11" font-weight="700" fill="#55C975">+$804B</text>
+    </g>
+
+    <!-- Fila 4: Discrepancia Estadística -->
+    <g transform="translate(18, 133)">
+      <rect width="284" height="24" rx="4" fill="#10172D"/>
+      <text x="12" y="16" font-family="Inter" font-size="10" fill="#A3AABE">Discrepancia estadística</text>
+      <text x="272" y="16" text-anchor="end" font-family="JetBrains Mono" font-size="10.5" fill="#A3AABE">-$189B</text>
+    </g>
+
+    <!-- Saldo final de Cuenta Financiera (Tarjeta destacada) -->
+    <g transform="translate(18, 168)">
+      <rect width="284" height="42" rx="7" fill="#10172D" stroke="#667FDA" stroke-width="1.4"/>
+      <text x="14" y="20" font-family="Inter" font-size="11" font-weight="700" fill="#EFF2F9">SALDO CUENTA FINANCIERA</text>
+      <text x="14" y="34" font-family="Inter" font-size="9" fill="#667FDA">Superávit: entrada neta de fondos</text>
+      <text x="270" y="27" text-anchor="end" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="#55C975">+$804B</text>
+    </g>
+
+    <text x="160" y="234" text-anchor="middle" font-family="Inter" font-size="9.5" fill="#A3AABE">Venta neta de activos al resto del mundo</text>
+  </g>
+
+  <!-- ==================== FRANJA INFERIOR: IDENTIDAD CONTABLE FUNDAMENTAL ==================== -->
+  <g transform="translate(40, 312)">
+    <rect width="700" height="42" rx="8" fill="#080C1C" stroke="#2A324A" stroke-width="1.2"/>
+    <circle cx="24" cy="21" r="5" fill="#55C975"/>
+    <text x="36" y="25" font-family="Inter" font-size="11" font-weight="700" fill="#EFF2F9">IDENTIDAD CONTABLE:</text>
+
+    <!-- Fórmula en pastillas -->
+    <text x="195" y="25" font-family="JetBrains Mono" font-size="12" font-weight="600" fill="#EFF2F9">CC (<tspan fill="#FB5668">-$993B</tspan>) + CF (<tspan fill="#55C975">+$804B</tspan>) + Discrepancia (<tspan fill="#A3AABE">-$189B</tspan>) = <tspan font-weight="700" fill="#55C975">$0</tspan></text>
+  </g>
+</svg>

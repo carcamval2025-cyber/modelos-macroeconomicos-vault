@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 350" role="img" aria-label="Diagrama de arbitraje y paridad de tasas de interés no cubierta entre bono doméstico y bono extranjero">
+  <title>Arbitraje y Paridad Descubierta de Tasas de Interés (UIP)</title>
+  <desc>Esquema de decisión del inversionista financiero entre comprar un bono doméstico que rinde (1+i) dólares o convertir a divisa extranjera, comprar un bono foráneo a tasa i* y reconvertir al tipo de cambio esperado, derivando la condición de paridad de tasas.</desc>
+
+  <!-- Contenedor base -->
+  <rect width="780" height="350" rx="12" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+
+  <!-- Trama reticular de fondo -->
+  <path d="M40 45H740M40 295H740" fill="none" stroke="#2A324A" stroke-width="0.8" stroke-dasharray="4 6" opacity=".4"/>
+  <path d="M190 25V315M490 25V315" fill="none" stroke="#2A324A" stroke-width="0.8" stroke-dasharray="4 6" opacity=".25"/>
+
+  <!-- ==================== NODO INICIAL: 1 USD HOY (t) ==================== -->
+  <g transform="translate(85, 160)">
+    <circle cx="0" cy="0" r="46" fill="#080C1C" stroke="#2A324A" stroke-width="2"/>
+    <circle cx="0" cy="0" r="38" fill="#10172D" stroke="#EFF2F9" stroke-width="2.6"/>
+    
+    <!-- Micro-insignia vectorial del dólar $ -->
+    <rect x="-14" y="-30" width="28" height="18" rx="4" fill="#1B223C" stroke="#55C975" stroke-width="1"/>
+    <text x="0" y="-17" text-anchor="middle" font-family="JetBrains Mono" font-size="11" font-weight="700" fill="#55C975">$ USD</text>
+
+    <text x="0" y="3" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="#EFF2F9">1 USD</text>
+    <text x="0" y="18" text-anchor="middle" font-family="Inter" font-size="10.5" fill="#A3AABE">hoy (año t)</text>
+  </g>
+
+  <!-- ==================== RUTA SUPERIOR: BONO DOMÉSTICO ==================== -->
+  <!-- Curva de flujo hacia bono local -->
+  <path d="M130 142C230 78 340 75 480 80" fill="none" stroke="#FF6F4A" stroke-width="2.6"/>
+  <path d="M470 74L480 80L469 86" fill="none" stroke="#FF6F4A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Pastilla informativa sobre la ruta superior -->
+  <rect x="220" y="55" width="190" height="26" rx="5" fill="#1B223C" stroke="#FF6F4A" stroke-width="1"/>
+  <text x="315" y="72" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#EFF2F9">Bono local a tasa <tspan font-weight="700" fill="#FF6F4A">i</tspan></text>
+
+  <!-- Tarjeta de resultado superior: (1+i) USD -->
+  <g transform="translate(490, 50)">
+    <rect width="250" height="66" rx="9" fill="#080C1C" stroke="#FF6F4A" stroke-width="1.8"/>
+    
+    <rect x="15" y="-11" width="140" height="20" rx="4" fill="#1B223C" stroke="#FF6F4A" stroke-width="1"/>
+    <text x="85" y="3" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#EFF2F9">RUTA DOMÉSTICA</text>
+
+    <text x="25" y="32" font-family="Inter" font-size="11" fill="#A3AABE">Retorno en año t+1:</text>
+    <rect x="135" y="16" width="100" height="26" rx="5" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="185" y="34" text-anchor="middle" font-family="JetBrains Mono" font-size="13" font-weight="700" fill="#EFF2F9">(1 + i) USD</text>
+
+    <text x="25" y="54" font-family="JetBrains Mono" font-size="9.5" fill="#55C975">Sin riesgo cambiario directo</text>
+  </g>
+
+  <!-- ==================== RUTA INFERIOR: BONO EXTRANJERO ==================== -->
+  <!-- Curva de flujo hacia bono foráneo -->
+  <path d="M130 178C210 232 300 240 480 238" fill="none" stroke="#667FDA" stroke-width="2.6"/>
+  <path d="M470 232L480 238L469 244" fill="none" stroke="#667FDA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Paso 1 inferior: Conversión a libras al tipo E_t -->
+  <g transform="translate(180, 215)">
+    <rect width="130" height="42" rx="6" fill="#1B223C" stroke="#667FDA" stroke-width="1"/>
+    <text x="65" y="18" text-anchor="middle" font-family="Inter" font-size="9.5" font-weight="600" fill="#A3AABE">1. Convertir divisa</text>
+    <text x="65" y="33" text-anchor="middle" font-family="JetBrains Mono" font-size="11.5" font-weight="700" fill="#667FDA">E<tspan font-size="9">t</tspan> libras</text>
+  </g>
+
+  <!-- Paso 2 inferior: Bono UK a tasa i* -->
+  <g transform="translate(325, 215)">
+    <rect width="140" height="42" rx="6" fill="#1B223C" stroke="#667FDA" stroke-width="1"/>
+    <text x="70" y="18" text-anchor="middle" font-family="Inter" font-size="9.5" font-weight="600" fill="#A3AABE">2. Invertir a tasa</text>
+    <text x="70" y="33" text-anchor="middle" font-family="JetBrains Mono" font-size="11.5" font-weight="700" fill="#EFF2F9">i* (extranjera)</text>
+  </g>
+
+  <!-- Tarjeta de resultado inferior: Bono foráneo -->
+  <g transform="translate(490, 205)">
+    <rect width="250" height="74" rx="9" fill="#080C1C" stroke="#667FDA" stroke-width="1.8"/>
+    
+    <rect x="15" y="-11" width="140" height="20" rx="4" fill="#1B223C" stroke="#667FDA" stroke-width="1"/>
+    <text x="85" y="3" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#EFF2F9">RUTA EXTRANJERA</text>
+
+    <!-- Micro-insignia vectorial libra £ -->
+    <rect x="175" y="-11" width="60" height="20" rx="4" fill="#10172D" stroke="#667FDA" stroke-width="0.8"/>
+    <text x="205" y="3" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="700" fill="#667FDA">£ GBP</text>
+
+    <text x="18" y="28" font-family="Inter" font-size="10.5" fill="#A3AABE">En libras:</text>
+    <text x="85" y="28" font-family="JetBrains Mono" font-size="11.5" font-weight="600" fill="#EFF2F9">(1 + i*) · E<tspan font-size="9">t</tspan></text>
+
+    <!-- Reconversión esperada a USD -->
+    <rect x="12" y="38" width="226" height="26" rx="5" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="125" y="55" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#FFB188">Reconversión a USD: <tspan font-weight="700" fill="#EFF2F9">(1+i*)·(E<tspan font-size="8">t</tspan>/E<tspan font-size="8">t+1</tspan><tspan font-size="7" dy="-3">e</tspan><tspan font-size="10" dy="3">)</tspan></tspan></text>
+  </g>
+
+  <!-- ==================== VÍNCULO DE ARBITRAJE ENTRE AMBAS RUTAS ==================== -->
+  <path d="M615 120V200" fill="none" stroke="#FFB188" stroke-width="2" stroke-dasharray="4 4"/>
+  <circle cx="615" cy="160" r="14" fill="#1B223C" stroke="#FFB188" stroke-width="1.4"/>
+  <text x="615" y="164" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#FFB188">VS</text>
+
+  <!-- ==================== FRANJA INFERIOR: CONDICIÓN DE ARBITRAJE (17.2) ==================== -->
+  <g transform="translate(40, 298)">
+    <rect width="700" height="38" rx="7" fill="#080C1C" stroke="#2A324A" stroke-width="1.2"/>
+    <rect x="15" y="7" width="170" height="24" rx="4" fill="#1B223C" stroke="#667FDA" stroke-width="1"/>
+    <text x="100" y="23" text-anchor="middle" font-family="Inter" font-size="10.5" font-weight="700" fill="#EFF2F9">ARBITRAJE EN EQUILIBRIO</text>
+
+    <text x="210" y="24" font-family="JetBrains Mono" font-size="12" font-weight="700" fill="#FF6F4A">(1 + i<tspan font-size="9">t</tspan>) = (1 + i*<tspan font-size="9">t</tspan>) · (E<tspan font-size="9">t</tspan> / E<tspan font-size="9">t+1</tspan><tspan font-size="8" dy="-4">e</tspan><tspan font-size="12" dy="4">)</tspan></text>
+
+    <!-- Versión aproximada -->
+    <rect x="490" y="7" width="195" height="24" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="587" y="23" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" fill="#FFB188">Aprox: i ≈ i* − (ΔE<tspan font-size="8" dy="-3">e</tspan><tspan font-size="10" dy="3">/E)</tspan></text>
+  </g>
+</svg>

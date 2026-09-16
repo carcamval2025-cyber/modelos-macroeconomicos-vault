@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img" aria-label="Diagrama del tipo de cambio real: epsilon igual a E por P sobre P asterisco">
+  <title>Construcción del Tipo de Cambio Real (ε = EP/P*)</title>
+  <desc>Diagrama que explica cómo los precios domésticos P convertidos a moneda extranjera mediante el tipo de cambio nominal E se comparan contra los precios extranjeros P* para determinar el precio relativo de los bienes (tipo de cambio real epsilon).</desc>
+
+  <!-- Contenedor base de superficie elevada -->
+  <rect width="760" height="340" rx="12" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+
+  <!-- Trama técnica reticular de fondo -->
+  <path d="M40 50H720M40 290H720" fill="none" stroke="#2A324A" stroke-width="0.8" stroke-dasharray="4 6" opacity=".4"/>
+  <path d="M160 30V310M380 30V310M600 30V310" fill="none" stroke="#2A324A" stroke-width="0.8" stroke-dasharray="4 6" opacity=".3"/>
+
+  <!-- ==================== BLOQUE IZQUIERDO: ECONOMÍA DOMÉSTICA ==================== -->
+  <g transform="translate(40, 50)">
+    <!-- Caja exterior -->
+    <rect width="230" height="180" rx="10" fill="#080C1C" stroke="#667FDA" stroke-width="2"/>
+    
+    <!-- Silueta vectorial técnica de fábrica/bienes domésticos -->
+    <path d="M185 30V15H170V30H155V15H140V42H210V30H185Z" fill="#10172D" stroke="#667FDA" stroke-width="1" opacity=".7"/>
+    <circle cx="150" cy="24" r="2" fill="#667FDA" opacity=".8"/>
+    <circle cx="178" cy="24" r="2" fill="#667FDA" opacity=".8"/>
+
+    <!-- Cabecera -->
+    <rect x="15" y="-12" width="165" height="24" rx="5" fill="#1B223C" stroke="#667FDA" stroke-width="1.2"/>
+    <text x="97" y="4" text-anchor="middle" font-family="Inter" font-size="11.5" font-weight="700" fill="#EFF2F9">ECONOMÍA DOMÉSTICA</text>
+
+    <!-- Caja de Precios P -->
+    <rect x="20" y="32" width="190" height="42" rx="7" fill="#10172D" stroke="#2A324A" stroke-width="1"/>
+    <text x="35" y="58" font-family="Inter" font-size="12" fill="#A3AABE">Precios locales:</text>
+    <rect x="150" y="40" width="45" height="26" rx="4" fill="#1B223C" stroke="#667FDA" stroke-width="1"/>
+    <text x="172" y="58" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="#667FDA">P</text>
+
+    <!-- Detalle de bien doméstico -->
+    <text x="115" y="104" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#EFF2F9">Bien doméstico</text>
+    <rect x="25" y="118" width="180" height="24" rx="5" fill="#10172D"/>
+    <text x="115" y="134" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">Costo: P (en moneda local)</text>
+
+    <!-- Valor convertido -->
+    <rect x="20" y="152" width="190" height="20" rx="4" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="115" y="166" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#FFB188">Valor en divisa: E · P</text>
+  </g>
+
+  <!-- ==================== BLOQUE DERECHO: ECONOMÍA EXTRANJERA ==================== -->
+  <g transform="translate(490, 50)">
+    <!-- Caja exterior -->
+    <rect width="230" height="180" rx="10" fill="#080C1C" stroke="#FF6F4A" stroke-width="2"/>
+
+    <!-- Silueta vectorial técnica de puerto/comercio exterior -->
+    <path d="M165 38L180 20L210 20L210 38H165Z" fill="#10172D" stroke="#FF6F4A" stroke-width="1" opacity=".7"/>
+    <circle cx="185" cy="28" r="2.5" fill="#FF6F4A" opacity=".8"/>
+    <path d="M195 24V32M202 24V32" stroke="#FF6F4A" stroke-width="1" opacity=".7"/>
+
+    <!-- Cabecera -->
+    <rect x="15" y="-12" width="165" height="24" rx="5" fill="#1B223C" stroke="#FF6F4A" stroke-width="1.2"/>
+    <text x="97" y="4" text-anchor="middle" font-family="Inter" font-size="11.5" font-weight="700" fill="#EFF2F9">ECONOMÍA EXTERIOR</text>
+
+    <!-- Caja de Precios P* -->
+    <rect x="20" y="32" width="190" height="42" rx="7" fill="#10172D" stroke="#2A324A" stroke-width="1"/>
+    <text x="35" y="58" font-family="Inter" font-size="12" fill="#A3AABE">Precios foráneos:</text>
+    <rect x="150" y="40" width="45" height="26" rx="4" fill="#1B223C" stroke="#FF6F4A" stroke-width="1"/>
+    <text x="172" y="58" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="#FF6F4A">P*</text>
+
+    <!-- Detalle de bien extranjero -->
+    <text x="115" y="104" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#EFF2F9">Bien extranjero</text>
+    <rect x="25" y="118" width="180" height="24" rx="5" fill="#10172D"/>
+    <text x="115" y="134" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">Costo: P* (en divisa extranjera)</text>
+
+    <!-- Base comparativa -->
+    <rect x="20" y="152" width="190" height="20" rx="4" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="115" y="166" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#A3AABE">Denominador: P*</text>
+  </g>
+
+  <!-- ==================== PUENTE CENTRAL: TIPO DE CAMBIO NOMINAL (E) ==================== -->
+  <g transform="translate(270, 95)">
+    <!-- Flecha de conversión de moneda -->
+    <path d="M10 20H210" fill="none" stroke="#FFB188" stroke-width="2.5" stroke-dasharray="6 4"/>
+    <path d="M200 13L210 20L200 27" fill="none" stroke="#FFB188" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Pastilla protectora para E -->
+    <rect x="25" y="2" width="170" height="34" rx="7" fill="#1B223C" stroke="#FFB188" stroke-width="1.2"/>
+    <text x="110" y="18" text-anchor="middle" font-family="Inter" font-size="10" font-weight="600" fill="#A3AABE">CONVERSIÓN NOMINAL</text>
+    <text x="110" y="30" text-anchor="middle" font-family="JetBrains Mono" font-size="12" font-weight="700" fill="#FFB188">E (Tipo de cambio)</text>
+  </g>
+
+  <!-- ==================== CONVERGENCIA INFERIOR: TIPO DE CAMBIO REAL (ε) ==================== -->
+  <!-- Guías curvas punteadas hacia el nodo central -->
+  <path d="M155 230C155 265 300 270 335 270" fill="none" stroke="#667FDA" stroke-width="2" stroke-dasharray="4 4" opacity=".85"/>
+  <path d="M605 230C605 265 460 270 425 270" fill="none" stroke="#FF6F4A" stroke-width="2" stroke-dasharray="4 4" opacity=".85"/>
+
+  <!-- NODO CENTRAL CONCÉNTRICO: ε -->
+  <g transform="translate(380, 270)">
+    <circle cx="0" cy="0" r="44" fill="#080C1C" stroke="#2A324A" stroke-width="2"/>
+    <circle cx="0" cy="0" r="38" fill="#10172D" stroke="#EFF2F9" stroke-width="2.8"/>
+    <circle cx="0" cy="0" r="28" fill="#080C1C" stroke="#FF6F4A" stroke-width="1.8"/>
+    <text x="0" y="2" text-anchor="middle" font-family="JetBrains Mono" font-size="22" font-weight="700" fill="#FF6F4A">ε</text>
+    <text x="0" y="18" text-anchor="middle" font-family="JetBrains Mono" font-size="9" font-weight="600" fill="#EFF2F9">= EP/P*</text>
+  </g>
+
+  <!-- Pastilla superior descriptiva del cociente -->
+  <rect x="290" y="185" width="180" height="28" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="1"/>
+  <text x="380" y="198" text-anchor="middle" font-family="Inter" font-size="10" font-weight="600" fill="#EFF2F9">PRECIO RELATIVO</text>
+  <text x="380" y="209" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#A3AABE">Bienes dom. / Bienes ext.</text>
+
+  <!-- ==================== PIE TÉCNICO INFERIOR: APRECIACIÓN vs DEPRECIACIÓN ==================== -->
+  <g transform="translate(40, 308)">
+    <rect width="320" height="22" rx="4" fill="#080C1C" stroke="#2A324A" stroke-width="0.8"/>
+    <circle cx="14" cy="11" r="4" fill="#FB5668"/>
+    <text x="26" y="15" font-family="JetBrains Mono" font-size="10.5" fill="#EFF2F9">↑ε = Apreciación Real <tspan fill="#A3AABE">(Bienes dom. más caros)</tspan></text>
+
+    <rect x="360" width="320" height="22" rx="4" fill="#080C1C" stroke="#2A324A" stroke-width="0.8"/>
+    <circle cx="374" cy="11" r="4" fill="#55C975"/>
+    <text x="386" y="15" font-family="JetBrains Mono" font-size="10.5" fill="#EFF2F9">↓ε = Depreciación Real <tspan fill="#A3AABE">(Bienes dom. más baratos)</tspan></text>
+  </g>
+</svg>

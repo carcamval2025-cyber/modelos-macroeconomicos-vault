@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 320" role="img" aria-label="Banner panorámico del Tema 4 — Apertura Comercial y Financiera: flujos de bienes y arbitraje de capitales">
+  <title>Tema 4: Apertura Comercial y Financiera — Economía Abierta</title>
+  <desc>Composición panorámica técnica mostrando los dos polos macroeconómicos (economía doméstica e internacional) conectados por los canales de movilidad de bienes (tipo de cambio real epsilon) y movilidad de capitales (paridad de tasas de interés UIP).</desc>
+
+  <!-- Fondo base -->
+  <rect width="1600" height="320" fill="#080C1C"/>
+
+  <!-- Retícula técnica y guías cartesianas -->
+  <path d="M0 40H1600M0 280H1600" fill="none" stroke="#2A324A" stroke-width="1.2" opacity=".4"/>
+  <path d="M200 30V290M400 30V290M600 30V290M800 30V290M1000 30V290M1200 30V290M1400 30V290" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="3 6" opacity=".25"/>
+  <path d="M100 36V44M300 36V44M500 36V44M700 36V44M900 36V44M1100 36V44M1300 36V44M1500 36V44" fill="none" stroke="#A3AABE" stroke-width="1" opacity=".2"/>
+  <path d="M100 276V284M300 276V284M500 276V284M700 276V284M900 276V284M1100 276V284M1300 276V284M1500 276V284" fill="none" stroke="#A3AABE" stroke-width="1" opacity=".2"/>
+
+  <!-- Haces de interconexión global de fondo (apertura) -->
+  <path d="M280 160C450 60 1150 60 1320 160" fill="none" stroke="#FF6F4A" stroke-width="2.5" stroke-dasharray="6 6" opacity=".35"/>
+  <path d="M280 160C450 260 1150 260 1320 160" fill="none" stroke="#667FDA" stroke-width="2.5" stroke-dasharray="6 6" opacity=".35"/>
+
+  <!-- Eje de intercambio comercial (superior) -->
+  <path d="M360 135C520 85 700 80 800 80S1080 85 1240 135" fill="none" stroke="#FFB188" stroke-width="3" stroke-linecap="round" opacity=".85"/>
+  <path d="M1230 128L1240 135L1228 141" fill="none" stroke="#FFB188" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M1240 145C1080 95 900 90 800 90S520 95 360 145" fill="none" stroke="#FF6F4A" stroke-width="2" stroke-dasharray="6 4" stroke-linecap="round" opacity=".7"/>
+  <path d="M370 152L360 145L372 139" fill="none" stroke="#FF6F4A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Eje de arbitraje financiero / UIP (inferior) -->
+  <path d="M360 185C520 235 700 240 800 240S1080 235 1240 185" fill="none" stroke="#667FDA" stroke-width="3" stroke-linecap="round" opacity=".9"/>
+  <path d="M1230 178L1240 185L1228 191" fill="none" stroke="#667FDA" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M1240 175C1080 225 900 230 800 230S520 225 360 175" fill="none" stroke="#EFF2F9" stroke-width="1.8" stroke-dasharray="5 5" stroke-linecap="round" opacity=".65"/>
+  <path d="M370 168L360 175L372 181" fill="none" stroke="#EFF2F9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Polo 1: ECONOMÍA DOMÉSTICA (Índigo) -->
+  <g transform="translate(280, 160)">
+    <circle cx="0" cy="0" r="76" fill="#10172D" stroke="#2A324A" stroke-width="1.5" opacity=".5"/>
+    <circle cx="0" cy="0" r="58" fill="#080C1C" stroke="#667FDA" stroke-width="2.2" opacity=".85"/>
+    <circle cx="0" cy="0" r="42" fill="#10172D" stroke="#667FDA" stroke-width="1.2" stroke-dasharray="4 4" opacity=".9"/>
+    <circle cx="0" cy="0" r="14" fill="#080C1C" stroke="#EFF2F9" stroke-width="2.8"/>
+    <circle cx="0" cy="0" r="6" fill="#667FDA"/>
+
+    <!-- Pastillas informativas Polo Doméstico -->
+    <rect x="-95" y="-112" width="190" height="24" rx="5" fill="#10172D" stroke="#667FDA" stroke-width="1"/>
+    <text x="0" y="-96" text-anchor="middle" font-family="Inter" font-size="12" font-weight="700" fill="#EFF2F9" letter-spacing="0.06em">ECONOMÍA DOMÉSTICA</text>
+
+    <rect x="-85" y="76" width="75" height="22" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="-47" y="91" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#667FDA">P (Precios)</text>
+
+    <rect x="10" y="76" width="75" height="22" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="47" y="91" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#EFF2F9">i (Tasa)</text>
+  </g>
+
+  <!-- Polo 2: RESTO DEL MUNDO / ECONOMÍA EXTRANJERA (Coral) -->
+  <g transform="translate(1320, 160)">
+    <circle cx="0" cy="0" r="76" fill="#10172D" stroke="#2A324A" stroke-width="1.5" opacity=".5"/>
+    <circle cx="0" cy="0" r="58" fill="#080C1C" stroke="#FF6F4A" stroke-width="2.2" opacity=".85"/>
+    <circle cx="0" cy="0" r="42" fill="#10172D" stroke="#FF6F4A" stroke-width="1.2" stroke-dasharray="4 4" opacity=".9"/>
+    <circle cx="0" cy="0" r="14" fill="#080C1C" stroke="#EFF2F9" stroke-width="2.8"/>
+    <circle cx="0" cy="0" r="6" fill="#FF6F4A"/>
+
+    <!-- Pastillas informativas Polo Extranjero -->
+    <rect x="-95" y="-112" width="190" height="24" rx="5" fill="#10172D" stroke="#FF6F4A" stroke-width="1"/>
+    <text x="0" y="-96" text-anchor="middle" font-family="Inter" font-size="12" font-weight="700" fill="#EFF2F9" letter-spacing="0.06em">RESTO DEL MUNDO</text>
+
+    <rect x="-85" y="76" width="75" height="22" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="-47" y="91" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#FF6F4A">P* (Precios)</text>
+
+    <rect x="10" y="76" width="75" height="22" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="47" y="91" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#FFB188">i* (Tasa)</text>
+  </g>
+
+  <!-- NODO CENTRAL SUPERIOR: Tipo de Cambio Real ε -->
+  <g transform="translate(800, 80)">
+    <rect x="-140" y="-22" width="280" height="44" rx="9" fill="#10172D" stroke="#FFB188" stroke-width="1.4"/>
+    <circle cx="-110" cy="0" r="12" fill="#080C1C" stroke="#FF6F4A" stroke-width="2"/>
+    <text x="-110" y="5" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="#FF6F4A">ε</text>
+    <text x="15" y="-4" text-anchor="middle" font-family="Inter" font-size="11" font-weight="600" fill="#EFF2F9">TIPO DE CAMBIO REAL</text>
+    <text x="15" y="14" text-anchor="middle" font-family="JetBrains Mono" font-size="12" fill="#FFB188">ε = (E · P) / P*</text>
+  </g>
+
+  <!-- NODO CENTRAL INFERIOR: Paridad de Tasas de Interés (UIP) -->
+  <g transform="translate(800, 240)">
+    <rect x="-180" y="-22" width="360" height="44" rx="9" fill="#10172D" stroke="#667FDA" stroke-width="1.4"/>
+    <circle cx="-148" cy="0" r="12" fill="#080C1C" stroke="#667FDA" stroke-width="2"/>
+    <text x="-148" y="5" text-anchor="middle" font-family="JetBrains Mono" font-size="12" font-weight="700" fill="#667FDA">UIP</text>
+    <text x="15" y="-4" text-anchor="middle" font-family="Inter" font-size="11" font-weight="600" fill="#EFF2F9">PARIDAD DE TASAS NO CUBIERTA</text>
+    <text x="15" y="14" text-anchor="middle" font-family="JetBrains Mono" font-size="12" fill="#EFF2F9">(1 + i<tspan font-size="9">t</tspan>) = (1 + i*<tspan font-size="9">t</tspan>) · (E<tspan font-size="9">t</tspan> / E<tspan font-size="9">t+1</tspan><tspan font-size="8" dy="-4">e</tspan><tspan font-size="12" dy="4">)</tspan></text>
+  </g>
+
+  <!-- Centro conector de Balanza de Pagos -->
+  <g transform="translate(800, 160)">
+    <circle cx="0" cy="0" r="22" fill="#080C1C" stroke="#2A324A" stroke-width="1.6"/>
+    <circle cx="0" cy="0" r="16" fill="#10172D" stroke="#EFF2F9" stroke-width="1.8"/>
+    <text x="0" y="4" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="700" fill="#55C975">BP</text>
+    <rect x="-85" y="-34" width="170" height="18" rx="4" fill="#080C1C" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="0" y="-21" text-anchor="middle" font-family="JetBrains Mono" font-size="9.5" fill="#A3AABE">CC + CF ≈ 0</text>
+  </g>
+
+  <!-- Marcadores laterales decorativos de metadatos -->
+  <text x="40" y="298" font-family="JetBrains Mono" font-size="10" fill="#A3AABE" opacity=".6">ESEN · MACRO II · BLANCHARD CAP. 17</text>
+  <text x="1560" y="298" text-anchor="end" font-family="JetBrains Mono" font-size="10" fill="#A3AABE" opacity=".6">MERCADO DE BIENES + MERCADO FINANCIERO</text>
+</svg>
