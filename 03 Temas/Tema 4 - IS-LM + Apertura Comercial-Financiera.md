@@ -13,9 +13,11 @@ otras_lecturas: "—"
 
 ## Subtemas cubiertos (ALCANCE real reportado por Navas)
 
-_(Actualizar conforme avanza la semana.)_
+Reportado 2026-09-16: los tres subtemas completos.
 
-- [ ]
+- [x] Movilidad de bienes y servicios y tipo de cambio real (secc. 17-1)
+- [x] Movilidad de capitales y paridad de tasas de interés (secc. 17-2)
+- [x] Balanza de pagos
 
 ## Materiales generados para este tema
 

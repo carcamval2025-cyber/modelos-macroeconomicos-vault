@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Repaso — Preparación Control 2 (Tema 4: Apertura Comercial/Financiera)</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080C1C; --bg-elev:#10172D; --bg-elev2:#1B223C; --border:#2A324A;
+  --text:#EFF2F9; --text-dim:#A3AABE;
+  --indigo-mid:#667FDA; --coral:#FF6F4A; --coral-2:#FFB188;
+  --success:#55C975; --danger:#FB5668;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{background:var(--bg);}
+body{
+  font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.65; font-weight:400;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M48 0H0V48' fill='none' stroke='%232A324A' stroke-width='0.6' opacity='0.35'/%3E%3Ccircle cx='0' cy='0' r='1' fill='%23667FDA' opacity='0.25'/%3E%3C/svg%3E");
+  background-attachment:fixed;
+}
+h1,h2,h3{font-family:'Fraunces',serif; color:var(--text); letter-spacing:-0.02em;}
+em{font-style:italic; color:var(--coral);}
+.mono{font-family:'JetBrains Mono',monospace; font-variant-numeric:tabular-nums;}
+a{color:var(--coral-2);}
+a:focus-visible, button:focus-visible{ outline:2px solid var(--coral); outline-offset:3px; border-radius:4px; }
+
+header{ background:var(--bg-elev); border-bottom:1px solid var(--border); padding:88px 24px 64px; position:relative; overflow:hidden; }
+header .wrap{max-width:820px; margin:0 auto; position:relative; z-index:1;}
+.volver{ display:inline-flex; align-items:center; gap:6px; font-family:'JetBrains Mono',monospace; font-size:0.76rem; color:var(--text-dim); text-decoration:none; margin-bottom:24px; }
+.volver:hover{color:var(--coral-2);}
+.eyebrow{ font-family:'JetBrains Mono',monospace; font-size:0.76rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--coral); font-weight:600; margin-bottom:20px; }
+h1{font-size:clamp(2.1rem, 5vw, 3.2rem); font-weight:600; margin-bottom:16px; text-wrap:balance;}
+header p.sub{color:var(--text-dim); max-width:58ch; font-size:1.02rem;}
+.meta-row{display:flex; gap:8px; flex-wrap:wrap; margin-top:28px;}
+.chip{padding:2px; border-radius:9px; background:rgba(239,242,249,0.04);}
+.chip-in{ display:block; font-family:'JetBrains Mono',monospace; font-size:0.76rem; color:var(--text-dim); background:var(--bg); border:1px solid var(--border); border-radius:7px; padding:6px 12px; box-shadow:inset 0 1px 0 rgba(239,242,249,0.03); }
+
+main{max-width:820px; margin:0 auto; padding:64px 24px 100px;}
+
+.modnav{ display:flex; gap:2px; margin-bottom:56px; width:fit-content; max-width:100%; flex-wrap:wrap; border:1px solid var(--border); border-radius:10px; padding:4px; background:var(--bg-elev); }
+.modnav a{ font-family:'JetBrains Mono',monospace; font-size:0.74rem; color:var(--text-dim); text-decoration:none; padding:8px 12px; border-radius:7px; transition:background .2s var(--ease), color .2s var(--ease); white-space:nowrap; }
+.modnav a:hover{background:var(--bg-elev2); color:var(--text);}
+
+.modulo{padding-top:48px; border-top:1px solid var(--border); margin-top:80px; scroll-margin-top:20px;}
+.modulo:first-of-type{margin-top:0;}
+.modulo-head{display:flex; align-items:flex-end; gap:16px; margin-bottom:18px;}
+.modulo-num{font-family:'Fraunces',serif; font-style:italic; font-weight:500; font-size:2.1rem; line-height:1; color:var(--text-dim);}
+.modulo-head h2{font-size:1.3rem; font-weight:600;}
+.modulo-text{color:var(--text-dim); font-size:0.92rem; max-width:60ch; margin-bottom:28px;}
+
+.reveal.reveal-play{opacity:0; transform:translateY(14px);}
+.reveal.reveal-play.reveal-in{ opacity:1; transform:translateY(0); transition:opacity .7s var(--ease), transform .7s var(--ease); }
+
+.bezel{padding:5px; border-radius:15px; background:rgba(239,242,249,0.035); border:1px solid var(--border); margin-bottom:20px;}
+.bezel-in{border-radius:11px; background:var(--bg-elev); box-shadow:inset 0 1px 0 rgba(239,242,249,0.05); padding:24px 26px;}
+
+.bloque{ background:var(--bg-elev); border:1px solid var(--border); border-radius:12px; padding:22px 24px; margin-bottom:18px; }
+.bloque h3{font-size:1.02rem; font-weight:600; margin-bottom:8px;}
+.bloque p + p{margin-top:10px;}
+.bloque p{font-size:0.95rem;}
+.bloque ul{margin:8px 0 0 20px; font-size:0.94rem;}
+.bloque li{margin-bottom:6px;}
+
+.ecuacion{ background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:12px 16px; margin:10px 0; font-family:'JetBrains Mono',monospace; font-size:0.92rem; color:var(--text); overflow-x:auto; }
+
+.recuadro{ background:rgba(255,111,74,0.06); border:1px solid rgba(255,111,74,0.35); border-radius:12px; padding:20px 24px; margin:18px 0; }
+.recuadro-tag{ font-family:'JetBrains Mono',monospace; font-size:0.7rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--coral); font-weight:600; margin-bottom:10px; display:block; }
+.recuadro p{font-size:0.95rem;}
+
+/* ---------- Verdadero/Falso ---------- */
+.vf{ background:var(--bg-elev); border:1px solid var(--border); border-radius:12px; padding:20px 22px; margin-bottom:14px; }
+.vf-enunciado{font-size:0.95rem; margin-bottom:12px;}
+.vf-opciones{display:flex; gap:10px;}
+.vf-btn{
+  font-family:'JetBrains Mono',monospace; font-size:0.82rem; font-weight:600; padding:8px 20px; border-radius:8px;
+  border:1px solid var(--border); background:var(--bg); color:var(--text); cursor:pointer;
+}
+.vf-btn:hover{background:var(--bg-elev2);}
+.vf[data-resuelto="true"] .vf-btn{pointer-events:none;}
+.vf[data-resuelto="true"] .vf-btn[data-val="true"][data-marcada="1"],
+.vf[data-resuelto="true"] .vf-btn[data-val="false"][data-marcada="1"]{ }
+.vf-justif{ margin-top:14px; padding:14px 16px; border-radius:10px; font-size:0.88rem; display:none; }
+.vf[data-resuelto="true"] .vf-justif{display:block;}
+.vf-justif.correcto{background:rgba(85,201,117,0.12); border:1px solid rgba(85,201,117,0.35);}
+.vf-justif.incorrecto{background:rgba(251,86,104,0.12); border:1px solid rgba(251,86,104,0.35);}
+.vf-tag{font-family:'JetBrains Mono',monospace; font-size:0.66rem; text-transform:uppercase; letter-spacing:0.05em; font-weight:600; display:block; margin-bottom:6px;}
+.vf-justif.correcto .vf-tag{color:var(--success);}
+.vf-justif.incorrecto .vf-tag{color:var(--danger);}
+
+/* ---------- Problemas numéricos con solución oculta ---------- */
+.numerico{ background:var(--bg-elev); border:1px solid var(--border); border-radius:12px; padding:22px 24px; margin-bottom:18px; }
+.item-num{font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:var(--coral); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px; display:block;}
+.datos{display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:10px; overflow:hidden; margin:14px 0;}
+.dato{background:var(--bg); padding:12px 14px;}
+.dato-label{font-family:'JetBrains Mono',monospace; font-size:0.66rem; color:var(--text-dim); text-transform:uppercase;}
+.dato-val{font-family:'JetBrains Mono',monospace; font-size:1.05rem; color:var(--indigo-mid); margin-top:4px;}
+.btn-revelar{ font-family:'JetBrains Mono',monospace; font-size:0.8rem; font-weight:600; color:var(--bg); background:var(--coral); border:none; border-radius:8px; padding:10px 18px; cursor:pointer; margin-top:8px; }
+.btn-revelar:hover{background:var(--coral-2);}
+.pista{ margin-top:12px; padding:12px 16px; border-radius:10px; background:rgba(102,127,218,0.10); border:1px dashed var(--indigo-mid); font-size:0.88rem; color:var(--text-dim); }
+.solucion{ margin-top:16px; padding:16px 18px; border-radius:10px; background:rgba(102,127,218,0.12); border:1px solid rgba(102,127,218,0.4); display:none; }
+.numerico[data-abierto="true"] .solucion{display:block;}
+.numerico[data-abierto="true"] .btn-revelar{display:none;}
+.solucion p{font-size:0.9rem; margin-top:6px;}
+.solucion p:first-child{margin-top:0;}
+
+.tabla-bp{width:100%; border-collapse:collapse; font-size:0.88rem; margin:14px 0;}
+.tabla-bp th, .tabla-bp td{padding:9px 12px; text-align:right; border-bottom:1px solid var(--border);}
+.tabla-bp th:first-child, .tabla-bp td:first-child{text-align:left; font-weight:400;}
+.tabla-bp thead th{font-family:'JetBrains Mono',monospace; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--text-dim); border-bottom:1px solid var(--border);}
+.tabla-bp td.mono, .tabla-bp th.mono{font-family:'JetBrains Mono',monospace;}
+.tabla-bp tr.total td{font-weight:600; border-top:1px solid var(--border); border-bottom:none;}
+.tabla-bp td.neg{color:var(--danger);}
+.tabla-bp td.pos{color:var(--success);}
+.tabla-bp td.incog{color:var(--coral); font-weight:600;}
+
+.glosario{display:grid; grid-template-columns:auto 1fr; gap:10px 20px; font-size:0.92rem;}
+.glosario dt{font-family:'JetBrains Mono',monospace; font-weight:600; color:var(--indigo-mid);}
+.glosario dd{color:var(--text);}
+
+.progreso-panel{ display:flex; gap:1px; background:var(--border); border:1px solid var(--border); border-radius:12px; overflow:hidden; margin-bottom:40px; position:sticky; top:12px; z-index:5; }
+.progreso-item{ background:var(--bg-elev); padding:14px 18px; flex:1; text-align:center; }
+.progreso-label{font-family:'JetBrains Mono',monospace; font-size:0.66rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-dim);}
+.progreso-val{font-family:'JetBrains Mono',monospace; font-size:1.3rem; font-weight:600; margin-top:4px;}
+.progreso-val.correctas{color:var(--success);}
+.progreso-val.incorrectas{color:var(--danger);}
+
+.badge{ display:inline-block; background:var(--bg-elev2); color:var(--text-dim); font-family:'JetBrains Mono',monospace; font-size:0.7rem; font-weight:600; padding:3px 10px; border-radius:999px; letter-spacing:0.03em; text-transform:uppercase; margin-right:6px; }
+
+footer{ border-top:1px solid var(--border); padding:32px 24px; text-align:center; font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--text-dim); }
+footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; font-family:'Inter',sans-serif; font-size:0.82rem;}
+
+@media (max-width:600px){
+  header{padding:56px 20px 44px;}
+  .modulo-num{font-size:1.7rem;}
+  .tabla-bp{font-size:0.78rem;}
+  .progreso-panel{position:static;}
+}
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; }
+  .reveal.reveal-play{opacity:1; transform:none;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="volver" href="../index.html">&larr; Modelos Macroeconómicos</a>
+    <div class="eyebrow">ESEN · Macro II · Tema 4 · Semana 4 · Preparación 2 de 2</div>
+    <h1>Repaso integrador — <em>preparación</em> para el Control 2</h1>
+    <p class="sub">Repaso integrador de los tres subtemas del Tema 4 (tipo de cambio real, paridad de tasas de interés y balanza de pagos), con el mismo nivel y formato mixto (teoría + problemas) que el repaso usado para el Control 1.</p>
+    <div class="meta-row">
+      <span class="chip"><span class="chip-in">Blanchard, cap. 17</span></span>
+      <span class="chip"><span class="chip-in">Control 2 — lunes 14 sep, Semana 4</span></span>
+      <span class="chip"><span class="chip-in">Prof. Luis Morera</span></span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <nav class="modnav" aria-label="Módulos de este repaso">
+    <a href="#alcance">01 · Alcance</a>
+    <a href="#teoria">02 · Repaso teórico</a>
+    <a href="#vf">03 · Verdadero/Falso</a>
+    <a href="#problema1">04 · Problema 1</a>
+    <a href="#problema2">05 · Problema 2</a>
+    <a href="#problema3">06 · Problema 3</a>
+    <a href="#sintesis">07 · Síntesis</a>
+  </nav>
+
+  <div class="progreso-panel" role="status" aria-live="polite">
+    <div class="progreso-item"><div class="progreso-label">V/F resueltos</div><div class="progreso-val" id="pv-total">0 / 5</div></div>
+    <div class="progreso-item"><div class="progreso-label">Correctos</div><div class="progreso-val correctas" id="pv-correctas">0</div></div>
+    <div class="progreso-item"><div class="progreso-label">Incorrectos</div><div class="progreso-val incorrectas" id="pv-incorrectas">0</div></div>
+  </div>
+
+  <section class="modulo reveal" id="alcance">
+    <div class="modulo-head"><span class="modulo-num">01</span><h2>Qué cubre este repaso y de dónde sale</h2></div>
+    <div class="bloque">
+      <p>Este repaso integra los <strong>tres subtemas completos</strong> del Tema 4 (según ALCANCE reportado): movilidad de bienes y tipo de cambio real, movilidad de capitales y paridad de tasas de interés, y balanza de pagos — todo de las secciones 17-1 y 17-2 de Blanchard. Es el mismo alcance que cubre la <a href="guia-tema4-apertura.html">Guía de Tema 4</a> y la <a href="actividad-tema4-apertura.html">Actividad de práctica</a>; este repaso los integra en formato mixto de preguntas de Verdadero/Falso justificado y problemas numéricos, replicando el formato con el que se preparó el Control 1.</p>
+      <p>Los problemas numéricos usan cifras de práctica genéricas (una "Economía X" hipotética) para no inventar series de datos reales no verificadas — la única tabla con cifras reales es la Tabla 17-3 de Blanchard (balanza de pagos de EE. UU., 2022), reproducida en la Guía de Tema 4.</p>
+    </div>
+  </section>
+
+  <section class="modulo reveal" id="teoria">
+    <div class="modulo-head"><span class="modulo-num">02</span><h2>Repaso teórico rápido</h2></div>
+    <div class="bloque">
+      <h3>1 · Movilidad de bienes (17-1)</h3>
+      <ul>
+        <li>Tipo de cambio real: ε = EP/P* — precio relativo de bienes domésticos vs. extranjeros.</li>
+        <li>Apreciación real = ↑ε (bienes domésticos más caros); depreciación real = ↓ε.</li>
+        <li>Restricciones: aranceles (impuestos a importaciones) y cuotas (límites de cantidad).</li>
+      </ul>
+    </div>
+    <div class="bloque">
+      <h3>2 · Movilidad de capitales (17-2)</h3>
+      <ul>
+        <li>Paridad de tasas de interés no cubierta: (1+i) = (1+i*)·(E<sub>t</sub>/E<sup>e</sup><sub>t+1</sub>).</li>
+        <li>Versión aproximada: i ≈ i* − (E<sup>e</sup><sub>t+1</sub> − E<sub>t</sub>)/E<sub>t</sub>.</li>
+        <li>Si se espera depreciación doméstica, i debe ser mayor que i* (y viceversa con apreciación esperada).</li>
+        <li>"No cubierta" = usa tipo de cambio esperado; "cubierta" = usa tipo de cambio forward, sin riesgo.</li>
+      </ul>
+    </div>
+    <div class="bloque">
+      <h3>3 · Balanza de pagos</h3>
+      <ul>
+        <li>Cuenta corriente = balanza comercial + ingreso neto (+ transferencias).</li>
+        <li>Cuenta financiera = aumento de tenencias extranjeras de activos domésticos − aumento de tenencias domésticas de activos extranjeros.</li>
+        <li>Cuenta corriente + cuenta financiera ≈ 0 (la diferencia real es la discrepancia estadística).</li>
+        <li>GNP = GDP + ingreso neto del resto del mundo (NI).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="modulo reveal" id="vf">
+    <div class="modulo-head"><span class="modulo-num">03</span><h2>Verdadero o falso, justificado</h2></div>
+    <div class="modulo-text">Marca tu respuesta y compárala con la justificación — así se evalúa típicamente en el Control (Quick Check de Blanchard, adaptado).</div>
+
+    <div class="vf" data-resuelto="false" data-respuesta="false">
+      <p class="vf-enunciado"><strong>1.</strong> Si un país tiene déficit comercial, necesariamente tiene déficit de cuenta corriente.</p>
+      <div class="vf-opciones">
+        <button class="vf-btn" data-val="true">Verdadero</button>
+        <button class="vf-btn" data-val="false">Falso</button>
+      </div>
+      <div class="vf-justif"><span class="vf-tag"></span><p><strong>Falso.</strong> La cuenta corriente suma la balanza comercial <em>más</em> el ingreso neto (y transferencias). Un ingreso neto positivo suficientemente grande puede compensar un déficit comercial y dejar la cuenta corriente en superávit.</p></div>
+    </div>
+
+    <div class="vf" data-resuelto="false" data-respuesta="true">
+      <p class="vf-enunciado"><strong>2.</strong> La paridad de tasas de interés cubierta es una condición de arbitraje libre de riesgo.</p>
+      <div class="vf-opciones">
+        <button class="vf-btn" data-val="true">Verdadero</button>
+        <button class="vf-btn" data-val="false">Falso</button>
+      </div>
+      <div class="vf-justif"><span class="vf-tag"></span><p><strong>Verdadero.</strong> Usa un tipo de cambio a plazo (forward) pactado hoy, por lo que ambas rutas de inversión se pueden realizar sin incertidumbre sobre el tipo de cambio futuro.</p></div>
+    </div>
+
+    <div class="vf" data-resuelto="false" data-respuesta="false">
+      <p class="vf-enunciado"><strong>3.</strong> Una apreciación nominal (↑E) siempre implica una apreciación real (↑ε).</p>
+      <div class="vf-opciones">
+        <button class="vf-btn" data-val="true">Verdadero</button>
+        <button class="vf-btn" data-val="false">Falso</button>
+      </div>
+      <div class="vf-justif"><span class="vf-tag"></span><p><strong>Falso.</strong> ε = EP/P* depende también de P y P*. Si P cae o P* sube lo suficiente en el mismo período, ε podría no subir pese a que E suba — la apreciación nominal no garantiza por sí sola la real.</p></div>
+    </div>
+
+    <div class="vf" data-resuelto="false" data-respuesta="true">
+      <p class="vf-enunciado"><strong>4.</strong> Si i &gt; i*, la paridad de tasas de interés implica que se espera una depreciación de la moneda doméstica.</p>
+      <div class="vf-opciones">
+        <button class="vf-btn" data-val="true">Verdadero</button>
+        <button class="vf-btn" data-val="false">Falso</button>
+      </div>
+      <div class="vf-justif"><span class="vf-tag"></span><p><strong>Verdadero.</strong> Despejando de i ≈ i* − (E<sup>e</sup><sub>t+1</sub> − E<sub>t</sub>)/E<sub>t</sub>: si i &gt; i*, entonces (E<sup>e</sup><sub>t+1</sub> − E<sub>t</sub>)/E<sub>t</sub> &lt; 0 solo si reordenamos mal — en realidad i − i* = −(depreciación esperada), así que i &gt; i* implica depreciación esperada <em>negativa</em>, es decir, se espera que la moneda doméstica se <em>aprecie</em>. <em>(Pista para el Control: siempre despeja con cuidado el signo antes de concluir — es el error más común en este tema.)</em></p></div>
+    </div>
+
+    <div class="vf" data-resuelto="false" data-respuesta="true">
+      <p class="vf-enunciado"><strong>5.</strong> La discrepancia estadística en la balanza de pagos existe porque la cuenta corriente y la cuenta financiera se construyen con fuentes de datos distintas.</p>
+      <div class="vf-opciones">
+        <button class="vf-btn" data-val="true">Verdadero</button>
+        <button class="vf-btn" data-val="false">Falso</button>
+      </div>
+      <div class="vf-justif"><span class="vf-tag"></span><p><strong>Verdadero.</strong> Aunque en teoría cuenta corriente + cuenta financiera deben sumar cero, en la práctica las fuentes de datos son distintas y no cuadran perfectamente — como en el ejemplo real de EE. UU. 2022 (discrepancia de −189).</p></div>
+    </div>
+  </section>
+
+  <div class="recuadro" style="max-width:820px; margin:0 auto 40px;">
+    <span class="recuadro-tag">Nota sobre el ítem 4</span>
+    <p>Ese enunciado se dejó deliberadamente con un despeje que invita a error de signo, porque es el error más frecuente en este subtema — practica despejando tú mismo antes de leer la justificación.</p>
+  </div>
+
+  <section class="modulo reveal" id="problema1">
+    <div class="modulo-head"><span class="modulo-num">04</span><h2>Problema 1 — resuelto completo (balanza de pagos)</h2></div>
+    <div class="numerico" data-abierto="true">
+      <span class="item-num">Ejemplo resuelto</span>
+      <p>La "Economía X" (hipotética, para práctica) reporta en un año: exportaciones 620, importaciones 780, ingreso recibido del resto del mundo 95, ingreso pagado al resto del mundo 110, aumento de tenencias extranjeras de activos de X = 240, aumento de tenencias de X de activos extranjeros = 55. Calcula la balanza comercial, el ingreso neto, el balance de cuenta corriente, el balance de cuenta financiera y la discrepancia estadística.</p>
+      <table class="tabla-bp">
+        <thead><tr><th>Cuenta corriente</th><th class="mono">Valor</th></tr></thead>
+        <tbody>
+          <tr><td>Exportaciones</td><td class="mono">620</td></tr>
+          <tr><td>Importaciones</td><td class="mono">780</td></tr>
+          <tr><td>Balanza comercial</td><td class="mono neg">−160</td></tr>
+          <tr><td>Ingreso recibido</td><td class="mono">95</td></tr>
+          <tr><td>Ingreso pagado</td><td class="mono">110</td></tr>
+          <tr><td>Ingreso neto</td><td class="mono neg">−15</td></tr>
+          <tr class="total"><td>Balance de cuenta corriente</td><td class="mono neg">−175</td></tr>
+        </tbody>
+      </table>
+      <table class="tabla-bp">
+        <thead><tr><th>Cuenta financiera</th><th class="mono">Valor</th></tr></thead>
+        <tbody>
+          <tr><td>Aumento tenencias extranjeras de activos de X</td><td class="mono">240</td></tr>
+          <tr><td>Aumento tenencias de X de activos extranjeros</td><td class="mono">55</td></tr>
+          <tr class="total"><td>Balance de cuenta financiera</td><td class="mono pos">185</td></tr>
+          <tr><td>Discrepancia estadística (CC + CF)</td><td class="mono pos">10</td></tr>
+        </tbody>
+      </table>
+      <div class="solucion">
+        <p><strong>Balanza comercial:</strong> 620 − 780 = −160 (déficit comercial).</p>
+        <p><strong>Ingreso neto:</strong> 95 − 110 = −15.</p>
+        <p><strong>Cuenta corriente:</strong> −160 + (−15) = −175 (déficit).</p>
+        <p><strong>Cuenta financiera:</strong> 240 − 55 = 185 (superávit).</p>
+        <p><strong>Discrepancia estadística:</strong> cuenta corriente + cuenta financiera = −175 + 185 = 10. En teoría debería ser 0; esa diferencia de 10 es la discrepancia estadística — la economía X "pidió prestado" al resto del mundo casi exactamente lo que su déficit de cuenta corriente requería, con una pequeña discrepancia de medición, igual que en el caso real de EE. UU.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo reveal" id="problema2">
+    <div class="modulo-head"><span class="modulo-num">05</span><h2>Problema 2 — guiado (paridad de tasas de interés)</h2></div>
+    <div class="numerico" data-abierto="false">
+      <span class="item-num">Resuélvelo antes de revelar</span>
+      <p>En la Economía X, la tasa doméstica es i = 8% y se espera que el tipo de cambio pase de E<sub>t</sub> = 4.50 a E<sup>e</sup><sub>t+1</sub> = 4.86 en un año. Usando la versión aproximada de la paridad de tasas de interés, ¿cuál es la tasa extranjera i* implícita?</p>
+      <div class="datos">
+        <div class="dato"><div class="dato-label">i</div><div class="dato-val">8%</div></div>
+        <div class="dato"><div class="dato-label">E_t</div><div class="dato-val">4.50</div></div>
+        <div class="dato"><div class="dato-label">E^e_t+1</div><div class="dato-val">4.86</div></div>
+      </div>
+      <div class="pista">Pista: primero calcula la tasa esperada de depreciación (E^e_t+1 − E_t)/E_t, y luego despeja i* de i ≈ i* − (depreciación esperada).</div>
+      <button class="btn-revelar" type="button">Ver solución</button>
+      <div class="solucion">
+        <p><strong>Paso 1 — depreciación esperada:</strong> (4.86 − 4.50)/4.50 = 0.36/4.50 = 0.08 = 8%.</p>
+        <p><strong>Paso 2 — despejar i*:</strong> i ≈ i* − (depreciación esperada) → i* ≈ i + (depreciación esperada) = 8% + 8% = <strong>16%</strong>.</p>
+        <p><strong>Interpretación:</strong> la tasa extranjera debe ser considerablemente mayor porque el inversionista que compra el activo extranjero espera además "perder" 8% al reconvertir su dinero a la moneda doméstica al final del período — necesita esa tasa alta para que el arbitraje se mantenga.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo reveal" id="problema3">
+    <div class="modulo-head"><span class="modulo-num">06</span><h2>Problema 3 — guiado (tipo de cambio real)</h2></div>
+    <div class="numerico" data-abierto="false">
+      <span class="item-num">Resuélvelo antes de revelar</span>
+      <p>Al inicio del año, en la Economía X: E = 4.50, el índice de precios domésticos P = 100, y el índice de precios extranjeros P* = 100 (año base, ε = ... calcúlalo). Durante el año, la inflación doméstica eleva P a 112, mientras P* sube solo a 103 y E permanece fijo en 4.50 (tipo de cambio fijo). Calcula ε al inicio y al final del año, y clasifica el movimiento.</p>
+      <div class="datos">
+        <div class="dato"><div class="dato-label">E (fijo)</div><div class="dato-val">4.50</div></div>
+        <div class="dato"><div class="dato-label">P inicial → final</div><div class="dato-val">100 → 112</div></div>
+        <div class="dato"><div class="dato-label">P* inicial → final</div><div class="dato-val">100 → 103</div></div>
+      </div>
+      <div class="pista">Pista: usa ε = EP/P* dos veces (con los valores iniciales y con los finales) y compara.</div>
+      <button class="btn-revelar" type="button">Ver solución</button>
+      <div class="solucion">
+        <p><strong>ε inicial:</strong> (4.50 × 100)/100 = 4.50.</p>
+        <p><strong>ε final:</strong> (4.50 × 112)/103 ≈ 4.89.</p>
+        <p><strong>Clasificación:</strong> ε subió de 4.50 a ≈4.89 (+8.7%): <strong>apreciación real</strong>, a pesar de que el tipo de cambio nominal E no se movió — es exactamente el mecanismo que Blanchard describe para países con tipo de cambio fijo anclados a una moneda de menor inflación: la mayor inflación doméstica relativa erosiona la competitividad sin que el tipo de cambio nominal lo refleje.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo reveal" id="sintesis">
+    <div class="modulo-head"><span class="modulo-num">07</span><h2>Síntesis — glosario del Tema 4</h2></div>
+    <div class="bezel">
+      <div class="bezel-in">
+        <dl class="glosario">
+          <dt>ε = EP/P*</dt><dd>Tipo de cambio real.</dd>
+          <dt>(1+i) = (1+i*)(E_t/E^e_t+1)</dt><dd>Paridad de tasas de interés no cubierta (exacta).</dd>
+          <dt>i ≈ i* − depreciación esperada</dt><dd>Versión aproximada de la paridad de tasas de interés.</dd>
+          <dt>Cuenta corriente</dt><dd>Balanza comercial + ingreso neto (+ transferencias).</dd>
+          <dt>Cuenta financiera</dt><dd>Variación neta de tenencias de activos entre residentes y el resto del mundo.</dd>
+          <dt>GNP = GDP + NI</dt><dd>Relación entre producto interno y producto nacional bruto.</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="recuadro">
+      <span class="recuadro-tag">Antes del Control 2</span>
+      <p>Repasa también la <a href="guia-tema4-apertura.html">Guía de Tema 4</a> (con la Tabla 17-3 real de EE. UU. y los diagramas de tipo de cambio real y arbitraje) y la <a href="actividad-tema4-apertura.html">Actividad de práctica</a> — este repaso asume que ya trabajaste ambas.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div>
+    <span class="badge">Fuente</span>Blanchard, Olivier (2023), <em>Macroeconomics</em>, 9ª ed., Pearson — Cap. 17, secc. 17-1/17-2 (pp. 353–370)
+  </div>
+  <p>Repaso integrador — Semana 4, Tema 4, preparación 2 de 2 para el Control 2. Borrador de trabajo del propio material de repaso del estudiante. &middot; <a href="../index.html">Volver al sitio</a></p>
+</footer>
+
+<script>
+(function(){
+  var vfs = document.querySelectorAll('.vf');
+  var total = vfs.length, correctas = 0, resueltos = 0;
+  function actualizar(){
+    document.getElementById('pv-total').textContent = resueltos + ' / ' + total;
+    document.getElementById('pv-correctas').textContent = correctas;
+    document.getElementById('pv-incorrectas').textContent = resueltos - correctas;
+  }
+  vfs.forEach(function(vf){
+    var botones = vf.querySelectorAll('.vf-btn');
+    var respuestaCorrecta = vf.getAttribute('data-respuesta') === 'true';
+    botones.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        if(vf.getAttribute('data-resuelto') === 'true') return;
+        var marcada = btn.getAttribute('data-val') === 'true';
+        vf.setAttribute('data-resuelto', 'true');
+        resueltos++;
+        var acerto = marcada === respuestaCorrecta;
+        if(acerto) correctas++;
+        var justif = vf.querySelector('.vf-justif');
+        justif.classList.add(acerto ? 'correcto' : 'incorrecto');
+        justif.querySelector('.vf-tag').textContent = acerto ? 'Correcto' : 'Incorrecto — revisa la justificación';
+        actualizar();
+      });
+    });
+  });
+  actualizar();
+
+  var botonesRevelar = document.querySelectorAll('.btn-revelar');
+  botonesRevelar.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      btn.closest('.numerico').setAttribute('data-abierto', 'true');
+    });
+  });
+})();
+
+if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  var targets = document.querySelectorAll('.reveal');
+  targets.forEach(function(el){ el.classList.add('reveal-play'); });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('reveal-in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.12});
+  targets.forEach(function(el){ io.observe(el); });
+}
+</script>
+
+</body>
+</html>

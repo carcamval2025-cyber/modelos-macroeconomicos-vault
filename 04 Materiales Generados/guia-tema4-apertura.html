@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía — Tema 4: IS-LM + Apertura Comercial/Financiera</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080C1C; --bg-elev:#10172D; --bg-elev2:#1B223C; --border:#2A324A;
+  --text:#EFF2F9; --text-dim:#A3AABE;
+  --indigo-mid:#667FDA; --coral:#FF6F4A; --coral-2:#FFB188;
+  --success:#55C975; --danger:#FB5668;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{background:var(--bg);}
+body{
+  font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.65; font-weight:400;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M48 0H0V48' fill='none' stroke='%232A324A' stroke-width='0.6' opacity='0.35'/%3E%3Ccircle cx='0' cy='0' r='1' fill='%23667FDA' opacity='0.25'/%3E%3C/svg%3E");
+  background-attachment:fixed;
+}
+h1,h2,h3{font-family:'Fraunces',serif; color:var(--text); letter-spacing:-0.02em;}
+em{font-style:italic; color:var(--coral);}
+.mono{font-family:'JetBrains Mono',monospace; font-variant-numeric:tabular-nums;}
+a{color:var(--coral-2);}
+a:focus-visible, button:focus-visible{
+  outline:2px solid var(--coral); outline-offset:3px; border-radius:4px;
+}
+
+header{
+  background:var(--bg-elev);
+  border-bottom:1px solid var(--border);
+  padding:88px 24px 64px; position:relative; overflow:hidden;
+}
+header .wrap{max-width:820px; margin:0 auto; position:relative; z-index:1;}
+.header-mark{position:absolute; width:min(42vw, 380px); height:auto; right:max(-36px, calc(50% - 470px)); bottom:-48px; pointer-events:none;}
+.volver{
+  display:inline-flex; align-items:center; gap:6px; font-family:'JetBrains Mono',monospace; font-size:0.76rem;
+  color:var(--text-dim); text-decoration:none; margin-bottom:24px;
+}
+.volver:hover{color:var(--coral-2);}
+.eyebrow{
+  font-family:'JetBrains Mono',monospace; font-size:0.76rem; letter-spacing:0.09em; text-transform:uppercase;
+  color:var(--coral); font-weight:600; margin-bottom:20px;
+}
+h1{font-size:clamp(2.1rem, 5vw, 3.2rem); font-weight:600; margin-bottom:16px; text-wrap:balance;}
+header p.sub{color:var(--text-dim); max-width:58ch; font-size:1.02rem;}
+.meta-row{display:flex; gap:8px; flex-wrap:wrap; margin-top:28px;}
+.chip{padding:2px; border-radius:9px; background:rgba(239,242,249,0.04);}
+.chip-in{
+  display:block; font-family:'JetBrains Mono',monospace; font-size:0.76rem; color:var(--text-dim);
+  background:var(--bg); border:1px solid var(--border); border-radius:7px; padding:6px 12px;
+  box-shadow:inset 0 1px 0 rgba(239,242,249,0.03);
+}
+
+main{max-width:820px; margin:0 auto; padding:64px 24px 100px;}
+
+.modnav{
+  display:flex; gap:2px; margin-bottom:56px; width:fit-content; max-width:100%; flex-wrap:wrap;
+  border:1px solid var(--border); border-radius:10px; padding:4px; background:var(--bg-elev);
+}
+.modnav a{
+  font-family:'JetBrains Mono',monospace; font-size:0.74rem; color:var(--text-dim); text-decoration:none;
+  padding:8px 12px; border-radius:7px; transition:background .2s var(--ease), color .2s var(--ease); white-space:nowrap;
+}
+.modnav a:hover{background:var(--bg-elev2); color:var(--text);}
+
+.modulo{padding-top:48px; border-top:1px solid var(--border); margin-top:80px; scroll-margin-top:20px;}
+.modulo:first-of-type{margin-top:0;}
+.modulo-head{display:flex; align-items:flex-end; gap:16px; margin-bottom:18px;}
+.modulo-num{font-family:'Fraunces',serif; font-style:italic; font-weight:500; font-size:2.1rem; line-height:1; color:var(--text-dim);}
+.modulo-head h2{font-size:1.3rem; font-weight:600;}
+.modulo-text{color:var(--text-dim); font-size:0.92rem; max-width:60ch; margin-bottom:28px;}
+
+.reveal.reveal-play{opacity:0; transform:translateY(14px);}
+.reveal.reveal-play.reveal-in{
+  opacity:1; transform:translateY(0);
+  transition:opacity .7s var(--ease), transform .7s var(--ease);
+}
+
+.bezel{padding:5px; border-radius:15px; background:rgba(239,242,249,0.035); border:1px solid var(--border); margin-bottom:20px;}
+.bezel-in{border-radius:11px; background:var(--bg-elev); box-shadow:inset 0 1px 0 rgba(239,242,249,0.05); padding:24px 26px;}
+
+.bloque{
+  background:var(--bg-elev); border:1px solid var(--border); border-radius:12px;
+  padding:22px 24px; margin-bottom:18px;
+}
+.bloque-icono{display:flex; gap:16px; align-items:flex-start;}
+.bloque-icono .icono{flex-shrink:0; margin-top:2px; display:flex;}
+.bloque h3{font-size:1.02rem; font-weight:600; margin-bottom:8px;}
+.bloque p + p{margin-top:10px;}
+.bloque p{font-size:0.95rem;}
+
+.ecuacion{
+  background:var(--bg); border:1px solid var(--border); border-radius:8px;
+  padding:12px 16px; margin:10px 0; font-family:'JetBrains Mono',monospace; font-size:0.92rem;
+  color:var(--text); overflow-x:auto;
+}
+
+.recuadro{
+  background:rgba(255,111,74,0.06); border:1px solid rgba(255,111,74,0.35); border-radius:12px;
+  padding:20px 24px; margin:18px 0;
+}
+.recuadro-tag{
+  font-family:'JetBrains Mono',monospace; font-size:0.7rem; letter-spacing:0.06em; text-transform:uppercase;
+  color:var(--coral); font-weight:600; margin-bottom:10px; display:block;
+}
+.recuadro p{font-size:0.95rem;}
+
+.aviso{
+  background:rgba(255,111,74,0.06); border:1px solid rgba(255,111,74,0.35); border-radius:12px;
+  padding:20px 24px; margin:18px 0;
+}
+.aviso-tag{
+  font-family:'JetBrains Mono',monospace; font-size:0.7rem; letter-spacing:0.06em; text-transform:uppercase;
+  color:var(--coral); font-weight:600; margin-bottom:10px; display:block;
+}
+.aviso p{font-size:0.94rem; color:var(--text);}
+
+figure{margin:20px 0;}
+.diagrama{
+  background:var(--bg-elev); border:1px solid var(--border); border-radius:12px;
+  padding:20px; overflow-x:auto;
+}
+.diagrama svg{max-width:100%; height:auto; display:block; margin:0 auto;}
+figcaption{font-size:0.82rem; color:var(--text-dim); margin-top:10px; text-align:center;}
+
+.glosario{display:grid; grid-template-columns:auto 1fr; gap:10px 20px; font-size:0.92rem;}
+.glosario dt{font-family:'JetBrains Mono',monospace; font-weight:600; color:var(--indigo-mid);}
+.glosario dd{color:var(--text);}
+
+.stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:12px; overflow:hidden; margin:18px 0;}
+.stat{background:var(--bg-elev); padding:18px 16px;}
+.stat-label{font-family:'JetBrains Mono',monospace; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-dim); margin-bottom:6px;}
+.stat-val{font-family:'JetBrains Mono',monospace; font-size:1.3rem; font-weight:600; color:var(--text);}
+.stat-val.up{color:var(--danger);}
+.stat-val.down{color:var(--success);}
+
+.tabla-bp{width:100%; border-collapse:collapse; font-size:0.88rem; margin:14px 0;}
+.tabla-bp th, .tabla-bp td{padding:9px 12px; text-align:right; border-bottom:1px solid var(--border);}
+.tabla-bp th:first-child, .tabla-bp td:first-child{text-align:left; font-weight:400;}
+.tabla-bp thead th{font-family:'JetBrains Mono',monospace; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--text-dim); border-bottom:1px solid var(--border);}
+.tabla-bp td.mono, .tabla-bp th.mono{font-family:'JetBrains Mono',monospace;}
+.tabla-bp tr.total td{font-weight:600; border-top:1px solid var(--border); border-bottom:none;}
+.tabla-bp td.neg{color:var(--danger);}
+.tabla-bp td.pos{color:var(--success);}
+
+.pregunta{border:1px solid var(--border); border-radius:12px; margin-bottom:12px; overflow:hidden; background:var(--bg-elev);}
+.pregunta button.disparador{
+  width:100%; text-align:left; background:transparent; border:none; padding:16px 20px;
+  font-family:'Inter',sans-serif; font-size:0.96rem; font-weight:600; color:var(--text); cursor:pointer;
+  display:flex; justify-content:space-between; align-items:center; gap:16px;
+}
+.pregunta button.disparador:hover{background:var(--bg-elev2);}
+.pregunta button.disparador .flecha{color:var(--text-dim); transition:transform .15s var(--ease); flex-shrink:0;}
+.pregunta button.disparador[aria-expanded="true"] .flecha{transform:rotate(180deg);}
+.pregunta .respuesta{
+  padding:16px 20px; margin:0 16px 16px; border:1px solid rgba(85,201,117,0.35);
+  background:rgba(85,201,117,0.12); border-radius:10px;
+}
+.pregunta .respuesta p{font-size:0.92rem;}
+.respuesta-tag{
+  font-family:'JetBrains Mono',monospace; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase;
+  color:var(--success); font-weight:600; margin-bottom:8px; display:block;
+}
+.pregunta[data-abierta="false"] .respuesta{display:none;}
+
+.img-request{
+  border:1px dashed var(--coral); border-radius:12px; padding:20px 24px; margin:0 0 8px;
+  background:rgba(255,111,74,0.04);
+}
+.img-request-badge{
+  font-family:'JetBrains Mono',monospace; font-size:0.68rem; letter-spacing:0.05em; text-transform:uppercase;
+  color:var(--coral); font-weight:600; display:inline-block; margin-bottom:8px;
+}
+.img-request p{font-size:0.88rem; color:var(--text-dim);}
+
+.hero-banner{margin:0 0 8px; border:1px solid var(--border); border-radius:12px; overflow:hidden; background:var(--bg);}
+.hero-banner svg{width:100%; height:auto; display:block;}
+
+.badge{
+  display:inline-block; background:var(--bg-elev2); color:var(--text-dim); font-family:'JetBrains Mono',monospace;
+  font-size:0.7rem; font-weight:600; padding:3px 10px; border-radius:999px; letter-spacing:0.03em;
+  text-transform:uppercase; margin-right:6px;
+}
+
+footer{
+  border-top:1px solid var(--border); padding:32px 24px; text-align:center;
+  font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--text-dim);
+}
+footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; font-family:'Inter',sans-serif; font-size:0.82rem;}
+
+@media (max-width:600px){
+  header{padding:56px 20px 44px;}
+  .header-mark{width:260px; right:-120px; bottom:-56px; opacity:.5;}
+  .modulo-num{font-size:1.7rem;}
+  .bloque-icono{flex-direction:column;}
+  .tabla-bp{font-size:0.78rem;}
+}
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    animation-duration:0.01ms !important; animation-iteration-count:1 !important;
+    transition-duration:0.01ms !important; scroll-behavior:auto !important;
+  }
+  .reveal.reveal-play{opacity:1; transform:none;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <svg class="header-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" role="img" aria-label="Flujos entre economía doméstica y resto del mundo, abstractos">
+    <path d="M60 140H340M200 40V240" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="3 5" opacity=".4"/>
+    <circle cx="120" cy="140" r="46" fill="none" stroke="#667FDA" stroke-width="1.4" opacity=".35"/>
+    <circle cx="280" cy="140" r="46" fill="none" stroke="#FF6F4A" stroke-width="1.4" opacity=".35"/>
+    <path d="M150 128C185 110 215 110 250 128" fill="none" stroke="#FFB188" stroke-width="2" stroke-dasharray="4 4" opacity=".8"/>
+    <path d="M242 122L250 128L241 133" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/>
+    <path d="M250 154C215 172 185 172 150 154" fill="none" stroke="#667FDA" stroke-width="2" stroke-dasharray="4 4" opacity=".8"/>
+    <path d="M158 160L150 154L159 149" fill="none" stroke="#667FDA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/>
+    <circle cx="120" cy="140" r="10" fill="#10172D" stroke="#667FDA" stroke-width="2.4"/>
+    <circle cx="120" cy="140" r="4" fill="#EFF2F9"/>
+    <circle cx="280" cy="140" r="10" fill="#10172D" stroke="#FF6F4A" stroke-width="2.4"/>
+    <circle cx="280" cy="140" r="4" fill="#EFF2F9"/>
+    <path d="M45 205H80M45 215H70" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
+    <path d="M320 65H355M330 75H355" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
+  </svg>
+  <div class="wrap">
+    <a class="volver" href="../index.html">&larr; Modelos Macroeconómicos</a>
+    <div class="eyebrow">ESEN · Macro II · Tema 4 · Semana 4</div>
+    <h1>IS-LM + <em>apertura</em> comercial y financiera</h1>
+    <p class="sub">Guía de estudio para el Tema 4: cómo cambia el análisis macroeconómico cuando la economía comercia bienes y activos con el resto del mundo — tipo de cambio, paridad de tasas de interés y balanza de pagos.</p>
+    <div class="meta-row">
+      <span class="chip"><span class="chip-in">Blanchard, cap. 17 (secc. 17-1/17-2)</span></span>
+      <span class="chip"><span class="chip-in">Semana 4 · 14–18 sep</span></span>
+      <span class="chip"><span class="chip-in">Prof. Luis Morera · Control 2</span></span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <nav class="modnav" aria-label="Módulos de esta guía">
+    <a href="#alcance">01 · Alcance</a>
+    <a href="#bienes">02 · Movilidad de bienes</a>
+    <a href="#capitales">03 · Movilidad de capitales</a>
+    <a href="#balanza">04 · Balanza de pagos</a>
+    <a href="#sintesis">05 · Síntesis</a>
+    <a href="#autoeval">06 · Autoevaluación</a>
+  </nav>
+
+  <div class="recuadro" style="margin-bottom:56px;">
+    <span class="recuadro-tag">Materiales de esta semana</span>
+    <p>Esta guía es la primera de tres piezas para el Tema 4: sigue con la <a href="actividad-tema4-apertura.html">Actividad de práctica</a> (11 ítems interactivos + 3 ejercicios numéricos) y el <a href="repaso-control2-tema4-apertura.html">Repaso integrador — preparación Control 2</a> (Verdadero/Falso justificado + 3 problemas).</p>
+  </div>
+
+  <section class="modulo reveal" id="alcance">
+    <div class="modulo-head"><span class="modulo-num">01</span><h2>Qué cubre esta guía y qué no</h2></div>
+    <div class="bloque">
+      <p>Esta guía sigue el alcance declarado para la Semana 4: los <strong>tres subtemas completos</strong> del Tema 4 según el Programa — (1) movilidad de bienes y servicios y tipo de cambio real, (2) movilidad de capitales y paridad de tasas de interés, y (3) balanza de pagos — todos cubiertos por las secciones 17-1 y 17-2 del capítulo 17 de Blanchard.</p>
+      <p>El Tema 4 es el único punto del curso donde se trabaja apertura comercial/financiera: el Programa asigna únicamente "partes seleccionadas" del capítulo 17, y los capítulos 18 a 20 de Blanchard (que amplían esto al modelo IS-LM en economía abierta) <strong>no están en el mapa Tema→Capítulo de este curso</strong>, así que esta guía no los adelanta.</p>
+    </div>
+  </section>
+
+  <section class="modulo reveal" id="bienes">
+    <div class="modulo-head"><span class="modulo-num">02</span><h2>Movilidad de bienes y servicios: el tipo de cambio real</h2></div>
+    <div class="modulo-text">Sección 17-1 de Blanchard. La primera dimensión de apertura es poder elegir entre bienes domésticos y extranjeros.</div>
+
+    <div class="bloque bloque-icono">
+      <span class="icono"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#667FDA" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18 9 9 0 0 1 0-18M3 12h18"/></svg></span>
+      <div>
+        <h3>Tres dimensiones de apertura (17-1)</h3>
+        <p>Blanchard distingue tres formas de apertura de una economía: <strong>apertura en el mercado de bienes</strong> (elegir entre bienes domésticos y extranjeros, limitada por aranceles y cuotas), <strong>apertura en el mercado financiero</strong> (elegir entre activos domésticos y extranjeros, limitada por controles de capital) y <strong>apertura en el mercado de factores</strong> (elegir dónde trabajar y dónde localizar la producción). El Tema 4 se concentra en las dos primeras.</p>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <h3>El tipo de cambio real (ε)</h3>
+      <p>El tipo de cambio real es el precio relativo de los bienes domésticos en términos de bienes extranjeros. Se construye a partir del tipo de cambio nominal (E, precio de la moneda doméstica en términos de la extranjera) y de los niveles de precios domésticos (P) y extranjeros (P*):</p>
+      <div class="ecuacion">ε = (E · P) / P*</div>
+      <p>Una <strong>apreciación real</strong> (↑ε) encarece los bienes domésticos frente a los extranjeros; una <strong>depreciación real</strong> (↓ε) los abarata. Esto es distinto de una apreciación o depreciación <em>nominal</em>, que se refiere únicamente al movimiento de E, sin ajustar por precios.</p>
+    </div>
+
+    <div class="recuadro">
+      <span class="recuadro-tag">Dato verificado — Blanchard, Fig. 17-2</span>
+      <p>La apertura comercial de una economía se mide por sus exportaciones e importaciones como proporción del PIB. En EE. UU., ese ratio pasó de ~5% del PIB a inicios de los años 60 a cerca de 14% en años recientes (11.7% en exportaciones, 15.5% en importaciones) — es decir, EE. UU. comercia hoy casi tres veces más (relativo a su PIB) que hace 50 años. Desde fines de los años setenta, las importaciones han superado consistentemente a las exportaciones, generando un déficit comercial sostenido.</p>
+    </div>
+
+    <div class="img-request">
+      <span class="img-request-badge">Pedido de imagen — img-t4-01</span>
+      <p>Diagrama esquemático del tipo de cambio real (ε = EP/P*): dos bloques de economía (doméstica/extranjera) conectados por flechas de conversión E y niveles de precio P/P*, con nodo central ε. Ver <code>Pedidos de Imagen - Tema 4.md</code> para el brief completo con la geometría base ya resuelta.</p>
+    </div>
+    <figure>
+      <div class="diagrama">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 300" role="img" aria-label="Diagrama del tipo de cambio real epsilon igual a E por P sobre P asterisco">
+          <title>Tipo de cambio real</title>
+          <desc>Bloque de la economía doméstica con nivel de precios P, convertido mediante el tipo de cambio nominal E, comparado contra el nivel de precios extranjero P asterisco, para obtener el tipo de cambio real epsilon.</desc>
+          <rect x="0" y="0" width="680" height="300" fill="#10172D"/>
+          <rect x="40" y="60" width="200" height="150" rx="11" fill="#080C1C" stroke="#667FDA" stroke-width="1.6"/>
+          <text x="140" y="95" text-anchor="middle" font-family="Inter" font-size="14" font-weight="600" fill="#EFF2F9">Economía doméstica</text>
+          <rect x="70" y="115" width="140" height="34" rx="7" fill="#10172D"/>
+          <text x="140" y="137" text-anchor="middle" font-family="JetBrains Mono" font-size="15" fill="#667FDA">Precios: P</text>
+          <text x="140" y="185" text-anchor="middle" font-family="Inter" font-size="12" fill="#A3AABE">Bien doméstico</text>
+
+          <rect x="440" y="60" width="200" height="150" rx="11" fill="#080C1C" stroke="#FF6F4A" stroke-width="1.6"/>
+          <text x="540" y="95" text-anchor="middle" font-family="Inter" font-size="14" font-weight="600" fill="#EFF2F9">Economía extranjera</text>
+          <rect x="470" y="115" width="140" height="34" rx="7" fill="#10172D"/>
+          <text x="540" y="137" text-anchor="middle" font-family="JetBrains Mono" font-size="15" fill="#FF6F4A">Precios: P*</text>
+          <text x="540" y="185" text-anchor="middle" font-family="Inter" font-size="12" fill="#A3AABE">Bien extranjero</text>
+
+          <path d="M240 130H440" fill="none" stroke="#FFB188" stroke-width="2" stroke-dasharray="5 4"/>
+          <path d="M430 124L440 130L430 136" fill="none" stroke="#FFB188" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="300" y="112" width="120" height="30" rx="6" fill="#1B223C"/>
+          <text x="360" y="132" text-anchor="middle" font-family="JetBrains Mono" font-size="13" fill="#FFB188">tipo de cambio E</text>
+
+          <circle cx="340" cy="250" r="34" fill="#080C1C" stroke="#EFF2F9" stroke-width="2.6"/>
+          <text x="340" y="246" text-anchor="middle" font-family="JetBrains Mono" font-size="16" fill="#FF6F4A">ε</text>
+          <text x="340" y="264" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#A3AABE">= EP/P*</text>
+          <path d="M180 210C220 235 280 248 306 250" fill="none" stroke="#667FDA" stroke-width="1.6" stroke-dasharray="4 4" opacity=".8"/>
+          <path d="M540 210C500 235 420 248 374 250" fill="none" stroke="#FF6F4A" stroke-width="1.6" stroke-dasharray="4 4" opacity=".8"/>
+        </svg>
+      </div>
+      <figcaption>Fig. propia — construcción del tipo de cambio real a partir de E, P y P* (Blanchard, secc. 17-1). Diagrama base entregado por Claude; pulido visual pendiente (ver img-t4-01).</figcaption>
+    </figure>
+  </section>
+
+  <section class="modulo reveal" id="capitales">
+    <div class="modulo-head"><span class="modulo-num">03</span><h2>Movilidad de capitales: la paridad de tasas de interés</h2></div>
+    <div class="modulo-text">Sección 17-2 de Blanchard. La segunda dimensión de apertura es poder elegir entre activos domésticos y extranjeros.</div>
+
+    <div class="bloque">
+      <h3>El dilema del inversionista financiero</h3>
+      <p>Con 1 dólar hoy, un inversionista puede: (a) comprar un bono doméstico a la tasa de interés nominal <span class="mono">i</span>, y tener <span class="mono">(1+i)</span> dólares el próximo año; o (b) convertir el dólar a libras al tipo de cambio nominal actual <span class="mono">E<sub>t</sub></span>, comprar un bono extranjero (Reino Unido) a la tasa <span class="mono">i*</span>, y luego reconvertir a dólares al tipo de cambio esperado <span class="mono">E<sup>e</sup><sub>t+1</sub></span>.</p>
+      <p>Si ambos bonos se mantienen en equilibrio, ambas rutas deben ofrecer el mismo rendimiento esperado — esto es una condición de <strong>arbitraje</strong>.</p>
+    </div>
+
+    <div class="img-request">
+      <span class="img-request-badge">Pedido de imagen — img-t4-02</span>
+      <p>Diagrama de las dos rutas de inversión (bono doméstico vs. bono extranjero convertido dos veces) con las tres flechas del arbitraje, siguiendo la figura de Blanchard cap. 17. Ver brief en <code>Pedidos de Imagen - Tema 4.md</code>.</p>
+    </div>
+    <figure>
+      <div class="diagrama">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320" role="img" aria-label="Diagrama de arbitraje entre bono domestico y bono extranjero para la paridad de tasas de interes">
+          <title>Arbitraje y paridad de tasas de interés</title>
+          <desc>Un dólar hoy puede invertirse en un bono doméstico a la tasa i, o convertirse a libras al tipo de cambio E sub t, invertirse en un bono extranjero a la tasa i asterisco, y reconvertirse a dólares al tipo de cambio esperado E sub t más 1 esperado.</desc>
+          <rect x="0" y="0" width="700" height="320" fill="#10172D"/>
+          <circle cx="80" cy="160" r="38" fill="#080C1C" stroke="#EFF2F9" stroke-width="2.6"/>
+          <text x="80" y="156" text-anchor="middle" font-family="JetBrains Mono" font-size="13" fill="#EFF2F9">1 USD</text>
+          <text x="80" y="172" text-anchor="middle" font-family="Inter" font-size="10" fill="#A3AABE">hoy (t)</text>
+
+          <path d="M118 140C220 90 320 85 430 90" fill="none" stroke="#FF6F4A" stroke-width="2.4"/>
+          <path d="M420 84L430 90L419 95" fill="none" stroke="#FF6F4A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="200" y="62" width="150" height="30" rx="7" fill="#1B223C"/>
+          <text x="275" y="82" text-anchor="middle" font-family="JetBrains Mono" font-size="12" fill="#FF6F4A">bono doméstico · i</text>
+
+          <rect x="440" y="58" width="180" height="64" rx="10" fill="#080C1C" stroke="#FF6F4A" stroke-width="2"/>
+          <text x="530" y="84" text-anchor="middle" font-family="JetBrains Mono" font-size="14" fill="#EFF2F9">(1+i) USD</text>
+          <text x="530" y="102" text-anchor="middle" font-family="Inter" font-size="10" fill="#A3AABE">t + 1</text>
+
+          <path d="M118 180C220 230 320 240 430 236" fill="none" stroke="#667FDA" stroke-width="2.4"/>
+          <path d="M420 231L430 236L419 241" fill="none" stroke="#667FDA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="150" y="208" width="150" height="30" rx="7" fill="#1B223C"/>
+          <text x="225" y="228" text-anchor="middle" font-family="JetBrains Mono" font-size="12" fill="#667FDA">convertir a £ · E_t</text>
+
+          <rect x="300" y="208" width="150" height="30" rx="7" fill="#1B223C"/>
+          <text x="375" y="228" text-anchor="middle" font-family="JetBrains Mono" font-size="12" fill="#667FDA">bono UK · i*</text>
+
+          <rect x="440" y="204" width="180" height="64" rx="10" fill="#080C1C" stroke="#667FDA" stroke-width="2"/>
+          <text x="530" y="228" text-anchor="middle" font-family="JetBrains Mono" font-size="13" fill="#EFF2F9">(1+i*)·E_t libras</text>
+          <text x="530" y="246" text-anchor="middle" font-family="Inter" font-size="10" fill="#A3AABE">t + 1</text>
+
+          <path d="M530 122V204" fill="none" stroke="#FFB188" stroke-width="2" stroke-dasharray="5 4"/>
+          <path d="M524 194L530 204L536 194" fill="none" stroke="#FFB188" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="640" y="167" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#FFB188">reconvertir a $</text>
+          <text x="640" y="182" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#FFB188">al E^e_t+1</text>
+
+          <rect x="20" y="284" width="660" height="26" rx="6" fill="#080C1C"/>
+          <text x="350" y="302" text-anchor="middle" font-family="JetBrains Mono" font-size="12" fill="#FFB188">arbitraje: (1+i) = (1+i*)·(E_t / E^e_t+1)</text>
+        </svg>
+      </div>
+      <figcaption>Fig. propia — arbitraje entre bono doméstico y bono extranjero (Blanchard, secc. 17-2). Diagrama base entregado por Claude; pulido visual pendiente (ver img-t4-02).</figcaption>
+    </figure>
+
+    <div class="bloque">
+      <h3>La condición de paridad de tasas de interés (no cubierta)</h3>
+      <p>Igualando el rendimiento esperado de ambas rutas y reorganizando, Blanchard llega a la ecuación (17.2):</p>
+      <div class="ecuacion">(1 + i<sub>t</sub>) = (1 + i*<sub>t</sub>) · (E<sub>t</sub> / E<sup>e</sup><sub>t+1</sub>)</div>
+      <p>Esta es la <strong>condición de paridad de tasas de interés no cubierta</strong> (uncovered interest parity), o simplemente "paridad de tasas de interés". El calificativo "no cubierta" la distingue de la paridad <em>cubierta</em>, que usa un tipo de cambio a plazo (forward) pactado hoy y es una condición de arbitraje sin riesgo.</p>
+      <p>Una versión aproximada, más usada en la práctica (ecuación 17.4), dice que la tasa doméstica es aproximadamente igual a la tasa extranjera menos la tasa esperada de apreciación nominal de la moneda doméstica:</p>
+      <div class="ecuacion">i<sub>t</sub> ≈ i*<sub>t</sub> − (E<sup>e</sup><sub>t+1</sub> − E<sub>t</sub>) / E<sub>t</sub></div>
+    </div>
+
+    <div class="recuadro">
+      <span class="recuadro-tag">Lectura de la ecuación</span>
+      <p>Si se espera que la moneda doméstica se <em>deprecie</em> (E<sup>e</sup><sub>t+1</sub> &gt; E<sub>t</sub>), la tasa doméstica debe ser <em>mayor</em> que la extranjera para compensar esa pérdida esperada al reconvertir — de lo contrario nadie querría el bono doméstico. Simétricamente, si se espera una <em>apreciación</em>, la tasa doméstica puede ser menor.</p>
+    </div>
+
+    <div class="bloque">
+      <p><em>El supuesto de que los inversionistas solo les importa el rendimiento esperado (ignorando costos de transacción y riesgo) es una simplificación — Blanchard lo señala explícitamente como "obviamente demasiado fuerte", útil como primera aproximación para el análisis macroeconómico de la relación entre tasas de interés y tipo de cambio.</em></p>
+    </div>
+  </section>
+
+  <section class="modulo reveal" id="balanza">
+    <div class="modulo-head"><span class="modulo-num">04</span><h2>Balanza de pagos</h2></div>
+    <div class="modulo-text">Registro contable de las transacciones de un país con el resto del mundo — comerciales y financieras.</div>
+
+    <div class="bloque">
+      <h3>Cuenta corriente ("arriba de la línea")</h3>
+      <p>Registra los pagos hacia y desde el resto del mundo por bienes, servicios e ingresos:</p>
+      <ul style="margin-left:20px; font-size:0.95rem;">
+        <li><strong>Balanza comercial</strong>: exportaciones menos importaciones. Superávit si exportaciones &gt; importaciones; déficit si importaciones &gt; exportaciones.</li>
+        <li><strong>Ingreso neto</strong>: ingreso que residentes domésticos reciben de sus activos en el extranjero, menos el ingreso que residentes extranjeros reciben de sus activos domésticos.</li>
+        <li><strong>Balance de cuenta corriente</strong> = balanza comercial + ingreso neto (+ transferencias netas).</li>
+      </ul>
+    </div>
+
+    <div class="bloque">
+      <h3>Cuenta financiera ("debajo de la línea")</h3>
+      <p>Muestra cómo se financia el balance de cuenta corriente: el aumento de tenencias extranjeras de activos domésticos, menos el aumento de tenencias domésticas de activos extranjeros. Un déficit de cuenta corriente implica que el país tomó prestado del resto del mundo — es decir, un superávit de cuenta financiera.</p>
+      <div class="ecuacion">Cuenta corriente + Cuenta financiera ≈ 0 (salvo discrepancia estadística)</div>
+    </div>
+
+    <div class="recuadro">
+      <span class="recuadro-tag">Dato verificado — Blanchard, Tabla 17-3</span>
+      <p>La balanza de pagos de EE. UU. de 2022 (en miles de millones de US$), tal como aparece en el capítulo, ilustra la mecánica completa: un déficit de cuenta corriente de −993, financiado casi en su totalidad por un superávit de cuenta financiera de 804, con una discrepancia estadística de −189 (≈19% del balance de cuenta corriente) que recuerda que incluso en un país con estadísticas avanzadas, los datos económicos distan de ser perfectos.</p>
+    </div>
+
+    <table class="tabla-bp">
+      <thead>
+        <tr><th>Cuenta corriente</th><th class="mono">US$ MM</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Exportaciones</td><td class="mono">4,424</td></tr>
+        <tr><td>Importaciones</td><td class="mono">5,396</td></tr>
+        <tr><td>Balanza comercial (déficit)</td><td class="mono neg">−972</td></tr>
+        <tr><td>Ingreso recibido</td><td class="mono">1,405</td></tr>
+        <tr><td>Ingreso pagado</td><td class="mono">1,426</td></tr>
+        <tr><td>Ingreso neto</td><td class="mono neg">−21</td></tr>
+        <tr class="total"><td>Balance de cuenta corriente (déficit)</td><td class="mono neg">−993</td></tr>
+      </tbody>
+    </table>
+    <table class="tabla-bp">
+      <thead>
+        <tr><th>Cuenta financiera</th><th class="mono">US$ MM</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Aumento de tenencias extranjeras de activos de EE. UU.</td><td class="mono">1,564</td></tr>
+        <tr><td>Aumento de tenencias de EE. UU. de activos extranjeros</td><td class="mono">760</td></tr>
+        <tr class="total"><td>Balance de cuenta financiera (superávit)</td><td class="mono pos">804</td></tr>
+        <tr><td>Discrepancia estadística</td><td class="mono neg">−189</td></tr>
+      </tbody>
+    </table>
+
+    <div class="stats">
+      <div class="stat"><div class="stat-label">Cuenta corriente</div><div class="stat-val up">−993</div></div>
+      <div class="stat"><div class="stat-label">Cuenta financiera</div><div class="stat-val down">+804</div></div>
+      <div class="stat"><div class="stat-label">Discrepancia</div><div class="stat-val">−189</div></div>
+      <div class="stat"><div class="stat-label">Suma (≈0 en teoría)</div><div class="stat-val up">−189</div></div>
+    </div>
+
+    <div class="bloque">
+      <h3>PIB vs. PNB</h3>
+      <p>El PIB mide el valor agregado producido dentro del país; el PNB mide el valor agregado generado por los factores de producción domésticos (estén donde estén). En economía cerrada ambas medidas coinciden; en economía abierta difieren en los pagos netos de ingreso al/del resto del mundo (NI):</p>
+      <div class="ecuacion">PNB = PIB + NI</div>
+      <p>Para EE. UU. en 2022, NI = −21 (de la tabla anterior), una diferencia pequeña relativa al PIB — pero en otras economías esta brecha puede ser considerable.</p>
+    </div>
+  </section>
+
+  <section class="modulo reveal" id="sintesis">
+    <div class="modulo-head"><span class="modulo-num">05</span><h2>Síntesis: glosario del Tema 4</h2></div>
+    <div class="bezel">
+      <div class="bezel-in">
+        <dl class="glosario">
+          <dt>Tipo de cambio nominal (E)</dt><dd>Precio de la moneda doméstica en términos de la moneda extranjera.</dd>
+          <dt>Tipo de cambio real (ε)</dt><dd>Precio relativo de los bienes domésticos en términos de bienes extranjeros: ε = EP/P*.</dd>
+          <dt>Apreciación / depreciación nominal</dt><dd>Aumento / disminución de E.</dd>
+          <dt>Apreciación / depreciación real</dt><dd>Aumento / disminución de ε.</dd>
+          <dt>Aranceles y cuotas</dt><dd>Restricciones a la apertura del mercado de bienes (impuestos y límites de cantidad a importaciones).</dd>
+          <dt>Controles de capital</dt><dd>Restricciones a la apertura del mercado financiero.</dd>
+          <dt>Paridad de tasas de interés (no cubierta)</dt><dd>Condición de arbitraje: (1+i) = (1+i*)·(E_t/E^e_t+1).</dd>
+          <dt>Balanza de pagos</dt><dd>Registro contable de las transacciones de un país con el resto del mundo.</dd>
+          <dt>Cuenta corriente</dt><dd>Balanza comercial + ingreso neto (+ transferencias).</dd>
+          <dt>Cuenta financiera</dt><dd>Aumento de tenencias extranjeras de activos domésticos − aumento de tenencias domésticas de activos extranjeros.</dd>
+          <dt>Discrepancia estadística</dt><dd>Diferencia entre cuenta corriente y cuenta financiera medidas por separado; en teoría deberían sumar cero.</dd>
+          <dt>PNB vs. PIB</dt><dd>PNB = PIB + ingreso neto recibido del resto del mundo.</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo reveal" id="autoeval">
+    <div class="modulo-head"><span class="modulo-num">06</span><h2>Autoevaluación rápida</h2></div>
+
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false">
+        <span>1. Si el tipo de cambio nominal E sube pero los precios domésticos e internacionales no cambian, ¿qué pasa con el tipo de cambio real ε?</span>
+        <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="respuesta">
+        <span class="respuesta-tag">Respuesta</span>
+        <p>Como ε = EP/P*, si E sube y P, P* no cambian, ε también sube: hay una apreciación real (los bienes domésticos se encarecen relativamente).</p>
+      </div>
+    </div>
+
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false">
+        <span>2. Según la condición de paridad de tasas de interés, si se espera que la moneda doméstica se deprecie el próximo año, ¿la tasa doméstica debe ser mayor o menor que la extranjera?</span>
+        <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="respuesta">
+        <span class="respuesta-tag">Respuesta</span>
+        <p>Mayor. Si se espera una depreciación, quien mantiene bonos domésticos necesita una tasa más alta para compensar la pérdida esperada al reconvertir la moneda — de lo contrario, todos preferirían el bono extranjero.</p>
+      </div>
+    </div>
+
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false">
+        <span>3. ¿Cuál es la diferencia entre la paridad de tasas de interés "cubierta" y la "no cubierta"?</span>
+        <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="respuesta">
+        <span class="respuesta-tag">Respuesta</span>
+        <p>La cubierta usa un tipo de cambio a plazo (forward) pactado hoy, por lo que es una condición de arbitraje sin riesgo. La no cubierta (la que se usa en el curso) usa el tipo de cambio <em>esperado</em>, así que sí implica un elemento de riesgo/expectativas.</p>
+      </div>
+    </div>
+
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false">
+        <span>4. ¿Puede un país tener déficit comercial sin tener déficit de cuenta corriente? ¿Y al revés?</span>
+        <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="respuesta">
+        <span class="respuesta-tag">Respuesta</span>
+        <p>Sí a ambas. La cuenta corriente suma la balanza comercial más el ingreso neto (y transferencias); un ingreso neto positivo grande podría compensar un déficit comercial (déficit comercial sin déficit de cuenta corriente), y un ingreso neto muy negativo podría generar déficit de cuenta corriente incluso con balanza comercial equilibrada o superavitaria.</p>
+      </div>
+    </div>
+
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false">
+        <span>5. En la balanza de pagos de EE. UU. de 2022, ¿cómo se financió el déficit de cuenta corriente de −993?</span>
+        <svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="respuesta">
+        <span class="respuesta-tag">Respuesta</span>
+        <p>Principalmente con un superávit de cuenta financiera de 804 (aumento neto de tenencias extranjeras de activos de EE. UU.), quedando una discrepancia estadística de −189 entre ambas mediciones.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div>
+    <span class="badge">Fuente</span>Blanchard, Olivier (2023), <em>Macroeconomics</em>, 9ª ed., Pearson — Cap. 17, secc. 17-1/17-2 (pp. 353–370)
+  </div>
+  <p>Guía de estudio — Semana 4, Tema 4. Borrador de trabajo del propio material de repaso del estudiante (no es Tarea ni Control). &middot; <a href="../index.html">Volver al sitio</a></p>
+</footer>
+
+<script>
+(function(){
+  var botones = document.querySelectorAll('.pregunta .disparador');
+  botones.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var pregunta = btn.closest('.pregunta');
+      var abierta = pregunta.getAttribute('data-abierta') === 'true';
+      pregunta.setAttribute('data-abierta', abierta ? 'false' : 'true');
+      btn.setAttribute('aria-expanded', abierta ? 'false' : 'true');
+    });
+    btn.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        btn.click();
+      }
+    });
+  });
+})();
+
+if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  var targets = document.querySelectorAll('.reveal');
+  targets.forEach(function(el){ el.classList.add('reveal-play'); });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('reveal-in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.12});
+  targets.forEach(function(el){ io.observe(el); });
+}
+</script>
+
+</body>
+</html>
