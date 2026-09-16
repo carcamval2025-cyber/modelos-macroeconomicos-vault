@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tema 3: IS-LM Ampliado — Mercados Financieros y Margen Bancario | Macro II</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080C1C; --bg-elev:#10172D; --bg-elev2:#1B223C; --border:#2A324A;
+  --text:#EFF2F9; --text-dim:#A3AABE;
+  --indigo-mid:#667FDA; --coral:#FF6F4A; --coral-2:#FFB188;
+  --success:#55C975; --danger:#FB5668;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{background:var(--bg); color-scheme: dark;}
+body{
+  font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.65; font-weight:400;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M48 0H0V48' fill='none' stroke='%232A324A' stroke-width='0.6' opacity='0.35'/%3E%3Ccircle cx='0' cy='0' r='1' fill='%23667FDA' opacity='0.25'/%3E%3C/svg%3E");
+  background-attachment:fixed;
+}
+h1,h2,h3,h4{font-family:'Fraunces',serif; color:var(--text); letter-spacing:-0.02em;}
+em{font-style:italic; color:var(--coral);}
+.mono{font-family:'JetBrains Mono',monospace; font-variant-numeric:tabular-nums;}
+a{color:var(--coral-2);}
+a:focus-visible, button:focus-visible, input:focus-visible{ outline:2px solid var(--coral); outline-offset:3px; border-radius:4px; }
+
+header{ background:var(--bg-elev); border-bottom:1px solid var(--border); padding:88px 24px 64px; position:relative; overflow:hidden; }
+header .wrap{max-width:920px; margin:0 auto; position:relative; z-index:1;}
+.volver{ display:inline-flex; align-items:center; gap:6px; font-family:'JetBrains Mono',monospace; font-size:0.76rem; color:var(--text-dim); text-decoration:none; margin-bottom:24px; }
+.volver:hover{color:var(--coral-2);}
+.eyebrow{ font-family:'JetBrains Mono',monospace; font-size:0.76rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--coral); font-weight:600; margin-bottom:20px; }
+h1{font-size:clamp(2.1rem, 5vw, 3.4rem); font-weight:600; margin-bottom:16px; text-wrap:balance;}
+header p.sub{color:var(--text-dim); max-width:62ch; font-size:1.02rem;}
+.meta-row{display:flex; gap:8px; flex-wrap:wrap; margin-top:28px;}
+.chip{padding:2px; border-radius:9px; background:rgba(239,242,249,0.04);}
+.chip-in{ display:block; font-family:'JetBrains Mono',monospace; font-size:0.76rem; color:var(--text-dim); background:var(--bg); border:1px solid var(--border); border-radius:7px; padding:6px 12px; box-shadow:inset 0 1px 0 rgba(239,242,249,0.03); }
+
+.hero-banner{padding:0; border-bottom:1px solid var(--border); background:var(--bg); overflow:hidden;}
+.hero-banner svg{width:100%; height:auto; display:block;}
+
+main{max-width:920px; margin:0 auto; padding:64px 24px 100px;}
+
+.modnav{ display:flex; gap:2px; margin-bottom:56px; width:fit-content; max-width:100%; flex-wrap:wrap; border:1px solid var(--border); border-radius:10px; padding:4px; background:var(--bg-elev); }
+.modnav a{ font-family:'JetBrains Mono',monospace; font-size:0.74rem; color:var(--text-dim); text-decoration:none; padding:8px 12px; border-radius:7px; transition:background .2s var(--ease), color .2s var(--ease); white-space:nowrap; }
+.modnav a:hover{background:var(--bg-elev2); color:var(--text);}
+
+.modulo{padding-top:48px; border-top:1px solid var(--border); margin-top:80px; scroll-margin-top:20px;}
+.modulo:first-of-type{margin-top:0;}
+.modulo-head{display:flex; align-items:flex-end; gap:16px; margin-bottom:18px;}
+.modulo-num{font-family:'Fraunces',serif; font-style:italic; font-weight:500; font-size:2.1rem; line-height:1; color:var(--text-dim);}
+.modulo-head h2{font-size:1.35rem; font-weight:600;}
+.modulo-text{color:var(--text-dim); font-size:0.92rem; max-width:64ch; margin-bottom:28px;}
+
+.reveal.reveal-play{opacity:0; transform:translateY(14px);}
+.reveal.reveal-play.reveal-in{ opacity:1; transform:translateY(0); transition:opacity .7s var(--ease), transform .7s var(--ease); }
+
+.bloque{ background:var(--bg-elev); border:1px solid var(--border); border-radius:12px; padding:22px 24px; margin-bottom:18px; }
+.bloque h3{font-size:1.05rem; font-weight:600; margin-bottom:8px;}
+.bloque p + p{margin-top:10px;}
+.bloque p{font-size:0.95rem;}
+.bloque ul{margin:10px 0 0 20px; font-size:0.94rem;}
+.bloque li{margin-bottom:6px;}
+
+.ecuacion{ background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:12px 16px; margin:12px 0; font-family:'JetBrains Mono',monospace; font-size:0.92rem; color:var(--text); overflow-x:auto; }
+
+.bezel{padding:5px; border-radius:15px; background:rgba(239,242,249,0.035); border:1px solid var(--border); margin-bottom:20px;}
+.bezel-in{border-radius:11px; background:var(--bg-elev); box-shadow:inset 0 1px 0 rgba(239,242,249,0.05); padding:24px 26px;}
+
+.recuadro{ background:rgba(255,111,74,0.06); border:1px solid rgba(255,111,74,0.35); border-radius:12px; padding:20px 24px; margin:18px 0; }
+.recuadro-tag{ font-family:'JetBrains Mono',monospace; font-size:0.7rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--coral); font-weight:600; margin-bottom:10px; display:block; }
+.recuadro p{font-size:0.95rem;}
+
+.badge{ display:inline-block; background:var(--bg-elev2); color:var(--text-dim); font-family:'JetBrains Mono',monospace; font-size:0.7rem; font-weight:600; padding:3px 10px; border-radius:999px; letter-spacing:0.03em; text-transform:uppercase; margin-right:6px; }
+
+figure{margin:18px 0 14px;}
+.diagrama{background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:12px; overflow:hidden;}
+.diagrama svg{width:100%; height:auto; display:block;}
+figcaption{font-size:0.78rem; color:var(--text-dim); margin-top:8px; line-height:1.45; font-family:'JetBrains Mono',monospace;}
+
+.tabla-datos{width:100%; border-collapse:collapse; font-size:0.88rem; margin:16px 0;}
+.tabla-datos th, .tabla-datos td{padding:10px 14px; text-align:right; border-bottom:1px solid var(--border);}
+.tabla-datos th:first-child, .tabla-datos td:first-child{text-align:left; font-weight:500;}
+.tabla-datos thead th{font-family:'JetBrains Mono',monospace; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--text-dim); border-bottom:1px solid var(--border);}
+.tabla-datos tr.total td{font-weight:700; border-top:1px solid var(--border); color:var(--coral);}
+
+/* ---------- Componentes del Simulador Interactivo (Sin elementos form) ---------- */
+.simulador-panel{ background:var(--bg-elev); border:1px solid var(--border); border-radius:14px; padding:24px; margin:24px 0; }
+.sim-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:18px; margin-bottom:24px;}
+.control-item{background:var(--bg); border:1px solid var(--border); border-radius:10px; padding:14px 16px;}
+.control-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;}
+.control-label{font-family:'JetBrains Mono',monospace; font-size:0.74rem; text-transform:uppercase; color:var(--text-dim); letter-spacing:0.04em;}
+.control-val{font-family:'JetBrains Mono',monospace; font-size:1.05rem; font-weight:700; color:var(--coral);}
+.control-slider{
+  width:100%; height:6px; appearance:none; background:var(--border); border-radius:3px; outline:none; cursor:pointer;
+}
+.control-slider::-webkit-slider-thumb{
+  appearance:none; width:18px; height:18px; border-radius:50%; background:var(--coral); cursor:pointer; border:2px solid var(--bg);
+}
+
+.kpis-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:12px; margin-bottom:24px;}
+.kpi-card{background:var(--bg); border:1px solid var(--border); border-radius:10px; padding:14px 16px;}
+.kpi-title{font-family:'JetBrains Mono',monospace; font-size:0.68rem; text-transform:uppercase; color:var(--text-dim); letter-spacing:0.04em;}
+.kpi-num{font-family:'JetBrains Mono',monospace; font-size:1.35rem; font-weight:700; color:var(--text); margin-top:4px;}
+.kpi-num.destacado{color:var(--success);}
+.kpi-num.alerta{color:var(--coral);}
+.kpi-sub{font-size:0.75rem; color:var(--text-dim); margin-top:4px;}
+
+.chart-box{background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:16px; margin-top:16px;}
+.chart-box svg{width:100%; height:auto; display:block;}
+
+footer{ border-top:1px solid var(--border); padding:32px 24px; text-align:center; font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--text-dim); }
+footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; font-family:'Inter',sans-serif; font-size:0.82rem;}
+
+@media (max-width:600px){
+  header{padding:56px 20px 44px;}
+  .modulo-num{font-size:1.7rem;}
+  .sim-grid{grid-template-columns:1fr;}
+}
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; }
+  .reveal.reveal-play{opacity:1; transform:none;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="volver" href="../index.html">&larr; Modelos Macroeconómicos</a>
+    <div class="eyebrow">ESEN · Macro II · Tema 3 · Semana 3 · Guía y Laboratorio de Profundización</div>
+    <h1>IS-LM Ampliado: <em>Mercados Financieros</em> y Margen Bancario</h1>
+    <p class="sub">Del modelo macroeconómico de Blanchard (Cap. 6) a la modelación analítica del intermediario financiero: estimación del margen de intermediación (MI), tasa activa exigida, apalancamiento y fragilidad bancaria ante riesgo de crédito.</p>
+    <div class="meta-row">
+      <span class="chip"><span class="chip-in">Blanchard, cap. 6</span></span>
+      <span class="chip"><span class="chip-in">Modelo: estima margen financiero.xlsx</span></span>
+      <span class="chip"><span class="chip-in">Prof. Luis Morera</span></span>
+      <span class="chip"><span class="chip-in">Simulador interactivo en vivo</span></span>
+    </div>
+  </div>
+</header>
+
+<section class="hero-banner" aria-label="Banner panorámico del Tema 3: IS-LM ampliado y transmisión bancaria">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 320" role="img" aria-label="Banner panorámico del Tema 3: IS-LM ampliado y transmisión del margen financiero bancario">
+    <title>Tema 3: IS-LM Ampliado — Mercados Financieros e Intermediación Bancaria</title>
+    <desc>Composición panorámica técnica que ilustra el circuito macro-financiero de Blanchard Cap. 6: desde la tasa de política monetaria fijada por el Banco Central, pasando por el balance del intermediario bancario (reservas, depósitos y apalancamiento) hasta el costo de financiamiento real (r + x) de la inversión agregada.</desc>
+    <rect width="1600" height="320" fill="#080C1C"/>
+    <path d="M0 40H1600M0 280H1600" fill="none" stroke="#2A324A" stroke-width="1.2" opacity=".4"/>
+    <path d="M200 30V290M400 30V290M600 30V290M800 30V290M1000 30V290M1200 30V290M1400 30V290" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="3 6" opacity=".25"/>
+    <path d="M280 160C450 70 650 70 800 120" fill="none" stroke="#667FDA" stroke-width="2.5" stroke-dasharray="6 6" opacity=".4"/>
+    <path d="M800 120C950 170 1150 170 1320 160" fill="none" stroke="#FF6F4A" stroke-width="2.5" stroke-dasharray="6 6" opacity=".4"/>
+    <path d="M360 145C520 100 680 95 800 95S1080 100 1240 145" fill="none" stroke="#FFB188" stroke-width="2.8" stroke-linecap="round" opacity=".85"/>
+    <path d="M1230 138L1240 145L1228 151" fill="none" stroke="#FFB188" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Banco Central -->
+    <g transform="translate(260, 160)">
+      <circle cx="0" cy="0" r="76" fill="#10172D" stroke="#2A324A" stroke-width="1.5" opacity=".5"/>
+      <circle cx="0" cy="0" r="58" fill="#080C1C" stroke="#667FDA" stroke-width="2.2" opacity=".85"/>
+      <circle cx="0" cy="0" r="42" fill="#10172D" stroke="#667FDA" stroke-width="1.2" stroke-dasharray="4 4" opacity=".9"/>
+      <circle cx="0" cy="0" r="14" fill="#080C1C" stroke="#EFF2F9" stroke-width="2.8"/>
+      <circle cx="0" cy="0" r="6" fill="#667FDA"/>
+      <rect x="-95" y="-112" width="190" height="24" rx="5" fill="#10172D" stroke="#667FDA" stroke-width="1"/>
+      <text x="0" y="-96" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EFF2F9" letter-spacing="0.06em">BANCO CENTRAL</text>
+      <rect x="-85" y="76" width="80" height="22" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+      <text x="-45" y="91" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#667FDA">i (Nominal)</text>
+      <rect x="5" y="76" width="80" height="22" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+      <text x="45" y="91" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#EFF2F9">r ≈ i − π<tspan font-size="8" dy="-2">e</tspan></text>
+    </g>
+
+    <!-- Banco Intermediario -->
+    <g transform="translate(800, 160)">
+      <rect x="-175" y="-85" width="350" height="170" rx="12" fill="#080C1C" stroke="#FF6F4A" stroke-width="2"/>
+      <rect x="-160" y="-72" width="320" height="26" rx="5" fill="#1B223C" stroke="#FF6F4A" stroke-width="1"/>
+      <text x="0" y="-55" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EFF2F9">INTERMEDIARIO FINANCIERO (BANCO)</text>
+      <g transform="translate(-160, -32)">
+        <rect width="155" height="42" rx="5" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+        <text x="10" y="18" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Activos ($1,000):</text>
+        <text x="10" y="34" font-family="JetBrains Mono, monospace" font-size="10" fill="#55C975">Préstamos + RL (rl=10%)</text>
+        <rect x="165" width="155" height="42" rx="5" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+        <text x="175" y="18" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Pasivo + K ($1,000):</text>
+        <text x="175" y="34" font-family="JetBrains Mono, monospace" font-size="10" fill="#EFF2F9">D=800 | Capital=200</text>
+      </g>
+      <g transform="translate(-160, 20)">
+        <rect width="320" height="52" rx="6" fill="#10172D" stroke="#FF6F4A" stroke-width="1.2"/>
+        <text x="160" y="20" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12.5" font-weight="700" fill="#FFB188">MI = D · [i<tspan font-size="9" dy="2">a</tspan><tspan font-size="12.5" dy="-2">(1−rl)(1−p) − i</tspan><tspan font-size="9" dy="2">p</tspan><tspan font-size="12.5" dy="-2">]</tspan></text>
+        <text x="160" y="39" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#EFF2F9">Apalancamiento = 4 | ROE = 10% base | Sube x con p</text>
+      </g>
+    </g>
+
+    <!-- Economía Real -->
+    <g transform="translate(1340, 160)">
+      <circle cx="0" cy="0" r="76" fill="#10172D" stroke="#2A324A" stroke-width="1.5" opacity=".5"/>
+      <circle cx="0" cy="0" r="58" fill="#080C1C" stroke="#FF6F4A" stroke-width="2.2" opacity=".85"/>
+      <circle cx="0" cy="0" r="42" fill="#10172D" stroke="#FF6F4A" stroke-width="1.2" stroke-dasharray="4 4" opacity=".9"/>
+      <circle cx="0" cy="0" r="14" fill="#080C1C" stroke="#EFF2F9" stroke-width="2.8"/>
+      <circle cx="0" cy="0" r="6" fill="#FF6F4A"/>
+      <rect x="-95" y="-112" width="190" height="24" rx="5" fill="#10172D" stroke="#FF6F4A" stroke-width="1"/>
+      <text x="0" y="-96" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EFF2F9" letter-spacing="0.06em">ECONOMÍA REAL (IS)</text>
+      <rect x="-85" y="76" width="80" height="22" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+      <text x="-45" y="91" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#FFB188">r + x (Préstamo)</text>
+      <rect x="5" y="76" width="80" height="22" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+      <text x="45" y="91" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#EFF2F9">I(Y, r + x)</text>
+    </g>
+  </svg>
+</section>
+
+<main>
+  <nav class="modnav" aria-label="Módulos de esta guía">
+    <a href="#fundamentos">01 · Fundamentos Cap. 6</a>
+    <a href="#balance">02 · Balance bancario</a>
+    <a href="#modelo-excel">03 · Ecuación del margen</a>
+    <a href="#escenarios">04 · Escenarios y choques</a>
+    <a href="#simulador">05 · Simulador interactivo</a>
+    <a href="#macro-islm">06 · Transmisión a la IS</a>
+  </nav>
+
+  <!-- MÓDULO 01 -->
+  <section class="modulo reveal" id="fundamentos">
+    <div class="modulo-head"><span class="modulo-num">01</span><h2>Fundamentos: Del tipo de interés nominal a la tasa de endeudamiento</h2></div>
+    <div class="modulo-text">En el modelo IS-LM básico (Cap. 5), la inversión dependía únicamente de la tasa de interés nominal o real única fijada por el Banco Central. El Capítulo 6 de Blanchard desmonta esa simplificación introduciendo dos realidades ineludibles: la diferencia entre tasas nominales y reales, y la existencia de una <strong>prima de riesgo ($x$)</strong>.</div>
+
+    <div class="bloque">
+      <h3>1. Tasa de interés nominal vs. real (Ecuación de Fisher)</h3>
+      <p>Los bancos centrales fijan la tasa de interés nominal <span class="mono">i</span>. Sin embargo, las decisiones de inversión y consumo de los agentes dependen de la <strong>tasa de interés real</strong> <span class="mono">r</span>, que descuenta la inflación esperada <span class="mono">π<sup>e</sup></span>:</p>
+      <div class="ecuacion">(1 + r<sub>t</sub>) = (1 + i<sub>t</sub>) / (1 + π<sup>e</sup><sub>t+1</sub>)   ≈   r<sub>t</sub> ≈ i<sub>t</sub> − π<sup>e</sup><sub>t+1</sub></div>
+      <p>Cuando la inflación esperada es cero, la tasa nominal y la real coinciden. Pero cuando existe deflación (<span class="mono">π<sup>e</sup> &lt; 0</span>) y la tasa nominal llega a su límite inferior cero (ZLB, <span class="mono">i = 0</span>), la tasa real no puede bajar de <span class="mono">−π<sup>e</sup> &gt; 0</span>, limitando el estímulo monetario convencional.</p>
+    </div>
+
+    <div class="bloque">
+      <h3>2. Tasa de política monetaria vs. Tasa de endeudamiento (Prima de riesgo x)</h3>
+      <p>Las empresas y familias no se endeudan a la tasa de política monetaria <span class="mono">r</span>. Se endeudan a una tasa <span class="mono">r + x</span>, donde <span class="mono">x</span> es la <strong>prima de riesgo</strong> o margen de intermediación exigido por los acreedores:</p>
+      <div class="ecuacion">x = f(p, K, Aversión al riesgo)</div>
+      <p>La prima de riesgo <span class="mono">x</span> depende de: (a) la probabilidad de quiebra o default <span class="mono">p</span> de los prestatarios, (b) el capital propio o patrimonio de los intermediarios bancarios, y (c) la salud del balance financiero del sistema.</p>
+    </div>
+  </section>
+
+  <!-- MÓDULO 02 -->
+  <section class="modulo reveal" id="balance">
+    <div class="modulo-head"><span class="modulo-num">02</span><h2>El rol de los intermediarios financieros y el apalancamiento</h2></div>
+    <div class="modulo-text">Los bancos toman depósitos de ahorristas y otorgan préstamos a prestatarios. Su rentabilidad depende del diferencial entre la tasa que cobran (tasa activa) y la tasa que pagan (tasa pasiva), operando con apalancamiento sobre su patrimonio.</div>
+
+    <figure>
+      <div class="diagrama">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 370" role="img" aria-label="Estructura del balance bancario, apalancamiento y margen de intermediación financiera">
+          <title>Balance Bancario y Margen de Intermediación (Modelo de Estimación)</title>
+          <desc>Desglose del balance del intermediario financiero de Blanchard Cap. 6 con los datos exactos del modelo: depósitos de 800, patrimonio de 200, encaje del 10% y tasa activa del 5% frente a pasiva del 2%, derivando el margen de intermediación de 20 y ROE del 10%.</desc>
+          <rect width="820" height="370" rx="14" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+          <path d="M40 45H780M40 325H780" fill="none" stroke="#2A324A" stroke-width="0.8" stroke-dasharray="4 6" opacity=".4"/>
+          <line x1="410" y1="35" x2="410" y2="295" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 6" opacity=".3"/>
+
+          <!-- Columna Izquierda: Activo -->
+          <g transform="translate(40, 45)">
+            <rect width="350" height="245" rx="10" fill="#080C1C" stroke="#667FDA" stroke-width="1.8"/>
+            <rect x="15" y="-12" width="180" height="24" rx="5" fill="#1B223C" stroke="#667FDA" stroke-width="1.2"/>
+            <text x="105" y="4" text-anchor="middle" font-family="Inter, sans-serif" font-size="11.5" font-weight="700" fill="#EFF2F9">ACTIVO (TOTAL: $1,000)</text>
+            <text x="18" y="28" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Asignación y colocación de recursos</text>
+            <g transform="translate(18, 42)">
+              <rect width="314" height="42" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+              <text x="12" y="19" font-family="Inter, sans-serif" font-size="10" fill="#EFF2F9">Reserva de Liquidez / Encaje (rl = 10%):</text>
+              <text x="12" y="34" font-family="Inter, sans-serif" font-size="9" fill="#A3AABE">rl · D = 10% × 800 (Fondo inmovilizado)</text>
+              <text x="300" y="26" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="#667FDA">$80</text>
+            </g>
+            <g transform="translate(18, 92)">
+              <rect width="314" height="48" rx="6" fill="#10172D" stroke="#55C975" stroke-width="1"/>
+              <text x="12" y="19" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#EFF2F9">Cartera de Crédito Prestada (90%):</text>
+              <text x="12" y="36" font-family="Inter, sans-serif" font-size="9" fill="#55C975">Rinde tasa activa i<tspan font-size="7" dy="2">a</tspan><tspan font-size="9" dy="-2"> = 5.0%</tspan></text>
+              <text x="300" y="31" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="#55C975">$720</text>
+            </g>
+            <g transform="translate(18, 148)">
+              <rect width="314" height="38" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+              <text x="12" y="18" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Financiado con Capital Propio:</text>
+              <text x="12" y="31" font-family="Inter, sans-serif" font-size="9" fill="#A3AABE">Colocaciones adicionales</text>
+              <text x="300" y="24" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#EFF2F9">$200</text>
+            </g>
+            <g transform="translate(18, 196)">
+              <rect width="314" height="34" rx="6" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+              <text x="12" y="21" font-family="Inter, sans-serif" font-size="9.5" fill="#A3AABE">Ingreso por intereses brutos:</text>
+              <text x="300" y="22" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#55C975">720 × 5% = $36.0</text>
+            </g>
+          </g>
+
+          <!-- Columna Derecha: Pasivo y Capital -->
+          <g transform="translate(430, 45)">
+            <rect width="350" height="245" rx="10" fill="#080C1C" stroke="#FF6F4A" stroke-width="1.8"/>
+            <rect x="15" y="-12" width="220" height="24" rx="5" fill="#1B223C" stroke="#FF6F4A" stroke-width="1.2"/>
+            <text x="125" y="4" text-anchor="middle" font-family="Inter, sans-serif" font-size="11.5" font-weight="700" fill="#EFF2F9">PASIVO + CAPITAL ($1,000)</text>
+            <text x="18" y="28" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Estructura de fondeo y apalancamiento</text>
+            <g transform="translate(18, 42)">
+              <rect width="314" height="42" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+              <text x="12" y="19" font-family="Inter, sans-serif" font-size="10" fill="#EFF2F9">Depósitos Captados (D = 800):</text>
+              <text x="12" y="34" font-family="Inter, sans-serif" font-size="9" fill="#FB5668">Costo: tasa pasiva i<tspan font-size="7" dy="2">p</tspan><tspan font-size="9" dy="-2"> = 2.0% (Intereses = $16.0)</tspan></text>
+              <text x="300" y="26" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="#EFF2F9">$800</text>
+            </g>
+            <g transform="translate(18, 92)">
+              <rect width="314" height="48" rx="6" fill="#10172D" stroke="#FF6F4A" stroke-width="1"/>
+              <text x="12" y="19" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#EFF2F9">Patrimonio Neto / Capital (K):</text>
+              <text x="12" y="36" font-family="Inter, sans-serif" font-size="9" fill="#FFB188">Apalancamiento: D / K = 800 / 200 = 4</text>
+              <text x="300" y="31" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="#FF6F4A">$200</text>
+            </g>
+            <g transform="translate(18, 148)">
+              <rect width="314" height="82" rx="7" fill="#10172D" stroke="#FF6F4A" stroke-width="1.4"/>
+              <text x="12" y="20" font-family="Inter, sans-serif" font-size="10.5" font-weight="700" fill="#EFF2F9">MARGEN DE INTERMEDIACIÓN (MI):</text>
+              <text x="12" y="38" font-family="JetBrains Mono, monospace" font-size="10" fill="#A3AABE">MI = Ingresos ($36) − Costos ($16) =</text>
+              <text x="235" y="38" font-family="JetBrains Mono, monospace" font-size="16" font-weight="700" fill="#55C975">$20.0</text>
+              <text x="12" y="58" font-family="Inter, sans-serif" font-size="9.5" font-weight="600" fill="#FFB188">Retorno sobre Patrimonio (ROE):</text>
+              <text x="12" y="72" font-family="JetBrains Mono, monospace" font-size="12" fill="#EFF2F9">ROE = MI / K = 20 / 200 = <tspan font-weight="700" fill="#55C975">10.0%</tspan></text>
+            </g>
+          </g>
+
+          <g transform="translate(40, 305)">
+            <rect width="740" height="45" rx="7" fill="#080C1C" stroke="#2A324A" stroke-width="1"/>
+            <text x="15" y="27" font-family="Inter, sans-serif" font-size="10.5" font-weight="700" fill="#FFB188">FÓRMULA MAESTRA (EXCEL):</text>
+            <text x="195" y="27" font-family="JetBrains Mono, monospace" font-size="11.5" fill="#EFF2F9">MI = D · [i<tspan font-size="8" dy="2">a</tspan><tspan font-size="11.5" dy="-2">·(1 − rl)·(1 − p) − i</tspan><tspan font-size="8" dy="2">p</tspan><tspan font-size="11.5" dy="-2">]   ⇒   i</tspan><tspan font-size="8" dy="2">a</tspan><tspan font-size="8" dy="-4">exigida</tspan><tspan font-size="11.5" dy="2">(p) = [MI*/D + i</tspan><tspan font-size="8" dy="2">p</tspan><tspan font-size="11.5" dy="-2">] / [(1 − rl)(1 − p)]</tspan></text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>Fig. propia — balance contable del intermediario financiero y mecánica de generación del margen de intermediación (Blanchard, secc. 6.2 y modelo Excel Morera).</figcaption>
+    </figure>
+
+    <div class="bloque">
+      <h3>El dilema del apalancamiento bancario</h3>
+      <p>El <strong>coeficiente de apalancamiento</strong> se define en Blanchard como el ratio de Activo a Capital (<span class="mono">Activos / Capital = 1000 / 200 = 5</span>), o alternativamente en el modelo de la cátedra como la relación entre pasivos captados y patrimonio (<span class="mono">Depósitos / Capital = 800 / 200 = 4</span>):</p>
+      <ul>
+        <li><strong>A mayor apalancamiento:</strong> por cada dólar de capital propio invertido, el banco financia más volumen de préstamos, multiplicando el retorno esperado sobre capital (<span class="mono">ROE</span>) en tiempos normales.</li>
+        <li><strong>El riesgo:</strong> si el valor de los préstamos cae apenas un <span class="mono">5%</span> (pérdida de $50), esa pérdida se absorbe completamente contra el patrimonio de $200, reduciéndolo un <span class="mono">25%</span> de golpe. Con un apalancamiento de 20 (frecuente antes de la crisis de 2008), una pérdida de activo de solo 5% aniquila el 100% del capital bancario, provocando <strong>insolvencia inmediata</strong>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- MÓDULO 03 -->
+  <section class="modulo reveal" id="modelo-excel">
+    <div class="modulo-head"><span class="modulo-num">03</span><h2>El Modelo Matemático del Margen de Intermediación</h2></div>
+    <div class="modulo-text">El archivo de modelación analítica <span class="mono">estima margen financiero.xlsx</span> formaliza las tres ecuaciones maestras que determinan la viabilidad operativa del banco:</div>
+
+    <div class="bezel">
+      <div class="bezel-in">
+        <h3 style="margin-bottom:12px;">1 · Margen de Intermediación Financiera (MI)</h3>
+        <p style="font-size:0.92rem; margin-bottom:8px;">Representa el ingreso neto generado por prestar los depósitos captados tras deducir la reserva legal inmovilizada, la pérdida esperada por impago y el costo de los fondos:</p>
+        <div class="ecuacion">MI = D · [ i<sub>a</sub> · (1 − rl) · (1 − p) − i<sub>p</sub> ]</div>
+        <p style="font-size:0.88rem; color:var(--text-dim); margin-top:6px;">Donde: <span class="mono">D</span> = Depósitos captados ($800), <span class="mono">i<sub>a</sub></span> = Tasa activa (5%), <span class="mono">rl</span> = Reserva de liquidez/encaje legal (10%), <span class="mono">p</span> = Tasa de mora o probabilidad de incumplimiento (0 a 48%), <span class="mono">i<sub>p</sub></span> = Tasa pasiva pagada a depositantes (2%).</p>
+
+        <h3 style="margin:20px 0 12px;">2 · Retorno sobre el Patrimonio (ROE / rsp)</h3>
+        <div class="ecuacion">ROE = rsp = MI / K = { D · [ i<sub>a</sub> · (1 − rl) · (1 − p) − i<sub>p</sub> ] } / K</div>
+        <p style="font-size:0.88rem; color:var(--text-dim); margin-top:6px;">En el punto base: <span class="mono">MI = 800 · [0.05·(0.90)·(1.0) − 0.02] = 800 · [0.045 − 0.02] = $20.0</span>. Al dividirlo entre el capital <span class="mono">K = $200</span>, el rendimiento patrimonial base es exactamente del <span class="mono">10.0%</span>.</p>
+
+        <h3 style="margin:20px 0 12px;">3 · Trayectoria de Tasa Activa Exigida (i<sub>a</sub><sup>exigida</sup>)</h3>
+        <p style="font-size:0.92rem; margin-bottom:8px;">Si la morosidad <span class="mono">p</span> aumenta, ¿qué tasa activa debe cobrar el banco para que su utilidad neta se mantenga en el objetivo meta <span class="mono">MI* = 20</span> (y preserve su ROE en 10%)? Despejando:</p>
+        <div class="ecuacion">i<sub>a</sub><sup>exigida</sup>(p) = [ (MI* / D) + i<sub>p</sub> ] / [ (1 − rl) · (1 − p) ]</div>
+        <p style="font-size:0.88rem; color:var(--text-dim); margin-top:6px;">Sustituyendo <span class="mono">MI* = 20, D = 800, i<sub>p</sub> = 0.02, rl = 0.10</span>:<br>
+        <span class="mono">i<sub>a</sub><sup>exigida</sup>(p) = [0.025 + 0.02] / [0.90 · (1 − p)] = 0.045 / [0.90 · (1 − p)] = <strong>0.05 / (1 − p)</strong></span>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÓDULO 04 -->
+  <section class="modulo reveal" id="escenarios">
+    <div class="modulo-head"><span class="modulo-num">04</span><h2>Análisis de Escenarios y Choques del Excel</h2></div>
+    <div class="modulo-text">El modelo compara cuatro escenarios fundamentales (pestaña <span class="mono">Sheet1</span>) que simulan la respuesta bancaria ante políticas del Banco Central y perturbaciones de riesgo macroeconómico:</div>
+
+    <table class="tabla-datos">
+      <thead>
+        <tr>
+          <th>Escenario</th>
+          <th>i<sub>a</sub></th>
+          <th>i<sub>p</sub></th>
+          <th>rl</th>
+          <th>p</th>
+          <th>D / K</th>
+          <th>MI</th>
+          <th>ROE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Escenario Base (H)</strong><br><span style="font-size:0.75rem; color:var(--text-dim);">Condiciones óptimas sin mora</span></td>
+          <td class="mono">5.0%</td>
+          <td class="mono">2.0%</td>
+          <td class="mono">10.0%</td>
+          <td class="mono">0.0%</td>
+          <td class="mono">800 / 200</td>
+          <td class="mono" style="color:var(--success);">$20.0</td>
+          <td class="mono" style="color:var(--success); font-weight:700;">10.0%</td>
+        </tr>
+        <tr>
+          <td><strong>Choque de Liquidez (L)</strong><br><span style="font-size:0.75rem; color:var(--text-dim);">Encaje sube de 10% a 20%</span></td>
+          <td class="mono" style="color:var(--coral);">5.625%*</td>
+          <td class="mono">2.0%</td>
+          <td class="mono" style="color:var(--danger);">20.0%</td>
+          <td class="mono">0.0%</td>
+          <td class="mono">800 / 200</td>
+          <td class="mono">$20.0</td>
+          <td class="mono" style="font-weight:700;">10.0%</td>
+        </tr>
+        <tr>
+          <td><strong>Choque de Mora (P)</strong><br><span style="font-size:0.75rem; color:var(--text-dim);">Mora p=10% sin ajustar tasa</span></td>
+          <td class="mono">5.0%</td>
+          <td class="mono">2.0%</td>
+          <td class="mono">10.0%</td>
+          <td class="mono" style="color:var(--danger);">10.0%</td>
+          <td class="mono">800 / 200</td>
+          <td class="mono" style="color:var(--danger);">$16.40</td>
+          <td class="mono" style="color:var(--danger); font-weight:700;">8.20%</td>
+        </tr>
+        <tr>
+          <td><strong>Escala Mayor (Row 11-15)</strong><br><span style="font-size:0.75rem; color:var(--text-dim);">Depósitos D=1,000 con K=200</span></td>
+          <td class="mono">5.0%</td>
+          <td class="mono">2.0%</td>
+          <td class="mono">10.0%</td>
+          <td class="mono">0.0%</td>
+          <td class="mono">1000 / 200</td>
+          <td class="mono" style="color:var(--coral);">$25.0</td>
+          <td class="mono" style="color:var(--coral); font-weight:700;">12.5%</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="recuadro">
+      <span class="recuadro-tag">Sensibilidad analítica del Excel (Celda S1)</span>
+      <p>En el Excel, la celda <span class="mono">S1</span> calcula <span class="mono">8 · 4.5 / 10 = 3.6</span>. Este es el <strong>factor de sensibilidad de la mora</strong>: por cada 10 puntos porcentuales que sube la probabilidad de impago (<span class="mono">Δp = 0.10</span>), el margen financiero se reduce exactamente en <span class="mono">ΔMI = −$3.60</span>, lo que provoca una contracción directa en el ROE de <span class="mono">−1.80 puntos porcentuales</span> (<span class="mono">3.6 / 200</span>). Si la mora alcanza el 55.56%, el margen de intermediación desaparece por completo (<span class="mono">MI = 0</span>).</p>
+    </div>
+  </section>
+
+  <!-- MÓDULO 05: SIMULADOR INTERACTIVO -->
+  <section class="modulo reveal" id="simulador">
+    <div class="modulo-head"><span class="modulo-num">05</span><h2>Laboratorio Interactivo: Simulador de Margen y Apalancamiento</h2></div>
+    <div class="modulo-text">Modifica los parámetros del balance bancario en tiempo real para visualizar cómo responden el Margen de Intermediación, el ROE y la Tasa Activa Exigida. La gráfica interactiva replica con precisión matemática las series de la hoja <span class="mono">Chart1</span> del Excel.</div>
+
+    <div class="simulador-panel">
+      <!-- Controles con sliders -->
+      <div class="sim-grid">
+        <div class="control-item">
+          <div class="control-top"><span class="control-label">Tasa Activa (i<sub>a</sub>)</span><span class="control-val" id="val-ia">5.0%</span></div>
+          <input type="range" class="control-slider" id="sl-ia" min="2.5" max="15.0" step="0.1" value="5.0" aria-label="Tasa activa ia">
+        </div>
+
+        <div class="control-item">
+          <div class="control-top"><span class="control-label">Tasa Pasiva (i<sub>p</sub>)</span><span class="control-val" id="val-ip">2.0%</span></div>
+          <input type="range" class="control-slider" id="sl-ip" min="0.5" max="8.0" step="0.1" value="2.0" aria-label="Tasa pasiva ip">
+        </div>
+
+        <div class="control-item">
+          <div class="control-top"><span class="control-label">Encaje Legal (rl)</span><span class="control-val" id="val-rl">10.0%</span></div>
+          <input type="range" class="control-slider" id="sl-rl" min="0.0" max="30.0" step="1.0" value="10.0" aria-label="Reserva de liquidez rl">
+        </div>
+
+        <div class="control-item">
+          <div class="control-top"><span class="control-label">Mora / Default (p)</span><span class="control-val" id="val-p">0.0%</span></div>
+          <input type="range" class="control-slider" id="sl-p" min="0.0" max="48.0" step="1.0" value="0.0" aria-label="Probabilidad de default p">
+        </div>
+
+        <div class="control-item">
+          <div class="control-top"><span class="control-label">Depósitos (D)</span><span class="control-val" id="val-d">$800</span></div>
+          <input type="range" class="control-slider" id="sl-d" min="400" max="1500" step="50" value="800" aria-label="Depósitos D">
+        </div>
+
+        <div class="control-item">
+          <div class="control-top"><span class="control-label">Patrimonio (K)</span><span class="control-val" id="val-k">$200</span></div>
+          <input type="range" class="control-slider" id="sl-k" min="100" max="500" step="25" value="200" aria-label="Capital propio K">
+        </div>
+      </div>
+
+      <!-- KPIs calculados en vivo -->
+      <div class="kpis-grid">
+        <div class="kpi-card">
+          <div class="kpi-title">Margen Financiero (MI)</div>
+          <div class="kpi-num destacado" id="res-mi">$20.00</div>
+          <div class="kpi-sub" id="res-mi-sub">Ingreso neto de intermediación</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-title">Retorno Patrimonio (ROE)</div>
+          <div class="kpi-num destacado" id="res-roe">10.00%</div>
+          <div class="kpi-sub">Rentabilidad sobre capital K</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-title">Tasa Activa Exigida</div>
+          <div class="kpi-num alerta" id="res-ia-exig">5.00%</div>
+          <div class="kpi-sub">Para mantener ROE en 10%</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-title">Apalancamiento (D/K)</div>
+          <div class="kpi-num" id="res-lev">4.0x</div>
+          <div class="kpi-sub" id="res-lev-sub">Activo/K = 5.0x</div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-title">Spread Financiero (x)</div>
+          <div class="kpi-num" id="res-spread">3.00%</div>
+          <div class="kpi-sub">i<sub>a</sub> − i<sub>p</sub> (Prima bancaria)</div>
+        </div>
+      </div>
+
+      <!-- Gráfico dinámico SVG -->
+      <div class="chart-box">
+        <h4 style="font-size:0.95rem; margin-bottom:12px; color:var(--text);">Trayectoria de Rentabilidad (ROE) y Tasa Activa Exigida vs. Probabilidad de Incumplimiento (p)</h4>
+        <svg id="simChart" viewBox="0 0 740 280" role="img" aria-label="Gráfica dinámica de rentabilidad y tasa exigida frente a probabilidad de default"></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÓDULO 06 -->
+  <section class="modulo reveal" id="macro-islm">
+    <div class="modulo-head"><span class="modulo-num">06</span><h2>La Transmisión Macroeconómica: El Modelo IS-LM Ampliado</h2></div>
+    <div class="modulo-text">El paso decisivo de Blanchard (Capítulo 6, sección 6.4) consiste en incorporar el margen bancario <span class="mono">x</span> directamente en el equilibrio del mercado de bienes (curva IS).</div>
+
+    <div class="bloque">
+      <h3>La Curva IS con Fricciones Financieras</h3>
+      <div class="ecuacion">Y = C(Y − T) + I(Y, r + x) + G</div>
+      <p>A diferencia del IS-LM simple donde la inversión respondía a la tasa real de política <span class="mono">r</span>, ahora la inversión responde a la <strong>tasa de endeudamiento <span class="mono">r + x</span></strong>.</p>
+      <p>La curva LM permanece inalterada bajo la regla moderna de política monetaria, donde el Banco Central fija la tasa de interés real meta:</p>
+      <div class="ecuacion">r = r̄</div>
+    </div>
+
+    <div class="bloque">
+      <h3>¿Qué ocurre durante una Crisis Financiera?</h3>
+      <p>Cuando surge un choque crediticio (ejemplo: colapso en el valor de las hipotecas o insolvencia de prestatarios, <span class="mono">↑p</span>):</p>
+      <ul>
+        <li><strong>Erosión de capital bancario:</strong> Las pérdidas crediticias deterioran el capital <span class="mono">K</span> del sistema.</li>
+        <li><strong>Aumento del spread:</strong> Los bancos deben elevar la prima de riesgo <span class="mono">x</span> para sobrevivir y cubrir sus costos, como demuestra la curva de <span class="mono">i<sub>a</sub><sup>exigida</sup></span> de nuestro modelo.</li>
+        <li><strong>Desplazamiento contractivo de la IS:</strong> Aunque el Banco Central mantenga <span class="mono">r</span> constante (e incluso la reduzca a cero), el aumento drástico en <span class="mono">x</span> hace que el costo de endeudamiento <span class="mono">r + x</span> se dispare.</li>
+        <li><strong>Contracción del PIB:</strong> La inversión privada se paraliza, la curva IS se desplaza fuertemente hacia la izquierda y la economía entra en una recesión severa.</p>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div>
+    <span class="badge">Fuente</span>Blanchard, Olivier (2023), <em>Macroeconomics</em>, 9ª ed., Pearson — Cap. 6 (pp. 119–140) · Cátedra Macro II ESEN (Prof. Luis Morera)
+  </div>
+  <p>Modelo analítico computacional desarrollado sobre la base de <span class="mono">estima margen financiero.xlsx</span>.</p>
+</footer>
+
+<script>
+// ---------- Lógica de cálculo interactivo y dibujo del gráfico ----------
+const slIa = document.getElementById('sl-ia');
+const slIp = document.getElementById('sl-ip');
+const slRl = document.getElementById('sl-rl');
+const slP = document.getElementById('sl-p');
+const slD = document.getElementById('sl-d');
+const slK = document.getElementById('sl-k');
+
+const valIa = document.getElementById('val-ia');
+const valIp = document.getElementById('val-ip');
+const valRl = document.getElementById('val-rl');
+const valP = document.getElementById('val-p');
+const valD = document.getElementById('val-d');
+const valK = document.getElementById('val-k');
+
+const resMi = document.getElementById('res-mi');
+const resRoe = document.getElementById('res-roe');
+const resIaExig = document.getElementById('res-ia-exig');
+const resLev = document.getElementById('res-lev');
+const resLevSub = document.getElementById('res-lev-sub');
+const resSpread = document.getElementById('res-spread');
+const simChart = document.getElementById('simChart');
+
+function recalcular(){
+  const ia = parseFloat(slIa.value) / 100;
+  const ip = parseFloat(slIp.value) / 100;
+  const rl = parseFloat(slRl.value) / 100;
+  const p = parseFloat(slP.value) / 100;
+  const D = parseFloat(slD.value);
+  const K = parseFloat(slK.value);
+
+  valIa.textContent = (ia * 100).toFixed(1) + '%';
+  valIp.textContent = (ip * 100).toFixed(1) + '%';
+  valRl.textContent = (rl * 100).toFixed(1) + '%';
+  valP.textContent = (p * 100).toFixed(1) + '%';
+  valD.textContent = '$' + D.toFixed(0);
+  valK.textContent = '$' + K.toFixed(0);
+
+  // Ecuación 1: Margen de intermediación
+  // MI = D * [ ia * (1 - rl) * (1 - p) - ip ]
+  const MI = D * (ia * (1 - rl) * (1 - p) - ip);
+  
+  // Ecuación 2: ROE
+  const ROE = (MI / K) * 100;
+
+  // Ecuación 3: ia exigida para mantener ROE meta en 10% (MI* = 0.10 * K)
+  const MI_target = 0.10 * K;
+  const denom = (1 - rl) * (1 - p);
+  const ia_exig = denom > 0.001 ? (((MI_target / D) + ip) / denom) * 100 : 99.9;
+
+  // Apalancamiento
+  const lev = D / K;
+  const levTotal = (D + K) / K;
+
+  // Spread
+  const spread = (ia - ip) * 100;
+
+  resMi.textContent = '$' + MI.toFixed(2);
+  resMi.className = 'kpi-num ' + (MI >= 0 ? 'destacado' : 'alerta');
+
+  resRoe.textContent = ROE.toFixed(2) + '%';
+  resRoe.className = 'kpi-num ' + (ROE >= 8 ? 'destacado' : (ROE >= 0 ? 'alerta' : 'alerta'));
+
+  resIaExig.textContent = ia_exig.toFixed(2) + '%';
+  resLev.textContent = lev.toFixed(2) + 'x';
+  resLevSub.textContent = 'Activo/K = ' + levTotal.toFixed(2) + 'x';
+  resSpread.textContent = spread.toFixed(2) + '%';
+
+  dibujarGrafico(ia, ip, rl, p, D, K);
+}
+
+function dibujarGrafico(currIa, ip, rl, currP, D, K){
+  const w = 740, h = 280;
+  const padL = 60, padR = 40, padT = 30, padB = 40;
+  const plotW = w - padL - padR;
+  const plotH = h - padT - padB;
+
+  // Dominio p de 0 a 0.50
+  const maxP = 0.50;
+  const maxRoeAxis = 15; // de -5% a 15%
+  const minRoeAxis = -5;
+  const maxIaAxis = 16;  // de 0% a 16%
+
+  function xCoord(pVal){ return padL + (pVal / maxP) * plotW; }
+  function yRoeCoord(roeVal){ 
+    const norm = (roeVal - minRoeAxis) / (maxRoeAxis - minRoeAxis);
+    return padT + (1 - norm) * plotH;
+  }
+  function yIaCoord(iaVal){
+    const norm = iaVal / maxIaAxis;
+    return padT + (1 - norm) * plotH;
+  }
+
+  // Generar puntos para ROE(p) con ia actual
+  let pathRoe = '';
+  let pathIa = '';
+  const steps = 50;
+  for(let i = 0; i <= steps; i++){
+    const pStep = (i / steps) * maxP;
+    const miStep = D * (currIa * (1 - rl) * (1 - pStep) - ip);
+    const roeStep = (miStep / K) * 100;
+    
+    // ia exigida para mantener ROE meta en 10%
+    const dNom = (1 - rl) * (1 - pStep);
+    const iaExStep = dNom > 0.005 ? (((0.10 * K / D) + ip) / dNom) * 100 : 20;
+
+    const x = xCoord(pStep);
+    const yRoe = yRoeCoord(roeStep);
+    const yIa = yIaCoord(iaExStep);
+
+    pathRoe += (i === 0 ? 'M' : 'L') + x.toFixed(1) + ' ' + yRoe.toFixed(1);
+    pathIa += (i === 0 ? 'M' : 'L') + x.toFixed(1) + ' ' + yIa.toFixed(1);
+  }
+
+  // Punto actual
+  const curX = xCoord(currP);
+  const curMi = D * (currIa * (1 - rl) * (1 - currP) - ip);
+  const curRoe = (curMi / K) * 100;
+  const curYRoe = yRoeCoord(curRoe);
+
+  const curDNom = (1 - rl) * (1 - currP);
+  const curIaEx = curDNom > 0.005 ? (((0.10 * K / D) + ip) / curDNom) * 100 : 20;
+  const curYIa = yIaCoord(curIaEx);
+
+  const svgContent = `
+    <!-- Ejes y retícula -->
+    <rect width="${w}" height="${h}" fill="#080C1C" rx="8"/>
+    <line x1="${padL}" y1="${padT}" x2="${padL}" y2="${h - padB}" stroke="#2A324A" stroke-width="1.2"/>
+    <line x1="${padL}" y1="${yRoeCoord(0)}" x2="${w - padR}" y2="${yRoeCoord(0)}" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 4" opacity="0.6"/>
+    <line x1="${padL}" y1="${h - padB}" x2="${w - padR}" y2="${h - padB}" stroke="#2A324A" stroke-width="1.2"/>
+
+    <!-- Ticks X (p) -->
+    <text x="${xCoord(0)}" y="${h - 18}" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#A3AABE">0%</text>
+    <text x="${xCoord(0.10)}" y="${h - 18}" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#A3AABE">10%</text>
+    <text x="${xCoord(0.20)}" y="${h - 18}" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#A3AABE">20%</text>
+    <text x="${xCoord(0.30)}" y="${h - 18}" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#A3AABE">30%</text>
+    <text x="${xCoord(0.40)}" y="${h - 18}" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#A3AABE">40%</text>
+    <text x="${xCoord(0.50)}" y="${h - 18}" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#A3AABE">50%</text>
+    <text x="${padL + plotW / 2}" y="${h - 4}" text-anchor="middle" font-family="Inter" font-size="11" font-weight="600" fill="#EFF2F9">Probabilidad de Incumplimiento (p)</text>
+
+    <!-- Ticks Y Izquierda (ROE) -->
+    <text x="${padL - 10}" y="${yRoeCoord(10) + 4}" text-anchor="end" font-family="JetBrains Mono" font-size="10" fill="#55C975">10%</text>
+    <text x="${padL - 10}" y="${yRoeCoord(5) + 4}" text-anchor="end" font-family="JetBrains Mono" font-size="10" fill="#A3AABE">5%</text>
+    <text x="${padL - 10}" y="${yRoeCoord(0) + 4}" text-anchor="end" font-family="JetBrains Mono" font-size="10" fill="#EFF2F9">0%</text>
+    <text x="${padL - 10}" y="${yRoeCoord(-5) + 4}" text-anchor="end" font-family="JetBrains Mono" font-size="10" fill="#FB5668">-5%</text>
+
+    <!-- Curva 1: ROE(p) -->
+    <path d="${pathRoe}" fill="none" stroke="#55C975" stroke-width="2.6" stroke-linecap="round"/>
+
+    <!-- Curva 2: ia exigida(p) -->
+    <path d="${pathIa}" fill="none" stroke="#FF6F4A" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="6 4"/>
+
+    <!-- Línea guía punto actual -->
+    <line x1="${curX}" y1="${padT}" x2="${curX}" y2="${h - padB}" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="3 3"/>
+
+    <!-- Nodos del punto actual -->
+    <circle cx="${curX}" cy="${curYRoe}" r="6" fill="#10172D" stroke="#55C975" stroke-width="2.5"/>
+    <circle cx="${curX}" cy="${curYRoe}" r="2" fill="#55C975"/>
+
+    <circle cx="${curX}" cy="${curYIa}" r="6" fill="#10172D" stroke="#FF6F4A" stroke-width="2.5"/>
+    <circle cx="${curX}" cy="${curYIa}" r="2" fill="#FF6F4A"/>
+
+    <!-- Leyenda superior -->
+    <g transform="translate(180, 16)">
+      <circle cx="0" cy="0" r="5" fill="#55C975"/>
+      <text x="10" y="4" font-family="Inter" font-size="10.5" font-weight="600" fill="#55C975">ROE actual: ${curRoe.toFixed(1)}%</text>
+      <circle cx="180" cy="0" r="5" fill="#FF6F4A"/>
+      <text x="190" y="4" font-family="Inter" font-size="10.5" font-weight="600" fill="#FF6F4A">i_a exigida: ${curIaEx.toFixed(1)}%</text>
+    </g>
+  `;
+  simChart.innerHTML = svgContent;
+}
+
+[slIa, slIp, slRl, slP, slD, slK].forEach(sl => {
+  sl.addEventListener('input', recalcular);
+});
+
+recalcular();
+
+// Scroll reveal
+if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  const targets = document.querySelectorAll('.reveal');
+  targets.forEach(el => el.classList.add('reveal-play'));
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('reveal-in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.12});
+  targets.forEach(el => io.observe(el));
+}
+</script>
+
+</body>
+</html>

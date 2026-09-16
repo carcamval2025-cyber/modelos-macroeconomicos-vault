@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 320" role="img" aria-label="Banner panorámico del Tema 3: IS-LM ampliado y transmisión del margen financiero bancario">
+  <title>Tema 3: IS-LM Ampliado — Mercados Financieros e Intermediación Bancaria</title>
+  <desc>Composición panorámica técnica que ilustra el circuito macro-financiero de Blanchard Cap. 6: desde la tasa de política monetaria fijada por el Banco Central, pasando por el balance del intermediario bancario (reservas, depósitos y apalancamiento) hasta el costo de financiamiento real (r + x) de la inversión agregada.</desc>
+  <rect width="1600" height="320" fill="#080C1C"/>
+  <path d="M0 40H1600M0 280H1600" fill="none" stroke="#2A324A" stroke-width="1.2" opacity=".4"/>
+  <path d="M200 30V290M400 30V290M600 30V290M800 30V290M1000 30V290M1200 30V290M1400 30V290" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="3 6" opacity=".25"/>
+  <path d="M100 36V44M300 36V44M500 36V44M700 36V44M900 36V44M1100 36V44M1300 36V44M1500 36V44" fill="none" stroke="#A3AABE" stroke-width="1" opacity=".2"/>
+  <path d="M100 276V284M300 276V284M500 276V284M700 276V284M900 276V284M1100 276V284M1300 276V284M1500 276V284" fill="none" stroke="#A3AABE" stroke-width="1" opacity=".2"/>
+
+  <!-- Guías de flujo macro-financiero -->
+  <path d="M280 160C450 70 650 70 800 120" fill="none" stroke="#667FDA" stroke-width="2.5" stroke-dasharray="6 6" opacity=".4"/>
+  <path d="M800 120C950 170 1150 170 1320 160" fill="none" stroke="#FF6F4A" stroke-width="2.5" stroke-dasharray="6 6" opacity=".4"/>
+  <path d="M360 145C520 100 680 95 800 95S1080 100 1240 145" fill="none" stroke="#FFB188" stroke-width="2.8" stroke-linecap="round" opacity=".85"/>
+  <path d="M1230 138L1240 145L1228 151" fill="none" stroke="#FFB188" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Polo 1: Banco Central (Tasa de Política Monetaria) -->
+  <g transform="translate(260, 160)">
+    <circle cx="0" cy="0" r="76" fill="#10172D" stroke="#2A324A" stroke-width="1.5" opacity=".5"/>
+    <circle cx="0" cy="0" r="58" fill="#080C1C" stroke="#667FDA" stroke-width="2.2" opacity=".85"/>
+    <circle cx="0" cy="0" r="42" fill="#10172D" stroke="#667FDA" stroke-width="1.2" stroke-dasharray="4 4" opacity=".9"/>
+    <circle cx="0" cy="0" r="14" fill="#080C1C" stroke="#EFF2F9" stroke-width="2.8"/>
+    <circle cx="0" cy="0" r="6" fill="#667FDA"/>
+    <rect x="-95" y="-112" width="190" height="24" rx="5" fill="#10172D" stroke="#667FDA" stroke-width="1"/>
+    <text x="0" y="-96" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EFF2F9" letter-spacing="0.06em">BANCO CENTRAL</text>
+    <rect x="-85" y="76" width="80" height="22" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="-45" y="91" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#667FDA">i (Nominal)</text>
+    <rect x="5" y="76" width="80" height="22" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="45" y="91" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#EFF2F9">r ≈ i − π<tspan font-size="8" dy="-2">e</tspan></text>
+  </g>
+
+  <!-- Polo Central: Intermediario Financiero (Bancos) -->
+  <g transform="translate(800, 160)">
+    <rect x="-175" y="-85" width="350" height="170" rx="12" fill="#080C1C" stroke="#FF6F4A" stroke-width="2"/>
+    <rect x="-160" y="-72" width="320" height="26" rx="5" fill="#1B223C" stroke="#FF6F4A" stroke-width="1"/>
+    <text x="0" y="-55" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EFF2F9">INTERMEDIARIO FINANCIERO (BANCO)</text>
+
+    <!-- Fila Balance -->
+    <g transform="translate(-160, -32)">
+      <rect width="155" height="42" rx="5" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+      <text x="10" y="18" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Activos (1,000):</text>
+      <text x="10" y="34" font-family="JetBrains Mono, monospace" font-size="11" fill="#55C975">Préstamos + RL (rl=10%)</text>
+
+      <rect x="165" width="155" height="42" rx="5" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+      <text x="175" y="18" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Pasivo + K (1,000):</text>
+      <text x="175" y="34" font-family="JetBrains Mono, monospace" font-size="11" fill="#EFF2F9">D=800 | Capital=200</text>
+    </g>
+
+    <!-- Caja Ecuación Margen -->
+    <g transform="translate(-160, 20)">
+      <rect width="320" height="52" rx="6" fill="#10172D" stroke="#FF6F4A" stroke-width="1.2"/>
+      <text x="160" y="20" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12.5" font-weight="700" fill="#FFB188">MI = D · [i<tspan font-size="9" dy="2">a</tspan><tspan font-size="12.5" dy="-2">(1−rl)(1−p) − i</tspan><tspan font-size="9" dy="2">p</tspan><tspan font-size="12.5" dy="-2">]</tspan></text>
+      <text x="160" y="39" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#EFF2F9">Apalancamiento = 4 | ROE = 10% base | Sube x con p</text>
+    </g>
+  </g>
+
+  <!-- Polo 3: Economía Real (Inversión y Producción IS) -->
+  <g transform="translate(1340, 160)">
+    <circle cx="0" cy="0" r="76" fill="#10172D" stroke="#2A324A" stroke-width="1.5" opacity=".5"/>
+    <circle cx="0" cy="0" r="58" fill="#080C1C" stroke="#FF6F4A" stroke-width="2.2" opacity=".85"/>
+    <circle cx="0" cy="0" r="42" fill="#10172D" stroke="#FF6F4A" stroke-width="1.2" stroke-dasharray="4 4" opacity=".9"/>
+    <circle cx="0" cy="0" r="14" fill="#080C1C" stroke="#EFF2F9" stroke-width="2.8"/>
+    <circle cx="0" cy="0" r="6" fill="#FF6F4A"/>
+    <rect x="-95" y="-112" width="190" height="24" rx="5" fill="#10172D" stroke="#FF6F4A" stroke-width="1"/>
+    <text x="0" y="-96" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EFF2F9" letter-spacing="0.06em">ECONOMÍA REAL (IS)</text>
+    <rect x="-85" y="76" width="80" height="22" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="-45" y="91" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#FFB188">r + x (Préstamo)</text>
+    <rect x="5" y="76" width="80" height="22" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="45" y="91" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#EFF2F9">I(Y, r + x)</text>
+  </g>
+
+  <text x="40" y="298" font-family="JetBrains Mono, monospace" font-size="10" fill="#A3AABE" opacity=".6">ESEN · MACRO II · BLANCHARD CAP. 6</text>
+  <text x="1560" y="298" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="10" fill="#A3AABE" opacity=".6">MODELO ESTIMA MARGEN FINANCIERO · TRANSMISIÓN BANCARIA</text>
+</svg>

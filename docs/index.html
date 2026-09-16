@@ -317,7 +317,7 @@ footer{
 const TEMAS = [
   {n:1, nombre:'Repaso de Macro I', capitulo:'Cap. 4 (secc. 4.3+)', semana:'Semana 1', disponible:true, href:'tema-01/'},
   {n:2, nombre:'Modelo IS-LM', capitulo:'Cap. 5', semana:'Semana 2', disponible:true, href:'tema-02/'},
-  {n:3, nombre:'Impuesto/Política fiscal y monetaria', capitulo:'Cap. 6', semana:'Semana 3', disponible:false, href:'tema-03/'},
+  {n:3, nombre:'IS-LM + Temas Financieros', capitulo:'Cap. 6', semana:'Semana 3', disponible:true, href:'tema-03/'},
   {n:4, nombre:'IS-LM + Apertura Comercial/Financiera', capitulo:'Cap. 17 (partes seleccionadas)', semana:'Semana 4', disponible:true, href:'tema-04/'},
   {n:5, nombre:'Mercado Laboral', capitulo:'Caps. 7–8', semana:'Semanas 7–8', disponible:false, href:'tema-05/'},
   {n:6, nombre:'Oferta Agregada y Demanda Agregada', capitulo:'Cap. 9', semana:'Semanas 9–10', disponible:false, href:'tema-06/'},
@@ -351,6 +351,9 @@ TEMAS.forEach((t)=>{
 const HERRAMIENTAS = [
   {tema:'Tema 2', nombre:'Simulador de choques IS-LM', descripcion:'Elige un choque fiscal, monetario o exógeno, predice el efecto en 11 variables y verifica contra el gráfico.', href:'tema-02/simulador-islm.html'},
   {tema:'Tema 2', nombre:'Simulacro — Control 1', descripcion:'10 preguntas con cronómetro de 25 min, al estilo del Control (no es el Control real).', href:'tema-02/simulacro-control1.html'},
+  {tema:'Tema 3', nombre:'Simulador de Margen Financiero y Apalancamiento', descripcion:'Modelo computacional interactivo del balance bancario: calcula MI, ROE, apalancamiento y trayectoria de tasa activa exigida frente a riesgo de mora y encaje.', href:'tema-03/#simulador'},
+  {tema:'Tema 4', nombre:'Actividad — Práctica de apertura comercial y financiera', descripcion:'Autoevaluación interactiva de 14 ítems con retroalimentación inmediata sobre tipo de cambio real, paridad UIP y balanza de pagos.', href:'tema-04/actividad-tema4-apertura.html'},
+  {tema:'Tema 4', nombre:'Repaso integrador — Control 2', descripcion:'Repaso mixto con preguntas de Verdadero/Falso justificadas, 3 problemas numéricos guiados y comparadores vectoriales de retornos esperados.', href:'tema-04/repaso-control2-tema4-apertura.html'},
 ];
 
 const gridH = document.getElementById('herramientasNichos');

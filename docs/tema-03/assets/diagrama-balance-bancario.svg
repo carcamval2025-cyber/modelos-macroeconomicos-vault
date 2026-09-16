@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 370" role="img" aria-label="Estructura del balance bancario, apalancamiento y margen de intermediación financiera">
+  <title>Balance Bancario y Margen de Intermediación (Modelo de Estimación)</title>
+  <desc>Desglose del balance del intermediario financiero de Blanchard Cap. 6 con los datos exactos del modelo: depósitos de 800, patrimonio de 200, encaje del 10% y tasa activa del 5% frente a pasiva del 2%, derivando el margen de intermediación de 20 y ROE del 10%.</desc>
+
+  <rect width="820" height="370" rx="14" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+  <path d="M40 45H780M40 325H780" fill="none" stroke="#2A324A" stroke-width="0.8" stroke-dasharray="4 6" opacity=".4"/>
+  <line x1="410" y1="35" x2="410" y2="295" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 6" opacity=".3"/>
+
+  <!-- Columna Izquierda: Activo del Banco (Usos de Fondos) -->
+  <g transform="translate(40, 45)">
+    <rect width="350" height="245" rx="10" fill="#080C1C" stroke="#667FDA" stroke-width="1.8"/>
+    <rect x="15" y="-12" width="180" height="24" rx="5" fill="#1B223C" stroke="#667FDA" stroke-width="1.2"/>
+    <text x="105" y="4" text-anchor="middle" font-family="Inter, sans-serif" font-size="11.5" font-weight="700" fill="#EFF2F9">ACTIVO (TOTAL: $1,000)</text>
+    <text x="18" y="28" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Asignación y colocación de recursos</text>
+
+    <!-- Fila 1: Reserva de Liquidez (rl = 10%) -->
+    <g transform="translate(18, 42)">
+      <rect width="314" height="42" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+      <text x="12" y="19" font-family="Inter, sans-serif" font-size="10" fill="#EFF2F9">Reserva de Liquidez / Encaje (rl = 10%):</text>
+      <text x="12" y="34" font-family="Inter, sans-serif" font-size="9" fill="#A3AABE">rl · D = 10% × 800 (Fondo inmovilizado)</text>
+      <text x="300" y="26" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="#667FDA">$80</text>
+    </g>
+
+    <!-- Fila 2: Cartera de Préstamos (1 - rl) · D = 90% -->
+    <g transform="translate(18, 92)">
+      <rect width="314" height="48" rx="6" fill="#10172D" stroke="#55C975" stroke-width="1"/>
+      <text x="12" y="19" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#EFF2F9">Cartera de Crédito Prestada (90%):</text>
+      <text x="12" y="36" font-family="Inter, sans-serif" font-size="9" fill="#55C975">Rinde tasa activa i<tspan font-size="7" dy="2">a</tspan><tspan font-size="9" dy="-2"> = 5.0%</tspan></text>
+      <text x="300" y="31" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="#55C975">$720</text>
+    </g>
+
+    <!-- Fila 3: Préstamos con Capital Propio (Patrimonio) -->
+    <g transform="translate(18, 148)">
+      <rect width="314" height="38" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+      <text x="12" y="18" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Financiado con Capital Propio:</text>
+      <text x="12" y="31" font-family="Inter, sans-serif" font-size="9" fill="#A3AABE">Colocaciones adicionales</text>
+      <text x="300" y="24" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#EFF2F9">$200</text>
+    </g>
+
+    <g transform="translate(18, 196)">
+      <rect width="314" height="34" rx="6" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
+      <text x="12" y="21" font-family="Inter, sans-serif" font-size="9.5" fill="#A3AABE">Ingreso por intereses brutos:</text>
+      <text x="300" y="22" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#55C975">720 × 5% = $36.0</text>
+    </g>
+  </g>
+
+  <!-- Columna Derecha: Pasivo y Patrimonio (Fuentes de Fondos) -->
+  <g transform="translate(430, 45)">
+    <rect width="350" height="245" rx="10" fill="#080C1C" stroke="#FF6F4A" stroke-width="1.8"/>
+    <rect x="15" y="-12" width="220" height="24" rx="5" fill="#1B223C" stroke="#FF6F4A" stroke-width="1.2"/>
+    <text x="125" y="4" text-anchor="middle" font-family="Inter, sans-serif" font-size="11.5" font-weight="700" fill="#EFF2F9">PASIVO + CAPITAL ($1,000)</text>
+    <text x="18" y="28" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Estructura de fondeo y apalancamiento</text>
+
+    <!-- Fila 1: Depósitos de Clientes (D = 800) -->
+    <g transform="translate(18, 42)">
+      <rect width="314" height="42" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+      <text x="12" y="19" font-family="Inter, sans-serif" font-size="10" fill="#EFF2F9">Depósitos Captados (D = 800):</text>
+      <text x="12" y="34" font-family="Inter, sans-serif" font-size="9" fill="#FB5668">Costo: tasa pasiva i<tspan font-size="7" dy="2">p</tspan><tspan font-size="9" dy="-2"> = 2.0% (Intereses = $16.0)</tspan></text>
+      <text x="300" y="26" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="#EFF2F9">$800</text>
+    </g>
+
+    <!-- Fila 2: Capital Propio / Patrimonio (K = 200) -->
+    <g transform="translate(18, 92)">
+      <rect width="314" height="48" rx="6" fill="#10172D" stroke="#FF6F4A" stroke-width="1"/>
+      <text x="12" y="19" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#EFF2F9">Patrimonio Neto / Capital (K):</text>
+      <text x="12" y="36" font-family="Inter, sans-serif" font-size="9" fill="#FFB188">Apalancamiento: D / K = 800 / 200 = 4</text>
+      <text x="300" y="31" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="#FF6F4A">$200</text>
+    </g>
+
+    <!-- Fila 3: Margen de Intermediación (MI) -->
+    <g transform="translate(18, 148)">
+      <rect width="314" height="82" rx="7" fill="#10172D" stroke="#FF6F4A" stroke-width="1.4"/>
+      <text x="12" y="20" font-family="Inter, sans-serif" font-size="10.5" font-weight="700" fill="#EFF2F9">MARGEN DE INTERMEDIACIÓN (MI):</text>
+      <text x="12" y="38" font-family="JetBrains Mono, monospace" font-size="10" fill="#A3AABE">MI = Ingresos ($36) − Costos ($16) =</text>
+      <text x="235" y="38" font-family="JetBrains Mono, monospace" font-size="16" font-weight="700" fill="#55C975">$20.0</text>
+      <text x="12" y="58" font-family="Inter, sans-serif" font-size="9.5" font-weight="600" fill="#FFB188">Retorno sobre Patrimonio (ROE):</text>
+      <text x="12" y="72" font-family="JetBrains Mono, monospace" font-size="12" fill="#EFF2F9">ROE = MI / K = 20 / 200 = <tspan font-weight="700" fill="#55C975">10.0%</tspan></text>
+    </g>
+  </g>
+
+  <!-- Franja Inferior: Ecuación General del Margen -->
+  <g transform="translate(40, 305)">
+    <rect width="740" height="45" rx="7" fill="#080C1C" stroke="#2A324A" stroke-width="1"/>
+    <text x="15" y="27" font-family="Inter, sans-serif" font-size="10.5" font-weight="700" fill="#FFB188">FÓRMULA MAESTRA (EXCEL):</text>
+    <text x="195" y="27" font-family="JetBrains Mono, monospace" font-size="11.5" fill="#EFF2F9">MI = D · [i<tspan font-size="8" dy="2">a</tspan><tspan font-size="11.5" dy="-2">·(1 − rl)·(1 − p) − i</tspan><tspan font-size="8" dy="2">p</tspan><tspan font-size="11.5" dy="-2">]   ⇒   i</tspan><tspan font-size="8" dy="2">a</tspan><tspan font-size="8" dy="-4">exigida</tspan><tspan font-size="11.5" dy="2">(p) = [MI*/D + i</tspan><tspan font-size="8" dy="2">p</tspan><tspan font-size="11.5" dy="-2">] / [(1 − rl)(1 − p)]</tspan></text>
+  </g>
+</svg>
