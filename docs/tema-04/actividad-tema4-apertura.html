@@ -116,6 +116,11 @@ main{max-width:820px; margin:0 auto; padding:64px 24px 100px;}
 .aviso-tag{ font-family:'JetBrains Mono',monospace; font-size:0.7rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--coral); font-weight:600; margin-bottom:10px; display:block; }
 .aviso p{font-size:0.94rem; color:var(--text);}
 
+
+figure{margin:18px 0 14px;}
+.diagrama{background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:12px; overflow:hidden;}
+.diagrama svg{width:100%; height:auto; display:block;}
+figcaption{font-size:0.78rem; color:var(--text-dim); margin-top:8px; line-height:1.45; font-family:'JetBrains Mono',monospace;}
 .badge{ display:inline-block; background:var(--bg-elev2); color:var(--text-dim); font-family:'JetBrains Mono',monospace; font-size:0.7rem; font-weight:600; padding:3px 10px; border-radius:999px; letter-spacing:0.03em; text-transform:uppercase; margin-right:6px; }
 
 footer{ border-top:1px solid var(--border); padding:32px 24px; text-align:center; font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--text-dim); }
@@ -171,7 +176,91 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
     <div class="modulo-head"><span class="modulo-num">01</span><h2>Clasificación: movimientos del tipo de cambio</h2></div>
     <div class="modulo-text">Para cada escenario, identifica si describe una apreciación real, depreciación real, o un movimiento puramente nominal (secc. 17-1, ε = EP/P*).</div>
 
-    <div class="item" data-resuelto="false">
+        <figure>
+      <div class="diagrama">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 370" role="img" aria-label="Diagrama conceptual de la dinámica y determinantes del tipo de cambio real: canal nominal, canal inflación y política comercial">
+  <title>Dinámica y Determinantes del Tipo de Cambio Real</title>
+  <desc>Descomposición analítica de la fórmula ε = EP/P* mostrando los tres canales de transmisión: variación nominal del tipo de cambio, diferencial inflacionario relativo y restricciones comerciales directas como cuotas y aranceles.</desc>
+
+  <rect width="820" height="370" rx="14" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+  <path d="M40 45H780M40 325H780" fill="none" stroke="#2A324A" stroke-width="0.8" stroke-dasharray="4 6" opacity=".4"/>
+
+  <!-- Encabezado superior / Ecuación maestra -->
+  <g transform="translate(40, 24)">
+    <rect width="740" height="46" rx="8" fill="#080C1C" stroke="#2A324A" stroke-width="1"/>
+    <text x="20" y="28" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EFF2F9">DETERMINANTES DE LA ECUACIÓN (17.1):</text>
+    <rect x="290" y="8" width="130" height="30" rx="6" fill="#1B223C" stroke="#667FDA" stroke-width="1.2"/>
+    <text x="355" y="28" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="14" font-weight="700" fill="#EFF2F9">ε = E · P / P*</text>
+    <text x="440" y="28" font-family="Inter, sans-serif" font-size="11" fill="#A3AABE">Precio relativo de los bienes domésticos frente a los extranjeros</text>
+  </g>
+
+  <!-- Tarjeta 1: Canal Nominal -->
+  <g transform="translate(40, 85)">
+    <rect width="234" height="236" rx="10" fill="#080C1C" stroke="#667FDA" stroke-width="1.5"/>
+    <rect x="14" y="14" width="115" height="22" rx="5" fill="#1B223C" stroke="#667FDA" stroke-width="1"/>
+    <text x="71" y="29" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#667FDA">CANAL NOMINAL</text>
+    <text x="14" y="58" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EFF2F9">Variación en E</text>
+    <text x="14" y="76" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Precios P y P* estables</text>
+
+    <!-- Caja de impacto -->
+    <rect x="14" y="92" width="206" height="52" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="24" y="114" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="#55C975">↑ E ⇒ ↑ ε</text>
+    <text x="24" y="132" font-family="Inter, sans-serif" font-size="10" fill="#EFF2F9">Apreciación real directa</text>
+
+    <text x="14" y="165" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Bienes domésticos son</text>
+    <text x="14" y="180" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">más caros para el foráneo.</text>
+
+    <rect x="14" y="196" width="206" height="26" rx="5" fill="#1B223C" stroke="#FB5668" stroke-width="0.8"/>
+    <text x="117" y="213" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" font-weight="600" fill="#FB5668">Erosión de competitividad</text>
+  </g>
+
+  <!-- Tarjeta 2: Canal Diferencial Inflacionario -->
+  <g transform="translate(293, 85)">
+    <rect width="234" height="236" rx="10" fill="#080C1C" stroke="#FF6F4A" stroke-width="1.5"/>
+    <rect x="14" y="14" width="135" height="22" rx="5" fill="#1B223C" stroke="#FF6F4A" stroke-width="1"/>
+    <text x="81" y="29" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#FF6F4A">CANAL INFLACIÓN</text>
+    <text x="14" y="58" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EFF2F9">Diferencial (π - π*)</text>
+    <text x="14" y="76" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Con tipo de cambio fijo (E constante)</text>
+
+    <!-- Caja de impacto -->
+    <rect x="14" y="92" width="206" height="52" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="24" y="114" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#FF6F4A">↑ P &gt; ↑ P* ⇒ ↑ ε</text>
+    <text x="24" y="132" font-family="Inter, sans-serif" font-size="10" fill="#EFF2F9">Sobrevaluación real</text>
+
+    <text x="14" y="165" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Pérdida de competitividad sin</text>
+    <text x="14" y="180" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">movimiento nominal alguno.</text>
+
+    <rect x="14" y="196" width="206" height="26" rx="5" fill="#1B223C" stroke="#FFB188" stroke-width="0.8"/>
+    <text x="117" y="213" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" font-weight="600" fill="#FFB188">Efecto clásico en ancla fija</text>
+  </g>
+
+  <!-- Tarjeta 3: Canal Comercial (Cuotas y Aranceles) -->
+  <g transform="translate(546, 85)">
+    <rect width="234" height="236" rx="10" fill="#080C1C" stroke="#55C975" stroke-width="1.5"/>
+    <rect x="14" y="14" width="135" height="22" rx="5" fill="#1B223C" stroke="#55C975" stroke-width="1"/>
+    <text x="81" y="29" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#55C975">MERCADO DE BIENES</text>
+    <text x="14" y="58" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EFF2F9">Cuotas y Aranceles</text>
+    <text x="14" y="76" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Restricción cuantitativa directa</text>
+
+    <!-- Caja de impacto -->
+    <rect x="14" y="92" width="206" height="52" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="24" y="114" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#55C975">Cuotas ⇒ ↓ IM</text>
+    <text x="24" y="132" font-family="Inter, sans-serif" font-size="10" fill="#EFF2F9">No altera fórmula de ε</text>
+
+    <text x="14" y="165" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Restringe apertura comercial,</text>
+    <text x="14" y="180" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">pero ε sigue siendo EP/P*.</text>
+
+    <rect x="14" y="196" width="206" height="26" rx="5" fill="#1B223C" stroke="#55C975" stroke-width="0.8"/>
+    <text x="117" y="213" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" font-weight="600" fill="#55C975">Barrera no arancelaria</text>
+  </g>
+
+  <!-- Pie explicativo -->
+  <text x="410" y="348" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" fill="#A3AABE">Blanchard Cap. 17: Diferenciar rigurosamente entre movimientos nominales (E), de precios relativos (P/P*) e intervenciones comerciales.</text>
+</svg>
+      </div>
+      <figcaption>Fig. propia — árbol de decisión y determinantes del tipo de cambio real (Blanchard, cap. 17). Canal nominal, diferencial de inflación y restricciones comerciales en el mercado de bienes.</figcaption>
+    </figure>
+<div class="item" data-resuelto="false">
       <span class="item-num">Ítem 1</span>
       <p class="item-enunciado">El tipo de cambio nominal E sube 10%, mientras que los precios domésticos (P) y extranjeros (P*) permanecen constantes.</p>
       <div class="opciones" role="radiogroup" aria-label="Opciones ítem 1">
@@ -212,7 +301,91 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
     <div class="modulo-head"><span class="modulo-num">02</span><h2>Paridad de tasas de interés</h2></div>
     <div class="modulo-text">Ejercicios numéricos con la versión aproximada de la ecuación (17.4): i ≈ i* − (E<sup>e</sup><sub>t+1</sub> − E<sub>t</sub>)/E<sub>t</sub>. Los valores son un ejemplo genérico de práctica (no corresponden a ninguna economía real).</div>
 
-    <div class="numerico" data-abierto="false">
+        <figure>
+      <div class="diagrama">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 370" role="img" aria-label="Regla de decisión de arbitraje de la Paridad Descubierta de Tasas de Interés">
+  <title>Regla de Decisión UIP: Relación entre Tasas y Expectativas Cambiarias</title>
+  <desc>Guía visual de arbitraje para la ecuación aproximada i ≈ i* − (Ee - E)/E, mostrando cómo la tasa doméstica se posiciona respecto a la extranjera según exista expectativa de depreciación, neutralidad o apreciación cambiaria.</desc>
+
+  <rect width="820" height="370" rx="14" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+  <path d="M40 45H780M40 325H780" fill="none" stroke="#2A324A" stroke-width="0.8" stroke-dasharray="4 6" opacity=".4"/>
+
+  <!-- Encabezado superior -->
+  <g transform="translate(40, 24)">
+    <rect width="740" height="46" rx="8" fill="#080C1C" stroke="#2A324A" stroke-width="1"/>
+    <text x="20" y="28" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EFF2F9">REGLA DE DECISIÓN UIP (ECUACIÓN 17.4):</text>
+    <rect x="310" y="8" width="165" height="30" rx="6" fill="#1B223C" stroke="#667FDA" stroke-width="1.2"/>
+    <text x="392" y="28" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="#EFF2F9">i ≈ i* − %ΔE<tspan font-size="9" dy="-3">e</tspan></text>
+    <text x="495" y="28" font-family="Inter, sans-serif" font-size="11" fill="#A3AABE">Arbitraje financiero internacional continuo</text>
+  </g>
+
+  <!-- Tarjeta 1: Depreciación esperada -->
+  <g transform="translate(40, 85)">
+    <rect width="234" height="236" rx="10" fill="#080C1C" stroke="#FF6F4A" stroke-width="1.5"/>
+    <rect x="14" y="14" width="115" height="22" rx="5" fill="#1B223C" stroke="#FF6F4A" stroke-width="1"/>
+    <text x="71" y="29" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#FF6F4A">EJERCICIO 1</text>
+    <text x="14" y="58" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EFF2F9">Depreciación esperada</text>
+    <text x="14" y="76" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Expectativa: %ΔE<tspan font-size="8" dy="-2">e</tspan><tspan font-size="10" dy="2"> &gt; 0</tspan></text>
+
+    <!-- Caja de impacto -->
+    <rect x="14" y="92" width="206" height="52" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="24" y="114" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="#FF6F4A">i &lt; i* (o i* &gt; i)</text>
+    <text x="24" y="132" font-family="Inter, sans-serif" font-size="10" fill="#EFF2F9">Tasa foránea compensa</text>
+
+    <text x="14" y="165" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">El bono extranjero debe pagar</text>
+    <text x="14" y="180" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">más para cubrir la depreciación.</text>
+
+    <rect x="14" y="196" width="206" height="26" rx="5" fill="#1B223C" stroke="#FF6F4A" stroke-width="0.8"/>
+    <text x="117" y="213" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" font-weight="600" fill="#FFB188">Premio cambiario foráneo</text>
+  </g>
+
+  <!-- Tarjeta 2: Neutralidad cambiaria -->
+  <g transform="translate(293, 85)">
+    <rect width="234" height="236" rx="10" fill="#080C1C" stroke="#667FDA" stroke-width="1.5"/>
+    <rect x="14" y="14" width="125" height="22" rx="5" fill="#1B223C" stroke="#667FDA" stroke-width="1"/>
+    <text x="76" y="29" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#667FDA">TIPO CAMBIO FIJO</text>
+    <text x="14" y="58" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EFF2F9">Neutralidad esperada</text>
+    <text x="14" y="76" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Expectativa: %ΔE<tspan font-size="8" dy="-2">e</tspan><tspan font-size="10" dy="2"> = 0</tspan></text>
+
+    <!-- Caja de impacto -->
+    <rect x="14" y="92" width="206" height="52" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="24" y="114" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="#667FDA">i ≈ i*</text>
+    <text x="24" y="132" font-family="Inter, sans-serif" font-size="10" fill="#EFF2F9">Igualdad absoluta de tasas</text>
+
+    <text x="14" y="165" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Sin riesgo cambiario esperado,</text>
+    <text x="14" y="180" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">las tasas convergen al 100%.</text>
+
+    <rect x="14" y="196" width="206" height="26" rx="5" fill="#1B223C" stroke="#667FDA" stroke-width="0.8"/>
+    <text x="117" y="213" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" font-weight="600" fill="#667FDA">Equilibrio sin diferencial</text>
+  </g>
+
+  <!-- Tarjeta 3: Apreciación esperada -->
+  <g transform="translate(546, 85)">
+    <rect width="234" height="236" rx="10" fill="#080C1C" stroke="#55C975" stroke-width="1.5"/>
+    <rect x="14" y="14" width="115" height="22" rx="5" fill="#1B223C" stroke="#55C975" stroke-width="1"/>
+    <text x="71" y="29" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#55C975">EJERCICIO 2</text>
+    <text x="14" y="58" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EFF2F9">Apreciación esperada</text>
+    <text x="14" y="76" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Expectativa: %ΔE<tspan font-size="8" dy="-2">e</tspan><tspan font-size="10" dy="2"> &lt; 0</tspan></text>
+
+    <!-- Caja de impacto -->
+    <rect x="14" y="92" width="206" height="52" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="24" y="114" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="#55C975">i &gt; i*</text>
+    <text x="24" y="132" font-family="Inter, sans-serif" font-size="10" fill="#EFF2F9">Tasa doméstica superior</text>
+
+    <text x="14" y="165" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Bono doméstico debe pagar más</text>
+    <text x="14" y="180" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">para retener al inversionista.</text>
+
+    <rect x="14" y="196" width="206" height="26" rx="5" fill="#1B223C" stroke="#55C975" stroke-width="0.8"/>
+    <text x="117" y="213" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" font-weight="600" fill="#55C975">Defensa de activos locales</text>
+  </g>
+
+  <!-- Pie explicativo -->
+  <text x="410" y="348" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" fill="#A3AABE">Alerta de signo: En i ≈ i* − %ΔEe, restar una apreciación negativa equivale a sumar: i ≈ i* − (−x%) = i* + x%.</text>
+</svg>
+      </div>
+      <figcaption>Fig. propia — regla de arbitraje y balanza de decisión UIP (Blanchard, secc. 17-2). Relación entre tasa doméstica y tasa extranjera según expectativas de depreciación, neutralidad o apreciación.</figcaption>
+    </figure>
+<div class="numerico" data-abierto="false">
       <span class="item-num">Ejercicio 1 — resuelto como ejemplo</span>
       <p class="item-enunciado">Un país extranjero tiene tasa de interés i* = 6%. El tipo de cambio actual es E<sub>t</sub> = 10.0 y se espera que en un año sea E<sup>e</sup><sub>t+1</sub> = 10.3 (depreciación esperada de la moneda doméstica). ¿Cuál debe ser la tasa doméstica i, según la paridad de tasas de interés?</p>
       <div class="datos">

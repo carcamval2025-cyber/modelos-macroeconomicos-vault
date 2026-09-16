@@ -1,97 +1,96 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 310" role="img" aria-label="Comparador visual de retornos esperados para el Problema 2: arbitraje entre bono doméstico y bono extranjero">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" role="img" aria-label="Comparador visual de retornos esperados para el Problema 2: arbitraje entre bono doméstico y bono extranjero">
   <title>Problema 2: Arbitraje y Paridad de Tasas de Interés</title>
-  <desc>Comparación visual de retornos esperados que demuestra por qué la tasa extranjera i* debe ser 16% cuando la tasa doméstica es 8% y se espera una depreciación del 8%, logrando la igualdad de rendimientos netos esperados.</desc>
+  <desc>Comparación visual de retornos esperados con espaciado amplio que demuestra por qué la tasa extranjera i* debe ser 16% cuando la tasa doméstica es 8% y se espera una depreciación del 8%, logrando la igualdad exacta de rendimientos netos esperados.</desc>
 
   <!-- Contenedor base -->
-  <rect width="740" height="310" rx="12" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+  <rect width="800" height="350" rx="12" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
 
   <!-- Trama reticular sutil -->
-  <path d="M40 45H700M40 265H700" fill="none" stroke="#2A324A" stroke-width="0.8" stroke-dasharray="4 6" opacity=".4"/>
-  <line x1="315" y1="35" x2="315" y2="265" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 6" opacity=".3"/>
+  <path d="M40 45H760M40 295H760" fill="none" stroke="#2A324A" stroke-width="0.8" stroke-dasharray="4 6" opacity=".4"/>
+  <line x1="330" y1="35" x2="330" y2="295" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 6" opacity=".25"/>
 
   <!-- ==================== COLUMNA IZQUIERDA: BONO DOMÉSTICO ==================== -->
   <g transform="translate(40, 40)">
     <!-- Marco de la tarjeta -->
-    <rect width="250" height="215" rx="9" fill="#080C1C" stroke="#FF6F4A" stroke-width="1.8"/>
+    <rect width="260" height="240" rx="10" fill="#080C1C" stroke="#FF6F4A" stroke-width="1.8"/>
 
     <!-- Cabecera -->
-    <rect x="15" y="-12" width="160" height="24" rx="5" fill="#1B223C" stroke="#FF6F4A" stroke-width="1.2"/>
-    <text x="95" y="4" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#EFF2F9">BONO DOMÉSTICO (X)</text>
+    <rect x="15" y="-12" width="170" height="24" rx="5" fill="#1B223C" stroke="#FF6F4A" stroke-width="1.2"/>
+    <text x="100" y="4" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#EFF2F9">BONO DOMÉSTICO (X)</text>
 
-    <text x="18" y="28" font-family="Inter" font-size="10" fill="#A3AABE">Rendimiento directo en moneda local</text>
+    <text x="18" y="26" font-family="Inter" font-size="10" fill="#A3AABE">Rendimiento directo en moneda local</text>
 
-    <!-- Barra de retorno i -->
-    <g transform="translate(18, 48)">
-      <rect width="214" height="48" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
-      <rect x="0" y="0" width="107" height="48" rx="6" fill="#1B223C" stroke="#FF6F4A" stroke-width="1"/>
-      <text x="14" y="22" font-family="Inter" font-size="10" font-weight="600" fill="#EFF2F9">Tasa de interés:</text>
-      <text x="14" y="38" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="#FF6F4A">i = 8.0%</text>
-      <text x="135" y="30" font-family="Inter" font-size="9" fill="#A3AABE">Pago fijo</text>
+    <!-- Fila 1: Tasa de interés -->
+    <g transform="translate(16, 44)">
+      <rect width="228" height="46" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+      <text x="12" y="20" font-family="Inter" font-size="10" font-weight="600" fill="#A3AABE">Tasa de interés fija:</text>
+      <text x="12" y="37" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="#FF6F4A">i = 8.0%</text>
+      <rect x="150" y="12" width="66" height="22" rx="4" fill="#1B223C"/>
+      <text x="183" y="27" text-anchor="middle" font-family="Inter" font-size="9" fill="#55C975">Sin riesgo</text>
     </g>
 
-    <!-- Retorno neto esperado -->
-    <g transform="translate(18, 115)">
-      <rect width="214" height="52" rx="7" fill="#10172D" stroke="#FF6F4A" stroke-width="1.4"/>
-      <text x="14" y="22" font-family="Inter" font-size="10.5" font-weight="700" fill="#EFF2F9">RETORNO NETO ESPERADO</text>
-      <text x="14" y="40" font-family="JetBrains Mono" font-size="18" font-weight="700" fill="#FF6F4A">8.0%</text>
-      <text x="110" y="40" font-family="Inter" font-size="9" fill="#55C975">Sin pérdida cambiaria</text>
+    <!-- Fila 2: Retorno neto esperado -->
+    <g transform="translate(16, 108)">
+      <rect width="228" height="66" rx="7" fill="#10172D" stroke="#FF6F4A" stroke-width="1.4"/>
+      <text x="12" y="20" font-family="Inter" font-size="10" font-weight="700" fill="#EFF2F9">RETORNO NETO ESPERADO</text>
+      <text x="12" y="44" font-family="JetBrains Mono" font-size="20" font-weight="700" fill="#FF6F4A">8.0%</text>
+      <text x="12" y="58" font-family="Inter" font-size="9" fill="#55C975">Cero pérdida cambiaria en divisa</text>
     </g>
 
-    <text x="125" y="194" text-anchor="middle" font-family="Inter" font-size="9" fill="#A3AABE">Inversionista recibe (1 + 0.08) USD</text>
+    <text x="130" y="210" text-anchor="middle" font-family="Inter" font-size="9.5" fill="#A3AABE">Paga (1 + 0.08) USD al año t+1</text>
   </g>
 
   <!-- ==================== SÍMBOLO CENTRAL DE ARBITRAJE ==================== -->
-  <g transform="translate(302, 125)">
-    <circle cx="14" cy="20" r="18" fill="#1B223C" stroke="#FFB188" stroke-width="1.6"/>
-    <text x="14" y="27" text-anchor="middle" font-family="JetBrains Mono" font-size="20" font-weight="700" fill="#EFF2F9">=</text>
-    <rect x="-35" y="46" width="98" height="18" rx="4" fill="#080C1C" stroke="#2A324A" stroke-width="0.8"/>
-    <text x="14" y="58" text-anchor="middle" font-family="Inter" font-size="8.5" font-weight="600" fill="#FFB188">ARBITRAJE</text>
+  <g transform="translate(315, 135)">
+    <circle cx="15" cy="20" r="18" fill="#1B223C" stroke="#FFB188" stroke-width="1.6"/>
+    <text x="15" y="27" text-anchor="middle" font-family="JetBrains Mono" font-size="20" font-weight="700" fill="#EFF2F9">=</text>
+    <rect x="-35" y="46" width="100" height="20" rx="4" fill="#080C1C" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="15" y="60" text-anchor="middle" font-family="Inter" font-size="8.5" font-weight="600" fill="#FFB188">ARBITRAJE</text>
   </g>
 
   <!-- ==================== COLUMNA DERECHA: BONO EXTRANJERO ==================== -->
-  <g transform="translate(345, 40)">
+  <g transform="translate(365, 40)">
     <!-- Marco de la tarjeta -->
-    <rect width="355" height="215" rx="9" fill="#080C1C" stroke="#667FDA" stroke-width="1.8"/>
+    <rect width="395" height="240" rx="10" fill="#080C1C" stroke="#667FDA" stroke-width="1.8"/>
 
     <!-- Cabecera -->
-    <rect x="15" y="-12" width="180" height="24" rx="5" fill="#1B223C" stroke="#667FDA" stroke-width="1.2"/>
-    <text x="105" y="4" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#EFF2F9">BONO EXTRANJERO (*) </text>
+    <rect x="15" y="-12" width="190" height="24" rx="5" fill="#1B223C" stroke="#667FDA" stroke-width="1.2"/>
+    <text x="110" y="4" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#EFF2F9">BONO EXTRANJERO (*)</text>
 
-    <text x="18" y="28" font-family="Inter" font-size="10" fill="#A3AABE">Ruta internacional: tasa foránea menos depreciación</text>
+    <text x="18" y="26" font-family="Inter" font-size="10" fill="#A3AABE">Ruta internacional: tasa foránea menos depreciación</text>
 
     <!-- Fila 1: Tasa nominal foránea i* = 16% -->
-    <g transform="translate(18, 42)">
-      <rect width="319" height="34" rx="5" fill="#10172D"/>
-      <text x="12" y="21" font-family="Inter" font-size="10" fill="#EFF2F9">Tasa de interés extranjera:</text>
-      <text x="195" y="22" font-family="JetBrains Mono" font-size="13" font-weight="700" fill="#55C975">i* = 16.0%</text>
-      <text x="270" y="21" font-family="Inter" font-size="9" fill="#55C975">(Ganancia)</text>
+    <g transform="translate(16, 38)">
+      <rect width="363" height="34" rx="5" fill="#10172D"/>
+      <text x="12" y="21" font-family="Inter" font-size="10" fill="#EFF2F9">Tasa extranjera bruta (i*):</text>
+      <text x="350" y="22" text-anchor="end" font-family="JetBrains Mono" font-size="13" font-weight="700" fill="#55C975">+16.0%</text>
     </g>
 
-    <!-- Fila 2: Pérdida cambiaria esperada -8% -->
-    <g transform="translate(18, 82)">
-      <rect width="319" height="34" rx="5" fill="#10172D"/>
-      <text x="12" y="16" font-family="Inter" font-size="10" fill="#A3AABE">Depreciación esperada (ΔE<tspan font-size="8" dy="-2">e</tspan><tspan font-size="10" dy="2">/E):</tspan></text>
-      <text x="12" y="28" font-family="JetBrains Mono" font-size="8.5" fill="#A3AABE">(4.86 − 4.50) / 4.50 =</text>
-      <text x="195" y="22" font-family="JetBrains Mono" font-size="13" font-weight="700" fill="#FB5668">− 8.0%</text>
-      <text x="270" y="21" font-family="Inter" font-size="9" fill="#FB5668">(Pérdida)</text>
+    <!-- Fila 2: Pérdida cambiaria esperada -8% (con dos líneas limpias) -->
+    <g transform="translate(16, 78)">
+      <rect width="363" height="42" rx="5" fill="#10172D"/>
+      <text x="12" y="17" font-family="Inter" font-size="10" fill="#A3AABE">Depreciación esperada (ΔE<tspan font-size="8" dy="-2">e</tspan><tspan font-size="10" dy="2">/E):</tspan></text>
+      <text x="12" y="32" font-family="JetBrains Mono" font-size="9" fill="#A3AABE">(4.86 − 4.50) / 4.50 = 0.08</text>
+      <text x="350" y="26" text-anchor="end" font-family="JetBrains Mono" font-size="13" font-weight="700" fill="#FB5668">−8.0%</text>
     </g>
 
-    <!-- Retorno neto esperado -->
-    <g transform="translate(18, 126)">
-      <rect width="319" height="42" rx="7" fill="#10172D" stroke="#667FDA" stroke-width="1.4"/>
-      <text x="12" y="18" font-family="Inter" font-size="10" font-weight="700" fill="#EFF2F9">RETORNO NETO ESPERADO</text>
-      <text x="12" y="32" font-family="JetBrains Mono" font-size="10" fill="#667FDA">16.0% − 8.0% =</text>
-      <text x="140" y="29" font-family="JetBrains Mono" font-size="18" font-weight="700" fill="#667FDA">8.0%</text>
-      <text x="210" y="26" font-family="Inter" font-size="9" fill="#55C975">¡Iguala a la ruta doméstica!</text>
+    <!-- Fila 3: Retorno neto esperado -->
+    <g transform="translate(16, 128)">
+      <rect width="363" height="52" rx="7" fill="#10172D" stroke="#667FDA" stroke-width="1.4"/>
+      <text x="12" y="19" font-family="Inter" font-size="10" font-weight="700" fill="#EFF2F9">RETORNO NETO ESPERADO</text>
+      <text x="12" y="38" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">16.0% − 8.0% =</text>
+      <text x="125" y="39" font-family="JetBrains Mono" font-size="18" font-weight="700" fill="#667FDA">8.0%</text>
+      <rect x="210" y="24" width="142" height="20" rx="4" fill="#1B223C"/>
+      <text x="281" y="38" text-anchor="middle" font-family="Inter" font-size="9" font-weight="600" fill="#55C975">¡Iguala a ruta local!</text>
     </g>
 
-    <text x="177" y="194" text-anchor="middle" font-family="Inter" font-size="9" fill="#A3AABE">El inversionista exige 16% para tolerar la pérdida cambiaria del 8%</text>
+    <text x="197" y="210" text-anchor="middle" font-family="Inter" font-size="9.5" fill="#A3AABE">El 16% extranjero compensa la pérdida cambiaria del 8%</text>
   </g>
 
   <!-- ==================== FRANJA INFERIOR DE CONCLUSIÓN Y FÓRMULA ==================== -->
-  <g transform="translate(40, 268)">
-    <rect width="660" height="30" rx="6" fill="#080C1C" stroke="#2A324A" stroke-width="1"/>
-    <text x="15" y="19" font-family="Inter" font-size="10" font-weight="700" fill="#FFB188">FÓRMULA DESPEJADA:</text>
-    <text x="160" y="19" font-family="JetBrains Mono" font-size="11" fill="#EFF2F9">i ≈ i* − %ΔE<tspan font-size="8" dy="-2">e</tspan><tspan font-size="11" dy="2"> ⇒ i* ≈ i + %ΔE</tspan><tspan font-size="8" dy="-2">e</tspan><tspan font-size="11" dy="2"> = 8% + 8% = <tspan font-weight="700" fill="#667FDA">16%</tspan></tspan></text>
+  <g transform="translate(40, 298)">
+    <rect width="720" height="34" rx="7" fill="#080C1C" stroke="#2A324A" stroke-width="1"/>
+    <text x="18" y="21" font-family="Inter" font-size="10" font-weight="700" fill="#FFB188">FÓRMULA APLICADA:</text>
+    <text x="160" y="21" font-family="JetBrains Mono" font-size="11" fill="#EFF2F9">i ≈ i* − %ΔE<tspan font-size="8" dy="-2">e</tspan><tspan font-size="11" dy="2">  ⇒  i* ≈ i + %ΔE</tspan><tspan font-size="8" dy="-2">e</tspan><tspan font-size="11" dy="2"> = 8.0% + 8.0% = <tspan font-weight="700" fill="#667FDA">16.0%</tspan></tspan></text>
   </g>
 </svg>

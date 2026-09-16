@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" role="img" aria-label="Diagrama del Problema 3: Apreciación real provocada por inflación doméstica diferencial bajo tipo de cambio nominal fijo">
+  <title>Problema 3: Apreciación Real por Inflación Relativa con Tipo de Cambio Fijo</title>
+  <desc>Demostración gráfica del paso de epsilon de 4.50 a 4.89 (+8.7%) cuando el tipo de cambio nominal permanece fijo en 4.50 pero la inflación doméstica de 12% supera a la foránea de 3%.</desc>
+
+  <rect width="800" height="350" rx="14" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+  <path d="M40 45H760M40 305H760" fill="none" stroke="#2A324A" stroke-width="0.8" stroke-dasharray="4 6" opacity=".4"/>
+
+  <!-- Encabezado superior -->
+  <g transform="translate(40, 24)">
+    <rect width="720" height="46" rx="8" fill="#080C1C" stroke="#2A324A" stroke-width="1"/>
+    <text x="20" y="28" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EFF2F9">PROBLEMA 3: ANOMALÍA DE COMPETITIVIDAD BAJO ANCLA FIJA</text>
+    <rect x="475" y="8" width="135" height="30" rx="6" fill="#1B223C" stroke="#FF6F4A" stroke-width="1.2"/>
+    <text x="542" y="28" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#FFB188">E = 4.50 (FIJO)</text>
+    <text x="625" y="28" font-family="Inter, sans-serif" font-size="11" fill="#A3AABE">secc. 17-1</text>
+  </g>
+
+  <!-- Tarjeta Izquierda: Período Inicial -->
+  <g transform="translate(40, 85)">
+    <rect width="230" height="205" rx="10" fill="#080C1C" stroke="#667FDA" stroke-width="1.5"/>
+    <rect x="14" y="14" width="120" height="22" rx="5" fill="#1B223C" stroke="#667FDA" stroke-width="1"/>
+    <text x="74" y="29" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#667FDA">MOMENTO t = 0</text>
+    <text x="14" y="58" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EFF2F9">Paridad de Precios Base</text>
+
+    <g transform="translate(14, 72)">
+      <rect width="202" height="50" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+      <text x="12" y="20" font-family="Inter, sans-serif" font-size="9.5" fill="#A3AABE">Índices de precios:</text>
+      <text x="12" y="38" font-family="JetBrains Mono, monospace" font-size="12" fill="#EFF2F9">P<tspan font-size="9" dy="2">0</tspan><tspan font-size="12" dy="-2"> = 100  |  P*</tspan><tspan font-size="9" dy="2">0</tspan><tspan font-size="12" dy="-2"> = 100</tspan></text>
+    </g>
+
+    <g transform="translate(14, 134)">
+      <rect width="202" height="55" rx="6" fill="#10172D" stroke="#667FDA" stroke-width="1.2"/>
+      <text x="12" y="20" font-family="Inter, sans-serif" font-size="9.5" font-weight="600" fill="#EFF2F9">TIPO DE CAMBIO REAL:</text>
+      <text x="12" y="42" font-family="JetBrains Mono, monospace" font-size="18" font-weight="700" fill="#667FDA">ε<tspan font-size="12" dy="2">0</tspan><tspan font-size="18" dy="-2"> = 4.50</tspan></text>
+      <text x="110" y="42" font-family="Inter, sans-serif" font-size="9" fill="#A3AABE">(Punto base)</text>
+    </g>
+  </g>
+
+  <!-- Conector Central: Dinámica de Inflación -->
+  <g transform="translate(285, 85)">
+    <rect width="230" height="205" rx="10" fill="#080C1C" stroke="#2A324A" stroke-width="1.2"/>
+    <text x="115" y="28" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#FFB188">TRANSMISIÓN EN EL AÑO</text>
+
+    <!-- Caja Inflación Doméstica -->
+    <g transform="translate(14, 40)">
+      <rect width="202" height="34" rx="5" fill="#10172D" stroke="#FB5668" stroke-width="0.8"/>
+      <text x="12" y="21" font-family="Inter, sans-serif" font-size="9.5" fill="#EFF2F9">Inflación local (X):</text>
+      <text x="135" y="22" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#FB5668">+12.0%</text>
+    </g>
+
+    <!-- Caja Inflación Extranjera -->
+    <g transform="translate(14, 82)">
+      <rect width="202" height="34" rx="5" fill="#10172D" stroke="#667FDA" stroke-width="0.8"/>
+      <text x="12" y="21" font-family="Inter, sans-serif" font-size="9.5" fill="#EFF2F9">Inflación foránea (*):</text>
+      <text x="145" y="22" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#667FDA">+3.0%</text>
+    </g>
+
+    <!-- Razón relativa -->
+    <g transform="translate(14, 126)">
+      <rect width="202" height="63" rx="6" fill="#1B223C" stroke="#FF6F4A" stroke-width="1"/>
+      <text x="12" y="19" font-family="Inter, sans-serif" font-size="9.5" font-weight="600" fill="#EFF2F9">Diferencial de precios:</text>
+      <text x="12" y="38" font-family="JetBrains Mono, monospace" font-size="12" fill="#FFB188">P<tspan font-size="9" dy="2">1</tspan><tspan font-size="12" dy="-2">/P*</tspan><tspan font-size="9" dy="2">1</tspan><tspan font-size="12" dy="-2"> = 112/103 =</tspan></text>
+      <text x="146" y="38" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="#55C975">1.0874</text>
+      <text x="12" y="54" font-family="Inter, sans-serif" font-size="9" fill="#A3AABE">Encuesta de precios: +8.74%</text>
+    </g>
+  </g>
+
+  <!-- Tarjeta Derecha: Período Final -->
+  <g transform="translate(530, 85)">
+    <rect width="230" height="205" rx="10" fill="#080C1C" stroke="#FF6F4A" stroke-width="1.5"/>
+    <rect x="14" y="14" width="120" height="22" rx="5" fill="#1B223C" stroke="#FF6F4A" stroke-width="1"/>
+    <text x="74" y="29" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#FF6F4A">MOMENTO t = 1</text>
+    <text x="14" y="58" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EFF2F9">Sobrevaluación Real</text>
+
+    <g transform="translate(14, 72)">
+      <rect width="202" height="50" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+      <text x="12" y="19" font-family="Inter, sans-serif" font-size="9.5" fill="#A3AABE">Fórmula con nuevos precios:</text>
+      <text x="12" y="38" font-family="JetBrains Mono, monospace" font-size="11.5" fill="#EFF2F9">4.50 × (112 / 103) ≈</text>
+    </g>
+
+    <g transform="translate(14, 134)">
+      <rect width="202" height="55" rx="6" fill="#10172D" stroke="#FF6F4A" stroke-width="1.4"/>
+      <text x="12" y="20" font-family="Inter, sans-serif" font-size="9.5" font-weight="700" fill="#EFF2F9">NUEVO TIPO DE CAMBIO:</text>
+      <text x="12" y="42" font-family="JetBrains Mono, monospace" font-size="18" font-weight="700" fill="#FF6F4A">ε<tspan font-size="12" dy="2">1</tspan><tspan font-size="18" dy="-2"> ≈ 4.89</tspan></text>
+      <text x="110" y="42" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#FB5668">(+8.7% real)</text>
+    </g>
+  </g>
+
+  <!-- Pie explicativo -->
+  <text x="400" y="328" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" fill="#A3AABE">Conclusión: Con E fijo, si la inflación doméstica supera a la externa, se genera apreciación real pura y severa pérdida de competitividad.</text>
+</svg>

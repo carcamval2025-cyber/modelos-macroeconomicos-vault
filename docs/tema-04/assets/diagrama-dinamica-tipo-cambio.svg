@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 370" role="img" aria-label="Diagrama conceptual de la dinámica y determinantes del tipo de cambio real: canal nominal, canal inflación y política comercial">
+  <title>Dinámica y Determinantes del Tipo de Cambio Real</title>
+  <desc>Descomposición analítica de la fórmula ε = EP/P* mostrando los tres canales de transmisión: variación nominal del tipo de cambio, diferencial inflacionario relativo y restricciones comerciales directas como cuotas y aranceles.</desc>
+
+  <rect width="820" height="370" rx="14" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+  <path d="M40 45H780M40 325H780" fill="none" stroke="#2A324A" stroke-width="0.8" stroke-dasharray="4 6" opacity=".4"/>
+
+  <!-- Encabezado superior / Ecuación maestra -->
+  <g transform="translate(40, 24)">
+    <rect width="740" height="46" rx="8" fill="#080C1C" stroke="#2A324A" stroke-width="1"/>
+    <text x="20" y="28" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EFF2F9">DETERMINANTES DE LA ECUACIÓN (17.1):</text>
+    <rect x="290" y="8" width="130" height="30" rx="6" fill="#1B223C" stroke="#667FDA" stroke-width="1.2"/>
+    <text x="355" y="28" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="14" font-weight="700" fill="#EFF2F9">ε = E · P / P*</text>
+    <text x="440" y="28" font-family="Inter, sans-serif" font-size="11" fill="#A3AABE">Precio relativo de los bienes domésticos frente a los extranjeros</text>
+  </g>
+
+  <!-- Tarjeta 1: Canal Nominal -->
+  <g transform="translate(40, 85)">
+    <rect width="234" height="236" rx="10" fill="#080C1C" stroke="#667FDA" stroke-width="1.5"/>
+    <rect x="14" y="14" width="115" height="22" rx="5" fill="#1B223C" stroke="#667FDA" stroke-width="1"/>
+    <text x="71" y="29" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#667FDA">CANAL NOMINAL</text>
+    <text x="14" y="58" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EFF2F9">Variación en E</text>
+    <text x="14" y="76" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Precios P y P* estables</text>
+
+    <!-- Caja de impacto -->
+    <rect x="14" y="92" width="206" height="52" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="24" y="114" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="#55C975">↑ E ⇒ ↑ ε</text>
+    <text x="24" y="132" font-family="Inter, sans-serif" font-size="10" fill="#EFF2F9">Apreciación real directa</text>
+
+    <text x="14" y="165" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Bienes domésticos son</text>
+    <text x="14" y="180" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">más caros para el foráneo.</text>
+
+    <rect x="14" y="196" width="206" height="26" rx="5" fill="#1B223C" stroke="#FB5668" stroke-width="0.8"/>
+    <text x="117" y="213" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" font-weight="600" fill="#FB5668">Erosión de competitividad</text>
+  </g>
+
+  <!-- Tarjeta 2: Canal Diferencial Inflacionario -->
+  <g transform="translate(293, 85)">
+    <rect width="234" height="236" rx="10" fill="#080C1C" stroke="#FF6F4A" stroke-width="1.5"/>
+    <rect x="14" y="14" width="135" height="22" rx="5" fill="#1B223C" stroke="#FF6F4A" stroke-width="1"/>
+    <text x="81" y="29" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#FF6F4A">CANAL INFLACIÓN</text>
+    <text x="14" y="58" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EFF2F9">Diferencial (π - π*)</text>
+    <text x="14" y="76" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Con tipo de cambio fijo (E constante)</text>
+
+    <!-- Caja de impacto -->
+    <rect x="14" y="92" width="206" height="52" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="24" y="114" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#FF6F4A">↑ P &gt; ↑ P* ⇒ ↑ ε</text>
+    <text x="24" y="132" font-family="Inter, sans-serif" font-size="10" fill="#EFF2F9">Sobrevaluación real</text>
+
+    <text x="14" y="165" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Pérdida de competitividad sin</text>
+    <text x="14" y="180" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">movimiento nominal alguno.</text>
+
+    <rect x="14" y="196" width="206" height="26" rx="5" fill="#1B223C" stroke="#FFB188" stroke-width="0.8"/>
+    <text x="117" y="213" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" font-weight="600" fill="#FFB188">Efecto clásico en ancla fija</text>
+  </g>
+
+  <!-- Tarjeta 3: Canal Comercial (Cuotas y Aranceles) -->
+  <g transform="translate(546, 85)">
+    <rect width="234" height="236" rx="10" fill="#080C1C" stroke="#55C975" stroke-width="1.5"/>
+    <rect x="14" y="14" width="135" height="22" rx="5" fill="#1B223C" stroke="#55C975" stroke-width="1"/>
+    <text x="81" y="29" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#55C975">MERCADO DE BIENES</text>
+    <text x="14" y="58" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EFF2F9">Cuotas y Aranceles</text>
+    <text x="14" y="76" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Restricción cuantitativa directa</text>
+
+    <!-- Caja de impacto -->
+    <rect x="14" y="92" width="206" height="52" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="24" y="114" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#55C975">Cuotas ⇒ ↓ IM</text>
+    <text x="24" y="132" font-family="Inter, sans-serif" font-size="10" fill="#EFF2F9">No altera fórmula de ε</text>
+
+    <text x="14" y="165" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Restringe apertura comercial,</text>
+    <text x="14" y="180" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">pero ε sigue siendo EP/P*.</text>
+
+    <rect x="14" y="196" width="206" height="26" rx="5" fill="#1B223C" stroke="#55C975" stroke-width="0.8"/>
+    <text x="117" y="213" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" font-weight="600" fill="#55C975">Barrera no arancelaria</text>
+  </g>
+
+  <!-- Pie explicativo -->
+  <text x="410" y="348" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" fill="#A3AABE">Blanchard Cap. 17: Diferenciar rigurosamente entre movimientos nominales (E), de precios relativos (P/P*) e intervenciones comerciales.</text>
+</svg>

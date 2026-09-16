@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 370" role="img" aria-label="Regla de decisión de arbitraje de la Paridad Descubierta de Tasas de Interés">
+  <title>Regla de Decisión UIP: Relación entre Tasas y Expectativas Cambiarias</title>
+  <desc>Guía visual de arbitraje para la ecuación aproximada i ≈ i* − (Ee - E)/E, mostrando cómo la tasa doméstica se posiciona respecto a la extranjera según exista expectativa de depreciación, neutralidad o apreciación cambiaria.</desc>
+
+  <rect width="820" height="370" rx="14" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+  <path d="M40 45H780M40 325H780" fill="none" stroke="#2A324A" stroke-width="0.8" stroke-dasharray="4 6" opacity=".4"/>
+
+  <!-- Encabezado superior -->
+  <g transform="translate(40, 24)">
+    <rect width="740" height="46" rx="8" fill="#080C1C" stroke="#2A324A" stroke-width="1"/>
+    <text x="20" y="28" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EFF2F9">REGLA DE DECISIÓN UIP (ECUACIÓN 17.4):</text>
+    <rect x="310" y="8" width="165" height="30" rx="6" fill="#1B223C" stroke="#667FDA" stroke-width="1.2"/>
+    <text x="392" y="28" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="#EFF2F9">i ≈ i* − %ΔE<tspan font-size="9" dy="-3">e</tspan></text>
+    <text x="495" y="28" font-family="Inter, sans-serif" font-size="11" fill="#A3AABE">Arbitraje financiero internacional continuo</text>
+  </g>
+
+  <!-- Tarjeta 1: Depreciación esperada -->
+  <g transform="translate(40, 85)">
+    <rect width="234" height="236" rx="10" fill="#080C1C" stroke="#FF6F4A" stroke-width="1.5"/>
+    <rect x="14" y="14" width="115" height="22" rx="5" fill="#1B223C" stroke="#FF6F4A" stroke-width="1"/>
+    <text x="71" y="29" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#FF6F4A">EJERCICIO 1</text>
+    <text x="14" y="58" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EFF2F9">Depreciación esperada</text>
+    <text x="14" y="76" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Expectativa: %ΔE<tspan font-size="8" dy="-2">e</tspan><tspan font-size="10" dy="2"> &gt; 0</tspan></text>
+
+    <!-- Caja de impacto -->
+    <rect x="14" y="92" width="206" height="52" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="24" y="114" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="#FF6F4A">i &lt; i* (o i* &gt; i)</text>
+    <text x="24" y="132" font-family="Inter, sans-serif" font-size="10" fill="#EFF2F9">Tasa foránea compensa</text>
+
+    <text x="14" y="165" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">El bono extranjero debe pagar</text>
+    <text x="14" y="180" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">más para cubrir la depreciación.</text>
+
+    <rect x="14" y="196" width="206" height="26" rx="5" fill="#1B223C" stroke="#FF6F4A" stroke-width="0.8"/>
+    <text x="117" y="213" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" font-weight="600" fill="#FFB188">Premio cambiario foráneo</text>
+  </g>
+
+  <!-- Tarjeta 2: Neutralidad cambiaria -->
+  <g transform="translate(293, 85)">
+    <rect width="234" height="236" rx="10" fill="#080C1C" stroke="#667FDA" stroke-width="1.5"/>
+    <rect x="14" y="14" width="125" height="22" rx="5" fill="#1B223C" stroke="#667FDA" stroke-width="1"/>
+    <text x="76" y="29" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#667FDA">TIPO CAMBIO FIJO</text>
+    <text x="14" y="58" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EFF2F9">Neutralidad esperada</text>
+    <text x="14" y="76" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Expectativa: %ΔE<tspan font-size="8" dy="-2">e</tspan><tspan font-size="10" dy="2"> = 0</tspan></text>
+
+    <!-- Caja de impacto -->
+    <rect x="14" y="92" width="206" height="52" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="24" y="114" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="#667FDA">i ≈ i*</text>
+    <text x="24" y="132" font-family="Inter, sans-serif" font-size="10" fill="#EFF2F9">Igualdad absoluta de tasas</text>
+
+    <text x="14" y="165" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Sin riesgo cambiario esperado,</text>
+    <text x="14" y="180" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">las tasas convergen al 100%.</text>
+
+    <rect x="14" y="196" width="206" height="26" rx="5" fill="#1B223C" stroke="#667FDA" stroke-width="0.8"/>
+    <text x="117" y="213" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" font-weight="600" fill="#667FDA">Equilibrio sin diferencial</text>
+  </g>
+
+  <!-- Tarjeta 3: Apreciación esperada -->
+  <g transform="translate(546, 85)">
+    <rect width="234" height="236" rx="10" fill="#080C1C" stroke="#55C975" stroke-width="1.5"/>
+    <rect x="14" y="14" width="115" height="22" rx="5" fill="#1B223C" stroke="#55C975" stroke-width="1"/>
+    <text x="71" y="29" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#55C975">EJERCICIO 2</text>
+    <text x="14" y="58" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#EFF2F9">Apreciación esperada</text>
+    <text x="14" y="76" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Expectativa: %ΔE<tspan font-size="8" dy="-2">e</tspan><tspan font-size="10" dy="2"> &lt; 0</tspan></text>
+
+    <!-- Caja de impacto -->
+    <rect x="14" y="92" width="206" height="52" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="24" y="114" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="#55C975">i &gt; i*</text>
+    <text x="24" y="132" font-family="Inter, sans-serif" font-size="10" fill="#EFF2F9">Tasa doméstica superior</text>
+
+    <text x="14" y="165" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Bono doméstico debe pagar más</text>
+    <text x="14" y="180" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">para retener al inversionista.</text>
+
+    <rect x="14" y="196" width="206" height="26" rx="5" fill="#1B223C" stroke="#55C975" stroke-width="0.8"/>
+    <text x="117" y="213" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" font-weight="600" fill="#55C975">Defensa de activos locales</text>
+  </g>
+
+  <!-- Pie explicativo -->
+  <text x="410" y="348" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" fill="#A3AABE">Alerta de signo: En i ≈ i* − %ΔEe, restar una apreciación negativa equivale a sumar: i ≈ i* − (−x%) = i* + x%.</text>
+</svg>

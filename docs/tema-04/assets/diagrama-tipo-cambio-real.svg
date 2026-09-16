@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" role="img" aria-label="Diagrama del tipo de cambio real: epsilon igual a E por P sobre P asterisco">
   <title>Construcción del Tipo de Cambio Real (ε = EP/P*)</title>
-  <desc>Diagrama que explica cómo los precios domésticos P convertidos a moneda extranjera mediante el tipo de cambio nominal E se comparan contra los precios extranjeros P* para determinar el precio relativo de los bienes (tipo de cambio real epsilon).</desc>
+  <desc>Diagrama que explica cómo los precios domésticos P convertidos a moneda extranjera mediante el tipo de cambio nominal E se comparan contra los precios extranjeros P* para determinar el precio relativo de los bienes (tipo de cambio real epsilon) con textos protegidos y espaciados.</desc>
 
   <!-- Contenedor base de superficie elevada -->
   <rect width="760" height="340" rx="12" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
@@ -21,18 +21,18 @@
 
     <!-- Cabecera -->
     <rect x="15" y="-12" width="165" height="24" rx="5" fill="#1B223C" stroke="#667FDA" stroke-width="1.2"/>
-    <text x="97" y="4" text-anchor="middle" font-family="Inter" font-size="11.5" font-weight="700" fill="#EFF2F9">ECONOMÍA DOMÉSTICA</text>
+    <text x="97" y="4" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#EFF2F9">ECONOMÍA DOMÉSTICA</text>
 
     <!-- Caja de Precios P -->
-    <rect x="20" y="32" width="190" height="42" rx="7" fill="#10172D" stroke="#2A324A" stroke-width="1"/>
-    <text x="35" y="58" font-family="Inter" font-size="12" fill="#A3AABE">Precios locales:</text>
-    <rect x="150" y="40" width="45" height="26" rx="4" fill="#1B223C" stroke="#667FDA" stroke-width="1"/>
-    <text x="172" y="58" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="#667FDA">P</text>
+    <rect x="18" y="32" width="194" height="42" rx="7" fill="#10172D" stroke="#2A324A" stroke-width="1"/>
+    <text x="32" y="58" font-family="Inter" font-size="11.5" fill="#A3AABE">Precios locales:</text>
+    <rect x="145" y="40" width="52" height="26" rx="4" fill="#1B223C" stroke="#667FDA" stroke-width="1"/>
+    <text x="171" y="58" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="#667FDA">P</text>
 
     <!-- Detalle de bien doméstico -->
     <text x="115" y="104" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#EFF2F9">Bien doméstico</text>
     <rect x="25" y="118" width="180" height="24" rx="5" fill="#10172D"/>
-    <text x="115" y="134" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">Costo: P (en moneda local)</text>
+    <text x="115" y="134" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" fill="#A3AABE">Costo: P (en moneda local)</text>
 
     <!-- Valor convertido -->
     <rect x="20" y="152" width="190" height="20" rx="4" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
@@ -51,18 +51,18 @@
 
     <!-- Cabecera -->
     <rect x="15" y="-12" width="165" height="24" rx="5" fill="#1B223C" stroke="#FF6F4A" stroke-width="1.2"/>
-    <text x="97" y="4" text-anchor="middle" font-family="Inter" font-size="11.5" font-weight="700" fill="#EFF2F9">ECONOMÍA EXTERIOR</text>
+    <text x="97" y="4" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#EFF2F9">ECONOMÍA EXTERIOR</text>
 
     <!-- Caja de Precios P* -->
-    <rect x="20" y="32" width="190" height="42" rx="7" fill="#10172D" stroke="#2A324A" stroke-width="1"/>
-    <text x="35" y="58" font-family="Inter" font-size="12" fill="#A3AABE">Precios foráneos:</text>
-    <rect x="150" y="40" width="45" height="26" rx="4" fill="#1B223C" stroke="#FF6F4A" stroke-width="1"/>
-    <text x="172" y="58" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="#FF6F4A">P*</text>
+    <rect x="18" y="32" width="194" height="42" rx="7" fill="#10172D" stroke="#2A324A" stroke-width="1"/>
+    <text x="32" y="58" font-family="Inter" font-size="11.5" fill="#A3AABE">Precios foráneos:</text>
+    <rect x="145" y="40" width="52" height="26" rx="4" fill="#1B223C" stroke="#FF6F4A" stroke-width="1"/>
+    <text x="171" y="58" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="#FF6F4A">P*</text>
 
     <!-- Detalle de bien extranjero -->
     <text x="115" y="104" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#EFF2F9">Bien extranjero</text>
     <rect x="25" y="118" width="180" height="24" rx="5" fill="#10172D"/>
-    <text x="115" y="134" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">Costo: P* (en divisa extranjera)</text>
+    <text x="115" y="134" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" fill="#A3AABE">Costo: P* (en divisa ext.)</text>
 
     <!-- Base comparativa -->
     <rect x="20" y="152" width="190" height="20" rx="4" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
@@ -71,18 +71,15 @@
 
   <!-- ==================== PUENTE CENTRAL: TIPO DE CAMBIO NOMINAL (E) ==================== -->
   <g transform="translate(270, 95)">
-    <!-- Flecha de conversión de moneda -->
     <path d="M10 20H210" fill="none" stroke="#FFB188" stroke-width="2.5" stroke-dasharray="6 4"/>
     <path d="M200 13L210 20L200 27" fill="none" stroke="#FFB188" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
     
-    <!-- Pastilla protectora para E -->
-    <rect x="25" y="2" width="170" height="34" rx="7" fill="#1B223C" stroke="#FFB188" stroke-width="1.2"/>
-    <text x="110" y="18" text-anchor="middle" font-family="Inter" font-size="10" font-weight="600" fill="#A3AABE">CONVERSIÓN NOMINAL</text>
-    <text x="110" y="30" text-anchor="middle" font-family="JetBrains Mono" font-size="12" font-weight="700" fill="#FFB188">E (Tipo de cambio)</text>
+    <rect x="20" y="2" width="180" height="34" rx="7" fill="#1B223C" stroke="#FFB188" stroke-width="1.2"/>
+    <text x="110" y="17" text-anchor="middle" font-family="Inter" font-size="9.5" font-weight="600" fill="#A3AABE">CONVERSIÓN NOMINAL</text>
+    <text x="110" y="30" text-anchor="middle" font-family="JetBrains Mono" font-size="11.5" font-weight="700" fill="#FFB188">E (Tipo de cambio)</text>
   </g>
 
   <!-- ==================== CONVERGENCIA INFERIOR: TIPO DE CAMBIO REAL (ε) ==================== -->
-  <!-- Guías curvas punteadas hacia el nodo central -->
   <path d="M155 230C155 265 300 270 335 270" fill="none" stroke="#667FDA" stroke-width="2" stroke-dasharray="4 4" opacity=".85"/>
   <path d="M605 230C605 265 460 270 425 270" fill="none" stroke="#FF6F4A" stroke-width="2" stroke-dasharray="4 4" opacity=".85"/>
 
@@ -102,12 +99,12 @@
 
   <!-- ==================== PIE TÉCNICO INFERIOR: APRECIACIÓN vs DEPRECIACIÓN ==================== -->
   <g transform="translate(40, 308)">
-    <rect width="320" height="22" rx="4" fill="#080C1C" stroke="#2A324A" stroke-width="0.8"/>
-    <circle cx="14" cy="11" r="4" fill="#FB5668"/>
-    <text x="26" y="15" font-family="JetBrains Mono" font-size="10.5" fill="#EFF2F9">↑ε = Apreciación Real <tspan fill="#A3AABE">(Bienes dom. más caros)</tspan></text>
+    <rect x="0" width="330" height="24" rx="5" fill="#080C1C" stroke="#2A324A" stroke-width="0.8"/>
+    <circle cx="16" cy="12" r="4" fill="#FB5668"/>
+    <text x="175" y="16" text-anchor="middle" font-family="JetBrains Mono" font-size="9.5" fill="#EFF2F9">↑ε = Apreciación Real <tspan fill="#A3AABE">(Bienes dom. más caros)</tspan></text>
 
-    <rect x="360" width="320" height="22" rx="4" fill="#080C1C" stroke="#2A324A" stroke-width="0.8"/>
-    <circle cx="374" cy="11" r="4" fill="#55C975"/>
-    <text x="386" y="15" font-family="JetBrains Mono" font-size="10.5" fill="#EFF2F9">↓ε = Depreciación Real <tspan fill="#A3AABE">(Bienes dom. más baratos)</tspan></text>
+    <rect x="350" width="330" height="24" rx="5" fill="#080C1C" stroke="#2A324A" stroke-width="0.8"/>
+    <circle cx="366" cy="12" r="4" fill="#55C975"/>
+    <text x="525" y="16" text-anchor="middle" font-family="JetBrains Mono" font-size="9.5" fill="#EFF2F9">↓ε = Depreciación Real <tspan fill="#A3AABE">(Bienes dom. más baratos)</tspan></text>
   </g>
 </svg>
