@@ -148,7 +148,7 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
     <div class="meta-row">
       <span class="chip"><span class="chip-in">Blanchard, cap. 17</span></span>
       <span class="chip"><span class="chip-in">Preparación para Control 2</span></span>
-      <span class="chip"><span class="chip-in">11 ítems + 3 ejercicios numéricos</span></span>
+      <span class="chip"><span class="chip-in">11 ítems + 4 ejercicios numéricos</span></span>
     </div>
   </div>
 </header>
@@ -167,7 +167,7 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
   </div>
 
   <div class="progreso-panel" role="status" aria-live="polite">
-    <div class="progreso-item"><div class="progreso-label">Resueltos</div><div class="progreso-val" id="pv-total">0 / 14</div></div>
+    <div class="progreso-item"><div class="progreso-label">Resueltos</div><div class="progreso-val" id="pv-total">0 / 11</div></div>
     <div class="progreso-item"><div class="progreso-label">Correctos</div><div class="progreso-val correctas" id="pv-correctas">0</div></div>
     <div class="progreso-item"><div class="progreso-label">Incorrectos</div><div class="progreso-val incorrectas" id="pv-incorrectas">0</div></div>
   </div>
@@ -428,6 +428,22 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
       <div class="solucion">
         <p><strong>Despejar de la ecuación 17.4:</strong> (E^e_t+1 − E_t)/E_t = i* − i = 7% − 4% = 3%.</p>
         <p><strong>Interpretación:</strong> se espera una <em>depreciación</em> de la moneda doméstica de aproximadamente 3% — que es justamente lo que compensa la menor tasa doméstica y mantiene el arbitraje sin oportunidades de ganancia libre de riesgo.</p>
+      </div>
+    </div>
+
+    <div class="numerico" data-abierto="false">
+      <span class="item-num">Ejercicio 4 — integrador con Tema 3 (prima de riesgo)</span>
+      <p class="item-enunciado">El banco central doméstico fija la tasa de política en r̄ = 3%. Como viste en Tema 3, las empresas no se endeudan a r̄ sino a r̄ + x, con una prima de riesgo x = 2%. La tasa "de mercado" doméstica que observa un inversionista extranjero es, entonces, i = 5%. La tasa extranjera es i* = 6% y no se espera ningún movimiento del tipo de cambio (E<sup>e</sup><sub>t+1</sub> = E<sub>t</sub>). ¿Se cumple la paridad de tasas de interés tal como la escribe Blanchard, y qué explica la diferencia entre i e i*?</p>
+      <div class="datos">
+        <div class="dato"><div class="dato-label">r̄</div><div class="dato-val">3%</div></div>
+        <div class="dato"><div class="dato-label">x (Tema 3)</div><div class="dato-val">2%</div></div>
+        <div class="dato"><div class="dato-label">i*</div><div class="dato-val">6%</div></div>
+      </div>
+      <button class="btn-revelar" type="button">Ver solución</button>
+      <div class="solucion">
+        <p><strong>Paso 1 — qué predice la UIP:</strong> con E<sup>e</sup><sub>t+1</sub> = E<sub>t</sub>, la ecuación (17.4) predice i ≈ i* − 0% = 6%.</p>
+        <p><strong>Paso 2 — qué se observa:</strong> i = r̄ + x = 3% + 2% = 5%, es decir, un punto porcentual por debajo de lo que la UIP "pura" predeciría.</p>
+        <p><strong>Interpretación:</strong> la UIP de Blanchard compara tasas nominales sin distinguir cuánta prima de riesgo trae cada una incorporada. Aquí ya sabemos, por Tema 3, que la tasa doméstica observada (5%) es la suma de la tasa de política (3%) más una prima de riesgo explícita (2%). El punto porcentual que falta frente al 6% extranjero no rompe necesariamente el arbitraje: puede significar que la tasa extranjera i* también trae una prima de riesgo distinta que el enunciado no aisló, o que existe una pequeña depreciación esperada no declarada. La lección de fondo: antes de comparar i con i* mecánicamente, conviene preguntar qué prima de riesgo x trae cada tasa — exactamente el desglose que Tema 3 enseñó a hacer.</p>
       </div>
     </div>
   </section>

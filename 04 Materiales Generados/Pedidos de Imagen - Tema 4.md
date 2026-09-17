@@ -7,7 +7,7 @@ sources: "Generado por Claude (Cowork) y enriquecido integralmente por Antigravi
 
 Este documento registra la suite completa de ilustraciones técnicas y diagramas SVG de alta precisión desarrollados para el **Tema 4**, integrados en `docs/tema-04/` y en `04 Materiales Generados/` (con réplicas modulares en `docs/tema-04/assets/`).
 
-## Resumen de Estado de la Suite Visual (9 Diagramas Técnicos)
+## Resumen de Estado de la Suite Visual (10 Diagramas Técnicos)
 
 | ID | Nombre | Archivo Asset | Ubicación HTML | Estado |
 |---|---|---|---|---|
@@ -20,6 +20,7 @@ Este documento registra la suite completa de ilustraciones técnicas y diagramas
 | `img-t4-06` | Regla de decisión de arbitraje UIP — tres escenarios de expectativas (820×370) | `docs/tema-04/assets/diagrama-regla-uip.svg` | `actividad-tema4-apertura.html`, Módulo 02 | ✅ Creado e Integrado |
 | `img-t4-07` | Tríptico de identidades fundamentales — TCR, UIP y Balanza de Pagos (820×370) | `docs/tema-04/assets/diagrama-mapa-identidades.svg` | `repaso-control2-tema4-apertura.html`, Módulo 02 | ✅ Creado e Integrado |
 | `img-t4-08` | Dinámica de apreciación real con tipo de cambio nominal fijo — Problema 3 (800×350) | `docs/tema-04/assets/diagrama-inflacion-tipo-cambio.svg` | `repaso-control2-tema4-apertura.html`, Módulo 06 | ✅ Creado e Integrado |
+| `img-t4-09` | Puente analítico: tasa con riesgo ($r+x$) y paridad UIP (820×400) | `docs/tema-04/assets/diagrama-uip-prima-riesgo.svg` | `repaso-control2-tema4-apertura.html`, Módulo 02 | ✅ Creado e Integrado |
 
 ---
 
@@ -93,6 +94,14 @@ Este documento registra la suite completa de ilustraciones técnicas y diagramas
 - **Dimensiones:** `800 × 350`.
 - **Aplicación:** Repaso Control 2 (Módulo 06, Problema 3).
 - **Contenido:** Esquema de comparación temporal ($t=0$ a $t=1$) para la Economía X con $E=4.50$ fijo, mostrando cómo la inflación doméstica de $12\%$ frente a la foránea de $3\%$ hace subir el ratio $P/P^*$ a $1.0874$, impulsando el tipo de cambio real de $4.50$ a $4.89$ ($+8.7\%$), provocando sobrevaluación real y pérdida de competitividad.
+
+### img-t4-09 — Puente analítico: tasa con riesgo (r + x) y paridad UIP (`diagrama-uip-prima-riesgo.svg`)
+- **Dimensiones:** `820 × 400`.
+- **Aplicación:** Repaso Control 2 (Módulo 02, Puente con Tema 3; e Ítem V/F 6).
+- **Contenido:** Esquema comparativo de dos paneles conectados:
+  - **Panel izquierdo (Tema 3):** Descomposición de la tasa nominal de mercado en tres estratos: tasa de política del Banco Central ($\bar{r}$), expectativa de inflación de Fisher ($\pi^e$), y prima de riesgo financiero / país ($x$) derivada del apalancamiento y mora bancaria, formando $i = \bar{r} + \pi^e + x$ (o tasa de endeudamiento real $r = \bar{r} + x$).
+  - **Panel derecho (Tema 4):** Ecuación canónica de UIP ($i \approx i^* - \%\Delta E^e$) y el supuesto restrictivo de $x=x^*=0$. Desmonta la trampa típica del Control 2: si se observa $i > i^*$, la UIP pura sugeriría apreciación esperada, pero al integrar Tema 3 se evidencia que puede reflejar simplemente una mayor prima de riesgo país ($x > x^*$).
+  - **Franja inferior de regla maestra:** Enseña al estudiante a aislar $x$ antes de proyectar variaciones cambiarias en ejercicios de examen.
 
 ---
 

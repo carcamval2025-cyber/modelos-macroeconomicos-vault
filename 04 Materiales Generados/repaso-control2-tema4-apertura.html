@@ -179,7 +179,7 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
   </nav>
 
   <div class="progreso-panel" role="status" aria-live="polite">
-    <div class="progreso-item"><div class="progreso-label">V/F resueltos</div><div class="progreso-val" id="pv-total">0 / 5</div></div>
+    <div class="progreso-item"><div class="progreso-label">V/F resueltos</div><div class="progreso-val" id="pv-total">0 / 6</div></div>
     <div class="progreso-item"><div class="progreso-label">Correctos</div><div class="progreso-val correctas" id="pv-correctas">0</div></div>
     <div class="progreso-item"><div class="progreso-label">Incorrectos</div><div class="progreso-val incorrectas" id="pv-incorrectas">0</div></div>
   </div>
@@ -293,8 +293,131 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
         <li>Versión aproximada: i ≈ i* − (E<sup>e</sup><sub>t+1</sub> − E<sub>t</sub>)/E<sub>t</sub>.</li>
         <li>Si se espera depreciación doméstica, i debe ser mayor que i* (y viceversa con apreciación esperada).</li>
         <li>"No cubierta" = usa tipo de cambio esperado; "cubierta" = usa tipo de cambio forward, sin riesgo.</li>
+        <li><strong>Puente con Tema 3:</strong> i e i* son tasas nominales; la UIP asume implícitamente que ambos bonos tienen el mismo riesgo. Si un país es más riesgoso, su tasa observada ya trae una prima x incorporada (tasa de endeudamiento r + x) — comparar i e i* "a secas" puede confundir riesgo con expectativa cambiaria.</li>
       </ul>
     </div>
+
+    <figure>
+      <div class="diagrama">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 400" role="img" aria-label="Puente analítico Tema 3 a Tema 4: Descomposición de tasas de interés y paridad descubierta con riesgo país">
+  <title>Puente Analítico Tema 3 → Tema 4: Prima de Riesgo (x) y Paridad de Tasas (UIP)</title>
+  <desc>Esquema conceptual integrado para el Control 2 que descompone la tasa nominal observada i en tasa de política r, inflación esperada pi^e y prima de riesgo x (Tema 3), contrastándola con la paridad descubierta de tasas UIP de Blanchard (Tema 4), demostrando por qué una mayor tasa doméstica no garantiza apreciación cambiaria si existe riesgo diferencial.</desc>
+
+  <!-- Contenedor base -->
+  <rect width="820" height="400" rx="14" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+
+  <!-- Trama reticular sutil -->
+  <path d="M30 45H790M30 355H790" fill="none" stroke="#2A324A" stroke-width="0.8" stroke-dasharray="4 6" opacity=".4"/>
+  <line x1="410" y1="72" x2="410" y2="315" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 6" opacity=".3"/>
+
+  <!-- Encabezado superior -->
+  <g transform="translate(30, 16)">
+    <rect width="760" height="46" rx="8" fill="#080C1C" stroke="#2A324A" stroke-width="1"/>
+    <text x="20" y="28" font-family="Inter, sans-serif" font-size="11.5" font-weight="700" fill="#EFF2F9">PUENTE ANALÍTICO: TEMA 3 (FINANZAS) → TEMA 4 (ECONOMÍA ABIERTA)</text>
+    <rect x="495" y="8" width="135" height="30" rx="6" fill="#1B223C" stroke="#FF6F4A" stroke-width="1.2"/>
+    <text x="562" y="27" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700" fill="#FFB188">CONTROL 2 PREP</text>
+    <text x="645" y="28" font-family="Inter, sans-serif" font-size="10.5" fill="#A3AABE">Blanchard Caps. 6 y 17</text>
+  </g>
+
+  <!-- ==================== PANEL IZQUIERDO: TEMA 3 (ANATOMÍA DE LA TASA) ==================== -->
+  <g transform="translate(30, 75)">
+    <!-- Tarjeta fondo -->
+    <rect width="365" height="236" rx="10" fill="#080C1C" stroke="#FF6F4A" stroke-width="1.6"/>
+
+    <!-- Cabecera -->
+    <rect x="16" y="-12" width="195" height="24" rx="5" fill="#1B223C" stroke="#FF6F4A" stroke-width="1.2"/>
+    <text x="113" y="4" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" font-weight="700" fill="#FF6F4A">TEMA 3 · TASA OBSERVADA</text>
+
+    <text x="18" y="24" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Descomposición de la tasa de mercado que pagan firmas:</text>
+
+    <!-- Capa 1: Tasa de política r̄ -->
+    <g transform="translate(16, 36)">
+      <rect width="333" height="34" rx="5" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+      <text x="12" y="21" font-family="Inter, sans-serif" font-size="9.5" fill="#EFF2F9">1. Tasa real de política del Banco Central:</text>
+      <text x="320" y="22" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#55C975">r̄</text>
+    </g>
+
+    <!-- Capa 2: Efecto Fisher (inflación esperada) -->
+    <g transform="translate(16, 75)">
+      <rect width="333" height="34" rx="5" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+      <text x="12" y="21" font-family="Inter, sans-serif" font-size="9.5" fill="#EFF2F9">2. Inflación esperada (Fisher: r ≈ i − π<tspan font-size="8" dy="-2">e</tspan><tspan font-size="9.5" dy="2">):</tspan></text>
+      <text x="320" y="22" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#667FDA">+ π<tspan font-size="9" dy="-2">e</tspan></text>
+    </g>
+
+    <!-- Capa 3: Prima de riesgo x (Cap. 6 / Margen financiero) -->
+    <g transform="translate(16, 114)">
+      <rect width="333" height="36" rx="5" fill="#10172D" stroke="#FB5668" stroke-width="1.2"/>
+      <text x="12" y="16" font-family="Inter, sans-serif" font-size="9.5" font-weight="600" fill="#EFF2F9">3. Prima de riesgo financiero / país:</text>
+      <text x="12" y="29" font-family="Inter, sans-serif" font-size="8.5" fill="#FB5668">Apalancamiento bancario, mora p y liquidez rl</text>
+      <text x="320" y="24" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="13" font-weight="700" fill="#FB5668">+ x</text>
+    </g>
+
+    <!-- Tarjeta de síntesis Tema 3 -->
+    <g transform="translate(16, 158)">
+      <rect width="333" height="64" rx="7" fill="#1B223C" stroke="#FF6F4A" stroke-width="1.2"/>
+      <text x="14" y="20" font-family="Inter, sans-serif" font-size="9.5" font-weight="700" fill="#EFF2F9">TASA NOMINAL TOTAL OBSERVADA:</text>
+      <text x="14" y="42" font-family="JetBrains Mono, monospace" font-size="14" font-weight="700" fill="#FF6F4A">i = r̄ + π<tspan font-size="10" dy="-3">e</tspan><tspan font-size="14" dy="3"> + x</tspan></text>
+      <text x="14" y="56" font-family="Inter, sans-serif" font-size="8.5" fill="#FFB188">Tasa real de endeudamiento que entra en IS: r = r̄ + x</text>
+    </g>
+  </g>
+
+  <!-- Conector central dinámico -->
+  <g transform="translate(410, 185)">
+    <circle cx="0" cy="0" r="16" fill="#1B223C" stroke="#FFB188" stroke-width="1.5"/>
+    <path d="M-8 -4L-2 0L-8 4M8 -4L2 0L8 4" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="-32" y="22" width="64" height="18" rx="4" fill="#080C1C" stroke="#2A324A" stroke-width="0.8"/>
+    <text x="0" y="34" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" font-weight="700" fill="#FFB188">UIP vs x</text>
+  </g>
+
+  <!-- ==================== PANEL DERECHO: TEMA 4 (UIP Y RIESGO PAÍS) ==================== -->
+  <g transform="translate(425, 75)">
+    <!-- Tarjeta fondo -->
+    <rect width="365" height="236" rx="10" fill="#080C1C" stroke="#667FDA" stroke-width="1.6"/>
+
+    <!-- Cabecera -->
+    <rect x="16" y="-12" width="205" height="24" rx="5" fill="#1B223C" stroke="#667FDA" stroke-width="1.2"/>
+    <text x="118" y="4" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" font-weight="700" fill="#667FDA">TEMA 4 · UIP Y EL SUPUESTO OCULTO</text>
+
+    <text x="18" y="24" font-family="Inter, sans-serif" font-size="10" fill="#A3AABE">Condición de Paridad Descubierta de Tasas (UIP):</text>
+
+    <!-- Caja 1: Ecuación UIP pura -->
+    <g transform="translate(16, 36)">
+      <rect width="333" height="46" rx="5" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
+      <text x="12" y="19" font-family="JetBrains Mono, monospace" font-size="12" font-weight="700" fill="#EFF2F9">i ≈ i* − %ΔE<tspan font-size="9" dy="-2">e</tspan></text>
+      <text x="12" y="36" font-family="Inter, sans-serif" font-size="8.5" fill="#A3AABE">Supuesto fuerte de Blanchard: bonos idénticos en riesgo (x = x* = 0)</text>
+    </g>
+
+    <!-- Caja 2: Trampa del examen / Control 2 -->
+    <g transform="translate(16, 90)">
+      <rect width="333" height="66" rx="6" fill="#10172D" stroke="#FFB188" stroke-width="1"/>
+      <text x="12" y="17" font-family="Inter, sans-serif" font-size="9.5" font-weight="700" fill="#FFB188">¿QUÉ SIGNIFICA OBSERVAR i &gt; i*?</text>
+      <text x="12" y="33" font-family="Inter, sans-serif" font-size="8.8" fill="#EFF2F9">• Visión UIP ingenua: <tspan fill="#667FDA">expectativa de apreciación</tspan> (%ΔE<tspan font-size="7" dy="-2">e</tspan><tspan font-size="8.8" dy="2"> &lt; 0)</tspan></text>
+      <text x="12" y="49" font-family="Inter, sans-serif" font-size="8.8" fill="#EFF2F9">• Con Tema 3: ¡puede ser <tspan font-weight="700" fill="#FB5668">mayor prima de riesgo (x &gt; x*)</tspan>!</text>
+      <text x="12" y="60" font-family="Inter, sans-serif" font-size="8" fill="#A3AABE">Sin igual riesgo, la brecha de tasas no es pura expectativa cambiaria.</text>
+    </g>
+
+    <!-- Alerta V/F Item 6 -->
+    <g transform="translate(16, 164)">
+      <rect width="333" height="58" rx="6" fill="#1B223C" stroke="#FB5668" stroke-width="1.2"/>
+      <text x="12" y="18" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#FB5668">CONCLUSIÓN PARA EL CONTROL 2 (ÍTEM V/F 6):</text>
+      <text x="12" y="34" font-family="Inter, sans-serif" font-size="8.5" fill="#EFF2F9">La UIP "pura" compara tasas a secas. En el mundo real,</text>
+      <text x="12" y="48" font-family="Inter, sans-serif" font-size="8.5" fill="#55C975">siempre se debe aislar x antes de proyectar el tipo de cambio.</text>
+    </g>
+  </g>
+
+  <!-- ==================== FRANJA INFERIOR DE CONCLUSIÓN Y REGLA ==================== -->
+  <g transform="translate(30, 326)">
+    <rect width="760" height="58" rx="8" fill="#080C1C" stroke="#2A324A" stroke-width="1.2"/>
+    <rect x="14" y="12" width="130" height="34" rx="5" fill="#1B223C" stroke="#FFB188" stroke-width="1"/>
+    <text x="79" y="33" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" font-weight="700" fill="#FFB188">REGLA MAESTRA</text>
+
+    <text x="156" y="27" font-family="Inter, sans-serif" font-size="9.5" font-weight="600" fill="#EFF2F9">Las tasas observadas i e i* ya internalizan el riesgo financiero x modelado en el Cap. 6.</text>
+    <text x="156" y="44" font-family="Inter, sans-serif" font-size="9" fill="#A3AABE">Evaluar la paridad internacional sin controlar por prima de riesgo x confunde riesgo país con movimiento cambiario.</text>
+  </g>
+</svg>
+      </div>
+      <figcaption>Fig. propia — puente analítico Tema 3 y Tema 4: descomposición de la tasa nominal observada (tasa de política r̄, inflación esperada π<sup>e</sup> y prima de riesgo x) y su contraste con la condición de paridad de tasas UIP (Blanchard, caps. 6 y 17).</figcaption>
+    </figure>
     <div class="bloque">
       <h3>3 · Balanza de pagos</h3>
       <ul>
@@ -353,6 +476,15 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
         <button class="vf-btn" data-val="false">Falso</button>
       </div>
       <div class="vf-justif"><span class="vf-tag"></span><p><strong>Verdadero.</strong> Aunque en teoría cuenta corriente + cuenta financiera deben sumar cero, en la práctica las fuentes de datos son distintas y no cuadran perfectamente — como en el ejemplo real de EE. UU. 2022 (discrepancia de −189).</p></div>
+    </div>
+
+    <div class="vf" data-resuelto="false" data-respuesta="false">
+      <p class="vf-enunciado"><strong>6 (integrador con Tema 3).</strong> Si observamos que la tasa doméstica i es mayor que la tasa extranjera i*, la paridad de tasas de interés garantiza que la causa es siempre una expectativa de apreciación de la moneda doméstica, nunca una diferencia de riesgo entre países.</p>
+      <div class="vf-opciones">
+        <button class="vf-btn" data-val="true">Verdadero</button>
+        <button class="vf-btn" data-val="false">Falso</button>
+      </div>
+      <div class="vf-justif"><span class="vf-tag"></span><p><strong>Falso.</strong> La ecuación (17.2/17.4) de Blanchard aísla el efecto cambiario <em>suponiendo</em> que ambos bonos tienen el mismo riesgo — un supuesto que el propio texto señala como "demasiado fuerte". Como vimos en Tema 3, las tasas observadas normalmente ya incluyen una prima de riesgo x (tasa de endeudamiento r + x). Un i &gt; i* también puede reflejar, total o parcialmente, que el país doméstico se percibe más riesgoso — no solo una expectativa de apreciación <em>(ver diagrama del puente analítico en Módulo 02)</em>.</p></div>
     </div>
   </section>
 
@@ -642,6 +774,7 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
           <dt>ε = EP/P*</dt><dd>Tipo de cambio real.</dd>
           <dt>(1+i) = (1+i*)(E_t/E^e_t+1)</dt><dd>Paridad de tasas de interés no cubierta (exacta).</dd>
           <dt>i ≈ i* − depreciación esperada</dt><dd>Versión aproximada de la paridad de tasas de interés.</dd>
+          <dt>r + x (Tema 3)</dt><dd>Tasa de endeudamiento real: tasa de política r más la prima de riesgo x. Las tasas nominales i, i* de la UIP ya traen una prima incorporada cuando el riesgo difiere entre países.</dd>
           <dt>Cuenta corriente</dt><dd>Balanza comercial + ingreso neto (+ transferencias).</dd>
           <dt>Cuenta financiera</dt><dd>Variación neta de tenencias de activos entre residentes y el resto del mundo.</dd>
           <dt>GNP = GDP + NI</dt><dd>Relación entre producto interno y producto nacional bruto.</dd>
