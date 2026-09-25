@@ -1,406 +1,132 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-k="IS">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Modelos Macroeconómicos — Macro II | ESEN [Macro-Cybernetics]</title>
+<title>Modelos Macroeconómicos · Macro II | ESEN</title>
+<meta name="description" content="Guías, actividades y repasos de Modelos Macroeconómicos (Macro II, ESEN 2026), organizados como capas del mismo modelo.">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#080C1C; --bg-elev:#10172D; --bg-elev2:#1B223C; --border:#2A324A;
-  --text:#EFF2F9; --text-dim:#A3AABE;
-  --indigo-mid:#667FDA; --coral:#FF6F4A; --coral-2:#FFB188;
-  --success:#55C975; --danger:#FB5668;
-  --ease:cubic-bezier(0.16,1,0.3,1);
-}
-*{box-sizing:border-box; margin:0; padding:0;}
-html{background:var(--bg); color-scheme: dark;}
-body{
-  font-family:'Inter',sans-serif;
-  background-color:var(--bg);
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M 48 0 L 0 0 0 48' fill='none' stroke='%232A324A' stroke-width='0.75' stroke-opacity='0.35'/%3E%3Ccircle cx='48' cy='48' r='1.2' fill='%23667FDA' fill-opacity='0.4'/%3E%3C/svg%3E");
-  background-attachment:fixed;
-  color:var(--text); line-height:1.65; font-weight:400;
-  accent-color: var(--coral);
-}
-h1,h2,h3{font-family:'Fraunces',serif; color:var(--text); letter-spacing:-0.02em;}
-em{font-style:italic; color:var(--coral);}
-.mono{font-family:'JetBrains Mono',monospace; font-variant-numeric:tabular-nums;}
-a{color:var(--coral-2);}
-a:focus-visible, button:focus-visible, .modnav a:focus-visible, .nicho-link:focus-visible{
-  outline:2px solid var(--coral); outline-offset:3px; border-radius:2px;
-}
-
-/* ---------- Barra de progreso HUD ultra-fina ---------- */
-.scroll-progreso{position:fixed; top:0; left:0; width:100%; height:3px; background:var(--border); z-index:999;}
-.scroll-progreso-fill{height:100%; width:0%; background:var(--coral); transition:width .1s linear;}
-
-/* ---------- Scrollbar técnica ---------- */
-::-webkit-scrollbar{width:7px; height:7px;}
-::-webkit-scrollbar-track{background:var(--bg);}
-::-webkit-scrollbar-thumb{background:var(--border); border-radius:2px;}
-::-webkit-scrollbar-thumb:hover{background:var(--coral);}
-
-/* ---------- Header: fondo plano, sin gradiente — la profundidad la da la tipografía y el espacio, no un wash de color ---------- */
-header{
-  background:var(--bg-elev);
-  border-bottom:1px solid var(--border);
-  box-shadow:0 4px 24px rgba(8,12,28,0.5);
-  padding:120px 24px 100px; position:relative; overflow:hidden;
-}
-header .wrap{max-width:1040px; margin:0 auto; position:relative; z-index:1;}
-.header-mark{position:absolute; width:min(42vw, 400px); height:auto; right:max(-36px, calc(50% - 570px)); bottom:-48px; pointer-events:none;}
-.eyebrow{
-  font-family:'JetBrains Mono',monospace; font-size:0.76rem; letter-spacing:0.09em; text-transform:uppercase;
-  color:var(--coral); font-weight:600; margin-bottom:20px;
-}
-h1{font-size:clamp(2.5rem, 5.5vw, 4.2rem); font-weight:600; margin-bottom:16px; text-wrap:balance;}
-header p.sub{color:var(--text-dim); max-width:52ch; font-size:1.02rem;}
-
-/* Chips "doble bisel": marco exterior tenue + relleno interior — no una caja plana de un solo borde */
-.meta-row{display:flex; gap:8px; flex-wrap:wrap; margin-top:28px;}
-.chip{
-  padding:2px; border-radius:9px; background:rgba(239,242,249,0.04);
-}
-.chip-in{
-  display:block; font-family:'JetBrains Mono',monospace; font-size:0.76rem; color:var(--text-dim);
-  background:var(--bg); border:1px solid var(--border); border-radius:7px; padding:6px 12px;
-  box-shadow:inset 0 1px 0 rgba(239,242,249,0.03);
-}
-.chip a.chip-in{color:var(--text-dim); text-decoration:none; transition:color .2s var(--ease), border-color .2s var(--ease);}
-.chip a.chip-in:hover{color:var(--coral-2); border-color:var(--coral-2);}
-
-main{max-width:1040px; margin:0 auto; padding:72px 24px 120px;}
-
-/* ---------- Navegación de módulos (menú tipo "mueble", no lista larga) ---------- */
-.modnav{
-  display:flex; gap:2px; margin-bottom:56px; width:fit-content; max-width:100%;
-  border:1px solid var(--border); border-radius:10px; padding:4px; background:var(--bg-elev);
-}
-.modnav a{
-  font-family:'JetBrains Mono',monospace; font-size:0.76rem; color:var(--text-dim); text-decoration:none;
-  padding:8px 14px; border-radius:7px; transition:background .2s var(--ease), color .2s var(--ease); white-space:nowrap;
-}
-.modnav a:hover{background:var(--bg-elev2); color:var(--text);}
-
-/* ---------- Módulos numerados (estructura tipo "bandeja") ---------- */
-.modulo{padding-top:56px; border-top:1px solid var(--border); margin-top:96px; scroll-margin-top:20px;}
-.modulo:first-of-type{margin-top:0;}
-.modulo-head{display:flex; align-items:flex-end; gap:18px; margin-bottom:18px;}
-.modulo-num{font-family:'Fraunces',serif; font-style:italic; font-weight:500; font-size:2.3rem; line-height:1; color:var(--text-dim);}
-.modulo-head h2{font-size:1.45rem; font-weight:600;}
-.modulo-text{color:var(--text-dim); font-size:0.92rem; max-width:56ch; margin-bottom:36px;}
-
-/* Contenido que entra al hacer scroll — visible por defecto; JS solo agrega la clase que anima si hay soporte y sin prefers-reduced-motion */
-.reveal.reveal-play{opacity:0; transform:translateY(14px);}
-.reveal.reveal-play.reveal-in{
-  opacity:1; transform:translateY(0);
-  transition:opacity .7s var(--ease), transform .7s var(--ease);
-}
-
-/* ---------- Doble bisel: marco exterior + núcleo interior, en vez de una caja plana con un solo borde ---------- */
-.bezel{padding:5px; border-radius:15px; background:rgba(239,242,249,0.035); border:1px solid var(--border);}
-.bezel-in{border-radius:11px; background:var(--bg-elev); box-shadow:inset 0 1px 0 rgba(239,242,249,0.05); overflow:hidden;}
-
-/* ---------- Nichos: cuadrícula de compartimentos con bordes compartidos (un solo mueble, no tarjetas sueltas) ---------- */
-.nichos-in{
-  display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
-  gap:1px; background:var(--border);
-}
-.nicho{
-  background:var(--bg-elev); padding:32px 26px; display:flex; flex-direction:column; gap:14px;
-  transition:background .2s var(--ease), transform .2s var(--ease);
-}
-.nicho .n-top{display:flex; justify-content:space-between; align-items:flex-start; gap:8px;}
-.nicho .n-num{font-family:'JetBrains Mono',monospace; font-weight:600; font-size:1rem; color:var(--text-dim);}
-.nicho.disponible .n-num{color:var(--coral);}
-.nicho h3{font-size:1rem; font-weight:600; font-family:'Inter',sans-serif; color:var(--text);}
-.nicho .n-meta{display:flex; flex-direction:column; gap:2px; font-family:'JetBrains Mono',monospace; font-size:0.74rem; color:var(--text-dim);}
-a.nicho-link{text-decoration:none; display:block;}
-a.nicho-link:hover .nicho{background:var(--bg-elev2); transform:translateY(-1px);}
-.status{
-  font-family:'JetBrains Mono',monospace; font-size:0.66rem; text-transform:uppercase; letter-spacing:0.04em;
-  padding:3px 9px; border-radius:5px; font-weight:600; display:inline-block; align-self:flex-start;
-}
-.status.pendiente{background:rgba(163,170,190,0.12); color:var(--text-dim);}
-.status.disponible{background:rgba(85,201,117,0.12); color:var(--success);}
-
-/* ---------- Recursos: filas tipo ficha, no tarjetas ---------- */
-.recursos-list{display:flex; flex-direction:column; border-top:1px solid var(--border);}
-.recurso-row{display:flex; gap:20px; padding:14px 0; border-bottom:1px solid var(--border); font-size:0.9rem; flex-wrap:wrap;}
-.recurso-row dt{
-  width:140px; flex-shrink:0; color:var(--text-dim); font-family:'JetBrains Mono',monospace;
-  font-size:0.72rem; text-transform:uppercase; letter-spacing:0.04em; padding-top:2px;
-}
-.recurso-row dd{color:var(--text);}
-
-footer{
-  border-top:1px solid var(--border); padding:32px 24px; text-align:center;
-  font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--text-dim);
-}
-
-/* ---------- Banner hero: sección de ancho completo entre el header y los módulos ---------- */
-.hero-banner{padding:0; border-bottom:1px solid var(--border); background:var(--bg); overflow:hidden;}
-.hero-banner svg{width:100%; height:auto; display:block;}
-
-@media (max-width:600px){
-  header{padding:76px 20px 60px;}
-  .header-mark{width:300px; right:-128px; bottom:-64px; opacity:.5;}
-  .recurso-row dt{width:100%;}
-  .modulo-num{font-size:1.9rem;}
-}
-@media (prefers-reduced-motion: reduce){
-  *, *::before, *::after{
-    animation-duration:0.01ms !important; animation-iteration-count:1 !important;
-    transition-duration:0.01ms !important; scroll-behavior:auto !important;
-  }
-  .reveal.reveal-play{opacity:1; transform:none;}
-}
-</style>
+<script>try{var t=localStorage.getItem('mm-tema');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="assets/guia.css">
 </head>
 <body>
-
-<div class="scroll-progreso" aria-hidden="true"><div class="scroll-progreso-fill" id="scrollFill"></div></div>
-
-<header>
-  <svg class="header-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" role="img" aria-label="Curvas macroeconómicas abstractas con puntos de equilibrio">
-    <path d="M190 260A170 170 0 0 1 370 70" fill="none" stroke="#667FDA" stroke-width="1" opacity=".10"/>
-    <path d="M225 265A140 140 0 0 1 385 95" fill="none" stroke="#FFB188" stroke-width="1" stroke-dasharray="4 4" opacity=".12"/>
-    <path d="M260 270A110 110 0 0 1 395 125" fill="none" stroke="#667FDA" stroke-width="1" opacity=".08"/>
-    <path d="M150 25V255M135 240H390" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" opacity=".35"/>
-    <path d="M146 32L150 24L154 32M382 236L390 240L382 244" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".35"/>
-    <path d="M147 80H153M147 135H153M147 190H153M205 237V243M265 237V243M325 237V243" fill="none" stroke="#A3AABE" stroke-width="1.2" stroke-linecap="round" opacity=".3"/>
-    <path d="M150 135H380M150 80H380M265 25V240M325 25V240" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="3 4" opacity=".4"/>
-    <path d="M150 135H265" fill="none" stroke="#FF6F4A" stroke-width="1.2" stroke-dasharray="4 4" opacity=".4"/>
-    <path d="M265 135V240" fill="none" stroke="#667FDA" stroke-width="1.2" stroke-dasharray="4 4" opacity=".4"/>
-    <path d="M150 110H305" fill="none" stroke="#FFB188" stroke-width="1" stroke-dasharray="3 4" opacity=".3"/>
-    <path d="M305 110V240" fill="none" stroke="#667FDA" stroke-width="1" stroke-dasharray="3 4" opacity=".3"/>
-    <path d="M145 60C205 100 275 165 375 210" fill="none" stroke="#FF6F4A" stroke-width="4.5" stroke-linecap="round" opacity=".85"/>
-    <path d="M185 42C245 82 315 147 395 188" fill="none" stroke="#FFB188" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6 5" opacity=".55"/>
-    <path d="M145 220C205 180 275 115 375 65" fill="none" stroke="#667FDA" stroke-width="4.5" stroke-linecap="round" opacity=".9"/>
-    <path d="M265 135C278 126 292 118 305 110" fill="none" stroke="#FFB188" stroke-width="2" stroke-dasharray="2 3" opacity=".75"/>
-    <path d="M288 122L293 117L286 116" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
-    <circle cx="265" cy="135" r="10.5" fill="#10172D" stroke="#EFF2F9" stroke-width="3" opacity=".98"/>
-    <circle cx="265" cy="135" r="5" fill="#FF6F4A"/>
-    <circle cx="265" cy="135" r="2" fill="#EFF2F9"/>
-    <circle cx="305" cy="110" r="8" fill="#10172D" stroke="#667FDA" stroke-width="2.4" opacity=".95"/>
-    <circle cx="305" cy="110" r="3" fill="#FFB188" opacity=".95"/>
-    <circle cx="150" cy="240" r="2.5" fill="#A3AABE" opacity=".6"/>
-  </svg>
-  <div class="wrap">
-    <div class="eyebrow">[SYS.PORTAL // ESEN · MACROECONOMÍA_II // 2026]</div>
-    <h1>Modelos <em>Macroeconómicos</em></h1>
-    <p class="sub">Materiales de estudio del curso con el profesor Luis Morera — guías, actividades y repasos generados junto con Claude, organizados por tema del cronograma oficial.</p>
-    <div class="meta-row">
-      <span class="chip"><span class="chip-in">[BLANCHARD_MACROECONOMICS_9E]</span></span>
-      <span class="chip"><span class="chip-in">[CRONOGRAMA · 12_SEMANAS]</span></span>
-      <span class="chip"><a class="chip-in" href="https://github.com/carcamval2025-cyber/modelos-macroeconomicos-vault">[REPOSITORIO_GITHUB]</a></span>
-    </div>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+<header class="cab">
+  <div class="cab-barra">
+    <a class="cab-marca" href="index.html" aria-current="page"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect x="6" y="7" width="52" height="10" fill="#F0B429"/><rect x="6" y="21" width="41" height="10" fill="#F2552C"/><rect x="6" y="35" width="30" height="10" fill="#C65BD6"/><rect x="6" y="49" width="19" height="10" fill="#22B8A0"/></svg><span><b>Macro II</b><small>Modelos Macroeconómicos · ESEN</small></span></a>
+    <button class="btn-tema" type="button" data-btn-tema>Tema oscuro</button>
   </div>
 </header>
+<p class="cuenta"><span data-proxima>Próxima evaluación según el cronograma del curso.</span></p>
 
-<section class="hero-banner" aria-label="Banner panorámico del espacio de fases y equilibrios macroeconómicos">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 320" role="img" aria-label="Banner panorámico del espacio de fases y equilibrios macroeconómicos">
-    <rect width="1600" height="320" fill="#080C1C"/>
-    <path d="M0 40H1600M0 280H1600" fill="none" stroke="#2A324A" stroke-width="1.2" opacity=".4"/>
-    <path d="M0 160H1600" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 8" opacity=".25"/>
-    <path d="M240 30V290M680 30V290M1080 30V290M1420 30V290" fill="none" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="3 6" opacity=".4"/>
-    <path d="M80 276V284M160 276V284M240 274V286M320 276V284M400 276V284M480 276V284M560 276V284M640 276V284M680 274V286M760 276V284M840 276V284M920 276V284M1000 276V284M1080 274V286M1160 276V284M1240 276V284M1320 276V284M1420 274V286M1500 276V284M1560 276V284" fill="none" stroke="#A3AABE" stroke-width="1.2" opacity=".3"/>
-    <path d="M80 36V44M240 34V46M400 36V44M560 36V44M680 34V46M840 36V44M1000 36V44M1080 34V46M1240 36V44M1420 34V46M1560 36V44" fill="none" stroke="#A3AABE" stroke-width="1" opacity=".2"/>
-    <path d="M-20 80C350 40 700 130 1100 90S1620 50 1650 50" fill="none" stroke="#667FDA" stroke-width="1.2" opacity=".10"/>
-    <path d="M-20 110C380 70 730 160 1130 120S1620 80 1650 80" fill="none" stroke="#667FDA" stroke-width="1.2" opacity=".14"/>
-    <path d="M-20 150C420 110 770 200 1170 160S1620 120 1650 120" fill="none" stroke="#FFB188" stroke-width="1" stroke-dasharray="6 8" opacity=".12"/>
-    <path d="M-20 190C450 160 800 240 1200 190S1620 160 1650 160" fill="none" stroke="#FF6F4A" stroke-width="1.2" opacity=".14"/>
-    <path d="M-20 230C480 210 830 270 1230 230S1620 200 1650 200" fill="none" stroke="#667FDA" stroke-width="1" opacity=".10"/>
-    <path d="M520 280A220 220 0 0 1 920 60" fill="none" stroke="#667FDA" stroke-width="1.2" stroke-dasharray="4 6" opacity=".18"/>
-    <path d="M580 280A160 160 0 0 1 880 90" fill="none" stroke="#FFB188" stroke-width="1" opacity=".15"/>
-    <path d="M920 280A180 180 0 0 1 1280 100" fill="none" stroke="#667FDA" stroke-width="1.2" stroke-dasharray="3 5" opacity=".15"/>
-    <path d="M1240 280A190 190 0 0 1 1580 80" fill="none" stroke="#EFF2F9" stroke-width="1" opacity=".10"/>
-    <path d="M120 60C380 100 560 145 960 220" fill="none" stroke="#FF6F4A" stroke-width="4.5" stroke-linecap="round" opacity=".88"/>
-    <path d="M200 40C460 80 640 125 1040 200" fill="none" stroke="#FFB188" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="8 5" opacity=".60"/>
-    <path d="M280 25C540 65 720 110 1120 185" fill="none" stroke="#FFB188" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 6" opacity=".30"/>
-    <path d="M140 265C380 230 560 185 960 85" fill="none" stroke="#667FDA" stroke-width="4.5" stroke-linecap="round" opacity=".92"/>
-    <path d="M220 280C460 245 640 200 1040 100" fill="none" stroke="#667FDA" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="7 6" opacity=".55"/>
-    <path d="M920 65C1000 100 1060 140 1260 240" fill="none" stroke="#FF6F4A" stroke-width="3.5" stroke-linecap="round" opacity=".80"/>
-    <path d="M980 48C1060 83 1120 123 1320 223" fill="none" stroke="#FFB188" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 5" opacity=".50"/>
-    <path d="M1080 45V275" fill="none" stroke="#EFF2F9" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 6" opacity=".65"/>
-    <path d="M1180 235C1300 135 1420 105 1580 95" fill="none" stroke="#EFF2F9" stroke-width="3.5" stroke-linecap="round" opacity=".85"/>
-    <path d="M1180 260L1580 125" fill="none" stroke="#667FDA" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6 5" opacity=".70"/>
-    <path d="M1240 270L1580 155" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-dasharray="4 5" opacity=".45"/>
-    <path d="M680 40V280M120 165H960" fill="none" stroke="#FF6F4A" stroke-width="1.2" stroke-dasharray="3 5" opacity=".35"/>
-    <path d="M760 40V280M200 135H1040" fill="none" stroke="#FFB188" stroke-width="1.2" stroke-dasharray="3 5" opacity=".35"/>
-    <path d="M1080 150H920M1080 150H1260" fill="none" stroke="#667FDA" stroke-width="1.2" stroke-dasharray="3 5" opacity=".35"/>
-    <path d="M1420 40V280M1180 105H1580" fill="none" stroke="#EFF2F9" stroke-width="1.2" stroke-dasharray="3 5" opacity=".30"/>
-    <path d="M240 40V280M0 195H400" fill="none" stroke="#A3AABE" stroke-width="1" stroke-dasharray="2 4" opacity=".25"/>
-    <path d="M680 165C710 155 735 145 755 138" fill="none" stroke="#FFB188" stroke-width="2" stroke-dasharray="3 3" opacity=".85"/>
-    <path d="M747 144L755 138L750 150" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
-    <path d="M775 133C870 120 980 130 1065 147" fill="none" stroke="#667FDA" stroke-width="1.8" stroke-dasharray="4 4" opacity=".75"/>
-    <path d="M1054 142L1065 147L1057 154" fill="none" stroke="#667FDA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/>
-    <path d="M1100 148C1190 135 1300 115 1405 106" fill="none" stroke="#EFF2F9" stroke-width="1.8" stroke-dasharray="4 6" opacity=".70"/>
-    <path d="M1394 102L1405 106L1396 114" fill="none" stroke="#EFF2F9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/>
-    <circle cx="240" cy="195" r="8" fill="#10172D" stroke="#A3AABE" stroke-width="2" opacity=".85"/>
-    <circle cx="240" cy="195" r="2.5" fill="#EFF2F9"/>
-    <circle cx="680" cy="165" r="12.5" fill="#10172D" stroke="#EFF2F9" stroke-width="3.5" opacity=".98"/>
-    <circle cx="680" cy="165" r="6" fill="#FF6F4A"/>
-    <circle cx="680" cy="165" r="2.5" fill="#EFF2F9"/>
-    <circle cx="760" cy="135" r="9.5" fill="#10172D" stroke="#667FDA" stroke-width="2.5" opacity=".95"/>
-    <circle cx="760" cy="135" r="4" fill="#FFB188" opacity=".95"/>
-    <circle cx="1080" cy="150" r="10" fill="#10172D" stroke="#FF6F4A" stroke-width="2.5" opacity=".95"/>
-    <circle cx="1080" cy="150" r="4" fill="#667FDA" opacity=".95"/>
-    <circle cx="1420" cy="105" r="12" fill="#10172D" stroke="#EFF2F9" stroke-width="3" opacity=".98"/>
-    <circle cx="1420" cy="105" r="5.5" fill="#667FDA"/>
-    <circle cx="1420" cy="105" r="2.2" fill="#EFF2F9"/>
-    <circle cx="440" cy="125" r="3.5" fill="#667FDA" opacity=".6"/>
-    <circle cx="960" cy="85" r="3.5" fill="#667FDA" opacity=".6"/>
-    <circle cx="960" cy="220" r="3.5" fill="#FF6F4A" opacity=".6"/>
-    <circle cx="1260" cy="240" r="3.5" fill="#FFB188" opacity=".6"/>
-    <circle cx="1520" cy="100" r="3.5" fill="#EFF2F9" opacity=".6"/>
-    <path d="M436 125H444M440 121V129" fill="none" stroke="#2A324A" stroke-width="1.5" opacity=".8"/>
-    <path d="M956 85H964M960 81V89" fill="none" stroke="#2A324A" stroke-width="1.5" opacity=".8"/>
-    <path d="M956 220H964M960 216V224" fill="none" stroke="#2A324A" stroke-width="1.5" opacity=".8"/>
-    <path d="M1256 240H1264M1260 236V244" fill="none" stroke="#2A324A" stroke-width="1.5" opacity=".8"/>
-  </svg>
-</section>
-
-<main>
-  <nav class="modnav" aria-label="Módulos del sitio">
-    <a href="#sitio">[ 01 // SITIO ]</a>
-    <a href="#ruta">[ 02 // RUTA_DEL_CURSO ]</a>
-    <a href="#herramientas">[ 03 // HERRAMIENTAS ]</a>
-    <a href="#recursos">[ 04 // RECURSOS ]</a>
-  </nav>
-
-  <section class="modulo reveal" id="sitio">
-    <div class="modulo-head"><span class="modulo-num">// 01</span><h2>Sobre este sitio</h2></div>
-    <p class="modulo-text">Aquí solo se publican Guías, Actividades y Repasos — material de estudio para uso directo del estudiante. Tareas, Controles y sus Pautas <strong style="color:var(--text)">nunca</strong> se publican aquí: son siempre borradores de trabajo para el profesor, conforme a la política de IA del Programa del curso.</p>
-  </section>
-
-  <section class="modulo reveal" id="ruta">
-    <div class="modulo-head"><span class="modulo-num">// 02</span><h2>Ruta del curso</h2></div>
-    <p class="modulo-text">Los 7 Temas en el orden del cronograma oficial, con su capítulo de Blanchard. Cada nicho se activa cuando existe una Guía/Actividad/Repaso publicado para ese tema.</p>
-    <div class="bezel">
-      <div class="bezel-in">
-        <div class="nichos-in" id="temasNichos"></div>
-      </div>
+<main id="contenido">
+  <section class="portada" aria-labelledby="t-portada">
+    <div class="titulo">
+      <h1 id="t-portada">Modelos Macroeconómicos, capa por capa</h1>
+      <p>Macro II, ESEN, Tercer Ciclo 2026, con el profesor Luis Morera. Cada Tema agrega una capa al mismo modelo: enciende o apaga una capa para ver qué le aportó al diagrama.</p>
+    </div>
+    <ol class="pila" id="pila" aria-label="Los 7 Temas del curso"></ol>
+    <div class="lienzo">
+      <svg class="plano" id="modelo" role="img" aria-label="Diagrama del modelo del curso compuesto por las capas encendidas: plano (i, Y) y tasa del banco central (Tema 1), curvas IS y LM con equilibrio A (Tema 2), desplazamiento de la IS por la prima de riesgo x (Tema 3) y vínculo con la tasa externa i* (Tema 4)."></svg>
+      <p id="lienzoEstado" aria-live="polite"></p>
     </div>
   </section>
 
-  <section class="modulo reveal" id="herramientas">
-    <div class="modulo-head"><span class="modulo-num">// 03</span><h2>Herramientas de práctica</h2></div>
-    <p class="modulo-text">Simuladores y simulacros interactivos para repasar a fondo antes de un Control o Parcial, organizados por Tema. Se van agregando conforme cada Tema los tiene listos.</p>
-    <div class="bezel">
-      <div class="bezel-in">
-        <div class="nichos-in" id="herramientasNichos"></div>
-      </div>
-    </div>
+  <section class="seccion-portada" id="herramientas" aria-labelledby="t-herr">
+    <h2 id="t-herr">Herramientas de práctica</h2>
+    <p>Simuladores, simulacros y actividades para repasar antes de un Control o Parcial. Tus aciertos se guardan en este navegador y se suman a la capa de su Tema.</p>
+    <ul class="herramientas" id="herramientasLista"></ul>
   </section>
 
-  <section class="modulo reveal" id="recursos">
-    <div class="modulo-head"><span class="modulo-num">// 04</span><h2>Recursos</h2></div>
-    <dl class="recursos-list">
-      <div class="recurso-row"><dt>Bibliografía</dt><dd>Blanchard, <em>Macroeconomics</em>, 9e</dd></div>
-      <div class="recurso-row"><dt>Duración</dt><dd>12 semanas, calendario oficial en <span class="mono">02 Curso/Cronograma.md</span></dd></div>
-      <div class="recurso-row"><dt>Repositorio</dt><dd><a href="https://github.com/carcamval2025-cyber/modelos-macroeconomicos-vault">github.com/carcamval2025-cyber/modelos-macroeconomicos-vault</a></dd></div>
+  <section class="seccion-portada" id="sitio" aria-labelledby="t-sitio">
+    <h2 id="t-sitio">Sobre este sitio</h2>
+    <p>Aquí solo se publican Guías, Actividades y Repasos: material de estudio para uso directo del estudiante. Tareas, Controles y sus Pautas <strong>nunca</strong> se publican aquí; son siempre borradores de trabajo para el profesor, conforme a la política de IA del Programa del curso.</p>
+  </section>
+
+  <section class="seccion-portada" id="recursos" aria-labelledby="t-recursos">
+    <h2 id="t-recursos">Recursos</h2>
+    <dl class="recursos">
+      <dt>Bibliografía</dt><dd>Blanchard, <em>Macroeconomics</em>, 9.ª ed.</dd>
+      <dt>Duración</dt><dd>12 semanas; calendario oficial en <code>02 Curso/Cronograma.md</code></dd>
+      <dt>Repositorio</dt><dd><a href="https://github.com/carcamval2025-cyber/modelos-macroeconomicos-vault">github.com/carcamval2025-cyber/modelos-macroeconomicos-vault</a></dd>
     </dl>
   </section>
 </main>
 
 <footer>
-  Vault de Modelos Macroeconómicos · generado y mantenido junto con Claude ·
-  <a href="https://github.com/carcamval2025-cyber/modelos-macroeconomicos-vault">repositorio en GitHub</a>
+  <p>Vault de Modelos Macroeconómicos, generado y mantenido junto con Claude. <a href="https://github.com/carcamval2025-cyber/modelos-macroeconomicos-vault">Repositorio en GitHub</a>.</p>
 </footer>
 
+<script src="assets/guia.js"></script>
 <script>
+/* Para publicar un Tema: cambiar disponible:false a disponible:true (ver AGENTS.md, sección GitHub Pages).
+   k es la variable que colorea su capa: Y, IS, x o ext. */
 const TEMAS = [
-  {n:1, nombre:'Repaso de Macro I', capitulo:'Cap. 4 (secc. 4.3+)', semana:'Semana 1', disponible:true, href:'tema-01/'},
-  {n:2, nombre:'Modelo IS-LM', capitulo:'Cap. 5', semana:'Semana 2', disponible:true, href:'tema-02/'},
-  {n:3, nombre:'IS-LM + Temas Financieros', capitulo:'Cap. 6', semana:'Semana 3', disponible:true, href:'tema-03/'},
-  {n:4, nombre:'IS-LM + Apertura Comercial/Financiera', capitulo:'Cap. 17 (partes seleccionadas)', semana:'Semana 4', disponible:true, href:'tema-04/'},
-  {n:5, nombre:'Mercado Laboral', capitulo:'Caps. 7–8', semana:'Semanas 7–8', disponible:false, href:'tema-05/'},
-  {n:6, nombre:'Oferta Agregada y Demanda Agregada', capitulo:'Cap. 9', semana:'Semanas 9–10', disponible:false, href:'tema-06/'},
-  {n:7, nombre:'Crecimiento Económico', capitulo:'Caps. 10–11', semana:'Semana 11', disponible:false, href:'tema-07/'},
+  {n:1, nombre:'Repaso de Macro I', capitulo:'Cap. 4 (secc. 4.3 en adelante)', semana:'Semana 1', disponible:true, href:'tema-01/', k:'Y', pieza:'Y = Z'},
+  {n:2, nombre:'Modelo IS-LM', capitulo:'Cap. 5', semana:'Semana 2', disponible:true, href:'tema-02/', k:'IS', pieza:'IS y LM'},
+  {n:3, nombre:'IS-LM + Temas Financieros', capitulo:'Cap. 6', semana:'Semana 3', disponible:true, href:'tema-03/', k:'x', pieza:'r + x'},
+  {n:4, nombre:'IS-LM + Apertura Comercial/Financiera', capitulo:'Cap. 17 (partes seleccionadas)', semana:'Semana 4', disponible:true, href:'tema-04/', k:'ext', pieza:'ε y UIP'},
+  {n:5, nombre:'Mercado Laboral', capitulo:'Caps. 7 y 8', semana:'Semanas 7 y 8', disponible:false, href:'tema-05/'},
+  {n:6, nombre:'IS-LM-PC', capitulo:'Cap. 9', semana:'Semanas 9 y 10', disponible:false, href:'tema-06/'},
+  {n:7, nombre:'Crecimiento Económico', capitulo:'Caps. 10 y 11', semana:'Semana 11', disponible:false, href:'tema-07/'},
 ];
-
-const grid = document.getElementById('temasNichos');
-TEMAS.forEach((t)=>{
-  const inner = `
-    <div class="nicho${t.disponible ? ' disponible' : ''}">
-      <div class="n-top">
-        <span class="n-num">${String(t.n).padStart(2,'0')}</span>
-        <span class="status ${t.disponible ? 'disponible' : 'pendiente'}">${t.disponible ? '[● DISPONIBLE]' : '[○ PENDIENTE]'}</span>
-      </div>
-      <h3>${t.nombre}</h3>
-      <div class="n-meta"><span>${t.capitulo}</span><span>${t.semana}</span></div>
-    </div>`;
-  if(t.disponible){
-    const a = document.createElement('a');
-    a.className = 'nicho-link';
-    a.href = t.href;
-    a.innerHTML = inner;
-    grid.appendChild(a);
-  } else {
-    const wrap = document.createElement('div');
-    wrap.innerHTML = inner;
-    grid.appendChild(wrap.firstElementChild);
-  }
-});
 
 const HERRAMIENTAS = [
-  {tema:'Tema 2', nombre:'Simulador de choques IS-LM', descripcion:'Elige un choque fiscal, monetario o exógeno, predice el efecto en 11 variables y verifica contra el gráfico.', href:'tema-02/simulador-islm.html'},
-  {tema:'Tema 2', nombre:'Simulacro — Control 1', descripcion:'10 preguntas con cronómetro de 25 min, al estilo del Control (no es el Control real).', href:'tema-02/simulacro-control1.html'},
-  {tema:'Tema 3', nombre:'Simulador de Margen Financiero y Apalancamiento', descripcion:'Modelo computacional interactivo del balance bancario: calcula MI, ROE, apalancamiento y trayectoria de tasa activa exigida frente a riesgo de mora y encaje.', href:'tema-03/#simulador'},
-  {tema:'Tema 4', nombre:'Actividad — Práctica de apertura comercial y financiera', descripcion:'Autoevaluación interactiva de 15 ítems (11 conceptuales + 4 ejercicios numéricos integrando Tema 3) con retroalimentación inmediata.', href:'tema-04/actividad-tema4-apertura.html'},
-  {tema:'Tema 4', nombre:'Repaso integrador — Control 2', descripcion:'Repaso mixto con 6 preguntas V/F justificadas, 3 problemas numéricos guiados y suite de 4 diagramas SVG incluyendo el puente analítico con Tema 3 (prima de riesgo x y UIP).', href:'tema-04/repaso-control2-tema4-apertura.html'},
+  {tema:2, nombre:'Simulador de choques IS-LM', descripcion:'Elige un choque fiscal, monetario o exógeno, predice el efecto en 11 variables y verifica contra el gráfico.', href:'tema-02/simulador-islm.html'},
+  {tema:2, nombre:'Predice antes de ver', descripcion:'Decide hacia dónde se mueven la IS y la LM ante cada choque; el diagrama dibuja tu predicción junto a la respuesta.', href:'tema-02/#predice'},
+  {tema:2, nombre:'Simulacro del Control 1', descripcion:'10 preguntas con cronómetro de 25 min, al estilo del Control (no es el Control real).', href:'tema-02/simulacro-control1.html'},
+  {tema:3, nombre:'Simulador de margen financiero y apalancamiento', descripcion:'Modelo interactivo del balance bancario: calcula MI, ROE, apalancamiento y la tasa activa exigida frente al riesgo de mora y el encaje.', href:'tema-03/#simulador'},
+  {tema:4, nombre:'Actividad de apertura comercial y financiera', descripcion:'Autoevaluación de 11 ítems con retroalimentación inmediata y 4 ejercicios numéricos que integran el Tema 3.', href:'tema-04/actividad-tema4-apertura.html'},
+  {tema:4, nombre:'Repaso integrador para el Control 2', descripcion:'6 preguntas de verdadero o falso justificadas, 3 problemas numéricos guiados y 4 diagramas, incluido el puente con el Tema 3 (prima de riesgo x y UIP).', href:'tema-04/repaso-control2-tema4-apertura.html'},
 ];
 
-const gridH = document.getElementById('herramientasNichos');
-HERRAMIENTAS.forEach((h)=>{
-  const a = document.createElement('a');
-  a.className = 'nicho-link';
-  a.href = h.href;
-  a.innerHTML = `
-    <div class="nicho disponible">
-      <div class="n-top">
-        <span class="n-num">${h.tema.replace('Tema ', 'T')}</span>
-        <span class="status disponible">[● DISPONIBLE]</span>
-      </div>
-      <h3>${h.nombre}</h3>
-      <div class="n-meta"><span>${h.descripcion}</span></div>
-    </div>`;
-  gridH.appendChild(a);
-});
+(function(){
+  const svg = document.getElementById('modelo');
+  const estado = document.getElementById('lienzoEstado');
+  const pila = document.getElementById('pila');
+  let encendidas = TEMAS.filter(t => t.disponible).map(t => t.n);
+  MM.plano(svg, {w:560, h:440, capas:encendidas});
 
-/* Entrada al hacer scroll: el contenido ya es visible por defecto (ver CSS .reveal sin .reveal-play);
-   esto solo lo mejora si el navegador soporta IntersectionObserver y el usuario no pidió menos movimiento.
-   Si algo falla, el contenido sencillamente no se anima — nunca queda invisible. */
-/* Barra de progreso de lectura */
-window.addEventListener('scroll', function(){
-  var h = document.documentElement,
-      b = document.body,
-      st = 'scrollTop',
-      sh = 'scrollHeight';
-  var percent = ((h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight)) * 100;
-  var fill = document.getElementById('scrollFill');
-  if(fill) fill.style.width = Math.min(100, Math.max(0, percent)) + '%';
-}, {passive:true});
+  function pintar(){
+    MM.capas(svg, encendidas);
+    const lista = encendidas.slice().sort((a,b)=>a-b);
+    estado.textContent = lista.length
+      ? 'Capas encendidas: ' + (lista.length === 1 ? 'Tema ' : 'Temas ') + lista.join(', ').replace(/, (\d+)$/, ' y $1') + '.'
+      : 'Todas las capas están apagadas.';
+  }
 
-if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-  const targets = document.querySelectorAll('.reveal');
-  targets.forEach(el => el.classList.add('reveal-play'));
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.classList.add('reveal-in');
-        io.unobserve(entry.target);
-      }
+  TEMAS.forEach(t => {
+    const li = document.createElement('li');
+    li.className = 'capa' + (t.disponible ? '' : ' vacia');
+    if (t.disponible) li.setAttribute('data-k', t.k);
+    li.innerHTML =
+      '<span class="n" aria-hidden="true">' + t.n + '</span>' +
+      '<span class="nm">' + (t.disponible ? '<a href="' + t.href + '"><span class="sr">Tema ' + t.n + ': </span>' + t.nombre + '</a>' : '<span class="sr">Tema ' + t.n + ': </span>' + t.nombre) +
+      '<small>' + t.capitulo + ' · ' + t.semana + '</small></span>' +
+      '<span class="acc">' + (t.disponible
+        ? '<span class="pz">' + t.pieza + '</span><button type="button" aria-pressed="true"><span class="sr">Tema ' + t.n + ': </span>En el diagrama</button>'
+        : '<span>Por publicar</span>') + '</span>' +
+      (t.disponible ? '<span class="pg" data-progreso="' + t.n + '"><span class="pg-barra" aria-hidden="true"><i></i></span><span class="pg-num"></span></span>' : '');
+    const b = li.querySelector('button');
+    if (b) b.addEventListener('click', () => {
+      const on = b.getAttribute('aria-pressed') === 'true';
+      b.setAttribute('aria-pressed', on ? 'false' : 'true');
+      encendidas = on ? encendidas.filter(n => n !== t.n) : encendidas.concat(t.n);
+      pintar();
     });
-  }, {threshold:0.12});
-  targets.forEach(el => io.observe(el));
-}
-</script>
+    pila.appendChild(li);
+  });
+  pintar();
 
+  const lista = document.getElementById('herramientasLista');
+  HERRAMIENTAS.forEach(h => {
+    const tema = TEMAS[h.tema - 1];
+    const li = document.createElement('li');
+    li.className = 'herramienta';
+    li.innerHTML = '<a href="' + h.href + '"><span class="t" data-k="' + tema.k + '">Tema ' + h.tema + '</span><b>' + h.nombre + '</b><span class="d">' + h.descripcion + '</span></a>';
+    lista.appendChild(li);
+  });
+})();
+</script>
 </body>
 </html>

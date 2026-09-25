@@ -1,192 +1,34 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-k="IS">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simulador de choques — IS-LM (repaso Control 1)</title>
+<title>Simulador de choques IS-LM · Tema 2 | Macro II</title>
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#080C1C; --bg-elev:#10172D; --bg-elev2:#1B223C; --border:#2A324A;
-  --text:#EFF2F9; --text-dim:#A3AABE;
-  --indigo-mid:#667FDA; --coral:#FF6F4A; --coral-2:#FFB188;
-  --success:#55C975; --danger:#FB5668;
-  --ease:cubic-bezier(0.16,1,0.3,1);
-}
-*{box-sizing:border-box; margin:0; padding:0;}
-html{background:var(--bg); color-scheme:dark;}
-body{
-  font-family:'Inter',sans-serif;
-  background-color:var(--bg);
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M 48 0 L 0 0 0 48' fill='none' stroke='%232A324A' stroke-width='0.75' stroke-opacity='0.35'/%3E%3Ccircle cx='48' cy='48' r='1.2' fill='%23667FDA' fill-opacity='0.4'/%3E%3C/svg%3E");
-  background-attachment:fixed;
-  color:var(--text); line-height:1.65; font-weight:400;
-}
-h1,h2,h3{font-family:'Fraunces',serif; color:var(--text); letter-spacing:-0.02em;}
-em{font-style:italic; color:var(--coral);}
-.mono{font-family:'JetBrains Mono',monospace; font-variant-numeric:tabular-nums;}
-a{color:var(--coral-2);}
-button{font-family:inherit; cursor:pointer;}
-a:focus-visible, button:focus-visible{
-  outline:2px solid var(--coral); outline-offset:3px; border-radius:4px;
-}
-
-header{
-  background:var(--bg-elev); border-bottom:1px solid var(--border);
-  padding:72px 24px 48px;
-}
-header .wrap{max-width:820px; margin:0 auto;}
-.volver{
-  display:inline-flex; align-items:center; gap:6px; font-family:'JetBrains Mono',monospace; font-size:0.76rem;
-  color:var(--text-dim); text-decoration:none; margin-bottom:28px;
-}
-.volver:hover{color:var(--coral-2);}
-.eyebrow{
-  font-family:'JetBrains Mono',monospace; font-size:0.76rem; letter-spacing:0.09em; text-transform:uppercase;
-  color:var(--coral); font-weight:600; margin-bottom:16px;
-}
-h1{font-size:clamp(2rem, 4.5vw, 3rem); font-weight:600; margin-bottom:14px;}
-header p.sub{color:var(--text-dim); max-width:62ch; font-size:1rem;}
-.meta-row{display:flex; gap:8px; flex-wrap:wrap; margin-top:22px;}
-.chip{padding:2px; border-radius:9px; background:rgba(239,242,249,0.04);}
-.chip-in{
-  display:block; font-family:'JetBrains Mono',monospace; font-size:0.76rem; color:var(--text-dim);
-  background:var(--bg); border:1px solid var(--border); border-radius:7px; padding:6px 12px;
-}
-
-main{max-width:820px; margin:0 auto; padding:56px 24px 120px;}
-
-/* ---------- Marcador (panel de progreso/métricas requerido por el sistema de diseño) ---------- */
-.marcador{
-  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;
-  padding:20px 24px; border:1px solid var(--border); border-radius:14px; background:var(--bg-elev);
-  margin-bottom:40px;
-}
-.marcador-stats{display:flex; gap:28px; flex-wrap:wrap;}
-.stat{display:flex; flex-direction:column; gap:2px;}
-.stat .num{font-family:'JetBrains Mono',monospace; font-weight:600; font-size:1.5rem; color:var(--text);}
-.stat .lbl{font-family:'JetBrains Mono',monospace; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-dim);}
-.btn-reset{
-  font-family:'JetBrains Mono',monospace; font-size:0.76rem; color:var(--text-dim);
-  background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:8px 14px;
-  transition:color .2s var(--ease), border-color .2s var(--ease);
-}
-.btn-reset:hover{color:var(--coral-2); border-color:var(--coral-2);}
-
-/* ---------- Selector de choque ---------- */
-h2.seccion{font-size:1.1rem; font-weight:600; margin-bottom:14px;}
-.choques-grid{
-  display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:1px;
-  background:var(--border); border:1px solid var(--border); border-radius:12px; overflow:hidden; margin-bottom:36px;
-}
-.choque-btn{
-  background:var(--bg-elev); border:none; padding:18px 20px; text-align:left; display:flex; gap:12px; align-items:flex-start;
-  transition:background .2s var(--ease);
-}
-.choque-btn:hover{background:var(--bg-elev2);}
-.choque-btn.activo{background:var(--bg-elev2); box-shadow:inset 3px 0 0 var(--coral);}
-.choque-badge{
-  flex-shrink:0; width:28px; height:28px; border-radius:8px; display:flex; align-items:center; justify-content:center;
-  font-family:'JetBrains Mono',monospace; font-weight:700; font-size:0.8rem;
-}
-.choque-badge.f{background:rgba(255,111,74,0.14); color:var(--coral);}
-.choque-badge.m{background:rgba(102,127,218,0.16); color:var(--indigo-mid);}
-.choque-badge.x{background:rgba(163,170,190,0.14); color:var(--text-dim);}
-.choque-btn h3{font-size:0.92rem; font-weight:600; color:var(--text); margin-bottom:3px; font-family:'Inter',sans-serif;}
-.choque-btn p{font-size:0.78rem; color:var(--text-dim); line-height:1.4;}
-
-/* ---------- Enunciado del escenario ---------- */
-.enunciado{
-  border:1px solid var(--border); border-radius:14px; padding:22px 24px; margin-bottom:32px; background:var(--bg-elev);
-  border-left:3px solid var(--coral);
-}
-.enunciado p{font-size:0.95rem;}
-
-/* ---------- Tabla de predicción ---------- */
-.tabla-prediccion{display:flex; flex-direction:column; border-top:1px solid var(--border); margin-bottom:24px;}
-.fila-var{
-  display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 4px;
-  border-bottom:1px solid var(--border); flex-wrap:wrap;
-}
-.fila-var .nombre-var{font-size:0.9rem; color:var(--text); min-width:220px;}
-.opciones{display:flex; gap:6px;}
-.opcion-btn{
-  font-family:'JetBrains Mono',monospace; font-size:0.76rem; padding:7px 12px; border-radius:8px;
-  background:var(--bg); border:1px solid var(--border); color:var(--text-dim);
-  transition:border-color .2s var(--ease), color .2s var(--ease), background .2s var(--ease);
-}
-.opcion-btn:hover{border-color:var(--coral-2); color:var(--text);}
-.opcion-btn[aria-pressed="true"]{background:var(--bg-elev2); border-color:var(--indigo-mid); color:var(--text); font-weight:600;}
-.fila-var.correcta .opcion-btn[aria-pressed="true"]{background:rgba(85,201,117,0.14); border-color:var(--success); color:var(--success);}
-.fila-var.incorrecta .opcion-btn[aria-pressed="true"]{background:rgba(251,86,104,0.12); border-color:var(--danger); color:var(--danger);}
-.fila-var.incorrecta .opcion-btn.era-correcta{background:rgba(85,201,117,0.14); border-color:var(--success); color:var(--success);}
-
-.btn-verificar{
-  display:block; width:100%; font-family:'JetBrains Mono',monospace; font-size:0.9rem; font-weight:600;
-  padding:14px; border-radius:10px; border:1px solid var(--coral); background:rgba(255,111,74,0.08); color:var(--coral);
-  margin-bottom:40px; transition:background .2s var(--ease);
-}
-.btn-verificar:hover:not(:disabled){background:rgba(255,111,74,0.16);}
-.btn-verificar:disabled{opacity:0.4; cursor:not-allowed;}
-
-/* ---------- Diagrama ---------- */
-.diagrama-wrap{border:1px solid var(--border); border-radius:14px; overflow:hidden; margin-bottom:32px; background:var(--bg-elev);}
-.diagrama-wrap svg{width:100%; height:auto; display:block;}
-.fade{opacity:0; transition:opacity .7s var(--ease);}
-.fade.mostrar{opacity:1;}
-.curva-fantasma{transition:opacity .7s var(--ease), stroke-dasharray .01s;}
-
-/* ---------- Explicación ---------- */
-.explicacion{
-  border:1px solid var(--border); border-radius:14px; padding:22px 24px; background:var(--bg-elev);
-  border-left:3px solid var(--indigo-mid); margin-bottom:32px;
-}
-.explicacion h3{font-size:0.95rem; margin-bottom:10px; font-family:'Inter',sans-serif; font-weight:600;}
-.explicacion p{font-size:0.9rem; margin-bottom:10px; color:var(--text-dim);}
-.explicacion p strong{color:var(--text);}
-
-.btn-siguiente{
-  display:inline-flex; align-items:center; gap:8px; font-family:'JetBrains Mono',monospace; font-size:0.85rem; font-weight:600;
-  padding:12px 20px; border-radius:10px; border:1px solid var(--indigo-mid); background:rgba(102,127,218,0.1); color:var(--indigo-mid);
-}
-.btn-siguiente:hover{background:rgba(102,127,218,0.18);}
-
-footer{
-  border-top:1px solid var(--border); padding:32px 24px; text-align:center;
-  font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--text-dim);
-}
-
-@media (max-width:600px){
-  header{padding:56px 20px 40px;}
-  .fila-var{flex-direction:column; align-items:flex-start;}
-}
-@media (prefers-reduced-motion: reduce){
-  *, *::before, *::after{
-    animation-duration:0.01ms !important; animation-iteration-count:1 !important;
-    transition-duration:0.01ms !important;
-  }
-}
-</style>
+<script>try{var t=localStorage.getItem('mm-tema');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/guia.css">
 </head>
 <body>
 
-<header>
-  <div class="wrap">
-    <a class="volver" href="index.html">&larr; Repaso Tema 2 — Modelo IS-LM</a>
-    <div class="eyebrow">ESEN · Macro II · Tema 2 · Actividad interactiva</div>
-    <h1>Simulador de <em>choques</em> IS-LM</h1>
-    <p class="sub">Elige un choque de política fiscal, monetaria o exógeno. Antes de ver el gráfico, predice qué pasa con cada variable — igual que tendrías que razonarlo en el Control 1, sin la curva ya dibujada.</p>
-    <div class="meta-row">
-      <span class="chip"><span class="chip-in">Blanchard, cap. 5 (secc. 5-1 a 5-4)</span></span>
-      <span class="chip"><span class="chip-in">Práctica ilimitada — no es el Control 1</span></span>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+<header class="cab">
+  <div class="cab-barra">
+    <a class="cab-marca" href="../index.html"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect x="6" y="7" width="52" height="10" fill="#F0B429"/><rect x="6" y="21" width="41" height="10" fill="#F2552C"/><rect x="6" y="35" width="30" height="10" fill="#C65BD6"/><rect x="6" y="49" width="19" height="10" fill="#22B8A0"/></svg><span><b>Macro II</b><small>Modelos Macroeconómicos · ESEN</small></span></a>
+    <button class="btn-tema" type="button" data-btn-tema>Tema oscuro</button>
+  </div>
+  <div class="cab-banda">
+    <div class="cab-in">
+      <p class="cab-kicker"><a href="../index.html">Inicio</a> / <a href="index.html">Repaso del Tema 2</a> / Tema 2 · Actividad interactiva</p>
+      <h1>Simulador de choques IS-LM</h1>
+      <p class="sub">Elige un choque de política fiscal, monetaria o exógeno. Antes de ver el gráfico, predice qué pasa con cada variable, igual que tendrías que razonarlo en el Control 1, sin la curva ya dibujada.</p>
+      <ul class="cab-meta"><li>Blanchard, cap. 5, secc. 5-1 a 5-4</li><li>Práctica ilimitada, no es el Control 1</li></ul>
+      
     </div>
   </div>
 </header>
 
-<main>
+<div class="pagina angosta sin-panel">
+<main id="contenido">
 
   <div class="marcador">
     <div class="marcador-stats">
@@ -212,38 +54,38 @@ footer{
     <div class="diagrama-wrap">
       <svg viewBox="0 0 460 270" role="img" aria-labelledby="fig-sim-title" xmlns="http://www.w3.org/2000/svg">
         <title id="fig-sim-title">Diagrama IS-LM del choque simulado</title>
-        <rect width="100%" height="100%" fill="#10172D"/>
+        <rect width="100%" height="100%" fill="#1A1B1D"/>
 
         <!-- Ejes -->
-        <line x1="60" y1="25" x2="60" y2="225" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round"/>
-        <line x1="60" y1="225" x2="425" y2="225" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round"/>
-        <path d="M56 31L60 23L64 31" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M419 221L427 225L419 229" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-        <text x="48" y="27" text-anchor="end" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">i</text>
-        <text x="428" y="240" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">Y</text>
+        <line x1="60" y1="25" x2="60" y2="225" stroke="#A9ABAE" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="60" y1="225" x2="425" y2="225" stroke="#A9ABAE" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M56 31L60 23L64 31" fill="none" stroke="#A9ABAE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M419 221L427 225L419 229" fill="none" stroke="#A9ABAE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="48" y="27" text-anchor="end" font-family="Archivo, sans-serif" font-weight="600" font-size="12" fill="#A9ABAE">i</text>
+        <text x="428" y="240" font-family="Archivo, sans-serif" font-weight="600" font-size="12" fill="#A9ABAE">Y</text>
 
         <!-- Curvas originales (siempre visibles al inicio) -->
-        <path id="isOriginal" d="M136 45 Q225.1 125, 337.5 205" fill="none" stroke="#FF6F4A" stroke-width="2.4" stroke-linecap="round"/>
-        <text id="isOriginalLbl" x="345" y="211" font-family="JetBrains Mono" font-weight="700" font-size="12" fill="#FF6F4A">IS</text>
-        <path id="lmOriginal" d="M75 140 L405 140" fill="none" stroke="#667FDA" stroke-width="2.2" stroke-linecap="round"/>
-        <text id="lmOriginalLbl" x="410" y="136" font-family="JetBrains Mono" font-weight="700" font-size="12" fill="#667FDA">LM</text>
+        <path id="isOriginal" d="M136 45 Q225.1 125, 337.5 205" fill="none" stroke="#F2552C" stroke-width="2.4" stroke-linecap="round"/>
+        <text id="isOriginalLbl" x="345" y="211" font-family="Azeret Mono, monospace" font-weight="700" font-size="12" fill="#F2552C">IS</text>
+        <path id="lmOriginal" d="M75 140 L405 140" fill="none" stroke="#5C9DFF" stroke-width="2.2" stroke-linecap="round"/>
+        <text id="lmOriginalLbl" x="410" y="136" font-family="Azeret Mono, monospace" font-weight="700" font-size="12" fill="#5C9DFF">LM</text>
 
         <!-- Curvas desplazadas (ocultas hasta verificar) -->
-        <path id="isNueva" class="fade" d="M136 45 Q225.1 125, 337.5 205" fill="none" stroke="#FF6F4A" stroke-width="2.4" stroke-linecap="round"/>
-        <text id="isNuevaLbl" class="fade" x="0" y="0" font-family="JetBrains Mono" font-weight="700" font-size="11.5" fill="#FF6F4A">IS&#8242;</text>
-        <path id="lmNueva" class="fade" d="M75 140 L405 140" fill="none" stroke="#667FDA" stroke-width="2.2" stroke-linecap="round"/>
-        <text id="lmNuevaLbl" class="fade" x="0" y="0" font-family="JetBrains Mono" font-weight="700" font-size="11.5" fill="#667FDA">LM&#8242;</text>
+        <path id="isNueva" class="fade" d="M136 45 Q225.1 125, 337.5 205" fill="none" stroke="#F2552C" stroke-width="2.4" stroke-linecap="round"/>
+        <text id="isNuevaLbl" class="fade" x="0" y="0" font-family="Azeret Mono, monospace" font-weight="700" font-size="11.5" fill="#F2552C">IS&#8242;</text>
+        <path id="lmNueva" class="fade" d="M75 140 L405 140" fill="none" stroke="#5C9DFF" stroke-width="2.2" stroke-linecap="round"/>
+        <text id="lmNuevaLbl" class="fade" x="0" y="0" font-family="Azeret Mono, monospace" font-weight="700" font-size="11.5" fill="#5C9DFF">LM&#8242;</text>
 
         <!-- Flecha de movimiento (oculta hasta verificar) -->
-        <line id="flechaMov" class="fade" x1="250" y1="140" x2="250" y2="140" stroke="#A3AABE" stroke-width="1.4" stroke-dasharray="3 2"/>
+        <line id="flechaMov" class="fade" x1="250" y1="140" x2="250" y2="140" stroke="#A9ABAE" stroke-width="1.4" stroke-dasharray="3 2"/>
 
         <!-- Punto A (original, siempre visible) -->
-        <circle cx="250" cy="140" r="4.5" fill="#10172D" stroke="#EFF2F9" stroke-width="1.8"/>
-        <text x="238" y="156" font-family="Inter" font-weight="800" font-size="13" fill="#EFF2F9">A</text>
+        <circle cx="250" cy="140" r="4.5" fill="#1A1B1D" stroke="#F2F2F0" stroke-width="1.8"/>
+        <text x="238" y="156" font-family="Archivo, sans-serif" font-weight="800" font-size="13" fill="#F2F2F0">A</text>
 
         <!-- Punto A' (oculto hasta verificar) -->
-        <circle id="puntoNuevo" class="fade" cx="250" cy="140" r="4.5" fill="#10172D" stroke="#FFB188" stroke-width="1.8"/>
-        <text id="puntoNuevoLbl" class="fade" x="250" y="140" font-family="Inter" font-weight="800" font-size="13" fill="#FFB188">A&#8242;</text>
+        <circle id="puntoNuevo" class="fade" cx="250" cy="140" r="4.5" fill="#1A1B1D" stroke="#FF9B7D" stroke-width="1.8"/>
+        <text id="puntoNuevoLbl" class="fade" x="250" y="140" font-family="Archivo, sans-serif" font-weight="800" font-size="13" fill="#FF9B7D">A&#8242;</text>
       </svg>
     </div>
     <div class="explicacion" id="explicacion"></div>
@@ -252,11 +94,14 @@ footer{
 
 </main>
 
+</div>
+
 <footer>
-  Herramienta de práctica construida junto con Claude — no sustituye la Guía de ejercicios 1 ni es el Control 1 real. Fuente: Blanchard, <em>Macroeconomics</em> 9e, cap. 5 (secc. 5-1 a 5-4). ·
-  <a href="index.html">Volver al Repaso — Tema 2</a>
+  Herramienta de práctica construida junto con Claude. No sustituye la Guía de ejercicios 1 ni es el Control 1 real. Fuente: Blanchard, <em>Macroeconomics</em> 9e, cap. 5 (secc. 5-1 a 5-4). ·
+  <a href="index.html">Volver al Repaso del Tema 2</a>
 </footer>
 
+<script src="../assets/guia.js"></script>
 <script>
 const VARIABLES = [
   "Tasa de interés (i)",
@@ -283,9 +128,9 @@ const ESCENARIOS = [
     isAfter: "M186 45 Q275.1 125, 387.5 205", lmAfter: null, eq: [300, 140],
     signos: ["igual","sube","sube","sube","sube","sube","igual","baja","sube","sube","baja"],
     explicacion: [
-      "<strong>Paso 1 — ¿qué curva se mueve?</strong> G entra directo en la demanda de bienes (Y = C + I + G), así que la IS se desplaza a la derecha. La LM no se mueve: el banco central no cambió su tasa.",
-      "<strong>Paso 2 — ¿cómo se mueve el equilibrio?</strong> Se mueve a lo largo de la LM (que sigue siendo la misma recta horizontal): mayor Y, la misma i.",
-      "<strong>Paso 3 — componente por componente.</strong> Con Y mayor y T constante, el ingreso disponible sube → consumo sube. La inversión sube porque depende positivamente de Y (i no cambió). El ahorro privado sube junto con el ingreso disponible. Las importaciones suben con el mayor Y; las exportaciones no cambian, así que la balanza comercial empeora. La demanda de dinero real sube (más Y, misma i) y el banco central debe dejar subir la oferta de dinero real en la misma medida para sostener la tasa fija. Con más producto, el desempleo baja (Ley de Okun)."
+      "<strong>Paso 1: ¿qué curva se mueve?</strong> G entra directo en la demanda de bienes (Y = C + I + G), así que la IS se desplaza a la derecha. La LM no se mueve: el banco central no cambió su tasa.",
+      "<strong>Paso 2: ¿cómo se mueve el equilibrio?</strong> Se mueve a lo largo de la LM (que sigue siendo la misma recta horizontal): mayor Y, la misma i.",
+      "<strong>Paso 3: componente por componente.</strong> Con Y mayor y T constante, el ingreso disponible sube → consumo sube. La inversión sube porque depende positivamente de Y (i no cambió). El ahorro privado sube junto con el ingreso disponible. Las importaciones suben con el mayor Y; las exportaciones no cambian, así que la balanza comercial empeora. La demanda de dinero real sube (más Y, misma i) y el banco central debe dejar subir la oferta de dinero real en la misma medida para sostener la tasa fija. Con más producto, el desempleo baja (Ley de Okun)."
     ]
   },
   {
@@ -295,7 +140,7 @@ const ESCENARIOS = [
     isAfter: "M86 45 Q175.1 125, 287.5 205", lmAfter: null, eq: [200, 140],
     signos: ["igual","baja","baja","baja","baja","baja","igual","sube","baja","baja","sube"],
     explicacion: [
-      "<strong>Paso 1.</strong> T no entra directo en Y = C + I + G, pero reduce el ingreso disponible y por tanto el consumo — la IS se desplaza a la izquierda. La LM no se mueve.",
+      "<strong>Paso 1.</strong> T no entra directo en Y = C + I + G, pero reduce el ingreso disponible y por tanto el consumo: la IS se desplaza a la izquierda. La LM no se mueve.",
       "<strong>Paso 2.</strong> El equilibrio se mueve a lo largo de la LM: menor Y, la misma i.",
       "<strong>Paso 3.</strong> Con Y menor y T mayor, el ingreso disponible cae por partida doble → consumo cae. La inversión cae porque depende positivamente de Y. El ahorro cae junto con el ingreso disponible. Las importaciones caen con el menor Y; las exportaciones no cambian, así que la balanza comercial mejora. La demanda de dinero real cae (menos Y, misma i) y la oferta de dinero real debe caer en la misma medida. El desempleo sube."
     ]
@@ -309,7 +154,7 @@ const ESCENARIOS = [
     explicacion: [
       "<strong>Paso 1.</strong> G entra completo en la demanda de bienes, pero T solo afecta indirectamente (a través del consumo, con peso c1 &lt; 1). Por eso el efecto expansivo de ↑G es más fuerte que el efecto contractivo de ↑T del mismo monto: la IS se desplaza a la derecha (el \"multiplicador del presupuesto equilibrado\" es exactamente 1). La LM no se mueve.",
       "<strong>Paso 2.</strong> El equilibrio se mueve a lo largo de la LM: Y sube en la misma cantidad que subió G, la tasa i no cambia.",
-      "<strong>Paso 3 — el resultado que sorprende.</strong> El ingreso disponible (Y − T) <strong>no cambia</strong>, porque Y y T subieron exactamente igual — por eso el consumo privado tampoco cambia, y el ahorro tampoco. La inversión sí sube, porque depende de Y (no del ingreso disponible) y Y aumentó. Las importaciones suben con el mayor Y; la balanza comercial empeora. La demanda y oferta de dinero real suben junto con Y. El desempleo baja. Moraleja: \"se cancelan\" es correcto para C y S, pero es falso que \"nada cambia\" en la economía — Y sí sube."
+      "<strong>Paso 3: el resultado que sorprende.</strong> El ingreso disponible (Y − T) <strong>no cambia</strong>, porque Y y T subieron exactamente igual: por eso el consumo privado tampoco cambia, y el ahorro tampoco. La inversión sí sube, porque depende de Y (no del ingreso disponible) y Y aumentó. Las importaciones suben con el mayor Y; la balanza comercial empeora. La demanda y oferta de dinero real suben junto con Y. El desempleo baja. Moraleja: \"se cancelan\" es correcto para C y S, pero es falso que \"nada cambia\" en la economía: Y sí sube."
     ]
   },
   {
@@ -333,7 +178,7 @@ const ESCENARIOS = [
     explicacion: [
       "<strong>Paso 1.</strong> El banco central baja la tasa de política, así que la LM (horizontal a esa tasa) se desplaza hacia abajo. La IS no se mueve: nada cambió en G, T ni en la inversión autónoma.",
       "<strong>Paso 2.</strong> Ahora el equilibrio se mueve a lo largo de la IS original (pendiente negativa): menor i, mayor Y.",
-      "<strong>Paso 3.</strong> Con Y mayor y T constante, el ingreso disponible sube → consumo sube. La inversión sube por partida doble: el efecto directo de la tasa más baja, más el efecto inducido del mayor Y. El ahorro sube junto con el ingreso disponible. Las importaciones suben con el mayor Y; la balanza comercial empeora. La demanda de dinero real sube (Y sube e i baja, ambos empujan hacia arriba) — y esta vez es el banco central quien aumenta activamente la oferta de dinero real para lograr la tasa más baja. El desempleo baja."
+      "<strong>Paso 3.</strong> Con Y mayor y T constante, el ingreso disponible sube → consumo sube. La inversión sube por partida doble: el efecto directo de la tasa más baja, más el efecto inducido del mayor Y. El ahorro sube junto con el ingreso disponible. Las importaciones suben con el mayor Y; la balanza comercial empeora. La demanda de dinero real sube (Y sube e i baja, ambos empujan hacia arriba), y esta vez es el banco central quien aumenta activamente la oferta de dinero real para lograr la tasa más baja. El desempleo baja."
     ]
   },
   {
@@ -345,10 +190,12 @@ const ESCENARIOS = [
     explicacion: [
       "<strong>Paso 1.</strong> El banco central sube la tasa de política, así que la LM se desplaza hacia arriba. La IS no se mueve.",
       "<strong>Paso 2.</strong> El equilibrio se mueve a lo largo de la IS original: mayor i, menor Y.",
-      "<strong>Paso 3.</strong> Con Y menor y T constante, el ingreso disponible cae → consumo cae. La inversión cae por partida doble: el efecto directo de la tasa más alta, más el efecto inducido del menor Y. El ahorro cae junto con el ingreso disponible. Las importaciones caen; la balanza comercial mejora. La demanda de dinero real cae (Y cae e i sube, ambos empujan hacia abajo) — y es el banco central quien reduce activamente la oferta de dinero real para lograr la tasa más alta. El desempleo sube."
+      "<strong>Paso 3.</strong> Con Y menor y T constante, el ingreso disponible cae → consumo cae. La inversión cae por partida doble: el efecto directo de la tasa más alta, más el efecto inducido del menor Y. El ahorro cae junto con el ingreso disponible. Las importaciones caen; la balanza comercial mejora. La demanda de dinero real cae (Y cae e i sube, ambos empujan hacia abajo), y es el banco central quien reduce activamente la oferta de dinero real para lograr la tasa más alta. El desempleo sube."
     ]
   }
 ];
+
+MM.progreso.registrar(2, 'simulador', ESCENARIOS.length);
 
 const OPCIONES = [
   {v:"sube", l:"Aumenta"},
@@ -435,7 +282,7 @@ function elegirEscenario(id){
   actualizarBotonVerificar();
   document.getElementById('resultado').hidden = true;
   resetDiagrama();
-  document.getElementById('tablaPrediccion').scrollIntoView({behavior:'smooth', block:'nearest'});
+  document.getElementById('tablaPrediccion').scrollIntoView({behavior:(matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'), block:'nearest'});
 }
 
 function resetDiagrama(){
@@ -466,6 +313,7 @@ function verificarRespuestas(){
     fila.querySelectorAll('.opcion-btn').forEach(b=> b.disabled = true);
   });
 
+  MM.progreso.marcar(2, 'simulador', escenarioActual.id, aciertosRonda === VARIABLES.length);
   marcador.aciertos += aciertosRonda;
   marcador.total += VARIABLES.length;
   marcador.rondas += 1;
@@ -506,12 +354,12 @@ function verificarRespuestas(){
   document.getElementById('explicacion').innerHTML = `<h3>Puntaje de esta ronda: ${aciertosRonda}/${VARIABLES.length}</h3>` +
     escenarioActual.explicacion.map(p=>`<p>${p}</p>`).join('');
   document.getElementById('resultado').hidden = false;
-  document.getElementById('resultado').scrollIntoView({behavior:'smooth', block:'start'});
+  MM.irA(document.getElementById('resultado'));
 }
 
 document.getElementById('btnVerificar').addEventListener('click', verificarRespuestas);
 document.getElementById('btnSiguiente').addEventListener('click', ()=>{
-  document.getElementById('choquesGrid').scrollIntoView({behavior:'smooth', block:'start'});
+  document.getElementById('choquesGrid').scrollIntoView({behavior:(matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'), block:'start'});
 });
 document.getElementById('btnReiniciarMarcador').addEventListener('click', ()=>{
   marcador = {aciertos:0, total:0, rondas:0};

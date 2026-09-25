@@ -1,376 +1,54 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-k="ext">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guía — Tema 4: IS-LM + Apertura Comercial/Financiera</title>
+<title>Tema 4 · IS-LM y apertura comercial y financiera | Macro II</title>
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#080C1C; --bg-elev:#10172D; --bg-elev2:#1B223C; --border:#2A324A;
-  --text:#EFF2F9; --text-dim:#A3AABE;
-  --indigo-mid:#667FDA; --coral:#FF6F4A; --coral-2:#FFB188;
-  --success:#55C975; --danger:#FB5668;
-  --ease:cubic-bezier(0.16,1,0.3,1);
-}
-*{box-sizing:border-box; margin:0; padding:0;}
-html{background:var(--bg);}
-body{
-  font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.65; font-weight:400;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M48 0H0V48' fill='none' stroke='%232A324A' stroke-width='0.6' opacity='0.35'/%3E%3Ccircle cx='0' cy='0' r='1' fill='%23667FDA' opacity='0.25'/%3E%3C/svg%3E");
-  background-attachment:fixed;
-}
-h1,h2,h3{font-family:'Fraunces',serif; color:var(--text); letter-spacing:-0.02em;}
-em{font-style:italic; color:var(--coral);}
-.mono{font-family:'JetBrains Mono',monospace; font-variant-numeric:tabular-nums;}
-a{color:var(--coral-2);}
-a:focus-visible, button:focus-visible{
-  outline:2px solid var(--coral); outline-offset:3px; border-radius:4px;
-}
-
-header{
-  background:var(--bg-elev);
-  border-bottom:1px solid var(--border);
-  padding:88px 24px 64px; position:relative; overflow:hidden;
-}
-header .wrap{max-width:820px; margin:0 auto; position:relative; z-index:1;}
-.header-mark{position:absolute; width:min(42vw, 380px); height:auto; right:max(-36px, calc(50% - 470px)); bottom:-48px; pointer-events:none;}
-.volver{
-  display:inline-flex; align-items:center; gap:6px; font-family:'JetBrains Mono',monospace; font-size:0.76rem;
-  color:var(--text-dim); text-decoration:none; margin-bottom:24px;
-}
-.volver:hover{color:var(--coral-2);}
-.eyebrow{
-  font-family:'JetBrains Mono',monospace; font-size:0.76rem; letter-spacing:0.09em; text-transform:uppercase;
-  color:var(--coral); font-weight:600; margin-bottom:20px;
-}
-h1{font-size:clamp(2.1rem, 5vw, 3.2rem); font-weight:600; margin-bottom:16px; text-wrap:balance;}
-header p.sub{color:var(--text-dim); max-width:58ch; font-size:1.02rem;}
-.meta-row{display:flex; gap:8px; flex-wrap:wrap; margin-top:28px;}
-.chip{padding:2px; border-radius:9px; background:rgba(239,242,249,0.04);}
-.chip-in{
-  display:block; font-family:'JetBrains Mono',monospace; font-size:0.76rem; color:var(--text-dim);
-  background:var(--bg); border:1px solid var(--border); border-radius:7px; padding:6px 12px;
-  box-shadow:inset 0 1px 0 rgba(239,242,249,0.03);
-}
-
-main{max-width:820px; margin:0 auto; padding:64px 24px 100px;}
-
-.modnav{
-  display:flex; gap:2px; margin-bottom:56px; width:fit-content; max-width:100%; flex-wrap:wrap;
-  border:1px solid var(--border); border-radius:10px; padding:4px; background:var(--bg-elev);
-}
-.modnav a{
-  font-family:'JetBrains Mono',monospace; font-size:0.74rem; color:var(--text-dim); text-decoration:none;
-  padding:8px 12px; border-radius:7px; transition:background .2s var(--ease), color .2s var(--ease); white-space:nowrap;
-}
-.modnav a:hover{background:var(--bg-elev2); color:var(--text);}
-
-.modulo{padding-top:48px; border-top:1px solid var(--border); margin-top:80px; scroll-margin-top:20px;}
-.modulo:first-of-type{margin-top:0;}
-.modulo-head{display:flex; align-items:flex-end; gap:16px; margin-bottom:18px;}
-.modulo-num{font-family:'Fraunces',serif; font-style:italic; font-weight:500; font-size:2.1rem; line-height:1; color:var(--text-dim);}
-.modulo-head h2{font-size:1.3rem; font-weight:600;}
-.modulo-text{color:var(--text-dim); font-size:0.92rem; max-width:60ch; margin-bottom:28px;}
-
-.reveal.reveal-play{opacity:0; transform:translateY(14px);}
-.reveal.reveal-play.reveal-in{
-  opacity:1; transform:translateY(0);
-  transition:opacity .7s var(--ease), transform .7s var(--ease);
-}
-
-.bezel{padding:5px; border-radius:15px; background:rgba(239,242,249,0.035); border:1px solid var(--border); margin-bottom:20px;}
-.bezel-in{border-radius:11px; background:var(--bg-elev); box-shadow:inset 0 1px 0 rgba(239,242,249,0.05); padding:24px 26px;}
-
-.bloque{
-  background:var(--bg-elev); border:1px solid var(--border); border-radius:12px;
-  padding:22px 24px; margin-bottom:18px;
-}
-.bloque-icono{display:flex; gap:16px; align-items:flex-start;}
-.bloque-icono .icono{flex-shrink:0; margin-top:2px; display:flex;}
-.bloque h3{font-size:1.02rem; font-weight:600; margin-bottom:8px;}
-.bloque p + p{margin-top:10px;}
-.bloque p{font-size:0.95rem;}
-
-.ecuacion{
-  background:var(--bg); border:1px solid var(--border); border-radius:8px;
-  padding:12px 16px; margin:10px 0; font-family:'JetBrains Mono',monospace; font-size:0.92rem;
-  color:var(--text); overflow-x:auto;
-}
-
-.recuadro{
-  background:rgba(255,111,74,0.06); border:1px solid rgba(255,111,74,0.35); border-radius:12px;
-  padding:20px 24px; margin:18px 0;
-}
-.recuadro-tag{
-  font-family:'JetBrains Mono',monospace; font-size:0.7rem; letter-spacing:0.06em; text-transform:uppercase;
-  color:var(--coral); font-weight:600; margin-bottom:10px; display:block;
-}
-.recuadro p{font-size:0.95rem;}
-
-.aviso{
-  background:rgba(255,111,74,0.06); border:1px solid rgba(255,111,74,0.35); border-radius:12px;
-  padding:20px 24px; margin:18px 0;
-}
-.aviso-tag{
-  font-family:'JetBrains Mono',monospace; font-size:0.7rem; letter-spacing:0.06em; text-transform:uppercase;
-  color:var(--coral); font-weight:600; margin-bottom:10px; display:block;
-}
-.aviso p{font-size:0.94rem; color:var(--text);}
-
-figure{margin:20px 0;}
-.diagrama{
-  background:var(--bg-elev); border:1px solid var(--border); border-radius:12px;
-  padding:20px; overflow-x:auto;
-}
-.diagrama svg{max-width:100%; height:auto; display:block; margin:0 auto;}
-figcaption{font-size:0.82rem; color:var(--text-dim); margin-top:10px; text-align:center;}
-
-.glosario{display:grid; grid-template-columns:auto 1fr; gap:10px 20px; font-size:0.92rem;}
-.glosario dt{font-family:'JetBrains Mono',monospace; font-weight:600; color:var(--indigo-mid);}
-.glosario dd{color:var(--text);}
-
-.stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:12px; overflow:hidden; margin:18px 0;}
-.stat{background:var(--bg-elev); padding:18px 16px;}
-.stat-label{font-family:'JetBrains Mono',monospace; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-dim); margin-bottom:6px;}
-.stat-val{font-family:'JetBrains Mono',monospace; font-size:1.3rem; font-weight:600; color:var(--text);}
-.stat-val.up{color:var(--danger);}
-.stat-val.down{color:var(--success);}
-
-.tabla-bp{width:100%; border-collapse:collapse; font-size:0.88rem; margin:14px 0;}
-.tabla-bp th, .tabla-bp td{padding:9px 12px; text-align:right; border-bottom:1px solid var(--border);}
-.tabla-bp th:first-child, .tabla-bp td:first-child{text-align:left; font-weight:400;}
-.tabla-bp thead th{font-family:'JetBrains Mono',monospace; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--text-dim); border-bottom:1px solid var(--border);}
-.tabla-bp td.mono, .tabla-bp th.mono{font-family:'JetBrains Mono',monospace;}
-.tabla-bp tr.total td{font-weight:600; border-top:1px solid var(--border); border-bottom:none;}
-.tabla-bp td.neg{color:var(--danger);}
-.tabla-bp td.pos{color:var(--success);}
-
-.pregunta{border:1px solid var(--border); border-radius:12px; margin-bottom:12px; overflow:hidden; background:var(--bg-elev);}
-.pregunta button.disparador{
-  width:100%; text-align:left; background:transparent; border:none; padding:16px 20px;
-  font-family:'Inter',sans-serif; font-size:0.96rem; font-weight:600; color:var(--text); cursor:pointer;
-  display:flex; justify-content:space-between; align-items:center; gap:16px;
-}
-.pregunta button.disparador:hover{background:var(--bg-elev2);}
-.pregunta button.disparador .flecha{color:var(--text-dim); transition:transform .15s var(--ease); flex-shrink:0;}
-.pregunta button.disparador[aria-expanded="true"] .flecha{transform:rotate(180deg);}
-.pregunta .respuesta{
-  padding:16px 20px; margin:0 16px 16px; border:1px solid rgba(85,201,117,0.35);
-  background:rgba(85,201,117,0.12); border-radius:10px;
-}
-.pregunta .respuesta p{font-size:0.92rem;}
-.respuesta-tag{
-  font-family:'JetBrains Mono',monospace; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase;
-  color:var(--success); font-weight:600; margin-bottom:8px; display:block;
-}
-.pregunta[data-abierta="false"] .respuesta{display:none;}
-
-.img-request{
-  border:1px dashed var(--coral); border-radius:12px; padding:20px 24px; margin:0 0 8px;
-  background:rgba(255,111,74,0.04);
-}
-.img-request-badge{
-  font-family:'JetBrains Mono',monospace; font-size:0.68rem; letter-spacing:0.05em; text-transform:uppercase;
-  color:var(--coral); font-weight:600; display:inline-block; margin-bottom:8px;
-}
-.img-request p{font-size:0.88rem; color:var(--text-dim);}
-
-.hero-banner{margin:0 0 8px; border:1px solid var(--border); border-radius:12px; overflow:hidden; background:var(--bg);}
-.hero-banner svg{width:100%; height:auto; display:block;}
-
-.badge{
-  display:inline-block; background:var(--bg-elev2); color:var(--text-dim); font-family:'JetBrains Mono',monospace;
-  font-size:0.7rem; font-weight:600; padding:3px 10px; border-radius:999px; letter-spacing:0.03em;
-  text-transform:uppercase; margin-right:6px;
-}
-
-footer{
-  border-top:1px solid var(--border); padding:32px 24px; text-align:center;
-  font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--text-dim);
-}
-footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; font-family:'Inter',sans-serif; font-size:0.82rem;}
-
-@media (max-width:600px){
-  header{padding:56px 20px 44px;}
-  .header-mark{width:260px; right:-120px; bottom:-56px; opacity:.5;}
-  .modulo-num{font-size:1.7rem;}
-  .bloque-icono{flex-direction:column;}
-  .tabla-bp{font-size:0.78rem;}
-}
-@media (prefers-reduced-motion: reduce){
-  *, *::before, *::after{
-    animation-duration:0.01ms !important; animation-iteration-count:1 !important;
-    transition-duration:0.01ms !important; scroll-behavior:auto !important;
-  }
-  .reveal.reveal-play{opacity:1; transform:none;}
-}
-</style>
+<script>try{var t=localStorage.getItem('mm-tema');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/guia.css">
 </head>
 <body>
 
-<header>
-  <svg class="header-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" role="img" aria-label="Flujos entre economía doméstica y resto del mundo, abstractos">
-    <path d="M60 140H340M200 40V240" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="3 5" opacity=".4"/>
-    <circle cx="120" cy="140" r="46" fill="none" stroke="#667FDA" stroke-width="1.4" opacity=".35"/>
-    <circle cx="280" cy="140" r="46" fill="none" stroke="#FF6F4A" stroke-width="1.4" opacity=".35"/>
-    <path d="M150 128C185 110 215 110 250 128" fill="none" stroke="#FFB188" stroke-width="2" stroke-dasharray="4 4" opacity=".8"/>
-    <path d="M242 122L250 128L241 133" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/>
-    <path d="M250 154C215 172 185 172 150 154" fill="none" stroke="#667FDA" stroke-width="2" stroke-dasharray="4 4" opacity=".8"/>
-    <path d="M158 160L150 154L159 149" fill="none" stroke="#667FDA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/>
-    <circle cx="120" cy="140" r="10" fill="#10172D" stroke="#667FDA" stroke-width="2.4"/>
-    <circle cx="120" cy="140" r="4" fill="#EFF2F9"/>
-    <circle cx="280" cy="140" r="10" fill="#10172D" stroke="#FF6F4A" stroke-width="2.4"/>
-    <circle cx="280" cy="140" r="4" fill="#EFF2F9"/>
-    <path d="M45 205H80M45 215H70" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
-    <path d="M320 65H355M330 75H355" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" opacity=".3"/>
-  </svg>
-  <div class="wrap">
-    <a class="volver" href="../index.html">&larr; Modelos Macroeconómicos</a>
-    <div class="eyebrow">ESEN · Macro II · Tema 4 · Semana 4</div>
-    <h1>IS-LM + <em>apertura</em> comercial y financiera</h1>
-    <p class="sub">Guía de estudio para el Tema 4: cómo cambia el análisis macroeconómico cuando la economía comercia bienes y activos con el resto del mundo — tipo de cambio, paridad de tasas de interés y balanza de pagos.</p>
-    <div class="meta-row">
-      <span class="chip"><span class="chip-in">Blanchard, cap. 17 (secc. 17-1/17-2)</span></span>
-      <span class="chip"><span class="chip-in">Semana 4 · 14–18 sep</span></span>
-      <span class="chip"><span class="chip-in">Prof. Luis Morera · Control 2</span></span>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+<header class="cab">
+  <div class="cab-barra">
+    <a class="cab-marca" href="../index.html"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect x="6" y="7" width="52" height="10" fill="#F0B429"/><rect x="6" y="21" width="41" height="10" fill="#F2552C"/><rect x="6" y="35" width="30" height="10" fill="#C65BD6"/><rect x="6" y="49" width="19" height="10" fill="#22B8A0"/></svg><span><b>Macro II</b><small>Modelos Macroeconómicos · ESEN</small></span></a>
+    <button class="btn-tema" type="button" data-btn-tema>Tema oscuro</button>
+  </div>
+  <div class="cab-banda">
+    <div class="cab-in">
+      <p class="cab-kicker"><a href="../index.html">Inicio</a> / Tema 4 · Semana 4 · Guía de estudio</p>
+      <h1>IS-LM y apertura comercial y financiera</h1>
+      <p class="sub">Guía de estudio para el Tema 4: cómo cambia el análisis macroeconómico cuando la economía comercia bienes y activos con el resto del mundo. Tipo de cambio, paridad de tasas de interés y balanza de pagos.</p>
+      <ul class="cab-meta"><li>Blanchard, cap. 17 (secc. 17-1 y 17-2)</li><li>Semana 4 · 14 a 18 sep</li><li>Prof. Luis Morera · Control 2</li></ul>
+      
     </div>
   </div>
 </header>
 
-<main>
-  <section class="hero-banner" aria-label="Banner panorámico del Tema 4: flujos de bienes y arbitraje de capitales">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 320" role="img" aria-label="Banner panorámico del Tema 4 — Apertura Comercial y Financiera: flujos de bienes y arbitraje de capitales">
-  <title>Tema 4: Apertura Comercial y Financiera — Economía Abierta</title>
-  <desc>Composición panorámica técnica mostrando los dos polos macroeconómicos (economía doméstica e internacional) conectados por los canales de movilidad de bienes (tipo de cambio real epsilon) y movilidad de capitales (paridad de tasas de interés UIP) con tipografía espaciada y protegida.</desc>
-
-  <!-- Fondo base -->
-  <rect width="1600" height="320" fill="#080C1C"/>
-
-  <!-- Retícula técnica y guías cartesianas -->
-  <path d="M0 40H1600M0 280H1600" fill="none" stroke="#2A324A" stroke-width="1.2" opacity=".4"/>
-  <path d="M200 30V290M400 30V290M600 30V290M800 30V290M1000 30V290M1200 30V290M1400 30V290" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="3 6" opacity=".25"/>
-  <path d="M100 36V44M300 36V44M500 36V44M700 36V44M900 36V44M1100 36V44M1300 36V44M1500 36V44" fill="none" stroke="#A3AABE" stroke-width="1" opacity=".2"/>
-  <path d="M100 276V284M300 276V284M500 276V284M700 276V284M900 276V284M1100 276V284M1300 276V284M1500 276V284" fill="none" stroke="#A3AABE" stroke-width="1" opacity=".2"/>
-
-  <!-- Haces de interconexión global de fondo (apertura) -->
-  <path d="M280 160C450 60 1150 60 1320 160" fill="none" stroke="#FF6F4A" stroke-width="2.5" stroke-dasharray="6 6" opacity=".35"/>
-  <path d="M280 160C450 260 1150 260 1320 160" fill="none" stroke="#667FDA" stroke-width="2.5" stroke-dasharray="6 6" opacity=".35"/>
-
-  <!-- Eje de intercambio comercial (superior) -->
-  <path d="M360 135C520 85 700 80 800 80S1080 85 1240 135" fill="none" stroke="#FFB188" stroke-width="3" stroke-linecap="round" opacity=".85"/>
-  <path d="M1230 128L1240 135L1228 141" fill="none" stroke="#FFB188" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M1240 145C1080 95 900 90 800 90S520 95 360 145" fill="none" stroke="#FF6F4A" stroke-width="2" stroke-dasharray="6 4" stroke-linecap="round" opacity=".7"/>
-  <path d="M370 152L360 145L372 139" fill="none" stroke="#FF6F4A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-
-  <!-- Eje de arbitraje financiero / UIP (inferior) -->
-  <path d="M360 185C520 235 700 240 800 240S1080 235 1240 185" fill="none" stroke="#667FDA" stroke-width="3" stroke-linecap="round" opacity=".9"/>
-  <path d="M1230 178L1240 185L1228 191" fill="none" stroke="#667FDA" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M1240 175C1080 225 900 230 800 230S520 225 360 175" fill="none" stroke="#EFF2F9" stroke-width="1.8" stroke-dasharray="5 5" stroke-linecap="round" opacity=".65"/>
-  <path d="M370 168L360 175L372 181" fill="none" stroke="#EFF2F9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-
-  <!-- Polo 1: ECONOMÍA DOMÉSTICA (Índigo) -->
-  <g transform="translate(280, 160)">
-    <circle cx="0" cy="0" r="76" fill="#10172D" stroke="#2A324A" stroke-width="1.5" opacity=".5"/>
-    <circle cx="0" cy="0" r="58" fill="#080C1C" stroke="#667FDA" stroke-width="2.2" opacity=".85"/>
-    <circle cx="0" cy="0" r="42" fill="#10172D" stroke="#667FDA" stroke-width="1.2" stroke-dasharray="4 4" opacity=".9"/>
-    <circle cx="0" cy="0" r="14" fill="#080C1C" stroke="#EFF2F9" stroke-width="2.8"/>
-    <circle cx="0" cy="0" r="6" fill="#667FDA"/>
-
-    <!-- Pastillas informativas Polo Doméstico -->
-    <rect x="-105" y="-112" width="210" height="24" rx="5" fill="#10172D" stroke="#667FDA" stroke-width="1"/>
-    <text x="0" y="-96" text-anchor="middle" font-family="Inter" font-size="12" font-weight="700" fill="#EFF2F9" letter-spacing="0.06em">ECONOMÍA DOMÉSTICA</text>
-
-    <rect x="-100" y="76" width="94" height="22" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
-    <text x="-53" y="91" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" fill="#667FDA">P (Precios)</text>
-
-    <rect x="6" y="76" width="94" height="22" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
-    <text x="53" y="91" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" fill="#EFF2F9">i (Tasa)</text>
-  </g>
-
-  <!-- Polo 2: RESTO DEL MUNDO / ECONOMÍA EXTRANJERA (Coral) -->
-  <g transform="translate(1320, 160)">
-    <circle cx="0" cy="0" r="76" fill="#10172D" stroke="#2A324A" stroke-width="1.5" opacity=".5"/>
-    <circle cx="0" cy="0" r="58" fill="#080C1C" stroke="#FF6F4A" stroke-width="2.2" opacity=".85"/>
-    <circle cx="0" cy="0" r="42" fill="#10172D" stroke="#FF6F4A" stroke-width="1.2" stroke-dasharray="4 4" opacity=".9"/>
-    <circle cx="0" cy="0" r="14" fill="#080C1C" stroke="#EFF2F9" stroke-width="2.8"/>
-    <circle cx="0" cy="0" r="6" fill="#FF6F4A"/>
-
-    <!-- Pastillas informativas Polo Extranjero -->
-    <rect x="-105" y="-112" width="210" height="24" rx="5" fill="#10172D" stroke="#FF6F4A" stroke-width="1"/>
-    <text x="0" y="-96" text-anchor="middle" font-family="Inter" font-size="12" font-weight="700" fill="#EFF2F9" letter-spacing="0.06em">RESTO DEL MUNDO</text>
-
-    <rect x="-100" y="76" width="94" height="22" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
-    <text x="-53" y="91" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" fill="#FF6F4A">P* (Precios)</text>
-
-    <rect x="6" y="76" width="94" height="22" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
-    <text x="53" y="91" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" fill="#FFB188">i* (Tasa)</text>
-  </g>
-
-  <!-- NODO CENTRAL SUPERIOR: Tipo de Cambio Real ε -->
-  <g transform="translate(800, 80)">
-    <rect x="-145" y="-22" width="290" height="44" rx="9" fill="#10172D" stroke="#FFB188" stroke-width="1.4"/>
-    <circle cx="-115" cy="0" r="12" fill="#080C1C" stroke="#FF6F4A" stroke-width="2"/>
-    <text x="-115" y="5" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="#FF6F4A">ε</text>
-    <text x="15" y="-4" text-anchor="middle" font-family="Inter" font-size="11" font-weight="600" fill="#EFF2F9">TIPO DE CAMBIO REAL</text>
-    <text x="15" y="14" text-anchor="middle" font-family="JetBrains Mono" font-size="12" fill="#FFB188">ε = (E · P) / P*</text>
-  </g>
-
-  <!-- NODO CENTRAL INFERIOR: Paridad de Tasas de Interés (UIP) -->
-  <g transform="translate(800, 240)">
-    <rect x="-205" y="-22" width="410" height="44" rx="9" fill="#10172D" stroke="#667FDA" stroke-width="1.4"/>
-    <circle cx="-172" cy="0" r="12" fill="#080C1C" stroke="#667FDA" stroke-width="2"/>
-    <text x="-172" y="5" text-anchor="middle" font-family="JetBrains Mono" font-size="11.5" font-weight="700" fill="#667FDA">UIP</text>
-    <text x="15" y="-4" text-anchor="middle" font-family="Inter" font-size="11" font-weight="600" fill="#EFF2F9">PARIDAD DE TASAS NO CUBIERTA</text>
-    <text x="15" y="14" text-anchor="middle" font-family="JetBrains Mono" font-size="11.5" fill="#EFF2F9">(1 + i<tspan font-size="9">t</tspan>) = (1 + i*<tspan font-size="9">t</tspan>) · (E<tspan font-size="9">t</tspan> / E<tspan font-size="9">t+1</tspan><tspan font-size="8" dy="-4">e</tspan><tspan font-size="11.5" dy="4">)</tspan></text>
-  </g>
-
-  <!-- Centro conector de Balanza de Pagos -->
-  <g transform="translate(800, 160)">
-    <circle cx="0" cy="0" r="22" fill="#080C1C" stroke="#2A324A" stroke-width="1.6"/>
-    <circle cx="0" cy="0" r="16" fill="#10172D" stroke="#EFF2F9" stroke-width="1.8"/>
-    <text x="0" y="4" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="700" fill="#55C975">BP</text>
-    <rect x="-85" y="-34" width="170" height="18" rx="4" fill="#080C1C" stroke="#2A324A" stroke-width="0.8"/>
-    <text x="0" y="-21" text-anchor="middle" font-family="JetBrains Mono" font-size="9.5" fill="#A3AABE">CC + CF ≈ 0</text>
-  </g>
-
-  <!-- Marcadores laterales decorativos de metadatos -->
-  <text x="40" y="298" font-family="JetBrains Mono" font-size="10" fill="#A3AABE" opacity=".6">ESEN · MACRO II · BLANCHARD CAP. 17</text>
-  <text x="1560" y="298" text-anchor="end" font-family="JetBrains Mono" font-size="10" fill="#A3AABE" opacity=".6">MERCADO DE BIENES + MERCADO FINANCIERO</text>
-</svg>
-  </section>
-
-  <nav class="modnav" aria-label="Módulos de esta guía">
-    <a href="#alcance">01 · Alcance</a>
-    <a href="#bienes">02 · Movilidad de bienes</a>
-    <a href="#capitales">03 · Movilidad de capitales</a>
-    <a href="#balanza">04 · Balanza de pagos</a>
-    <a href="#sintesis">05 · Síntesis</a>
-    <a href="#autoeval">06 · Autoevaluación</a>
-  </nav>
+<div class="pagina">
+<main id="contenido">
 
   <div class="recuadro" style="margin-bottom:56px;">
     <span class="recuadro-tag">Materiales de esta semana</span>
-    <p>Esta guía es la primera de tres piezas para el Tema 4: sigue con la <a href="actividad-tema4-apertura.html">Actividad de práctica</a> (11 ítems interactivos + 3 ejercicios numéricos) y el <a href="repaso-control2-tema4-apertura.html">Repaso integrador — preparación Control 2</a> (Verdadero/Falso justificado + 3 problemas).</p>
+    <p>Esta guía es la primera de tres piezas para el Tema 4: sigue con la <a href="actividad-tema4-apertura.html">Actividad de práctica</a> (11 ítems interactivos + 3 ejercicios numéricos) y el <a href="repaso-control2-tema4-apertura.html">Repaso integrador para el Control 2</a> (Verdadero/Falso justificado + 3 problemas).</p>
   </div>
 
-  <section class="modulo reveal" id="alcance">
-    <div class="modulo-head"><span class="modulo-num">01</span><h2>Qué cubre esta guía y qué no</h2></div>
+  <section class="modulo" id="alcance">
+    <div class="modulo-head"><h2>Qué cubre esta guía y qué no</h2></div>
     <div class="bloque">
-      <p>Esta guía sigue el alcance declarado para la Semana 4: los <strong>tres subtemas completos</strong> del Tema 4 según el Programa — (1) movilidad de bienes y servicios y tipo de cambio real, (2) movilidad de capitales y paridad de tasas de interés, y (3) balanza de pagos — todos cubiertos por las secciones 17-1 y 17-2 del capítulo 17 de Blanchard.</p>
+      <p>Esta guía sigue el alcance declarado para la Semana 4: los <strong>tres subtemas completos</strong> del Tema 4 según el Programa: (1) movilidad de bienes y servicios y tipo de cambio real, (2) movilidad de capitales y paridad de tasas de interés, y (3) balanza de pagos, todos cubiertos por las secciones 17-1 y 17-2 del capítulo 17 de Blanchard.</p>
       <p>El Tema 4 es el único punto del curso donde se trabaja apertura comercial/financiera: el Programa asigna únicamente "partes seleccionadas" del capítulo 17, y los capítulos 18 a 20 de Blanchard (que amplían esto al modelo IS-LM en economía abierta) <strong>no están en el mapa Tema→Capítulo de este curso</strong>, así que esta guía no los adelanta.</p>
     </div>
   </section>
 
-  <section class="modulo reveal" id="bienes">
-    <div class="modulo-head"><span class="modulo-num">02</span><h2>Movilidad de bienes y servicios: el tipo de cambio real</h2></div>
+  <section class="modulo" id="bienes">
+    <div class="modulo-head"><h2>Movilidad de bienes y servicios: el tipo de cambio real</h2></div>
     <div class="modulo-text">Sección 17-1 de Blanchard. La primera dimensión de apertura es poder elegir entre bienes domésticos y extranjeros.</div>
 
     <div class="bloque bloque-icono">
-      <span class="icono"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#667FDA" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18 9 9 0 0 1 0-18M3 12h18"/></svg></span>
+      <span class="icono"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5C9DFF" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18 9 9 0 0 1 0-18M3 12h18"/></svg></span>
       <div>
         <h3>Tres dimensiones de apertura (17-1)</h3>
         <p>Blanchard distingue tres formas de apertura de una economía: <strong>apertura en el mercado de bienes</strong> (elegir entre bienes domésticos y extranjeros, limitada por aranceles y cuotas), <strong>apertura en el mercado financiero</strong> (elegir entre activos domésticos y extranjeros, limitada por controles de capital) y <strong>apertura en el mercado de factores</strong> (elegir dónde trabajar y dónde localizar la producción). El Tema 4 se concentra en las dos primeras.</p>
@@ -380,13 +58,13 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
     <div class="bloque">
       <h3>El tipo de cambio real (ε)</h3>
       <p>El tipo de cambio real es el precio relativo de los bienes domésticos en términos de bienes extranjeros. Se construye a partir del tipo de cambio nominal (E, precio de la moneda doméstica en términos de la extranjera) y de los niveles de precios domésticos (P) y extranjeros (P*):</p>
-      <div class="ecuacion">ε = (E · P) / P*</div>
+      <div class="ecuacion"><span class="v" data-var="ext"><span>ε</span></span> = (<span class="v" data-var="ext"><span>E</span></span> · P) / <span class="v" data-var="ext"><span>P*</span></span></div>
       <p>Una <strong>apreciación real</strong> (↑ε) encarece los bienes domésticos frente a los extranjeros; una <strong>depreciación real</strong> (↓ε) los abarata. Esto es distinto de una apreciación o depreciación <em>nominal</em>, que se refiere únicamente al movimiento de E, sin ajustar por precios.</p>
     </div>
 
     <div class="recuadro">
-      <span class="recuadro-tag">Dato verificado — Blanchard, Fig. 17-2</span>
-      <p>La apertura comercial de una economía se mide por sus exportaciones e importaciones como proporción del PIB. En EE. UU., ese ratio pasó de ~5% del PIB a inicios de los años 60 a cerca de 14% en años recientes (11.7% en exportaciones, 15.5% en importaciones) — es decir, EE. UU. comercia hoy casi tres veces más (relativo a su PIB) que hace 50 años. Desde fines de los años setenta, las importaciones han superado consistentemente a las exportaciones, generando un déficit comercial sostenido.</p>
+      <span class="recuadro-tag">Dato verificado: Blanchard, Fig. 17-2</span>
+      <p>La apertura comercial de una economía se mide por sus exportaciones e importaciones como proporción del PIB. En EE. UU., ese ratio pasó de ~5% del PIB a inicios de los años 60 a cerca de 14% en años recientes (11.7% en exportaciones, 15.5% en importaciones), es decir, EE. UU. comercia hoy casi tres veces más (relativo a su PIB) que hace 50 años. Desde fines de los años setenta, las importaciones han superado consistentemente a las exportaciones, generando un déficit comercial sostenido.</p>
     </div>
 
     <figure>
@@ -396,124 +74,124 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
   <desc>Diagrama que explica cómo los precios domésticos P convertidos a moneda extranjera mediante el tipo de cambio nominal E se comparan contra los precios extranjeros P* para determinar el precio relativo de los bienes (tipo de cambio real epsilon) con textos protegidos y espaciados.</desc>
 
   <!-- Contenedor base de superficie elevada -->
-  <rect width="760" height="340" rx="12" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+  <rect width="760" height="340" rx="12" fill="#1A1B1D" stroke="#3A3C41" stroke-width="1.2"/>
 
   <!-- Trama técnica reticular de fondo -->
-  <path d="M40 50H720M40 290H720" fill="none" stroke="#2A324A" stroke-width="0.8" stroke-dasharray="4 6" opacity=".4"/>
-  <path d="M160 30V310M380 30V310M600 30V310" fill="none" stroke="#2A324A" stroke-width="0.8" stroke-dasharray="4 6" opacity=".3"/>
+  <path d="M40 50H720M40 290H720" fill="none" stroke="#3A3C41" stroke-width="0.8" stroke-dasharray="4 6" opacity=".4"/>
+  <path d="M160 30V310M380 30V310M600 30V310" fill="none" stroke="#3A3C41" stroke-width="0.8" stroke-dasharray="4 6" opacity=".3"/>
 
   <!-- ==================== BLOQUE IZQUIERDO: ECONOMÍA DOMÉSTICA ==================== -->
   <g transform="translate(40, 50)">
     <!-- Caja exterior -->
-    <rect width="230" height="180" rx="10" fill="#080C1C" stroke="#667FDA" stroke-width="2"/>
+    <rect width="230" height="180" rx="10" fill="#101112" stroke="#5C9DFF" stroke-width="2"/>
     
     <!-- Silueta vectorial técnica de fábrica/bienes domésticos -->
-    <path d="M185 30V15H170V30H155V15H140V42H210V30H185Z" fill="#10172D" stroke="#667FDA" stroke-width="1" opacity=".7"/>
-    <circle cx="150" cy="24" r="2" fill="#667FDA" opacity=".8"/>
-    <circle cx="178" cy="24" r="2" fill="#667FDA" opacity=".8"/>
+    <path d="M185 30V15H170V30H155V15H140V42H210V30H185Z" fill="#1A1B1D" stroke="#5C9DFF" stroke-width="1" opacity=".7"/>
+    <circle cx="150" cy="24" r="2" fill="#5C9DFF" opacity=".8"/>
+    <circle cx="178" cy="24" r="2" fill="#5C9DFF" opacity=".8"/>
 
     <!-- Cabecera -->
-    <rect x="15" y="-12" width="165" height="24" rx="5" fill="#1B223C" stroke="#667FDA" stroke-width="1.2"/>
-    <text x="97" y="4" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#EFF2F9">ECONOMÍA DOMÉSTICA</text>
+    <rect x="15" y="-12" width="165" height="24" rx="5" fill="#202124" stroke="#5C9DFF" stroke-width="1.2"/>
+    <text x="97" y="4" text-anchor="middle" font-family="Archivo, sans-serif" font-size="11" font-weight="700" fill="#F2F2F0">ECONOMÍA DOMÉSTICA</text>
 
     <!-- Caja de Precios P -->
-    <rect x="18" y="32" width="194" height="42" rx="7" fill="#10172D" stroke="#2A324A" stroke-width="1"/>
-    <text x="32" y="58" font-family="Inter" font-size="11.5" fill="#A3AABE">Precios locales:</text>
-    <rect x="145" y="40" width="52" height="26" rx="4" fill="#1B223C" stroke="#667FDA" stroke-width="1"/>
-    <text x="171" y="58" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="#667FDA">P</text>
+    <rect x="18" y="32" width="194" height="42" rx="7" fill="#1A1B1D" stroke="#3A3C41" stroke-width="1"/>
+    <text x="32" y="58" font-family="Archivo, sans-serif" font-size="11.5" fill="#A9ABAE">Precios locales:</text>
+    <rect x="145" y="40" width="52" height="26" rx="4" fill="#202124" stroke="#5C9DFF" stroke-width="1"/>
+    <text x="171" y="58" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="15" font-weight="700" fill="#5C9DFF">P</text>
 
     <!-- Detalle de bien doméstico -->
-    <text x="115" y="104" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#EFF2F9">Bien doméstico</text>
-    <rect x="25" y="118" width="180" height="24" rx="5" fill="#10172D"/>
-    <text x="115" y="134" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" fill="#A3AABE">Costo: P (en moneda local)</text>
+    <text x="115" y="104" text-anchor="middle" font-family="Archivo, sans-serif" font-size="12" font-weight="600" fill="#F2F2F0">Bien doméstico</text>
+    <rect x="25" y="118" width="180" height="24" rx="5" fill="#1A1B1D"/>
+    <text x="115" y="134" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="10.5" fill="#A9ABAE">Costo: P (en moneda local)</text>
 
     <!-- Valor convertido -->
-    <rect x="20" y="152" width="190" height="20" rx="4" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
-    <text x="115" y="166" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#FFB188">Valor en divisa: E · P</text>
+    <rect x="20" y="152" width="190" height="20" rx="4" fill="#202124" stroke="#3A3C41" stroke-width="0.8"/>
+    <text x="115" y="166" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="10" fill="#FF9B7D">Valor en divisa: E · P</text>
   </g>
 
   <!-- ==================== BLOQUE DERECHO: ECONOMÍA EXTRANJERA ==================== -->
   <g transform="translate(490, 50)">
     <!-- Caja exterior -->
-    <rect width="230" height="180" rx="10" fill="#080C1C" stroke="#FF6F4A" stroke-width="2"/>
+    <rect width="230" height="180" rx="10" fill="#101112" stroke="#F2552C" stroke-width="2"/>
 
     <!-- Silueta vectorial técnica de puerto/comercio exterior -->
-    <path d="M165 38L180 20L210 20L210 38H165Z" fill="#10172D" stroke="#FF6F4A" stroke-width="1" opacity=".7"/>
-    <circle cx="185" cy="28" r="2.5" fill="#FF6F4A" opacity=".8"/>
-    <path d="M195 24V32M202 24V32" stroke="#FF6F4A" stroke-width="1" opacity=".7"/>
+    <path d="M165 38L180 20L210 20L210 38H165Z" fill="#1A1B1D" stroke="#F2552C" stroke-width="1" opacity=".7"/>
+    <circle cx="185" cy="28" r="2.5" fill="#F2552C" opacity=".8"/>
+    <path d="M195 24V32M202 24V32" stroke="#F2552C" stroke-width="1" opacity=".7"/>
 
     <!-- Cabecera -->
-    <rect x="15" y="-12" width="165" height="24" rx="5" fill="#1B223C" stroke="#FF6F4A" stroke-width="1.2"/>
-    <text x="97" y="4" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#EFF2F9">ECONOMÍA EXTERIOR</text>
+    <rect x="15" y="-12" width="165" height="24" rx="5" fill="#202124" stroke="#F2552C" stroke-width="1.2"/>
+    <text x="97" y="4" text-anchor="middle" font-family="Archivo, sans-serif" font-size="11" font-weight="700" fill="#F2F2F0">ECONOMÍA EXTERIOR</text>
 
     <!-- Caja de Precios P* -->
-    <rect x="18" y="32" width="194" height="42" rx="7" fill="#10172D" stroke="#2A324A" stroke-width="1"/>
-    <text x="32" y="58" font-family="Inter" font-size="11.5" fill="#A3AABE">Precios foráneos:</text>
-    <rect x="145" y="40" width="52" height="26" rx="4" fill="#1B223C" stroke="#FF6F4A" stroke-width="1"/>
-    <text x="171" y="58" text-anchor="middle" font-family="JetBrains Mono" font-size="15" font-weight="700" fill="#FF6F4A">P*</text>
+    <rect x="18" y="32" width="194" height="42" rx="7" fill="#1A1B1D" stroke="#3A3C41" stroke-width="1"/>
+    <text x="32" y="58" font-family="Archivo, sans-serif" font-size="11.5" fill="#A9ABAE">Precios foráneos:</text>
+    <rect x="145" y="40" width="52" height="26" rx="4" fill="#202124" stroke="#F2552C" stroke-width="1"/>
+    <text x="171" y="58" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="15" font-weight="700" fill="#F2552C">P*</text>
 
     <!-- Detalle de bien extranjero -->
-    <text x="115" y="104" text-anchor="middle" font-family="Inter" font-size="12" font-weight="600" fill="#EFF2F9">Bien extranjero</text>
-    <rect x="25" y="118" width="180" height="24" rx="5" fill="#10172D"/>
-    <text x="115" y="134" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" fill="#A3AABE">Costo: P* (en divisa ext.)</text>
+    <text x="115" y="104" text-anchor="middle" font-family="Archivo, sans-serif" font-size="12" font-weight="600" fill="#F2F2F0">Bien extranjero</text>
+    <rect x="25" y="118" width="180" height="24" rx="5" fill="#1A1B1D"/>
+    <text x="115" y="134" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="10.5" fill="#A9ABAE">Costo: P* (en divisa ext.)</text>
 
     <!-- Base comparativa -->
-    <rect x="20" y="152" width="190" height="20" rx="4" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
-    <text x="115" y="166" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#A3AABE">Denominador: P*</text>
+    <rect x="20" y="152" width="190" height="20" rx="4" fill="#202124" stroke="#3A3C41" stroke-width="0.8"/>
+    <text x="115" y="166" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="10" fill="#A9ABAE">Denominador: P*</text>
   </g>
 
   <!-- ==================== PUENTE CENTRAL: TIPO DE CAMBIO NOMINAL (E) ==================== -->
   <g transform="translate(270, 95)">
-    <path d="M10 20H210" fill="none" stroke="#FFB188" stroke-width="2.5" stroke-dasharray="6 4"/>
-    <path d="M200 13L210 20L200 27" fill="none" stroke="#FFB188" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M10 20H210" fill="none" stroke="#FF9B7D" stroke-width="2.5" stroke-dasharray="6 4"/>
+    <path d="M200 13L210 20L200 27" fill="none" stroke="#FF9B7D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
     
-    <rect x="20" y="2" width="180" height="34" rx="7" fill="#1B223C" stroke="#FFB188" stroke-width="1.2"/>
-    <text x="110" y="17" text-anchor="middle" font-family="Inter" font-size="9.5" font-weight="600" fill="#A3AABE">CONVERSIÓN NOMINAL</text>
-    <text x="110" y="30" text-anchor="middle" font-family="JetBrains Mono" font-size="11.5" font-weight="700" fill="#FFB188">E (Tipo de cambio)</text>
+    <rect x="20" y="2" width="180" height="34" rx="7" fill="#202124" stroke="#FF9B7D" stroke-width="1.2"/>
+    <text x="110" y="17" text-anchor="middle" font-family="Archivo, sans-serif" font-size="9.5" font-weight="600" fill="#A9ABAE">CONVERSIÓN NOMINAL</text>
+    <text x="110" y="30" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="11.5" font-weight="700" fill="#FF9B7D">E (Tipo de cambio)</text>
   </g>
 
   <!-- ==================== CONVERGENCIA INFERIOR: TIPO DE CAMBIO REAL (ε) ==================== -->
-  <path d="M155 230C155 265 300 270 335 270" fill="none" stroke="#667FDA" stroke-width="2" stroke-dasharray="4 4" opacity=".85"/>
-  <path d="M605 230C605 265 460 270 425 270" fill="none" stroke="#FF6F4A" stroke-width="2" stroke-dasharray="4 4" opacity=".85"/>
+  <path d="M155 230C155 265 300 270 335 270" fill="none" stroke="#5C9DFF" stroke-width="2" stroke-dasharray="4 4" opacity=".85"/>
+  <path d="M605 230C605 265 460 270 425 270" fill="none" stroke="#F2552C" stroke-width="2" stroke-dasharray="4 4" opacity=".85"/>
 
   <!-- NODO CENTRAL CONCÉNTRICO: ε -->
   <g transform="translate(380, 270)">
-    <circle cx="0" cy="0" r="44" fill="#080C1C" stroke="#2A324A" stroke-width="2"/>
-    <circle cx="0" cy="0" r="38" fill="#10172D" stroke="#EFF2F9" stroke-width="2.8"/>
-    <circle cx="0" cy="0" r="28" fill="#080C1C" stroke="#FF6F4A" stroke-width="1.8"/>
-    <text x="0" y="2" text-anchor="middle" font-family="JetBrains Mono" font-size="22" font-weight="700" fill="#FF6F4A">ε</text>
-    <text x="0" y="18" text-anchor="middle" font-family="JetBrains Mono" font-size="9" font-weight="600" fill="#EFF2F9">= EP/P*</text>
+    <circle cx="0" cy="0" r="44" fill="#101112" stroke="#3A3C41" stroke-width="2"/>
+    <circle cx="0" cy="0" r="38" fill="#1A1B1D" stroke="#F2F2F0" stroke-width="2.8"/>
+    <circle cx="0" cy="0" r="28" fill="#101112" stroke="#F2552C" stroke-width="1.8"/>
+    <text x="0" y="2" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="22" font-weight="700" fill="#F2552C">ε</text>
+    <text x="0" y="18" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="9" font-weight="600" fill="#F2F2F0">= EP/P*</text>
   </g>
 
   <!-- Pastilla superior descriptiva del cociente -->
-  <rect x="290" y="185" width="180" height="28" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="1"/>
-  <text x="380" y="198" text-anchor="middle" font-family="Inter" font-size="10" font-weight="600" fill="#EFF2F9">PRECIO RELATIVO</text>
-  <text x="380" y="209" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#A3AABE">Bienes dom. / Bienes ext.</text>
+  <rect x="290" y="185" width="180" height="28" rx="6" fill="#1A1B1D" stroke="#3A3C41" stroke-width="1"/>
+  <text x="380" y="198" text-anchor="middle" font-family="Archivo, sans-serif" font-size="10" font-weight="600" fill="#F2F2F0">PRECIO RELATIVO</text>
+  <text x="380" y="209" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="9" fill="#A9ABAE">Bienes dom. / Bienes ext.</text>
 
   <!-- ==================== PIE TÉCNICO INFERIOR: APRECIACIÓN vs DEPRECIACIÓN ==================== -->
   <g transform="translate(40, 308)">
-    <rect x="0" width="330" height="24" rx="5" fill="#080C1C" stroke="#2A324A" stroke-width="0.8"/>
-    <circle cx="16" cy="12" r="4" fill="#FB5668"/>
-    <text x="175" y="16" text-anchor="middle" font-family="JetBrains Mono" font-size="9.5" fill="#EFF2F9">↑ε = Apreciación Real <tspan fill="#A3AABE">(Bienes dom. más caros)</tspan></text>
+    <rect x="0" width="330" height="24" rx="5" fill="#101112" stroke="#3A3C41" stroke-width="0.8"/>
+    <circle cx="16" cy="12" r="4" fill="#FF7382"/>
+    <text x="175" y="16" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="9.5" fill="#F2F2F0">↑ε = Apreciación Real <tspan fill="#A9ABAE">(Bienes dom. más caros)</tspan></text>
 
-    <rect x="350" width="330" height="24" rx="5" fill="#080C1C" stroke="#2A324A" stroke-width="0.8"/>
+    <rect x="350" width="330" height="24" rx="5" fill="#101112" stroke="#3A3C41" stroke-width="0.8"/>
     <circle cx="366" cy="12" r="4" fill="#55C975"/>
-    <text x="525" y="16" text-anchor="middle" font-family="JetBrains Mono" font-size="9.5" fill="#EFF2F9">↓ε = Depreciación Real <tspan fill="#A3AABE">(Bienes dom. más baratos)</tspan></text>
+    <text x="525" y="16" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="9.5" fill="#F2F2F0">↓ε = Depreciación Real <tspan fill="#A9ABAE">(Bienes dom. más baratos)</tspan></text>
   </g>
 </svg>
       </div>
-      <figcaption>Fig. propia — construcción del tipo de cambio real a partir de E, P y P* (Blanchard, secc. 17-1). Comparación de precios de bienes domésticos en moneda foránea contra bienes externos.</figcaption>
+      <figcaption>Fig. propia: construcción del tipo de cambio real a partir de E, P y P* (Blanchard, secc. 17-1). Comparación de precios de bienes domésticos en moneda foránea contra bienes externos.</figcaption>
     </figure>
   </section>
 
-  <section class="modulo reveal" id="capitales">
-    <div class="modulo-head"><span class="modulo-num">03</span><h2>Movilidad de capitales: la paridad de tasas de interés</h2></div>
+  <section class="modulo" id="capitales">
+    <div class="modulo-head"><h2>Movilidad de capitales: la paridad de tasas de interés</h2></div>
     <div class="modulo-text">Sección 17-2 de Blanchard. La segunda dimensión de apertura es poder elegir entre activos domésticos y extranjeros.</div>
 
     <div class="bloque">
       <h3>El dilema del inversionista financiero</h3>
       <p>Con 1 dólar hoy, un inversionista puede: (a) comprar un bono doméstico a la tasa de interés nominal <span class="mono">i</span>, y tener <span class="mono">(1+i)</span> dólares el próximo año; o (b) convertir el dólar a libras al tipo de cambio nominal actual <span class="mono">E<sub>t</sub></span>, comprar un bono extranjero (Reino Unido) a la tasa <span class="mono">i*</span>, y luego reconvertir a dólares al tipo de cambio esperado <span class="mono">E<sup>e</sup><sub>t+1</sub></span>.</p>
-      <p>Si ambos bonos se mantienen en equilibrio, ambas rutas deben ofrecer el mismo rendimiento esperado — esto es una condición de <strong>arbitraje</strong>.</p>
+      <p>Si ambos bonos se mantienen en equilibrio, ambas rutas deben ofrecer el mismo rendimiento esperado: esto es una condición de <strong>arbitraje</strong>.</p>
     </div>
 
     <figure>
@@ -523,133 +201,133 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
   <desc>Esquema de decisión del inversionista financiero entre comprar un bono doméstico que rinde (1+i) dólares o convertir a divisa extranjera, comprar un bono foráneo a tasa i* y reconvertir al tipo de cambio esperado, derivando la condición de paridad de tasas con espaciado amplio.</desc>
 
   <!-- Contenedor base -->
-  <rect width="780" height="350" rx="12" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+  <rect width="780" height="350" rx="12" fill="#1A1B1D" stroke="#3A3C41" stroke-width="1.2"/>
 
   <!-- Trama reticular de fondo -->
-  <path d="M40 45H740M40 295H740" fill="none" stroke="#2A324A" stroke-width="0.8" stroke-dasharray="4 6" opacity=".4"/>
-  <path d="M190 25V315M490 25V315" fill="none" stroke="#2A324A" stroke-width="0.8" stroke-dasharray="4 6" opacity=".25"/>
+  <path d="M40 45H740M40 295H740" fill="none" stroke="#3A3C41" stroke-width="0.8" stroke-dasharray="4 6" opacity=".4"/>
+  <path d="M190 25V315M490 25V315" fill="none" stroke="#3A3C41" stroke-width="0.8" stroke-dasharray="4 6" opacity=".25"/>
 
   <!-- ==================== NODO INICIAL: 1 USD HOY (t) ==================== -->
   <g transform="translate(85, 160)">
-    <circle cx="0" cy="0" r="46" fill="#080C1C" stroke="#2A324A" stroke-width="2"/>
-    <circle cx="0" cy="0" r="38" fill="#10172D" stroke="#EFF2F9" stroke-width="2.6"/>
+    <circle cx="0" cy="0" r="46" fill="#101112" stroke="#3A3C41" stroke-width="2"/>
+    <circle cx="0" cy="0" r="38" fill="#1A1B1D" stroke="#F2F2F0" stroke-width="2.6"/>
     
     <!-- Micro-insignia vectorial del dólar $ -->
-    <rect x="-16" y="-30" width="32" height="18" rx="4" fill="#1B223C" stroke="#55C975" stroke-width="1"/>
-    <text x="0" y="-17" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" font-weight="700" fill="#55C975">$ USD</text>
+    <rect x="-16" y="-30" width="32" height="18" rx="4" fill="#202124" stroke="#55C975" stroke-width="1"/>
+    <text x="0" y="-17" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="10.5" font-weight="700" fill="#55C975">$ USD</text>
 
-    <text x="0" y="3" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="#EFF2F9">1 USD</text>
-    <text x="0" y="18" text-anchor="middle" font-family="Inter" font-size="10.5" fill="#A3AABE">hoy (año t)</text>
+    <text x="0" y="3" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="14" font-weight="700" fill="#F2F2F0">1 USD</text>
+    <text x="0" y="18" text-anchor="middle" font-family="Archivo, sans-serif" font-size="10.5" fill="#A9ABAE">hoy (año t)</text>
   </g>
 
   <!-- ==================== RUTA SUPERIOR: BONO DOMÉSTICO ==================== -->
-  <path d="M130 142C230 78 340 75 480 80" fill="none" stroke="#FF6F4A" stroke-width="2.6"/>
-  <path d="M470 74L480 80L469 86" fill="none" stroke="#FF6F4A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M130 142C230 78 340 75 480 80" fill="none" stroke="#F2552C" stroke-width="2.6"/>
+  <path d="M470 74L480 80L469 86" fill="none" stroke="#F2552C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
 
   <!-- Pastilla informativa sobre la ruta superior -->
-  <rect x="220" y="55" width="190" height="26" rx="5" fill="#1B223C" stroke="#FF6F4A" stroke-width="1"/>
-  <text x="315" y="72" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#EFF2F9">Bono local a tasa <tspan font-weight="700" fill="#FF6F4A">i</tspan></text>
+  <rect x="220" y="55" width="190" height="26" rx="5" fill="#202124" stroke="#F2552C" stroke-width="1"/>
+  <text x="315" y="72" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="11" fill="#F2F2F0">Bono local a tasa <tspan font-weight="700" fill="#F2552C">i</tspan></text>
 
   <!-- Tarjeta de resultado superior: (1+i) USD -->
   <g transform="translate(485, 48)">
-    <rect width="260" height="68" rx="9" fill="#080C1C" stroke="#FF6F4A" stroke-width="1.8"/>
+    <rect width="260" height="68" rx="9" fill="#101112" stroke="#F2552C" stroke-width="1.8"/>
     
-    <rect x="15" y="-11" width="140" height="20" rx="4" fill="#1B223C" stroke="#FF6F4A" stroke-width="1"/>
-    <text x="85" y="3" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#EFF2F9">RUTA DOMÉSTICA</text>
+    <rect x="15" y="-11" width="140" height="20" rx="4" fill="#202124" stroke="#F2552C" stroke-width="1"/>
+    <text x="85" y="3" text-anchor="middle" font-family="Archivo, sans-serif" font-size="10" font-weight="700" fill="#F2F2F0">RUTA DOMÉSTICA</text>
 
-    <text x="18" y="32" font-family="Inter" font-size="11" fill="#A3AABE">Retorno en año t+1:</text>
-    <rect x="145" y="16" width="100" height="26" rx="5" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
-    <text x="195" y="34" text-anchor="middle" font-family="JetBrains Mono" font-size="13" font-weight="700" fill="#EFF2F9">(1 + i) USD</text>
+    <text x="18" y="32" font-family="Archivo, sans-serif" font-size="11" fill="#A9ABAE">Retorno en año t+1:</text>
+    <rect x="145" y="16" width="100" height="26" rx="5" fill="#1A1B1D" stroke="#3A3C41" stroke-width="0.8"/>
+    <text x="195" y="34" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="13" font-weight="700" fill="#F2F2F0">(1 + i) USD</text>
 
-    <text x="18" y="54" font-family="JetBrains Mono" font-size="9.5" fill="#55C975">Sin riesgo cambiario directo</text>
+    <text x="18" y="54" font-family="Azeret Mono, monospace" font-size="9.5" fill="#55C975">Sin riesgo cambiario directo</text>
   </g>
 
   <!-- ==================== RUTA INFERIOR: BONO EXTRANJERO ==================== -->
-  <path d="M130 178C210 232 300 240 480 238" fill="none" stroke="#667FDA" stroke-width="2.6"/>
-  <path d="M470 232L480 238L469 244" fill="none" stroke="#667FDA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M130 178C210 232 300 240 480 238" fill="none" stroke="#5C9DFF" stroke-width="2.6"/>
+  <path d="M470 232L480 238L469 244" fill="none" stroke="#5C9DFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
 
   <!-- Paso 1 inferior: Conversión a libras al tipo E_t -->
   <g transform="translate(180, 215)">
-    <rect width="130" height="42" rx="6" fill="#1B223C" stroke="#667FDA" stroke-width="1"/>
-    <text x="65" y="17" text-anchor="middle" font-family="Inter" font-size="9.5" font-weight="600" fill="#A3AABE">1. Convertir divisa</text>
-    <text x="65" y="33" text-anchor="middle" font-family="JetBrains Mono" font-size="11.5" font-weight="700" fill="#667FDA">E<tspan font-size="9">t</tspan> libras</text>
+    <rect width="130" height="42" rx="6" fill="#202124" stroke="#5C9DFF" stroke-width="1"/>
+    <text x="65" y="17" text-anchor="middle" font-family="Archivo, sans-serif" font-size="9.5" font-weight="600" fill="#A9ABAE">1. Convertir divisa</text>
+    <text x="65" y="33" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="11.5" font-weight="700" fill="#5C9DFF">E<tspan font-size="9">t</tspan> libras</text>
   </g>
 
   <!-- Paso 2 inferior: Bono UK a tasa i* -->
   <g transform="translate(325, 215)">
-    <rect width="140" height="42" rx="6" fill="#1B223C" stroke="#667FDA" stroke-width="1"/>
-    <text x="70" y="17" text-anchor="middle" font-family="Inter" font-size="9.5" font-weight="600" fill="#A3AABE">2. Invertir a tasa</text>
-    <text x="70" y="33" text-anchor="middle" font-family="JetBrains Mono" font-size="11.5" font-weight="700" fill="#EFF2F9">i* (extranjera)</text>
+    <rect width="140" height="42" rx="6" fill="#202124" stroke="#5C9DFF" stroke-width="1"/>
+    <text x="70" y="17" text-anchor="middle" font-family="Archivo, sans-serif" font-size="9.5" font-weight="600" fill="#A9ABAE">2. Invertir a tasa</text>
+    <text x="70" y="33" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="11.5" font-weight="700" fill="#F2F2F0">i* (extranjera)</text>
   </g>
 
   <!-- Tarjeta de resultado inferior: Bono foráneo -->
   <g transform="translate(485, 202)">
-    <rect width="260" height="78" rx="9" fill="#080C1C" stroke="#667FDA" stroke-width="1.8"/>
+    <rect width="260" height="78" rx="9" fill="#101112" stroke="#5C9DFF" stroke-width="1.8"/>
     
-    <rect x="15" y="-11" width="140" height="20" rx="4" fill="#1B223C" stroke="#667FDA" stroke-width="1"/>
-    <text x="85" y="3" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#EFF2F9">RUTA EXTRANJERA</text>
+    <rect x="15" y="-11" width="140" height="20" rx="4" fill="#202124" stroke="#5C9DFF" stroke-width="1"/>
+    <text x="85" y="3" text-anchor="middle" font-family="Archivo, sans-serif" font-size="10" font-weight="700" fill="#F2F2F0">RUTA EXTRANJERA</text>
 
     <!-- Micro-insignia vectorial libra £ -->
-    <rect x="185" y="-11" width="60" height="20" rx="4" fill="#10172D" stroke="#667FDA" stroke-width="0.8"/>
-    <text x="215" y="3" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="700" fill="#667FDA">£ GBP</text>
+    <rect x="185" y="-11" width="60" height="20" rx="4" fill="#1A1B1D" stroke="#5C9DFF" stroke-width="0.8"/>
+    <text x="215" y="3" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="10" font-weight="700" fill="#5C9DFF">£ GBP</text>
 
-    <text x="18" y="27" font-family="Inter" font-size="10.5" fill="#A3AABE">En libras:</text>
-    <text x="80" y="27" font-family="JetBrains Mono" font-size="11.5" font-weight="600" fill="#EFF2F9">(1 + i*) · E<tspan font-size="9">t</tspan></text>
+    <text x="18" y="27" font-family="Archivo, sans-serif" font-size="10.5" fill="#A9ABAE">En libras:</text>
+    <text x="80" y="27" font-family="Azeret Mono, monospace" font-size="11.5" font-weight="600" fill="#F2F2F0">(1 + i*) · E<tspan font-size="9">t</tspan></text>
 
     <!-- Reconversión esperada a USD con espacio amplio -->
-    <rect x="10" y="38" width="240" height="28" rx="5" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
-    <text x="130" y="56" text-anchor="middle" font-family="JetBrains Mono" font-size="9.5" fill="#FFB188">Reconversión: <tspan font-weight="700" fill="#EFF2F9">(1+i*)·(E<tspan font-size="8">t</tspan>/E<tspan font-size="8">t+1</tspan><tspan font-size="7" dy="-3">e</tspan><tspan font-size="9.5" dy="3">)</tspan></tspan></text>
+    <rect x="10" y="38" width="240" height="28" rx="5" fill="#1A1B1D" stroke="#3A3C41" stroke-width="0.8"/>
+    <text x="130" y="56" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="9.5" fill="#FF9B7D">Reconversión: <tspan font-weight="700" fill="#F2F2F0">(1+i*)·(E<tspan font-size="8">t</tspan>/E<tspan font-size="8">t+1</tspan><tspan font-size="7" dy="-3">e</tspan><tspan font-size="9.5" dy="3">)</tspan></tspan></text>
   </g>
 
   <!-- ==================== VÍNCULO DE ARBITRAJE ENTRE AMBAS RUTAS ==================== -->
-  <path d="M615 118V198" fill="none" stroke="#FFB188" stroke-width="2" stroke-dasharray="4 4"/>
-  <circle cx="615" cy="158" r="14" fill="#1B223C" stroke="#FFB188" stroke-width="1.4"/>
-  <text x="615" y="162" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#FFB188">VS</text>
+  <path d="M615 118V198" fill="none" stroke="#FF9B7D" stroke-width="2" stroke-dasharray="4 4"/>
+  <circle cx="615" cy="158" r="14" fill="#202124" stroke="#FF9B7D" stroke-width="1.4"/>
+  <text x="615" y="162" text-anchor="middle" font-family="Archivo, sans-serif" font-size="11" font-weight="700" fill="#FF9B7D">VS</text>
 
   <!-- ==================== FRANJA INFERIOR: CONDICIÓN DE ARBITRAJE (17.2) ==================== -->
   <g transform="translate(30, 298)">
-    <rect width="720" height="38" rx="7" fill="#080C1C" stroke="#2A324A" stroke-width="1.2"/>
-    <rect x="12" y="7" width="165" height="24" rx="4" fill="#1B223C" stroke="#667FDA" stroke-width="1"/>
-    <text x="94" y="23" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#EFF2F9">ARBITRAJE EN EQUILIBRIO</text>
+    <rect width="720" height="38" rx="7" fill="#101112" stroke="#3A3C41" stroke-width="1.2"/>
+    <rect x="12" y="7" width="165" height="24" rx="4" fill="#202124" stroke="#5C9DFF" stroke-width="1"/>
+    <text x="94" y="23" text-anchor="middle" font-family="Archivo, sans-serif" font-size="10" font-weight="700" fill="#F2F2F0">ARBITRAJE EN EQUILIBRIO</text>
 
-    <text x="190" y="23" font-family="JetBrains Mono" font-size="11.5" font-weight="700" fill="#FF6F4A">(1 + i<tspan font-size="9">t</tspan>) = (1 + i*<tspan font-size="9">t</tspan>) · (E<tspan font-size="9">t</tspan> / E<tspan font-size="9">t+1</tspan><tspan font-size="8" dy="-4">e</tspan><tspan font-size="11.5" dy="4">)</tspan></text>
+    <text x="190" y="23" font-family="Azeret Mono, monospace" font-size="11.5" font-weight="700" fill="#F2552C">(1 + i<tspan font-size="9">t</tspan>) = (1 + i*<tspan font-size="9">t</tspan>) · (E<tspan font-size="9">t</tspan> / E<tspan font-size="9">t+1</tspan><tspan font-size="8" dy="-4">e</tspan><tspan font-size="11.5" dy="4">)</tspan></text>
 
     <!-- Versión aproximada bien separada -->
-    <rect x="495" y="7" width="212" height="24" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
-    <text x="601" y="23" text-anchor="middle" font-family="JetBrains Mono" font-size="10.5" fill="#FFB188">Aprox: i ≈ i* − (ΔE<tspan font-size="8" dy="-3">e</tspan><tspan font-size="10.5" dy="3">/E)</tspan></text>
+    <rect x="495" y="7" width="212" height="24" rx="4" fill="#1A1B1D" stroke="#3A3C41" stroke-width="0.8"/>
+    <text x="601" y="23" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="10.5" fill="#FF9B7D">Aprox: i ≈ i* − (ΔE<tspan font-size="8" dy="-3">e</tspan><tspan font-size="10.5" dy="3">/E)</tspan></text>
   </g>
 </svg>
       </div>
-      <figcaption>Fig. propia — arbitraje entre bono doméstico y bono extranjero (Blanchard, secc. 17-2). Condición de paridad descubierta de tasas de interés (UIP).</figcaption>
+      <figcaption>Fig. propia: arbitraje entre bono doméstico y bono extranjero (Blanchard, secc. 17-2). Condición de paridad descubierta de tasas de interés (UIP).</figcaption>
     </figure>
 
     <div class="bloque">
       <h3>La condición de paridad de tasas de interés (no cubierta)</h3>
       <p>Igualando el rendimiento esperado de ambas rutas y reorganizando, Blanchard llega a la ecuación (17.2):</p>
-      <div class="ecuacion">(1 + i<sub>t</sub>) = (1 + i*<sub>t</sub>) · (E<sub>t</sub> / E<sup>e</sup><sub>t+1</sub>)</div>
+      <div class="ecuacion">(1 + <span class="v" data-var="i"><span>i<sub>t</sub></span></span>) = (1 + <span class="v" data-var="ext"><span>i*<sub>t</sub></span></span>) · (<span class="v" data-var="ext"><span>E<sub>t</sub></span></span> / <span class="v" data-var="ext"><span>E<sup>e</sup><sub>t+1</sub></span></span>)</div>
       <p>Esta es la <strong>condición de paridad de tasas de interés no cubierta</strong> (uncovered interest parity), o simplemente "paridad de tasas de interés". El calificativo "no cubierta" la distingue de la paridad <em>cubierta</em>, que usa un tipo de cambio a plazo (forward) pactado hoy y es una condición de arbitraje sin riesgo.</p>
       <p>Una versión aproximada, más usada en la práctica (ecuación 17.4), dice que la tasa doméstica es aproximadamente igual a la tasa extranjera menos la tasa esperada de apreciación nominal de la moneda doméstica:</p>
-      <div class="ecuacion">i<sub>t</sub> ≈ i*<sub>t</sub> − (E<sup>e</sup><sub>t+1</sub> − E<sub>t</sub>) / E<sub>t</sub></div>
+      <div class="ecuacion"><span class="v" data-var="i"><span>i<sub>t</sub></span></span> ≈ <span class="v" data-var="ext"><span>i*<sub>t</sub></span></span> − (<span class="v" data-var="ext"><span>E<sup>e</sup><sub>t+1</sub></span></span> − <span class="v" data-var="ext"><span>E<sub>t</sub></span></span>) / <span class="v" data-var="ext"><span>E<sub>t</sub></span></span></div>
     </div>
 
     <div class="recuadro">
       <span class="recuadro-tag">Lectura de la ecuación</span>
-      <p>Si se espera que la moneda doméstica se <em>deprecie</em> (E<sup>e</sup><sub>t+1</sub> &gt; E<sub>t</sub>), la tasa doméstica debe ser <em>mayor</em> que la extranjera para compensar esa pérdida esperada al reconvertir — de lo contrario nadie querría el bono doméstico. Simétricamente, si se espera una <em>apreciación</em>, la tasa doméstica puede ser menor.</p>
+      <p>Si se espera que la moneda doméstica se <em>deprecie</em> (E<sup>e</sup><sub>t+1</sub> &gt; E<sub>t</sub>), la tasa doméstica debe ser <em>mayor</em> que la extranjera para compensar esa pérdida esperada al reconvertir; de lo contrario nadie querría el bono doméstico. Simétricamente, si se espera una <em>apreciación</em>, la tasa doméstica puede ser menor.</p>
     </div>
 
     <div class="bloque">
-      <p><em>El supuesto de que los inversionistas solo les importa el rendimiento esperado (ignorando costos de transacción y riesgo) es una simplificación — Blanchard lo señala explícitamente como "obviamente demasiado fuerte", útil como primera aproximación para el análisis macroeconómico de la relación entre tasas de interés y tipo de cambio.</em></p>
+      <p><em>El supuesto de que los inversionistas solo les importa el rendimiento esperado (ignorando costos de transacción y riesgo) es una simplificación: Blanchard lo señala explícitamente como "obviamente demasiado fuerte", útil como primera aproximación para el análisis macroeconómico de la relación entre tasas de interés y tipo de cambio.</em></p>
     </div>
 
     <div class="recuadro">
-      <span class="recuadro-tag">Puente con Tema 3 — qué son i, i* en la práctica</span>
-      <p>La UIP se escribe en términos de <span class="mono">i</span> e <span class="mono">i*</span> — tasas de interés <em>nominales</em> a las que se puede prestar o pedir prestado en cada país (Fisher, Tema 3: <span class="mono">r ≈ i − π<sup>e</sup></span>). Y el propio Blanchard advierte que la ecuación (17.2) ignora el riesgo del prestatario: asume que ambos bonos son igual de "seguros". En Tema 3 vimos que eso casi nunca es cierto — los agentes no se endeudan a la tasa de política <span class="mono">r</span> (o a la tasa i libre de riesgo), sino a <span class="mono">r + x</span>, donde <span class="mono">x</span> es la <strong>prima de riesgo</strong>. Aplicado aquí: si el país extranjero se percibe más riesgoso, su tasa observada <span class="mono">i*</span> ya trae incorporada una prima de riesgo país, y comparar tasas "a secas" entre economías con riesgo distinto puede llevar a conclusiones erróneas sobre hacia dónde conviene mover el capital.</p>
+      <span class="recuadro-tag">Puente con Tema 3: qué son i, i* en la práctica</span>
+      <p>La UIP se escribe en términos de <span class="mono">i</span> e <span class="mono">i*</span>: tasas de interés <em>nominales</em> a las que se puede prestar o pedir prestado en cada país (Fisher, Tema 3: <span class="mono">r ≈ i − π<sup>e</sup></span>). Y el propio Blanchard advierte que la ecuación (17.2) ignora el riesgo del prestatario: asume que ambos bonos son igual de "seguros". En Tema 3 vimos que eso casi nunca es cierto: los agentes no se endeudan a la tasa de política <span class="mono">r</span> (o a la tasa i libre de riesgo), sino a <span class="mono">r + x</span>, donde <span class="mono">x</span> es la <strong>prima de riesgo</strong>. Aplicado aquí: si el país extranjero se percibe más riesgoso, su tasa observada <span class="mono">i*</span> ya trae incorporada una prima de riesgo país, y comparar tasas "a secas" entre economías con riesgo distinto puede llevar a conclusiones erróneas sobre hacia dónde conviene mover el capital.</p>
     </div>
   </section>
 
-  <section class="modulo reveal" id="balanza">
-    <div class="modulo-head"><span class="modulo-num">04</span><h2>Balanza de pagos</h2></div>
-    <div class="modulo-text">Registro contable de las transacciones de un país con el resto del mundo — comerciales y financieras.</div>
+  <section class="modulo" id="balanza">
+    <div class="modulo-head"><h2>Balanza de pagos</h2></div>
+    <div class="modulo-text">Registro contable de las transacciones de un país con el resto del mundo, comerciales y financieras.</div>
 
     <div class="bloque">
       <h3>Cuenta corriente ("arriba de la línea")</h3>
@@ -663,12 +341,12 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
 
     <div class="bloque">
       <h3>Cuenta financiera ("debajo de la línea")</h3>
-      <p>Muestra cómo se financia el balance de cuenta corriente: el aumento de tenencias extranjeras de activos domésticos, menos el aumento de tenencias domésticas de activos extranjeros. Un déficit de cuenta corriente implica que el país tomó prestado del resto del mundo — es decir, un superávit de cuenta financiera.</p>
+      <p>Muestra cómo se financia el balance de cuenta corriente: el aumento de tenencias extranjeras de activos domésticos, menos el aumento de tenencias domésticas de activos extranjeros. Un déficit de cuenta corriente implica que el país tomó prestado del resto del mundo, es decir, un superávit de cuenta financiera.</p>
       <div class="ecuacion">Cuenta corriente + Cuenta financiera ≈ 0 (salvo discrepancia estadística)</div>
     </div>
 
     <div class="recuadro">
-      <span class="recuadro-tag">Dato verificado — Blanchard, Tabla 17-3</span>
+      <span class="recuadro-tag">Dato verificado: Blanchard, Tabla 17-3</span>
       <p>La balanza de pagos de EE. UU. de 2022 (en miles de millones de US$), tal como aparece en el capítulo, ilustra la mecánica completa: un déficit de cuenta corriente de −993, financiado casi en su totalidad por un superávit de cuenta financiera de 804, con una discrepancia estadística de −189 (≈19% del balance de cuenta corriente) que recuerda que incluso en un país con estadísticas avanzadas, los datos económicos distan de ser perfectos.</p>
     </div>
 
@@ -712,146 +390,146 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
   <desc>Doble balanza acoplada que muestra cómo el déficit por cuenta corriente de EE. UU. (-993 mil millones de dólares) se financia necesariamente mediante una entrada neta de capitales en la cuenta financiera (+804 mil millones) satisfaciendo la identidad contable fundamental con cero solapamiento de textos.</desc>
 
   <!-- Contenedor base -->
-  <rect width="820" height="380" rx="12" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+  <rect width="820" height="380" rx="12" fill="#1A1B1D" stroke="#3A3C41" stroke-width="1.2"/>
 
   <!-- Trama reticular de fondo -->
-  <path d="M40 50H780M40 320H780" fill="none" stroke="#2A324A" stroke-width="0.8" stroke-dasharray="4 6" opacity=".4"/>
-  <line x1="410" y1="30" x2="410" y2="320" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 6" opacity=".3"/>
+  <path d="M40 50H780M40 320H780" fill="none" stroke="#3A3C41" stroke-width="0.8" stroke-dasharray="4 6" opacity=".4"/>
+  <line x1="410" y1="30" x2="410" y2="320" stroke="#3A3C41" stroke-width="1" stroke-dasharray="4 6" opacity=".3"/>
 
   <!-- ==================== PANEL IZQUIERDO: CUENTA CORRIENTE ==================== -->
   <g transform="translate(40, 45)">
     <!-- Marco del panel -->
-    <rect width="340" height="260" rx="10" fill="#080C1C" stroke="#FF6F4A" stroke-width="1.8"/>
+    <rect width="340" height="260" rx="10" fill="#101112" stroke="#F2552C" stroke-width="1.8"/>
 
     <!-- Cabecera de Cuenta Corriente -->
-    <rect x="15" y="-12" width="200" height="24" rx="5" fill="#1B223C" stroke="#FF6F4A" stroke-width="1.2"/>
-    <text x="115" y="4" text-anchor="middle" font-family="Inter" font-size="11.5" font-weight="700" fill="#EFF2F9">CUENTA CORRIENTE (CC)</text>
+    <rect x="15" y="-12" width="200" height="24" rx="5" fill="#202124" stroke="#F2552C" stroke-width="1.2"/>
+    <text x="115" y="4" text-anchor="middle" font-family="Archivo, sans-serif" font-size="11.5" font-weight="700" fill="#F2F2F0">CUENTA CORRIENTE (CC)</text>
 
     <!-- Subtítulo pedagógico -->
-    <text x="18" y="28" font-family="Inter" font-size="10" fill="#A3AABE">Transacciones de bienes, servicios e ingresos</text>
+    <text x="18" y="28" font-family="Archivo, sans-serif" font-size="10" fill="#A9ABAE">Transacciones de bienes, servicios e ingresos</text>
 
     <!-- Fila 1: Exportaciones -->
     <g transform="translate(18, 42)">
-      <rect width="304" height="26" rx="4" fill="#10172D"/>
-      <text x="12" y="17" font-family="Inter" font-size="11" fill="#EFF2F9">Exportaciones (X)</text>
-      <text x="292" y="17" text-anchor="end" font-family="JetBrains Mono" font-size="11.5" font-weight="600" fill="#55C975">+$4,424B</text>
+      <rect width="304" height="26" rx="4" fill="#1A1B1D"/>
+      <text x="12" y="17" font-family="Archivo, sans-serif" font-size="11" fill="#F2F2F0">Exportaciones (X)</text>
+      <text x="292" y="17" text-anchor="end" font-family="Azeret Mono, monospace" font-size="11.5" font-weight="600" fill="#55C975">+$4,424B</text>
     </g>
 
     <!-- Fila 2: Importaciones -->
     <g transform="translate(18, 73)">
-      <rect width="304" height="26" rx="4" fill="#10172D"/>
-      <text x="12" y="17" font-family="Inter" font-size="11" fill="#EFF2F9">Importaciones (IM)</text>
-      <text x="292" y="17" text-anchor="end" font-family="JetBrains Mono" font-size="11.5" font-weight="600" fill="#FB5668">-$5,396B</text>
+      <rect width="304" height="26" rx="4" fill="#1A1B1D"/>
+      <text x="12" y="17" font-family="Archivo, sans-serif" font-size="11" fill="#F2F2F0">Importaciones (IM)</text>
+      <text x="292" y="17" text-anchor="end" font-family="Azeret Mono, monospace" font-size="11.5" font-weight="600" fill="#FF7382">-$5,396B</text>
     </g>
 
     <!-- Fila 3: Saldo Comercial -->
     <g transform="translate(18, 104)">
-      <rect width="304" height="24" rx="4" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
-      <text x="12" y="16" font-family="Inter" font-size="10.5" font-weight="600" fill="#FFB188">Balanza Comercial (X − IM)</text>
-      <text x="292" y="16" text-anchor="end" font-family="JetBrains Mono" font-size="11" font-weight="700" fill="#FF6F4A">-$972B</text>
+      <rect width="304" height="24" rx="4" fill="#202124" stroke="#3A3C41" stroke-width="0.8"/>
+      <text x="12" y="16" font-family="Archivo, sans-serif" font-size="10.5" font-weight="600" fill="#FF9B7D">Balanza Comercial (X − IM)</text>
+      <text x="292" y="16" text-anchor="end" font-family="Azeret Mono, monospace" font-size="11" font-weight="700" fill="#F2552C">-$972B</text>
     </g>
 
     <!-- Fila 4: Renta neta -->
     <g transform="translate(18, 133)">
-      <rect width="304" height="24" rx="4" fill="#10172D"/>
-      <text x="12" y="16" font-family="Inter" font-size="10" fill="#A3AABE">Renta neta de inversiones</text>
-      <text x="292" y="16" text-anchor="end" font-family="JetBrains Mono" font-size="10.5" fill="#FB5668">-$21B</text>
+      <rect width="304" height="24" rx="4" fill="#1A1B1D"/>
+      <text x="12" y="16" font-family="Archivo, sans-serif" font-size="10" fill="#A9ABAE">Renta neta de inversiones</text>
+      <text x="292" y="16" text-anchor="end" font-family="Azeret Mono, monospace" font-size="10.5" fill="#FF7382">-$21B</text>
     </g>
 
     <!-- Saldo final de Cuenta Corriente (Tarjeta destacada) -->
     <g transform="translate(18, 168)">
-      <rect width="304" height="44" rx="7" fill="#10172D" stroke="#FF6F4A" stroke-width="1.4"/>
-      <text x="14" y="20" font-family="Inter" font-size="11" font-weight="700" fill="#EFF2F9">SALDO CUENTA CORRIENTE</text>
-      <text x="14" y="35" font-family="Inter" font-size="9" fill="#FFB188">Déficit: salida neta de divisas</text>
-      <text x="290" y="28" text-anchor="end" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#FB5668">-$993B</text>
+      <rect width="304" height="44" rx="7" fill="#1A1B1D" stroke="#F2552C" stroke-width="1.4"/>
+      <text x="14" y="20" font-family="Archivo, sans-serif" font-size="11" font-weight="700" fill="#F2F2F0">SALDO CUENTA CORRIENTE</text>
+      <text x="14" y="35" font-family="Archivo, sans-serif" font-size="9" fill="#FF9B7D">Déficit: salida neta de divisas</text>
+      <text x="290" y="28" text-anchor="end" font-family="Azeret Mono, monospace" font-size="16" font-weight="700" fill="#FF7382">-$993B</text>
     </g>
 
-    <text x="170" y="242" text-anchor="middle" font-family="Inter" font-size="9.5" fill="#A3AABE">EE. UU. gasta más de lo que produce en el exterior</text>
+    <text x="170" y="242" text-anchor="middle" font-family="Archivo, sans-serif" font-size="9.5" fill="#A9ABAE">EE. UU. gasta más de lo que produce en el exterior</text>
   </g>
 
   <!-- ==================== CONECTOR CENTRAL DE FINANCIAMIENTO ==================== -->
   <g transform="translate(385, 140)">
-    <path d="M0 35H50" fill="none" stroke="#FFB188" stroke-width="2.6" stroke-dasharray="4 3"/>
-    <path d="M42 29L50 35L42 41" fill="none" stroke="#FFB188" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-    <circle cx="25" cy="35" r="14" fill="#1B223C" stroke="#2A324A" stroke-width="1.2"/>
-    <text x="25" y="39" text-anchor="middle" font-family="JetBrains Mono" font-size="9" font-weight="700" fill="#55C975">FIN</text>
-    <text x="25" y="10" text-anchor="middle" font-family="Inter" font-size="8.5" font-weight="600" fill="#FFB188">EXIGE</text>
-    <text x="25" y="62" text-anchor="middle" font-family="Inter" font-size="8" fill="#A3AABE">Deuda neta</text>
+    <path d="M0 35H50" fill="none" stroke="#FF9B7D" stroke-width="2.6" stroke-dasharray="4 3"/>
+    <path d="M42 29L50 35L42 41" fill="none" stroke="#FF9B7D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="25" cy="35" r="14" fill="#202124" stroke="#3A3C41" stroke-width="1.2"/>
+    <text x="25" y="39" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="9" font-weight="700" fill="#55C975">FIN</text>
+    <text x="25" y="10" text-anchor="middle" font-family="Archivo, sans-serif" font-size="8.5" font-weight="600" fill="#FF9B7D">EXIGE</text>
+    <text x="25" y="62" text-anchor="middle" font-family="Archivo, sans-serif" font-size="8" fill="#A9ABAE">Deuda neta</text>
   </g>
 
   <!-- ==================== PANEL DERECHO: CUENTA FINANCIERA ==================== -->
   <g transform="translate(440, 45)">
     <!-- Marco del panel -->
-    <rect width="340" height="260" rx="10" fill="#080C1C" stroke="#667FDA" stroke-width="1.8"/>
+    <rect width="340" height="260" rx="10" fill="#101112" stroke="#5C9DFF" stroke-width="1.8"/>
 
     <!-- Cabecera de Cuenta Financiera -->
-    <rect x="15" y="-12" width="200" height="24" rx="5" fill="#1B223C" stroke="#667FDA" stroke-width="1.2"/>
-    <text x="115" y="4" text-anchor="middle" font-family="Inter" font-size="11.5" font-weight="700" fill="#EFF2F9">CUENTA FINANCIERA (CF)</text>
+    <rect x="15" y="-12" width="200" height="24" rx="5" fill="#202124" stroke="#5C9DFF" stroke-width="1.2"/>
+    <text x="115" y="4" text-anchor="middle" font-family="Archivo, sans-serif" font-size="11.5" font-weight="700" fill="#F2F2F0">CUENTA FINANCIERA (CF)</text>
 
     <!-- Subtítulo pedagógico -->
-    <text x="18" y="28" font-family="Inter" font-size="10" fill="#A3AABE">Flujos de activos financieros y endeudamiento</text>
+    <text x="18" y="28" font-family="Archivo, sans-serif" font-size="10" fill="#A9ABAE">Flujos de activos financieros y endeudamiento</text>
 
     <!-- Fila 1: Activos domésticos en manos foráneas (Etiqueta clara y sin choque) -->
     <g transform="translate(18, 42)">
-      <rect width="304" height="26" rx="4" fill="#10172D"/>
-      <text x="12" y="17" font-family="Inter" font-size="10" fill="#EFF2F9">Entrada capital (compra activos US)</text>
-      <text x="292" y="17" text-anchor="end" font-family="JetBrains Mono" font-size="11.5" font-weight="600" fill="#55C975">+$1,564B</text>
+      <rect width="304" height="26" rx="4" fill="#1A1B1D"/>
+      <text x="12" y="17" font-family="Archivo, sans-serif" font-size="10" fill="#F2F2F0">Entrada capital (compra activos US)</text>
+      <text x="292" y="17" text-anchor="end" font-family="Azeret Mono, monospace" font-size="11.5" font-weight="600" fill="#55C975">+$1,564B</text>
     </g>
 
     <!-- Fila 2: Activos extranjeros en manos domésticas (Etiqueta clara y sin choque) -->
     <g transform="translate(18, 73)">
-      <rect width="304" height="26" rx="4" fill="#10172D"/>
-      <text x="12" y="17" font-family="Inter" font-size="10" fill="#EFF2F9">Salida capital (compra activos ext.)</text>
-      <text x="292" y="17" text-anchor="end" font-family="JetBrains Mono" font-size="11.5" font-weight="600" fill="#FB5668">-$760B</text>
+      <rect width="304" height="26" rx="4" fill="#1A1B1D"/>
+      <text x="12" y="17" font-family="Archivo, sans-serif" font-size="10" fill="#F2F2F0">Salida capital (compra activos ext.)</text>
+      <text x="292" y="17" text-anchor="end" font-family="Azeret Mono, monospace" font-size="11.5" font-weight="600" fill="#FF7382">-$760B</text>
     </g>
 
     <!-- Fila 3: Saldo Cuenta Financiera -->
     <g transform="translate(18, 104)">
-      <rect width="304" height="24" rx="4" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
-      <text x="12" y="16" font-family="Inter" font-size="10" font-weight="600" fill="#667FDA">Entrada Neta de Capitales</text>
-      <text x="292" y="16" text-anchor="end" font-family="JetBrains Mono" font-size="11" font-weight="700" fill="#55C975">+$804B</text>
+      <rect width="304" height="24" rx="4" fill="#202124" stroke="#3A3C41" stroke-width="0.8"/>
+      <text x="12" y="16" font-family="Archivo, sans-serif" font-size="10" font-weight="600" fill="#5C9DFF">Entrada Neta de Capitales</text>
+      <text x="292" y="16" text-anchor="end" font-family="Azeret Mono, monospace" font-size="11" font-weight="700" fill="#55C975">+$804B</text>
     </g>
 
     <!-- Fila 4: Discrepancia Estadística -->
     <g transform="translate(18, 133)">
-      <rect width="304" height="24" rx="4" fill="#10172D"/>
-      <text x="12" y="16" font-family="Inter" font-size="10" fill="#A3AABE">Discrepancia estadística</text>
-      <text x="292" y="16" text-anchor="end" font-family="JetBrains Mono" font-size="10.5" fill="#A3AABE">-$189B</text>
+      <rect width="304" height="24" rx="4" fill="#1A1B1D"/>
+      <text x="12" y="16" font-family="Archivo, sans-serif" font-size="10" fill="#A9ABAE">Discrepancia estadística</text>
+      <text x="292" y="16" text-anchor="end" font-family="Azeret Mono, monospace" font-size="10.5" fill="#A9ABAE">-$189B</text>
     </g>
 
     <!-- Saldo final de Cuenta Financiera (Tarjeta destacada) -->
     <g transform="translate(18, 168)">
-      <rect width="304" height="44" rx="7" fill="#10172D" stroke="#667FDA" stroke-width="1.4"/>
-      <text x="14" y="20" font-family="Inter" font-size="11" font-weight="700" fill="#EFF2F9">SALDO CUENTA FINANCIERA</text>
-      <text x="14" y="35" font-family="Inter" font-size="9" fill="#667FDA">Superávit: entrada neta de fondos</text>
-      <text x="290" y="28" text-anchor="end" font-family="JetBrains Mono" font-size="16" font-weight="700" fill="#55C975">+$804B</text>
+      <rect width="304" height="44" rx="7" fill="#1A1B1D" stroke="#5C9DFF" stroke-width="1.4"/>
+      <text x="14" y="20" font-family="Archivo, sans-serif" font-size="11" font-weight="700" fill="#F2F2F0">SALDO CUENTA FINANCIERA</text>
+      <text x="14" y="35" font-family="Archivo, sans-serif" font-size="9" fill="#5C9DFF">Superávit: entrada neta de fondos</text>
+      <text x="290" y="28" text-anchor="end" font-family="Azeret Mono, monospace" font-size="16" font-weight="700" fill="#55C975">+$804B</text>
     </g>
 
-    <text x="170" y="242" text-anchor="middle" font-family="Inter" font-size="9.5" fill="#A3AABE">Venta neta de activos al resto del mundo</text>
+    <text x="170" y="242" text-anchor="middle" font-family="Archivo, sans-serif" font-size="9.5" fill="#A9ABAE">Venta neta de activos al resto del mundo</text>
   </g>
 
   <!-- ==================== FRANJA INFERIOR: IDENTIDAD CONTABLE FUNDAMENTAL ==================== -->
   <g transform="translate(40, 324)">
-    <rect width="740" height="42" rx="8" fill="#080C1C" stroke="#2A324A" stroke-width="1.2"/>
+    <rect width="740" height="42" rx="8" fill="#101112" stroke="#3A3C41" stroke-width="1.2"/>
     <circle cx="24" cy="21" r="5" fill="#55C975"/>
-    <text x="38" y="25" font-family="Inter" font-size="11" font-weight="700" fill="#EFF2F9">IDENTIDAD CONTABLE:</text>
-    <text x="205" y="25" font-family="JetBrains Mono" font-size="11.5" font-weight="600" fill="#EFF2F9">CC (<tspan fill="#FB5668">-$993B</tspan>) + CF (<tspan fill="#55C975">+$804B</tspan>) + Discrepancia (<tspan fill="#A3AABE">-$189B</tspan>) = <tspan font-weight="700" fill="#55C975">$0</tspan></text>
+    <text x="38" y="25" font-family="Archivo, sans-serif" font-size="11" font-weight="700" fill="#F2F2F0">IDENTIDAD CONTABLE:</text>
+    <text x="205" y="25" font-family="Azeret Mono, monospace" font-size="11.5" font-weight="600" fill="#F2F2F0">CC (<tspan fill="#FF7382">-$993B</tspan>) + CF (<tspan fill="#55C975">+$804B</tspan>) + Discrepancia (<tspan fill="#A9ABAE">-$189B</tspan>) = <tspan font-weight="700" fill="#55C975">$0</tspan></text>
   </g>
 </svg>
       </div>
-      <figcaption>Fig. propia — estructura y flujos acoplados de la Balanza de Pagos con datos reales de EE. UU. (Blanchard, Tabla 17-3). El déficit de cuenta corriente exige financiamiento equivalente mediante superávit en la cuenta financiera.</figcaption>
+      <figcaption>Fig. propia: estructura y flujos acoplados de la Balanza de Pagos con datos reales de EE. UU. (Blanchard, Tabla 17-3). El déficit de cuenta corriente exige financiamiento equivalente mediante superávit en la cuenta financiera.</figcaption>
     </figure>
 
     <div class="bloque">
       <h3>PIB vs. PNB</h3>
       <p>El PIB mide el valor agregado producido dentro del país; el PNB mide el valor agregado generado por los factores de producción domésticos (estén donde estén). En economía cerrada ambas medidas coinciden; en economía abierta difieren en los pagos netos de ingreso al/del resto del mundo (NI):</p>
       <div class="ecuacion">PNB = PIB + NI</div>
-      <p>Para EE. UU. en 2022, NI = −21 (de la tabla anterior), una diferencia pequeña relativa al PIB — pero en otras economías esta brecha puede ser considerable.</p>
+      <p>Para EE. UU. en 2022, NI = −21 (de la tabla anterior), una diferencia pequeña relativa al PIB, pero en otras economías esta brecha puede ser considerable.</p>
     </div>
   </section>
 
-  <section class="modulo reveal" id="sintesis">
-    <div class="modulo-head"><span class="modulo-num">05</span><h2>Síntesis: glosario del Tema 4</h2></div>
+  <section class="modulo" id="sintesis">
+    <div class="modulo-head"><h2>Síntesis: glosario del Tema 4</h2></div>
     <div class="bezel">
       <div class="bezel-in">
         <dl class="glosario">
@@ -862,7 +540,7 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
           <dt>Aranceles y cuotas</dt><dd>Restricciones a la apertura del mercado de bienes (impuestos y límites de cantidad a importaciones).</dd>
           <dt>Controles de capital</dt><dd>Restricciones a la apertura del mercado financiero.</dd>
           <dt>Paridad de tasas de interés (no cubierta)</dt><dd>Condición de arbitraje: (1+i) = (1+i*)·(E_t/E^e_t+1).</dd>
-          <dt>Prima de riesgo (x) — <span class="mono">Tema 3</span></dt><dd>Margen que exigen los acreedores sobre la tasa de política; la UIP compara tasas nominales i, i* que en la práctica ya incorporan esa prima cuando difiere el riesgo entre países.</dd>
+          <dt>Prima de riesgo (x) · <span class="mono">Tema 3</span></dt><dd>Margen que exigen los acreedores sobre la tasa de política; la UIP compara tasas nominales i, i* que en la práctica ya incorporan esa prima cuando difiere el riesgo entre países.</dd>
           <dt>Balanza de pagos</dt><dd>Registro contable de las transacciones de un país con el resto del mundo.</dd>
           <dt>Cuenta corriente</dt><dd>Balanza comercial + ingreso neto (+ transferencias).</dd>
           <dt>Cuenta financiera</dt><dd>Aumento de tenencias extranjeras de activos domésticos − aumento de tenencias domésticas de activos extranjeros.</dd>
@@ -873,8 +551,8 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
     </div>
   </section>
 
-  <section class="modulo reveal" id="autoeval">
-    <div class="modulo-head"><span class="modulo-num">06</span><h2>Autoevaluación rápida</h2></div>
+  <section class="modulo" id="autoeval">
+    <div class="modulo-head"><h2>Autoevaluación rápida</h2></div>
 
     <div class="pregunta" data-abierta="false">
       <button class="disparador" aria-expanded="false">
@@ -894,7 +572,7 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
       </button>
       <div class="respuesta">
         <span class="respuesta-tag">Respuesta</span>
-        <p>Mayor. Si se espera una depreciación, quien mantiene bonos domésticos necesita una tasa más alta para compensar la pérdida esperada al reconvertir la moneda — de lo contrario, todos preferirían el bono extranjero.</p>
+        <p>Mayor. Si se espera una depreciación, quien mantiene bonos domésticos necesita una tasa más alta para compensar la pérdida esperada al reconvertir la moneda; de lo contrario, todos preferirían el bono extranjero.</p>
       </div>
     </div>
 
@@ -932,14 +610,30 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
     </div>
   </section>
 </main>
+<nav class="panel" data-nav-eq aria-label="Índice de esta página">
+  <button class="panel-boton" type="button" aria-expanded="false" aria-controls="panel-lista"><i><svg aria-hidden="true" focusable="false"></svg></i><span class="sr">Índice. Estás en: </span><span data-nav-actual>Índice</span></button>
+  <p class="panel-tt">Tema 4<small>En esta página</small></p>
+  <svg class="panel-svg" aria-hidden="true" focusable="false"></svg>
+  <ol class="panel-lista" id="panel-lista">
+    <li><a href="#alcance">Alcance</a></li>
+    <li><a href="#bienes">Movilidad de bienes</a></li>
+    <li><a href="#capitales">Movilidad de capitales</a></li>
+    <li><a href="#balanza">Balanza de pagos</a></li>
+    <li><a href="#sintesis">Síntesis</a></li>
+    <li><a href="#autoeval">Autoevaluación</a></li>
+  </ol>
+  <p class="panel-ayuda">El punto marca dónde vas leyendo. Con el foco en el índice, las flechas lo recorren.</p>
+</nav>
+</div>
 
 <footer>
   <div>
-    <span class="badge">Fuente</span>Blanchard, Olivier (2023), <em>Macroeconomics</em>, 9ª ed., Pearson — Cap. 17, secc. 17-1/17-2 (pp. 353–370)
+    <span class="badge">Fuente</span>Blanchard, Olivier (2023), <em>Macroeconomics</em>, 9ª ed., Pearson, Cap. 17, secc. 17-1/17-2 (pp. 353–370)
   </div>
-  <p>Guía de estudio — Semana 4, Tema 4. Borrador de trabajo del propio material de repaso del estudiante (no es Tarea ni Control). &middot; <a href="../index.html">Volver al sitio</a></p>
+  <p>Guía de estudio: Semana 4, Tema 4. Borrador de trabajo del propio material de repaso del estudiante (no es Tarea ni Control). &middot; <a href="../index.html">Volver al sitio</a></p>
 </footer>
 
+<script src="../assets/guia.js"></script>
 <script>
 (function(){
   var botones = document.querySelectorAll('.pregunta .disparador');
@@ -959,19 +653,6 @@ footer p{margin-top:8px; max-width:640px; margin-left:auto; margin-right:auto; f
   });
 })();
 
-if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-  var targets = document.querySelectorAll('.reveal');
-  targets.forEach(function(el){ el.classList.add('reveal-play'); });
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.isIntersecting){
-        entry.target.classList.add('reveal-in');
-        io.unobserve(entry.target);
-      }
-    });
-  }, {threshold:0.12});
-  targets.forEach(function(el){ io.observe(el); });
-}
 </script>
 
 </body>

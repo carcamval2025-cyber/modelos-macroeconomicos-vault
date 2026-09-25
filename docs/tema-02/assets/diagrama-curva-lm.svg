@@ -3,78 +3,78 @@
   <desc id="fig-lm-desc">Eje vertical i, eje horizontal Y. La curva LM es una recta horizontal en color índigo, a la altura de la tasa de política monetaria fijada por el banco central, independiente del nivel de producto. Una recta LM' discontinua, situada más arriba, ilustra una política monetaria restrictiva que eleva la tasa de interés objetivo.</desc>
 
   <!-- Marco de contención y fondo técnico elevado -->
-  <rect x="6" y="6" width="668" height="358" rx="12" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+  <rect x="6" y="6" width="668" height="358" rx="12" fill="#1A1B1D" stroke="#3A3C41" stroke-width="1.2"/>
 
   <!-- Encabezado técnico -->
-  <rect x="24" y="18" width="280" height="26" rx="5" fill="#1B223C"/>
-  <text x="164" y="35" text-anchor="middle" font-family="Inter" font-weight="700" font-size="12" fill="#EFF2F9">Mercados Financieros: Curva LM</text>
-  <rect x="316" y="18" width="340" height="26" rx="5" fill="#1B223C" stroke="#2A324A" stroke-width="1"/>
-  <text x="486" y="35" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="11.5" fill="#667FDA">LM: i = i* (Tasa de Pol&#237;tica Monetaria)</text>
+  <rect x="24" y="18" width="280" height="26" rx="5" fill="#202124"/>
+  <text x="164" y="35" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="700" font-size="12" fill="#F2F2F0">Mercados Financieros: Curva LM</text>
+  <rect x="316" y="18" width="340" height="26" rx="5" fill="#202124" stroke="#3A3C41" stroke-width="1"/>
+  <text x="486" y="35" text-anchor="middle" font-family="Azeret Mono, monospace" font-weight="700" font-size="11.5" fill="#5C9DFF">LM: i = i* (Tasa de Pol&#237;tica Monetaria)</text>
 
   <!-- Retícula cartesiana discontinua técnica -->
-  <path d="M75 110H615M75 190H615M75 255H615" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".35"/>
-  <path d="M180 60V300M290 60V300M400 60V300M510 60V300" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".25"/>
+  <path d="M75 110H615M75 190H615M75 255H615" fill="none" stroke="#3A3C41" stroke-width="1" stroke-dasharray="4 5" opacity=".35"/>
+  <path d="M180 60V300M290 60V300M400 60V300M510 60V300" fill="none" stroke="#3A3C41" stroke-width="1" stroke-dasharray="4 5" opacity=".25"/>
 
   <!-- Sombreado de ajuste monetario entre LM y LM' -->
-  <rect x="75" y="110" width="485" height="80" fill="#667FDA" fill-opacity="0.06"/>
+  <rect x="75" y="110" width="485" height="80" fill="#5C9DFF" fill-opacity="0.06"/>
 
   <!-- Proyección ortogonal de referencia para el producto Y -->
-  <line x1="290" y1="190" x2="290" y2="300" stroke="#A3AABE" stroke-width="1.4" stroke-dasharray="4 4" opacity=".65"/>
+  <line x1="290" y1="190" x2="290" y2="300" stroke="#A9ABAE" stroke-width="1.4" stroke-dasharray="4 4" opacity=".65"/>
 
   <!-- Ejes cartesianos con puntas de flecha sólidas -->
-  <line x1="75" y1="55" x2="75" y2="300" stroke="#A3AABE" stroke-width="1.6" stroke-linecap="round"/>
-  <line x1="75" y1="300" x2="625" y2="300" stroke="#A3AABE" stroke-width="1.6" stroke-linecap="round"/>
-  <path d="M70 63L75 53L80 63" fill="none" stroke="#A3AABE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M615 295L625 300L615 305" fill="none" stroke="#A3AABE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="75" y1="55" x2="75" y2="300" stroke="#A9ABAE" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="75" y1="300" x2="625" y2="300" stroke="#A9ABAE" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M70 63L75 53L80 63" fill="none" stroke="#A9ABAE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M615 295L625 300L615 305" fill="none" stroke="#A9ABAE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
 
   <!-- Marcas de calibración (ticks) en los ejes -->
-  <line x1="68" y1="110" x2="75" y2="110" stroke="#667FDA" stroke-width="1.8"/>
-  <line x1="68" y1="190" x2="75" y2="190" stroke="#EFF2F9" stroke-width="1.8"/>
-  <line x1="290" y1="300" x2="290" y2="307" stroke="#A3AABE" stroke-width="1.8"/>
+  <line x1="68" y1="110" x2="75" y2="110" stroke="#5C9DFF" stroke-width="1.8"/>
+  <line x1="68" y1="190" x2="75" y2="190" stroke="#F2F2F0" stroke-width="1.8"/>
+  <line x1="290" y1="300" x2="290" y2="307" stroke="#A9ABAE" stroke-width="1.8"/>
 
   <!-- Títulos de ejes protegidos con pastillas -->
-  <rect x="42" y="50" width="28" height="22" rx="4" fill="#10172D"/>
-  <text x="56" y="66" text-anchor="middle" font-family="Inter" font-weight="700" font-size="14" fill="#EFF2F9">i</text>
-  <rect x="615" y="306" width="28" height="22" rx="4" fill="#10172D"/>
-  <text x="629" y="322" text-anchor="middle" font-family="Inter" font-weight="700" font-size="14" fill="#EFF2F9">Y</text>
+  <rect x="42" y="50" width="28" height="22" rx="4" fill="#1A1B1D"/>
+  <text x="56" y="66" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="700" font-size="14" fill="#F2F2F0">i</text>
+  <rect x="615" y="306" width="28" height="22" rx="4" fill="#1A1B1D"/>
+  <text x="629" y="322" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="700" font-size="14" fill="#F2F2F0">Y</text>
 
   <!-- Coordenadas en los ejes protegidas por pastillas -->
-  <rect x="22" y="100" width="48" height="20" rx="4" fill="#10172D"/>
-  <text x="46" y="115" text-anchor="middle" font-family="JetBrains Mono" font-size="12" fill="#667FDA">i*&#8242;</text>
+  <rect x="22" y="100" width="48" height="20" rx="4" fill="#1A1B1D"/>
+  <text x="46" y="115" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="12" fill="#5C9DFF">i*&#8242;</text>
 
-  <rect x="24" y="180" width="46" height="20" rx="4" fill="#10172D"/>
-  <text x="47" y="195" text-anchor="middle" font-family="JetBrains Mono" font-size="12" fill="#EFF2F9">i*</text>
+  <rect x="24" y="180" width="46" height="20" rx="4" fill="#1A1B1D"/>
+  <text x="47" y="195" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="12" fill="#F2F2F0">i*</text>
 
-  <rect x="274" y="308" width="34" height="20" rx="4" fill="#10172D"/>
-  <text x="290" y="323" text-anchor="middle" font-family="JetBrains Mono" font-size="12" fill="#A3AABE">Y</text>
+  <rect x="274" y="308" width="34" height="20" rx="4" fill="#1A1B1D"/>
+  <text x="290" y="323" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="12" fill="#A9ABAE">Y</text>
 
   <!-- Curva LM original con doble trazo (horizontal a la tasa i*) -->
-  <line x1="85" y1="190" x2="560" y2="190" stroke="#667FDA" stroke-width="4.2" stroke-linecap="round"/>
-  <line x1="85" y1="190" x2="560" y2="190" stroke="#667FDA" stroke-width="1.4" stroke-dasharray="4 4" opacity=".4"/>
+  <line x1="85" y1="190" x2="560" y2="190" stroke="#5C9DFF" stroke-width="4.2" stroke-linecap="round"/>
+  <line x1="85" y1="190" x2="560" y2="190" stroke="#5C9DFF" stroke-width="1.4" stroke-dasharray="4 4" opacity=".4"/>
   <!-- Etiqueta de curva LM -->
-  <rect x="568" y="178" width="46" height="24" rx="4" fill="#10172D" stroke="#667FDA" stroke-width="1.2"/>
-  <text x="591" y="195" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="13" fill="#667FDA">LM</text>
+  <rect x="568" y="178" width="46" height="24" rx="4" fill="#1A1B1D" stroke="#5C9DFF" stroke-width="1.2"/>
+  <text x="591" y="195" text-anchor="middle" font-family="Azeret Mono, monospace" font-weight="700" font-size="13" fill="#5C9DFF">LM</text>
 
   <!-- Curva LM' desplazada (política restrictiva a tasa i*') -->
-  <line x1="85" y1="110" x2="560" y2="110" stroke="#667FDA" stroke-width="2.6" stroke-dasharray="6 4" opacity=".95"/>
+  <line x1="85" y1="110" x2="560" y2="110" stroke="#5C9DFF" stroke-width="2.6" stroke-dasharray="6 4" opacity=".95"/>
   <!-- Etiqueta de curva LM' -->
-  <rect x="568" y="98" width="52" height="24" rx="4" fill="#10172D" stroke="#667FDA" stroke-width="1"/>
-  <text x="594" y="115" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="13" fill="#667FDA">LM&#8242;</text>
+  <rect x="568" y="98" width="52" height="24" rx="4" fill="#1A1B1D" stroke="#5C9DFF" stroke-width="1"/>
+  <text x="594" y="115" text-anchor="middle" font-family="Azeret Mono, monospace" font-weight="700" font-size="13" fill="#5C9DFF">LM&#8242;</text>
 
   <!-- Vector dinámico de desplazamiento vertical hacia arriba -->
-  <line x1="360" y1="178" x2="360" y2="122" stroke="#FFB188" stroke-width="2"/>
-  <path d="M354 130L360 120L366 130" fill="none" stroke="#FFB188" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="360" y1="178" x2="360" y2="122" stroke="#FF9B7D" stroke-width="2"/>
+  <path d="M354 130L360 120L366 130" fill="none" stroke="#FF9B7D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   <!-- Badge de política restrictiva -->
-  <rect x="375" y="138" width="205" height="24" rx="4" fill="#10172D" stroke="#FFB188" stroke-width="0.9"/>
-  <text x="477" y="154" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#FFB188">&#8593; Pol&#237;tica monetaria restrictiva</text>
+  <rect x="375" y="138" width="205" height="24" rx="4" fill="#1A1B1D" stroke="#FF9B7D" stroke-width="0.9"/>
+  <text x="477" y="154" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="11" fill="#FF9B7D">&#8593; Pol&#237;tica monetaria restrictiva</text>
 
   <!-- Nodo de referencia sobre la LM -->
-  <circle cx="290" cy="190" r="10" fill="#10172D" stroke="#EFF2F9" stroke-width="2.6"/>
-  <circle cx="290" cy="190" r="4.2" fill="#667FDA"/>
-  <rect x="258" y="206" width="64" height="22" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.9"/>
-  <text x="290" y="221" text-anchor="middle" font-family="Inter" font-weight="700" font-size="11" fill="#EFF2F9">Nodo A</text>
+  <circle cx="290" cy="190" r="10" fill="#1A1B1D" stroke="#F2F2F0" stroke-width="2.6"/>
+  <circle cx="290" cy="190" r="4.2" fill="#5C9DFF"/>
+  <rect x="258" y="206" width="64" height="22" rx="4" fill="#1A1B1D" stroke="#3A3C41" stroke-width="0.9"/>
+  <text x="290" y="221" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="700" font-size="11" fill="#F2F2F0">Nodo A</text>
 
   <!-- Resumen pedagógico en franja inferior protegida -->
-  <rect x="24" y="334" width="632" height="24" rx="4" fill="#1B223C" stroke="#2A324A" stroke-width="0.8"/>
-  <text x="340" y="350" text-anchor="middle" font-family="Inter" font-size="10.5" fill="#A3AABE">Para cualquier nivel de <tspan fill="#EFF2F9" font-weight="600">Y</tspan>, la <tspan fill="#667FDA" font-weight="600">LM</tspan> es horizontal en la tasa fijada por el banco central</text>
+  <rect x="24" y="334" width="632" height="24" rx="4" fill="#202124" stroke="#3A3C41" stroke-width="0.8"/>
+  <text x="340" y="350" text-anchor="middle" font-family="Archivo, sans-serif" font-size="10.5" fill="#A9ABAE">Para cualquier nivel de <tspan fill="#F2F2F0" font-weight="600">Y</tspan>, la <tspan fill="#5C9DFF" font-weight="600">LM</tspan> es horizontal en la tasa fijada por el banco central</text>
 </svg>

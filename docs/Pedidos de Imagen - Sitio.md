@@ -157,7 +157,11 @@ curvas con ejes punteados y puntos de equilibrio también funcionó bien; solo r
 
 ---
 
-## img-docs-03 — Banner hero del sitio (pendiente, pedido 2026-08-27)
+## img-docs-03 — Banner hero del sitio (pedido 2026-08-27; retirado de la vista el 2026-09-25)
+
+> **2026-09-25:** con el rediseño "Capas del modelo" la portada ya no muestra banner: su papel
+> lo cumple el diagrama del modelo que dibuja `docs/assets/guia.js`. El SVG entregado se conserva
+> en `docs/assets/hero-banner.svg`, sin uso. No hay pedido pendiente.
 
 **Ubicación:** sección `.hero-banner` en `docs/index.html`, entre `</header>` y `<main>` —
 ahora mismo contiene una tarjeta `.img-request` de marcador. Reemplazar **toda la sección**

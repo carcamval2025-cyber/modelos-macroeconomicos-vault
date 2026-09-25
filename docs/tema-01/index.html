@@ -1,474 +1,38 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-k="Y">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guía Completa — Tema 1: Repaso de Macro I | Macro-Cybernetics</title>
+<title>Tema 1 · Repaso de Macro I | Macro II</title>
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#080C1C; --bg-elev:#10172D; --bg-elev2:#1B223C; --border:#2A324A;
-  --text:#EFF2F9; --text-dim:#A3AABE;
-  --indigo-mid:#667FDA; --coral:#FF6F4A; --coral-2:#FFB188;
-  --success:#55C975; --danger:#FB5668;
-  --ease:cubic-bezier(0.16,1,0.3,1);
-}
-*{box-sizing:border-box; margin:0; padding:0;}
-html{background:var(--bg); color-scheme: dark;}
-body{
-  font-family:'Inter',sans-serif;
-  background-color:var(--bg);
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M 48 0 L 0 0 0 48' fill='none' stroke='%232A324A' stroke-width='0.75' stroke-opacity='0.35'/%3E%3Ccircle cx='48' cy='48' r='1.2' fill='%23667FDA' fill-opacity='0.4'/%3E%3C/svg%3E");
-  background-attachment:fixed;
-  color:var(--text); line-height:1.7; font-weight:400;
-  accent-color: var(--coral);
-}
-h1,h2,h3,h4{font-family:'Fraunces',serif; color:var(--text); letter-spacing:-0.02em;}
-em{font-style:italic; color:var(--coral);}
-.mono{font-family:'JetBrains Mono',monospace; font-variant-numeric:tabular-nums;}
-a{color:var(--coral-2);}
-a:focus-visible, button:focus-visible{
-  outline:2px solid var(--coral); outline-offset:3px; border-radius:2px;
-}
-
-/* ---------- Barra de progreso HUD ultra-fina ---------- */
-.scroll-progreso{position:fixed; top:0; left:0; width:100%; height:3px; background:var(--border); z-index:999;}
-.scroll-progreso-fill{height:100%; width:0%; background:var(--coral); transition:width .1s linear;}
-
-/* ---------- Scrollbar técnica ---------- */
-::-webkit-scrollbar{width:7px; height:7px;}
-::-webkit-scrollbar-track{background:var(--bg);}
-::-webkit-scrollbar-thumb{background:var(--border); border-radius:2px;}
-::-webkit-scrollbar-thumb:hover{background:var(--coral);}
-
-/* ---------- Header ---------- */
-header{
-  background:var(--bg-elev);
-  border-bottom:1px solid var(--border);
-  box-shadow:0 4px 24px rgba(8,12,28,0.5);
-  padding:88px 32px 64px; position:relative; overflow:hidden;
-}
-header .wrap{max-width:1100px; margin:0 auto; position:relative; z-index:1;}
-.header-mark{position:absolute; width:min(36vw, 380px); height:auto; right:max(-20px, calc(50% - 560px)); bottom:-48px; pointer-events:none;}
-.volver{
-  display:inline-flex; align-items:center; gap:6px; font-family:'JetBrains Mono',monospace; font-size:0.76rem;
-  color:var(--text-dim); text-decoration:none; margin-bottom:24px; transition:color .2s var(--ease);
-}
-.volver:hover{color:var(--coral-2);}
-.eyebrow{
-  font-family:'JetBrains Mono',monospace; font-size:0.76rem; letter-spacing:0.09em; text-transform:uppercase;
-  color:var(--coral); font-weight:600; margin-bottom:20px;
-}
-h1{font-size:clamp(2.2rem, 5vw, 3.4rem); font-weight:600; margin-bottom:16px; text-wrap:balance;}
-header p.sub{color:var(--text-dim); max-width:68ch; font-size:1.05rem; line-height:1.6;}
-.meta-row{display:flex; gap:8px; flex-wrap:wrap; margin-top:28px;}
-.chip{padding:2px; border-radius:9px; background:rgba(239,242,249,0.04);}
-.chip-in{
-  display:block; font-family:'JetBrains Mono',monospace; font-size:0.76rem; color:var(--text-dim);
-  background:var(--bg); border:1px solid var(--border); border-radius:7px; padding:6px 12px;
-  box-shadow:inset 0 1px 0 rgba(239,242,249,0.03);
-}
-
-/* ---------- Main Container ---------- */
-main{max-width:1100px; margin:0 auto; padding:48px 32px 100px;}
-
-/* ---------- Navegación ---------- */
-.modnav{
-  display:flex; gap:3px; margin-bottom:48px; width:fit-content; max-width:100%; flex-wrap:wrap;
-  border:1px solid var(--border); border-radius:10px; padding:4px; background:var(--bg-elev);
-}
-.modnav a{
-  font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--text-dim); text-decoration:none;
-  padding:8px 14px; border-radius:7px; transition:background .2s var(--ease), color .2s var(--ease); white-space:nowrap;
-}
-.modnav a:hover{background:var(--bg-elev2); color:var(--text);}
-
-/* ---------- Módulos ---------- */
-.modulo{padding-top:48px; border-top:1px solid var(--border); margin-top:72px; scroll-margin-top:20px;}
-.modulo:first-of-type{margin-top:0;}
-.modulo-head{display:flex; align-items:flex-end; gap:16px; margin-bottom:24px;}
-.modulo-num{font-family:'Fraunces',serif; font-style:italic; font-weight:500; font-size:2.2rem; line-height:1; color:var(--text-dim);}
-.modulo-head h2{font-size:1.45rem; font-weight:600;}
-.modulo-text{color:var(--text-dim); font-size:0.95rem; max-width:74ch; margin-bottom:28px;}
-
-/* ---------- Grids ---------- */
-.grid-2{display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:18px; margin:20px 0;}
-.grid-3{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px; margin:20px 0;}
-
-/* ---------- Bloques y Tarjetas ---------- */
-.bloque{
-  background:var(--bg-elev); border:1px solid var(--border); border-radius:12px;
-  padding:26px 30px; margin-bottom:22px;
-}
-.bloque-icono{display:flex; gap:18px; align-items:flex-start;}
-.bloque-icono .icono{flex-shrink:0; margin-top:2px; display:flex;}
-.bloque h3{font-size:1.15rem; font-weight:600; margin-bottom:12px;}
-.bloque p + p{margin-top:14px;}
-.bloque p{font-size:0.96rem;}
-
-.mini-card{
-  background:var(--bg-elev); border:1px solid var(--border); border-radius:10px;
-  padding:18px 20px; display:flex; flex-direction:column; gap:8px;
-}
-.mini-card h4{font-size:0.96rem; font-weight:600; color:var(--text); display:flex; align-items:center; gap:8px;}
-.mini-card p{font-size:0.90rem; color:var(--text-dim); line-height:1.55;}
-
-/* ---------- Resaltados y Chips ---------- */
-.hl-coral{
-  background:rgba(255,111,74,0.12); color:var(--coral-2);
-  border:1px solid rgba(255,111,74,0.28); border-radius:4px;
-  padding:1px 6px; font-weight:500;
-}
-.hl-indigo{
-  background:rgba(102,127,218,0.12); color:#9EB2F6;
-  border:1px solid rgba(102,127,218,0.28); border-radius:4px;
-  padding:1px 6px; font-weight:500;
-}
-.hl-green{
-  background:rgba(85,201,117,0.12); color:var(--success);
-  border:1px solid rgba(85,201,117,0.28); border-radius:4px;
-  padding:1px 6px; font-weight:500;
-}
-.tag-pill{
-  display:inline-flex; align-items:center; gap:5px; font-family:'JetBrains Mono',monospace;
-  font-size:0.72rem; font-weight:600; padding:2px 8px; border-radius:6px;
-  background:var(--bg); border:1px solid var(--border); color:var(--text-dim);
-}
-.tag-coral{border-color:rgba(255,111,74,0.4); color:var(--coral); background:rgba(255,111,74,0.08);}
-.tag-indigo{border-color:rgba(102,127,218,0.4); color:var(--indigo-mid); background:rgba(102,127,218,0.08);}
-.tag-green{border-color:rgba(85,201,117,0.4); color:var(--success); background:rgba(85,201,117,0.08);}
-
-/* ---------- Tarjetas de Conclusión ---------- */
-.takeaway{
-  background:var(--bg-elev); border:1px solid var(--border); border-left:3px solid var(--coral);
-  border-radius:10px; padding:18px 22px; margin:20px 0;
-}
-.takeaway.takeaway-indigo{border-left-color:var(--indigo-mid);}
-.takeaway-tag{
-  font-family:'JetBrains Mono',monospace; font-size:0.70rem; letter-spacing:0.06em;
-  text-transform:uppercase; color:var(--coral); font-weight:600; margin-bottom:8px;
-  display:flex; align-items:center; gap:6px;
-}
-.takeaway.takeaway-indigo .takeaway-tag{color:var(--indigo-mid);}
-.takeaway p{font-size:0.95rem;}
-
-/* ---------- Flujo de Causalidad ---------- */
-.mecanismo{
-  display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:16px 0;
-  background:var(--bg); border:1px solid var(--border); border-radius:10px; padding:12px 16px;
-}
-.mecanismo-step{
-  font-family:'JetBrains Mono',monospace; font-size:0.80rem; color:var(--text);
-  background:var(--bg-elev2); border:1px solid var(--border); border-radius:6px; padding:5px 10px;
-}
-.mecanismo-arrow{color:var(--coral); font-weight:bold; font-size:0.9rem;}
-
-/* ---------- Ecuaciones ---------- */
-.ecuacion-card{
-  background:var(--bg); border:1px solid var(--border); border-radius:10px;
-  padding:18px 22px; margin:14px 0;
-}
-.ecuacion-header{
-  display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;
-  font-family:'JetBrains Mono',monospace; font-size:0.72rem; text-transform:uppercase; color:var(--text-dim);
-}
-.ecuacion-body{
-  font-family:'JetBrains Mono',monospace; font-size:1.05rem; font-weight:600; color:var(--text);
-  padding:8px 0; overflow-x:auto;
-}
-.ecuacion-desc{font-size:0.88rem; color:var(--text-dim); margin-top:6px; line-height:1.55;}
-
-/* ---------- Recuadros ---------- */
-.recuadro{
-  background:rgba(255,111,74,0.06); border:1px solid rgba(255,111,74,0.35); border-radius:12px;
-  padding:24px 28px; margin:22px 0;
-}
-.recuadro-tag{
-  font-family:'JetBrains Mono',monospace; font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase;
-  color:var(--coral); font-weight:600; margin-bottom:12px; display:inline-flex; align-items:center; gap:6px;
-}
-.recuadro p{font-size:0.95rem;}
-.recuadro p + p{margin-top:12px;}
-
-/* ---------- Aviso y Cápsulas Especiales ---------- */
-.aviso{
-  background:rgba(102,127,218,0.06); border:1px solid rgba(102,127,218,0.35); border-radius:12px;
-  padding:24px 28px; margin:22px 0;
-}
-.aviso-tag{
-  font-family:'JetBrains Mono',monospace; font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase;
-  color:var(--indigo-mid); font-weight:600; margin-bottom:12px; display:inline-flex; align-items:center; gap:6px;
-}
-.aviso p{font-size:0.95rem; color:var(--text);}
-.aviso p + p{margin-top:12px;}
-
-/* ---------- Diagramas ---------- */
-figure{margin:44px 0;}
-.diagrama-wrap{
-  max-width:1040px; margin:0 auto;
-}
-.diagrama{
-  background:var(--bg-elev); border:1px solid var(--border); border-radius:14px;
-  padding:36px 28px; overflow-x:auto;
-}
-.diagrama svg{width:100%; max-width:1000px; height:auto; display:block; margin:0 auto;}
-figcaption{font-size:0.90rem; color:var(--text-dim); margin-top:14px; text-align:center;}
-
-/* ---------- Doble bisel ---------- */
-.bezel{padding:5px; border-radius:15px; background:rgba(239,242,249,0.035); border:1px solid var(--border); margin-bottom:24px;}
-.bezel-in{border-radius:11px; background:var(--bg-elev); box-shadow:inset 0 1px 0 rgba(239,242,249,0.05); padding:26px 28px;}
-
-/* ---------- Glosario ---------- */
-.glosario{display:grid; grid-template-columns:auto 1fr; gap:12px 22px; font-size:0.94rem;}
-.glosario dt{font-family:'JetBrains Mono',monospace; font-weight:600; color:var(--indigo-mid); display:flex; align-items:center;}
-.glosario dd{color:var(--text); line-height:1.55;}
-
-/* ---------- QUIZ INTERACTIVO DE OPCIÓN MÚLTIPLE ---------- */
-.quiz-tracker{
-  background:var(--bg-elev); border:1px solid var(--border); border-radius:12px;
-  padding:20px 24px; margin-bottom:28px; display:flex; justify-content:space-between;
-  align-items:center; flex-wrap:wrap; gap:16px;
-}
-.quiz-tracker-info{display:flex; flex-direction:column; gap:4px;}
-.quiz-score-val{font-family:'JetBrains Mono',monospace; font-size:1.25rem; font-weight:700; color:var(--coral);}
-.quiz-progress-text{font-size:0.85rem; color:var(--text-dim);}
-.quiz-progress-bar-wrap{width:100%; height:6px; background:var(--bg-elev2); border-radius:999px; overflow:hidden; margin-top:6px;}
-.quiz-progress-bar{height:100%; width:0%; background:var(--coral); transition:width .3s var(--ease);}
-.quiz-btn-reset{
-  font-family:'JetBrains Mono',monospace; font-size:0.78rem; font-weight:600;
-  padding:8px 16px; border-radius:8px; background:var(--bg-elev2); color:var(--text);
-  border:1px solid var(--border); cursor:pointer; transition:all .2s var(--ease);
-}
-.quiz-btn-reset:hover{background:var(--bg); border-color:var(--coral-2); color:var(--coral-2);}
-
-.quiz-card{
-  background:var(--bg-elev); border:1px solid var(--border); border-radius:14px;
-  padding:24px 28px; margin-bottom:24px; transition:border-color .2s var(--ease);
-}
-.quiz-card-head{
-  display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;
-}
-.quiz-q-tag{
-  font-family:'JetBrains Mono',monospace; font-size:0.72rem; letter-spacing:0.05em;
-  text-transform:uppercase; color:var(--indigo-mid); font-weight:600;
-}
-.quiz-card h3{font-size:1.05rem; font-weight:600; line-height:1.55; margin-bottom:18px;}
-
-.quiz-opciones{display:flex; flex-direction:column; gap:10px;}
-.quiz-opcion{
-  display:flex; align-items:flex-start; gap:14px; padding:14px 18px;
-  background:var(--bg); border:1px solid var(--border); border-radius:10px;
-  cursor:pointer; text-align:left; font-family:'Inter',sans-serif; font-size:0.92rem;
-  color:var(--text); width:100%; transition:all .2s var(--ease);
-}
-.quiz-opcion:hover:not(:disabled){
-  background:var(--bg-elev2); border-color:rgba(102,127,218,0.5); transform:translateX(3px);
-}
-.quiz-opcion:disabled{cursor:default;}
-.quiz-opt-letter{
-  font-family:'JetBrains Mono',monospace; font-weight:700; font-size:0.80rem;
-  padding:3px 8px; border-radius:6px; background:var(--bg-elev2);
-  border:1px solid var(--border); color:var(--text-dim); flex-shrink:0;
-}
-
-/* Estados de feedback interactivo */
-.quiz-opcion.correct{
-  background:rgba(85,201,117,0.12) !important; border-color:var(--success) !important; color:#EFF2F9 !important;
-}
-.quiz-opcion.correct .quiz-opt-letter{
-  background:var(--success); color:#080C1C; border-color:var(--success);
-}
-.quiz-opcion.incorrect{
-  background:rgba(251,86,104,0.12) !important; border-color:var(--danger) !important; color:#EFF2F9 !important;
-}
-.quiz-opcion.incorrect .quiz-opt-letter{
-  background:var(--danger); color:#080C1C; border-color:var(--danger);
-}
-.quiz-opcion.revealed-correct{
-  border-color:var(--success) !important; background:rgba(85,201,117,0.06) !important;
-}
-.quiz-opcion.revealed-correct .quiz-opt-letter{
-  border-color:var(--success); color:var(--success);
-}
-
-.quiz-explicacion{
-  margin-top:18px; padding:18px 20px; border-radius:10px;
-  background:rgba(85,201,117,0.08); border:1px solid rgba(85,201,117,0.3);
-  display:none; animation:fadeIn .3s var(--ease);
-}
-.quiz-explicacion.visible{display:block;}
-.quiz-exp-tag{
-  font-family:'JetBrains Mono',monospace; font-size:0.72rem; letter-spacing:0.06em;
-  text-transform:uppercase; color:var(--success); font-weight:600; margin-bottom:8px; display:block;
-}
-.quiz-explicacion p{font-size:0.92rem; line-height:1.6;}
-.quiz-explicacion p + p{margin-top:8px;}
-
-@keyframes fadeIn{from{opacity:0; transform:translateY(-4px);} to{opacity:1; transform:none;}}
-
-/* ---------- Banner hero ---------- */
-.hero-banner{margin:0 0 16px; border:1px solid var(--border); border-radius:12px; overflow:hidden; background:var(--bg);}
-.hero-banner svg{width:100%; height:auto; display:block;}
-
-.badge{
-  display:inline-block; background:var(--bg-elev2); color:var(--text-dim); font-family:'JetBrains Mono',monospace;
-  font-size:0.7rem; font-weight:600; padding:3px 10px; border-radius:999px; letter-spacing:0.03em;
-  text-transform:uppercase; margin-right:6px;
-}
-
-footer{
-  border-top:1px solid var(--border); padding:36px 24px; text-align:center;
-  font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--text-dim);
-}
-footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; font-family:'Inter',sans-serif; font-size:0.84rem;}
-
-@media (max-width:768px){
-  header{padding:56px 20px 44px;}
-  main{padding:36px 18px 80px;}
-  .header-mark{width:260px; right:-120px; bottom:-56px; opacity:.5;}
-  .modulo-num{font-size:1.8rem;}
-  .bloque-icono{flex-direction:column;}
-  .grid-2, .grid-3{grid-template-columns:1fr;}
-  .quiz-tracker{flex-direction:column; align-items:flex-start;}
-}
-@media (prefers-reduced-motion: reduce){
-  *, *::before, *::after{
-    animation-duration:0.01ms !important; animation-iteration-count:1 !important;
-    transition-duration:0.01ms !important; scroll-behavior:auto !important;
-  }
-  .reveal.reveal-play{opacity:1; transform:none;}
-}
-</style>
+<script>try{var t=localStorage.getItem('mm-tema');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/guia.css">
 </head>
 <body>
 
-<div class="scroll-progreso" aria-hidden="true"><div class="scroll-progreso-fill" id="scrollFill"></div></div>
-
-<header>
-  <svg class="header-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" role="img" aria-label="Curvas macroeconómicas abstractas con puntos de equilibrio">
-    <path d="M190 260A170 170 0 0 1 370 70" fill="none" stroke="#667FDA" stroke-width="1" opacity=".10"/>
-    <path d="M225 265A140 140 0 0 1 385 95" fill="none" stroke="#FFB188" stroke-width="1" stroke-dasharray="4 4" opacity=".12"/>
-    <path d="M260 270A110 110 0 0 1 395 125" fill="none" stroke="#667FDA" stroke-width="1" opacity=".08"/>
-    <path d="M150 25V255M135 240H390" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" opacity=".35"/>
-    <path d="M146 32L150 24L154 32M382 236L390 240L382 244" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".35"/>
-    <path d="M147 80H153M147 135H153M147 190H153M205 237V243M265 237V243M325 237V243" fill="none" stroke="#A3AABE" stroke-width="1.2" stroke-linecap="round" opacity=".3"/>
-    <path d="M150 135H380M150 80H380M265 25V240M325 25V240" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="3 4" opacity=".4"/>
-    <path d="M150 135H265" fill="none" stroke="#FF6F4A" stroke-width="1.2" stroke-dasharray="4 4" opacity=".4"/>
-    <path d="M265 135V240" fill="none" stroke="#667FDA" stroke-width="1.2" stroke-dasharray="4 4" opacity=".4"/>
-    <path d="M150 110H305" fill="none" stroke="#FFB188" stroke-width="1" stroke-dasharray="3 4" opacity=".3"/>
-    <path d="M305 110V240" fill="none" stroke="#667FDA" stroke-width="1" stroke-dasharray="3 4" opacity=".3"/>
-    <path d="M145 60C205 100 275 165 375 210" fill="none" stroke="#FF6F4A" stroke-width="4.5" stroke-linecap="round" opacity=".85"/>
-    <path d="M185 42C245 82 315 147 395 188" fill="none" stroke="#FFB188" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6 5" opacity=".55"/>
-    <path d="M145 220C205 180 275 115 375 65" fill="none" stroke="#667FDA" stroke-width="4.5" stroke-linecap="round" opacity=".9"/>
-    <path d="M265 135C278 126 292 118 305 110" fill="none" stroke="#FFB188" stroke-width="2" stroke-dasharray="2 3" opacity=".75"/>
-    <path d="M288 122L293 117L286 116" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
-    <circle cx="265" cy="135" r="10.5" fill="#10172D" stroke="#EFF2F9" stroke-width="3" opacity=".98"/>
-    <circle cx="265" cy="135" r="5" fill="#FF6F4A"/>
-    <circle cx="265" cy="135" r="2" fill="#EFF2F9"/>
-    <circle cx="305" cy="110" r="8" fill="#10172D" stroke="#667FDA" stroke-width="2.4" opacity=".95"/>
-    <circle cx="305" cy="110" r="3" fill="#FFB188" opacity=".95"/>
-    <circle cx="150" cy="240" r="2.5" fill="#A3AABE" opacity=".6"/>
-  </svg>
-  <div class="wrap">
-    <a class="volver" href="../index.html">&larr; Modelos Macroeconómicos</a>
-    <div class="eyebrow">[SYS.TEMA_01 // REPASO_MACRO_I // SEMANA_01]</div>
-    <h1>Repaso de <em>Macro I</em></h1>
-    <p class="sub">Guía de estudio exhaustiva: determinación de la tasa de interés, el papel de los bancos comerciales, el multiplicador monetario y la trampa de liquidez (Blanchard, cap. 4 y Sala i Martín).</p>
-    <div class="meta-row">
-      <span class="chip"><span class="chip-in">[BLANCHARD_CAP_4_COMPLETO]</span></span>
-      <span class="chip"><span class="chip-in">[SALA_I_MARTÍN · CAP_AMARILLO]</span></span>
-      <span class="chip"><span class="chip-in">[SEMANA_01 · 24–28_AGO]</span></span>
-      <span class="chip"><span class="chip-in">[CÁTEDRA · PROF.LUIS_MORERA]</span></span>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+<header class="cab">
+  <div class="cab-barra">
+    <a class="cab-marca" href="../index.html"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect x="6" y="7" width="52" height="10" fill="#F0B429"/><rect x="6" y="21" width="41" height="10" fill="#F2552C"/><rect x="6" y="35" width="30" height="10" fill="#C65BD6"/><rect x="6" y="49" width="19" height="10" fill="#22B8A0"/></svg><span><b>Macro II</b><small>Modelos Macroeconómicos · ESEN</small></span></a>
+    <button class="btn-tema" type="button" data-btn-tema>Tema oscuro</button>
+  </div>
+  <div class="cab-banda">
+    <div class="cab-in">
+      <p class="cab-kicker"><a href="../index.html">Inicio</a> / Tema 1 · Semana 1 · Guía de estudio</p>
+      <h1>Repaso de Macro I</h1>
+      <p class="sub">Guía de estudio exhaustiva: determinación de la tasa de interés, el papel de los bancos comerciales, el multiplicador monetario y la trampa de liquidez (Blanchard, cap. 4 y Sala i Martín).</p>
+      <ul class="cab-meta"><li>Blanchard, cap. 4 completo</li><li>Sala i Martín, capítulo amarillo</li><li>Semana 1 · 24 a 28 ago</li><li>Cátedra del prof. Luis Morera</li></ul>
+      
     </div>
   </div>
 </header>
 
-<main>
-  <section class="hero-banner" aria-label="Banner panorámico del Tema 1 — mercado de dinero, balances bancarios y trampa de liquidez">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 320" role="img" aria-label="Banner panorámico del Tema 1 — Mercado de dinero, balances bancarios y trampa de liquidez">
-      <rect width="1600" height="320" fill="#080C1C"/>
-      <path d="M0 40H1600M0 280H1600" fill="none" stroke="#2A324A" stroke-width="1.2" opacity=".4"/>
-      <path d="M0 240H1600" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="6 6" opacity=".35"/>
-      <path d="M220 30V290M520 30V290M840 30V290M1160 30V290M1440 30V290" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="3 6" opacity=".3"/>
-      <path d="M100 276V284M220 274V286M340 276V284M460 276V284M520 274V286M640 276V284M760 276V284M840 274V286M960 276V284M1060 276V284M1160 274V286M1280 276V284M1360 276V284M1440 274V286M1540 276V284" fill="none" stroke="#A3AABE" stroke-width="1.2" opacity=".3"/>
-      <path d="M100 36V44M220 34V46M340 36V44M460 36V44M520 34V46M640 36V44M760 36V44M840 34V46M960 36V44M1060 36V44M1160 34V46M1280 36V44M1360 36V44M1440 34V46M1540 36V44" fill="none" stroke="#A3AABE" stroke-width="1" opacity=".2"/>
-      <path d="M-20 60C300 110 500 50 820 120S1320 200 1620 180" fill="none" stroke="#667FDA" stroke-width="1.2" opacity=".10"/>
-      <path d="M-20 90C320 140 520 80 840 150S1340 230 1620 210" fill="none" stroke="#667FDA" stroke-width="1" opacity=".14"/>
-      <path d="M-20 150C340 190 540 130 860 180S1360 250 1620 240" fill="none" stroke="#FFB188" stroke-width="1" stroke-dasharray="6 8" opacity=".12"/>
-      <path d="M-20 210C360 240 560 180 880 220S1380 270 1620 260" fill="none" stroke="#FF6F4A" stroke-width="1.2" opacity=".10"/>
-      <path d="M120 70H320M220 70V210M120 140H320" fill="none" stroke="#2A324A" stroke-width="1.2" opacity=".6"/>
-      <path d="M140 95H195M245 95H300M140 120H180M245 120H290M140 165H200M245 165H285M140 185H175M245 185H305" fill="none" stroke="#667FDA" stroke-width="2" stroke-linecap="round" opacity=".35"/>
-      <path d="M280 110H460M370 110V250M280 180H460" fill="none" stroke="#2A324A" stroke-width="1.2" opacity=".5"/>
-      <path d="M300 135H355M395 135H445M300 160H340M395 160H430M300 205H350M395 205H440M300 225H335M395 225H450" fill="none" stroke="#FFB188" stroke-width="2" stroke-linecap="round" opacity=".30"/>
-      <path d="M220 140C270 100 320 100 370 145" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-dasharray="3 4" opacity=".7"/>
-      <path d="M362 138L370 145L363 152" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
-      <path d="M370 180C420 200 460 170 510 120" fill="none" stroke="#667FDA" stroke-width="1.8" stroke-dasharray="3 4" opacity=".7"/>
-      <path d="M502 124L510 120L507 132" fill="none" stroke="#667FDA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
-      <path d="M480 50C560 90 640 150 780 205C880 232 980 240 1580 240" fill="none" stroke="#FF6F4A" stroke-width="4.5" stroke-linecap="round" opacity=".92"/>
-      <path d="M540 40C620 80 700 138 840 192C940 222 1040 240 1580 240" fill="none" stroke="#FFB188" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="8 6" opacity=".65"/>
-      <path d="M600 35C680 70 760 128 900 180C1000 212 1100 240 1580 240" fill="none" stroke="#FFB188" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 6" opacity=".35"/>
-      <path d="M640 40V280" fill="none" stroke="#667FDA" stroke-width="3.5" stroke-linecap="round" opacity=".85"/>
-      <path d="M780 40V280" fill="none" stroke="#667FDA" stroke-width="3.5" stroke-linecap="round" opacity=".85"/>
-      <path d="M980 40V280" fill="none" stroke="#667FDA" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 5" opacity=".70"/>
-      <path d="M1240 40V280" fill="none" stroke="#667FDA" stroke-width="3" stroke-linecap="round" stroke-dasharray="6 5" opacity=".70"/>
-      <path d="M1440 40V280" fill="none" stroke="#667FDA" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 4" opacity=".50"/>
-      <path d="M640 90H770" fill="none" stroke="#FFB188" stroke-width="2" stroke-dasharray="4 3" opacity=".85"/>
-      <path d="M762 85L770 90L762 95" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
-      <path d="M780 90H970" fill="none" stroke="#FFB188" stroke-width="2" stroke-dasharray="4 3" opacity=".85"/>
-      <path d="M962 85L970 90L962 95" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
-      <path d="M980 90H1230" fill="none" stroke="#667FDA" stroke-width="1.8" stroke-dasharray="4 4" opacity=".70"/>
-      <path d="M1222 85L1230 90L1222 95" fill="none" stroke="#667FDA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
-      <path d="M1240 90H1430" fill="none" stroke="#667FDA" stroke-width="1.5" stroke-dasharray="4 4" opacity=".50"/>
-      <path d="M1422 85L1430 90L1422 95" fill="none" stroke="#667FDA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".6"/>
-      <path d="M640 145H480" fill="none" stroke="#FF6F4A" stroke-width="1.2" stroke-dasharray="3 4" opacity=".45"/>
-      <path d="M780 205H480" fill="none" stroke="#FFB188" stroke-width="1.2" stroke-dasharray="3 4" opacity=".45"/>
-      <path d="M980 240H480" fill="none" stroke="#EFF2F9" stroke-width="1.2" stroke-dasharray="4 4" opacity=".35"/>
-      <circle cx="220" cy="140" r="8" fill="#10172D" stroke="#667FDA" stroke-width="2" opacity=".9"/>
-      <circle cx="220" cy="140" r="3" fill="#EFF2F9"/>
-      <circle cx="370" cy="145" r="8" fill="#10172D" stroke="#FFB188" stroke-width="2" opacity=".9"/>
-      <circle cx="370" cy="145" r="3" fill="#FF6F4A"/>
-      <circle cx="640" cy="145" r="12" fill="#10172D" stroke="#EFF2F9" stroke-width="3.5" opacity=".98"/>
-      <circle cx="640" cy="145" r="5.5" fill="#FF6F4A"/>
-      <circle cx="640" cy="145" r="2.2" fill="#EFF2F9"/>
-      <circle cx="780" cy="205" r="10" fill="#10172D" stroke="#667FDA" stroke-width="2.5" opacity=".95"/>
-      <circle cx="780" cy="205" r="4.5" fill="#FFB188" opacity=".95"/>
-      <circle cx="980" cy="240" r="11" fill="#10172D" stroke="#EFF2F9" stroke-width="3" opacity=".98"/>
-      <circle cx="980" cy="240" r="5" fill="#FF6F4A"/>
-      <circle cx="980" cy="240" r="2" fill="#EFF2F9"/>
-      <circle cx="1240" cy="240" r="9.5" fill="#10172D" stroke="#667FDA" stroke-width="2.5" opacity=".95"/>
-      <circle cx="1240" cy="240" r="4" fill="#EFF2F9" opacity=".9"/>
-      <circle cx="1440" cy="240" r="8" fill="#10172D" stroke="#A3AABE" stroke-width="2" opacity=".85"/>
-      <circle cx="1440" cy="240" r="3" fill="#667FDA"/>
-      <circle cx="520" cy="50" r="3.5" fill="#FF6F4A" opacity=".6"/>
-      <circle cx="640" cy="40" r="3.5" fill="#667FDA" opacity=".6"/>
-      <circle cx="780" cy="40" r="3.5" fill="#667FDA" opacity=".6"/>
-      <circle cx="980" cy="40" r="3.5" fill="#667FDA" opacity=".6"/>
-      <circle cx="1240" cy="40" r="3.5" fill="#667FDA" opacity=".6"/>
-      <circle cx="1540" cy="240" r="3.5" fill="#FF6F4A" opacity=".6"/>
-      <path d="M516 50H524M520 46V54" fill="none" stroke="#2A324A" stroke-width="1.5" opacity=".8"/>
-      <path d="M636 40H644M640 36V44" fill="none" stroke="#2A324A" stroke-width="1.5" opacity=".8"/>
-      <path d="M776 40H784M780 36V44" fill="none" stroke="#2A324A" stroke-width="1.5" opacity=".8"/>
-      <path d="M976 40H984M980 36V44" fill="none" stroke="#2A324A" stroke-width="1.5" opacity=".8"/>
-      <path d="M1236 40H1244M1240 36V44" fill="none" stroke="#2A324A" stroke-width="1.5" opacity=".8"/>
-      <path d="M1536 240H1544M1540 236V244" fill="none" stroke="#2A324A" stroke-width="1.5" opacity=".8"/>
-    </svg>
-  </section>
-
-  <nav class="modnav" aria-label="Módulos de esta guía">
-    <a href="#alcance">01 · Alcance y Fuentes</a>
-    <a href="#marco">02 · Demanda de Dinero y OMA</a>
-    <a href="#bancos">03 · Bancos y Dinero Central</a>
-    <a href="#trampa">04 · Trampa de Liquidez</a>
-    <a href="#sintesis">05 · Síntesis y Glosario</a>
-    <a href="#quiz">06 · Quiz Interactivo</a>
-  </nav>
+<div class="pagina">
+<main id="contenido">
 
   <!-- ==================== MÓDULO 01 ==================== -->
-  <section class="modulo reveal" id="alcance">
-    <div class="modulo-head"><span class="modulo-num">// 01</span><h2>Alcance del curso y lectura complementaria</h2></div>
+  <section class="modulo" id="alcance">
+    <div class="modulo-head"><h2>Alcance del curso y lectura complementaria</h2></div>
     
     <div class="bloque">
       <h3>Objetivo de Aprendizaje y Cobertura</h3>
@@ -480,7 +44,7 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
     <div class="aviso">
       <span class="aviso-tag">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/></svg>
-        Cápsula de Lectura — Capítulo Amarillo (Sala i Martín, Economía en Colores)
+        Cápsula de Lectura: Capítulo Amarillo (Sala i Martín, Economía en Colores)
       </span>
       <h3 style="font-size:1.1rem; margin-bottom:10px; color:var(--text);">El Dinero, los Bancos Centrales y la Convención de la Confianza</h3>
       <p>En el <em>Capítulo Amarillo</em>, Xavier Sala i Martín analiza la naturaleza del dinero desde una perspectiva histórica e institucional: el dinero no tiene valor intrínseco por el papel en el que está impreso, sino porque representa un <strong>acuerdo social fiduciario</strong> (del latín <em>fiducia</em>, confianza).</p>
@@ -503,8 +67,8 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
   </section>
 
   <!-- ==================== MÓDULO 02 ==================== -->
-  <section class="modulo reveal" id="marco">
-    <div class="modulo-head"><span class="modulo-num">// 02</span><h2>4-1 y 4-2 · Demanda de dinero, precios de bonos y OMA</h2></div>
+  <section class="modulo" id="marco">
+    <div class="modulo-head"><h2>4-1 y 4-2 · Demanda de dinero, precios de bonos y OMA</h2></div>
 
     <div class="bloque">
       <h3>1. La decisión de portafolio: Dinero vs Bonos</h3>
@@ -522,7 +86,7 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
         <span>Función Agregada de Demanda de Dinero</span>
         <span class="tag-pill tag-coral">Ecuación 4.1</span>
       </div>
-      <div class="ecuacion-body">M<sup>d</sup> = $Y · L(i)</div>
+      <div class="ecuacion-body">M<sup>d</sup> = <span class="v" data-var="Y"><span>$Y</span></span> · L(<span class="v" data-var="i"><span>i</span></span>)</div>
       <div class="ecuacion-desc">
         Donde <span class="mono">$Y</span> es el ingreso nominal y <span class="mono">L(i)</span> es una función decreciente de la tasa de interés (<span class="mono">L'(i) &lt; 0</span>). Un aumento en el ingreso desplaza la curva de demanda a la derecha; un aumento en la tasa de interés reduce la cantidad demandada de dinero a lo largo de la curva.
       </div>
@@ -538,7 +102,7 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
             <span>Tasa de Interés en función del Precio</span>
             <span class="tag-pill">Fórmula Directa</span>
           </div>
-          <div class="ecuacion-body">i = (100 - P<sub>B</sub>) / P<sub>B</sub></div>
+          <div class="ecuacion-body"><span class="v" data-var="i"><span>i</span></span> = (100 - P<sub>B</sub>) / P<sub>B</sub></div>
           <div class="ecuacion-desc">El rendimiento es la ganancia de capital ($100 - P<sub>B</sub>) dividida por el costo de inversión ($P<sub>B</sub>).</div>
         </div>
 
@@ -547,7 +111,7 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
             <span>Precio del Bono en función de la Tasa</span>
             <span class="tag-pill tag-indigo">Fórmula Despejada</span>
           </div>
-          <div class="ecuacion-body">P<sub>B</sub> = 100 / (1 + i)</div>
+          <div class="ecuacion-body">P<sub>B</sub> = 100 / (1 + <span class="v" data-var="i"><span>i</span></span>)</div>
           <div class="ecuacion-desc">El precio actual es el valor presente descontado del pago facial futuro ($100).</div>
         </div>
       </div>
@@ -567,102 +131,102 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
             <desc id="fig-bonos-desc">Panel izquierdo con la curva hiperbólica inversa entre el precio del bono PB y la tasa de interés i, donde los puntos A y B coinciden exactamente con las proyecciones ortogonales y la curva. Panel derecho con el flujo de transmisión de una operación de mercado abierto expansiva.</desc>
 
             <!-- Panel Izquierdo: Curva PB vs i -->
-            <rect x="8" y="8" width="250" height="244" rx="10" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
-            <rect x="24" y="16" width="218" height="22" rx="5" fill="#1B223C"/>
-            <text x="133" y="31" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#EFF2F9">Relación Inversa: Precio y Tasa</text>
+            <rect x="8" y="8" width="250" height="244" rx="10" fill="#1A1B1D" stroke="#3A3C41" stroke-width="1.2"/>
+            <rect x="24" y="16" width="218" height="22" rx="5" fill="#202124"/>
+            <text x="133" y="31" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="11" fill="#F2F2F0">Relación Inversa: Precio y Tasa</text>
             
             <!-- Retícula de referencia y proyecciones ortogonales -->
             <!-- Proyección Punto A (105, 90) -->
-            <line x1="45" y1="90" x2="105" y2="90" stroke="#667FDA" stroke-width="1.2" stroke-dasharray="3 3" opacity=".8"/>
-            <line x1="105" y1="90" x2="105" y2="200" stroke="#667FDA" stroke-width="1.2" stroke-dasharray="3 3" opacity=".8"/>
+            <line x1="45" y1="90" x2="105" y2="90" stroke="#5C9DFF" stroke-width="1.2" stroke-dasharray="3 3" opacity=".8"/>
+            <line x1="105" y1="90" x2="105" y2="200" stroke="#5C9DFF" stroke-width="1.2" stroke-dasharray="3 3" opacity=".8"/>
 
             <!-- Proyección Punto B (165, 145) -->
-            <line x1="45" y1="145" x2="165" y2="145" stroke="#A3AABE" stroke-width="1.2" stroke-dasharray="3 3" opacity=".6"/>
-            <line x1="165" y1="145" x2="165" y2="200" stroke="#A3AABE" stroke-width="1.2" stroke-dasharray="3 3" opacity=".6"/>
+            <line x1="45" y1="145" x2="165" y2="145" stroke="#A9ABAE" stroke-width="1.2" stroke-dasharray="3 3" opacity=".6"/>
+            <line x1="165" y1="145" x2="165" y2="200" stroke="#A9ABAE" stroke-width="1.2" stroke-dasharray="3 3" opacity=".6"/>
 
             <!-- Ejes panel izquierdo -->
-            <line x1="45" y1="46" x2="45" y2="200" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round"/>
-            <line x1="45" y1="200" x2="235" y2="200" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round"/>
-            <path d="M42 52L45 46L48 52" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M229 197L235 200L229 203" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="45" y1="46" x2="45" y2="200" stroke="#A9ABAE" stroke-width="1.4" stroke-linecap="round"/>
+            <line x1="45" y1="200" x2="235" y2="200" stroke="#A9ABAE" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M42 52L45 46L48 52" fill="none" stroke="#A9ABAE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M229 197L235 200L229 203" fill="none" stroke="#A9ABAE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
             
             <!-- Marcas (ticks) en los ejes -->
-            <line x1="41" y1="90" x2="45" y2="90" stroke="#667FDA" stroke-width="1.5"/>
-            <line x1="41" y1="145" x2="45" y2="145" stroke="#A3AABE" stroke-width="1.5"/>
-            <line x1="105" y1="200" x2="105" y2="204" stroke="#667FDA" stroke-width="1.5"/>
-            <line x1="165" y1="200" x2="165" y2="204" stroke="#A3AABE" stroke-width="1.5"/>
+            <line x1="41" y1="90" x2="45" y2="90" stroke="#5C9DFF" stroke-width="1.5"/>
+            <line x1="41" y1="145" x2="45" y2="145" stroke="#A9ABAE" stroke-width="1.5"/>
+            <line x1="105" y1="200" x2="105" y2="204" stroke="#5C9DFF" stroke-width="1.5"/>
+            <line x1="165" y1="200" x2="165" y2="204" stroke="#A9ABAE" stroke-width="1.5"/>
 
             <!-- Títulos de ejes -->
-            <rect x="14" y="42" width="26" height="18" rx="4" fill="#10172D"/>
-            <text x="27" y="55" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#A3AABE">P<tspan baseline-shift="sub" font-size="8">B</tspan></text>
+            <rect x="14" y="42" width="26" height="18" rx="4" fill="#1A1B1D"/>
+            <text x="27" y="55" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="11" fill="#A9ABAE">P<tspan baseline-shift="sub" font-size="8">B</tspan></text>
 
-            <rect x="226" y="204" width="18" height="16" rx="4" fill="#10172D"/>
-            <text x="235" y="216" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#A3AABE">i</text>
+            <rect x="226" y="204" width="18" height="16" rx="4" fill="#1A1B1D"/>
+            <text x="235" y="216" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="11" fill="#A9ABAE">i</text>
 
             <!-- Valores en los ejes -->
-            <text x="38" y="93" text-anchor="end" font-family="JetBrains Mono" font-size="8.5" fill="#EFF2F9">95.2</text>
-            <text x="38" y="148" text-anchor="end" font-family="JetBrains Mono" font-size="8.5" fill="#A3AABE">90.9</text>
-            <text x="105" y="215" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="#EFF2F9">5%</text>
-            <text x="165" y="215" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="#A3AABE">10%</text>
+            <text x="38" y="93" text-anchor="end" font-family="Azeret Mono, monospace" font-size="8.5" fill="#F2F2F0">95.2</text>
+            <text x="38" y="148" text-anchor="end" font-family="Azeret Mono, monospace" font-size="8.5" fill="#A9ABAE">90.9</text>
+            <text x="105" y="215" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="8.5" fill="#F2F2F0">5%</text>
+            <text x="165" y="215" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="8.5" fill="#A9ABAE">10%</text>
 
             <!-- Curva hiperbólica PB = 100 / (1 + i) que pasa EXACTAMENTE por (105, 90) y (165, 145) -->
-            <path d="M 60 58 C 80 72, 92 80, 105 90 C 125 106, 145 125, 165 145 C 185 163, 205 172, 220 178" fill="none" stroke="#FF6F4A" stroke-width="3.2" stroke-linecap="round"/>
-            <path d="M 60 58 C 80 72, 92 80, 105 90 C 125 106, 145 125, 165 145 C 185 163, 205 172, 220 178" fill="none" stroke="#FFB188" stroke-width="1.2" stroke-dasharray="3 3" opacity=".4"/>
+            <path d="M 60 58 C 80 72, 92 80, 105 90 C 125 106, 145 125, 165 145 C 185 163, 205 172, 220 178" fill="none" stroke="#F2552C" stroke-width="3.2" stroke-linecap="round"/>
+            <path d="M 60 58 C 80 72, 92 80, 105 90 C 125 106, 145 125, 165 145 C 185 163, 205 172, 220 178" fill="none" stroke="#FF9B7D" stroke-width="1.2" stroke-dasharray="3 3" opacity=".4"/>
 
             <!-- Punto A (105, 90): Tasa baja i=5%, Precio alto PB=95.2 -->
-            <circle cx="105" cy="90" r="7.5" fill="#10172D" stroke="#EFF2F9" stroke-width="2.2"/>
-            <circle cx="105" cy="90" r="3.2" fill="#FF6F4A"/>
+            <circle cx="105" cy="90" r="7.5" fill="#1A1B1D" stroke="#F2F2F0" stroke-width="2.2"/>
+            <circle cx="105" cy="90" r="3.2" fill="#F2552C"/>
             <!-- Etiqueta Punto A -->
-            <rect x="114" y="74" width="76" height="18" rx="4" fill="#10172D" stroke="#667FDA" stroke-width="0.8"/>
-            <text x="152" y="87" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="8.5" fill="#EFF2F9">A (5%, 95.2)</text>
+            <rect x="114" y="74" width="76" height="18" rx="4" fill="#1A1B1D" stroke="#5C9DFF" stroke-width="0.8"/>
+            <text x="152" y="87" text-anchor="middle" font-family="Azeret Mono, monospace" font-weight="600" font-size="8.5" fill="#F2F2F0">A (5%, 95.2)</text>
 
             <!-- Punto B (165, 145): Tasa alta i=10%, Precio bajo PB=90.9 -->
-            <circle cx="165" cy="145" r="7" fill="#10172D" stroke="#667FDA" stroke-width="2"/>
-            <circle cx="165" cy="145" r="3" fill="#FFB188"/>
+            <circle cx="165" cy="145" r="7" fill="#1A1B1D" stroke="#5C9DFF" stroke-width="2"/>
+            <circle cx="165" cy="145" r="3" fill="#FF9B7D"/>
             <!-- Etiqueta Punto B -->
-            <rect x="126" y="152" width="82" height="18" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
-            <text x="167" y="165" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="#A3AABE">B (10%, 90.9)</text>
+            <rect x="126" y="152" width="82" height="18" rx="4" fill="#1A1B1D" stroke="#3A3C41" stroke-width="0.8"/>
+            <text x="167" y="165" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="8.5" fill="#A9ABAE">B (10%, 90.9)</text>
 
             <!-- Vector dinámico OMA en la curva -->
             <path d="M 152 133 C 138 120, 128 110, 118 100" fill="none" stroke="#55C975" stroke-width="1.8" stroke-dasharray="2 3"/>
             <path d="M 116 106 L 117 99 L 123 102" fill="none" stroke="#55C975" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 
             <!-- Fórmula base inferior -->
-            <rect x="36" y="222" width="194" height="22" rx="5" fill="#1B223C" stroke="#2A324A" stroke-width="1"/>
-            <text x="133" y="237" text-anchor="middle" font-family="JetBrains Mono" font-size="9.5" font-weight="600" fill="#FFB188">P<tspan baseline-shift="sub" font-size="7.5">B</tspan> = 100 / (1 + i)  &#8660;  i = (100 - P<tspan baseline-shift="sub" font-size="7.5">B</tspan>)/P<tspan baseline-shift="sub" font-size="7.5">B</tspan></text>
+            <rect x="36" y="222" width="194" height="22" rx="5" fill="#202124" stroke="#3A3C41" stroke-width="1"/>
+            <text x="133" y="237" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="9.5" font-weight="600" fill="#FF9B7D">P<tspan baseline-shift="sub" font-size="7.5">B</tspan> = 100 / (1 + i)  &#8660;  i = (100 - P<tspan baseline-shift="sub" font-size="7.5">B</tspan>)/P<tspan baseline-shift="sub" font-size="7.5">B</tspan></text>
 
             <!-- Panel Derecho: Flujo de Operación de Mercado Abierto -->
-            <rect x="266" y="8" width="246" height="244" rx="10" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
-            <rect x="280" y="16" width="218" height="22" rx="5" fill="#1B223C"/>
-            <text x="389" y="31" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#EFF2F9">Mecánica OMA Expansiva</text>
+            <rect x="266" y="8" width="246" height="244" rx="10" fill="#1A1B1D" stroke="#3A3C41" stroke-width="1.2"/>
+            <rect x="280" y="16" width="218" height="22" rx="5" fill="#202124"/>
+            <text x="389" y="31" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="11" fill="#F2F2F0">Mecánica OMA Expansiva</text>
 
             <!-- Paso 1 -->
-            <rect x="280" y="46" width="218" height="34" rx="6" fill="#1B223C" stroke="#667FDA" stroke-width="1"/>
-            <text x="292" y="61" font-family="JetBrains Mono" font-size="9" font-weight="600" fill="#667FDA">1. INYECCIÓN</text>
-            <text x="292" y="73" font-family="Inter" font-size="9" fill="#EFF2F9">Banco Central compra bonos</text>
+            <rect x="280" y="46" width="218" height="34" rx="6" fill="#202124" stroke="#5C9DFF" stroke-width="1"/>
+            <text x="292" y="61" font-family="Azeret Mono, monospace" font-size="9" font-weight="600" fill="#5C9DFF">1. INYECCIÓN</text>
+            <text x="292" y="73" font-family="Archivo, sans-serif" font-size="9" fill="#F2F2F0">Banco Central compra bonos</text>
 
             <!-- Flecha 1 a 2 -->
-            <path d="M389 80V90" fill="none" stroke="#FF6F4A" stroke-width="1.5"/>
-            <path d="M386 87L389 92L392 87" fill="none" stroke="#FF6F4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M389 80V90" fill="none" stroke="#F2552C" stroke-width="1.5"/>
+            <path d="M386 87L389 92L392 87" fill="none" stroke="#F2552C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 
             <!-- Paso 2 -->
-            <rect x="280" y="94" width="218" height="34" rx="6" fill="#1B223C" stroke="#FFB188" stroke-width="1"/>
-            <text x="292" y="109" font-family="JetBrains Mono" font-size="9" font-weight="600" fill="#FFB188">2. PRECIO SUBE</text>
-            <text x="292" y="121" font-family="Inter" font-size="9" fill="#EFF2F9">Demanda de bonos &#8593; &#8658; P<tspan baseline-shift="sub" font-size="7">B</tspan> sube</text>
+            <rect x="280" y="94" width="218" height="34" rx="6" fill="#202124" stroke="#FF9B7D" stroke-width="1"/>
+            <text x="292" y="109" font-family="Azeret Mono, monospace" font-size="9" font-weight="600" fill="#FF9B7D">2. PRECIO SUBE</text>
+            <text x="292" y="121" font-family="Archivo, sans-serif" font-size="9" fill="#F2F2F0">Demanda de bonos &#8593; &#8658; P<tspan baseline-shift="sub" font-size="7">B</tspan> sube</text>
 
             <!-- Flecha 2 a 3 -->
-            <path d="M389 128V138" fill="none" stroke="#FF6F4A" stroke-width="1.5"/>
-            <path d="M386 135L389 140L392 135" fill="none" stroke="#FF6F4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M389 128V138" fill="none" stroke="#F2552C" stroke-width="1.5"/>
+            <path d="M386 135L389 140L392 135" fill="none" stroke="#F2552C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 
             <!-- Paso 3 -->
-            <rect x="280" y="142" width="218" height="34" rx="6" fill="#1B223C" stroke="#55C975" stroke-width="1"/>
-            <text x="292" y="157" font-family="JetBrains Mono" font-size="9" font-weight="600" fill="#55C975">3. TASA CAE</text>
-            <text x="292" y="169" font-family="Inter" font-size="9" fill="#EFF2F9">Rendimiento efectivo i baja</text>
+            <rect x="280" y="142" width="218" height="34" rx="6" fill="#202124" stroke="#55C975" stroke-width="1"/>
+            <text x="292" y="157" font-family="Azeret Mono, monospace" font-size="9" font-weight="600" fill="#55C975">3. TASA CAE</text>
+            <text x="292" y="169" font-family="Archivo, sans-serif" font-size="9" fill="#F2F2F0">Rendimiento efectivo i baja</text>
 
             <!-- Badge resultado inferior -->
-            <rect x="280" y="194" width="218" height="46" rx="6" fill="#080C1C" stroke="#2A324A" stroke-width="1"/>
-            <text x="389" y="213" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="600" fill="#55C975">&#916; H &gt; 0 &#8658; &#916; P<tspan baseline-shift="sub" font-size="8">B</tspan> &gt; 0 &#8658; &#916; i &lt; 0</text>
-            <text x="389" y="228" text-anchor="middle" font-family="Inter" font-size="8.5" fill="#A3AABE">Operación de mercado abierto expansiva</text>
+            <rect x="280" y="194" width="218" height="46" rx="6" fill="#101112" stroke="#3A3C41" stroke-width="1"/>
+            <text x="389" y="213" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="10" font-weight="600" fill="#55C975">&#916; H &gt; 0 &#8658; &#916; P<tspan baseline-shift="sub" font-size="8">B</tspan> &gt; 0 &#8658; &#916; i &lt; 0</text>
+            <text x="389" y="228" text-anchor="middle" font-family="Archivo, sans-serif" font-size="8.5" fill="#A9ABAE">Operación de mercado abierto expansiva</text>
           </svg>
         </div>
       </div>
@@ -673,7 +237,7 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
     <div class="recuadro">
       <span class="recuadro-tag">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/></svg>
-        Recuadro Blanchard — ¿Quién tiene todo el efectivo en dólares?
+        Recuadro Blanchard: ¿Quién tiene todo el efectivo en dólares?
       </span>
       <p>En Estados Unidos circulaban en 2020 aproximadamente <strong>$1.9 billones de dólares</strong> en billetes físicos, lo que equivalía a casi $5,800 por cada habitante estadounidense. Claramente, una familia promedio no guarda esa suma bajo el colchón. Blanchard explica este fenómeno por dos vías:</p>
       <p>1. <strong>Tenencia extranjera:</strong> Se estima que más del 60% de los billetes de $100 dólares se encuentran fuera de EE. UU. (utilizados como reserva de valor en países con alta inflación o inestabilidad cambiaria, como en América Latina o Europa del Este).</p>
@@ -682,8 +246,8 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
   </section>
 
   <!-- ==================== MÓDULO 03 ==================== -->
-  <section class="modulo reveal" id="bancos">
-    <div class="modulo-head"><span class="modulo-num">// 03</span><h2>4-3 · El papel de los intermediarios bancarios y el dinero central</h2></div>
+  <section class="modulo" id="bancos">
+    <div class="modulo-head"><h2>4-3 · El papel de los intermediarios bancarios y el dinero central</h2></div>
 
     <div class="bloque bloque-icono">
       <span class="icono" style="color:var(--coral)">
@@ -723,71 +287,71 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
             <title id="fig1-title">Balance del banco comercial y del banco central</title>
             <desc id="fig1-desc">Dos balances contables lado a lado: el del banco comercial, con reservas, préstamos y bonos como activos y depósitos a la vista como pasivo; y el del banco central, con bonos como activo y dinero del banco central (reservas + efectivo) como pasivo. Una línea conectora sin obstrucciones une las reservas del banco comercial con el dinero del banco central (H).</desc>
 
-            <rect x="10" y="10" width="230" height="165" rx="12" fill="#10172D" stroke="#2A324A" stroke-width="1.5"/>
-            <rect x="11" y="11" width="228" height="34" rx="11" fill="#1B223C" opacity=".6"/>
+            <rect x="10" y="10" width="230" height="165" rx="12" fill="#1A1B1D" stroke="#3A3C41" stroke-width="1.5"/>
+            <rect x="11" y="11" width="228" height="34" rx="11" fill="#202124" opacity=".6"/>
             <g transform="translate(20, 19)">
-              <path d="M2 8L10 2L18 8" fill="none" stroke="#667FDA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M3 8V15M7 8V15M13 8V15M17 8V15" fill="none" stroke="#667FDA" stroke-width="1.6" stroke-linecap="round"/>
-              <path d="M1 17H19" fill="none" stroke="#667FDA" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M2 8L10 2L18 8" fill="none" stroke="#5C9DFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 8V15M7 8V15M13 8V15M17 8V15" fill="none" stroke="#5C9DFF" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M1 17H19" fill="none" stroke="#5C9DFF" stroke-width="1.8" stroke-linecap="round"/>
             </g>
-            <text x="130" y="33" text-anchor="middle" font-family="Inter" font-weight="600" font-size="14" fill="#EFF2F9">Banco Comercial</text>
-            <line x1="10" y1="45" x2="240" y2="45" stroke="#2A324A" stroke-width="1"/>
-            <line x1="125" y1="45" x2="125" y2="175" stroke="#2A324A" stroke-width="1"/>
+            <text x="130" y="33" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="14" fill="#F2F2F0">Banco Comercial</text>
+            <line x1="10" y1="45" x2="240" y2="45" stroke="#3A3C41" stroke-width="1"/>
+            <line x1="125" y1="45" x2="125" y2="175" stroke="#3A3C41" stroke-width="1"/>
 
-            <rect x="16" y="66" width="102" height="98" rx="6" fill="#1B223C" opacity=".4"/>
-            <rect x="131" y="66" width="102" height="98" rx="6" fill="#1B223C" opacity=".4"/>
+            <rect x="16" y="66" width="102" height="98" rx="6" fill="#202124" opacity=".4"/>
+            <rect x="131" y="66" width="102" height="98" rx="6" fill="#202124" opacity=".4"/>
 
-            <text x="67" y="58" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#A3AABE">Activos</text>
-            <text x="182" y="58" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#A3AABE">Pasivos</text>
+            <text x="67" y="58" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="11" fill="#A9ABAE">Activos</text>
+            <text x="182" y="58" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="11" fill="#A9ABAE">Pasivos</text>
 
-            <rect x="22" y="72" width="90" height="22" rx="5" fill="#FF6F4A" fill-opacity=".12" stroke="#FF6F4A" stroke-width="1" stroke-opacity=".6"/>
-            <circle cx="32" cy="83" r="3" fill="#FF6F4A"/>
-            <text x="42" y="86" font-family="JetBrains Mono" font-weight="500" font-size="11" fill="#EFF2F9">Reservas</text>
+            <rect x="22" y="72" width="90" height="22" rx="5" fill="#F2552C" fill-opacity=".12" stroke="#F2552C" stroke-width="1" stroke-opacity=".6"/>
+            <circle cx="32" cy="83" r="3" fill="#F2552C"/>
+            <text x="42" y="86" font-family="Azeret Mono, monospace" font-weight="500" font-size="11" fill="#F2F2F0">Reservas</text>
             
-            <circle cx="32" cy="109" r="2.5" fill="#667FDA" opacity=".7"/>
-            <text x="42" y="112" font-family="JetBrains Mono" font-size="11" fill="#EFF2F9">Préstamos</text>
+            <circle cx="32" cy="109" r="2.5" fill="#5C9DFF" opacity=".7"/>
+            <text x="42" y="112" font-family="Azeret Mono, monospace" font-size="11" fill="#F2F2F0">Préstamos</text>
 
-            <circle cx="32" cy="135" r="2.5" fill="#667FDA" opacity=".7"/>
-            <text x="42" y="138" font-family="JetBrains Mono" font-size="11" fill="#EFF2F9">Bonos</text>
+            <circle cx="32" cy="135" r="2.5" fill="#5C9DFF" opacity=".7"/>
+            <text x="42" y="138" font-family="Azeret Mono, monospace" font-size="11" fill="#F2F2F0">Bonos</text>
 
-            <circle cx="141" cy="83" r="2.5" fill="#FFB188"/>
-            <text x="149" y="86" font-family="JetBrains Mono" font-size="11" fill="#EFF2F9">Depósitos a</text>
-            <text x="149" y="100" font-family="JetBrains Mono" font-size="11" fill="#EFF2F9">la vista</text>
+            <circle cx="141" cy="83" r="2.5" fill="#FF9B7D"/>
+            <text x="149" y="86" font-family="Azeret Mono, monospace" font-size="11" fill="#F2F2F0">Depósitos a</text>
+            <text x="149" y="100" font-family="Azeret Mono, monospace" font-size="11" fill="#F2F2F0">la vista</text>
 
             <!-- Banco Central -->
-            <rect x="270" y="10" width="240" height="165" rx="12" fill="#10172D" stroke="#2A324A" stroke-width="1.5"/>
-            <rect x="271" y="11" width="238" height="34" rx="11" fill="#1B223C" opacity=".6"/>
+            <rect x="270" y="10" width="240" height="165" rx="12" fill="#1A1B1D" stroke="#3A3C41" stroke-width="1.5"/>
+            <rect x="271" y="11" width="238" height="34" rx="11" fill="#202124" opacity=".6"/>
             <g transform="translate(280, 19)">
-              <path d="M2 8L10 2L18 8" fill="none" stroke="#FF6F4A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M3 8V15M7 8V15M13 8V15M17 8V15" fill="none" stroke="#FF6F4A" stroke-width="1.6" stroke-linecap="round"/>
-              <path d="M1 17H19" fill="none" stroke="#FF6F4A" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M2 8L10 2L18 8" fill="none" stroke="#F2552C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 8V15M7 8V15M13 8V15M17 8V15" fill="none" stroke="#F2552C" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="M1 17H19" fill="none" stroke="#F2552C" stroke-width="1.8" stroke-linecap="round"/>
             </g>
-            <text x="400" y="33" text-anchor="middle" font-family="Inter" font-weight="600" font-size="14" fill="#EFF2F9">Banco Central</text>
-            <line x1="270" y1="45" x2="510" y2="45" stroke="#2A324A" stroke-width="1"/>
-            <line x1="390" y1="45" x2="390" y2="175" stroke="#2A324A" stroke-width="1"/>
+            <text x="400" y="33" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="14" fill="#F2F2F0">Banco Central</text>
+            <line x1="270" y1="45" x2="510" y2="45" stroke="#3A3C41" stroke-width="1"/>
+            <line x1="390" y1="45" x2="390" y2="175" stroke="#3A3C41" stroke-width="1"/>
 
-            <rect x="276" y="66" width="108" height="98" rx="6" fill="#1B223C" opacity=".4"/>
-            <rect x="396" y="66" width="108" height="98" rx="6" fill="#1B223C" opacity=".4"/>
+            <rect x="276" y="66" width="108" height="98" rx="6" fill="#202124" opacity=".4"/>
+            <rect x="396" y="66" width="108" height="98" rx="6" fill="#202124" opacity=".4"/>
 
-            <text x="330" y="58" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#A3AABE">Activos</text>
-            <text x="450" y="58" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#A3AABE">Pasivos</text>
+            <text x="330" y="58" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="11" fill="#A9ABAE">Activos</text>
+            <text x="450" y="58" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="11" fill="#A9ABAE">Pasivos</text>
 
-            <circle cx="286" cy="95" r="2.5" fill="#667FDA" opacity=".7"/>
-            <text x="294" y="98" font-family="JetBrains Mono" font-size="11" fill="#EFF2F9">Bonos</text>
+            <circle cx="286" cy="95" r="2.5" fill="#5C9DFF" opacity=".7"/>
+            <text x="294" y="98" font-family="Azeret Mono, monospace" font-size="11" fill="#F2F2F0">Bonos</text>
 
-            <rect x="402" y="72" width="96" height="36" rx="5" fill="#FF6F4A" fill-opacity=".12" stroke="#FF6F4A" stroke-width="1" stroke-opacity=".6"/>
-            <circle cx="412" cy="83" r="3" fill="#FF6F4A"/>
-            <text x="422" y="84" font-family="JetBrains Mono" font-weight="500" font-size="10.5" fill="#EFF2F9">Dinero del</text>
-            <text x="422" y="97" font-family="JetBrains Mono" font-weight="500" font-size="10.5" fill="#EFF2F9">banco central (H)</text>
-            <text x="450" y="122" text-anchor="middle" font-family="JetBrains Mono" font-size="9.5" fill="#A3AABE">= Reservas + Efectivo</text>
+            <rect x="402" y="72" width="96" height="36" rx="5" fill="#F2552C" fill-opacity=".12" stroke="#F2552C" stroke-width="1" stroke-opacity=".6"/>
+            <circle cx="412" cy="83" r="3" fill="#F2552C"/>
+            <text x="422" y="84" font-family="Azeret Mono, monospace" font-weight="500" font-size="10.5" fill="#F2F2F0">Dinero del</text>
+            <text x="422" y="97" font-family="Azeret Mono, monospace" font-weight="500" font-size="10.5" fill="#F2F2F0">banco central (H)</text>
+            <text x="450" y="122" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="9.5" fill="#A9ABAE">= Reservas + Efectivo</text>
 
-            <path d="M 22 83 H 14 Q 8 83 8 91 V 185 Q 8 198 22 198 H 120" fill="none" stroke="#FF6F4A" stroke-width="1.5" stroke-dasharray="3 3" opacity=".75"/>
-            <path d="M 400 198 H 498 Q 512 198 512 185 V 91 Q 512 83 504 83 H 498" fill="none" stroke="#FF6F4A" stroke-width="1.5" stroke-dasharray="3 3" opacity=".75"/>
-            <path d="M 504 80 L 498 83 L 504 86" fill="none" stroke="#FF6F4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+            <path d="M 22 83 H 14 Q 8 83 8 91 V 185 Q 8 198 22 198 H 120" fill="none" stroke="#F2552C" stroke-width="1.5" stroke-dasharray="3 3" opacity=".75"/>
+            <path d="M 400 198 H 498 Q 512 198 512 185 V 91 Q 512 83 504 83 H 498" fill="none" stroke="#F2552C" stroke-width="1.5" stroke-dasharray="3 3" opacity=".75"/>
+            <path d="M 504 80 L 498 83 L 504 86" fill="none" stroke="#F2552C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
 
-            <rect x="120" y="187" width="280" height="22" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
-            <circle cx="135" cy="198" r="3" fill="#FF6F4A"/>
-            <text x="262" y="201.5" text-anchor="middle" font-family="JetBrains Mono" font-weight="500" font-size="9.5" fill="#FF6F4A">las reservas del banco son parte de H</text>
+            <rect x="120" y="187" width="280" height="22" rx="6" fill="#1A1B1D" stroke="#3A3C41" stroke-width="1.2"/>
+            <circle cx="135" cy="198" r="3" fill="#F2552C"/>
+            <text x="262" y="201.5" text-anchor="middle" font-family="Azeret Mono, monospace" font-weight="500" font-size="9.5" fill="#F2552C">las reservas del banco son parte de H</text>
           </svg>
         </div>
       </div>
@@ -821,7 +385,7 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
       <p>La demanda total de dinero del banco central (<span class="mono">H<sup>d</sup></span>) es la suma del efectivo demandado por el público más las reservas demandadas por los bancos comerciales:</p>
 
       <!-- Ecuación General Hd -->
-      <div class="ecuacion-card" style="border-color:rgba(255,111,74,0.4); background:rgba(255,111,74,0.04);">
+      <div class="ecuacion-card" style="border-color:var(--c-k);">
         <div class="ecuacion-header">
           <span>Demanda Total de Dinero del Banco Central (Caso General)</span>
           <span class="tag-pill tag-coral">Ecuación 4.4 Extendida</span>
@@ -841,54 +405,54 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
             <title id="fig-mult-title">Flujo del Multiplicador Monetario y Demanda de Dinero Central</title>
             <desc id="fig-mult-desc">Diagrama de árbol de decisiones financieras que desglosa la demanda agregada de dinero Md en efectivo c*Md y depósitos (1-c)*Md. Los depósitos generan demanda de reservas theta*(1-c)*Md. Ambas ramas convergen en la demanda de dinero central Hd = [c + theta(1-c)]Md, originando el multiplicador monetario.</desc>
 
-            <rect x="8" y="8" width="524" height="264" rx="12" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
+            <rect x="8" y="8" width="524" height="264" rx="12" fill="#1A1B1D" stroke="#3A3C41" stroke-width="1.2"/>
 
-            <rect x="20" y="24" width="168" height="52" rx="8" fill="#1B223C" stroke="#FF6F4A" stroke-width="1.4"/>
-            <text x="104" y="44" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#EFF2F9">Demanda de Dinero</text>
-            <text x="104" y="62" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="12" fill="#FF6F4A">M<tspan baseline-shift="super" font-size="8">d</tspan> = $Y &#183; L(i)</text>
+            <rect x="20" y="24" width="168" height="52" rx="8" fill="#202124" stroke="#F2552C" stroke-width="1.4"/>
+            <text x="104" y="44" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="11" fill="#F2F2F0">Demanda de Dinero</text>
+            <text x="104" y="62" text-anchor="middle" font-family="Azeret Mono, monospace" font-weight="600" font-size="12" fill="#F2552C">M<tspan baseline-shift="super" font-size="8">d</tspan> = $Y &#183; L(i)</text>
 
-            <path d="M 188 42 H 224 V 95 H 250" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-dasharray="3 3"/>
-            <path d="M 244 92 L 250 95 L 244 98" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M 188 42 H 224 V 95 H 250" fill="none" stroke="#A9ABAE" stroke-width="1.4" stroke-dasharray="3 3"/>
+            <path d="M 244 92 L 250 95 L 244 98" fill="none" stroke="#A9ABAE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
             
-            <rect x="206" y="66" width="18" height="18" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
-            <text x="215" y="79" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="600" fill="#FFB188">c</text>
+            <rect x="206" y="66" width="18" height="18" rx="4" fill="#1A1B1D" stroke="#3A3C41" stroke-width="0.8"/>
+            <text x="215" y="79" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="10" font-weight="600" fill="#FF9B7D">c</text>
 
-            <path d="M 188 58 H 224 V 165 H 250" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-dasharray="3 3"/>
-            <path d="M 244 162 L 250 165 L 244 168" fill="none" stroke="#A3AABE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M 188 58 H 224 V 165 H 250" fill="none" stroke="#A9ABAE" stroke-width="1.4" stroke-dasharray="3 3"/>
+            <path d="M 244 162 L 250 165 L 244 168" fill="none" stroke="#A9ABAE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
             
-            <rect x="195" y="136" width="38" height="18" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
-            <text x="214" y="149" text-anchor="middle" font-family="JetBrains Mono" font-size="9" font-weight="600" fill="#EFF2F9">1 - c</text>
+            <rect x="195" y="136" width="38" height="18" rx="4" fill="#1A1B1D" stroke="#3A3C41" stroke-width="0.8"/>
+            <text x="214" y="149" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="9" font-weight="600" fill="#F2F2F0">1 - c</text>
 
-            <rect x="250" y="72" width="144" height="46" rx="6" fill="#1B223C" stroke="#667FDA" stroke-width="1.2"/>
-            <text x="322" y="89" text-anchor="middle" font-family="Inter" font-size="10" fill="#A3AABE">Efectivo del público</text>
-            <text x="322" y="105" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="11" fill="#667FDA">CU<tspan baseline-shift="super" font-size="7">d</tspan> = c &#183; M<tspan baseline-shift="super" font-size="7">d</tspan></text>
+            <rect x="250" y="72" width="144" height="46" rx="6" fill="#202124" stroke="#5C9DFF" stroke-width="1.2"/>
+            <text x="322" y="89" text-anchor="middle" font-family="Archivo, sans-serif" font-size="10" fill="#A9ABAE">Efectivo del público</text>
+            <text x="322" y="105" text-anchor="middle" font-family="Azeret Mono, monospace" font-weight="600" font-size="11" fill="#5C9DFF">CU<tspan baseline-shift="super" font-size="7">d</tspan> = c &#183; M<tspan baseline-shift="super" font-size="7">d</tspan></text>
 
-            <rect x="250" y="142" width="144" height="46" rx="6" fill="#1B223C" stroke="#2A324A" stroke-width="1.2"/>
-            <text x="322" y="159" text-anchor="middle" font-family="Inter" font-size="10" fill="#A3AABE">Depósitos a la vista</text>
-            <text x="322" y="175" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="11" fill="#EFF2F9">D<tspan baseline-shift="super" font-size="7">d</tspan> = (1-c)M<tspan baseline-shift="super" font-size="7">d</tspan></text>
+            <rect x="250" y="142" width="144" height="46" rx="6" fill="#202124" stroke="#3A3C41" stroke-width="1.2"/>
+            <text x="322" y="159" text-anchor="middle" font-family="Archivo, sans-serif" font-size="10" fill="#A9ABAE">Depósitos a la vista</text>
+            <text x="322" y="175" text-anchor="middle" font-family="Azeret Mono, monospace" font-weight="600" font-size="11" fill="#F2F2F0">D<tspan baseline-shift="super" font-size="7">d</tspan> = (1-c)M<tspan baseline-shift="super" font-size="7">d</tspan></text>
 
-            <path d="M 322 188 V 208" fill="none" stroke="#FFB188" stroke-width="1.4"/>
-            <path d="M 319 204 L 322 208 L 325 204" fill="none" stroke="#FFB188" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M 322 188 V 208" fill="none" stroke="#FF9B7D" stroke-width="1.4"/>
+            <path d="M 319 204 L 322 208 L 325 204" fill="none" stroke="#FF9B7D" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
             
-            <rect x="330" y="188" width="70" height="18" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
-            <text x="365" y="201" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="#FFB188">&#215; &#952; (encaje)</text>
+            <rect x="330" y="188" width="70" height="18" rx="4" fill="#1A1B1D" stroke="#3A3C41" stroke-width="0.8"/>
+            <text x="365" y="201" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="8.5" fill="#FF9B7D">&#215; &#952; (encaje)</text>
 
-            <rect x="240" y="210" width="164" height="46" rx="6" fill="#1B223C" stroke="#FFB188" stroke-width="1.2"/>
-            <text x="322" y="227" text-anchor="middle" font-family="Inter" font-size="10" fill="#A3AABE">Reservas de los bancos</text>
-            <text x="322" y="243" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="10.5" fill="#FFB188">R<tspan baseline-shift="super" font-size="7">d</tspan> = &#952;(1-c)M<tspan baseline-shift="super" font-size="7">d</tspan></text>
+            <rect x="240" y="210" width="164" height="46" rx="6" fill="#202124" stroke="#FF9B7D" stroke-width="1.2"/>
+            <text x="322" y="227" text-anchor="middle" font-family="Archivo, sans-serif" font-size="10" fill="#A9ABAE">Reservas de los bancos</text>
+            <text x="322" y="243" text-anchor="middle" font-family="Azeret Mono, monospace" font-weight="600" font-size="10.5" fill="#FF9B7D">R<tspan baseline-shift="super" font-size="7">d</tspan> = &#952;(1-c)M<tspan baseline-shift="super" font-size="7">d</tspan></text>
 
-            <path d="M 394 95 H 418 V 130 H 426" fill="none" stroke="#FF6F4A" stroke-width="1.5"/>
-            <path d="M 404 233 H 418 V 150 H 426" fill="none" stroke="#FF6F4A" stroke-width="1.5"/>
-            <path d="M 421 137 L 427 140 L 421 143" fill="none" stroke="#FF6F4A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M 394 95 H 418 V 130 H 426" fill="none" stroke="#F2552C" stroke-width="1.5"/>
+            <path d="M 404 233 H 418 V 150 H 426" fill="none" stroke="#F2552C" stroke-width="1.5"/>
+            <path d="M 421 137 L 427 140 L 421 143" fill="none" stroke="#F2552C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 
-            <rect x="428" y="105" width="94" height="70" rx="8" fill="#080C1C" stroke="#FF6F4A" stroke-width="1.5"/>
-            <text x="475" y="124" text-anchor="middle" font-family="Inter" font-weight="600" font-size="9.5" fill="#EFF2F9">Demanda de H</text>
-            <text x="475" y="142" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="12" fill="#FF6F4A">H<tspan baseline-shift="super" font-size="8">d</tspan></text>
-            <text x="475" y="160" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">= CU<tspan baseline-shift="super" font-size="6">d</tspan> + R<tspan baseline-shift="super" font-size="6">d</tspan></text>
+            <rect x="428" y="105" width="94" height="70" rx="8" fill="#101112" stroke="#F2552C" stroke-width="1.5"/>
+            <text x="475" y="124" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="9.5" fill="#F2F2F0">Demanda de H</text>
+            <text x="475" y="142" text-anchor="middle" font-family="Azeret Mono, monospace" font-weight="600" font-size="12" fill="#F2552C">H<tspan baseline-shift="super" font-size="8">d</tspan></text>
+            <text x="475" y="160" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="8" fill="#A9ABAE">= CU<tspan baseline-shift="super" font-size="6">d</tspan> + R<tspan baseline-shift="super" font-size="6">d</tspan></text>
 
-            <rect x="20" y="210" width="202" height="46" rx="6" fill="#080C1C" stroke="#2A324A" stroke-width="1"/>
-            <text x="121" y="226" text-anchor="middle" font-family="Inter" font-size="9" fill="#A3AABE">Multiplicador del dinero (M / H):</text>
-            <text x="121" y="244" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="10.5" fill="#55C975">M = [ 1 / (c + &#952;(1-c)) ] &#183; H</text>
+            <rect x="20" y="210" width="202" height="46" rx="6" fill="#101112" stroke="#3A3C41" stroke-width="1"/>
+            <text x="121" y="226" text-anchor="middle" font-family="Archivo, sans-serif" font-size="9" fill="#A9ABAE">Multiplicador del dinero (M / H):</text>
+            <text x="121" y="244" text-anchor="middle" font-family="Azeret Mono, monospace" font-weight="600" font-size="10.5" fill="#55C975">M = [ 1 / (c + &#952;(1-c)) ] &#183; H</text>
           </svg>
         </div>
       </div>
@@ -915,71 +479,71 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
             <title id="fig2-title">Equilibrio en el mercado de dinero del banco central</title>
             <desc id="fig2-desc">Eje horizontal H (dinero del banco central), eje vertical i (tasa de interés). Curva de demanda H-d con pendiente negativa en coral que corta exactamente por los puntos de equilibrio A y A'. Dos líneas de oferta verticales en índigo: la oferta original en H y una oferta mayor en H' tras una operación de mercado abierto. El equilibrio se mueve del punto A al punto A', con una tasa de interés menor, mostrando que un aumento de H baja i.</desc>
 
-            <path d="M60 70H420M60 112H420M60 165H420" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".3"/>
-            <path d="M140 20V220M240 20V220M320 20V220" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="3 5" opacity=".2"/>
+            <path d="M60 70H420M60 112H420M60 165H420" fill="none" stroke="#3A3C41" stroke-width="1" stroke-dasharray="4 5" opacity=".3"/>
+            <path d="M140 20V220M240 20V220M320 20V220" fill="none" stroke="#3A3C41" stroke-width="1" stroke-dasharray="3 5" opacity=".2"/>
 
-            <path d="M 240 220 V 112 C 280 138, 300 152, 320 165 V 220 Z" fill="#667FDA" opacity=".08"/>
+            <path d="M 240 220 V 112 C 280 138, 300 152, 320 165 V 220 Z" fill="#5C9DFF" opacity=".08"/>
 
-            <line x1="60" y1="112" x2="240" y2="112" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="4 3"/>
-            <line x1="240" y1="112" x2="240" y2="220" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="4 3"/>
-            <line x1="60" y1="165" x2="320" y2="165" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="4 3"/>
-            <line x1="320" y1="165" x2="320" y2="220" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="4 3"/>
+            <line x1="60" y1="112" x2="240" y2="112" stroke="#3A3C41" stroke-width="1.2" stroke-dasharray="4 3"/>
+            <line x1="240" y1="112" x2="240" y2="220" stroke="#3A3C41" stroke-width="1.2" stroke-dasharray="4 3"/>
+            <line x1="60" y1="165" x2="320" y2="165" stroke="#3A3C41" stroke-width="1.2" stroke-dasharray="4 3"/>
+            <line x1="320" y1="165" x2="320" y2="220" stroke="#3A3C41" stroke-width="1.2" stroke-dasharray="4 3"/>
 
-            <line x1="60" y1="20" x2="60" y2="220" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="60" y1="220" x2="420" y2="220" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M56 26L60 18L64 26" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M414 216L422 220L414 224" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="60" y1="20" x2="60" y2="220" stroke="#A9ABAE" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="60" y1="220" x2="420" y2="220" stroke="#A9ABAE" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M56 26L60 18L64 26" fill="none" stroke="#A9ABAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M414 216L422 220L414 224" fill="none" stroke="#A9ABAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 
-            <path d="M60 70H66M60 112H66M60 165H66" fill="none" stroke="#A3AABE" stroke-width="1.2" opacity=".6"/>
-            <path d="M140 220V226M240 220V226M320 220V226" fill="none" stroke="#A3AABE" stroke-width="1.2" opacity=".6"/>
+            <path d="M60 70H66M60 112H66M60 165H66" fill="none" stroke="#A9ABAE" stroke-width="1.2" opacity=".6"/>
+            <path d="M140 220V226M240 220V226M320 220V226" fill="none" stroke="#A9ABAE" stroke-width="1.2" opacity=".6"/>
             
-            <rect x="24" y="16" width="18" height="16" rx="4" fill="#10172D"/>
-            <text x="33" y="28" text-anchor="middle" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">i</text>
+            <rect x="24" y="16" width="18" height="16" rx="4" fill="#1A1B1D"/>
+            <text x="33" y="28" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="12" fill="#A9ABAE">i</text>
 
-            <rect x="412" y="228" width="18" height="16" rx="4" fill="#10172D"/>
-            <text x="421" y="240" text-anchor="middle" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">H</text>
+            <rect x="412" y="228" width="18" height="16" rx="4" fill="#1A1B1D"/>
+            <text x="421" y="240" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="12" fill="#A9ABAE">H</text>
 
-            <line x1="240" y1="20" x2="240" y2="220" stroke="#667FDA" stroke-width="2.4" stroke-linecap="round"/>
-            <rect x="174" y="22" width="62" height="18" rx="4" fill="#10172D" stroke="#667FDA" stroke-width="0.8"/>
-            <text x="205" y="35" text-anchor="middle" font-family="JetBrains Mono" font-weight="500" font-size="10" fill="#667FDA">Oferta H</text>
+            <line x1="240" y1="20" x2="240" y2="220" stroke="#5C9DFF" stroke-width="2.4" stroke-linecap="round"/>
+            <rect x="174" y="22" width="62" height="18" rx="4" fill="#1A1B1D" stroke="#5C9DFF" stroke-width="0.8"/>
+            <text x="205" y="35" text-anchor="middle" font-family="Azeret Mono, monospace" font-weight="500" font-size="10" fill="#5C9DFF">Oferta H</text>
 
-            <line x1="320" y1="20" x2="320" y2="220" stroke="#667FDA" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="6 4" opacity=".9"/>
-            <rect x="326" y="22" width="66" height="18" rx="4" fill="#10172D" stroke="#667FDA" stroke-width="0.8"/>
-            <text x="359" y="35" text-anchor="middle" font-family="JetBrains Mono" font-weight="500" font-size="10" fill="#667FDA">Oferta H&#8242;</text>
+            <line x1="320" y1="20" x2="320" y2="220" stroke="#5C9DFF" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="6 4" opacity=".9"/>
+            <rect x="326" y="22" width="66" height="18" rx="4" fill="#1A1B1D" stroke="#5C9DFF" stroke-width="0.8"/>
+            <text x="359" y="35" text-anchor="middle" font-family="Azeret Mono, monospace" font-weight="500" font-size="10" fill="#5C9DFF">Oferta H&#8242;</text>
 
-            <path d="M 90 40 C 140 55, 180 73, 240 112 C 280 138, 349 189, 390 200" fill="none" stroke="#FF6F4A" stroke-width="3.2" stroke-linecap="round"/>
-            <path d="M 90 40 C 140 55, 180 73, 240 112 C 280 138, 349 189, 390 200" fill="none" stroke="#FFB188" stroke-width="1.2" stroke-dasharray="4 4" opacity=".35"/>
+            <path d="M 90 40 C 140 55, 180 73, 240 112 C 280 138, 349 189, 390 200" fill="none" stroke="#F2552C" stroke-width="3.2" stroke-linecap="round"/>
+            <path d="M 90 40 C 140 55, 180 73, 240 112 C 280 138, 349 189, 390 200" fill="none" stroke="#FF9B7D" stroke-width="1.2" stroke-dasharray="4 4" opacity=".35"/>
             
-            <rect x="300" y="194" width="86" height="18" rx="4" fill="#10172D" stroke="#FF6F4A" stroke-width="0.8"/>
-            <text x="343" y="207" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="10.5" fill="#FF6F4A">Demanda H<tspan baseline-shift="sub" font-size="7.5">d</tspan></text>
+            <rect x="300" y="194" width="86" height="18" rx="4" fill="#1A1B1D" stroke="#F2552C" stroke-width="0.8"/>
+            <text x="343" y="207" text-anchor="middle" font-family="Azeret Mono, monospace" font-weight="600" font-size="10.5" fill="#F2552C">Demanda H<tspan baseline-shift="sub" font-size="7.5">d</tspan></text>
 
-            <path d="M 252 120 C 270 132, 288 144, 306 156" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-dasharray="3 3" opacity=".9"/>
-            <path d="M 298 152 L 306 156 L 301 146" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".95"/>
+            <path d="M 252 120 C 270 132, 288 144, 306 156" fill="none" stroke="#FF9B7D" stroke-width="1.8" stroke-dasharray="3 3" opacity=".9"/>
+            <path d="M 298 152 L 306 156 L 301 146" fill="none" stroke="#FF9B7D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".95"/>
 
-            <circle cx="240" cy="112" r="9.5" fill="#10172D" stroke="#EFF2F9" stroke-width="2.5"/>
-            <circle cx="240" cy="112" r="4" fill="#FF6F4A"/>
-            <rect x="252" y="98" width="18" height="16" rx="4" fill="#10172D"/>
-            <text x="261" y="110" text-anchor="middle" font-family="Inter" font-weight="600" font-size="12" fill="#EFF2F9">A</text>
+            <circle cx="240" cy="112" r="9.5" fill="#1A1B1D" stroke="#F2F2F0" stroke-width="2.5"/>
+            <circle cx="240" cy="112" r="4" fill="#F2552C"/>
+            <rect x="252" y="98" width="18" height="16" rx="4" fill="#1A1B1D"/>
+            <text x="261" y="110" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="12" fill="#F2F2F0">A</text>
 
-            <circle cx="320" cy="165" r="8.5" fill="#10172D" stroke="#FFB188" stroke-width="2.2" opacity=".98"/>
-            <circle cx="320" cy="165" r="3.5" fill="#FF6F4A" opacity=".95"/>
-            <rect x="332" y="152" width="22" height="16" rx="4" fill="#10172D"/>
-            <text x="343" y="164" text-anchor="middle" font-family="Inter" font-weight="600" font-size="12" fill="#EFF2F9">A&#8242;</text>
+            <circle cx="320" cy="165" r="8.5" fill="#1A1B1D" stroke="#FF9B7D" stroke-width="2.2" opacity=".98"/>
+            <circle cx="320" cy="165" r="3.5" fill="#F2552C" opacity=".95"/>
+            <rect x="332" y="152" width="22" height="16" rx="4" fill="#1A1B1D"/>
+            <text x="343" y="164" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="12" fill="#F2F2F0">A&#8242;</text>
 
-            <rect x="24" y="104" width="28" height="16" rx="3" fill="#10172D"/>
-            <text x="38" y="116" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">i</text>
+            <rect x="24" y="104" width="28" height="16" rx="3" fill="#1A1B1D"/>
+            <text x="38" y="116" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="11" fill="#A9ABAE">i</text>
 
-            <rect x="24" y="157" width="28" height="16" rx="3" fill="#10172D"/>
-            <text x="38" y="169" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">i&#8242;</text>
+            <rect x="24" y="157" width="28" height="16" rx="3" fill="#1A1B1D"/>
+            <text x="38" y="169" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="11" fill="#A9ABAE">i&#8242;</text>
 
-            <rect x="226" y="228" width="28" height="16" rx="3" fill="#10172D"/>
-            <text x="240" y="240" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">H</text>
+            <rect x="226" y="228" width="28" height="16" rx="3" fill="#1A1B1D"/>
+            <text x="240" y="240" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="11" fill="#A9ABAE">H</text>
 
-            <rect x="306" y="228" width="28" height="16" rx="3" fill="#10172D"/>
-            <text x="320" y="240" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">H&#8242;</text>
+            <rect x="306" y="228" width="28" height="16" rx="3" fill="#1A1B1D"/>
+            <text x="320" y="240" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="11" fill="#A9ABAE">H&#8242;</text>
 
-            <rect x="72" y="136" width="148" height="24" rx="6" fill="#10172D" stroke="#2A324A" stroke-width="1"/>
-            <text x="146" y="152" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#A3AABE">H&#8593; &#8658; i&#8595; (ec. 4.6)</text>
+            <rect x="72" y="136" width="148" height="24" rx="6" fill="#1A1B1D" stroke="#3A3C41" stroke-width="1"/>
+            <text x="146" y="152" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="10" fill="#A9ABAE">H&#8593; &#8658; i&#8595; (ec. 4.6)</text>
           </svg>
         </div>
       </div>
@@ -991,7 +555,7 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
       <div class="recuadro">
         <span class="recuadro-tag">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          Recuadro — Fondos Federales y el Sistema Floor
+          Recuadro: Fondos Federales y el Sistema Floor
         </span>
         <p>En EE. UU., los bancos se prestan reservas a un día en el <strong>mercado de fondos federales</strong>. Históricamente, la Fed modificaba la oferta de reservas <span class="mono">H</span> mediante OMA para mover la tasa hacia su objetivo. Tras 2008, con el exceso masivo de reservas, los bancos centrales modernos migraron al <strong>sistema de piso</strong> (<em>floor system</em>): la Fed fija directamente la tasa remunerando las reservas bancarias (<em>Interest on Reserves - IOR</em>).</p>
       </div>
@@ -999,7 +563,7 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
       <div class="recuadro">
         <span class="recuadro-tag">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          Recuadro — ¿Reemplazará Bitcoin al Dinero Soberano?
+          Recuadro: ¿Reemplazará Bitcoin al Dinero Soberano?
         </span>
         <p>Blanchard concluye que las criptomonedas no reemplazarán al dinero fiduciario por tres límites insalvables:</p>
         <p>1. <strong>Económico:</strong> Extrema volatilidad de precios, impidiendo cumplir la función de unidad de cuenta estable.<br>
@@ -1010,8 +574,8 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
   </section>
 
   <!-- ==================== MÓDULO 04 ==================== -->
-  <section class="modulo reveal" id="trampa">
-    <div class="modulo-head"><span class="modulo-num">// 04</span><h2>4-4 · La trampa de liquidez y el límite inferior cero (ZLB)</h2></div>
+  <section class="modulo" id="trampa">
+    <div class="modulo-head"><h2>4-4 · La trampa de liquidez y el límite inferior cero (ZLB)</h2></div>
 
     <div class="bloque bloque-icono">
       <span class="icono" style="color:var(--indigo-mid)">
@@ -1028,11 +592,11 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
 
     <!-- Comparación de Regímenes -->
     <div class="grid-2">
-      <div class="mini-card" style="border-left:3px solid var(--success);">
+      <div class="mini-card" style="box-shadow:inset 0 0 0 2px var(--ok);">
         <h4><span class="tag-pill tag-green">Régimen Convencional (i > 0)</span></h4>
         <p>Los bonos pagan una tasa positiva. Los agentes sacrifican liquidez a cambio de rentabilidad. La inyección de dinero central desplaza la oferta y <strong>baja la tasa de interés</strong>.</p>
       </div>
-      <div class="mini-card" style="border-left:3px solid var(--coral);">
+      <div class="mini-card" style="box-shadow:inset 0 0 0 2px var(--c-k);">
         <h4><span class="tag-pill tag-coral">Trampa de Liquidez (i = 0)</span></h4>
         <p>A tasa cero, dinero y bonos se vuelven <strong>perfectos sustitutos</strong>. La demanda de dinero se torna <span class="hl-coral">completamente horizontal</span>: inyecciones adicionales son absorbidas sin alterar <span class="mono">i</span>.</p>
       </div>
@@ -1044,74 +608,74 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
         <div class="diagrama">
           <svg viewBox="0 0 460 280" role="img" aria-labelledby="fig3-title fig3-desc" xmlns="http://www.w3.org/2000/svg">
             <title id="fig3-title">Demanda de dinero, oferta de dinero y la trampa de liquidez</title>
-            <desc id="fig3-desc">Eje horizontal M (dinero), eje vertical i. La curva de demanda de dinero, en coral, desciende y luego se vuelve horizontal en i=0 más allá de cierto punto — esa zona horizontal está sombreada y rotulada como la trampa de liquidez. Tres líneas verticales de oferta de dinero Ms, Ms' y Ms'', en índigo — las dos últimas intersectan la curva de demanda en su tramo horizontal, ambas con tasa de interés cero. Una flecha indica que la oferta de dinero sigue aumentando de Ms a Ms'' sin que la tasa de interés cambie.</desc>
+            <desc id="fig3-desc">Eje horizontal M (dinero), eje vertical i. La curva de demanda de dinero, en coral, desciende y luego se vuelve horizontal en i=0 más allá de cierto punto; esa zona horizontal está sombreada y rotulada como la trampa de liquidez. Tres líneas verticales de oferta de dinero Ms, Ms' y Ms'', en índigo; las dos últimas intersectan la curva de demanda en su tramo horizontal, ambas con tasa de interés cero. Una flecha indica que la oferta de dinero sigue aumentando de Ms a Ms'' sin que la tasa de interés cambie.</desc>
 
-            <rect x="220" y="190" width="180" height="30" fill="#667FDA" opacity=".09"/>
-            <path d="M240 190V220M270 190V220M300 190V220M330 190V220M360 190V220M390 190V220" fill="none" stroke="#667FDA" stroke-width="1" stroke-dasharray="2 4" opacity=".2"/>
+            <rect x="220" y="190" width="180" height="30" fill="#5C9DFF" opacity=".09"/>
+            <path d="M240 190V220M270 190V220M300 190V220M330 190V220M360 190V220M390 190V220" fill="none" stroke="#5C9DFF" stroke-width="1" stroke-dasharray="2 4" opacity=".2"/>
 
-            <path d="M75 60H400M75 130H400" fill="none" stroke="#2A324A" stroke-width="1" stroke-dasharray="4 5" opacity=".3"/>
+            <path d="M75 60H400M75 130H400" fill="none" stroke="#3A3C41" stroke-width="1" stroke-dasharray="4 5" opacity=".3"/>
 
-            <line x1="55" y1="190" x2="220" y2="190" stroke="#2A324A" stroke-width="1.2" stroke-dasharray="4 3"/>
+            <line x1="55" y1="190" x2="220" y2="190" stroke="#3A3C41" stroke-width="1.2" stroke-dasharray="4 3"/>
 
-            <line x1="55" y1="20" x2="55" y2="220" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="55" y1="220" x2="420" y2="220" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M51 26L55 18L59 26" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M414 216L422 220L414 224" fill="none" stroke="#A3AABE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="55" y1="20" x2="55" y2="220" stroke="#A9ABAE" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="55" y1="220" x2="420" y2="220" stroke="#A9ABAE" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M51 26L55 18L59 26" fill="none" stroke="#A9ABAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M414 216L422 220L414 224" fill="none" stroke="#A9ABAE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 
-            <path d="M55 60H61M55 95H61M55 130H61" fill="none" stroke="#A3AABE" stroke-width="1" opacity=".5"/>
-            <path d="M150 220V226M260 220V226M340 220V226" fill="none" stroke="#A3AABE" stroke-width="1" opacity=".5"/>
+            <path d="M55 60H61M55 95H61M55 130H61" fill="none" stroke="#A9ABAE" stroke-width="1" opacity=".5"/>
+            <path d="M150 220V226M260 220V226M340 220V226" fill="none" stroke="#A9ABAE" stroke-width="1" opacity=".5"/>
             
-            <rect x="22" y="16" width="18" height="16" rx="4" fill="#10172D"/>
-            <text x="31" y="28" text-anchor="middle" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">i</text>
+            <rect x="22" y="16" width="18" height="16" rx="4" fill="#1A1B1D"/>
+            <text x="31" y="28" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="12" fill="#A9ABAE">i</text>
 
-            <rect x="410" y="228" width="18" height="16" rx="4" fill="#10172D"/>
-            <text x="419" y="240" text-anchor="middle" font-family="Inter" font-weight="600" font-size="12" fill="#A3AABE">M</text>
+            <rect x="410" y="228" width="18" height="16" rx="4" fill="#1A1B1D"/>
+            <text x="419" y="240" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="12" fill="#A9ABAE">M</text>
 
-            <rect x="20" y="182" width="18" height="16" rx="3" fill="#10172D"/>
-            <text x="29" y="194" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#A3AABE">0</text>
+            <rect x="20" y="182" width="18" height="16" rx="3" fill="#1A1B1D"/>
+            <text x="29" y="194" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="11" fill="#A9ABAE">0</text>
 
-            <path d="M 90 30 C 120 50, 135 70, 150 95 C 168 125, 192 165, 220 190 L 400 190" fill="none" stroke="#FF6F4A" stroke-width="3.2" stroke-linecap="round"/>
-            <path d="M 90 30 C 120 50, 135 70, 150 95 C 168 125, 192 165, 220 190 L 400 190" fill="none" stroke="#FFB188" stroke-width="1.2" stroke-dasharray="4 4" opacity=".35"/>
+            <path d="M 90 30 C 120 50, 135 70, 150 95 C 168 125, 192 165, 220 190 L 400 190" fill="none" stroke="#F2552C" stroke-width="3.2" stroke-linecap="round"/>
+            <path d="M 90 30 C 120 50, 135 70, 150 95 C 168 125, 192 165, 220 190 L 400 190" fill="none" stroke="#FF9B7D" stroke-width="1.2" stroke-dasharray="4 4" opacity=".35"/>
             
-            <rect x="382" y="166" width="30" height="18" rx="4" fill="#10172D" stroke="#FF6F4A" stroke-width="0.8"/>
-            <text x="397" y="179" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="10.5" fill="#FF6F4A">M<tspan baseline-shift="super" font-size="7.5">d</tspan></text>
+            <rect x="382" y="166" width="30" height="18" rx="4" fill="#1A1B1D" stroke="#F2552C" stroke-width="0.8"/>
+            <text x="397" y="179" text-anchor="middle" font-family="Azeret Mono, monospace" font-weight="600" font-size="10.5" fill="#F2552C">M<tspan baseline-shift="super" font-size="7.5">d</tspan></text>
 
-            <line x1="150" y1="20" x2="150" y2="220" stroke="#667FDA" stroke-width="2.4" stroke-linecap="round"/>
-            <line x1="260" y1="20" x2="260" y2="190" stroke="#667FDA" stroke-width="2.2" stroke-linecap="round"/>
-            <line x1="340" y1="20" x2="340" y2="190" stroke="#667FDA" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="150" y1="20" x2="150" y2="220" stroke="#5C9DFF" stroke-width="2.4" stroke-linecap="round"/>
+            <line x1="260" y1="20" x2="260" y2="190" stroke="#5C9DFF" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="340" y1="20" x2="340" y2="190" stroke="#5C9DFF" stroke-width="2.2" stroke-linecap="round"/>
 
-            <rect x="135" y="4" width="30" height="15" rx="3" fill="#10172D" stroke="#667FDA" stroke-width="0.8"/>
-            <text x="150" y="15" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#667FDA">M<tspan baseline-shift="super" font-size="6.5">s</tspan></text>
+            <rect x="135" y="4" width="30" height="15" rx="3" fill="#1A1B1D" stroke="#5C9DFF" stroke-width="0.8"/>
+            <text x="150" y="15" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="9" fill="#5C9DFF">M<tspan baseline-shift="super" font-size="6.5">s</tspan></text>
 
-            <rect x="245" y="4" width="30" height="15" rx="3" fill="#10172D" stroke="#667FDA" stroke-width="0.8"/>
-            <text x="260" y="15" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#667FDA">M<tspan baseline-shift="super" font-size="6.5">s&#8242;</tspan></text>
+            <rect x="245" y="4" width="30" height="15" rx="3" fill="#1A1B1D" stroke="#5C9DFF" stroke-width="0.8"/>
+            <text x="260" y="15" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="9" fill="#5C9DFF">M<tspan baseline-shift="super" font-size="6.5">s&#8242;</tspan></text>
 
-            <rect x="325" y="4" width="32" height="15" rx="3" fill="#10172D" stroke="#667FDA" stroke-width="0.8"/>
-            <text x="341" y="15" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#667FDA">M<tspan baseline-shift="super" font-size="6.5">s&#8242;&#8242;</tspan></text>
+            <rect x="325" y="4" width="32" height="15" rx="3" fill="#1A1B1D" stroke="#5C9DFF" stroke-width="0.8"/>
+            <text x="341" y="15" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="9" fill="#5C9DFF">M<tspan baseline-shift="super" font-size="6.5">s&#8242;&#8242;</tspan></text>
 
-            <path d="M155 34H335" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-dasharray="4 3" opacity=".85"/>
-            <path d="M327 30L335 34L327 38" fill="none" stroke="#FFB188" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
-            <rect x="160" y="24" width="168" height="16" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
-            <text x="244" y="36" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="#FFB188">inyección monetaria continua</text>
+            <path d="M155 34H335" fill="none" stroke="#FF9B7D" stroke-width="1.8" stroke-dasharray="4 3" opacity=".85"/>
+            <path d="M327 30L335 34L327 38" fill="none" stroke="#FF9B7D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+            <rect x="160" y="24" width="168" height="16" rx="4" fill="#1A1B1D" stroke="#3A3C41" stroke-width="0.8"/>
+            <text x="244" y="36" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="8.5" fill="#FF9B7D">inyección monetaria continua</text>
 
-            <circle cx="150" cy="95" r="8" fill="#10172D" stroke="#EFF2F9" stroke-width="2.4"/>
-            <circle cx="150" cy="95" r="3.5" fill="#FF6F4A"/>
-            <rect x="162" y="82" width="38" height="26" rx="4" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
-            <text x="181" y="94" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#EFF2F9">A</text>
-            <text x="181" y="104" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">i &gt; 0</text>
+            <circle cx="150" cy="95" r="8" fill="#1A1B1D" stroke="#F2F2F0" stroke-width="2.4"/>
+            <circle cx="150" cy="95" r="3.5" fill="#F2552C"/>
+            <rect x="162" y="82" width="38" height="26" rx="4" fill="#1A1B1D" stroke="#3A3C41" stroke-width="0.8"/>
+            <text x="181" y="94" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="11" fill="#F2F2F0">A</text>
+            <text x="181" y="104" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="8" fill="#A9ABAE">i &gt; 0</text>
 
-            <circle cx="260" cy="190" r="8" fill="#10172D" stroke="#FFB188" stroke-width="2.2"/>
-            <circle cx="260" cy="190" r="3.5" fill="#667FDA"/>
-            <rect x="272" y="174" width="16" height="16" rx="3" fill="#10172D"/>
-            <text x="280" y="186" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#EFF2F9">B</text>
+            <circle cx="260" cy="190" r="8" fill="#1A1B1D" stroke="#FF9B7D" stroke-width="2.2"/>
+            <circle cx="260" cy="190" r="3.5" fill="#5C9DFF"/>
+            <rect x="272" y="174" width="16" height="16" rx="3" fill="#1A1B1D"/>
+            <text x="280" y="186" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="11" fill="#F2F2F0">B</text>
 
-            <circle cx="340" cy="190" r="8" fill="#10172D" stroke="#FFB188" stroke-width="2.2"/>
-            <circle cx="340" cy="190" r="3.5" fill="#667FDA"/>
-            <rect x="352" y="174" width="16" height="16" rx="3" fill="#10172D"/>
-            <text x="360" y="186" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11" fill="#EFF2F9">C</text>
+            <circle cx="340" cy="190" r="8" fill="#1A1B1D" stroke="#FF9B7D" stroke-width="2.2"/>
+            <circle cx="340" cy="190" r="3.5" fill="#5C9DFF"/>
+            <rect x="352" y="174" width="16" height="16" rx="3" fill="#1A1B1D"/>
+            <text x="360" y="186" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="11" fill="#F2F2F0">C</text>
 
-            <rect x="225" y="196" width="170" height="20" rx="5" fill="#10172D" stroke="#2A324A" stroke-width="1"/>
-            <text x="310" y="209.5" text-anchor="middle" font-family="JetBrains Mono" font-weight="500" font-size="10" fill="#667FDA">trampa de liquidez (i = 0)</text>
+            <rect x="225" y="196" width="170" height="20" rx="5" fill="#1A1B1D" stroke="#3A3C41" stroke-width="1"/>
+            <text x="310" y="209.5" text-anchor="middle" font-family="Azeret Mono, monospace" font-weight="500" font-size="10" fill="#5C9DFF">trampa de liquidez (i = 0)</text>
           </svg>
         </div>
       </div>
@@ -1126,68 +690,68 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
             <title id="fig-evid-title">La Trampa de Liquidez en Acción: Tasa de Interés y Reservas Bancarias (2008–2016)</title>
             <desc id="fig-evid-desc">Gráfico comparativo empírico de EE. UU. entre 2008 y 2016 con pastillas protectoras de texto. La tasa de fondos federales cae al 0% y permanece en el límite cero. Las reservas bancarias explotan de 10 mil millones a 2,500 mil millones de dólares sin mover la tasa.</desc>
 
-            <rect x="8" y="8" width="524" height="254" rx="12" fill="#10172D" stroke="#2A324A" stroke-width="1.2"/>
-            <rect x="120" y="16" width="300" height="22" rx="5" fill="#1B223C"/>
-            <text x="270" y="31" text-anchor="middle" font-family="Inter" font-weight="600" font-size="11.5" fill="#EFF2F9">Evidencia Empírica de EE. UU. (Crisis Financiera 2008–2016)</text>
+            <rect x="8" y="8" width="524" height="254" rx="12" fill="#1A1B1D" stroke="#3A3C41" stroke-width="1.2"/>
+            <rect x="120" y="16" width="300" height="22" rx="5" fill="#202124"/>
+            <text x="270" y="31" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="11.5" fill="#F2F2F0">Evidencia Empírica de EE. UU. (Crisis Financiera 2008–2016)</text>
 
-            <rect x="22" y="44" width="240" height="204" rx="8" fill="#1B223C" stroke="#2A324A" stroke-width="1"/>
-            <text x="142" y="62" text-anchor="middle" font-family="Inter" font-weight="600" font-size="10.5" fill="#667FDA">Tasa de Fondos Federales (i)</text>
+            <rect x="22" y="44" width="240" height="204" rx="8" fill="#202124" stroke="#3A3C41" stroke-width="1"/>
+            <text x="142" y="62" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="10.5" fill="#5C9DFF">Tasa de Fondos Federales (i)</text>
 
-            <line x1="50" y1="72" x2="50" y2="195" stroke="#A3AABE" stroke-width="1.2" stroke-linecap="round"/>
-            <line x1="50" y1="195" x2="245" y2="195" stroke="#A3AABE" stroke-width="1.2" stroke-linecap="round"/>
+            <line x1="50" y1="72" x2="50" y2="195" stroke="#A9ABAE" stroke-width="1.2" stroke-linecap="round"/>
+            <line x1="50" y1="195" x2="245" y2="195" stroke="#A9ABAE" stroke-width="1.2" stroke-linecap="round"/>
             
-            <rect x="28" y="70" width="20" height="14" rx="3" fill="#10172D"/>
-            <text x="38" y="81" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="#A3AABE">5%</text>
+            <rect x="28" y="70" width="20" height="14" rx="3" fill="#1A1B1D"/>
+            <text x="38" y="81" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="8.5" fill="#A9ABAE">5%</text>
 
-            <rect x="28" y="188" width="20" height="14" rx="3" fill="#10172D"/>
-            <text x="38" y="199" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="#A3AABE">0%</text>
+            <rect x="28" y="188" width="20" height="14" rx="3" fill="#1A1B1D"/>
+            <text x="38" y="199" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="8.5" fill="#A9ABAE">0%</text>
 
-            <text x="50" y="210" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">'07</text>
-            <text x="100" y="210" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">'08</text>
-            <text x="170" y="210" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">'12</text>
-            <text x="230" y="210" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">'16</text>
+            <text x="50" y="210" font-family="Azeret Mono, monospace" font-size="8" fill="#A9ABAE">'07</text>
+            <text x="100" y="210" font-family="Azeret Mono, monospace" font-size="8" fill="#A9ABAE">'08</text>
+            <text x="170" y="210" font-family="Azeret Mono, monospace" font-size="8" fill="#A9ABAE">'12</text>
+            <text x="230" y="210" font-family="Azeret Mono, monospace" font-size="8" fill="#A9ABAE">'16</text>
 
-            <rect x="100" y="185" width="145" height="10" fill="#667FDA" opacity=".2"/>
-            <rect x="125" y="168" width="94" height="15" rx="3" fill="#10172D" stroke="#667FDA" stroke-width="0.8"/>
-            <text x="172" y="179" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#667FDA">Límite Cero (ZLB)</text>
+            <rect x="100" y="185" width="145" height="10" fill="#5C9DFF" opacity=".2"/>
+            <rect x="125" y="168" width="94" height="15" rx="3" fill="#1A1B1D" stroke="#5C9DFF" stroke-width="0.8"/>
+            <text x="172" y="179" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="8" fill="#5C9DFF">Límite Cero (ZLB)</text>
 
-            <path d="M 50 80 L 80 110 L 100 195 L 245 195" fill="none" stroke="#667FDA" stroke-width="2.5" stroke-linecap="round"/>
-            <circle cx="100" cy="195" r="4" fill="#FF6F4A"/>
+            <path d="M 50 80 L 80 110 L 100 195 L 245 195" fill="none" stroke="#5C9DFF" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="100" cy="195" r="4" fill="#F2552C"/>
             
-            <rect x="94" y="142" width="86" height="16" rx="3" fill="#10172D" stroke="#FF6F4A" stroke-width="0.8"/>
-            <text x="137" y="153" text-anchor="middle" font-family="JetBrains Mono" font-size="7.5" fill="#FF6F4A">fines 2008: i = 0</text>
+            <rect x="94" y="142" width="86" height="16" rx="3" fill="#1A1B1D" stroke="#F2552C" stroke-width="0.8"/>
+            <text x="137" y="153" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="7.5" fill="#F2552C">fines 2008: i = 0</text>
 
-            <rect x="278" y="44" width="240" height="204" rx="8" fill="#1B223C" stroke="#2A324A" stroke-width="1"/>
-            <text x="398" y="62" text-anchor="middle" font-family="Inter" font-weight="600" font-size="10.5" fill="#FF6F4A">Reservas Bancarias en la Fed ($B)</text>
+            <rect x="278" y="44" width="240" height="204" rx="8" fill="#202124" stroke="#3A3C41" stroke-width="1"/>
+            <text x="398" y="62" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="600" font-size="10.5" fill="#F2552C">Reservas Bancarias en la Fed ($B)</text>
 
-            <line x1="305" y1="72" x2="305" y2="195" stroke="#A3AABE" stroke-width="1.2" stroke-linecap="round"/>
-            <line x1="305" y1="195" x2="500" y2="195" stroke="#A3AABE" stroke-width="1.2" stroke-linecap="round"/>
+            <line x1="305" y1="72" x2="305" y2="195" stroke="#A9ABAE" stroke-width="1.2" stroke-linecap="round"/>
+            <line x1="305" y1="195" x2="500" y2="195" stroke="#A9ABAE" stroke-width="1.2" stroke-linecap="round"/>
 
-            <rect x="276" y="70" width="28" height="14" rx="3" fill="#10172D"/>
-            <text x="290" y="81" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">$2.5T</text>
+            <rect x="276" y="70" width="28" height="14" rx="3" fill="#1A1B1D"/>
+            <text x="290" y="81" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="8" fill="#A9ABAE">$2.5T</text>
 
-            <rect x="276" y="188" width="28" height="14" rx="3" fill="#10172D"/>
-            <text x="290" y="199" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">$10B</text>
+            <rect x="276" y="188" width="28" height="14" rx="3" fill="#1A1B1D"/>
+            <text x="290" y="199" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="8" fill="#A9ABAE">$10B</text>
 
-            <text x="305" y="210" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">'07</text>
-            <text x="350" y="210" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">'08</text>
-            <text x="420" y="210" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">'12</text>
-            <text x="480" y="210" font-family="JetBrains Mono" font-size="8" fill="#A3AABE">'16</text>
+            <text x="305" y="210" font-family="Azeret Mono, monospace" font-size="8" fill="#A9ABAE">'07</text>
+            <text x="350" y="210" font-family="Azeret Mono, monospace" font-size="8" fill="#A9ABAE">'08</text>
+            <text x="420" y="210" font-family="Azeret Mono, monospace" font-size="8" fill="#A9ABAE">'12</text>
+            <text x="480" y="210" font-family="Azeret Mono, monospace" font-size="8" fill="#A9ABAE">'16</text>
 
-            <path d="M 305 194 L 350 193 C 360 160, 390 110, 480 78" fill="none" stroke="#FF6F4A" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M 305 194 L 350 193 C 360 160, 390 110, 480 78 L 480 195 L 305 195 Z" fill="#FF6F4A" opacity=".10"/>
+            <path d="M 305 194 L 350 193 C 360 160, 390 110, 480 78" fill="none" stroke="#F2552C" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M 305 194 L 350 193 C 360 160, 390 110, 480 78 L 480 195 L 305 195 Z" fill="#F2552C" opacity=".10"/>
 
-            <circle cx="350" cy="193" r="3.5" fill="#FFB188"/>
-            <rect x="330" y="166" width="70" height="15" rx="3" fill="#10172D" stroke="#2A324A" stroke-width="0.8"/>
-            <text x="365" y="177" text-anchor="middle" font-family="JetBrains Mono" font-size="7.5" fill="#FFB188">$10B (2008)</text>
+            <circle cx="350" cy="193" r="3.5" fill="#FF9B7D"/>
+            <rect x="330" y="166" width="70" height="15" rx="3" fill="#1A1B1D" stroke="#3A3C41" stroke-width="0.8"/>
+            <text x="365" y="177" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="7.5" fill="#FF9B7D">$10B (2008)</text>
 
-            <circle cx="480" cy="78" r="4.5" fill="#10172D" stroke="#EFF2F9" stroke-width="2"/>
-            <circle cx="480" cy="78" r="2" fill="#FF6F4A"/>
-            <rect x="400" y="68" width="74" height="18" rx="4" fill="#10172D" stroke="#EFF2F9" stroke-width="0.8"/>
-            <text x="437" y="80" text-anchor="middle" font-family="JetBrains Mono" font-weight="600" font-size="8" fill="#EFF2F9">$2,500B (2015)</text>
+            <circle cx="480" cy="78" r="4.5" fill="#1A1B1D" stroke="#F2F2F0" stroke-width="2"/>
+            <circle cx="480" cy="78" r="2" fill="#F2552C"/>
+            <rect x="400" y="68" width="74" height="18" rx="4" fill="#1A1B1D" stroke="#F2F2F0" stroke-width="0.8"/>
+            <text x="437" y="80" text-anchor="middle" font-family="Azeret Mono, monospace" font-weight="600" font-size="8" fill="#F2F2F0">$2,500B (2015)</text>
 
-            <rect x="22" y="222" width="496" height="20" rx="4" fill="#080C1C" stroke="#2A324A" stroke-width="1"/>
-            <text x="270" y="236" text-anchor="middle" font-family="JetBrains Mono" font-size="8.5" fill="#55C975">Conclusión: A tasa cero, la inyección masiva de H se acumula en reservas sin alterar la tasa i.</text>
+            <rect x="22" y="222" width="496" height="20" rx="4" fill="#101112" stroke="#3A3C41" stroke-width="1"/>
+            <text x="270" y="236" text-anchor="middle" font-family="Azeret Mono, monospace" font-size="8.5" fill="#55C975">Conclusión: A tasa cero, la inyección masiva de H se acumula en reservas sin alterar la tasa i.</text>
           </svg>
         </div>
       </div>
@@ -1198,7 +762,7 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
     <div class="recuadro">
       <span class="recuadro-tag">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-        Recuadro Blanchard — La Trampa de Liquidez en Acción (2008–2016)
+        Recuadro Blanchard: La Trampa de Liquidez en Acción (2008–2016)
       </span>
       <p>Tras la quiebra de Lehman Brothers en septiembre de 2008, la Fed redujo agresivamente la tasa de fondos federales desde 5.25% hasta el rango 0–0.25% en diciembre de 2008. Al quedar inhabilitado el canal convencional de tasas, la Fed implementó <strong>expansión cuantitativa</strong> (<em>Quantitative Easing - QE</em>), comprando billones de dólares en bonos a largo plazo e hipotecas titulizadas.</p>
       <p>El resultado empírico confirmó de forma rotunda el modelo de Blanchard:</p>
@@ -1210,8 +774,8 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
   </section>
 
   <!-- ==================== MÓDULO 05 ==================== -->
-  <section class="modulo reveal" id="sintesis">
-    <div class="modulo-head"><span class="modulo-num">// 05</span><h2>Síntesis analítica y glosario de variables</h2></div>
+  <section class="modulo" id="sintesis">
+    <div class="modulo-head"><h2>Síntesis analítica y glosario de variables</h2></div>
 
     <div class="grid-2">
       <div class="bezel">
@@ -1248,8 +812,8 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
   </section>
 
   <!-- ==================== MÓDULO 06: QUIZ INTERACTIVO ==================== -->
-  <section class="modulo reveal" id="quiz">
-    <div class="modulo-head"><span class="modulo-num">// 06</span><h2>Quiz de Opción Múltiple (10 Preguntas y Ejercicios)</h2></div>
+  <section class="modulo" id="quiz">
+    <div class="modulo-head"><h2>Quiz de Opción Múltiple (10 Preguntas y Ejercicios)</h2></div>
     <p class="modulo-text">Pon a prueba tu dominio del Tema 1. Selecciona la opción que consideres correcta para recibir retroalimentación inmediata, desglose conceptual y desarrollo matemático paso a paso.</p>
 
     <!-- Score & Progress Tracker -->
@@ -1585,14 +1149,30 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
     </div>
   </section>
 </main>
+<nav class="panel" data-nav-eq aria-label="Índice de esta página">
+  <button class="panel-boton" type="button" aria-expanded="false" aria-controls="panel-lista"><i><svg aria-hidden="true" focusable="false"></svg></i><span class="sr">Índice. Estás en: </span><span data-nav-actual>Índice</span></button>
+  <p class="panel-tt">Tema 1<small>En esta página</small></p>
+  <svg class="panel-svg" aria-hidden="true" focusable="false"></svg>
+  <ol class="panel-lista" id="panel-lista">
+    <li><a href="#alcance">Alcance y fuentes</a></li>
+    <li><a href="#marco">Demanda de dinero y OMA</a></li>
+    <li><a href="#bancos">Bancos y dinero central</a></li>
+    <li><a href="#trampa">Trampa de liquidez</a></li>
+    <li><a href="#sintesis">Síntesis y glosario</a></li>
+    <li><a href="#quiz">Quiz interactivo</a></li>
+  </ol>
+  <p class="panel-ayuda">El punto marca dónde vas leyendo. Con el foco en el índice, las flechas lo recorren.</p>
+</nav>
+</div>
 
 <footer>
   <div>
     <span class="badge">Fuentes</span>Blanchard, Olivier (2023), <em>Macroeconomics</em>, 9ª ed., Cap. 4 &middot; Sala i Martín, Xavier (2016), <em>Economía en Colores</em>, Cap. Amarillo
   </div>
-  <p>Guía de estudio — Semana 1, Tema 1. Repaso de Modelos Macroeconómicos &middot; <a href="../index.html">Volver al portal principal</a></p>
+  <p>Guía de estudio: Semana 1, Tema 1. Repaso de Modelos Macroeconómicos &middot; <a href="../index.html">Volver al portal principal</a></p>
 </footer>
 
+<script src="../assets/guia.js"></script>
 <script>
 (function(){
   // Sistema de Quiz Interactivo de Opción Múltiple
@@ -1613,7 +1193,10 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
     if(progressBar) progressBar.style.width = pct + '%';
   }
 
-  quizCards.forEach(function(card){
+  // progreso guardado: cuenta para la capa del Tema 1 en la portada
+  MM.progreso.registrar(1, 'quiz', totalQuestions);
+
+  quizCards.forEach(function(card, idx){
     var options = card.querySelectorAll('.quiz-opcion');
     var explicacion = card.querySelector('.quiz-explicacion');
 
@@ -1638,6 +1221,8 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
           });
         }
 
+        MM.progreso.marcar(1, 'quiz', idx, isCorrect);
+
         // Deshabilitar botones de esta pregunta
         options.forEach(function(b){ b.disabled = true; });
 
@@ -1653,6 +1238,7 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
     resetBtn.addEventListener('click', function(){
       answeredCount = 0;
       correctCount = 0;
+      MM.progreso.limpiar(1, 'quiz');
       quizCards.forEach(function(card){
         card.removeAttribute('data-answered');
         var options = card.querySelectorAll('.quiz-opcion');
@@ -1670,30 +1256,6 @@ footer p{margin-top:8px; max-width:680px; margin-left:auto; margin-right:auto; f
   updateTracker();
 })();
 
-/* Control de barra de progreso superior */
-window.addEventListener('scroll', function(){
-  var h = document.documentElement,
-      b = document.body,
-      st = 'scrollTop',
-      sh = 'scrollHeight';
-  var percent = ((h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight)) * 100;
-  var fill = document.getElementById('scrollFill');
-  if(fill) fill.style.width = Math.min(100, Math.max(0, percent)) + '%';
-}, {passive:true});
-
-if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-  var targets = document.querySelectorAll('.reveal');
-  targets.forEach(function(el){ el.classList.add('reveal-play'); });
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.isIntersecting){
-        entry.target.classList.add('reveal-in');
-        io.unobserve(entry.target);
-      }
-    });
-  }, {threshold:0.08});
-  targets.forEach(function(el){ io.observe(el); });
-}
 </script>
 
 </body>

@@ -7,7 +7,11 @@ primero. A diferencia de `00 Inicio/00 Inicio.md` (pensado para Obsidian: usa
 documento usa únicamente markdown plano y rutas de archivo relativas, para que
 funcione igual sin Obsidian.
 
-## Handoff del 2026-08-26 — resuelto 2026-08-27
+## Handoff del 2026-08-26 — resuelto 2026-08-27 (superado el 2026-09-25)
+
+El rediseño "Capas del modelo" del 2026-09-25 reemplazó el layout de nichos y dejó de mostrar el
+`.hero-banner` (el archivo `docs/assets/hero-banner.svg` se conserva). Lo de abajo queda como
+historial.
 
 Nota completa en `01 Meta - Aprendizaje/Handoff - Sesión Macro (2026-08-26).md` (la dejó una
 sesión de Claude que trabajó aquí por error, adjunta al Project de Contabilidad Financiera).
@@ -107,47 +111,38 @@ RESTRICCIONES: [extensión, nivel, etc. — si aplica, sino omitir]
   `github.com/carcamval2025-cyber/modelos-macroeconomicos-vault` (público desde
   2026-08-26), Pages sirve desde `main` / `docs`. Ver sección de Pages más abajo.
 
-## Sistema de diseño HTML (solo para Guía / Actividad / Repaso — no aplica a Tarea/Control/Pauta, que son Word/PDF)
+## Sistema de diseño HTML (solo para Guía / Actividad / Repaso; no aplica a Tarea/Control/Pauta, que son Word/PDF)
 
-**Actualización 2026-08-26 (rediseño completo — leer esto, no una versión en caché):**
-Navas pidió una pasada de diseño (`/impeccable` `/design-system` `/design-critique`
-`/frontend-design`) porque la identidad anterior ("azul pizarra" sobre fondo claro) se
-sentía sosa. Se reemplazó **toda la paleta y tipografía**, para el sitio de `docs/` y
-para todo material nuevo de Guía/Actividad/Repaso — detalle completo en
-`02 Curso/Sistema de Diseño HTML.md`.
+**Vigente desde 2026-09-25: dirección "Capas del modelo"** (leer esto, no una versión en caché).
+Reemplaza la identidad Índigo profundo + coral del 2026-08-26. Detalle completo, tokens y
+checklist en `02 Curso/Sistema de Diseño HTML.md`; registro del proceso en
+`01 Meta - Aprendizaje/Bitácora/Entradas/2026-09-25 - Rediseño Capas del modelo.md`.
 
-Tipografía: **Fraunces** (títulos, serif de carácter) + **Inter** (400–700, cuerpo) +
-**JetBrains Mono** (500/600, ecuaciones como `Y = C + I + G + X − M`, metadatos).
+- **Idea central:** cada Tema es una capa del mismo modelo (Tema 1 plano (i, Y) y tasa del banco
+  central, Tema 2 IS y LM, Tema 3 prima x, Tema 4 paridad con el exterior). La portada apila las
+  capas y cada una enciende su pieza en el diagrama del modelo.
+- **Color = variable:** Y `#F0B429`, IS `#F2552C`, x `#C65BD6`, sector externo (ε, E, i*)
+  `#22B8A0`, i y LM `#3D8BFD` como bandas; variantes de texto por tema claro/oscuro en el
+  documento de diseño. Fondo gris sin tinte (`#F4F5F6` claro, `#101112` oscuro), nunca crema.
+  Tema claro y oscuro, según el sistema o el botón de la cabecera.
+- **Tipografía:** Archivo (títulos en ancho 75 %, peso 850) + Azeret Mono (ecuaciones y cifras),
+  servidas desde `docs/assets/fonts/`.
+- **Archivos compartidos:** todo el estilo vive en `docs/assets/guia.css` y el comportamiento
+  común en `docs/assets/guia.js`. Ninguna página lleva `<style>` propio.
+- **Interacciones:** índice como diagrama (punto = posición de lectura, flechas del teclado),
+  variables vivas en ecuaciones, "predice antes de ver" (Tema 2), progreso guardado en el
+  navegador que la portada suma por Tema, próxima evaluación calculada desde el cronograma.
+- **Diagramas SVG heredados:** láminas oscuras en ambos temas, recoloreadas por tabla de
+  equivalencias sin mover geometría ni etiquetas.
 
-Paleta — **Índigo profundo + coral**, tema oscuro (antes era claro): `#080C1C` fondo
-general, `#10172D`/`#1B223C` superficies elevadas, `#2A324A` bordes, `#EFF2F9` texto
-principal, `#A3AABE` texto secundario, `#667FDA` índigo medio (acento secundario, curva
-LM), `#FF6F4A` coral (acento principal, curva IS, énfasis), `#FFB188` coral claro
-(enlaces), `#55C975` éxito/disponible, `#FB5668` error. Todos los pares texto/fondo
-verificados en WCAG AA (≥6:1 en los casos usados). Esta identidad sigue siendo
-intencionalmente distinta a la de Macro I (verde) y ahora también distinta a la propia
-paleta clara anterior de este curso — ajustable solo si Navas lo pide.
+Reglas técnicas: sin `<form>` (usar eventos JS), sin gradientes, sin bordes laterales de color,
+sin sombras decorativas ni vidrio, sin guiones largos (—) en los textos, contenido visible sin
+JavaScript, debe abrir directo en navegador sin servidor, responsive desde 390 px, diagramas de
+modelos siempre como SVG inline etiquetado, nunca imágenes externas ni capturas de libro.
 
-El side-stripe de retroalimentación sigue siendo borde completo + tinte de fondo (no
-franja de 4px en el borde izquierdo) — eso no cambió con el rediseño de color.
-
-**Estructura modular ("bandejas"/"nichos")**: el mismo día, Navas pidió que el sitio fuera
-modular, con el sitio de un cliente de Velkor ("Retablo") como referencia de layout — menú como
-mueble que se recorre, contenido en módulos numerados que contienen "nichos" en cuadrícula con
-bordes compartidos, en vez de secciones sueltas o grilla de tarjetas idénticas. `docs/index.html`
-ya sigue este patrón (`02 Curso/Sistema de Diseño HTML.md`, sección "Estructura modular") — es el
-layout de referencia para cualquier página nueva de `docs/` o de un Tema.
-
-**Pedidos de imagen a otro agente (Antigravity/Codex)**: `02 Curso/Sistema de Diseño
-HTML.md` tiene ahora una sección "Protocolo — pedir ilustraciones a otro agente" —
-úsala para cualquier pieza de identidad visual (favicon, marca del sitio,
-ilustraciones decorativas). Los diagramas de modelos con datos (IS-LM, Phillips,
-Solow) los sigue construyendo la sesión de Claude directamente, nunca se delegan.
-
-Reglas técnicas: sin `<form>` (usar eventos JS), sin gradientes/sombras
-decorativas/colores fuera de paleta, debe abrir directo en navegador sin servidor,
-responsive para escritorio, diagramas de modelos (IS-LM, Phillips, Solow) siempre como
-SVG inline etiquetado, nunca imágenes externas ni capturas de libro.
+**Pedidos de imagen a otro agente (Antigravity/Codex)**: `02 Curso/Sistema de Diseño HTML.md`
+tiene la sección "Protocolo: pedir ilustraciones a otro agente"; las reglas de color y fuente de
+ese protocolo ya usan la paleta "Capas del modelo".
 
 ## GitHub Pages (`docs/`) — establecido 2026-08-26
 
@@ -155,18 +150,21 @@ El repo ya es público, así que Pages funciona directo: en GitHub, Settings →
 "Deploy from a branch" → rama `main`, carpeta `/docs` (si aún no está activado,
 activarlo ahí una sola vez).
 
-`docs/index.html` es un índice único con una tarjeta por cada uno de los 7 Temas del
-curso (nombre, capítulo de Blanchard, semana, estado). Como a la fecha de creación de
-este sitio `04 Materiales Generados/` seguía vacío, las 7 tarjetas arrancan en estado
-"Pendiente" y sin enlace — es un armazón (*scaffold*), no un sitio con contenido todavía.
+`docs/index.html` es la portada: una capa por cada uno de los 7 Temas (nombre, capítulo de
+Blanchard, semana, pieza del modelo, progreso guardado). Los Temas sin publicar aparecen como
+capas vacías con borde punteado y sin enlace.
 
 **Convención para agregar una página cuando se genere el primer material real de un
 Tema** (Guía HTML / Actividad HTML / Repaso — nunca Tarea/Control/Pauta, ver regla 5
 de arriba):
 1. Publicar el HTML del material en `docs/tema-0N/index.html` (mismo contenido que se
-   entrega al usuario, sin cambios de fondo).
+   entrega al usuario, sin cambios de fondo), con el esqueleto de las otras páginas de Tema:
+   `../assets/guia.css`, `../assets/guia.js`, `data-k` en `<html>`, cabecera `.cab` e índice
+   `nav.panel[data-nav-eq]`. Sin `<style>` propio.
 2. En `docs/index.html`, dentro del arreglo `TEMAS` del `<script>`, cambiar
-   `disponible:false` a `disponible:true` para ese Tema — la tarjeta se activa sola.
+   `disponible:false` a `disponible:true` para ese Tema y darle `k` (variable de su capa) y
+   `pieza`. La capa se activa sola; si el Tema aporta una pieza nueva al diagrama, agregarla
+   como capa en `MM.plano` de `guia.js`.
 3. Registrar la publicación en `04 Materiales Generados/` como con cualquier entrega.
 
 **Regla que no se negocia sobre este sitio**: `docs/` es público en internet. Nunca
@@ -174,13 +172,8 @@ publicar ahí una Tarea, un Control o su Pauta, ni borradores dirigidos al profe
 esas rutas de trabajo terminan en Word/PDF entregado directamente a Navas o al
 profesor, jamás en `docs/`.
 
-Diseño del índice: mismas tipografías y paleta Índigo profundo + coral de
-`02 Curso/Sistema de Diseño HTML.md` (rediseño 2026-08-26) — ya no usa colores fuera de
-la paleta documentada; el badge "Disponible" usa el token semántico `--success`
-(`#55C975`) definido ahí mismo, no un verde ad-hoc como en la versión anterior. El
-índice sigue la estructura modular ("bandejas"/"nichos") descrita más arriba: los 7
-Temas viven como nichos en cuadrícula de bordes compartidos dentro del módulo "02 Ruta
-del curso", no como timeline ni como grilla de tarjetas idénticas.
+Diseño de la portada y de las páginas: dirección "Capas del modelo" (ver sección de sistema de
+diseño arriba y `02 Curso/Sistema de Diseño HTML.md`).
 
 ## Cómo trabajar aquí
 
@@ -206,4 +199,5 @@ del curso", no como timeline ni como grilla de tarjetas idénticas.
 - `02 Curso/Cronograma.md`
 - `02 Curso/Fuentes y Bibliografía.md`
 - `02 Curso/Sistema de Diseño HTML.md`
-- `docs/index.html` — sitio publicado en GitHub Pages.
+- `docs/index.html`: sitio publicado en GitHub Pages; estilos y comportamiento compartidos en
+  `docs/assets/guia.css` y `docs/assets/guia.js`.
