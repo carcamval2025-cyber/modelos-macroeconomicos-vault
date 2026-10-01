@@ -10,5 +10,6 @@ cómo trabajar en este curso — distinto de la [[Bitácora de Retroalimentació
 transversal: cómo le gusta que se le explique algo, qué tono prefiere, qué tipo de
 ejemplos le sirven más, etc.
 
-_(Vacío por ahora — se llena con citas o resúmenes fieles de lo que Navas vaya
-diciendo, no con interpretaciones.)_
+- **2026-10-01, publicación del sitio:** "Está bien, sigue publicando directo en main". Los
+  cambios al sitio de `docs/` se suben a la rama de trabajo y se pasan directo a `main` (GitHub
+  Pages publica desde ahí), sin pull request, después de verificarlos.
