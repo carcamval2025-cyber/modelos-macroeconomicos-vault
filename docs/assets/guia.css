@@ -483,7 +483,7 @@ textarea.respuesta-libre:focus-visible{border-color:var(--tinta)}
 /* =====================================================================
    Portada
    ===================================================================== */
-.portada{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,540px);grid-template-areas:'titulo lienzo' 'pila lienzo';grid-template-rows:auto 1fr;max-width:calc(var(--ancho) + 80px);margin:0 auto}
+.portada{overflow-x:clip;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,540px);grid-template-areas:'titulo lienzo' 'pila lienzo';grid-template-rows:auto 1fr;max-width:calc(var(--ancho) + 80px);margin:0 auto}
 .portada > .titulo{grid-area:titulo;padding:28px clamp(16px,4vw,40px) 24px}
 .titulo h1{font-size:clamp(2.6rem,6vw,5rem);line-height:.95}
 .titulo p{margin-top:14px;max-width:46ch;color:var(--tenue);font-size:1.08rem}
@@ -530,6 +530,68 @@ footer > *{max-width:calc(var(--ancho) + 80px);margin-left:auto;margin-right:aut
 footer p{margin-top:8px}
 
 /* =====================================================================
+   Accesos a los materiales de cada Tema (repasos, actividades, simulacros)
+   ===================================================================== */
+.cab-mats{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:24px}
+.cab-mats span{font-weight:700;font-size:.9rem;margin-right:4px}
+.cab-mats a,.capa .mat{font-weight:700;font-size:.9rem;text-decoration:none;color:var(--k-txt);border:2px solid var(--k-txt);padding:5px 12px;line-height:1.3}
+.cab-mats a:hover,.capa .mat:hover{background:color-mix(in srgb,var(--k-txt) 14%,var(--k))}
+.cab-mats a[aria-current="page"]{background:var(--k-txt);color:#FFFFFF}
+.capa .mats{grid-column:2 / 4;display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.capa .mat{font-size:.84rem;padding:3px 10px}
+.cab-salto{font-weight:700;font-size:.9rem;white-space:nowrap;text-decoration:none;border-bottom:2px solid var(--tinta);padding:2px 0}
+.btn-armar{align-self:flex-start;font-weight:700;font-size:.9rem;padding:8px 14px;border:2px solid var(--tinta);background:transparent;color:var(--tinta)}
+.btn-armar:hover{background:var(--s2)}
+.pl-mov{stroke:var(--tinta);stroke-width:2.5;stroke-dasharray:2 6;stroke-linecap:round}
+.pl-mov-punta{fill:var(--tinta)}
+.nv-onda{fill:none;stroke:var(--c-is);stroke-width:2;pointer-events:none}
+.plano[data-resalta] [data-capa]{transition:opacity .25s var(--ease)}
+.plano[data-resalta] [data-capa]:not(.resaltada){opacity:.15}
+
+/* =====================================================================
+   Movimiento (solo con html.mm-motion, que guia.js agrega si no hay
+   prefers-reduced-motion). Ningún estado previo oculta contenido.
+   ===================================================================== */
+.mm-motion .cab-banda,.mm-motion .modulo-head,.mm-motion .seccion-titulo{position:relative;isolation:isolate}
+/* solo durante la entrada la banda vive en ::before para poder crecer; al terminar vuelve a ser el fondo del elemento */
+.mm-motion .mm-espera,.mm-motion .mm-anima{background:transparent}
+.mm-motion .mm-espera::before,.mm-motion .mm-anima::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--k);transform-origin:left center;transition:transform .9s var(--ease)}
+.mm-motion .mm-anima{transition:color .5s ease .3s}
+.mm-motion .mm-espera{color:var(--tinta)}
+.mm-motion .mm-espera::before{transform:scaleX(0);transition:none}
+.mm-motion .cab-in h1,.mm-motion .modulo-head h2,.mm-motion .seccion-titulo h2{transition:transform .9s var(--ease)}
+.mm-motion .cab-banda.mm-espera h1{transform:translateY(24px);transition:none}
+.mm-motion .mm-espera h2{transform:translateX(-18px);transition:none}
+.mm-motion .cab-banda.mm-espera .cab-meta,.mm-motion .cab-banda.mm-espera .cab-mats{transform:translateY(12px);transition:none}
+.mm-motion .cab-meta,.mm-motion .cab-mats{transition:transform .9s var(--ease) .12s}
+
+/* interacciones: respuesta táctil y retroalimentación que se mueve, sin ocultar */
+.mm-motion button,.mm-motion .cab-mats a,.mm-motion .capa .mat{transition:transform .12s ease,background-color .2s,color .2s,border-color .2s}
+.mm-motion button:active:not(:disabled),.mm-motion .cab-mats a:active,.mm-motion .capa .mat:active{transform:scale(.96)}
+.mm-motion .capa:not(.vacia){transition:transform .35s var(--ease)}
+.mm-motion .capa:not(.vacia):hover,.mm-motion .capa:not(.vacia):focus-within{transform:translateX(8px)}
+.mm-motion .herramienta a > *{transition:transform .35s var(--ease)}
+.mm-motion .herramienta a:hover > *,.mm-motion .herramienta a:focus-visible > *{transform:translateX(8px)}
+.mm-motion .v{transition:background-color .15s,color .15s}
+.mm-motion .plano [data-var]{transition:opacity .2s,stroke-width .2s}
+.mm-motion .panel-lista a{transition:background-color .2s,color .2s}
+.mm-motion .pregunta button.disparador .flecha{transition:transform .4s var(--ease)}
+.mm-motion .quiz-progress-bar,.mm-motion .pg-barra i{transition:width 1s var(--ease)}
+@keyframes mm-entra{from{transform:translateY(-10px)}to{transform:none}}
+@keyframes mm-pulso{0%{transform:none}35%{transform:scale(1.025)}100%{transform:none}}
+@keyframes mm-sacude{0%,100%{transform:none}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(3px)}}
+.mm-motion .quiz-explicacion.visible,.mm-motion .item[data-resuelto="true"] .retro,.mm-motion .vf[data-resuelto="true"] .vf-justif,
+.mm-motion .numerico[data-abierto="true"] .solucion,.mm-motion .pregunta[data-abierta="true"] .respuesta,.mm-motion .pr-resultado > p,
+.mm-motion .modelo-respuesta,.mm-motion .explicacion,.mm-motion .resultado-final{animation:mm-entra .5s var(--ease)}
+.mm-motion .quiz-opcion.correct,.mm-motion .item[data-resuelto="true"] .opcion[aria-checked="true"][data-correcta="true"],.mm-motion .fila-var.correcta{animation:mm-pulso .55s var(--ease)}
+.mm-motion .quiz-opcion.incorrect,.mm-motion .item[data-resuelto="true"] .opcion[aria-checked="true"][data-correcta="false"],.mm-motion .fila-var.incorrecta{animation:mm-sacude .45s ease}
+
+/* cambio de tema: el tema nuevo se abre en círculo desde el botón */
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+.mm-vt::view-transition-new(root){animation:mm-revela .7s var(--ease)}
+@keyframes mm-revela{from{clip-path:circle(0 at var(--vt-x) var(--vt-y))}to{clip-path:circle(var(--vt-r) at var(--vt-x) var(--vt-y))}}
+
+/* =====================================================================
    Responsive
    ===================================================================== */
 @media (max-width:900px){
@@ -544,6 +606,8 @@ footer p{margin-top:8px}
 }
 @media (max-width:640px){
   body{font-size:1rem}
+  .cab-marca small{display:none}
+  .cab-salto{font-size:.85rem}
   .bloque,.quiz-card,.item,.numerico,.vf,.pregunta-card,.predice{padding:18px 16px}
   .bloque-icono{flex-direction:column}
   .modulo-head{padding:14px 16px}

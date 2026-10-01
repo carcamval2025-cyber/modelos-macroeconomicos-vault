@@ -52,6 +52,18 @@ por pasos con confirmación. Ver [[Sistema de Diseño HTML]] para el sistema res
 - Safari y Firefox (solo Chromium en esta sesión).
 - `prefers-reduced-transparency` solo se emuló por CDP en Chromium.
 
+## Seguimiento 2026-10-01
+
+- Fusionado en `main` y publicado en GitHub Pages.
+- Navas reportó que no encontraba cómo entrar a los repasos. Causa: la página del Tema 2 no
+  enlazaba a su simulador ni a su simulacro, y en la portada los repasos solo estaban en la lista
+  final. Se agregó la navegación de materiales por Tema en todas las cabeceras y accesos directos
+  en cada capa de la portada. Lección: cada material publicado debe ser alcanzable desde la
+  portada en un clic y desde cualquier página de su Tema.
+- Navas pidió más movimiento: se agregaron animaciones con propósito (ver "Movimiento" en
+  `02 Curso/Sistema de Diseño HTML.md`). Verificación Playwright ampliada a 99 comprobaciones,
+  incluida la ausencia total de animaciones con movimiento reducido.
+
 ## Ver también
 
 [[Errores Comunes a Evitar]] · [[Patrones que Funcionan Bien]] · `AGENTS.md`

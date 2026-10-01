@@ -107,6 +107,44 @@ Reglas de color:
 - **Próxima evaluación:** calculada con las fechas de `MM.EVALUACIONES` (copiadas del
   Cronograma). Si el Cronograma cambia, actualizar ahí.
 
+## Accesos a los materiales (2026-10-01)
+
+Navas no encontraba los repasos: solo eran visibles al final de la portada y la página del
+Tema 2 no enlazaba a su simulador ni a su simulacro. Ahora:
+
+- Cada página de Tema lleva en la cabecera `nav.cab-mats` con **todos** los materiales de ese
+  Tema (guía, repaso, actividad, simulador, simulacro); el actual va marcado con
+  `aria-current="page"`. Al publicar un material nuevo, agregarlo en las `cab-mats` de todas
+  las páginas de su Tema.
+- En la portada, cada capa muestra sus materiales como accesos directos (campo `materiales` del
+  arreglo `TEMAS`), la barra superior tiene "Repasos y práctica" y la sección se llama
+  "Repasos, actividades y simulacros".
+
+## Movimiento (2026-10-01)
+
+Todo pasa por `MM.animar` / `MM.trazar` en `guia.js` (Web Animations) o por reglas bajo
+`html.mm-motion` en `guia.css`. Reglas:
+
+- Con `prefers-reduced-motion: reduce` no hay ninguna animación ni la clase `mm-motion`.
+- Ningún estado previo oculta contenido: las entradas solo desplazan, o pintan la banda de color
+  mientras el texto queda en color de tinta, legible sobre el fondo. Si la pestaña pasa a segundo
+  plano, las animaciones en curso se completan de golpe.
+- Curva `cubic-bezier(0.16, 1, 0.3, 1)`; nada de rebote salvo el "pop" de los puntos.
+
+Qué se anima y por qué:
+
+- **Portada:** las capas llegan en orden y el diagrama se dibuja pieza por pieza (el modelo se
+  arma). El botón "Ver cómo se arma el modelo" repite la secuencia. Encender una capa la dibuja;
+  apagarla la desvanece. Pasar o enfocar una capa resalta su pieza en el diagrama.
+- **Cabecera y títulos de módulo:** la banda del Tema crece de izquierda a derecha al llegar.
+- **Índice-diagrama:** una onda marca cada cambio de sección.
+- **Predice antes de ver:** la respuesta se traza y el equilibrio viaja de A a A′ con una
+  flecha que queda dibujada (a lo largo de la LM o de la IS: el dato que hay que aprender).
+- **Retroalimentación:** la explicación entra deslizándose; la respuesta correcta late, la
+  incorrecta tiembla.
+- **Cambio de tema:** el tema nuevo se abre en círculo desde el botón (View Transitions).
+- **Barras de progreso:** crecen desde cero.
+
 ## Reglas técnicas
 
 - Sin `<form>`; eventos JS. HTML/CSS/JS plano, sin build ni librerías externas; abre directo

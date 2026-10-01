@@ -14,6 +14,7 @@
 <header class="cab">
   <div class="cab-barra">
     <a class="cab-marca" href="index.html" aria-current="page"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect x="6" y="7" width="52" height="10" fill="#F0B429"/><rect x="6" y="21" width="41" height="10" fill="#F2552C"/><rect x="6" y="35" width="30" height="10" fill="#C65BD6"/><rect x="6" y="49" width="19" height="10" fill="#22B8A0"/></svg><span><b>Macro II</b><small>Modelos Macroeconómicos · ESEN</small></span></a>
+    <a class="cab-salto" href="#herramientas">Repasos y práctica</a>
     <button class="btn-tema" type="button" data-btn-tema>Tema oscuro</button>
   </div>
 </header>
@@ -29,12 +30,13 @@
     <div class="lienzo">
       <svg class="plano" id="modelo" role="img" aria-label="Diagrama del modelo del curso compuesto por las capas encendidas: plano (i, Y) y tasa del banco central (Tema 1), curvas IS y LM con equilibrio A (Tema 2), desplazamiento de la IS por la prima de riesgo x (Tema 3) y vínculo con la tasa externa i* (Tema 4)."></svg>
       <p id="lienzoEstado" aria-live="polite"></p>
+      <button class="btn-armar" type="button" id="btnArmar">Ver cómo se arma el modelo</button>
     </div>
   </section>
 
   <section class="seccion-portada" id="herramientas" aria-labelledby="t-herr">
-    <h2 id="t-herr">Herramientas de práctica</h2>
-    <p>Simuladores, simulacros y actividades para repasar antes de un Control o Parcial. Tus aciertos se guardan en este navegador y se suman a la capa de su Tema.</p>
+    <h2 id="t-herr">Repasos, actividades y simulacros</h2>
+    <p>Todo el material de práctica para preparar un Control o el Parcial, ordenado por Tema. Tus aciertos se guardan en este navegador y se suman a la capa de su Tema.</p>
     <ul class="herramientas" id="herramientasLista"></ul>
   </section>
 
@@ -62,16 +64,17 @@
 /* Para publicar un Tema: cambiar disponible:false a disponible:true (ver AGENTS.md, sección GitHub Pages).
    k es la variable que colorea su capa: Y, IS, x o ext. */
 const TEMAS = [
-  {n:1, nombre:'Repaso de Macro I', capitulo:'Cap. 4 (secc. 4.3 en adelante)', semana:'Semana 1', disponible:true, href:'tema-01/', k:'Y', pieza:'Y = Z'},
-  {n:2, nombre:'Modelo IS-LM', capitulo:'Cap. 5', semana:'Semana 2', disponible:true, href:'tema-02/', k:'IS', pieza:'IS y LM'},
-  {n:3, nombre:'IS-LM + Temas Financieros', capitulo:'Cap. 6', semana:'Semana 3', disponible:true, href:'tema-03/', k:'x', pieza:'r + x'},
-  {n:4, nombre:'IS-LM + Apertura Comercial/Financiera', capitulo:'Cap. 17 (partes seleccionadas)', semana:'Semana 4', disponible:true, href:'tema-04/', k:'ext', pieza:'ε y UIP'},
+  {n:1, nombre:'Repaso de Macro I', capitulo:'Cap. 4 (secc. 4.3 en adelante)', semana:'Semana 1', disponible:true, href:'tema-01/', k:'Y', pieza:'Y = Z', materiales:[['tema-01/','Guía']]},
+  {n:2, nombre:'Modelo IS-LM', capitulo:'Cap. 5', semana:'Semana 2', disponible:true, href:'tema-02/', k:'IS', pieza:'IS y LM', materiales:[['tema-02/','Repaso Control 1'],['tema-02/simulador-islm.html','Simulador'],['tema-02/simulacro-control1.html','Simulacro']]},
+  {n:3, nombre:'IS-LM + Temas Financieros', capitulo:'Cap. 6', semana:'Semana 3', disponible:true, href:'tema-03/', k:'x', pieza:'r + x', materiales:[['tema-03/','Guía y laboratorio']]},
+  {n:4, nombre:'IS-LM + Apertura Comercial/Financiera', capitulo:'Cap. 17 (partes seleccionadas)', semana:'Semana 4', disponible:true, href:'tema-04/', k:'ext', pieza:'ε y UIP', materiales:[['tema-04/','Guía'],['tema-04/actividad-tema4-apertura.html','Actividad'],['tema-04/repaso-control2-tema4-apertura.html','Repaso Control 2']]},
   {n:5, nombre:'Mercado Laboral', capitulo:'Caps. 7 y 8', semana:'Semanas 7 y 8', disponible:false, href:'tema-05/'},
   {n:6, nombre:'IS-LM-PC', capitulo:'Cap. 9', semana:'Semanas 9 y 10', disponible:false, href:'tema-06/'},
   {n:7, nombre:'Crecimiento Económico', capitulo:'Caps. 10 y 11', semana:'Semana 11', disponible:false, href:'tema-07/'},
 ];
 
 const HERRAMIENTAS = [
+  {tema:2, nombre:'Repaso integrador para el Control 1', descripcion:'Curvas IS y LM, equilibrio y política fiscal y monetaria, con los ejercicios de la Guía de ejercicios 1 resueltos o guiados.', href:'tema-02/'},
   {tema:2, nombre:'Simulador de choques IS-LM', descripcion:'Elige un choque fiscal, monetario o exógeno, predice el efecto en 11 variables y verifica contra el gráfico.', href:'tema-02/simulador-islm.html'},
   {tema:2, nombre:'Predice antes de ver', descripcion:'Decide hacia dónde se mueven la IS y la LM ante cada choque; el diagrama dibuja tu predicción junto a la respuesta.', href:'tema-02/#predice'},
   {tema:2, nombre:'Simulacro del Control 1', descripcion:'10 preguntas con cronómetro de 25 min, al estilo del Control (no es el Control real).', href:'tema-02/simulacro-control1.html'},
@@ -106,17 +109,34 @@ const HERRAMIENTAS = [
       '<span class="acc">' + (t.disponible
         ? '<span class="pz">' + t.pieza + '</span><button type="button" aria-pressed="true"><span class="sr">Tema ' + t.n + ': </span>En el diagrama</button>'
         : '<span>Por publicar</span>') + '</span>' +
+      (t.disponible ? '<span class="mats" role="group" aria-label="Materiales del Tema ' + t.n + '">' + t.materiales.map(m => '<a class="mat" href="' + m[0] + '">' + m[1] + '</a>').join('') + '</span>' : '') +
       (t.disponible ? '<span class="pg" data-progreso="' + t.n + '"><span class="pg-barra" aria-hidden="true"><i></i></span><span class="pg-num"></span></span>' : '');
     const b = li.querySelector('button');
     if (b) b.addEventListener('click', () => {
       const on = b.getAttribute('aria-pressed') === 'true';
       b.setAttribute('aria-pressed', on ? 'false' : 'true');
       encendidas = on ? encendidas.filter(n => n !== t.n) : encendidas.concat(t.n);
-      pintar();
+      if (on) { MM.apagarCapa(svg, t.n, pintar); }
+      else { pintar(); MM.armar(svg, [t.n]); }
     });
+    // al pasar por una capa, el diagrama resalta solo la pieza de ese Tema
+    if (t.disponible) {
+      li.addEventListener('mouseenter', () => MM.resaltarCapa(svg, t.n));
+      li.addEventListener('mouseleave', () => MM.resaltarCapa(svg, null));
+      li.addEventListener('focusin', () => MM.resaltarCapa(svg, t.n));
+      li.addEventListener('focusout', () => MM.resaltarCapa(svg, null));
+    }
     pila.appendChild(li);
   });
   pintar();
+
+  // entrada: las capas llegan en orden y el diagrama se dibuja pieza por pieza
+  if (MM.movimiento()) {
+    pila.querySelectorAll('.capa').forEach((li, k) => MM.animar(li,
+      [{transform:'translateX(-40px)'}, {transform:'none'}], {duration:800, delay:k * 110}));
+  }
+  MM.armar(svg, encendidas);
+  document.getElementById('btnArmar').addEventListener('click', () => MM.armar(svg, encendidas));
 
   const lista = document.getElementById('herramientasLista');
   HERRAMIENTAS.forEach(h => {

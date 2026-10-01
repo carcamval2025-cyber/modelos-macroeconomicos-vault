@@ -15,6 +15,114 @@
   var reducido = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function cada(sel, fn, raiz) { [].forEach.call((raiz || document).querySelectorAll(sel), fn); }
 
+  /* ---------- Movimiento ----------
+     Toda animación pasa por aquí: se omite con prefers-reduced-motion, nunca deja contenido
+     oculto (solo mueve o dibuja trazos) y se completa de golpe si la pestaña pasa a segundo plano. */
+  var EASE = 'cubic-bezier(0.16, 1, 0.3, 1)';
+  var vivas = [];
+  MM.movimiento = function () {
+    return !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) &&
+      typeof Element.prototype.animate === 'function';
+  };
+  MM.animar = function (el, cuadros, opts) {
+    if (!el || !MM.movimiento()) return null;
+    opts = opts || {};
+    var a = el.animate(cuadros, {
+      duration: opts.duration || 600, delay: opts.delay || 0,
+      easing: opts.easing || EASE, fill: opts.fill || 'backwards'
+    });
+    vivas.push(a);
+    var quitar = function () { var k = vivas.indexOf(a); if (k > -1) vivas.splice(k, 1); };
+    a.addEventListener('finish', quitar);
+    a.addEventListener('cancel', quitar);
+    return a;
+  };
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) vivas.slice().forEach(function (a) { try { a.finish(); } catch (e) { /* ya terminó */ } });
+  });
+  // dibuja un trazo de punta a punta (líneas continuas); los trazos punteados entran deslizándose
+  MM.trazar = function (el, delay, dur) {
+    if (!MM.movimiento() || !el.getTotalLength) return null;
+    var punteado = getComputedStyle(el).strokeDasharray;
+    if (punteado && punteado !== 'none') {
+      return MM.animar(el, [{ opacity: 0, transform: 'translateX(-12px)' }, { opacity: 1, transform: 'none' }], { duration: dur, delay: delay });
+    }
+    var L = el.getTotalLength();
+    if (!L) return null;
+    return MM.animar(el, [
+      { strokeDasharray: L + ' ' + L, strokeDashoffset: L },
+      { strokeDasharray: L + ' ' + L, strokeDashoffset: 0 }
+    ], { duration: dur, delay: delay });
+  };
+  MM.aparecer = function (el, delay) {
+    el.style.transformBox = 'fill-box';
+    el.style.transformOrigin = 'center';
+    return MM.animar(el, [{ opacity: 0, transform: 'scale(.3)' }, { opacity: 1, transform: 'none' }], { duration: 520, delay: delay, easing: 'cubic-bezier(0.34, 1.3, 0.64, 1)' });
+  };
+  // el modelo se arma: cada capa se dibuja después de la anterior
+  MM.armar = function (svg, capas) {
+    if (!MM.movimiento() || document.hidden) return;
+    (svg._anims || []).forEach(function (a) { try { a.cancel(); } catch (e) { /* nada */ } });
+    svg._anims = [];
+    capas.slice().sort(function (a, b) { return a - b; }).forEach(function (n, k) {
+      var g = svg.querySelector('[data-capa="' + n + '"]');
+      if (!g) return;
+      var base = k * 450, i = 0;
+      [].forEach.call(g.children, function (el) {
+        var a = null, tag = el.tagName.toLowerCase();
+        if (tag === 'line' || tag === 'path') a = MM.trazar(el, base + (i++) * 90, 750);
+        else if (tag === 'circle') a = MM.aparecer(el, base + 520);
+        else if (tag === 'text') a = MM.animar(el, [{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }], { duration: 450, delay: base + 420 });
+        if (a) svg._anims.push(a);
+      });
+    });
+  };
+  MM.apagarCapa = function (svg, n, listo) {
+    var g = svg.querySelector('[data-capa="' + n + '"]');
+    var a = g && MM.animar(g, [{ opacity: 1 }, { opacity: 0 }], { duration: 260, fill: 'forwards' });
+    if (!a) { listo(); return; }
+    a.onfinish = function () { listo(); a.cancel(); };
+  };
+  MM.resaltarCapa = function (svg, n) {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-transparency: reduce)').matches) return;
+    if (n === null) { svg.removeAttribute('data-resalta'); }
+    else svg.setAttribute('data-resalta', n);
+    cada('[data-capa]', function (g) { g.classList.toggle('resaltada', n !== null && +g.getAttribute('data-capa') === n); }, svg);
+  };
+
+  /* entradas: la banda del Tema y los títulos de módulo se pintan al llegar.
+     El estado previo es legible (texto en color de tinta sobre el fondo), nunca invisible. */
+  function revelar(el) {
+    el.classList.add('mm-anima');
+    el.classList.remove('mm-espera');
+    setTimeout(function () { el.classList.remove('mm-anima'); }, 1300);
+  }
+  function entradas() {
+    var raiz = document.documentElement;
+    function aplicar() { raiz.classList.toggle('mm-motion', MM.movimiento()); }
+    aplicar();
+    if (window.matchMedia) {
+      var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (mq.addEventListener) mq.addEventListener('change', aplicar);
+    }
+    if (!MM.movimiento() || document.hidden) return;
+    var banda = document.querySelector('.cab-banda');
+    if (banda) {
+      banda.classList.add('mm-espera');
+      requestAnimationFrame(function () { requestAnimationFrame(function () { revelar(banda); }); });
+    }
+    if (!('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { revelar(e.target); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -12% 0px' });
+    cada('.modulo-head, .seccion-titulo', function (h) {
+      if (h.getBoundingClientRect().top > window.innerHeight) { h.classList.add('mm-espera'); io.observe(h); }
+    });
+    window.addEventListener('beforeprint', function () { cada('.mm-espera', function (e) { e.classList.remove('mm-espera'); }); });
+  }
+
   /* ---------- Fechas de evaluación (02 Curso/Cronograma.md) ---------- */
   MM.EVALUACIONES = [
     { f: '2026-09-07', nombre: 'Control 1' },
@@ -98,7 +206,8 @@
       var num = e.querySelector('.pg-num'), barra = e.querySelector('.pg-barra i');
       var texto = r.total ? r.aciertos + ' de ' + r.total + ' aciertos guardados' : 'Sin aciertos guardados todavía';
       if (num) num.textContent = texto;
-      if (barra) barra.style.width = r.total ? Math.round(Math.min(1, r.aciertos / r.total) * 100) + '%' : '0%';
+      var ancho = r.total ? Math.round(Math.min(1, r.aciertos / r.total) * 100) + '%' : '0%';
+      if (barra) requestAnimationFrame(function () { requestAnimationFrame(function () { barra.style.width = ancho; }); });
     });
     cada('[data-proxima]', function (e) { e.textContent = MM.textoProxima(); });
   };
@@ -262,7 +371,22 @@
       var ib = M.ibar + dI[esc.lm], a = M.a + dA[esc.is];
       el('line', { x1: f.X(0), y1: f.Yc(ib), x2: f.X(0.98), y2: f.Yc(ib), class: 'pl-lm', 'data-var': 'i LM' }, svg);
       lineaIS(svg, f, a, { class: 'pl-is', 'data-var': 'IS' });
-      el('circle', { cx: f.X(MM.eqY(a, ib)), cy: f.Yc(ib), r: 7, class: 'pl-eq' }, svg);
+      var bx = f.X(MM.eqY(M.a, M.ibar)), by = f.Yc(M.ibar), nx = f.X(MM.eqY(a, ib)), ny = f.Yc(ib);
+      var lineas = [].slice.call(svg.querySelectorAll('.pl-lm:not(.pl-tuya), .pl-is:not(.pl-tuya)'));
+      // flecha del movimiento del equilibrio: a lo largo de la LM o a lo largo de la IS
+      var mov = null;
+      if (Math.abs(nx - bx) + Math.abs(ny - by) > 1) {
+        var id = svgId(svg) + '-mov';
+        var defs = el('defs', {}, svg);
+        var m = el('marker', { id: id, viewBox: '0 0 10 10', refX: 8, refY: 5, markerWidth: 6, markerHeight: 6, orient: 'auto-start-reverse' }, defs);
+        el('path', { d: 'M0 0L10 5L0 10z', class: 'pl-mov-punta' }, m);
+        var k = 10 / Math.hypot(nx - bx, ny - by);
+        mov = el('line', { x1: bx, y1: by, x2: nx - (nx - bx) * k, y2: ny - (ny - by) * k, class: 'pl-mov', 'marker-end': 'url(#' + id + ')' }, svg);
+      }
+      var punto = el('circle', { cx: nx, cy: ny, r: 7, class: 'pl-eq' }, svg);
+      lineas.forEach(function (ln) { MM.trazar(ln, 0, 650); });
+      if (mov) MM.trazar(mov, 600, 800);
+      MM.animar(punto, [{ transform: 'translate(' + (bx - nx) + 'px,' + (by - ny) + 'px)' }, { transform: 'none' }], { duration: 800, delay: 600 });
     }
   }
 
@@ -329,6 +453,13 @@
     var mini = nav.querySelector('.panel-boton svg'), actual = nav.querySelector('[data-nav-actual]');
     if (mini) mini.setAttribute('viewBox', svg.getAttribute('viewBox'));
 
+    var previo = -1;
+    function onda(p) {
+      var c = el('circle', { cx: p[0], cy: p[1], r: 7, class: 'nv-onda' }, svg);
+      c.style.transformBox = 'fill-box'; c.style.transformOrigin = 'center';
+      var a = MM.animar(c, [{ transform: 'scale(1)', opacity: 0.9 }, { transform: 'scale(3.2)', opacity: 0 }], { duration: 700, fill: 'forwards' });
+      if (a) a.addEventListener('finish', function () { c.remove(); }); else c.remove();
+    }
     function actualizar() {
       var corte = window.innerHeight * 0.35, idx = 0, frac = 0;
       for (var k = 0; k < n; k++) {
@@ -345,6 +476,8 @@
         if (k === idx) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current');
         marcas[k].classList.toggle('nv-activa', k === idx);
       });
+      if (previo > -1 && previo !== idx) onda(pos(n === 1 ? 0.5 : idx / (n - 1)));
+      previo = idx;
       if (actual) actual.textContent = (idx + 1) + '. ' + enlaces[idx].textContent;
       if (mini) mini.innerHTML = svg.innerHTML;
     }
@@ -408,11 +541,21 @@
       btn.textContent = oscuro ? 'Tema claro' : 'Tema oscuro';
       btn.setAttribute('aria-label', oscuro ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro');
     }
-    btn.addEventListener('click', function () {
+    function cambiar() {
       var t = actual() === 'dark' ? 'light' : 'dark';
       raiz.setAttribute('data-theme', t);
       try { localStorage.setItem('mm-tema', t); } catch (e) { /* solo en esta visita */ }
       pintar();
+    }
+    btn.addEventListener('click', function () {
+      if (!document.startViewTransition || !MM.movimiento()) { cambiar(); return; }
+      var r = btn.getBoundingClientRect(), x = r.left + r.width / 2, y = r.top + r.height / 2;
+      raiz.style.setProperty('--vt-x', x + 'px');
+      raiz.style.setProperty('--vt-y', y + 'px');
+      raiz.style.setProperty('--vt-r', Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y)) + 'px');
+      raiz.classList.add('mm-vt');
+      var vt = document.startViewTransition(cambiar);
+      vt.finished.then(function () { raiz.classList.remove('mm-vt'); }, function () { raiz.classList.remove('mm-vt'); });
     });
     pintar();
   };
@@ -421,6 +564,7 @@
   MM.irA = function (el) { if (el) el.scrollIntoView({ behavior: reducido ? 'auto' : 'smooth', block: 'start' }); };
 
   function iniciar() {
+    entradas();
     cada('[data-btn-tema]', MM.botonTema);
     cada('nav[data-nav-eq]', MM.navEq);
     cada('[data-predice]', MM.predice);
