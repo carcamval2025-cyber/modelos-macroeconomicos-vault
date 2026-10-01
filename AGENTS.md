@@ -134,6 +134,8 @@ checklist en `02 Curso/Sistema de Diseño HTML.md`; registro del proceso en
   navegador que la portada suma por Tema, próxima evaluación calculada desde el cronograma.
 - **Diagramas SVG heredados:** láminas oscuras en ambos temas, recoloreadas por tabla de
   equivalencias sin mover geometría ni etiquetas.
+- **Prompt para material nuevo:** `01 Meta - Aprendizaje/Prompt - Material nuevo con diseño Capas del
+  modelo.md` (esqueleto, componentes, interacciones y checklist de publicación).
 - **Accesos y movimiento (2026-10-01):** cada página de Tema enlaza todos los materiales de su
   Tema en la cabecera (`nav.cab-mats`); la portada los muestra en cada capa. Animaciones con
   propósito (el modelo se dibuja pieza por pieza, el equilibrio viaja en las predicciones), todas
