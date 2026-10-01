@@ -34,6 +34,17 @@
     </div>
   </section>
 
+  <section class="pp" data-k="parcial" id="parcial" aria-labelledby="t-parcial">
+    <div class="pp-in">
+      <p class="pp-kicker">Parcial · Temas 1 a 4</p>
+      <h2 id="t-parcial">Preparación del parcial</h2>
+      <p>Las cuatro capas juntas, con el formato de tus guías: un repaso integrador, la resolución comentada de tus guías, un banco de ejercicios con pauta y un simulacro cronometrado.</p>
+      <div class="cab-capas" aria-hidden="true"><i data-k="Y"></i><i data-k="IS"></i><i data-k="x"></i><i data-k="ext"></i></div>
+      <nav class="cab-mats" aria-label="Materiales del parcial"><a href="parcial-t1-t4/index.html">Inicio del parcial</a><a href="parcial-t1-t4/01-repaso-integrador.html">Repaso integrador</a><a href="parcial-t1-t4/02-resolucion-comentada.html">Resolución comentada</a><a href="parcial-t1-t4/03-banco-ejercicios.html">Banco de ejercicios</a><a href="parcial-t1-t4/04-simulacro-parcial.html">Simulacro</a></nav>
+      <p class="pg" data-progreso="parcial"><span class="pg-barra" aria-hidden="true"><i></i></span><span class="pg-num"></span></p>
+    </div>
+  </section>
+
   <section class="seccion-portada" id="herramientas" aria-labelledby="t-herr">
     <h2 id="t-herr">Repasos, actividades y simulacros</h2>
     <p>Todo el material de práctica para preparar un Control o el Parcial, ordenado por Tema. Tus aciertos se guardan en este navegador y se suman a la capa de su Tema.</p>
@@ -48,7 +59,6 @@
   <section class="seccion-portada" id="recursos" aria-labelledby="t-recursos">
     <h2 id="t-recursos">Recursos</h2>
     <dl class="recursos">
-      <dt>Parcial · Temas 1–4</dt><dd><a href="parcial-t1-t4/index.html">Preparación del parcial: repaso, resolución comentada, banco de ejercicios y simulacro</a></dd>
       <dt>Bibliografía</dt><dd>Blanchard, <em>Macroeconomics</em>, 9.ª ed.</dd>
       <dt>Duración</dt><dd>12 semanas; calendario oficial en <code>02 Curso/Cronograma.md</code></dd>
       <dt>Repositorio</dt><dd><a href="https://github.com/carcamval2025-cyber/modelos-macroeconomicos-vault">github.com/carcamval2025-cyber/modelos-macroeconomicos-vault</a></dd>
@@ -75,6 +85,10 @@ const TEMAS = [
 ];
 
 const HERRAMIENTAS = [
+  {tema:'parcial', nombre:'Repaso integrador del parcial', descripcion:'Los cuatro temas en un solo mapa: método para las tablas de signos, fórmulas, diagramas y la tabla maestra de choques.', href:'parcial-t1-t4/01-repaso-integrador.html'},
+  {tema:'parcial', nombre:'Resolución comentada de tus guías', descripcion:'Guía de preparación del parcial y Guía de ejercicios 1 resueltas casilla por casilla, con modo práctica.', href:'parcial-t1-t4/02-resolucion-comentada.html'},
+  {tema:'parcial', nombre:'Banco de ejercicios del parcial', descripcion:'Tablas de signos, verdadero o falso, problemas y preguntas cortas nuevos, con retroalimentación inmediata.', href:'parcial-t1-t4/03-banco-ejercicios.html'},
+  {tema:'parcial', nombre:'Simulacro de parcial cronometrado', descripcion:'Examen completo de 100 puntos con tiempo, puntaje y revisión al final.', href:'parcial-t1-t4/04-simulacro-parcial.html'},
   {tema:2, nombre:'Repaso integrador para el Control 1', descripcion:'Curvas IS y LM, equilibrio y política fiscal y monetaria, con los ejercicios de la Guía de ejercicios 1 resueltos o guiados.', href:'tema-02/'},
   {tema:2, nombre:'Simulador de choques IS-LM', descripcion:'Elige un choque fiscal, monetario o exógeno, predice el efecto en 11 variables y verifica contra el gráfico.', href:'tema-02/simulador-islm.html'},
   {tema:2, nombre:'Predice antes de ver', descripcion:'Decide hacia dónde se mueven la IS y la LM ante cada choque; el diagrama dibuja tu predicción junto a la respuesta.', href:'tema-02/#predice'},
@@ -141,10 +155,11 @@ const HERRAMIENTAS = [
 
   const lista = document.getElementById('herramientasLista');
   HERRAMIENTAS.forEach(h => {
-    const tema = TEMAS[h.tema - 1];
+    const esParcial = h.tema === 'parcial';
+    const k = esParcial ? 'parcial' : TEMAS[h.tema - 1].k;
     const li = document.createElement('li');
     li.className = 'herramienta';
-    li.innerHTML = '<a href="' + h.href + '"><span class="t" data-k="' + tema.k + '">Tema ' + h.tema + '</span><b>' + h.nombre + '</b><span class="d">' + h.descripcion + '</span></a>';
+    li.innerHTML = '<a href="' + h.href + '"><span class="t" data-k="' + k + '">' + (esParcial ? 'Parcial' : 'Tema ' + h.tema) + '</span><b>' + h.nombre + '</b><span class="d">' + h.descripcion + '</span></a>';
     lista.appendChild(li);
   });
 })();

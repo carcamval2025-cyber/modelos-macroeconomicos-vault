@@ -1,318 +1,48 @@
-<!doctype html>
-<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Parcial · Temas 1–4</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#080C1C; --bg-elev:#10172D; --bg-elev2:#1B223C; --border:#2A324A;
-  --text:#EFF2F9; --text-dim:#A3AABE;
-  --indigo-mid:#667FDA; --coral:#FF6F4A; --coral-2:#FFB188;
-  --success:#55C975; --danger:#FB5668; --warn:#F2C14E;
-  --ease:cubic-bezier(0.16,1,0.3,1);
-}
-*{box-sizing:border-box; margin:0; padding:0;}
-html{background:var(--bg); scroll-behavior:smooth;}
-body{
-  font-family:'Inter',system-ui,sans-serif; background:var(--bg); color:var(--text); line-height:1.65; font-weight:400;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M48 0H0V48' fill='none' stroke='%232A324A' stroke-width='0.6' opacity='0.35'/%3E%3Ccircle cx='0' cy='0' r='1' fill='%23667FDA' opacity='0.25'/%3E%3C/svg%3E");
-  background-attachment:fixed;
-}
-h1,h2,h3,h4{font-family:'Fraunces',serif; color:var(--text); letter-spacing:-0.02em;}
-em{font-style:italic; color:var(--coral);}
-.mono{font-family:'JetBrains Mono',monospace; font-variant-numeric:tabular-nums;}
-a{color:var(--coral-2);}
-a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, summary:focus-visible{ outline:2px solid var(--coral); outline-offset:3px; border-radius:4px; }
-header{ background:var(--bg-elev); border-bottom:1px solid var(--border); padding:72px 24px 52px; }
-header .wrap{max-width:900px; margin:0 auto;}
-.volver{ display:inline-flex; align-items:center; gap:6px; font-family:'JetBrains Mono',monospace; font-size:0.76rem; color:var(--text-dim); text-decoration:none; margin-bottom:22px; }
-.volver:hover{color:var(--coral-2);}
-.eyebrow{ font-family:'JetBrains Mono',monospace; font-size:0.76rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--coral); font-weight:600; margin-bottom:18px; }
-h1{font-size:clamp(2rem, 5vw, 3rem); font-weight:600; margin-bottom:14px; text-wrap:balance;}
-header p.sub{color:var(--text-dim); max-width:64ch; font-size:1.02rem;}
-.meta-row{display:flex; gap:8px; flex-wrap:wrap; margin-top:26px;}
-.chip{padding:2px; border-radius:9px; background:rgba(239,242,249,0.04);}
-.chip-in{ display:block; font-family:'JetBrains Mono',monospace; font-size:0.76rem; color:var(--text-dim); background:var(--bg); border:1px solid var(--border); border-radius:7px; padding:6px 12px; }
-main{max-width:900px; margin:0 auto; padding:48px 24px 110px;}
-.modnav{ display:flex; gap:2px; margin-bottom:48px; width:fit-content; max-width:100%; flex-wrap:wrap; border:1px solid var(--border); border-radius:10px; padding:4px; background:var(--bg-elev); }
-.modnav a{ font-family:'JetBrains Mono',monospace; font-size:0.74rem; color:var(--text-dim); text-decoration:none; padding:8px 12px; border-radius:7px; transition:background .2s var(--ease), color .2s var(--ease); white-space:nowrap; }
-.modnav a:hover{background:var(--bg-elev2); color:var(--text);}
-.modulo{padding-top:44px; border-top:1px solid var(--border); margin-top:72px; scroll-margin-top:70px;}
-.modulo:first-of-type{margin-top:0; border-top:0; padding-top:0;}
-.modulo-head{display:flex; align-items:flex-end; gap:16px; margin-bottom:16px;}
-.modulo-num{font-family:'Fraunces',serif; font-style:italic; font-weight:500; font-size:2.1rem; line-height:1; color:var(--text-dim);}
-.modulo-head h2{font-size:1.4rem; font-weight:600;}
-.modulo-text{color:var(--text-dim); font-size:0.94rem; max-width:68ch; margin-bottom:26px;}
-.reveal.reveal-play{opacity:0; transform:translateY(14px);}
-.reveal.reveal-play.reveal-in{ opacity:1; transform:translateY(0); transition:opacity .7s var(--ease), transform .7s var(--ease); }
-@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto;} .reveal.reveal-play{opacity:1; transform:none;} *{transition:none !important;} }
-.bezel{padding:5px; border-radius:15px; background:rgba(239,242,249,0.035); border:1px solid var(--border); margin-bottom:20px;}
-.bezel-in{border-radius:11px; background:var(--bg-elev); box-shadow:inset 0 1px 0 rgba(239,242,249,0.05); padding:22px 24px;}
-.bloque{ background:var(--bg-elev); border:1px solid var(--border); border-radius:12px; padding:20px 24px; margin-bottom:16px; }
-.bloque h3{font-size:1.05rem; font-weight:600; margin-bottom:8px;}
-.bloque h4{font-size:0.95rem; font-weight:600; margin:14px 0 4px;}
-.bloque p{font-size:0.95rem;} .bloque p + p{margin-top:10px;}
-.bloque ul, .bloque ol{margin:8px 0 0 20px; font-size:0.94rem;} .bloque li{margin-bottom:6px;}
-.grid2{display:grid; grid-template-columns:1fr 1fr; gap:16px;} .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
-@media (max-width:760px){.grid2,.grid3{grid-template-columns:1fr;}}
-.ecuacion{ background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:11px 16px; margin:10px 0; font-family:'JetBrains Mono',monospace; font-size:0.9rem; color:var(--text); overflow-x:auto; }
-.ecuacion small{display:block; color:var(--text-dim); font-family:'Inter',sans-serif; font-size:0.78rem; margin-top:4px;}
-.recuadro{ background:rgba(255,111,74,0.06); border:1px solid rgba(255,111,74,0.35); border-radius:12px; padding:18px 22px; margin:16px 0; }
-.recuadro.ok{background:rgba(85,201,117,0.08); border-color:rgba(85,201,117,0.4);} .recuadro.ok .recuadro-tag{color:var(--success);}
-.recuadro.bad{background:rgba(251,86,104,0.08); border-color:rgba(251,86,104,0.4);} .recuadro.bad .recuadro-tag{color:var(--danger);}
-.recuadro.info{background:rgba(102,127,218,0.08); border-color:rgba(102,127,218,0.4);} .recuadro.info .recuadro-tag{color:var(--indigo-mid);}
-.recuadro-tag{ font-family:'JetBrains Mono',monospace; font-size:0.7rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--coral); font-weight:600; margin-bottom:8px; display:block; }
-.recuadro p{font-size:0.93rem;} .recuadro p + p{margin-top:8px;} .recuadro ul{margin:6px 0 0 20px; font-size:0.93rem;}
-.fig{background:var(--bg-elev); border:1px solid var(--border); border-radius:12px; padding:14px; margin:14px 0; text-align:center;}
-.fig svg{max-width:100%; height:auto;}
-.fig figcaption{font-size:0.8rem; color:var(--text-dim); margin-top:8px; text-align:left;}
-svg text{font-family:'JetBrains Mono',monospace; fill:#A3AABE; font-size:11px;}
-svg .lbl{fill:#EFF2F9;} svg .is{stroke:#FF6F4A;} svg .lm{stroke:#667FDA;}
-table.tbl{width:100%; border-collapse:collapse; font-size:0.86rem; margin:10px 0;}
-table.tbl th, table.tbl td{border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top;}
-table.tbl th{background:var(--bg-elev2); font-weight:600; color:var(--text);}
-table.tbl td{background:var(--bg-elev);}
-.tblwrap{overflow-x:auto; border-radius:10px;}
-/* master table */
-table.master{font-size:0.72rem; min-width:780px;}
-table.master th{font-family:'JetBrains Mono',monospace; font-size:0.66rem; text-align:center; padding:6px 4px;}
-table.master td{text-align:center; padding:6px 4px; font-family:'JetBrains Mono',monospace; font-weight:600;}
-table.master td.rowh{text-align:left; font-family:'Inter',sans-serif; font-weight:500; min-width:150px;}
-td.up{color:var(--success);} td.dn{color:var(--danger);} td.eq{color:var(--text-dim);} td.un{color:var(--warn);}
-/* scoreboard */
-.score{position:sticky; top:0; z-index:20; background:rgba(16,23,45,0.96); border-bottom:1px solid var(--border); padding:10px 24px;}
-.score-in{max-width:900px; margin:0 auto; display:flex; gap:22px; align-items:center; flex-wrap:wrap;}
-.metric{font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--text-dim);} .metric b{color:var(--text); font-size:1.02rem;}
-.bar{flex:1; min-width:120px; height:8px; background:var(--bg); border:1px solid var(--border); border-radius:6px; overflow:hidden;}
-.bar > i{display:block; height:100%; width:0; background:var(--coral); transition:width .5s var(--ease);}
-.btn{font-family:'JetBrains Mono',monospace; font-size:0.78rem; font-weight:600; padding:9px 16px; border-radius:8px; border:1px solid var(--border); background:var(--bg-elev2); color:var(--text); cursor:pointer;}
-.btn:hover{border-color:var(--indigo-mid);} .btn.primary{background:var(--coral); color:#080C1C; border-color:var(--coral);} .btn.primary:hover{background:var(--coral-2);}
-.btn[disabled]{opacity:.45; cursor:not-allowed;}
-/* sign tables */
-.st{background:var(--bg-elev); border:1px solid var(--border); border-radius:12px; padding:18px 20px; margin-bottom:22px;}
-.st-title{display:flex; justify-content:space-between; gap:12px; align-items:baseline; flex-wrap:wrap; margin-bottom:8px;}
-.st-title h3{font-size:1.05rem;} .pts{font-family:'JetBrains Mono',monospace; font-size:0.74rem; color:var(--text-dim);}
-.st p.enun{font-size:0.93rem; margin-bottom:12px;}
-.st-row{display:grid; grid-template-columns:minmax(180px,1.5fr) 3fr; gap:10px; padding:8px 8px; border:1px solid transparent; border-radius:9px; align-items:center;}
-.st-row + .st-row{border-top:1px solid var(--border);}
-.st-name{font-size:0.88rem;}
-.st-opts{display:grid; grid-template-columns:repeat(4,1fr); gap:6px;}
-.opt{font-family:'JetBrains Mono',monospace; font-size:0.7rem; padding:7px 4px; border-radius:7px; border:1px solid var(--border); background:var(--bg); color:var(--text-dim); cursor:pointer; line-height:1.25;}
-.opt:hover{background:var(--bg-elev2); color:var(--text);}
-.opt[aria-checked="true"]{border-color:var(--indigo-mid); background:rgba(102,127,218,0.18); color:var(--text);}
-.st-row.ok{background:rgba(85,201,117,0.10); border-color:rgba(85,201,117,0.4);}
-.st-row.bad{background:rgba(251,86,104,0.10); border-color:rgba(251,86,104,0.4);}
-.st-row.ok .opt[aria-checked="true"]{border-color:var(--success); background:rgba(85,201,117,0.2);}
-.st-row.bad .opt[aria-checked="true"]{border-color:var(--danger); background:rgba(251,86,104,0.2);}
-.st-row .opt.is-key{border-color:var(--success); color:var(--success);}
-.st-why{grid-column:1/-1; font-size:0.82rem; color:var(--text-dim); display:none; padding:2px 4px 4px;}
-.st-row.ok .st-why, .st-row.bad .st-why, .st-row.keyshow .st-why{display:block;}
-.st-why b{color:var(--text);} .st-why .k{font-family:'JetBrains Mono',monospace; font-size:0.74rem; color:var(--success);}
-.st-row.bad .st-why .k{color:var(--danger);}
-@media (max-width:700px){.st-row{grid-template-columns:1fr;} .st-opts{grid-template-columns:repeat(2,1fr);} }
-/* key (resolución) */
-.keychip{font-family:'JetBrains Mono',monospace; font-size:0.74rem; font-weight:600; padding:5px 10px; border-radius:7px; border:1px solid var(--border); display:inline-block;}
-.keychip.up{color:var(--success); border-color:rgba(85,201,117,.5); background:rgba(85,201,117,.08);}
-.keychip.dn{color:var(--danger); border-color:rgba(251,86,104,.5); background:rgba(251,86,104,.08);}
-.keychip.eq{color:var(--text-dim);} .keychip.un{color:var(--warn); border-color:rgba(242,193,78,.5); background:rgba(242,193,78,.08);}
-.keyrow{display:grid; grid-template-columns:minmax(180px,1.4fr) 130px 4fr; gap:12px; padding:9px 4px; align-items:start; border-top:1px solid var(--border); font-size:0.86rem;}
-.keyrow:first-child{border-top:0;} .keyrow .why{color:var(--text-dim); font-size:0.83rem;}
-body.hide-answers .keyrow .keychip, body.hide-answers .keyrow .why{visibility:hidden;}
-body.hide-answers .keyrow .reveal-one{visibility:visible;}
-.keyrow.shown .keychip, .keyrow.shown .why{visibility:visible !important;}
-.reveal-one{font-family:'JetBrains Mono',monospace; font-size:0.7rem; background:transparent; border:1px dashed var(--border); color:var(--text-dim); border-radius:6px; padding:4px 8px; cursor:pointer; display:none;}
-body.hide-answers .reveal-one{display:inline-block;} body.hide-answers .keyrow.shown .reveal-one{display:none;}
-@media (max-width:700px){.keyrow{grid-template-columns:1fr;}}
-.matiz{background:rgba(242,193,78,0.07); border:1px solid rgba(242,193,78,0.4); border-radius:10px; padding:12px 16px; margin:10px 0; font-size:0.86rem;}
-.matiz b.t{font-family:'JetBrains Mono',monospace; font-size:0.7rem; letter-spacing:.06em; text-transform:uppercase; color:var(--warn); display:block; margin-bottom:4px;}
-/* V/F */
-.vf{ background:var(--bg-elev); border:1px solid var(--border); border-radius:12px; padding:18px 22px; margin-bottom:14px; }
-.vf-n{font-family:'JetBrains Mono',monospace; font-size:0.74rem; color:var(--text-dim);}
-.vf-enun{font-size:0.95rem; margin:4px 0 12px;}
-.vf-opts{display:flex; gap:10px;}
-.vf-btn{ font-family:'JetBrains Mono',monospace; font-size:0.82rem; font-weight:600; padding:8px 22px; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text); cursor:pointer; }
-.vf-btn:hover{background:var(--bg-elev2);} .vf-btn[aria-checked="true"]{border-color:var(--indigo-mid); background:rgba(102,127,218,0.18);}
-.vf.ok{border-color:rgba(85,201,117,0.5); background:rgba(85,201,117,0.07);} .vf.bad{border-color:rgba(251,86,104,0.5); background:rgba(251,86,104,0.07);}
-.vf-just{display:none; margin-top:12px; font-size:0.88rem; color:var(--text);} .vf.ok .vf-just, .vf.bad .vf-just, .vf.keyshow .vf-just{display:block;}
-.vf-just .v{font-family:'JetBrains Mono',monospace; font-weight:600;} .vf.ok .v{color:var(--success);} .vf.bad .v, .vf.keyshow .v{color:var(--danger);} .vf.keyshow .v{color:var(--success);}
-/* numeric */
-.prob{background:var(--bg-elev); border:1px solid var(--border); border-radius:12px; padding:20px 24px; margin-bottom:18px;}
-.prob h3{font-size:1.02rem; margin-bottom:6px;} .prob p{font-size:0.93rem;} .prob p + p{margin-top:8px;}
-.sub{margin-top:12px;} .sub label{display:block; font-size:0.9rem; margin-bottom:6px;}
-.num-row{display:flex; gap:10px; align-items:center; flex-wrap:wrap;}
-.num-in{font-family:'JetBrains Mono',monospace; font-size:0.9rem; background:var(--bg); color:var(--text); border:1px solid var(--border); border-radius:8px; padding:8px 12px; width:150px;}
-.num-in.ok{border-color:var(--success); background:rgba(85,201,117,0.1);} .num-in.bad{border-color:var(--danger); background:rgba(251,86,104,0.1);}
-.unit{font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--text-dim);}
-.fb{font-size:0.85rem; margin-top:6px; display:none;} .fb.show{display:block;} .fb.okt{color:var(--success);} .fb.bdt{color:var(--danger);}
-details.sol{margin-top:12px; border:1px solid var(--border); border-radius:10px; background:var(--bg);}
-details.sol summary{cursor:pointer; padding:10px 14px; font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--coral-2);}
-details.sol .sol-in{padding:6px 16px 14px; font-size:0.9rem;} details.sol .sol-in p + p{margin-top:8px;}
-.sol-in .ecuacion{font-size:0.84rem;}
-/* open answers */
-textarea.open-in{width:100%; min-height:110px; background:var(--bg); color:var(--text); border:1px solid var(--border); border-radius:10px; padding:12px 14px; font-family:'Inter',sans-serif; font-size:0.92rem; resize:vertical; margin-top:6px;}
-.rubric{display:none; margin-top:10px; padding:12px 16px; border:1px solid var(--border); border-radius:10px; background:var(--bg);} .rubric.show{display:block;}
-.rubric label{display:flex; gap:10px; align-items:flex-start; font-size:0.86rem; margin:6px 0; cursor:pointer;}
-.rubric .model{font-size:0.88rem; color:var(--text); margin-bottom:8px;}
-/* timer */
-.timer{font-family:'JetBrains Mono',monospace; font-size:1.4rem; font-weight:600; color:var(--coral);} .timer.low{color:var(--danger);}
-.sel{font-family:'JetBrains Mono',monospace; background:var(--bg); color:var(--text); border:1px solid var(--border); border-radius:8px; padding:8px 10px; font-size:0.78rem;}
-.result{display:none;} .result.show{display:block;}
-.bignum{font-family:'Fraunces',serif; font-size:3rem; font-weight:600; color:var(--coral); line-height:1;}
-.sect-score{display:flex; justify-content:space-between; padding:8px 0; border-top:1px solid var(--border); font-size:0.9rem;} .sect-score:first-child{border-top:0;}
-.locked{pointer-events:none; opacity:.92;}
-footer.fuentes{max-width:900px; margin:0 auto; padding:0 24px 80px; color:var(--text-dim); font-size:0.8rem;}
-footer.fuentes .bezel-in{padding:16px 20px;}
-.tag{font-family:'JetBrains Mono',monospace; font-size:0.68rem; padding:2px 8px; border-radius:6px; border:1px solid var(--border); color:var(--text-dim); margin-right:6px;}
-.hub{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1px; background:var(--border); border-radius:11px; overflow:hidden;}
-.hub a{display:block; background:var(--bg-elev); padding:22px 22px; text-decoration:none; color:var(--text);} .hub a:hover{background:var(--bg-elev2);}
-.hub a b{font-family:'Fraunces',serif; font-size:1.15rem; display:block; margin-bottom:6px;} .hub a span{font-size:0.86rem; color:var(--text-dim);} .hub a i{font-family:'JetBrains Mono',monospace; font-style:normal; font-size:0.7rem; color:var(--coral); letter-spacing:.06em; text-transform:uppercase; display:block; margin-bottom:8px;}
-@media print{ .score,.modnav{display:none;} body{background:#fff; color:#000;} }
-</style>
+<!DOCTYPE html>
+<html lang="es" data-k="parcial"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parcial · Temas 1 a 4 | Macro II</title>
+
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<script>try{var t=localStorage.getItem('mm-tema');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/guia.css">
 </head>
 <body data-mode="live">
-<header><div class="wrap">
-<a class="volver" href="../index.html">← Modelos Macroeconómicos</a>
-<div class="eyebrow">Macro II · Examen parcial</div>
-<h1>Preparación del parcial <em>· Temas 1 a 4</em></h1>
-<p class="sub">Cuatro piezas para estudiar el parcial con el formato de tus guías: repaso, resolución, práctica y simulacro.</p>
-<div class="meta-row"><span class="chip"><span class="chip-in">Semana 5 · Repaso general</span></span><span class="chip"><span class="chip-in">Blanchard caps. 4, 5, 6 y 17</span></span><span class="chip"><span class="chip-in">Prof. Luis Morera</span></span></div>
-</div></header>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+<header class="cab">
+  <div class="cab-barra">
+    <a class="cab-marca" href="../index.html"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect x="6" y="7" width="52" height="10" fill="#F0B429"/><rect x="6" y="21" width="41" height="10" fill="#F2552C"/><rect x="6" y="35" width="30" height="10" fill="#C65BD6"/><rect x="6" y="49" width="19" height="10" fill="#22B8A0"/></svg><span><b>Macro II</b><small>Modelos Macroeconómicos · ESEN</small></span></a>
+    <button class="btn-tema" type="button" data-btn-tema>Tema oscuro</button>
+  </div>
+  <div class="cab-banda">
+    <div class="cab-in">
+      <p class="cab-kicker"><a href="../index.html">Inicio</a> / Parcial · Temas 1 a 4</p>
+      <h1>Preparación del parcial, Temas 1 a 4</h1>
+      <p class="sub">Cuatro piezas para estudiar el parcial con el formato de tus guías: repaso, resolución, práctica y simulacro.</p>
+      <ul class="cab-meta"><li>Semana 5 · Repaso general</li><li>Blanchard caps. 4, 5, 6 y 17</li><li>Prof. Luis Morera</li></ul>
+      <nav class="cab-mats" aria-label="Materiales del parcial"><span>Materiales del parcial:</span><a href="index.html" aria-current="page">Inicio del parcial</a><a href="01-repaso-integrador.html">Repaso integrador</a><a href="02-resolucion-comentada.html">Resolución comentada</a><a href="03-banco-ejercicios.html">Banco de ejercicios</a><a href="04-simulacro-parcial.html">Simulacro</a></nav>
+      <div class="cab-capas" aria-hidden="true"><i data-k="Y"></i><i data-k="IS"></i><i data-k="x"></i><i data-k="ext"></i></div>
+    </div>
+  </div>
+</header>
 
-<main>
-<nav class="modnav" aria-label="Módulos"><a href="#m1">01 Ruta</a><a href="#m2">02 Qué hay</a><a href="#m3">03 Notas</a></nav>
-<section class="modulo reveal" id="m1"><div class="modulo-head"><span class="modulo-num">01</span><h2>Ruta de estudio sugerida</h2></div><p class="modulo-text">Orden pensado para llegar al examen con práctica real y no solo con lectura.</p><div class="hub"><a href="01-repaso-integrador.html"><i>Paso 1</i><b>Repaso integrador</b><span>Mapa de los 4 temas, fórmulas, diagramas y la tabla maestra de signos.</span></a><a href="02-resolucion-comentada.html"><i>Paso 2</i><b>Resolución comentada</b><span>Tus dos guías resueltas casilla por casilla, con modo práctica.</span></a><a href="03-banco-ejercicios.html"><i>Paso 3</i><b>Banco de ejercicios</b><span>Tablas, V/F, problemas y preguntas cortas nuevos con retroalimentación inmediata.</span></a><a href="04-simulacro-parcial.html"><i>Paso 4</i><b>Simulacro cronometrado</b><span>Examen completo de 100 puntos para medir dónde estás.</span></a></div></section><section class="modulo reveal" id="m2"><div class="modulo-head"><span class="modulo-num">02</span><h2>Qué cubre y de dónde sale</h2></div><div class="bloque"><h3>Alcance</h3><p>Temas 1 a 4 completos: repaso de Macro I (cap. 4, desde 4-3, y capítulo amarillo), IS-LM (cap. 5), IS-LM con temas financieros (cap. 6) y apertura comercial y financiera (cap. 17, secc. 17-1 y 17-2). El enfoque está en los ejercicios de preparación: tablas de signos y verdadero o falso, como en tu Guía de preparación del parcial.</p></div></section><section class="modulo reveal" id="m3"><div class="modulo-head"><span class="modulo-num">03</span><h2>Antes de empezar: dos avisos</h2></div><div class="recuadro bad"><span class="recuadro-tag">Corrección importante</span><p>En la Guía del Tema 4 y en el ítem 4 del Repaso del Control 2 de tu vault, el signo de la paridad de tasas aparece invertido respecto a Blanchard (17.4). Estos materiales usan la versión correcta: i &gt; i* ⇒ se espera depreciación de la moneda doméstica.</p></div><div class="recuadro info"><span class="recuadro-tag">Matices en las claves</span><p>En tres casillas de tu Guía de preparación la clave estricta del modelo y la clave del documento no coinciden por completo (ahorro privado en la pregunta 1, balanza comercial en la pregunta 2 y el consumo del ejercicio de presupuesto equilibrado). Todo está explicado en la Resolución comentada; en el examen sigue la clave.</p></div></section>
+<div class="pagina">
+<main id="contenido">
+
+<section class="modulo" id="m1"><div class="modulo-head"><h2>Ruta de estudio sugerida</h2></div><p class="modulo-text">Orden pensado para llegar al examen con práctica real y no solo con lectura.</p><div class="hub"><a href="01-repaso-integrador.html"><i>Paso 1</i><b>Repaso integrador</b><span>Mapa de los 4 temas, fórmulas, diagramas y la tabla maestra de signos.</span></a><a href="02-resolucion-comentada.html"><i>Paso 2</i><b>Resolución comentada</b><span>Tus dos guías resueltas casilla por casilla, con modo práctica.</span></a><a href="03-banco-ejercicios.html"><i>Paso 3</i><b>Banco de ejercicios</b><span>Tablas, V/F, problemas y preguntas cortas nuevos con retroalimentación inmediata.</span></a><a href="04-simulacro-parcial.html"><i>Paso 4</i><b>Simulacro cronometrado</b><span>Examen completo de 100 puntos para medir dónde estás.</span></a></div></section><section class="modulo" id="m2"><div class="modulo-head"><h2>Qué cubre y de dónde sale</h2></div><div class="bloque"><h3>Alcance</h3><p>Temas 1 a 4 completos: repaso de Macro I (cap. 4, desde 4-3, y capítulo amarillo), IS-LM (cap. 5), IS-LM con temas financieros (cap. 6) y apertura comercial y financiera (cap. 17, secc. 17-1 y 17-2). El enfoque está en los ejercicios de preparación: tablas de signos y verdadero o falso, como en tu Guía de preparación del parcial.</p></div></section><section class="modulo" id="m3"><div class="modulo-head"><h2>Antes de empezar: dos avisos</h2></div><div class="recuadro bad"><span class="recuadro-tag">Corrección importante</span><p>En la Guía del Tema 4 y en el ítem 4 del Repaso del Control 2 de tu vault, el signo de la paridad de tasas aparece invertido respecto a Blanchard (17.4). Estos materiales usan la versión correcta: i &gt; i* ⇒ se espera depreciación de la moneda doméstica.</p></div><div class="recuadro info"><span class="recuadro-tag">Matices en las claves</span><p>En tres casillas de tu Guía de preparación la clave estricta del modelo y la clave del documento no coinciden por completo (ahorro privado en la pregunta 1, balanza comercial en la pregunta 2 y el consumo del ejercicio de presupuesto equilibrado). Todo está explicado en la Resolución comentada; en el examen sigue la clave.</p></div></section>
 </main>
-<footer class="fuentes"><div class="bezel"><div class="bezel-in"><b>Fuentes.</b> Blanchard, <i>Macroeconomics</i>, 9ª ed.: cap. 4 (secc. 4-3 y 4-4), cap. 5 (secc. 5-1 a 5-4), cap. 6 (secc. 6-1 a 6-4) y cap. 17 (secc. 17-1 y 17-2; ecuaciones 17.2 y 17.4; Tabla 17-3). Sala i Martín, <i>Economía en Colores</i> (capítulo amarillo). Material de la cátedra: Clase 1 de IS-LM, Guía de ejercicios 1, Guía de preparación del parcial, pautas de los Controles 1 y 2. Las cifras numéricas de los problemas son de práctica (economías hipotéticas), no datos reales. Borrador de estudio: no sustituye lo que indique el profesor Luis Morera.</div></div></footer>
-<script>
-(function(){
-'use strict';
-var OPTS=['Aumenta','Se reduce','No cambia','No se puede saber'];
-function $(s,r){return (r||document).querySelector(s);} function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));}
-var MODE=document.body.getAttribute('data-mode')||'live';
-/* reveal on scroll (safe) */
-(function(){
-  var reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(!('IntersectionObserver' in window)||reduce) return;
-  var els=$$('.reveal'); var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('reveal-in'); io.unobserve(e.target);}});},{rootMargin:'0px 0px -6% 0px'});
-  els.forEach(function(el){var r=el.getBoundingClientRect(); if(r.top>window.innerHeight){el.classList.add('reveal-play'); io.observe(el);}});
-})();
-/* ---- scoring ---- */
-function items(){return $$('.q');}
-function recompute(){
-  var tot=0, got=0, done=0, n=0;
-  items().forEach(function(q){var p=parseFloat(q.getAttribute('data-pts')||'0'); tot+=p; n++; var e=q.getAttribute('data-earned'); if(e!==null){got+=parseFloat(e); done++;}});
-  var g=$('#sc-got'), t=$('#sc-tot'), b=$('#sc-bar'), d=$('#sc-done'), nn=$('#sc-n');
-  if(g) g.textContent=(Math.round(got*10)/10); if(t) t.textContent=tot; if(d) d.textContent=done; if(nn) nn.textContent=n;
-  if(b) b.style.width=(tot? (100*done/n):0)+'%';
-  return {got:got,tot:tot,done:done,n:n};
-}
-window.__recompute=recompute;
-/* ---- sign tables ---- */
-function rowSelect(row,val){
-  $$('.opt',row).forEach(function(b){b.setAttribute('aria-checked', b.getAttribute('data-v')===val?'true':'false');});
-  row.setAttribute('data-sel',val);
-}
-function gradeRow(row, reveal){
-  var key=row.getAttribute('data-key'), sel=row.getAttribute('data-sel');
-  var pts=parseFloat(row.getAttribute('data-pts')||'1');
-  var ok=(sel===key);
-  row.classList.remove('ok','bad'); row.classList.add(ok?'ok':'bad');
-  row.setAttribute('data-earned', ok?pts:0);
-  var w=$('.st-why',row); if(w){ w.innerHTML='<span class="k">'+(ok?'Correcto':'Clave: '+key)+'</span> · '+ (row.getAttribute('data-why')||''); }
-  $$('.opt',row).forEach(function(b){ if(!ok && b.getAttribute('data-v')===key) b.classList.add('is-key'); });
-}
-document.addEventListener('click',function(ev){
-  var t=ev.target.closest('.opt');
-  if(t){ var row=t.closest('.st-row'); if(!row||row.classList.contains('locked')) return;
-    if(MODE==='live' && row.hasAttribute('data-earned')) return;
-    rowSelect(row,t.getAttribute('data-v'));
-    if(MODE==='live'){ gradeRow(row); }
-    recomputeRows(); recompute(); return; }
-  var v=ev.target.closest('.vf-btn');
-  if(v){ var box=v.closest('.vf'); if(!box||box.classList.contains('locked')) return;
-    if(MODE==='live' && box.hasAttribute('data-earned')) return;
-    $$('.vf-btn',box).forEach(function(b){b.setAttribute('aria-checked', b===v?'true':'false');});
-    box.setAttribute('data-sel', v.getAttribute('data-v'));
-    if(MODE==='live'){ gradeVF(box); } recompute(); return; }
-  var c=ev.target.closest('[data-act="check-num"]');
-  if(c){ gradeNum(c.closest('.prob')); recompute(); return; }
-  var r=ev.target.closest('[data-act="show-rubric"]');
-  if(r){ var o=r.closest('.prob'); $('.rubric',o).classList.add('show'); r.style.display='none'; return; }
-  var rb=ev.target.closest('.rubric input[type=checkbox]');
-  if(rb){ gradeOpen(rb.closest('.prob')); recompute(); return; }
-  var ro=ev.target.closest('.reveal-one');
-  if(ro){ ro.closest('.keyrow').classList.add('shown'); return; }
-});
-function recomputeRows(){
-  $$('.st').forEach(function(st){
-    var rows=$$('.st-row',st), sel=0, ok=0, tot=0;
-    rows.forEach(function(r){ tot++; if(r.getAttribute('data-sel')) sel++; if(r.classList.contains('ok')) ok++; });
-    var c=$('.st-count',st); if(c) c.textContent=sel+'/'+tot;
-    if(MODE==='live'){ var earned=0; rows.forEach(function(r){ if(r.hasAttribute('data-earned')) earned+=parseFloat(r.getAttribute('data-earned')); }); st.setAttribute('data-earned-sum',earned); }
-  });
-}
-function gradeVF(box){
-  var key=box.getAttribute('data-key'), sel=box.getAttribute('data-sel'); if(!sel) return;
-  var pts=parseFloat(box.getAttribute('data-pts')||'1'); var ok=(sel===key);
-  box.classList.remove('ok','bad'); box.classList.add(ok?'ok':'bad'); box.setAttribute('data-earned', ok?pts:0);
-  var j=$('.vf-just',box); if(j){ j.innerHTML='<span class="v">'+(ok?'Correcto. ':'Incorrecto. ')+'Es '+(key==='V'?'VERDADERO':'FALSO')+'.</span> '+box.getAttribute('data-why'); }
-}
-function parseNum(s){ if(s==null) return NaN; s=String(s).trim().replace('%','').replace(/\s/g,'').replace(',','.'); return parseFloat(s); }
-function gradeNum(prob){
-  var got=0, tot=0, allsel=true;
-  $$('.num-in',prob).forEach(function(inp){
-    var ans=parseFloat(inp.getAttribute('data-ans')), tol=parseFloat(inp.getAttribute('data-tol')||'0.01'), p=parseFloat(inp.getAttribute('data-pts')||'1');
-    tot+=p; var v=parseNum(inp.value); var ok=!isNaN(v) && Math.abs(v-ans)<=tol;
-    inp.classList.remove('ok','bad'); inp.classList.add(ok?'ok':'bad'); if(ok) got+=p;
-    var fb=inp.closest('.sub').querySelector('.fb'); if(fb){ fb.className='fb show '+(ok?'okt':'bdt'); fb.textContent= ok? 'Correcto.' : ('Respuesta esperada: '+inp.getAttribute('data-show')); }
-  });
-  prob.setAttribute('data-earned',got);
-  var sol=$('details.sol',prob); if(sol && MODE==='live') sol.open=true;
-}
-function gradeOpen(prob){
-  var got=0; $$('.rubric input[type=checkbox]',prob).forEach(function(c){ if(c.checked) got+=parseFloat(c.getAttribute('data-pts')); });
-  prob.setAttribute('data-earned',got);
-}
-/* init */
-$$('.num-in').forEach(function(i){ i.addEventListener('keydown',function(e){ if(e.key==='Enter' && MODE==='live'){ var b=i.closest('.prob').querySelector('[data-act="check-num"]'); if(b) b.click(); } }); });
-/* sign table "q" wrappers: each row is a q (pts 1) */
-/* hide-answers toggle (resolución) */
-var tog=$('#toggle-answers'); if(tog){ tog.addEventListener('click',function(){ document.body.classList.toggle('hide-answers'); tog.textContent=document.body.classList.contains('hide-answers')?'Mostrar todas las respuestas':'Modo práctica: ocultar respuestas'; $$('.keyrow.shown').forEach(function(k){k.classList.remove('shown');}); $$('.vf.keyshow').forEach(function(k){}); }); }
-$$('.vf[data-static]').forEach(function(b){b.classList.add('keyshow');});
-/* ---- exam mode ---- */
-var timerId=null, remaining=0, started=false, submitted=false;
-function fmt(s){var m=Math.floor(s/60), r=s%60; return (m<10?'0':'')+m+':'+(r<10?'0':'')+r;}
-function tick(){ remaining--; var tm=$('#timer'); if(tm){tm.textContent=fmt(Math.max(remaining,0)); if(remaining<=300) tm.classList.add('low');} if(remaining<=0){ submitExam(true);} }
-function startExam(){
-  if(started) return; started=true; var sel=$('#dur'); remaining=parseInt(sel.value,10)*60; sel.disabled=true;
-  $('#exam-body').classList.remove('locked'); $('#exam-cover').style.display='none';
-  $('#timer').textContent=fmt(remaining); timerId=setInterval(tick,1000); $('#btn-start').disabled=true; $('#btn-submit').disabled=false;
-  $('#exam-body').scrollIntoView({behavior:'smooth'});
-}
-function submitExam(auto){
-  if(submitted) return; submitted=true; if(timerId) clearInterval(timerId);
-  $$('#exam-body .st-row').forEach(function(r){ if(!r.getAttribute('data-sel')){ r.setAttribute('data-sel','—'); } gradeRow(r); r.classList.add('locked'); });
-  $$('#exam-body .vf').forEach(function(b){ if(!b.getAttribute('data-sel')){ b.setAttribute('data-sel','—'); } gradeVF(b); b.classList.add('locked'); });
-  $$('#exam-body .prob[data-kind="num"]').forEach(function(p){ gradeNum(p); var s=$('details.sol',p); if(s) s.open=true; });
-  $$('#exam-body .prob[data-kind="open"]').forEach(function(p){ $('.rubric',p).classList.add('show'); var b=$('[data-act="show-rubric"]',p); if(b) b.style.display='none'; gradeOpen(p); });
-  $('#btn-submit').disabled=true; showResult(auto);
-}
-function sectionScore(sel){ var got=0,tot=0; $$(sel).forEach(function(q){ tot+=parseFloat(q.getAttribute('data-pts')||'0'); var e=q.getAttribute('data-earned'); if(e!==null) got+=parseFloat(e); }); return [got,tot]; }
-function showResult(auto){
-  var box=$('#result'); if(!box) return; box.classList.add('show');
-  var parts=[['Parte I · Tablas de signos','#exam-body .sec-I .q'],['Parte II · Verdadero o falso','#exam-body .sec-II .q'],['Parte III · Problemas numéricos','#exam-body .sec-III .q'],['Parte IV · Preguntas cortas (autocalificadas con pauta)','#exam-body .sec-IV .q']];
-  var html='', G=0, T=0;
-  parts.forEach(function(p){ var s=sectionScore(p[1]); G+=s[0]; T+=s[1]; html+='<div class="sect-score"><span>'+p[0]+'</span><span class="mono">'+(Math.round(s[0]*10)/10)+' / '+s[1]+'</span></div>'; });
-  $('#res-sections').innerHTML=html; $('#res-total').textContent=Math.round(G*10)/10; $('#res-max').textContent=T;
-  var pct=T?G/T:0; var msg= pct>=0.85?'Nivel muy sólido. Repasa solo los ítems que fallaste.':pct>=0.7?'Buen nivel. Revisa los ítems marcados y vuelve a intentar los que tengan "No se puede saber".':pct>=0.5?'Nivel intermedio. Repasa el módulo 06 (tabla maestra de signos) del Repaso integrador y las notas de cada ítem fallado.':'Todavía hay huecos: empieza por el Repaso integrador y la Resolución comentada, y repite el simulacro.';
-  $('#res-msg').textContent=(auto?'Se acabó el tiempo. ':'')+msg; box.scrollIntoView({behavior:'smooth'}); recompute();
-}
-var bs=$('#btn-start'); if(bs) bs.addEventListener('click',startExam);
-var bsub=$('#btn-submit'); if(bsub){ bsub.disabled=true; bsub.addEventListener('click',function(){ if(window.confirm('¿Entregar el simulacro ahora?')) submitExam(false); }); }
-var br=$('#btn-restart'); if(br) br.addEventListener('click',function(){ window.location.reload(); });
-if(MODE==='exam'){ var eb=$('#exam-body'); if(eb) eb.classList.add('locked'); }
-/* reset in live mode */
-var rs=$('#btn-reset'); if(rs) rs.addEventListener('click',function(){ window.location.reload(); });
-recompute();
-})();
-</script>
+<nav class="panel" data-nav-eq aria-label="Índice de esta página">
+  <button class="panel-boton" type="button" aria-expanded="false" aria-controls="panel-lista"><i><svg aria-hidden="true" focusable="false"></svg></i><span class="sr">Índice. Estás en: </span><span data-nav-actual>Índice</span></button>
+  <p class="panel-tt">Parcial<small>En esta página</small></p>
+  <svg class="panel-svg" aria-hidden="true" focusable="false"></svg>
+  <ol class="panel-lista" id="panel-lista">
+    <li><a href="#m1">Ruta</a></li>
+    <li><a href="#m2">Qué hay</a></li>
+    <li><a href="#m3">Notas</a></li>
+  </ol>
+  <p class="panel-ayuda">El punto marca dónde vas leyendo. Con el foco en el índice, las flechas lo recorren.</p>
+</nav>
+</div>
+<footer><p><b>Fuentes.</b> Blanchard, <i>Macroeconomics</i>, 9ª ed.: cap. 4 (secc. 4-3 y 4-4), cap. 5 (secc. 5-1 a 5-4), cap. 6 (secc. 6-1 a 6-4) y cap. 17 (secc. 17-1 y 17-2; ecuaciones 17.2 y 17.4; Tabla 17-3). Sala i Martín, <i>Economía en Colores</i> (capítulo amarillo). Material de la cátedra: Clase 1 de IS-LM, Guía de ejercicios 1, Guía de preparación del parcial, pautas de los Controles 1 y 2. Las cifras numéricas de los problemas son de práctica (economías hipotéticas), no datos reales. Borrador de estudio: no sustituye lo que indique el profesor Luis Morera.</p><p><a href="../index.html">Volver al sitio</a></p></footer>
+<script src="../assets/guia.js"></script>
+<script src="parcial.js"></script>
 </body></html>

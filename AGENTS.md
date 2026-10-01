@@ -134,6 +134,8 @@ checklist en `02 Curso/Sistema de Diseño HTML.md`; registro del proceso en
   navegador que la portada suma por Tema, próxima evaluación calculada desde el cronograma.
 - **Diagramas SVG heredados:** láminas oscuras en ambos temas, recoloreadas por tabla de
   equivalencias sin mover geometría ni etiquetas.
+- **Parcial (2026-10-01):** `docs/parcial-t1-t4/` ya usa este diseño con la capa integradora
+  `data-k="parcial"` (banda de tinta + franja de los 4 colores) y su script `parcial.js`.
 - **Prompt para material nuevo:** `01 Meta - Aprendizaje/Prompt - Material nuevo con diseño Capas del
   modelo.md` (esqueleto, componentes, interacciones y checklist de publicación).
 - **Accesos y movimiento (2026-10-01):** cada página de Tema enlaza todos los materiales de su

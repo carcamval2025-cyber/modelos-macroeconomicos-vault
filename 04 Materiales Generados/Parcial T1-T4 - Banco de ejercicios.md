@@ -16,6 +16,8 @@ Material de preparación del parcial, con alcance de Temas 1–4. Entrega del pa
 - Publicación: [GitHub Pages](https://carcamval2025-cyber.github.io/modelos-macroeconomicos-vault/parcial-t1-t4/03-banco-ejercicios.html).
 - Hub: [Inicio del paquete](Parcial%20T1-T4/00-inicio.html).
 
+- 2026-10-01: la versión publicada en `docs/parcial-t1-t4/` pasó al diseño "Capas del modelo" (mismo contenido; estilos en `docs/assets/guia.css`, script compartido en `docs/parcial-t1-t4/parcial.js`). El original de esta carpeta conserva el diseño anterior.
+
 Navas autorizó expresamente publicar los cinco HTML del paquete, incluida la resolución comentada. La autorización no incluye Tareas, Controles ni Pautas.
 
 Ver [[Tema 1 - Repaso de Macro I]], [[Tema 2 - Modelo IS-LM]], [[Tema 3 - IS-LM + Temas Financieros]] y [[Tema 4 - IS-LM + Apertura Comercial-Financiera]].

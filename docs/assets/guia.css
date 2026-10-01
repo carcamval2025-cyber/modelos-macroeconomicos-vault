@@ -52,6 +52,8 @@
 [data-k="x"]{--k:var(--k-x); --c-k:var(--c-x)}
 [data-k="ext"]{--k:var(--k-ext); --c-k:var(--c-ext)}
 [data-k="i"]{--k:var(--k-i); --c-k:var(--c-i)}
+/* el parcial integra las cuatro capas: su banda es la tinta, con la franja de colores de los Temas */
+[data-k="parcial"]{--k:var(--tinta); --c-k:var(--tinta); --k-txt:var(--bg)}
 
 /* ---------- Base ---------- */
 *,*::before,*::after{box-sizing:border-box}
@@ -530,13 +532,146 @@ footer > *{max-width:calc(var(--ancho) + 80px);margin-left:auto;margin-right:aut
 footer p{margin-top:8px}
 
 /* =====================================================================
+   Parcial integrador (docs/parcial-t1-t4): tablas de signos, V/F,
+   problemas con respuesta numérica, preguntas cortas con pauta y simulacro
+   ===================================================================== */
+.cab-capas{display:flex;height:10px;max-width:420px;margin-top:26px}
+.cab-capas i{flex:1;background:var(--k)}
+.score{position:sticky;top:0;z-index:30;background:var(--s1);border-bottom:2px solid var(--tinta);padding:10px clamp(16px,4vw,40px)}
+.score-in{max-width:calc(var(--ancho) + 80px);margin:0 auto;display:flex;gap:10px 22px;align-items:center;flex-wrap:wrap}
+.metric{font-size:.9rem;font-weight:600;color:var(--tenue)}
+.metric b{font-family:var(--mono);font-size:1.05rem;color:var(--tinta)}
+.bar{flex:1;min-width:120px;height:8px;background:var(--s2);overflow:hidden}
+.bar > i{display:block;height:100%;width:0;background:var(--tinta);transition:width .5s var(--ease)}
+.btn{background:transparent;color:var(--tinta)}
+.btn:hover:not(:disabled){background:var(--s2)}
+.btn.primary{background:var(--tinta);color:var(--bg)}
+.btn:disabled{color:var(--tenue);border-color:var(--linea);background:transparent}
+.timer{font-family:var(--mono);font-size:1.4rem;font-weight:700}
+.timer.low{color:var(--mal)}
+.sel{font-family:var(--mono);font-size:.85rem;background:var(--bg);color:var(--tinta);border:2px solid var(--tinta);padding:5px 8px}
+.pts{font-family:var(--mono);font-size:.82rem;color:var(--tenue);font-weight:500}
+.tag{font-weight:700;font-size:.8rem;padding:1px 8px;border:1.5px solid var(--linea);margin-right:6px}
+.grid2,.grid3{display:grid;gap:2px;background:var(--linea);margin:16px 0}
+.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.grid2 > *,.grid3 > *{margin:0}
+.bloque h4{font-size:1rem;font-weight:700;margin:14px 0 4px}
+.ecuacion small{display:block;font-family:var(--sans);font-size:.85rem;color:var(--tenue);margin-top:4px}
+.recuadro.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 8%,var(--s1))}.recuadro.ok .recuadro-tag{color:var(--ok)}
+.recuadro.bad{border-color:var(--mal);background:color-mix(in srgb,var(--mal) 8%,var(--s1))}.recuadro.bad .recuadro-tag{color:var(--mal)}
+.matiz{border:2px dashed var(--tinta);padding:12px 16px;margin:12px 0}
+.matiz b.t{display:block;font-weight:800;margin-bottom:4px}
+
+/* recorrido del parcial: pasos en orden real */
+.hub{display:flex;flex-direction:column;border-top:2px solid var(--tinta);margin:16px 0}
+.hub a{display:grid;grid-template-columns:6.5rem minmax(0,1fr);gap:2px 18px;padding:16px 4px;border-bottom:1px solid var(--linea);text-decoration:none}
+.hub a:hover{background:var(--s1)}
+.hub a i{grid-row:span 2;align-self:start;font-style:normal;font-weight:800;text-align:center;padding:2px 8px;background:var(--tinta);color:var(--bg)}
+.hub a b{font-size:1.1rem}
+.hub a span{color:var(--tenue)}
+
+/* figuras del parcial: láminas oscuras con su texto definido aquí */
+.fig{background:var(--lamina);color-scheme:dark;padding:clamp(12px,2.5vw,24px);margin:20px 0;overflow-x:auto}
+.fig svg{max-width:100%;height:auto;display:block;margin:0 auto}
+.fig svg text{font-family:var(--sans);font-stretch:88%;fill:#A9ABAE;font-size:11px;font-variant-numeric:tabular-nums}
+.fig svg .lbl{fill:#F2F2F0}.fig svg .is{stroke:#F2552C}.fig svg .lm{stroke:#5C9DFF}
+.fig figcaption{color:#A9ABAE;margin-top:10px}
+
+/* tablas */
+.tblwrap{overflow-x:auto;margin:12px 0}
+table.tbl{width:100%;font-size:.92rem;background:var(--s1)}
+table.tbl th,table.tbl td{border:1px solid var(--linea);padding:7px 10px;text-align:left;vertical-align:top}
+table.tbl th{background:var(--s2);font-weight:700}
+table.master{font-size:.85rem;min-width:780px}
+table.master th{text-align:center;padding:6px 4px;font-family:var(--mono);font-size:.8rem}
+table.master td{text-align:center;padding:6px 4px;font-family:var(--mono);font-weight:700}
+table.master td.rowh{text-align:left;font-family:var(--sans);font-weight:500;min-width:170px}
+td.up{color:var(--ok)}td.dn{color:var(--mal)}td.eq{color:var(--tenue)}td.un{color:var(--tinta);text-decoration:underline dotted}
+
+/* tablas de signos */
+.st{background:var(--s1);padding:20px 22px;margin-bottom:22px}
+.st-title{display:flex;justify-content:space-between;gap:8px 12px;align-items:baseline;flex-wrap:wrap;margin-bottom:8px}
+.st .enun{margin-bottom:12px}
+.st-row{display:grid;grid-template-columns:minmax(180px,1.4fr) 3fr;gap:8px 12px;padding:10px 8px;align-items:center;border:2px solid transparent}
+.st-row + .st-row{border-top:1px solid var(--linea)}
+.st-opts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.opt{font-size:.85rem;font-weight:600;padding:7px 4px;border:2px solid var(--linea);background:var(--bg);color:var(--tinta);line-height:1.25}
+.opt:hover{border-color:var(--tinta)}
+.opt[aria-checked="true"]{background:var(--tinta);color:var(--bg);border-color:var(--tinta)}
+.st-row.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 8%,var(--s1))}
+.st-row.bad{border-color:var(--mal);background:color-mix(in srgb,var(--mal) 8%,var(--s1))}
+.st-row.ok .opt[aria-checked="true"]{background:var(--ok);border-color:var(--ok);color:var(--bg)}
+.st-row.bad .opt[aria-checked="true"]{background:var(--mal);border-color:var(--mal);color:var(--bg)}
+.st-row .opt.is-key{border-color:var(--ok);font-weight:800}
+.st-row .opt.is-key::before{content:"✓ "}
+.st-why{grid-column:1 / -1;font-size:.92rem;color:var(--tenue);display:none;padding:2px 4px 4px}
+.st-row.ok .st-why,.st-row.bad .st-why,.st-row.keyshow .st-why{display:block}
+.st-why b{color:var(--tinta)}.st-why .k{font-weight:800;color:var(--ok)}.st-row.bad .st-why .k{color:var(--mal)}
+
+/* resolución comentada: clave casilla por casilla y modo práctica */
+.keychip{font-family:var(--mono);font-size:.85rem;font-weight:700;padding:2px 10px;border:2px solid var(--linea);display:inline-block}
+.keychip.up{color:var(--ok);border-color:var(--ok)}.keychip.dn{color:var(--mal);border-color:var(--mal)}
+.keychip.eq{color:var(--tenue)}.keychip.un{color:var(--tinta);border-style:dashed}
+.keyrow{display:grid;grid-template-columns:minmax(180px,1.4fr) 160px 4fr;gap:12px;padding:10px 4px;align-items:start;border-top:1px solid var(--linea)}
+.keyrow:first-child{border-top:0}
+.keyrow .why{color:var(--tenue);font-size:.95rem}
+body.hide-answers .keyrow .keychip,body.hide-answers .keyrow .why{visibility:hidden}
+.keyrow.shown .keychip,.keyrow.shown .why{visibility:visible!important}
+.reveal-one{font-size:.8rem;font-weight:700;background:transparent;border:2px dashed var(--tenue);color:var(--tinta);padding:1px 8px;margin-left:6px;display:none}
+body.hide-answers .reveal-one{display:inline-block}
+body.hide-answers .keyrow.shown .reveal-one{display:none}
+
+/* verdadero o falso del parcial (aria-checked) */
+.vf{border:2px solid transparent}
+.vf-n{display:block;font-weight:800;color:var(--c-k)}
+.vf-enun{margin:4px 0 12px}
+.vf-btn[aria-checked="true"]{background:var(--tinta);color:var(--bg)}
+.vf.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 8%,var(--s1))}
+.vf.bad{border-color:var(--mal);background:color-mix(in srgb,var(--mal) 8%,var(--s1))}
+.vf-just{display:none;margin-top:12px}
+.vf.ok .vf-just,.vf.bad .vf-just,.vf.keyshow .vf-just{display:block}
+.vf-just .v{font-weight:800}.vf.ok .vf-just .v,.vf.keyshow .vf-just .v{color:var(--ok)}.vf.bad .vf-just .v{color:var(--mal)}
+
+/* problemas numéricos y preguntas cortas */
+.prob{background:var(--s1);padding:22px 24px;margin-bottom:18px}
+.prob h3{margin-bottom:6px}
+.prob p + p{margin-top:8px}
+.prob .sub{margin-top:14px}
+.prob .sub label{display:block;margin-bottom:6px;font-weight:600}
+.num-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.num-in{font-family:var(--mono);font-size:1rem;background:var(--bg);color:var(--tinta);border:2px solid var(--linea);padding:8px 12px;width:min(170px,100%)}
+.num-in:focus-visible{border-color:var(--tinta)}
+.num-in.ok{border-color:var(--ok)}.num-in.bad{border-color:var(--mal)}
+.unit{font-family:var(--mono);color:var(--tenue)}
+.fb{margin-top:6px;display:none;font-weight:700}.fb.show{display:block}.fb.okt{color:var(--ok)}.fb.bdt{color:var(--mal)}
+details.sol{margin-top:12px;border:2px solid var(--tinta);background:var(--bg)}
+details.sol summary{cursor:pointer;padding:10px 14px;font-weight:700}
+details.sol .sol-in{padding:6px 16px 14px}
+.sol-in p + p{margin-top:8px}
+textarea.open-in{width:100%;min-height:110px;background:var(--bg);color:var(--tinta);border:2px solid var(--linea);padding:12px 14px;font:inherit;resize:vertical;margin-top:6px}
+textarea.open-in:focus-visible{border-color:var(--tinta)}
+.rubric{display:none;margin-top:12px;padding:14px 16px;border:2px solid var(--tinta);background:var(--bg)}
+.rubric.show{display:block}
+.rubric .model{margin-bottom:10px}
+.rubric label{display:flex;gap:10px;align-items:flex-start;margin:6px 0;cursor:pointer}
+.rubric input[type=checkbox]{width:18px;height:18px;margin-top:4px;flex-shrink:0;accent-color:var(--tinta)}
+
+/* simulacro: resultado */
+.result{display:none}.result.show{display:block}
+.res-tag{font-weight:800;margin-bottom:6px}
+.bignum{font-family:var(--mono);font-size:3rem;font-weight:700;line-height:1}
+.sect-score{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid var(--linea)}
+.sect-score:first-child{border-top:0}
+.locked{pointer-events:none}
+
+/* =====================================================================
    Accesos a los materiales de cada Tema (repasos, actividades, simulacros)
    ===================================================================== */
 .cab-mats{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:24px}
 .cab-mats span{font-weight:700;font-size:.9rem;margin-right:4px}
 .cab-mats a,.capa .mat{font-weight:700;font-size:.9rem;text-decoration:none;color:var(--k-txt);border:2px solid var(--k-txt);padding:5px 12px;line-height:1.3}
 .cab-mats a:hover,.capa .mat:hover{background:color-mix(in srgb,var(--k-txt) 14%,var(--k))}
-.cab-mats a[aria-current="page"]{background:var(--k-txt);color:#FFFFFF}
+.cab-mats a[aria-current="page"]{background:var(--k-txt);color:var(--k)}
 .capa .mats{grid-column:2 / 4;display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
 .capa .mat{font-size:.84rem;padding:3px 10px}
 .cab-salto{font-weight:700;font-size:.9rem;white-space:nowrap;text-decoration:none;border-bottom:2px solid var(--tinta);padding:2px 0}
@@ -582,9 +717,10 @@ footer p{margin-top:8px}
 @keyframes mm-sacude{0%,100%{transform:none}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(3px)}}
 .mm-motion .quiz-explicacion.visible,.mm-motion .item[data-resuelto="true"] .retro,.mm-motion .vf[data-resuelto="true"] .vf-justif,
 .mm-motion .numerico[data-abierto="true"] .solucion,.mm-motion .pregunta[data-abierta="true"] .respuesta,.mm-motion .pr-resultado > p,
-.mm-motion .modelo-respuesta,.mm-motion .explicacion,.mm-motion .resultado-final{animation:mm-entra .5s var(--ease)}
-.mm-motion .quiz-opcion.correct,.mm-motion .item[data-resuelto="true"] .opcion[aria-checked="true"][data-correcta="true"],.mm-motion .fila-var.correcta{animation:mm-pulso .55s var(--ease)}
-.mm-motion .quiz-opcion.incorrect,.mm-motion .item[data-resuelto="true"] .opcion[aria-checked="true"][data-correcta="false"],.mm-motion .fila-var.incorrecta{animation:mm-sacude .45s ease}
+.mm-motion .modelo-respuesta,.mm-motion .explicacion,.mm-motion .resultado-final,
+.mm-motion .fb.show,.mm-motion .rubric.show,.mm-motion details.sol[open] .sol-in,.mm-motion .result.show,.mm-motion .st-row.ok .st-why,.mm-motion .st-row.bad .st-why{animation:mm-entra .5s var(--ease)}
+.mm-motion .quiz-opcion.correct,.mm-motion .item[data-resuelto="true"] .opcion[aria-checked="true"][data-correcta="true"],.mm-motion .fila-var.correcta,.mm-motion .st-row.ok,.mm-motion .vf.ok{animation:mm-pulso .55s var(--ease)}
+.mm-motion .quiz-opcion.incorrect,.mm-motion .item[data-resuelto="true"] .opcion[aria-checked="true"][data-correcta="false"],.mm-motion .fila-var.incorrecta,.mm-motion .st-row.bad,.mm-motion .vf.bad{animation:mm-sacude .45s ease}
 
 /* cambio de tema: el tema nuevo se abre en círculo desde el botón */
 ::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
@@ -618,6 +754,16 @@ footer p{margin-top:8px}
   .glosario{grid-template-columns:minmax(0,1fr)}
   .glosario dd{margin-bottom:6px}
   .tabla-bp{font-size:.82rem}
+  .st-row,.keyrow{grid-template-columns:minmax(0,1fr)}
+  .score{padding:6px 12px}
+  .score-in{gap:6px 14px}
+  .score .bar{display:none}
+  .score .btn{padding:6px 10px;font-size:.88rem}
+  .timer{font-size:1.15rem}
+  .st-opts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid2,.grid3{grid-template-columns:minmax(0,1fr)}
+  .hub a{grid-template-columns:minmax(0,1fr)}
+  .hub a i{grid-row:auto;justify-self:start}
   /* tablas anchas: se desplazan dentro de su propio marco, nunca la página */
   .tabla-bp,.tabla-datos{display:block;overflow-x:auto;max-width:100%}
 }
@@ -639,3 +785,18 @@ footer p{margin-top:8px}
   .panel,.btn-tema,.cuenta{display:none!important}
   .pagina{display:block}
 }
+
+/* páginas con marcador fijo arriba (parcial): el índice y las anclas quedan debajo de él */
+.score ~ .pagina .panel{top:84px}
+.score ~ .pagina .modulo,.score ~ .pagina [id]{scroll-margin-top:84px}
+@media (max-width:1100px){.score ~ .pagina .panel{top:auto}}
+
+/* portada: bloque del parcial (banda de tinta con la franja de las cuatro capas) */
+.pp{position:relative;isolation:isolate;background:var(--k);color:var(--k-txt);margin:64px auto 0;max-width:calc(var(--ancho) + 80px)}
+.pp-in{padding:clamp(28px,4vw,48px) clamp(16px,4vw,40px)}
+.pp-kicker{font-weight:700;margin-bottom:8px}
+.pp h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:10px}
+.pp p{max-width:var(--lectura)}
+.pp .cab-capas{margin-top:20px}
+.pp .pg{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:18px;font-weight:600;font-size:.9rem}
+.pp :focus-visible{outline-color:var(--k-txt)}

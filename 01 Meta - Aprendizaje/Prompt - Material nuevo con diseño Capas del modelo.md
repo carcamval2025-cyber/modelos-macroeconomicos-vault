@@ -67,7 +67,8 @@ Cada Tema es una capa del mismo modelo, y **cada color es una variable**:
 | Tema 4, sector externo (ε, E, i*, UIP) | `ext` | `#22B8A0` |
 | i y LM (tasa del banco central) | `i` | `#3D8BFD` |
 
-Para los Temas 5 a 7 todavía no hay color: propón uno a Navas antes de publicar (debe
+Un material que integra varios Temas (como `docs/parcial-t1-t4/`) usa `data-k="parcial"`: banda de
+tinta con la franja `<div class="cab-capas">` de los cuatro colores. Para los Temas 5 a 7 todavía no hay color: propón uno a Navas antes de publicar (debe
 representar la variable nueva del Tema y pasar AA con texto `#140C00`), y agrégalo a
 `guia.css` y al documento de diseño.
 
@@ -149,6 +150,9 @@ estilo viene de `../assets/guia.css` y el comportamiento común de `../assets/gu
   `.solucion` (copiar el script de la actividad del Tema 4).
 - Verdadero o falso: `.vf` con `.vf-btn` y `.vf-justif` (copiar del repaso del Tema 4).
 - Quiz de opción múltiple: `.quiz-tracker` + `.quiz-card` (copiar del Tema 1).
+- Formato de examen (tablas de signos, V/F, problemas con respuesta numérica, preguntas cortas
+  con pauta, simulacro cronometrado): componentes `.st`, `.vf`, `.prob`, `.rubric`, `.score`; reutiliza
+  `docs/parcial-t1-t4/parcial.js` como referencia.
 
 ## Interacciones que se reutilizan
 

@@ -64,6 +64,17 @@ por pasos con confirmación. Ver [[Sistema de Diseño HTML]] para el sistema res
   `02 Curso/Sistema de Diseño HTML.md`). Verificación Playwright ampliada a 99 comprobaciones,
   incluida la ausencia total de animaciones con movimiento reducido.
 
+## Parcial al diseño nuevo (2026-10-01)
+
+- Navas subió el paquete del parcial (5 páginas) con el diseño anterior y pidió migrarlo. Se pasó a
+  `guia.css`/`guia.js` con la capa integradora `parcial`, el script repetido en las 5 páginas se
+  llevó a `parcial-t1-t4/parcial.js` (con progreso guardado y el examen `inert` antes de comenzar)
+  y se agregó el bloque del parcial en la portada. La cuenta regresiva ahora reconoce la semana de
+  parciales en curso. Se amplió el lienzo de una figura que ya venía cortada (sin mover geometría).
+- Verificación Playwright: 139 comprobaciones, incluidas las interacciones del parcial con teclado.
+- Lección: el material que llega de otra sesión puede venir con el diseño anterior; el prompt
+  `Prompt - Material nuevo con diseño Capas del modelo.md` existe para evitarlo.
+
 ## Ver también
 
 [[Errores Comunes a Evitar]] · [[Patrones que Funcionan Bien]] · `AGENTS.md`

@@ -141,9 +141,12 @@
     for (var k = 0; k < MM.EVALUACIONES.length; k++) {
       var e = MM.EVALUACIONES[k], p = e.f.split('-');
       var d = new Date(+p[0], +p[1] - 1, +p[2]);
-      if (d >= h) {
+      // una semana de evaluación sigue vigente de lunes a viernes
+      var fin = e.semana ? new Date(d.getFullYear(), d.getMonth(), d.getDate() + 4) : d;
+      if (fin >= h) {
         return {
-          nombre: e.nombre, semana: !!e.semana, dias: Math.round((d - h) / 864e5),
+          nombre: e.nombre, semana: !!e.semana, dias: Math.max(0, Math.round((d - h) / 864e5)),
+          enCurso: !!e.semana && d <= h,
           fecha: DIAS[d.getDay()] + ' ' + d.getDate() + ' ' + MESES[d.getMonth()]
         };
       }
@@ -153,6 +156,7 @@
   MM.textoProxima = function () {
     var p = MM.proxima();
     if (!p) return 'No quedan evaluaciones en el cronograma.';
+    if (p.enCurso) return p.nombre + ': es esta semana (empezó el ' + p.fecha + ').';
     var cuando = p.dias === 0 ? 'es hoy' : p.dias === 1 ? 'falta 1 día' : 'faltan ' + p.dias + ' días';
     return 'Próxima evaluación: ' + p.nombre + (p.semana ? ', empieza el ' : ', ') + p.fecha + '. ' + cuando.charAt(0).toUpperCase() + cuando.slice(1) + '.';
   };
@@ -202,7 +206,8 @@
 
   MM.pintarProgreso = function () {
     cada('[data-progreso]', function (e) {
-      var r = MM.progreso.resumen(+e.getAttribute('data-progreso'));
+      var t = e.getAttribute('data-progreso');
+      var r = MM.progreso.resumen(isNaN(+t) ? t : +t);
       var num = e.querySelector('.pg-num'), barra = e.querySelector('.pg-barra i');
       var texto = r.total ? r.aciertos + ' de ' + r.total + ' aciertos guardados' : 'Sin aciertos guardados todavía';
       if (num) num.textContent = texto;

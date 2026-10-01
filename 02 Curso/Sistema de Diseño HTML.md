@@ -120,6 +120,20 @@ Tema 2 no enlazaba a su simulador ni a su simulacro. Ahora:
   arreglo `TEMAS`), la barra superior tiene "Repasos y práctica" y la sección se llama
   "Repasos, actividades y simulacros".
 
+## Material integrador: el parcial (2026-10-01)
+
+`docs/parcial-t1-t4/` reúne los Temas 1 a 4. Su capa es `data-k="parcial"`: la banda es la tinta
+(negra en claro, casi blanca en oscuro) con la franja `.cab-capas` de los cuatro colores de Tema,
+porque el material no es de una variable sino de todas. En la portada tiene su propio bloque
+`section.pp` y sus 4 piezas encabezan "Repasos, actividades y simulacros".
+
+Componentes propios (en `guia.css`): tablas de signos `.st` / `.st-row` / `.opt`, clave comentada
+`.keyrow` / `.keychip` con modo práctica (`body.hide-answers`), verdadero o falso con
+`aria-checked`, problemas `.prob` con `.num-in` y pauta `.rubric`, tablas `.tbl` y `.master`,
+figuras `.fig` (láminas), marcador fijo `.score` y resultado del simulacro. La calificación vive
+en `docs/parcial-t1-t4/parcial.js` (antes repetida en cada página) y guarda el progreso en la
+capa `parcial`. En el simulacro, el examen queda `inert` hasta presionar Comenzar.
+
 ## Movimiento (2026-10-01)
 
 Todo pasa por `MM.animar` / `MM.trazar` en `guia.js` (Web Animations) o por reglas bajo
