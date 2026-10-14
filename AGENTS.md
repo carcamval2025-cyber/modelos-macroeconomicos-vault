@@ -130,6 +130,8 @@ checklist en `02 Curso/Sistema de Diseño HTML.md`; registro del proceso en
   servidas desde `docs/assets/fonts/`.
 - **Archivos compartidos:** todo el estilo vive en `docs/assets/guia.css` y el comportamiento
   común en `docs/assets/guia.js`. Ninguna página lleva `<style>` propio.
+- **Caché:** antes de publicar, ejecutar `python3 scripts/versionar-assets.py` y añadir los
+  HTML actualizados al commit. `--check` comprueba que sus versiones coinciden con los assets.
 - **Interacciones:** índice como diagrama (punto = posición de lectura, flechas del teclado),
   variables vivas en ecuaciones, "predice antes de ver" (Tema 2), progreso guardado en el
   navegador que la portada suma por Tema, próxima evaluación calculada desde el cronograma.

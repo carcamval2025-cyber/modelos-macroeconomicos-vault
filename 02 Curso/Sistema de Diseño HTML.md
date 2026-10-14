@@ -39,6 +39,11 @@ riesgo x, Tema 4 la paridad de tasas con el exterior. Esa idea se ve en:
 
 ## Archivos compartidos (no escribir CSS suelto por página)
 
+Antes de publicar, ejecutar `python3 scripts/versionar-assets.py`. El script actualiza el
+parámetro `?v=` de los estilos, el script común y el favicon en todos los HTML con una huella
+de su contenido, para evitar que el navegador reutilice una versión anterior. Para comprobar
+sin editar: `python3 scripts/versionar-assets.py --check`.
+
 - `docs/assets/guia.css`: tokens, tema claro y oscuro, todos los componentes.
 - `docs/assets/guia.js`: tema claro/oscuro, índice-diagrama, variables vivas, diagrama del
   modelo, "predice antes de ver", progreso guardado y fechas de evaluación del cronograma.
