@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es" data-k="u">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tema 5 · Semana 8 · Actividad: curva de Phillips | Macro II</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<script>try{var t=localStorage.getItem('mm-tema');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/guia.css">
+</head>
+<body>
+
+<a class="salto" href="#contenido">Saltar al contenido</a>
+<header class="cab">
+  <div class="cab-barra">
+    <a class="cab-marca" href="../index.html"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect x="6" y="6" width="52" height="8" fill="#F0B429"/><rect x="6" y="18" width="43" height="8" fill="#F2552C"/><rect x="6" y="30" width="34" height="8" fill="#C65BD6"/><rect x="6" y="42" width="25" height="8" fill="#22B8A0"/><rect x="6" y="54" width="16" height="8" fill="#EC6FA0"/></svg><span><b>Macro II</b><small>Modelos Macroeconómicos · ESEN</small></span></a>
+    <button class="btn-tema" type="button" data-btn-tema>Tema oscuro</button>
+  </div>
+  <div class="cab-banda">
+    <div class="cab-in">
+      <p class="cab-kicker"><a href="../index.html">Inicio</a> / Tema 5 · Semana 8 · Actividad de práctica</p>
+      <h1>Actividad: curva de Phillips e inflación</h1>
+      <p class="sub">Autoevaluación interactiva del capítulo 8: la ecuación de la curva de Phillips, el papel de las expectativas, los shocks de oferta, la indexación y la deflación.</p>
+      <ul class="cab-meta"><li>Blanchard, cap. 8</li><li>Preparación para el Control 3</li><li>21 ítems y 3 ejercicios numéricos</li></ul>
+      <nav class="cab-mats" aria-label="Materiales del Tema 5"><span>Materiales del Tema 5:</span><a href="index.html">Guía semana 7</a><a href="actividad-semana7-mercado-laboral.html">Actividad semana 7</a><a href="guia-semana8-phillips.html">Guía semana 8</a><a href="actividad-semana8-phillips.html" aria-current="page">Actividad semana 8</a></nav>
+    </div>
+  </div>
+</header>
+
+<div class="pagina angosta">
+<main id="contenido">
+  <div class="aviso" style="margin-bottom:32px;">
+    <span class="aviso-tag">Antes de empezar</span>
+    <p>Repasa la <a href="guia-semana8-phillips.html">Guía de la semana 8</a>. Cada ítem cuenta solo el primer intento y tus aciertos se guardan en este navegador. En los ejercicios numéricos escribe números con punto o coma decimal, sin el símbolo %. Los parámetros son de economías hipotéticas.</p>
+  </div>
+  <div class="progreso-panel" role="status" aria-live="polite">
+    <div class="progreso-item"><div class="progreso-label">Resueltos</div><div class="progreso-val" id="pv-total">0</div></div>
+    <div class="progreso-item"><div class="progreso-label">Correctos</div><div class="progreso-val correctas" id="pv-correctas">0</div></div>
+    <div class="progreso-item"><div class="progreso-label">Incorrectos</div><div class="progreso-val incorrectas" id="pv-incorrectas">0</div></div>
+  </div>
+  <section class="modulo" id="ecuacion">
+    <div class="modulo-head"><h2>La ecuación de la curva de Phillips</h2></div>
+    <div class="modulo-text">Sección 8-1. π = π<sup>e</sup> + (m + z) − αu, con u<sub>n</sub> = (m + z)/α.</div>
+    <div class="item" data-resuelto="false">
+      <span class="item-num">Ítem 1</span>
+      <p class="item-enunciado">En π = π<sup>e</sup> + (m + z) − αu, dada π<sup>e</sup>, un aumento del desempleo…</p>
+      <div class="opciones" role="radiogroup" aria-label="Opciones ítem 1">
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>aumenta la inflación, porque baja la productividad.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>no afecta la inflación, solo la inflación esperada.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="true"><span class="marca"></span>reduce la inflación, porque reduce los salarios nominales y con ellos los precios.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>aumenta el markup m.</button>
+      </div>
+      <div class="retro correcto"><span class="retro-tag">Correcto</span><p>Dada π<sup>e</sup>, más desempleo reduce el salario nominal que se fija; eso reduce el nivel de precios y, por tanto, la inflación (término −αu).</p></div>
+      <div class="retro incorrecto"><span class="retro-tag">Incorrecto</span><p>Dada π<sup>e</sup>, más desempleo reduce el salario nominal que se fija; eso reduce el nivel de precios y, por tanto, la inflación (término −αu).</p></div>
+    </div>
+    <div class="item" data-resuelto="false">
+      <span class="item-num">Ítem 2</span>
+      <p class="item-enunciado">¿Cómo se define la tasa natural de desempleo en el capítulo 8?</p>
+      <div class="opciones" role="radiogroup" aria-label="Opciones ítem 2">
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="true"><span class="marca"></span>La tasa a la que la inflación efectiva es igual a la inflación esperada.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>La tasa a la que la inflación es cero.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>El desempleo mínimo que puede alcanzar la política fiscal.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>El desempleo promedio de los últimos cinco años.</button>
+      </div>
+      <div class="retro correcto"><span class="retro-tag">Correcto</span><p>Es la tasa a la que π = π<sup>e</sup>, equivalente a la condición P = P<sup>e</sup> del capítulo 7.</p></div>
+      <div class="retro incorrecto"><span class="retro-tag">Incorrecto</span><p>Es la tasa a la que π = π<sup>e</sup>, equivalente a la condición P = P<sup>e</sup> del capítulo 7.</p></div>
+    </div>
+    <div class="numerico" data-abierto="false" data-resuelto="false">
+      <span class="item-num">Ejercicio 1: tasa natural e inflación</span>
+      <p class="item-enunciado">Economía hipotética con m = 0.08, z = 0.04 y α = 2.</p>
+      <div class="datos"><div class="dato"><div class="dato-label">m</div><div class="dato-val">0.08</div></div><div class="dato"><div class="dato-label">z</div><div class="dato-val">0.04</div></div><div class="dato"><div class="dato-label">α</div><div class="dato-val">2</div></div></div>
+      <div class="campos-num">
+        <div class="campo-num"><label for="n1-0">Tasa natural uₙ (%)</label><input id="n1-0" type="text" inputmode="decimal" autocomplete="off" data-resp="6" data-tol="0.05" data-mostrar="6"></div>
+        <div class="campo-num"><label for="n1-1">Si π<sup>e</sup> = 3% y u = 5%, inflación π (%)</label><input id="n1-1" type="text" inputmode="decimal" autocomplete="off" data-resp="5" data-tol="0.05" data-mostrar="5"></div>
+      </div>
+      <div class="acciones-num"><button class="btn btn-comprobar" type="button">Comprobar</button><button class="btn-revelar btn-reset" type="button">Ver solución</button></div>
+      <div class="retro correcto"><span class="retro-tag">Correcto</span><p>Tus resultados coinciden con la solución.</p></div>
+      <div class="retro incorrecto"><span class="retro-tag">Revisa</span><p>Alguna casilla no coincide (marcada en rojo). Puedes corregir y volver a comprobar; el progreso guarda solo el primer intento.</p></div>
+      <div class="solucion"><p><strong>Tasa natural:</strong> uₙ = (m + z)/α = 0.12/2 = 0.06 (6%).</p><p><strong>Inflación:</strong> π = 0.03 + 0.12 − 2(0.05) = 0.05 (5%). Como u está 1 punto por debajo de uₙ, la inflación supera a la esperada en α × 1 = 2 puntos.</p></div>
+    </div>
+    <div class="item" data-resuelto="false">
+      <span class="item-num">Ítem 3</span>
+      <p class="item-enunciado">Si el desempleo está por encima de la tasa natural, entonces…</p>
+      <div class="opciones" role="radiogroup" aria-label="Opciones ítem 3">
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>la inflación es mayor que la esperada.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="true"><span class="marca"></span>la inflación es menor que la esperada.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>la inflación es necesariamente negativa.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>la inflación es igual a la esperada.</button>
+      </div>
+      <div class="retro correcto"><span class="retro-tag">Correcto</span><p>De (8.5): π<sub>t</sub> − π<sup>e</sup><sub>t</sub> = −α(u<sub>t</sub> − u<sub>n</sub>). Si u<sub>t</sub> &gt; u<sub>n</sub>, el lado derecho es negativo.</p></div>
+      <div class="retro incorrecto"><span class="retro-tag">Incorrecto</span><p>De (8.5): π<sub>t</sub> − π<sup>e</sup><sub>t</sub> = −α(u<sub>t</sub> − u<sub>n</sub>). Si u<sub>t</sub> &gt; u<sub>n</sub>, el lado derecho es negativo.</p></div>
+    </div>
+  </section>
+  <section class="modulo" id="expectativas">
+    <div class="modulo-head"><h2>Expectativas: curva original y aceleracionista</h2></div>
+    <div class="modulo-text">Sección 8-2 y recuadro de Friedman y Phelps.</div>
+    <div class="item" data-resuelto="false">
+      <span class="item-num">Ítem 4</span>
+      <p class="item-enunciado">¿Por qué funcionaba la curva de Phillips original hasta los años sesenta?</p>
+      <div class="opciones" role="radiogroup" aria-label="Opciones ítem 4">
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>Porque no existían sindicatos.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>Porque los salarios estaban indexados.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>Porque la tasa natural de desempleo era cero.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="true"><span class="marca"></span>Porque la inflación no era persistente y las expectativas eran aproximadamente constantes.</button>
+      </div>
+      <div class="retro correcto"><span class="retro-tag">Correcto</span><p>La inflación de un año no ayudaba a predecir la del siguiente; era razonable esperar un valor constante π̄ (θ cercano a 0), y así se obtiene una relación entre el nivel de la inflación y el desempleo.</p></div>
+      <div class="retro incorrecto"><span class="retro-tag">Incorrecto</span><p>La inflación de un año no ayudaba a predecir la del siguiente; era razonable esperar un valor constante π̄ (θ cercano a 0), y así se obtiene una relación entre el nivel de la inflación y el desempleo.</p></div>
+    </div>
+    <div class="item" data-resuelto="false">
+      <span class="item-num">Ítem 5</span>
+      <p class="item-enunciado">Si θ = 1 en π<sup>e</sup><sub>t</sub> = (1 − θ)π̄ + θπ<sub>t−1</sub>, entonces…</p>
+      <div class="opciones" role="radiogroup" aria-label="Opciones ítem 5">
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>las expectativas están ancladas en π̄.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="true"><span class="marca"></span>la gente espera la inflación del año pasado y un desempleo bajo hace que la inflación aumente año tras año.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>la inflación ya no depende del desempleo.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>se recupera la curva de Phillips original.</button>
+      </div>
+      <div class="retro correcto"><span class="retro-tag">Correcto</span><p>Con θ = 1, π<sup>e</sup><sub>t</sub> = π<sub>t−1</sub> y se obtiene π<sub>t</sub> − π<sub>t−1</sub> = −α(u<sub>t</sub> − u<sub>n</sub>): la curva aceleracionista.</p></div>
+      <div class="retro incorrecto"><span class="retro-tag">Incorrecto</span><p>Con θ = 1, π<sup>e</sup><sub>t</sub> = π<sub>t−1</sub> y se obtiene π<sub>t</sub> − π<sub>t−1</sub> = −α(u<sub>t</sub> − u<sub>n</sub>): la curva aceleracionista.</p></div>
+    </div>
+    <div class="item" data-resuelto="false">
+      <span class="item-num">Ítem 6</span>
+      <p class="item-enunciado">Según Blanchard, ¿qué explica que θ cayera desde fines de los noventa hasta casi 0 hacia 2020?</p>
+      <div class="opciones" role="radiogroup" aria-label="Opciones ítem 6">
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="true"><span class="marca"></span>La mayor credibilidad de la Fed en su compromiso con inflación baja y estable.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>La generalización de la indexación salarial.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>El aumento del precio del petróleo.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>La caída de la tasa de participación laboral.</button>
+      </div>
+      <div class="retro correcto"><span class="retro-tag">Correcto</span><p>Desde inicios de los ochenta la Fed se comprometió con inflación baja y estable (meta explícita de 2% desde 2012). Con inflación estable por más de una década, las expectativas se re-anclaron.</p></div>
+      <div class="retro incorrecto"><span class="retro-tag">Incorrecto</span><p>Desde inicios de los ochenta la Fed se comprometió con inflación baja y estable (meta explícita de 2% desde 2012). Con inflación estable por más de una década, las expectativas se re-anclaron.</p></div>
+    </div>
+    <div class="item" data-resuelto="false">
+      <span class="item-num">Ítem 7</span>
+      <p class="item-enunciado">La tesis de Friedman y Phelps a fines de los sesenta fue que…</p>
+      <div class="opciones" role="radiogroup" aria-label="Opciones ítem 7">
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>los gobiernos pueden lograr un desempleo tan bajo como quieran aceptando más inflación.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>la inflación no tiene relación alguna con el desempleo.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="true"><span class="marca"></span>existe un trade-off temporal entre inflación y desempleo, pero no uno permanente.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>la curva de Phillips es perfectamente estable en el tiempo.</button>
+      </div>
+      <div class="retro correcto"><span class="retro-tag">Correcto</span><p>Argumentaron que el trade-off viene de una inflación creciente (inesperada); si se intenta explotarlo, las expectativas se ajustan y desaparece, como ocurrió en los setenta.</p></div>
+      <div class="retro incorrecto"><span class="retro-tag">Incorrecto</span><p>Argumentaron que el trade-off viene de una inflación creciente (inesperada); si se intenta explotarlo, las expectativas se ajustan y desaparece, como ocurrió en los setenta.</p></div>
+    </div>
+    <div class="numerico" data-abierto="false" data-resuelto="false">
+      <span class="item-num">Ejercicio 2: mantener el desempleo bajo</span>
+      <p class="item-enunciado">Misma economía del bloque 1 (π<sub>t</sub> = π<sup>e</sup><sub>t</sub> + 0.12 − 2u<sub>t</sub>, uₙ = 6%) con π̄ = 2%. En el año 0, u = uₙ y π = 2%. Desde el año 1 el gobierno mantiene u = 5%. Calcula la inflación (%).</p>
+      <div class="campos-num">
+        <div class="campo-num"><label for="n2-0">θ = 0, año 1</label><input id="n2-0" type="text" inputmode="decimal" autocomplete="off" data-resp="4" data-tol="0.05" data-mostrar="4"></div>
+        <div class="campo-num"><label for="n2-1">θ = 0, año 2</label><input id="n2-1" type="text" inputmode="decimal" autocomplete="off" data-resp="4" data-tol="0.05" data-mostrar="4"></div>
+        <div class="campo-num"><label for="n2-2">θ = 1, año 1</label><input id="n2-2" type="text" inputmode="decimal" autocomplete="off" data-resp="4" data-tol="0.05" data-mostrar="4"></div>
+        <div class="campo-num"><label for="n2-3">θ = 1, año 2</label><input id="n2-3" type="text" inputmode="decimal" autocomplete="off" data-resp="6" data-tol="0.05" data-mostrar="6"></div>
+        <div class="campo-num"><label for="n2-4">θ = 1, año 3</label><input id="n2-4" type="text" inputmode="decimal" autocomplete="off" data-resp="8" data-tol="0.05" data-mostrar="8"></div>
+      </div>
+      <div class="acciones-num"><button class="btn btn-comprobar" type="button">Comprobar</button><button class="btn-revelar btn-reset" type="button">Ver solución</button></div>
+      <div class="retro correcto"><span class="retro-tag">Correcto</span><p>Tus resultados coinciden con la solución.</p></div>
+      <div class="retro incorrecto"><span class="retro-tag">Revisa</span><p>Alguna casilla no coincide (marcada en rojo). Puedes corregir y volver a comprobar; el progreso guarda solo el primer intento.</p></div>
+      <div class="solucion"><p>Con uₙ = 6% y u = 5%, el término −α(u − uₙ) = −2(−0.01) = +2 puntos.</p><p><strong>θ = 0:</strong> π = 2% + 2 = 4% todos los años (trade-off estable).</p><p><strong>θ = 1:</strong> π<sub>t</sub> = π<sub>t−1</sub> + 2: 4%, 6%, 8%. La inflación se acelera mientras u siga por debajo de uₙ.</p></div>
+    </div>
+  </section>
+  <section class="modulo" id="shocks">
+    <div class="modulo-head"><h2>Shocks de oferta y la inflación del Covid</h2></div>
+    <div class="modulo-text">Sección 8-3.</div>
+    <div class="item" data-resuelto="false">
+      <span class="item-num">Ítem 8</span>
+      <p class="item-enunciado">En el modelo, un fuerte aumento del precio del petróleo se representa como…</p>
+      <div class="opciones" role="radiogroup" aria-label="Opciones ítem 8">
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>una caída de z que reduce la tasa natural.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="true"><span class="marca"></span>un aumento de m que reduce el salario real y eleva la tasa natural.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>un aumento de α que no cambia la tasa natural.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>una caída de la inflación esperada.</button>
+      </div>
+      <div class="retro correcto"><span class="retro-tag">Correcto</span><p>Un mayor costo de insumos no laborales que las empresas trasladan a precios es un aumento de m: sube P dado W, cae el salario real 1/(1 + m) y sube uₙ = (m + z)/α.</p></div>
+      <div class="retro incorrecto"><span class="retro-tag">Incorrecto</span><p>Un mayor costo de insumos no laborales que las empresas trasladan a precios es un aumento de m: sube P dado W, cae el salario real 1/(1 + m) y sube uₙ = (m + z)/α.</p></div>
+    </div>
+    <div class="item" data-resuelto="false">
+      <span class="item-num">Ítem 9</span>
+      <p class="item-enunciado">Según Blanchard, ¿cuál fue el canal principal de la inflación del Covid en EE. UU.?</p>
+      <div class="opciones" role="radiogroup" aria-label="Opciones ítem 9">
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>Un desempleo muy por debajo de la tasa natural con un α muy grande.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>El desanclaje total de las expectativas (θ = 1).</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>La indexación generalizada de salarios.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="true"><span class="marca"></span>Un aumento del markup m por energía, materias primas y cadenas de suministro.</button>
+      </div>
+      <div class="retro correcto"><span class="retro-tag">Correcto</span><p>Hubo inflación sustancial, pero no vino principalmente del desempleo ni del desanclaje: el canal principal fue el aumento de precios dados los salarios (m), por energía y materias primas y por disrupciones de cadenas de suministro.</p></div>
+      <div class="retro incorrecto"><span class="retro-tag">Incorrecto</span><p>Hubo inflación sustancial, pero no vino principalmente del desempleo ni del desanclaje: el canal principal fue el aumento de precios dados los salarios (m), por energía y materias primas y por disrupciones de cadenas de suministro.</p></div>
+    </div>
+    <div class="item" data-resuelto="false">
+      <span class="item-num">Ítem 10</span>
+      <p class="item-enunciado">Un shock eleva (m + z) por un tiempo y luego desaparece. Si las expectativas se mantienen <strong>ancladas</strong>, ¿qué pasa con la inflación?</p>
+      <div class="opciones" role="radiogroup" aria-label="Opciones ítem 10">
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="true"><span class="marca"></span>Vuelve sola a la meta cuando (m + z) regresa a su valor inicial.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>Queda permanentemente más alta.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>Sigue aumentando cada año.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>Se vuelve negativa.</button>
+      </div>
+      <div class="retro correcto"><span class="retro-tag">Correcto</span><p>Con expectativas ancladas hay un brote de inflación que desaparece solo; no hace falta que la política monetaria eleve el desempleo.</p></div>
+      <div class="retro incorrecto"><span class="retro-tag">Incorrecto</span><p>Con expectativas ancladas hay un brote de inflación que desaparece solo; no hace falta que la política monetaria eleve el desempleo.</p></div>
+    </div>
+    <div class="item" data-resuelto="false">
+      <span class="item-num">Ítem 11</span>
+      <p class="item-enunciado">El mismo shock, pero las expectativas se <strong>desanclan</strong> (θ sube hasta 1). ¿Qué pasa?</p>
+      <div class="opciones" role="radiogroup" aria-label="Opciones ítem 11">
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>Lo mismo que con expectativas ancladas.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="true"><span class="marca"></span>La inflación sube mientras dure el shock y, aun cuando pasa, queda más alta; se necesita un período de mayor desempleo para devolverla a la meta.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>La tasa natural baja y la inflación cae.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>La inflación no se ve afectada.</button>
+      </div>
+      <div class="retro correcto"><span class="retro-tag">Correcto</span><p>Es el escenario menos atractivo: la inflación se acumula y, para regresarla a la meta, la política debe aceptar más desempleo por un tiempo.</p></div>
+      <div class="retro incorrecto"><span class="retro-tag">Incorrecto</span><p>Es el escenario menos atractivo: la inflación se acumula y, para regresarla a la meta, la política debe aceptar más desempleo por un tiempo.</p></div>
+    </div>
+    <div class="item" data-resuelto="false">
+      <span class="item-num">Ítem 12</span>
+      <p class="item-enunciado">¿Por qué el brote inflacionario del Covid no se amplificó como el de los años setenta?</p>
+      <div class="opciones" role="radiogroup" aria-label="Opciones ítem 12">
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>Porque el aumento del precio de la energía fue menor en todos los sentidos.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>Porque no hubo estímulo fiscal.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="true"><span class="marca"></span>Porque las expectativas de inflación se mantuvieron en gran medida ancladas.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>Porque la tasa natural de desempleo bajó a cero.</button>
+      </div>
+      <div class="retro correcto"><span class="retro-tag">Correcto</span><p>En los setenta el desanclaje llevó la inflación a 17% anualizado a inicios de 1980. En 2021 y 2022, el pronóstico a diez años apenas llegó a 2.4%: la credibilidad de los bancos centrales mantuvo ancladas las expectativas.</p></div>
+      <div class="retro incorrecto"><span class="retro-tag">Incorrecto</span><p>En los setenta el desanclaje llevó la inflación a 17% anualizado a inicios de 1980. En 2021 y 2022, el pronóstico a diez años apenas llegó a 2.4%: la credibilidad de los bancos centrales mantuvo ancladas las expectativas.</p></div>
+    </div>
+  </section>
+  <section class="modulo" id="indexacion">
+    <div class="modulo-head"><h2>Indexación y deflación</h2></div>
+    <div class="modulo-text">Sección 8-4.</div>
+    <div class="numerico" data-abierto="false" data-resuelto="false">
+      <span class="item-num">Ejercicio 3: indexación salarial</span>
+      <p class="item-enunciado">Economía hipotética con π<sup>e</sup><sub>t</sub> = π<sub>t−1</sub>, α = 2 y la mitad de los contratos indexados (λ = 0.5).</p>
+      <div class="datos"><div class="dato"><div class="dato-label">α</div><div class="dato-val">2</div></div><div class="dato"><div class="dato-label">λ</div><div class="dato-val">0.5</div></div></div>
+      <div class="campos-num">
+        <div class="campo-num"><label for="n3-0">Coeficiente α/(1 − λ)</label><input id="n3-0" type="text" inputmode="decimal" autocomplete="off" data-resp="4" data-tol="0.01" data-mostrar="4"></div>
+        <div class="campo-num"><label for="n3-1">Si u está 1 punto bajo uₙ, aumento anual de π (puntos)</label><input id="n3-1" type="text" inputmode="decimal" autocomplete="off" data-resp="4" data-tol="0.01" data-mostrar="4"></div>
+      </div>
+      <div class="acciones-num"><button class="btn btn-comprobar" type="button">Comprobar</button><button class="btn-revelar btn-reset" type="button">Ver solución</button></div>
+      <div class="retro correcto"><span class="retro-tag">Correcto</span><p>Tus resultados coinciden con la solución.</p></div>
+      <div class="retro incorrecto"><span class="retro-tag">Revisa</span><p>Alguna casilla no coincide (marcada en rojo). Puedes corregir y volver a comprobar; el progreso guarda solo el primer intento.</p></div>
+      <div class="solucion"><p>Con indexación: π<sub>t</sub> − π<sub>t−1</sub> = −[α/(1 − λ)](u<sub>t</sub> − u<sub>n</sub>). Con α = 2 y λ = 0.5, el coeficiente es 2/0.5 = 4.</p><p>Si u está 1 punto por debajo de uₙ, la inflación sube 4 puntos por año: el doble que sin indexación.</p></div>
+    </div>
+    <div class="item" data-resuelto="false">
+      <span class="item-num">Ítem 13</span>
+      <p class="item-enunciado">Cuando casi todos los contratos están indexados (λ cercano a 1)…</p>
+      <div class="opciones" role="radiogroup" aria-label="Opciones ítem 13">
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="true"><span class="marca"></span>la relación entre inflación y desempleo se vuelve muy tenue y puede desaparecer.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>la inflación deja de responder a cualquier variable.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>la curva de Phillips original se vuelve más estable.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>el desempleo se fija automáticamente en la tasa natural.</button>
+      </div>
+      <div class="retro correcto"><span class="retro-tag">Correcto</span><p>El coeficiente α/(1 − λ) se vuelve enorme: pequeños cambios del desempleo generan grandes cambios de la inflación, y la relación termina desapareciendo, como en países de inflación muy alta.</p></div>
+      <div class="retro incorrecto"><span class="retro-tag">Incorrecto</span><p>El coeficiente α/(1 − λ) se vuelve enorme: pequeños cambios del desempleo generan grandes cambios de la inflación, y la relación termina desapareciendo, como en países de inflación muy alta.</p></div>
+    </div>
+    <div class="item" data-resuelto="false">
+      <span class="item-num">Ítem 14</span>
+      <p class="item-enunciado">La Figura 8-8 (Portugal, 1984 y 2012) se usa para mostrar que…</p>
+      <div class="opciones" role="radiogroup" aria-label="Opciones ítem 14">
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>la inflación alta elimina la indexación.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="true"><span class="marca"></span>los salarios nominales rara vez bajan, lo que debilita la curva de Phillips con inflación muy baja.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>la tasa natural de Portugal subió en 2012.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>los salarios reales nunca caen.</button>
+      </div>
+      <div class="retro correcto"><span class="retro-tag">Correcto</span><p>En 2012 (inflación de 2.1%) los cambios salariales se amontonaban en cero, casi sin recortes nominales; en 1984 (27%) la distribución era casi simétrica.</p></div>
+      <div class="retro incorrecto"><span class="retro-tag">Incorrecto</span><p>En 2012 (inflación de 2.1%) los cambios salariales se amontonaban en cero, casi sin recortes nominales; en 1984 (27%) la distribución era casi simétrica.</p></div>
+    </div>
+    <div class="item" data-resuelto="false">
+      <span class="item-num">Ítem 15</span>
+      <p class="item-enunciado">Caso 1: inflación de 4% y tu salario nominal sube 2%. Caso 2: inflación de 0% y tu salario nominal baja 2%. Según el razonamiento económico…</p>
+      <div class="opciones" role="radiogroup" aria-label="Opciones ítem 15">
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>el caso 1 es mejor porque tu salario nominal sube.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>el caso 2 es mejor porque no hay inflación.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="true"><span class="marca"></span>deberías ser indiferente: en ambos tu salario real cae 2%.</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>no se puede comparar sin conocer la tasa natural.</button>
+      </div>
+      <div class="retro correcto"><span class="retro-tag">Correcto</span><p>En ambos casos el salario real cae 2%. Que mucha gente prefiera el primero muestra ilusión monetaria.</p></div>
+      <div class="retro incorrecto"><span class="retro-tag">Incorrecto</span><p>En ambos casos el salario real cae 2%. Que mucha gente prefiera el primero muestra ilusión monetaria.</p></div>
+    </div>
+  </section>
+  <section class="modulo" id="vf">
+    <div class="modulo-head"><h2>Verdadero o falso</h2></div>
+    <div class="modulo-text">Todo el capítulo 8.</div>
+    <div class="item" data-resuelto="false">
+      <span class="item-num">Ítem 16</span>
+      <p class="item-enunciado">"La curva de Phillips original ha sido muy estable entre países y a lo largo del tiempo."</p>
+      <div class="opciones" role="radiogroup" aria-label="Opciones ítem 16">
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>Verdadero</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="true"><span class="marca"></span>Falso</button>
+      </div>
+      <div class="retro correcto"><span class="retro-tag">Correcto</span><p>Falso. Se rompió en los setenta, reapareció como aceleracionista, volvió a su forma original desde los noventa y cambió otra vez con el Covid.</p></div>
+      <div class="retro incorrecto"><span class="retro-tag">Incorrecto</span><p>Falso. Se rompió en los setenta, reapareció como aceleracionista, volvió a su forma original desde los noventa y cambió otra vez con el Covid.</p></div>
+    </div>
+    <div class="item" data-resuelto="false">
+      <span class="item-num">Ítem 17</span>
+      <p class="item-enunciado">"Los gobiernos solo pueden explotar el trade-off entre inflación y desempleo de forma temporal."</p>
+      <div class="opciones" role="radiogroup" aria-label="Opciones ítem 17">
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="true"><span class="marca"></span>Verdadero</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>Falso</button>
+      </div>
+      <div class="retro correcto"><span class="retro-tag">Correcto</span><p>Verdadero. Es la lección de Friedman y Phelps: si se intenta explotarlo de forma sistemática, las expectativas se ajustan.</p></div>
+      <div class="retro incorrecto"><span class="retro-tag">Incorrecto</span><p>Verdadero. Es la lección de Friedman y Phelps: si se intenta explotarlo de forma sistemática, las expectativas se ajustan.</p></div>
+    </div>
+    <div class="item" data-resuelto="false">
+      <span class="item-num">Ítem 18</span>
+      <p class="item-enunciado">"Si la gente supone que la inflación será igual a la del año pasado, la curva de Phillips relaciona el cambio de la inflación con el desempleo."</p>
+      <div class="opciones" role="radiogroup" aria-label="Opciones ítem 18">
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="true"><span class="marca"></span>Verdadero</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>Falso</button>
+      </div>
+      <div class="retro correcto"><span class="retro-tag">Correcto</span><p>Verdadero. Con π<sup>e</sup><sub>t</sub> = π<sub>t−1</sub> (θ = 1) se obtiene la ecuación (8.9).</p></div>
+      <div class="retro incorrecto"><span class="retro-tag">Incorrecto</span><p>Verdadero. Con π<sup>e</sup><sub>t</sub> = π<sub>t−1</sub> (θ = 1) se obtiene la ecuación (8.9).</p></div>
+    </div>
+    <div class="item" data-resuelto="false">
+      <span class="item-num">Ítem 19</span>
+      <p class="item-enunciado">"Cuando las expectativas están ancladas, la curva de Phillips relaciona el cambio de la inflación con el desempleo."</p>
+      <div class="opciones" role="radiogroup" aria-label="Opciones ítem 19">
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>Verdadero</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="true"><span class="marca"></span>Falso</button>
+      </div>
+      <div class="retro correcto"><span class="retro-tag">Correcto</span><p>Falso. Con expectativas ancladas (θ cercano a 0), la curva relaciona el nivel de la inflación con el desempleo; el cambio de la inflación corresponde a expectativas desancladas.</p></div>
+      <div class="retro incorrecto"><span class="retro-tag">Incorrecto</span><p>Falso. Con expectativas ancladas (θ cercano a 0), la curva relaciona el nivel de la inflación con el desempleo; el cambio de la inflación corresponde a expectativas desancladas.</p></div>
+    </div>
+    <div class="item" data-resuelto="false">
+      <span class="item-num">Ítem 20</span>
+      <p class="item-enunciado">"La tasa natural de desempleo es la misma en todos los países."</p>
+      <div class="opciones" role="radiogroup" aria-label="Opciones ítem 20">
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>Verdadero</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="true"><span class="marca"></span>Falso</button>
+      </div>
+      <div class="retro correcto"><span class="retro-tag">Correcto</span><p>Falso. uₙ = (m + z)/α depende de las instituciones y la estructura de cada economía; el capítulo 7 mostró grandes diferencias entre países.</p></div>
+      <div class="retro incorrecto"><span class="retro-tag">Incorrecto</span><p>Falso. uₙ = (m + z)/α depende de las instituciones y la estructura de cada economía; el capítulo 7 mostró grandes diferencias entre países.</p></div>
+    </div>
+    <div class="item" data-resuelto="false">
+      <span class="item-num">Ítem 21</span>
+      <p class="item-enunciado">"Según la curva de Phillips, se puede tener alta inflación o alto desempleo, pero nunca ambos a la vez."</p>
+      <div class="opciones" role="radiogroup" aria-label="Opciones ítem 21">
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="false"><span class="marca"></span>Verdadero</button>
+        <button class="opcion" type="button" role="radio" aria-checked="false" data-correcta="true"><span class="marca"></span>Falso</button>
+      </div>
+      <div class="retro correcto"><span class="retro-tag">Correcto</span><p>Falso. En los setenta, EE. UU. y la mayoría de países de la OCDE tuvieron a la vez alta inflación y alto desempleo, contradiciendo la curva original.</p></div>
+      <div class="retro incorrecto"><span class="retro-tag">Incorrecto</span><p>Falso. En los setenta, EE. UU. y la mayoría de países de la OCDE tuvieron a la vez alta inflación y alto desempleo, contradiciendo la curva original.</p></div>
+    </div>
+  </section>
+
+</main>
+<nav class="panel" data-nav-eq aria-label="Índice de esta página">
+  <button class="panel-boton" type="button" aria-expanded="false" aria-controls="panel-lista"><i><svg aria-hidden="true" focusable="false"></svg></i><span class="sr">Índice. Estás en: </span><span data-nav-actual>Índice</span></button>
+  <p class="panel-tt">Tema 5<small>En esta página</small></p>
+  <svg class="panel-svg" aria-hidden="true" focusable="false"></svg>
+  <ol class="panel-lista" id="panel-lista">
+    <li><a href="#ecuacion">La ecuación</a></li>
+    <li><a href="#expectativas">Expectativas</a></li>
+    <li><a href="#shocks">Shocks de oferta</a></li>
+    <li><a href="#indexacion">Indexación y deflación</a></li>
+    <li><a href="#vf">Verdadero o falso</a></li>
+  </ol>
+  <p class="panel-ayuda">El punto marca dónde vas leyendo. Con el foco en el índice, las flechas lo recorren.</p>
+</nav>
+</div>
+
+<footer>
+  <div>
+    <span class="badge">Fuente</span>Blanchard, Olivier (2023), <em>Macroeconomics</em>, 9ª ed., Pearson, Cap. 8 (pp. 157–176). Los parámetros de los ejercicios numéricos son hipotéticos.
+  </div>
+  <p>Actividad de práctica: Semana 8, Tema 5. Material de repaso del propio estudiante. &middot; <a href="../index.html">Volver al sitio</a></p>
+</footer>
+
+<script src="../assets/guia.js"></script>
+
+<script>
+(function(){
+  var TEMA = 5, PAGINA = 'actividad-s8';
+  var items = [].slice.call(document.querySelectorAll('.item'));
+  var nums = [].slice.call(document.querySelectorAll('.numerico'));
+  var total = items.length + nums.length, correctas = 0, resueltos = 0;
+  function actualizar(){
+    document.getElementById('pv-total').textContent = resueltos + ' / ' + total;
+    document.getElementById('pv-correctas').textContent = correctas;
+    document.getElementById('pv-incorrectas').textContent = resueltos - correctas;
+  }
+  function anotar(id, ok){ resueltos++; if (ok) correctas++; MM.progreso.marcar(TEMA, PAGINA, id, ok); actualizar(); }
+  MM.progreso.registrar(TEMA, PAGINA, total);
+
+  items.forEach(function(item, idx){
+    var opciones = item.querySelectorAll('.opcion');
+    opciones.forEach(function(op){
+      op.addEventListener('click', function(){
+        if (item.getAttribute('data-resuelto') === 'true') return;
+        opciones.forEach(function(o){ o.setAttribute('aria-checked', 'false'); });
+        op.setAttribute('aria-checked', 'true');
+        item.setAttribute('data-resuelto', 'true');
+        var ok = op.getAttribute('data-correcta') === 'true';
+        item.querySelector('.retro.correcto').style.display = ok ? 'block' : 'none';
+        item.querySelector('.retro.incorrecto').style.display = ok ? 'none' : 'block';
+        anotar('i' + idx, ok);
+      });
+    });
+  });
+
+  function leer(v){ v = String(v).trim().replace('%', '').replace(/\s/g, '').replace(',', '.'); return v === '' ? NaN : Number(v); }
+  nums.forEach(function(nm, idx){
+    var campos = [].slice.call(nm.querySelectorAll('input'));
+    var bien = nm.querySelector('.retro.correcto'), mal = nm.querySelector('.retro.incorrecto');
+    function cerrar(ok){ if (nm.getAttribute('data-resuelto') === 'true') return; nm.setAttribute('data-resuelto', 'true'); anotar('n' + idx, ok); }
+    nm.querySelector('.btn-comprobar').addEventListener('click', function(){
+      var vacio = false, todo = true;
+      campos.forEach(function(c){
+        var v = leer(c.value);
+        if (isNaN(v)) { vacio = true; c.removeAttribute('data-estado'); return; }
+        var ok = Math.abs(v - Number(c.getAttribute('data-resp'))) <= Number(c.getAttribute('data-tol'));
+        c.setAttribute('data-estado', ok ? 'ok' : 'mal');
+        if (!ok) todo = false;
+      });
+      if (vacio) { mal.setAttribute('data-visible', 'true'); bien.setAttribute('data-visible', 'false'); mal.querySelector('p').textContent = 'Completa todas las casillas con un número (punto o coma decimal, sin el símbolo %).'; return; }
+      mal.querySelector('p').textContent = 'Alguna casilla no coincide (marcada en rojo). Puedes corregir y volver a comprobar; el progreso guarda solo el primer intento.';
+      bien.setAttribute('data-visible', todo ? 'true' : 'false'); mal.setAttribute('data-visible', todo ? 'false' : 'true');
+      cerrar(todo);
+    });
+    nm.querySelector('.btn-revelar').addEventListener('click', function(){
+      nm.setAttribute('data-abierto', 'true');
+      cerrar(false);
+    });
+  });
+  actualizar();
+})();
+</script>
+
+</body>
+</html>

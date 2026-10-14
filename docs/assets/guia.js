@@ -293,6 +293,12 @@
     var g4 = el('g', { 'data-capa': '4' }, svg);
     txt('↔ i*', { x: f.X(0) + 8, y: f.Yc(M.ibar) - 12, class: 'pl-lbl pl-lbl-ext', 'data-var': 'ext' }, g4);
 
+    // Tema 5: la tasa natural de desempleo fija el nivel natural de producto Yn (geometría cualitativa)
+    var g5 = el('g', { 'data-capa': '5' }, svg), yN = yA + 0.14;
+    el('line', { x1: f.X(yN), y1: f.Yc(0.96), x2: f.X(yN), y2: f.Yc(0), class: 'pl-yn', 'data-var': 'u' }, g5);
+    txt('Yₙ', { x: f.X(yN), y: f.Yc(0) + 32, class: 'pl-lbl pl-lbl-u', 'data-var': 'u', 'text-anchor': 'middle' }, g5);
+    txt('uₙ → Yₙ', { x: f.X(yN) + 8, y: f.Yc(0.96) + 4, class: 'pl-lbl pl-lbl-u', 'data-var': 'u' }, g5);
+
     var defs = el('defs', {}, svg);
     var m = el('marker', { id: svgId(svg) + '-m', viewBox: '0 0 10 10', refX: 8, refY: 5, markerWidth: 7, markerHeight: 7, orient: 'auto-start-reverse' }, defs);
     el('path', { d: 'M0 0L10 5L0 10z', class: 'pl-punta' }, m);
@@ -429,7 +435,7 @@
       primera.appendChild(nota);
     }
   };
-  var NOMBRES = { Y: 'producto', i: 'tasa de interés', IS: 'curva IS', x: 'prima de riesgo', ext: 'sector externo' };
+  var NOMBRES = { Y: 'producto', i: 'tasa de interés', IS: 'curva IS', x: 'prima de riesgo', ext: 'sector externo', u: 'desempleo y mercado laboral' };
 
   /* ---------- Índice como diagrama: el punto es la posición de lectura ---------- */
   MM.navEq = function (nav) {

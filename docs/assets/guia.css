@@ -16,10 +16,10 @@
   color-scheme:light;
   --bg:#F4F5F6; --s1:#FFFFFF; --s2:#E9EBEE; --linea:#C9CCD1; --tinta:#111214; --tenue:#4D5157;
   /* color de cada variable como texto o trazo sobre el fondo */
-  --c-y:#855B00; --c-is:#B8330F; --c-x:#8E2FA3; --c-ext:#08735F; --c-i:#1F5FD1;
+  --c-y:#855B00; --c-is:#B8330F; --c-x:#8E2FA3; --c-ext:#08735F; --c-i:#1F5FD1; --c-u:#AD2A62;
   --ok:#1A7F3C; --mal:#C0263A; --base:#A3A7AD;
   /* capas: el color sólido de cada variable, igual en ambos temas, siempre con texto oscuro */
-  --k-y:#F0B429; --k-is:#F2552C; --k-x:#C65BD6; --k-ext:#22B8A0; --k-i:#3D8BFD; --k-txt:#140C00;
+  --k-y:#F0B429; --k-is:#F2552C; --k-x:#C65BD6; --k-ext:#22B8A0; --k-i:#3D8BFD; --k-u:#EC6FA0; --k-txt:#140C00;
   /* lámina: fondo fijo de los diagramas SVG heredados (su fondo va dentro del dibujo) */
   --lamina:#1A1B1D; --lamina-linea:#34363A;
   --k:var(--k-is); --c-k:var(--c-is);
@@ -36,14 +36,14 @@
   :root:not([data-theme="light"]){
     color-scheme:dark;
     --bg:#101112; --s1:#1A1B1D; --s2:#202124; --linea:#3A3C41; --tinta:#F2F2F0; --tenue:#A9ABAE;
-    --c-y:#F0B429; --c-is:#F2552C; --c-x:#D27AE0; --c-ext:#22B8A0; --c-i:#5C9DFF;
+    --c-y:#F0B429; --c-is:#F2552C; --c-x:#D27AE0; --c-ext:#22B8A0; --c-i:#5C9DFF; --c-u:#F08AB2;
     --ok:#55C975; --mal:#FF7382; --base:#55585D;
   }
 }
 :root[data-theme="dark"]{
   color-scheme:dark;
   --bg:#101112; --s1:#1A1B1D; --s2:#202124; --linea:#3A3C41; --tinta:#F2F2F0; --tenue:#A9ABAE;
-  --c-y:#F0B429; --c-is:#F2552C; --c-x:#D27AE0; --c-ext:#22B8A0; --c-i:#5C9DFF;
+  --c-y:#F0B429; --c-is:#F2552C; --c-x:#D27AE0; --c-ext:#22B8A0; --c-i:#5C9DFF; --c-u:#F08AB2;
   --ok:#55C975; --mal:#FF7382; --base:#55585D;
 }
 /* color de la capa de cada Tema */
@@ -54,6 +54,8 @@
 [data-k="i"]{--k:var(--k-i); --c-k:var(--c-i)}
 /* el parcial integra las cuatro capas: su banda es la tinta, con la franja de colores de los Temas */
 [data-k="parcial"]{--k:var(--tinta); --c-k:var(--tinta); --k-txt:var(--bg)}
+
+[data-k="u"]{--k:var(--k-u); --c-k:var(--c-u)}
 
 /* ---------- Base ---------- */
 *,*::before,*::after{box-sizing:border-box}
@@ -83,7 +85,7 @@ button:disabled{cursor:not-allowed}
 /* ---------- Variables con color fijo ---------- */
 .v{font-weight:700;font-style:normal}
 .v[data-var~="Y"]{color:var(--c-y)} .v[data-var~="i"]{color:var(--c-i)} .v[data-var~="IS"]{color:var(--c-is)}
-.v[data-var~="x"]{color:var(--c-x)} .v[data-var~="ext"]{color:var(--c-ext)}
+.v[data-var~="x"]{color:var(--c-x)} .v[data-var~="ext"]{color:var(--c-ext)} .v[data-var~="u"]{color:var(--c-u)}
 .ecuacion .v,.ecuacion-body .v,.ec .v{cursor:help;padding:0 1px}
 .vivo .ecuacion .v.es-viva,.vivo .ecuacion-body .v.es-viva,.vivo .ec .v.es-viva{background:currentColor;outline:2px solid currentColor}
 .vivo .ecuacion .v.es-viva > span,.vivo .ecuacion-body .v.es-viva > span,.vivo .ec .v.es-viva > span{color:var(--bg)}
@@ -106,7 +108,8 @@ button:disabled{cursor:not-allowed}
 .pl-tuya{stroke-dasharray:7 7}
 .pl-lbl{fill:var(--tinta);font-family:var(--mono);font-size:15px;font-weight:700}
 .pl-lbl-eje{font-size:18px}
-.pl-lbl-is{fill:var(--c-is)}.pl-lbl-lm{fill:var(--c-i)}.pl-lbl-x{fill:var(--c-x)}.pl-lbl-ext{fill:var(--c-ext)}
+.pl-lbl-is{fill:var(--c-is)}.pl-lbl-lm{fill:var(--c-i)}.pl-lbl-x{fill:var(--c-x)}.pl-lbl-ext{fill:var(--c-ext)}.pl-lbl-u{fill:var(--c-u)}
+.pl-yn{stroke:var(--c-u);stroke-width:3;stroke-dasharray:9 7}
 [data-capa]{transition:opacity .3s var(--ease)}
 
 /* =====================================================================
@@ -800,3 +803,15 @@ textarea.open-in:focus-visible{border-color:var(--tinta)}
 .pp .cab-capas{margin-top:20px}
 .pp .pg{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:18px;font-weight:600;font-size:.9rem}
 .pp :focus-visible{outline-color:var(--k-txt)}
+
+/* ---------- Respuestas numéricas con verificación (Tema 5, 2026-10-14) ---------- */
+.campos-num{display:grid;gap:10px;margin:14px 0}
+.campo-num{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
+.campo-num label{flex:1 1 260px;font-weight:600}
+.campo-num input{font-family:var(--mono);font-size:1rem;width:9rem;padding:8px 10px;border:2px solid var(--linea);background:var(--bg);color:var(--tinta)}
+.campo-num input:focus-visible{border-color:var(--tinta)}
+.campo-num input[data-estado="ok"]{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 10%,var(--s1))}
+.campo-num input[data-estado="mal"]{border-color:var(--mal);background:color-mix(in srgb,var(--mal) 10%,var(--s1))}
+.acciones-num{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.numerico .retro{display:none}
+.numerico .retro[data-visible="true"]{display:block}

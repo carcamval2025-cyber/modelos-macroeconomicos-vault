@@ -30,6 +30,13 @@ riesgo x, Tema 4 la paridad de tasas con el exterior. Esa idea se ve en:
 - **Logo:** cuatro barras que bajan como una IS, una por Tema publicado, en los colores de las
   capas (`docs/assets/favicon.svg`; en la cabecera va en línea).
 
+## Tema 5 (2026-10-14)
+
+- Capa nueva `data-k="u"` (desempleo y mercado laboral): tokens `--k-u`, `--c-u` en `guia.css`; variable viva `data-var="u"` (en `NOMBRES` de `guia.js`). Contraste medido: banda 6.8:1 con `#140C00`; texto claro `#AD2A62` ≥5.3:1 sobre `--s1`, `--s2` y `--bg`; texto oscuro `#F08AB2` ≥6.9:1.
+- Pieza del Tema 5 en `MM.plano`: capa `data-capa="5"`, línea vertical punteada Yₙ ("uₙ → Yₙ"), geometría cualitativa.
+- Componente nuevo `.campos-num` / `.campo-num` (respuesta numérica con verificación, estados `data-estado="ok|mal"`) para actividades con ejercicios numéricos.
+- Logo y favicon pasan a 5 barras (una por Tema publicado).
+
 ## Archivos compartidos (no escribir CSS suelto por página)
 
 - `docs/assets/guia.css`: tokens, tema claro y oscuro, todos los componentes.
@@ -50,6 +57,7 @@ de Tema: ver cualquiera de `docs/tema-0N/index.html` (cabecera `.cab` con `.cab-
 | IS (Tema 2) | `#F2552C` | `#F2552C` | `#B8330F` | `#F2552C` (IS desplazada: `#FF9B7D`) |
 | x, prima de riesgo (Tema 3) | `#C65BD6` | `#D27AE0` | `#8E2FA3` | `#D27AE0` |
 | ε, E, i*, UIP: sector externo (Tema 4) | `#22B8A0` | `#22B8A0` | `#08735F` | `#22B8A0` |
+| u, uₙ: mercado laboral (Tema 5, desde 2026-10-14) | `#EC6FA0` | `#F08AB2` | `#AD2A62` | `#F08AB2` |
 | i y LM: tasa del banco central | `#3D8BFD` | `#5C9DFF` | `#1F5FD1` | `#5C9DFF` |
 
 Neutros y semánticos:

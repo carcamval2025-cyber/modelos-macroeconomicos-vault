@@ -119,10 +119,11 @@ checklist en `02 Curso/Sistema de Diseño HTML.md`; registro del proceso en
 `01 Meta - Aprendizaje/Bitácora/Entradas/2026-09-25 - Rediseño Capas del modelo.md`.
 
 - **Idea central:** cada Tema es una capa del mismo modelo (Tema 1 plano (i, Y) y tasa del banco
-  central, Tema 2 IS y LM, Tema 3 prima x, Tema 4 paridad con el exterior). La portada apila las
+  central, Tema 2 IS y LM, Tema 3 prima x, Tema 4 paridad con el exterior, Tema 5 nivel natural
+  de producto Yₙ ligado a uₙ). La portada apila las
   capas y cada una enciende su pieza en el diagrama del modelo.
 - **Color = variable:** Y `#F0B429`, IS `#F2552C`, x `#C65BD6`, sector externo (ε, E, i*)
-  `#22B8A0`, i y LM `#3D8BFD` como bandas; variantes de texto por tema claro/oscuro en el
+  `#22B8A0`, u y mercado laboral (Tema 5, `data-k="u"`) `#EC6FA0`, i y LM `#3D8BFD` como bandas; variantes de texto por tema claro/oscuro en el
   documento de diseño. Fondo gris sin tinte (`#F4F5F6` claro, `#101112` oscuro), nunca crema.
   Tema claro y oscuro, según el sistema o el botón de la cabecera.
 - **Tipografía:** Archivo (títulos en ancho 75 %, peso 850) + Azeret Mono (ecuaciones y cifras),

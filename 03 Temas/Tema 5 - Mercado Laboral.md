@@ -15,7 +15,10 @@ otras_lecturas: "—"
 
 _(Actualizar conforme avanza — este tema se cubre en dos semanas.)_
 
-- [ ]
+- [x] Semana 7: capítulo 7 completo (7-1 a 7-6, recuadros y apéndice) — reportado por Navas el 2026-10-14.
+- [x] Clase del profesor "Clase 2 El Mercado Laboral" (PDF `clase 1 mercado laboral.pdf` en la carpeta del curso): 13 movimientos (PET, PEA, PEI, PNET, resto del mundo), escenarios favorable y desfavorable, modelo W = PᵉF(u, z), P = (1 + m)W.
+- [x] Semana 8: capítulo 8 completo (8-1 a 8-4, recuadro Friedman y Phelps, apéndice) — reportado por Navas el 2026-10-14.
+- Publicado en `docs/tema-05/` (2 guías y 2 actividades). Color de la capa: u, mercado laboral (`#EC6FA0`).
 
 ## Materiales generados para este tema
 

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es" data-k="u">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tema 5 · Semana 8 · Curva de Phillips | Macro II</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<script>try{var t=localStorage.getItem('mm-tema');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/guia.css">
+</head>
+<body>
+
+<a class="salto" href="#contenido">Saltar al contenido</a>
+<header class="cab">
+  <div class="cab-barra">
+    <a class="cab-marca" href="../index.html"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect x="6" y="6" width="52" height="8" fill="#F0B429"/><rect x="6" y="18" width="43" height="8" fill="#F2552C"/><rect x="6" y="30" width="34" height="8" fill="#C65BD6"/><rect x="6" y="42" width="25" height="8" fill="#22B8A0"/><rect x="6" y="54" width="16" height="8" fill="#EC6FA0"/></svg><span><b>Macro II</b><small>Modelos Macroeconómicos · ESEN</small></span></a>
+    <button class="btn-tema" type="button" data-btn-tema>Tema oscuro</button>
+  </div>
+  <div class="cab-banda">
+    <div class="cab-in">
+      <p class="cab-kicker"><a href="../index.html">Inicio</a> / Tema 5 · Semana 8 · Guía de estudio</p>
+      <h1>Curva de Phillips, tasa natural e inflación</h1>
+      <p class="sub">Guía de estudio de la semana 8: qué pasa cuando el nivel de precios difiere del esperado. De las ecuaciones del capítulo 7 a la curva de Phillips, el papel de las expectativas, los shocks de oferta y la inflación del Covid.</p>
+      <ul class="cab-meta"><li>Blanchard, cap. 8 (secc. 8-1 a 8-4 y apéndice)</li><li>Semana 8 · 12 a 16 oct</li><li>Prof. Luis Morera · Control 3</li></ul>
+      <nav class="cab-mats" aria-label="Materiales del Tema 5"><span>Materiales del Tema 5:</span><a href="index.html">Guía semana 7</a><a href="actividad-semana7-mercado-laboral.html">Actividad semana 7</a><a href="guia-semana8-phillips.html" aria-current="page">Guía semana 8</a><a href="actividad-semana8-phillips.html">Actividad semana 8</a></nav>
+    </div>
+  </div>
+</header>
+
+<div class="pagina">
+<main id="contenido">
+  <div class="recuadro" style="margin-bottom:56px;">
+    <span class="recuadro-tag">Materiales del Tema 5</span>
+    <p>Esta guía cubre la semana 8 (capítulo 8) y parte de lo visto en la <a href="index.html">guía de la semana 7</a>. Practica con la <a href="actividad-semana8-phillips.html">Actividad de la semana 8</a>. Mensaje central del capítulo: <strong>un desempleo bajo presiona la inflación al alza, pero la forma de la relación depende mucho de cómo personas y empresas forman sus expectativas.</strong></p>
+  </div>
+
+  <section class="modulo" id="alcance">
+    <div class="modulo-head"><h2>Qué cubre esta guía y qué no</h2></div>
+    <div class="bloque">
+      <p>Alcance declarado: capítulo 8 de Blanchard completo (secciones 8-1 a 8-4, el recuadro sobre Friedman y Phelps y el apéndice de la derivación). Parte de las ecuaciones de salarios y precios de la semana 7. Cómo se combina la curva de Phillips con el IS-LM (modelo IS-LM-PC, capítulo 9) es el Tema 6 y no se adelanta aquí.</p>
+      <p>En el capítulo 7 se obtuvo la tasa natural suponiendo <strong>P = P<sup>e</sup></strong>. Ahora se relaja ese supuesto: ¿qué pasa cuando el nivel de precios difiere del esperado?</p>
+    </div>
+  </section>
+
+  <section class="modulo" id="historia">
+    <div class="modulo-head"><h2>Una curva con varias mutaciones</h2></div>
+    <div class="modulo-text">Introducción del capítulo 8.</div>
+    <div class="bloque">
+      <ul>
+        <li><strong>1958, A. W. Phillips:</strong> grafica inflación contra desempleo en el Reino Unido, 1861 a 1957, y encuentra una relación inversa: desempleo bajo con inflación alta, desempleo alto con inflación baja y a veces negativa.</li>
+        <li><strong>1960, Samuelson y Solow:</strong> replican el ejercicio para EE. UU., 1900 a 1960 (salvo los años de la Gran Depresión, 1931 a 1939) y la llaman <strong>curva de Phillips</strong>. Parecía un menú: menos desempleo a cambio de más inflación, o estabilidad de precios a cambio de más desempleo.</li>
+        <li><strong>Años setenta:</strong> la relación se rompe (alta inflación y alto desempleo a la vez) y reaparece como relación entre el <em>cambio</em> de la inflación y el desempleo.</li>
+        <li><strong>Años noventa:</strong> vuelve la relación original. <strong>Años 2020:</strong> cambia de nuevo con la inflación del Covid.</li>
+      </ul>
+    </div>
+    <div class="recuadro">
+      <span class="recuadro-tag">"La curva de Phillips ha muerto"</span>
+      <p>Blanchard advierte que estos anuncios periódicos son incorrectos: el desempleo sí afecta la inflación. Lo cierto es que la relación es compleja, ha cambiado con el tiempo y puede volver a cambiar; quien hace política debe entenderla y usarla con cuidado.</p>
+    </div>
+  </section>
+
+  <section class="modulo" id="derivacion">
+    <div class="modulo-head"><h2>Inflación, inflación esperada y desempleo</h2></div>
+    <div class="modulo-text">Sección 8-1 y apéndice del capítulo 8.</div>
+    <div class="bloque">
+      <h3>Paso 1: las ecuaciones de la semana 7, con una forma concreta para F</h3>
+      <p>Se usa F(<span class="v" data-var="u">u</span>, z) = 1 − α<span class="v" data-var="u">u</span> + z, donde α mide cuánto afecta el desempleo al salario.</p>
+      <div class="ecuacion">W = P<sup>e</sup>(1 − α<span class="v" data-var="u"><span>u</span></span> + z) &nbsp;&nbsp; y &nbsp;&nbsp; P = (1 + m)W</div>
+      <h3>Paso 2: sustituir W</h3>
+      <div class="ecuacion">P = P<sup>e</sup>(1 + m)(1 − α<span class="v" data-var="u"><span>u</span></span> + z) &nbsp;&nbsp; (8.1)</div>
+      <h3>Paso 3: pasar de niveles de precios a tasas de inflación</h3>
+      <div class="ecuacion">π = π<sup>e</sup> + (m + z) − α<span class="v" data-var="u"><span>u</span></span> &nbsp;&nbsp; (8.2)</div>
+      <p>Blanchard la llama una de las ecuaciones más importantes de la macroeconomía. Tres efectos:</p>
+      <ul>
+        <li><strong>Sube π<sup>e</sup>, sube π:</strong> si quienes fijan salarios esperan precios más altos, fijan un W mayor, que eleva P; dado el precio del año pasado, más P es más inflación.</li>
+        <li><strong>Sube m o z, sube π:</strong> dada π<sup>e</sup>, un mayor markup o factores que suben salarios elevan los precios.</li>
+        <li><strong>Baja <span class="v" data-var="u">u</span>, sube π:</strong> dada π<sup>e</sup>, menos desempleo eleva el salario nominal y con él los precios.</li>
+      </ul>
+      <p>Con índices de tiempo (m y z se tratan por ahora como constantes):</p>
+      <div class="ecuacion">π<sub>t</sub> = π<sup>e</sup><sub>t</sub> + (m + z) − α<span class="v" data-var="u"><span>u<sub>t</sub></span></span> &nbsp;&nbsp; (8.3)</div>
+      <h3>Paso 4: la tasa natural</h3>
+      <p>La tasa natural es la tasa de desempleo a la que la inflación efectiva es igual a la esperada. Imponiendo π<sub>t</sub> = π<sup>e</sup><sub>t</sub> en (8.3): 0 = (m + z) − α<span class="v" data-var="u">u<sub>n</sub></span>.</p>
+      <div class="ecuacion"><span class="v" data-var="u"><span>u<sub>n</sub></span></span> = (m + z) / α &nbsp;&nbsp; (8.4)</div>
+      <h3>Paso 5: la relación de la curva de Phillips</h3>
+      <div class="ecuacion">π<sub>t</sub> − π<sup>e</sup><sub>t</sub> = −α(<span class="v" data-var="u"><span>u<sub>t</sub></span></span> − <span class="v" data-var="u"><span>u<sub>n</sub></span></span>) &nbsp;&nbsp; (8.5)</div>
+    </div>
+    <div class="recuadro">
+      <span class="recuadro-tag">Cómo leer la ecuación (8.5)</span>
+      <p>Si el desempleo está <strong>por debajo</strong> de la tasa natural, la inflación resulta <strong>mayor</strong> que la esperada. Si está <strong>por encima</strong>, resulta <strong>menor</strong> que la esperada. Por eso la tasa natural es la tasa a la que la inflación es igual a la esperada.</p>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false"><span>Apéndice: de (8.1) a (8.2) paso a paso</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta">
+        <ol>
+          <li>Con índices de tiempo: P<sub>t</sub> = P<sup>e</sup><sub>t</sub>(1 + m)(1 − αu<sub>t</sub> + z).</li>
+          <li>Dividir entre P<sub>t−1</sub>: P<sub>t</sub>/P<sub>t−1</sub> = (P<sup>e</sup><sub>t</sub>/P<sub>t−1</sub>)(1 + m)(1 − αu<sub>t</sub> + z).</li>
+          <li>Usar P<sub>t</sub>/P<sub>t−1</sub> = 1 + π<sub>t</sub> y P<sup>e</sup><sub>t</sub>/P<sub>t−1</sub> = 1 + π<sup>e</sup><sub>t</sub>: (1 + π<sub>t</sub>) = (1 + π<sup>e</sup><sub>t</sub>)(1 + m)(1 − αu<sub>t</sub> + z).</li>
+          <li>Dividir entre (1 + π<sup>e</sup><sub>t</sub>)(1 + m).</li>
+          <li>Si π, π<sup>e</sup> y m no son muy grandes, el lado izquierdo es aproximadamente 1 + π<sub>t</sub> − π<sup>e</sup><sub>t</sub> − m. Reordenando: π<sub>t</sub> = π<sup>e</sup><sub>t</sub> + (m + z) − αu<sub>t</sub>.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo" id="expectativas">
+    <div class="modulo-head"><h2>El papel de las expectativas de inflación</h2></div>
+    <div class="modulo-text">Sección 8-2 y recuadro "La teoría antes que los hechos".</div>
+    <div class="bloque">
+      <h3>La curva de Phillips original</h3>
+      <p>Si la inflación varía alrededor de un valor π̄ y <strong>no es persistente</strong> (la de este año no ayuda a predecir la del próximo), lo razonable es esperar π<sup>e</sup><sub>t</sub> = π̄. Entonces:</p>
+      <div class="ecuacion">π<sub>t</sub> = π̄ − α(<span class="v" data-var="u"><span>u<sub>t</sub></span></span> − <span class="v" data-var="u"><span>u<sub>n</sub></span></span>) &nbsp;&nbsp; (8.6)</div>
+      <p>En EE. UU., de 1961 a 1969, el desempleo bajó de 6.8% a 3.4% y la inflación subió de 1.0% a 5.5%: la economía "subió" por la curva de Phillips.</p>
+    </div>
+
+    <figure>
+      <div class="diagrama">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" role="img" aria-label="Izquierda: curva original, de 1961 (desempleo 6.8, inflación 1.0) a 1969 (3.4 y 5.5). Derecha: curva aceleracionista, el cambio de la inflación es positivo con desempleo bajo la tasa natural y negativo por encima">
+          <rect width="760" height="300" fill="#1A1B1D"/>
+          <defs><marker id="f8a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F2F2F0"/></marker></defs>
+          <g>
+            <line x1="60" y1="250" x2="350" y2="250" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#f8a)"/>
+            <line x1="60" y1="250" x2="60" y2="24" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#f8a)"/>
+            <text x="348" y="278" font-size="13" text-anchor="end" fill="#F2F2F0">Desempleo, u (%)</text>
+            <text x="68" y="28" font-size="13" fill="#F2F2F0">Inflación, π (%)</text>
+            <line x1="100" y1="72" x2="300" y2="214" stroke="#F2F2F0" stroke-width="4"/>
+            <circle cx="300" cy="214" r="6" fill="#F08AB2"/>
+            <text x="300" y="240" font-size="12" text-anchor="middle" fill="#A9ABAE" font-family="Azeret Mono, monospace">1961: u 6.8 · π 1.0</text>
+            <circle cx="100" cy="72" r="6" fill="#F08AB2"/>
+            <text x="112" y="60" font-size="12" fill="#A9ABAE" font-family="Azeret Mono, monospace">1969: u 3.4 · π 5.5</text>
+            <text x="218" y="132" font-size="13" fill="#A9ABAE">la economía "sube" por la curva</text>
+            <text x="205" y="296" font-size="13" text-anchor="middle" font-weight="700" fill="#F2F2F0">Original (θ = 0)</text>
+          </g>
+          <g>
+            <line x1="420" y1="140" x2="730" y2="140" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#f8a)"/>
+            <line x1="420" y1="262" x2="420" y2="24" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#f8a)"/>
+            <text x="728" y="130" font-size="13" text-anchor="end" fill="#F2F2F0">u</text>
+            <text x="428" y="28" font-size="13" fill="#F2F2F0">π<tspan font-size="10" dy="3">t</tspan><tspan dy="-3"> − π</tspan><tspan font-size="10" dy="3">t−1</tspan></text>
+            <line x1="450" y1="44" x2="700" y2="236" stroke="#F2F2F0" stroke-width="4"/>
+            <circle cx="575" cy="140" r="7" fill="#F08AB2"/>
+            <text x="584" y="122" font-size="13" fill="#F08AB2" font-family="Azeret Mono, monospace">u = uₙ</text>
+            <text x="560" y="70" font-size="13" fill="#A9ABAE">u &lt; uₙ: la inflación sube</text>
+            <text x="440" y="214" font-size="13" fill="#FF7382">u &gt; uₙ: la inflación baja</text>
+            <text x="575" y="296" font-size="13" text-anchor="middle" font-weight="700" fill="#F2F2F0">Aceleracionista (θ = 1)</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>Fig. propia. Izquierda: esquema de la Figura 8-2 con solo los extremos citados en el texto. Derecha: forma de la curva aceleracionista, ecuación (8.9).</figcaption>
+    </figure>
+
+    <div class="bloque">
+      <h3>¿Por qué desapareció en los setenta? Expectativas que se desanclan</h3>
+      <p>Como la política toleró más inflación para bajar el desempleo, la inflación se volvió <strong>persistente</strong> y la gente empezó a tomar en cuenta la inflación pasada:</p>
+      <div class="ecuacion">π<sup>e</sup><sub>t</sub> = (1 − θ)π̄ + θπ<sub>t−1</sub> &nbsp;&nbsp; (8.7)</div>
+      <div class="ecuacion">π<sub>t</sub> = (1 − θ)π̄ + θπ<sub>t−1</sub> − α(<span class="v" data-var="u"><span>u<sub>t</sub></span></span> − <span class="v" data-var="u"><span>u<sub>n</sub></span></span>) &nbsp;&nbsp; (8.8)</div>
+      <div class="tabla-wrap">
+        <table class="tabla-datos">
+          <thead><tr><th>θ</th><th>Forma de la curva</th><th>Lectura</th></tr></thead>
+          <tbody>
+            <tr><td>θ = 0</td><td>Original: π<sub>t</sub> = π̄ − α(u<sub>t</sub> − u<sub>n</sub>)</td><td>Expectativas ancladas: desempleo bajo, inflación <strong>alta</strong>.</td></tr>
+            <tr><td>0 &lt; θ &lt; 1</td><td>Ecuación (8.8)</td><td>La inflación depende del desempleo y de la inflación pasada.</td></tr>
+            <tr><td>θ = 1</td><td>Aceleracionista: π<sub>t</sub> − π<sub>t−1</sub> = −α(u<sub>t</sub> − u<sub>n</sub>) (8.9)</td><td>Expectativas desancladas: desempleo bajo, inflación <strong>creciente</strong>.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Blanchard estima θ con ventanas móviles de 20 años (Figura 8-4): sube desde 1966, se mantiene cerca de 1 hasta fines de los noventa y luego cae hasta casi 0 hacia 2020.</p>
+      <h3>¿Por qué volvió la curva original? Re-anclaje por credibilidad</h3>
+      <p>Desde inicios de los ochenta la Fed enfatizó su compromiso con una inflación baja y estable, y en 2012 adoptó una meta explícita de 2%. Hacia fines de los noventa la inflación llevaba más de una década estable: aunque un año superara la meta, la gente suponía que el banco central la haría volver. Las expectativas se <strong>re-anclaron</strong> alrededor de la meta.</p>
+    </div>
+
+    <div class="recuadro info">
+      <span class="recuadro-tag">Recuadro Focus: la teoría antes que los hechos (Friedman y Phelps)</span>
+      <p>A fines de los sesenta, cuando la curva original funcionaba muy bien, Milton Friedman y Edmund Phelps sostuvieron que el trade-off era una ilusión que desaparecería si se intentaba explotarlo. La idea central de Friedman (1968): <em>siempre hay un trade-off temporal entre inflación y desempleo; no hay uno permanente</em>, y el trade-off temporal viene de una inflación creciente, no de la inflación en sí. Estimó que el efecto inicial de una inflación inesperada duraría de dos a cinco años y el ajuste completo un par de décadas. Pocos años después, la curva original empezó a desaparecer tal como predijo.</p>
+    </div>
+  </section>
+
+  <section class="modulo" id="simulador">
+    <div class="modulo-head"><h2>Simulador: mantener el desempleo bajo la tasa natural</h2></div>
+    <div class="modulo-text">Economía hipotética con π̄ = 2%, u<sub>n</sub> = 5% y α = 1. En el año 0, u = u<sub>n</sub> y π = 2%. Desde el año 1 se mantiene el desempleo en el nivel que elijas. Se usan (8.7) y la versión con indexación de la sección 8-4: π<sub>t</sub> = π<sup>e</sup><sub>t</sub> − [α/(1 − λ)](u − u<sub>n</sub>).</div>
+    <div class="simulador-panel">
+      <div class="sim-grid">
+        <div class="control-item"><div class="control-top"><label class="control-label" for="su">Desempleo mantenido u</label><span class="control-val" id="vu">4.0%</span></div><input class="control-slider" type="range" id="su" min="3" max="7" step="0.5" value="4"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="st">Peso de la inflación pasada θ</label><span class="control-val" id="vt">0.0</span></div><input class="control-slider" type="range" id="st" min="0" max="1" step="0.1" value="0"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="sl">Proporción indexada λ</label><span class="control-val" id="vl">0.0</span></div><input class="control-slider" type="range" id="sl" min="0" max="0.8" step="0.1" value="0"></div>
+      </div>
+      <div class="kpis-grid" aria-live="polite">
+        <div class="kpi-card"><div class="kpi-title">Inflación en el año 1</div><div class="kpi-num" id="k1">3.0%</div></div>
+        <div class="kpi-card"><div class="kpi-title">Inflación en el año 8</div><div class="kpi-num" id="k8">3.0%</div></div>
+        <div class="kpi-card"><div class="kpi-title">Coeficiente α/(1 − λ)</div><div class="kpi-num" id="kk">1.00</div></div>
+      </div>
+      <div class="diagrama"><svg id="sim" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 330" role="img" aria-label="Trayectoria simulada de la inflación durante 8 años"></svg></div>
+      <p class="pr-leyenda" style="margin-top:12px;">Pruebas sugeridas: (1) u = 4% y θ = 0: la inflación sube una vez a 3% y se queda ahí. (2) u = 4% y θ = 1: sube 1 punto cada año. (3) u = 4%, θ = 1 y λ = 0.5: el coeficiente se duplica y sube 2 puntos por año. Los puntos fuera de escala se dibujan en el borde.</p>
+    </div>
+  </section>
+
+  <section class="modulo" id="shocks">
+    <div class="modulo-head"><h2>Shocks de oferta y la inflación del Covid</h2></div>
+    <div class="modulo-text">Sección 8-3.</div>
+    <div class="bloque">
+      <p>Hasta ahora m, z y α eran constantes, y con ellos <span class="v" data-var="u">u<sub>n</sub></span> = (m + z)/α. Normalmente cambian despacio, pero a veces hay <strong>grandes movimientos de m</strong>, típicamente por un aumento del costo de insumos no laborales que las empresas trasladan a precios: en los setenta, la OPEP (un cártel que actuó como monopolista) quintuplicó el precio del petróleo; durante el Covid subió con fuerza el precio de las materias primas.</p>
+      <p>Un aumento de m eleva <span class="v" data-var="u">u<sub>n</sub></span> y reduce mecánicamente el salario real 1/(1 + m). Salvo que los trabajadores acepten salarios reales menores (baja z) o las empresas absorban el costo (m no sube), <strong>(m + z) aumenta</strong>: dados <span class="v" data-var="u">u</span> y π<sup>e</sup>, la inflación sube; o, lo que es lo mismo, la tasa natural sube y el desempleo queda por debajo de ella.</p>
+      <div class="tabla-wrap">
+        <table class="tabla-datos">
+          <thead><tr><th>Expectativas ancladas (θ cercano a 0)</th><th>Expectativas que se desanclan (θ hacia 1)</th></tr></thead>
+          <tbody><tr><td>Brote de inflación que <strong>desaparece solo</strong> cuando (m + z) vuelve a su valor inicial; no hace falta que la política monetaria eleve el desempleo.</td><td>Mientras (m + z) siga alto, la inflación <strong>sigue subiendo</strong>; aun cuando el shock pasa, queda más alta y se necesita un período de <strong>mayor desempleo</strong> para regresarla a la meta.</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="bloque">
+      <h3>El caso Covid en EE. UU.</h3>
+      <ul>
+        <li><strong>Inicio (primer trimestre de 2020):</strong> confinamientos, fuerte alza del desempleo y caída inicial de la inflación, brevemente negativa.</li>
+        <li><strong>Después:</strong> la inflación (trimestral anualizada) superó 10% a mediados de 2022, muy por encima de la meta de 2%; en el cuarto trimestre de 2022 había bajado a cerca de 3%.</li>
+        <li><strong>Demanda:</strong> demanda reprimida y paquetes fiscales de 2 billones (marzo 2020), 0.9 billones (diciembre 2020) y 1.9 billones de dólares (marzo 2021), en conjunto 15% del PIB de 2020.</li>
+        <li><strong>Dos visiones en 2021:</strong> la mayoritaria, incluida la Fed, creía que α era pequeño y las expectativas estaban ancladas; la minoritaria temía que α creciera y que θ subiera.</li>
+        <li><strong>Resultado:</strong> ambas acertaron y fallaron en parte. Hubo bastante inflación, pero el canal principal fue el <strong>aumento de m</strong>: subida de energía y materias primas (agravada desde inicios de 2022 por la guerra en Ucrania y el embargo al petróleo ruso) y disrupción de las cadenas de suministro (por ejemplo, la escasez de chips encareció autos nuevos y usados).</li>
+        <li><strong>Buena noticia:</strong> las expectativas casi no se desanclaron; el pronóstico a diez años llegó a un máximo de 2.4% en 2022. En los setenta, en cambio, la inflación llegó a 17% anualizado a inicios de 1980, y bajarla a 4% tomó casi cuatro años y un período de alto desempleo. La diferencia: la <strong>credibilidad</strong> de los bancos centrales.</li>
+      </ul>
+    </div>
+    <div class="recuadro info">
+      <span class="recuadro-tag">La pregunta abierta al escribir el libro</span>
+      <p>Con desempleo por debajo de 4% y, según un amplio consenso, quizá un punto bajo la tasa natural, para regresar la inflación a la meta la Fed tendría que frenar el crecimiento y permitir algo más de desempleo (ecuación 8.6 con expectativas ancladas).</p>
+    </div>
+  </section>
+
+  <section class="modulo" id="advertencias">
+    <div class="modulo-head"><h2>Resumen y advertencias</h2></div>
+    <div class="modulo-text">Sección 8-4.</div>
+    <div class="bloque">
+      <ul>
+        <li>La relación entre inflación y desempleo depende de cómo se forman las expectativas.</li>
+        <li>Expectativas <strong>ancladas</strong> (años sesenta y desde mediados de los noventa): relación entre la <strong>inflación</strong> y el desempleo.</li>
+        <li>Expectativas <strong>desancladas</strong> (setenta y ochenta, con π<sup>e</sup><sub>t</sub> = π<sub>t−1</sub>): relación entre el <strong>cambio de la inflación</strong> y el desempleo.</li>
+        <li>Los <strong>shocks de oferta</strong> afectan directamente la inflación; que el efecto se amplifique y persista depende del anclaje de las expectativas.</li>
+      </ul>
+    </div>
+    <div class="bloque">
+      <h3>Advertencia 1: inflación alta e indexación salarial</h3>
+      <p>Con inflación alta, la inflación se vuelve más variable y los contratos cambian: los salarios se fijan por períodos más cortos y se generaliza la <strong>indexación</strong> (ajuste automático a la inflación). Ejemplo del libro: con inflación promedio de 2%, quienes fijan salarios pueden confiar en que estará entre 1% y 3%; con 30%, solo en que estará entre 20% y 40%. Si una proporción λ de contratos está indexada y π<sup>e</sup><sub>t</sub> = π<sub>t−1</sub>:</p>
+      <div class="ecuacion">π<sub>t</sub> = [λπ<sub>t</sub> + (1 − λ)π<sub>t−1</sub>] − α(<span class="v" data-var="u"><span>u<sub>t</sub></span></span> − <span class="v" data-var="u"><span>u<sub>n</sub></span></span>) &nbsp;&nbsp; (8.10)</div>
+      <div class="ecuacion">π<sub>t</sub> − π<sub>t−1</sub> = −[α / (1 − λ)](<span class="v" data-var="u"><span>u<sub>t</sub></span></span> − <span class="v" data-var="u"><span>u<sub>n</sub></span></span>)</div>
+      <p>Cuanto mayor es λ, mayor el efecto del desempleo sobre el cambio de la inflación: con indexación, la subida de precios eleva salarios dentro del mismo año, lo que vuelve a subir los precios. Si λ se acerca a 1, pequeños cambios del desempleo generan grandes cambios de la inflación, y la relación termina desapareciendo. Las cláusulas de indexación eran comunes en los setenta y hoy son muy raras, incluso después del brote del Covid.</p>
+    </div>
+    <div class="bloque">
+      <h3>Advertencia 2: deflación</h3>
+      <p>En la Gran Depresión, con un desempleo altísimo, cabría esperar una gran deflación, pero fue limitada y de 1934 a 1937 la inflación fue incluso positiva. Dos explicaciones posibles: que también subiera la tasa natural (poco probable: la mayoría de historiadores ve la Depresión como un gran shock adverso de demanda) o que, con deflación, la curva se debilite porque los trabajadores <strong>se resisten a recortes de su salario nominal</strong>. En Portugal, la distribución de cambios salariales era casi simétrica en 1984 (inflación de 27%), pero en 2012 (inflación de 2.1%) se amontonaba en cero, casi sin recortes.</p>
+    </div>
+    <div class="recuadro">
+      <span class="recuadro-tag">Ilusión monetaria</span>
+      <p>Escenario A: inflación de 4% y tu salario nominal sube 2%. Escenario B: inflación de 0% y tu salario nominal baja 2%. En ambos el salario real cae 2% y el economista diría que deberías ser indiferente, pero mucha gente encuentra menos doloroso el escenario A.</p>
+    </div>
+  </section>
+
+  <section class="modulo" id="glosario">
+    <div class="modulo-head"><h2>Glosario de la semana 8</h2></div>
+    <div class="bezel"><div class="bezel-in">
+      <dl class="glosario">
+        <dt>Curva de Phillips</dt><dd>Relación negativa entre inflación y desempleo (Samuelson y Solow).</dd>
+        <dt>Relación de la curva de Phillips</dt><dd>π<sub>t</sub> − π<sup>e</sup><sub>t</sub> = −α(u<sub>t</sub> − u<sub>n</sub>), ecuación (8.5).</dd>
+        <dt>Curva original (θ = 0)</dt><dd>Desempleo bajo, inflación alta.</dd>
+        <dt>Curva aceleracionista (θ = 1)</dt><dd>Desempleo bajo, inflación creciente.</dd>
+        <dt>Expectativas ancladas</dt><dd>Inflación esperada casi constante, cerca de la meta.</dd>
+        <dt>Desanclaje y re-anclaje</dt><dd>Las expectativas pasan a seguir la inflación pasada, o vuelven a la meta.</dd>
+        <dt>θ</dt><dd>Peso de la inflación pasada en la inflación esperada.</dd>
+        <dt>α</dt><dd>Efecto del desempleo sobre el salario y la inflación.</dd>
+        <dt>Shock de oferta</dt><dd>Cambio de m (energía, escasez) que mueve la tasa natural y la inflación.</dd>
+        <dt>Indexación salarial (λ)</dt><dd>Salarios que se ajustan automáticamente a la inflación.</dd>
+        <dt>Deflación</dt><dd>Inflación negativa.</dd>
+        <dt>Ilusión monetaria</dt><dd>Juzgar en términos nominales en lugar de reales.</dd>
+      </dl>
+    </div></div>
+  </section>
+
+  <section class="modulo" id="autoeval">
+    <div class="modulo-head"><h2>Autoevaluación rápida</h2></div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false"><span>1. ¿Qué supuesto del capítulo 7 se relaja en el capítulo 8 y qué ecuación resulta?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Se relaja P = P<sup>e</sup>. Combinando la ecuación de salarios y la de precios se obtiene π = π<sup>e</sup> + (m + z) − αu, y de ahí la relación π<sub>t</sub> − π<sup>e</sup><sub>t</sub> = −α(u<sub>t</sub> − u<sub>n</sub>).</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false"><span>2. ¿Por qué la curva original "desapareció" en los años setenta?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Porque al volverse persistente la inflación, la gente empezó a esperar la inflación del año anterior (θ subió hacia 1). La relación pasó a ser entre el cambio de la inflación y el desempleo (curva aceleracionista).</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false"><span>3. Con θ = 1, ¿qué pasa si el gobierno mantiene el desempleo por debajo de la tasa natural?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>La inflación aumenta año tras año, mientras el desempleo siga por debajo de u<sub>n</sub>. Si lo mantiene en u<sub>n</sub>, la inflación se queda constante en el nivel al que haya llegado.</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false"><span>4. ¿Por qué la indexación hace la inflación más sensible al desempleo?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Porque los salarios indexados responden a la inflación efectiva dentro del mismo año: el alza de precios eleva salarios, que vuelven a subir precios. El coeficiente pasa de α a α/(1 − λ).</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false"><span>5. ¿Qué tipo de shock explica principalmente la inflación del Covid según Blanchard y por qué no se amplificó?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Un shock de oferta: aumento de m por energía, materias primas y cadenas de suministro. No se amplificó como en los setenta porque las expectativas siguieron ancladas gracias a la credibilidad de los bancos centrales.</p></div>
+    </div>
+  </section>
+
+</main>
+<nav class="panel" data-nav-eq aria-label="Índice de esta página">
+  <button class="panel-boton" type="button" aria-expanded="false" aria-controls="panel-lista"><i><svg aria-hidden="true" focusable="false"></svg></i><span class="sr">Índice. Estás en: </span><span data-nav-actual>Índice</span></button>
+  <p class="panel-tt">Tema 5<small>En esta página</small></p>
+  <svg class="panel-svg" aria-hidden="true" focusable="false"></svg>
+  <ol class="panel-lista" id="panel-lista">
+    <li><a href="#alcance">Alcance</a></li>
+    <li><a href="#historia">Historia</a></li>
+    <li><a href="#derivacion">8-1 Derivación</a></li>
+    <li><a href="#expectativas">8-2 Expectativas</a></li>
+    <li><a href="#simulador">Simulador</a></li>
+    <li><a href="#shocks">8-3 Shocks de oferta</a></li>
+    <li><a href="#advertencias">8-4 Advertencias</a></li>
+    <li><a href="#glosario">Glosario</a></li>
+    <li><a href="#autoeval">Autoevaluación</a></li>
+  </ol>
+  <p class="panel-ayuda">El punto marca dónde vas leyendo. Con el foco en el índice, las flechas lo recorren.</p>
+</nav>
+</div>
+
+<footer>
+  <div>
+    <span class="badge">Fuente</span>Blanchard, Olivier (2023), <em>Macroeconomics</em>, 9ª ed., Pearson, Cap. 8 "The Phillips Curve, the Natural Rate of Unemployment, and Inflation", secc. 8-1 a 8-4, recuadro Focus y apéndice (pp. 157–176)
+  </div>
+  <p>Guía de estudio: Semana 8, Tema 5. Material de repaso del propio estudiante (no es Tarea ni Control). &middot; <a href="../index.html">Volver al sitio</a></p>
+</footer>
+
+<script src="../assets/guia.js"></script>
+
+<script>
+(function(){
+  document.querySelectorAll('.pregunta .disparador').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var p = btn.closest('.pregunta'), abierta = p.getAttribute('data-abierta') === 'true';
+      p.setAttribute('data-abierta', abierta ? 'false' : 'true');
+      btn.setAttribute('aria-expanded', abierta ? 'false' : 'true');
+    });
+  });
+
+  // Simulador de la curva de Phillips (parámetros hipotéticos); colores de lámina
+  var svg = document.getElementById('sim'), NS = 'http://www.w3.org/2000/svg';
+  var X0 = 70, X1 = 600, Y0 = 280, Y1 = 30, T = 8, PMIN = -10, PMAX = 20;
+  var C = { fondo:'#1A1B1D', tinta:'#F2F2F0', tenue:'#A9ABAE', linea:'#34363A', u:'#F08AB2', mal:'#FF7382' };
+  function px(t){ return X0 + (t / T) * (X1 - X0); }
+  function py(p){ var q = Math.max(PMIN, Math.min(PMAX, p)); return Y0 - ((q - PMIN) / (PMAX - PMIN)) * (Y0 - Y1); }
+  function el(t, a, txt){ var e = document.createElementNS(NS, t); for (var k in a) e.setAttribute(k, a[k]); if (txt != null) e.textContent = txt; svg.appendChild(e); return e; }
+  function dibujar(u, th, la){
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    el('rect', { width: 640, height: 330, fill: C.fondo });
+    [-10, -5, 0, 5, 10, 15, 20].forEach(function(p){
+      el('line', { x1: X0, y1: py(p), x2: X1, y2: py(p), stroke: C.linea, 'stroke-width': p === 0 ? 2 : 1 });
+      el('text', { x: X0 - 10, y: py(p) + 4, 'font-size': 13, 'text-anchor': 'end', fill: C.tenue, 'font-family': 'Azeret Mono, monospace' }, p + '%');
+    });
+    for (var t = 0; t <= T; t++) el('text', { x: px(t), y: Y0 + 22, 'font-size': 13, 'text-anchor': 'middle', fill: C.tenue, 'font-family': 'Azeret Mono, monospace' }, t);
+    el('text', { x: X1, y: Y0 + 44, 'font-size': 14, 'text-anchor': 'end', fill: C.tinta }, 'Año');
+    el('text', { x: X0, y: Y1 - 10, 'font-size': 14, fill: C.tinta }, 'Inflación, π');
+    el('line', { x1: X0, y1: py(2), x2: X1, y2: py(2), stroke: C.tenue, 'stroke-width': 1.5, 'stroke-dasharray': '7 6' });
+    el('text', { x: X1 - 16, y: py(2) + 20, 'font-size': 13, 'text-anchor': 'end', fill: C.tenue }, 'π̄ = 2%');
+    var pib = 2, un = 5, a = 1, k = a / (1 - la), pi = [2];
+    for (var s = 1; s <= T; s++){ var pe = (1 - th) * pib + th * pi[s - 1]; pi.push(pe - k * (u - un)); }
+    el('polyline', { points: pi.map(function(p, i){ return px(i) + ',' + py(p); }).join(' '), fill: 'none', stroke: C.tinta, 'stroke-width': 3.5 });
+    pi.forEach(function(p, i){ var fuera = p > PMAX || p < PMIN; el('circle', { cx: px(i), cy: py(p), r: 5.5, fill: fuera ? C.mal : C.u }); });
+    document.getElementById('k1').textContent = pi[1].toFixed(1) + '%';
+    document.getElementById('k8').textContent = pi[8].toFixed(1) + '%';
+    document.getElementById('kk').textContent = k.toFixed(2);
+  }
+  var su = document.getElementById('su'), st = document.getElementById('st'), sl = document.getElementById('sl');
+  function go(){
+    var u = +su.value, th = +st.value, la = +sl.value;
+    document.getElementById('vu').textContent = u.toFixed(1) + '%';
+    document.getElementById('vt').textContent = th.toFixed(1);
+    document.getElementById('vl').textContent = la.toFixed(1);
+    dibujar(u, th, la);
+  }
+  [su, st, sl].forEach(function(s){ s.addEventListener('input', go); }); go();
+})();
+</script>
+
+</body>
+</html>
