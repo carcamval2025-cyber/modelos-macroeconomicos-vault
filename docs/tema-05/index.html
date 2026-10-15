@@ -6,7 +6,7 @@
 <title>Tema 5 · Semana 7 · El mercado laboral | Macro II</title>
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg?v=945dfb6041af">
 <script>try{var t=localStorage.getItem('mm-tema');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
-<link rel="stylesheet" href="../assets/guia.css?v=8e486db24cba">
+<link rel="stylesheet" href="../assets/guia.css?v=3f35d585a726">
 </head>
 <body>
 
@@ -20,7 +20,7 @@
     <div class="cab-in">
       <p class="cab-kicker"><a href="../index.html">Inicio</a> / Tema 5 · Semana 7 · Guía de estudio</p>
       <h1>El mercado laboral y la tasa natural de desempleo</h1>
-      <p class="sub">Guía de estudio de la semana 7: cómo se mide el mercado laboral, sus flujos, cómo se fijan salarios y precios y por qué de ahí sale una tasa natural de desempleo. Incluye la perspectiva dinámica de los 13 movimientos vista en clase.</p>
+      <p class="sub">Guía de estudio de la semana 7, versión ampliada: cómo se mide el mercado laboral, sus flujos, cómo se fijan salarios y precios y por qué de ahí sale una tasa natural de desempleo. Cada fórmula viene con la explicación de cada una de sus piezas, su deducción paso a paso y varias formas de entenderla.</p>
       <ul class="cab-meta"><li>Blanchard, cap. 7 (secc. 7-1 a 7-6 y apéndice)</li><li>Semana 7 · 5 a 9 oct</li><li>Prof. Luis Morera · Control 3</li></ul>
       <nav class="cab-mats" aria-label="Materiales del Tema 5"><span>Materiales del Tema 5:</span><a href="index.html" aria-current="page">Guía semana 7</a><a href="actividad-semana7-mercado-laboral.html">Actividad semana 7</a><a href="guia-semana8-phillips.html">Guía semana 8</a><a href="actividad-semana8-phillips.html">Actividad semana 8</a></nav>
     </div>
@@ -29,22 +29,101 @@
 
 <div class="pagina">
 <main id="contenido">
-  <div class="recuadro" style="margin-bottom:56px;">
+  <div class="recuadro">
     <span class="recuadro-tag">Materiales del Tema 5</span>
-    <p>Esta guía cubre la semana 7 (capítulo 7). Practica con la <a href="actividad-semana7-mercado-laboral.html">Actividad de la semana 7</a> y sigue con la <a href="guia-semana8-phillips.html">Guía de la semana 8</a> (curva de Phillips, capítulo 8) y su <a href="actividad-semana8-phillips.html">actividad</a>. Mensaje central del capítulo: <strong>la tasa natural de desempleo es la tasa a la cual las demandas salariales de los trabajadores son consistentes con las decisiones de precios de las empresas.</strong></p>
+    <p>Esta guía cubre la semana 7 (capítulo 7). Practica con la <a href="actividad-semana7-mercado-laboral.html">Actividad de la semana 7</a> y sigue con la <a href="guia-semana8-phillips.html">Guía de la semana 8</a> (curva de Phillips, capítulo 8) y su <a href="actividad-semana8-phillips.html">actividad</a>. Mensaje central del capítulo: <strong>la tasa natural de desempleo es la tasa a la cual las demandas salariales de los trabajadores son consistentes con las decisiones de precios de las empresas.</strong> Toda la guía está armada para que puedas explicar esa frase con tus palabras, con un dibujo y con la fórmula.</p>
   </div>
 
   <section class="modulo" id="alcance">
-    <div class="modulo-head"><h2>Qué cubre esta guía y qué no</h2></div>
+    <div class="modulo-head"><h2>Qué cubre esta guía y cómo usarla</h2></div>
     <div class="bloque">
       <p>Alcance declarado: capítulo 7 de Blanchard completo (secciones 7-1 a 7-6, recuadros y apéndice) más los apuntes de la clase "El Mercado Laboral" del profesor (perspectiva dinámica de 13 movimientos, escenarios favorable y desfavorable y el modelo de salarios y precios). La curva de Phillips (capítulo 8) está en la <a href="guia-semana8-phillips.html">guía de la semana 8</a>. El modelo IS-LM-PC (capítulo 9, Tema 6) no se adelanta aquí.</p>
-      <p><strong>¿Por qué estudiar el mercado laboral?</strong> En el IS-LM supusimos un nivel de precios constante: las empresas ofrecían cualquier cantidad de producto a un precio dado. Para el corto plazo funcionaba; para el <strong>mediano plazo</strong> hay que ver cómo se ajustan precios y salarios. Blanchard describe la cadena que veníamos ignorando: más demanda, más producción, más empleo, menos desempleo, salarios más altos, costos más altos, precios más altos, trabajadores que piden salarios más altos, y así sucesivamente. En el centro está el mercado laboral, donde se determinan los salarios.</p>
+      <p><strong>Sobre las cifras:</strong> los datos reales (Estados Unidos, Figuras 7-1 y 7-2, el caso Ford) son los del libro. Los ejemplos que llevan la etiqueta <span class="tag-pill">hipotético</span> son números inventados solo para practicar el mecanismo; no son datos de ninguna economía. Los cálculos derivados de las cifras del libro (por ejemplo, 2.0 / 8.4) están marcados como cálculo propio.</p>
+    </div>
+
+    <div class="bloque">
+      <h3>¿Por qué estudiar el mercado laboral?</h3>
+      <p>En el IS-LM supusimos un nivel de precios constante: las empresas ofrecían cualquier cantidad de producto a un precio dado. Para el corto plazo funcionaba. Para el <strong>mediano plazo</strong> hay que ver cómo se ajustan precios y salarios. Blanchard describe la cadena que veníamos ignorando; léela como un círculo, porque lo que sale al final vuelve a empezar:</p>
+      <div class="mecanismo" role="list" aria-label="Cadena de ajuste entre producción, empleo, salarios y precios">
+        <span class="mecanismo-step" role="listitem">Más demanda</span><span class="mecanismo-arrow" aria-hidden="true">→</span>
+        <span class="mecanismo-step" role="listitem">Más producción</span><span class="mecanismo-arrow" aria-hidden="true">→</span>
+        <span class="mecanismo-step" role="listitem">Más empleo</span><span class="mecanismo-arrow" aria-hidden="true">→</span>
+        <span class="mecanismo-step" role="listitem">Menos desempleo</span><span class="mecanismo-arrow" aria-hidden="true">→</span>
+        <span class="mecanismo-step" role="listitem">Salarios más altos</span><span class="mecanismo-arrow" aria-hidden="true">→</span>
+        <span class="mecanismo-step" role="listitem">Costos más altos</span><span class="mecanismo-arrow" aria-hidden="true">→</span>
+        <span class="mecanismo-step" role="listitem">Precios más altos</span><span class="mecanismo-arrow" aria-hidden="true">→</span>
+        <span class="mecanismo-step" role="listitem">Los trabajadores piden salarios más altos</span><span class="mecanismo-arrow" aria-hidden="true">↺</span>
+      </div>
+      <p>Al suponer precios constantes en el IS-LM, en la práctica supusimos que las empresas podían y querían ofrecer cualquier cantidad a un precio dado. Eso es razonable mientras miramos el corto plazo (una excepción rara fueron los cierres por el Covid, cuando muchas empresas no podían producir y hubo escasez). Ahora que miramos el mediano plazo, hay que abandonar ese supuesto y explicar cómo se mueven precios y salarios, y qué efecto tienen sobre el producto y la inflación. Ese es el trabajo de este capítulo y de los dos siguientes. <strong>En el centro de la cadena está el mercado laboral, que es el mercado donde se determinan los salarios.</strong></p>
+    </div>
+
+    <div class="bloque">
+      <h3>Mapa de la guía en cinco ideas</h3>
+      <ol>
+        <li><strong>Medir (7-1).</strong> Quién está empleado, quién está desempleado y quién está fuera de la fuerza laboral, y qué tasas se calculan con eso.</li>
+        <li><strong>Mover (7-1, 7-2 y la clase).</strong> Las cifras de desempleo esconden flujos enormes de personas; cuando el desempleo sube, la vida de los trabajadores empeora por dos vías.</li>
+        <li><strong>Fijar salarios (7-3).</strong> Los salarios dependen del precio esperado, del desempleo (negativamente) y de un conjunto de factores agrupados en z.</li>
+        <li><strong>Fijar precios (7-4).</strong> Las empresas cobran un margen m sobre su costo, que aquí es el salario.</li>
+        <li><strong>Cuadrar ambas (7-5 y 7-6).</strong> El desempleo al que las dos reglas coinciden es la tasa natural, y de ella se desprende un nivel natural de producto.</li>
+      </ol>
+    </div>
+
+    <div class="bloque">
+      <h3>Cómo leer una fórmula en esta guía</h3>
+      <p>Cada fórmula importante aparece dentro de una caja con el título "Qué significa cada pieza". Para estudiar con ellas, repite siempre este método:</p>
+      <ol class="pasos">
+        <li><b class="paso-tt">Mira el lado izquierdo.</b><div>Es lo que la fórmula determina. En (7.1) es el salario nominal W; en (7.7) es la tasa natural de desempleo.</div></li>
+        <li><b class="paso-tt">Nombra cada pieza del lado derecho.</b><div>Di qué es, en qué unidades se mide y quién la decide (trabajadores, empresas, el gobierno, la economía).</div></li>
+        <li><b class="paso-tt">Anota el signo de cada efecto.</b><div>Pregunta: si esta pieza sube, ¿el resultado sube o baja? Los signos menos y más debajo de F en (7.1) hacen justo esto.</div></li>
+        <li><b class="paso-tt">Pruébala con números o con casos extremos.</b><div>Por ejemplo, ¿qué pasa en (7.3) si m = 0? Si el resultado tiene sentido, entendiste la pieza.</div></li>
+        <li><b class="paso-tt">Dila en una frase.</b><div>Si no puedes decirla sin usar letras, vuelve al paso 2.</div></li>
+      </ol>
+    </div>
+
+    <div class="bloque">
+      <h3>Mapa de símbolos del capítulo</h3>
+      <p>Esta tabla reúne todas las letras que vas a ver. Consúltala cuando una fórmula te resulte opaca.</p>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Símbolo</th><th>Qué es</th><th>Cómo se mide</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">L</td><td>Fuerza laboral: personas que trabajan o buscan trabajo (L = N + U).</td><td>Personas (millones en la Figura 7-1).</td></tr>
+            <tr><td class="mono">N</td><td>Empleo: número de personas empleadas.</td><td>Personas.</td></tr>
+            <tr><td class="mono">U</td><td>Desempleo: personas sin trabajo que lo buscan (U = L − N).</td><td>Personas.</td></tr>
+            <tr><td class="mono">u</td><td>Tasa de desempleo: la fracción de la fuerza laboral que está desempleada (u = U / L).</td><td>Fracción entre 0 y 1, o porcentaje.</td></tr>
+            <tr><td class="mono">u<sub>n</sub></td><td>Tasa natural de desempleo: el valor de u al que las reglas de salarios y precios son consistentes.</td><td>Fracción o porcentaje.</td></tr>
+            <tr><td class="mono">Y</td><td>Producto: cantidad de bienes producidos.</td><td>Unidades de producto.</td></tr>
+            <tr><td class="mono">A</td><td>Productividad del trabajo: producto por trabajador (A = Y / N). Aquí se toma constante y se fija en 1.</td><td>Unidades de producto por trabajador.</td></tr>
+            <tr><td class="mono">W</td><td>Salario nominal: lo que se paga a un trabajador, en dinero.</td><td>Dinero por trabajador.</td></tr>
+            <tr><td class="mono">P</td><td>Nivel de precios: el precio de una unidad de producto, en dinero.</td><td>Dinero por unidad de producto.</td></tr>
+            <tr><td class="mono">P<sup>e</sup></td><td>Nivel de precios esperado al momento de fijar los salarios.</td><td>Igual que P.</td></tr>
+            <tr><td class="mono">W / P</td><td>Salario real: cuántas unidades de producto compra el salario.</td><td>Unidades de producto por trabajador.</td></tr>
+            <tr><td class="mono">F(u, z)</td><td>Función que resume cómo los trabajadores y las empresas fijan el salario real según el desempleo y los demás factores.</td><td>Sin unidades (es un salario real).</td></tr>
+            <tr><td class="mono">z</td><td>Todo lo demás que influye en los salarios: seguro de desempleo, salario mínimo, protección del empleo y otros.</td><td>Índice, sin unidad propia.</td></tr>
+            <tr><td class="mono">m</td><td>Markup: margen del precio sobre el costo.</td><td>Fracción (0.25 equivale a 25%).</td></tr>
+            <tr><td class="mono">N<sub>n</sub>, Y<sub>n</sub></td><td>Empleo natural y producto natural: el empleo y el producto que corresponden a u<sub>n</sub>.</td><td>Personas y unidades de producto.</td></tr>
+            <tr><td class="mono">WS, PS</td><td>Relación de fijación de salarios (wage setting) y de fijación de precios (price setting).</td><td>Curvas en el plano (u, W/P).</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 
   <section class="modulo" id="recorrido">
     <div class="modulo-head"><h2>Un recorrido por el mercado laboral</h2></div>
     <div class="modulo-text">Sección 7-1 de Blanchard. Datos de Estados Unidos, 2022 (Figura 7-1, fuente original: Current Population Survey).</div>
+
+    <div class="bloque">
+      <h3>De la población total a los desempleados: quién entra en cada caja</h3>
+      <p>Las estadísticas laborales parten de la población total y la van dividiendo en grupos que no se solapan. Léelo como un embudo:</p>
+      <ol class="pasos">
+        <li><b class="paso-tt">Población total (333.3 millones).</b><div>Todas las personas del país.</div></li>
+        <li><b class="paso-tt">Población civil no institucional (264.0 millones).</b><div>Es la población potencialmente disponible para un empleo civil. Se obtiene quitando a los menores de 16 años, a quienes están en las fuerzas armadas y a quienes están en prisión.</div></li>
+        <li><b class="paso-tt">Fuerza laboral civil (164.3 millones).</b><div>Quienes trabajan o están buscando trabajo. Se divide en empleados (158.3) y desempleados (6.0).</div></li>
+        <li><b class="paso-tt">Fuera de la fuerza laboral (99.7 millones).</b><div>Quienes no trabajan en el mercado y tampoco buscan trabajo (estudiantes, personas que se dedican al hogar, jubilados y otros).</div></li>
+      </ol>
+      <p>Comprueba que cuadra: 158.3 + 6.0 = 164.3 (fuerza laboral) y 164.3 + 99.7 = 264.0 (población civil no institucional).</p>
+    </div>
 
     <figure>
       <div class="diagrama">
@@ -79,17 +158,129 @@
     </figure>
 
     <div class="bloque">
+      <h3>Tus apuntes de clase y Blanchard hablan de lo mismo con otros nombres</h3>
+      <p>En clase se usan las siglas de las estadísticas laborales de América Latina. La equivalencia es aproximada, porque cada fuente define sus grupos con pequeñas diferencias (por ejemplo, Blanchard excluye además a militares y reclusos):</p>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>En clase</th><th>En Blanchard</th><th>Qué es</th></tr></thead>
+          <tbody>
+            <tr><td>PET, población en edad de trabajar</td><td>Non-institutional civilian population</td><td>Quienes tienen edad para trabajar (16 años o más en la clase).</td></tr>
+            <tr><td>PEA, población económicamente activa</td><td>Labor force</td><td>Ocupados más desocupados.</td></tr>
+            <tr><td>Ocupados</td><td>Employed</td><td>Tienen empleo. En clase se distinguen plenos, subempleados, formales e informales.</td></tr>
+            <tr><td>Desocupados</td><td>Unemployed</td><td>No tienen empleo y lo buscan. En clase: cesantes (perdieron el trabajo que tenían) y quienes buscan empleo por primera vez.</td></tr>
+            <tr><td>PEI, población económicamente inactiva</td><td>Out of the labor force</td><td>En edad de trabajar, pero ni trabajan ni buscan (estudiantes, amas de casa, pensionados).</td></tr>
+            <tr><td>PNET, población en no edad de trabajar</td><td>Menores de 16 años (parte de lo que Blanchard excluye)</td><td>Quienes todavía no entran a la PET.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="matiz"><b class="t">La frontera entre desempleado e inactivo es borrosa</b><p>Blanchard lo advierte: hay personas que se declaran desempleadas pero no aceptarían cualquier empleo (quizá no buscan de verdad), y hay personas fuera de la fuerza laboral que aceptarían un trabajo si se lo ofrecen. Estas últimas son los <strong>trabajadores desalentados</strong>. Volveremos a ellos porque cambian la forma de leer las tasas.</p></div>
+    </div>
+
+    <div class="bloque">
       <h3>Tres tasas que debes saber calcular</h3>
-      <div class="ecuacion">Tasa de participación = fuerza laboral / población civil no institucional = 164.3 / 264.0 ≈ 62%</div>
-      <div class="ecuacion">Tasa de desempleo <span class="v" data-var="u"><span>u</span></span> = desempleados / fuerza laboral = 6.0 / 164.3 ≈ 3.6%</div>
-      <div class="ecuacion">Tasa de empleo = empleados / población civil no institucional = 158.3 / 264.0 ≈ 59.9%</div>
-      <p>La tasa de empleo y la de desempleo no suman 1 porque tienen <strong>denominadores distintos</strong> (pista que da el propio libro). La participación aumentó desde 1950, sobre todo por la mayor participación de las mujeres: en 1950 una de cada tres estaba en la fuerza laboral; hoy son cerca de dos de cada tres. El trabajo en el hogar no se cuenta como trabajo en las estadísticas oficiales por la dificultad de medirlo, no por un juicio de valor.</p>
+      <p>Las tres tasas usan los mismos datos, pero cada una responde a una pregunta distinta. Lo único que cambia entre ellas es <strong>el denominador</strong>.</p>
+
+      <div class="anatomia">
+        <div class="ecuacion">Tasa de participación = fuerza laboral / población civil no institucional = 164.3 / 264.0 ≈ 62%</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>Fuerza laboral</dt><dd><p>Numerador. Cuenta a todos los que están "en el mercado": empleados más desempleados. No cuenta a quienes están fuera.</p></dd>
+          <dt>Población civil no inst.</dt><dd><p>Denominador. Es el universo de quienes podrían participar. Por eso la tasa responde a: ¿qué parte de quienes podrían estar en el mercado está en él?</p></dd>
+          <dt>≈ 62%</dt><dd><p>Casi dos de cada tres personas disponibles participan. Sube si más gente empieza a buscar o a tener trabajo; baja si más gente sale del mercado (jubilaciones, desaliento, estudios).</p></dd>
+        </dl>
+      </div>
+
+      <div class="anatomia">
+        <div class="ecuacion">Tasa de desempleo <span class="v" data-var="u"><span>u</span></span> = desempleados / fuerza laboral = 6.0 / 164.3 ≈ 3.65%<small>El libro reporta 3.6%; la diferencia viene del redondeo de las cifras en millones.</small></div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>Desempleados</dt><dd><p>Numerador. Solo quienes <em>no tienen empleo y lo buscan</em>. Quien no busca no cuenta, aunque no tenga trabajo.</p></dd>
+          <dt>Fuerza laboral</dt><dd><p>Denominador. Fíjate que no es la población total ni la población disponible: el desempleo se mide sobre quienes ya están en el mercado.</p></dd>
+          <dt>u</dt><dd><p>Es el indicador de referencia del estado del mercado laboral. Es también la variable que aparece en la ecuación de salarios. Baja si los desempleados consiguen empleo, pero también baja (de forma no tan buena) si dejan de buscar.</p></dd>
+        </dl>
+      </div>
+
+      <div class="anatomia">
+        <div class="ecuacion">Tasa de empleo = empleados / población civil no institucional = 158.3 / 264.0 ≈ 59.96%<small>El libro la reporta como 59.9% y también la llama razón empleo-población.</small></div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>Empleados</dt><dd><p>Numerador. Solo las personas con empleo.</p></dd>
+          <dt>Población civil no inst.</dt><dd><p>Denominador, el mismo de la participación. Aquí quienes salen del mercado <em>sí</em> cuentan en el denominador, y por eso la tasa baja cuando alguien se retira.</p></dd>
+          <dt>≈ 60%</dt><dd><p>Seis de cada diez personas disponibles tienen empleo. A diferencia de u, esta tasa no mejora artificialmente cuando alguien deja de buscar.</p></dd>
+        </dl>
+      </div>
+
+      <p>La tasa de empleo y la de desempleo no suman 1 porque tienen <strong>denominadores distintos</strong> (pista que da el propio libro). Una se divide entre la población disponible (264.0) y la otra entre la fuerza laboral (164.3). Lo que sí las une es esta identidad:</p>
+
+      <div class="anatomia">
+        <div class="ecuacion">Tasa de empleo = participación × (1 − <span class="v" data-var="u"><span>u</span></span>)</div>
+        <span class="anatomia-tt">De dónde sale y qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>Deducción</dt><dd><p>Escribe la tasa de empleo como (L / población) × (N / L). El primer factor es la participación. El segundo es la parte de la fuerza laboral que tiene empleo; como N = L − U, entonces N / L = 1 − U / L = 1 − u.</p></dd>
+          <dt>Participación</dt><dd><p>Cuánta gente entra al mercado.</p></dd>
+          <dt>(1 − u)</dt><dd><p>De quienes entran, cuántos consiguen empleo.</p></dd>
+          <dt>Comprobación</dt><dd><p>0.6224 × (1 − 0.0365) = 0.6224 × 0.9635 ≈ 0.5996, que es 158.3 / 264.0. Cálculo propio.</p></dd>
+          <dt>Qué enseña</dt><dd><p>La tasa de empleo depende de dos cosas a la vez. Puede bajar aunque u baje, si la participación cae lo suficiente.</p></dd>
+        </dl>
+      </div>
+
+      <p>La participación aumentó desde 1950, sobre todo por la mayor participación de las mujeres: en 1950 una de cada tres estaba en la fuerza laboral; hoy son cerca de dos de cada tres. Según el libro, la participación total viene bajando desde 1999. El trabajo en el hogar (cocinar, criar hijos) no se cuenta como trabajo en las estadísticas oficiales por la dificultad de medirlo, no por un juicio de valor.</p>
+    </div>
+
+    <div class="simulador-panel" id="sim-tasas">
+      <h3>Calculadora de tasas: ¿qué le pasa a cada tasa si el mercado se mueve?</h3>
+      <p>Parte de las cifras de la Figura 7-1. Elige cuántos desempleados dejan de estar desempleados este período y qué fracción de ellos consigue empleo (el resto sale de la fuerza laboral). Es un ejercicio de lectura de las tasas, no una predicción.</p>
+      <div class="btn-escenarios">
+        <button class="btn" type="button" id="esc-base">Cifras del libro</button>
+        <button class="btn" type="button" id="esc-desalentados">1.0 M dejan de buscar</button>
+        <button class="btn" type="button" id="esc-empleo">1.0 M consiguen empleo</button>
+      </div>
+      <div class="sim-grid">
+        <div class="control-item"><div class="control-top"><label class="control-label" for="tx">Desempleados que dejan de serlo (millones)</label><span class="control-val" id="vtx">0.0</span></div><input class="control-slider" type="range" id="tx" min="0" max="6" step="0.1" value="0"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="th">De ellos, porcentaje que consigue empleo</label><span class="control-val" id="vth">100%</span></div><input class="control-slider" type="range" id="th" min="0" max="100" step="10" value="100"></div>
+      </div>
+      <div class="kpis-grid" aria-live="polite">
+        <div class="kpi-card"><div class="kpi-title">Empleados</div><div class="kpi-num" id="te">158.3</div><div class="kpi-sub" id="tbe">Base: 158.3</div></div>
+        <div class="kpi-card"><div class="kpi-title">Desempleados</div><div class="kpi-num" id="tu">6.0</div><div class="kpi-sub" id="tbu">Base: 6.0</div></div>
+        <div class="kpi-card"><div class="kpi-title">Tasa de desempleo</div><div class="kpi-num" id="tru">3.65%</div><div class="kpi-sub" id="tbru">Base: 3.65%</div></div>
+        <div class="kpi-card"><div class="kpi-title">Tasa de participación</div><div class="kpi-num" id="trp">62.2%</div><div class="kpi-sub" id="tbrp">Base: 62.2%</div></div>
+        <div class="kpi-card"><div class="kpi-title">Tasa de empleo</div><div class="kpi-num" id="tre">60.0%</div><div class="kpi-sub" id="tbre">Base: 60.0%</div></div>
+      </div>
+      <p class="sim-nota" id="tnota">Con las cifras del libro, nada se ha movido todavía.</p>
+    </div>
+
+    <div class="recuadro info">
+      <span class="recuadro-tag">Qué tendrías que notar en la calculadora</span>
+      <p>Prueba los dos botones. Si 1.0 millón de desempleados <strong>deja de buscar</strong>, la tasa de desempleo cae a cerca de 3.06% y la participación baja, pero la tasa de empleo no cambia (nadie consiguió trabajo). Si 1.0 millón <strong>consigue empleo</strong>, el desempleo cae a casi lo mismo (cerca de 3.04%), pero ahora la tasa de empleo sube a cerca de 60.3%. Cálculos propios con las cifras de la Figura 7-1. El desempleo mejora en ambos casos; solo la tasa de empleo distingue una buena noticia de una mala. Por eso Blanchard dice que el enfoque exclusivo en la tasa de desempleo está en parte mal dirigido.</p>
     </div>
 
     <div class="bloque">
       <h3>Los grandes flujos de trabajadores</h3>
-      <p><strong>La analogía del aeropuerto:</strong> un aeropuerto puede estar lleno porque llegan y salen muchos vuelos, o porque el mal clima dejó varados a los pasajeros. El número de pasajeros es alto en ambos casos, pero la situación es muy distinta. Igual, una misma tasa de desempleo puede reflejar un mercado <strong>activo</strong> (muchas separaciones y contrataciones) o uno <strong>esclerótico</strong> (pocas transacciones y un grupo de desempleados estancado). Para saber cuál es, se necesitan datos de flujos.</p>
+      <p><strong>Stock y flujo.</strong> Un <em>stock</em> es una cantidad medida en un momento (6.0 millones de desempleados). Un <em>flujo</em> es una cantidad que se mueve durante un período (3.9 millones de personas dejan de estar desempleadas en un mes). La imagen clásica es una bañera: el nivel del agua es el stock; el agua que entra por la llave y la que sale por el desagüe son flujos. El nivel puede mantenerse igual aunque entre y salga muchísima agua. Con el desempleo pasa lo mismo.</p>
+      <p><strong>La analogía del aeropuerto:</strong> un aeropuerto puede estar lleno porque llegan y salen muchos vuelos, o porque el mal clima dejó varados a los pasajeros. El número de pasajeros es alto en ambos casos, pero la situación es muy distinta. Igual, una misma tasa de desempleo puede reflejar un mercado <strong>activo</strong> (muchas separaciones y contrataciones) o uno <strong>esclerótico</strong> (pocas transacciones y un grupo de desempleados estancado; "esclerosis" significa endurecimiento de las arterias, y en economía describe mercados que funcionan mal y tienen pocas transacciones). Para saber cuál es, se necesitan datos de flujos.</p>
+      <p>En Estados Unidos esos datos salen de la Current Population Survey (CPS), una encuesta mensual de unos 60,000 hogares. Cada hogar permanece cuatro meses en la muestra, sale ocho y vuelve cuatro más. Como se sigue a las mismas personas en meses consecutivos, se puede ver cuántos de los desempleados del mes pasado tienen empleo este mes, y de ahí estimar la probabilidad de conseguirlo.</p>
     </div>
+
+    <figure>
+      <div class="diagrama">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="Bañera del desempleo: entran 3.8 millones al mes (1.8 desde el empleo y 2.0 desde fuera de la fuerza laboral), salen 3.9 millones (2.0 a empleo y 1.9 a fuera), y el nivel de desempleados es 8.4 millones">
+          <rect width="720" height="300" fill="#1A1B1D"/>
+          <defs><marker id="f7e" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F2F2F0"/></marker></defs>
+          <rect x="250" y="70" width="220" height="150" fill="#202124" stroke="#F08AB2" stroke-width="3"/>
+          <rect x="253" y="130" width="214" height="87" fill="#F08AB2"/>
+          <text x="360" y="168" text-anchor="middle" font-size="16" font-weight="700" fill="#140C00">Desempleados (stock)</text>
+          <text x="360" y="194" text-anchor="middle" font-size="16" fill="#140C00" font-family="Azeret Mono, monospace">8.4 millones</text>
+          <line x1="40" y1="100" x2="244" y2="100" stroke="#F2F2F0" stroke-width="3" marker-end="url(#f7e)"/>
+          <text x="40" y="60" font-size="15" font-weight="700" fill="#F2F2F0">Entradas: 3.8 M por mes</text>
+          <text x="40" y="82" font-size="13" fill="#A9ABAE">1.8 desde empleo + 2.0 desde fuera</text>
+          <line x1="476" y1="190" x2="680" y2="190" stroke="#F2F2F0" stroke-width="3" marker-end="url(#f7e)"/>
+          <text x="680" y="232" text-anchor="end" font-size="15" font-weight="700" fill="#F2F2F0">Salidas: 3.9 M por mes</text>
+          <text x="680" y="254" text-anchor="end" font-size="13" fill="#A9ABAE">2.0 a empleo + 1.9 a fuera</text>
+          <text x="360" y="276" text-anchor="middle" font-size="13" fill="#A9ABAE">Si entradas y salidas son casi iguales, el nivel casi no cambia aunque el agua corra</text>
+        </svg>
+      </div>
+      <figcaption>Fig. propia con los flujos de la Figura 7-2 (promedio mensual 1990 a 2022). El agua dibujada representa el stock de desempleados.</figcaption>
+    </figure>
 
     <figure>
       <div class="diagrama">
@@ -130,6 +321,24 @@
       <figcaption>Fig. propia con los flujos mensuales promedio de la Figura 7-2 (EE. UU., 1990 a 2022, sin abril a diciembre de 2020), en millones. E = empleo, U = desempleo, F = fuera de la fuerza laboral.</figcaption>
     </figure>
 
+    <div class="bloque">
+      <h3>Cómo leer la Figura 7-2, flecha por flecha</h3>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Flujo</th><th>Millones por mes</th><th>Qué significa</th></tr></thead>
+          <tbody>
+            <tr><td>E a U</td><td class="mono">1.8</td><td>Empleados que pierden o dejan su empleo y pasan a buscar otro.</td></tr>
+            <tr><td>U a E</td><td class="mono">2.0</td><td>Desempleados que consiguen empleo.</td></tr>
+            <tr><td>E a F</td><td class="mono">3.9</td><td>Empleados que dejan de trabajar y salen del mercado.</td></tr>
+            <tr><td>F a E</td><td class="mono">3.8</td><td>Personas fuera de la fuerza laboral que consiguen un empleo directamente.</td></tr>
+            <tr><td>U a F</td><td class="mono">1.9</td><td>Desempleados que dejan de buscar (incluye a los que se desalientan).</td></tr>
+            <tr><td>F a U</td><td class="mono">2.0</td><td>Personas que estaban fuera y empiezan a buscar empleo.</td></tr>
+            <tr><td>Cambio de empleo</td><td class="mono">3.4</td><td>Personas que pasan de un empleo a otro sin pasar por el desempleo (el círculo de arriba en la figura).</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
     <div class="stats">
       <div class="stat"><div class="stat-label">Separaciones al mes</div><div class="stat-val">9.1 M</div></div>
       <div class="stat"><div class="stat-label">Salida mensual del desempleo</div><div class="stat-val">3.9 / 8.4 ≈ 46%</div></div>
@@ -138,19 +347,63 @@
     </div>
 
     <div class="bloque">
+      <h3>Los tres rasgos que destaca el libro</h3>
       <ul>
-        <li><strong>Flujos de empleo grandes:</strong> 9.1 millones de separaciones al mes de un total de 139 millones de empleados; cerca de tres cuartos son <strong>renuncias</strong> y un cuarto <strong>despidos</strong>. Detrás de cifras agregadas estables hay destrucción y creación continua de empleos. En promedio, cada día unas 60,000 personas quedan desempleadas.</li>
-        <li><strong>Flujos de desempleo grandes respecto al número de desempleados:</strong> cada mes salen 3.9 millones (2.0 consiguen empleo y 1.9 dejan de buscar), cerca de 46% del total. Para la mayoría, el desempleo es una transición rápida, no una larga espera (en muchos países europeos la duración es mucho mayor).</li>
-        <li><strong>Flujos de la fuerza laboral grandes:</strong> salen 5.7 millones (3.9 + 1.8) y entran 5.8 millones (3.8 + 2.0) al mes, aunque solo unos 450,000 son nuevos entrantes y unos 350,000 se jubilan. Muchos clasificados como "fuera de la fuerza laboral" son <strong>trabajadores desalentados</strong>: no buscan, pero aceptarían un empleo. Por eso a veces se mira la tasa de empleo en lugar de la de desempleo.</li>
+        <li><strong>Los flujos de empleo son grandes.</strong> Hay 9.1 millones de separaciones al mes de un total de 139 millones de empleados. Una <em>separación</em> es cualquier salida de un empleo: 3.4 (cambian de empleo) + 3.9 (salen de la fuerza laboral) + 1.8 (pasan al desempleo) = 9.1. Eso equivale a cerca de 6.5% del empleo cada mes (9.1 / 139.0, cálculo propio). Cerca de tres cuartos son <strong>renuncias</strong> (quits) y un cuarto <strong>despidos</strong> (layoffs). Detrás de cifras agregadas estables hay destrucción y creación continua de empleos: en cualquier momento unas empresas pierden demanda y reducen su personal, mientras otras la ganan y contratan. En promedio, cada día unas 60,000 personas quedan desempleadas (1.8 millones al mes, repartidos en 30 días).</li>
+        <li><strong>Los flujos de desempleo son grandes respecto al número de desempleados.</strong> Cada mes salen 3.9 millones (2.0 consiguen empleo y 1.9 dejan de buscar), cerca de 46% del total. Para la mayoría, el desempleo es una transición rápida, no una larga espera. Con todo, hay dos matices: Estados Unidos es inusual en esto (en muchos países europeos la duración es mucho mayor), y aun allí, cuando el desempleo es alto, como en la crisis financiera, la duración se alarga mucho y estar desempleado duele más.</li>
+        <li><strong>Los flujos de la fuerza laboral son sorprendentemente grandes.</strong> Cada mes salen de la fuerza laboral 5.8 millones (3.9 desde el empleo más 1.9 desde el desempleo) y entran 5.8 (3.8 hacia el empleo más 2.0 hacia el desempleo): en total 11.6 millones. Quizá esperabas que fueran jóvenes que terminan la escuela y jubilados, pero solo unos 450,000 son nuevos entrantes y unos 350,000 se jubilan cada mes, o sea 0.8 millones, menos de 7% de los 11.6 millones (cálculo propio). El resto es gente que va y viene entre participar y no participar.</li>
       </ul>
-      <div class="ecuacion">Duración promedio del desempleo = 1 / (proporción de desempleados que sale cada mes)</div>
-      <p>Ejemplo del libro: con 100 desempleados constantes y dos meses de desempleo por persona, cada mes salen 50 (50%) y la duración es 1/0.5 = 2 meses.</p>
+      <div class="matiz"><b class="t">Ojo con dos cifras del libro</b><p>(1) El texto del capítulo dice que salen de la fuerza laboral "5.7 millones (3.9 más 1.8)". Con la Figura 7-2, la cuenta correcta de salidas es 3.9 (desde el empleo) más 1.9 (desde el desempleo) = 5.8, y 5.8 + 5.8 = 11.6 es el total que cita el propio libro. Usa 5.8. (2) El resumen del capítulo dice que sale "alrededor de 4%" de los desempleados cada mes; el cuerpo del capítulo dice 46%. Usa 46%.</p></div>
+    </div>
+
+    <div class="bloque">
+      <h3>Indicadores de flujo: tres fórmulas con sus piezas</h3>
+
+      <div class="anatomia">
+        <div class="ecuacion">Proporción que sale del desempleo = flujo de salida del desempleo / desempleados = 3.9 / 8.4 ≈ 46%</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>Flujo de salida</dt><dd><p>Numerador, en personas por mes. Suma los que consiguen empleo (2.0) y los que dejan de buscar (1.9).</p></dd>
+          <dt>Desempleados</dt><dd><p>Denominador, el stock que había (8.4 millones). Comparar un flujo con un stock da una tasa: qué parte del grupo sale cada mes.</p></dd>
+          <dt>Qué enseña</dt><dd><p>Si es alta, el desempleo es una puerta giratoria. Si fuera baja, sería una espera larga. Cálculo con la Figura 7-2.</p></dd>
+        </dl>
+      </div>
+
+      <div class="anatomia">
+        <div class="ecuacion">Duración promedio del desempleo = 1 / (proporción de desempleados que sale cada mes)</div>
+        <span class="anatomia-tt">Qué significa cada pieza y por qué es el inverso</span>
+        <dl class="simbolos">
+          <dt>Duración</dt><dd><p>Tiempo promedio que una persona pasa desempleada, medido en meses.</p></dd>
+          <dt>Proporción que sale</dt><dd><p>La fracción de los desempleados que se va cada mes (la fórmula anterior). Con 46%, la duración es 1 / 0.46 ≈ 2.2 meses, dentro del rango de dos a tres meses del libro.</p></dd>
+          <dt>Ejemplo del libro</dt><dd><p>Hay 100 desempleados constantes y cada uno permanece dos meses. Siempre hay 50 que llevan un mes y 50 que llevan dos. Cada mes salen los 50 que completaron dos meses: la proporción es 50 / 100 = 50% y la duración es 1 / 0.5 = 2 meses.</p></dd>
+          <dt>Por qué el inverso</dt><dd><p>Si cada mes sale una fracción s del grupo, un desempleado típico tarda 1 / s meses en salir, igual que si cada día se te va el 25% de una bolsa de dulces, tardarías unos 4 días en vaciarla. Otra manera de verlo: desempleados = entradas por mes × duración, así que duración = desempleados / entradas por mes = 8.4 / 3.9 ≈ 2.2 meses (cálculo propio).</p></dd>
+        </dl>
+      </div>
+
+      <div class="anatomia">
+        <div class="ecuacion">Tasa de separación = separaciones del mes / empleo = 9.1 / 139.0 ≈ 6.5%</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>Separaciones</dt><dd><p>Numerador: renuncias más despidos más cambios de empleo (9.1 millones por mes).</p></dd>
+          <dt>Empleo</dt><dd><p>Denominador: el stock de empleados (139.0 millones).</p></dd>
+          <dt>Qué enseña</dt><dd><p>Qué tan "rotativo" es el empleo. Aunque el empleo total cambia poco, cada mes cerca de uno de cada quince empleos termina. Los empleos nuevos (hires) compensan: 3.4 + 2.0 + 3.8 = 9.2 entradas al empleo, casi igual a las salidas (cálculo propio).</p></dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="recuadro info">
+      <span class="recuadro-tag">Trabajadores desalentados y la tasa de empleo</span>
+      <p>Una gran parte de los clasificados como "fuera de la fuerza laboral" dicen que no buscan pero "quieren un trabajo", y muchos toman un empleo cuando se lo ofrecen. Esos son los <strong>trabajadores desalentados</strong>: se parecen mucho a los desempleados aunque la estadística no los cuente como tales. Por eso a veces se mira la tasa de empleo en lugar de la de desempleo, ya que baja cuando sube el número de personas fuera de la fuerza laboral. Aun así, el libro sigue la tradición y usa el desempleo como indicador, recordando que no es la mejor medida de cuántas personas están disponibles para trabajar.</p>
     </div>
   </section>
 
   <section class="modulo" id="movimientos">
     <div class="modulo-head"><h2>La perspectiva dinámica de la clase: 13 movimientos</h2></div>
     <div class="modulo-text">Apuntes de clase del profesor ("Clase 2 El Mercado Laboral"). Usa las categorías PET, PEA (ocupados y desocupados) y PEI, y amplía los 6 movimientos internos con 7 más.</div>
+
+    <div class="bloque">
+      <p><strong>La idea.</strong> La Figura 7-2 de Blanchard tiene seis flujos entre tres grupos (empleo, desempleo y fuera de la fuerza laboral). La clase añade dos cosas. Primero, el <strong>resto del mundo</strong>: personas que entran al país o salen de él y se incorporan a alguno de los tres grupos, lo que da seis flujos nuevos. Segundo, la entrada de quienes <strong>cumplen 16 años</strong> y pasan de la población en no edad de trabajar a la PET (se supone que ingresan a la PEI). Eso suma 6 + 6 + 1 = 13 movimientos.</p>
+    </div>
 
     <figure>
       <div class="diagrama">
@@ -198,7 +451,7 @@
     </figure>
 
     <div class="tabla-wrap">
-      <table class="tabla-datos">
+      <table class="tabla-datos texto">
         <thead><tr><th>N.º</th><th>Movimiento</th><th>Ejemplos de la clase</th></tr></thead>
         <tbody>
           <tr><td>1</td><td>Desocupados a ocupados</td><td>Salen del desempleo, consiguen trabajo.</td></tr>
@@ -217,12 +470,46 @@
     </div>
 
     <div class="bloque">
-      <h3>El análisis de interrelaciones: dos escenarios</h3>
+      <h3>La contabilidad de los 13 movimientos: cada grupo es una bañera</h3>
+      <p>Cada grupo es un stock, y su cambio en un período es lo que entra menos lo que sale. Con la numeración del diagrama:</p>
+      <div class="anatomia">
+        <div class="ecuacion">ΔOcupados = (1) + (3) + (8) − (2) − (4) − (9)<br>ΔDesocupados = (2) + (5) + (10) − (1) − (6) − (11)<br>ΔPEI = (4) + (6) + (7) + (12) − (3) − (5) − (13)</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>Δ</dt><dd><p>"Cambio en". ΔOcupados es cuántos ocupados más (o menos) hay al final del período.</p></dd>
+          <dt>(n)</dt><dd><p>El número de personas que hicieron el movimiento n durante el período. Es un flujo.</p></dd>
+          <dt>Signo +</dt><dd><p>Movimientos que llegan al grupo (agua que entra a la bañera).</p></dd>
+          <dt>Signo −</dt><dd><p>Movimientos que salen del grupo (agua que se va por el desagüe).</p></dd>
+          <dt>Qué enseña</dt><dd><p>Si sumas las tres ecuaciones, los movimientos internos (1) a (6) se cancelan, porque lo que sale de un grupo entra a otro. Queda ΔPET = (7) + (8) + (10) + (12) − (9) − (11) − (13): la población en edad de trabajar solo cambia por cumplir 16 años o por los flujos con el resto del mundo. Sumando solo las dos primeras queda el cambio de la fuerza laboral: ΔPEA = (3) + (5) + (8) + (10) − (4) − (6) − (9) − (11).</p></dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <h3>Una misma caída de la tasa de desempleo puede ser buena o mala noticia</h3>
+      <p>Como u = desocupados / PEA, puede bajar por varios caminos. La tasa final no te dice cuál ocurrió; hay que mirar el movimiento:</p>
       <div class="tabla-wrap">
-        <table class="tabla-datos">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Por qué baja u</th><th>Movimiento</th><th>Lectura</th></tr></thead>
+          <tbody>
+            <tr><td>Los desocupados consiguen trabajo</td><td>1</td><td>Buena noticia: aumenta el empleo y baja el desempleo.</td></tr>
+            <tr><td>Los desocupados dejan de buscar</td><td>6</td><td>Mala noticia disimulada: el desempleo baja pero nadie consiguió trabajo. Es el desaliento.</td></tr>
+            <tr><td>Los desocupados emigran</td><td>11</td><td>Escape del problema hacia afuera: el desempleo local baja, pero se pierde población activa.</td></tr>
+            <tr><td>Entra gente con empleo desde el exterior o desde la PEI</td><td>8 o 3</td><td>El denominador crece con personas empleadas, y u baja aunque los desocupados no cambien.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Este es el equivalente, en el lenguaje de la clase, de lo que muestra la calculadora de tasas: leer solo u puede ocultar qué pasó realmente.</p>
+    </div>
+
+    <div class="bloque">
+      <h3>El análisis de interrelaciones: dos escenarios</h3>
+      <p>Los escenarios no son dos teoremas, sino dos "paquetes" de resultados que suelen ir juntos porque todos dependen de una misma comparación: ¿la <strong>creación de empleo</strong> es mayor o menor que la suma de la <strong>destrucción de empleos</strong> y la <strong>presión de la PEI que sale a buscar trabajo</strong>?</p>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
           <thead><tr><th>Escenario favorable</th><th>Escenario desfavorable</th></tr></thead>
           <tbody>
-            <tr><td colspan="1">La creación de empleo supera a la destrucción de empleos y a la presión de la PEI que sale a buscar trabajo.</td><td>La creación de empleo es menor que la destrucción de empleos y la presión de la PEI que sale a buscar trabajo.</td></tr>
+            <tr><td>La creación de empleo supera a la destrucción de empleos y a la presión de la PEI que sale a buscar trabajo.</td><td>La creación de empleo es menor que la destrucción de empleos y la presión de la PEI que sale a buscar trabajo.</td></tr>
             <tr><td>Se reduce la tasa de desempleo.</td><td>Aumenta en el tiempo la tasa de desempleo.</td></tr>
             <tr><td>Aumenta la entrada de personas al país, o se reduce la necesidad de salir para conseguir empleo.</td><td>Aumenta la salida de personas del país.</td></tr>
             <tr><td>Se reduce el peso del sector informal (empleos de baja calidad o de subsistencia).</td><td>Aumenta el peso del sector informal.</td></tr>
@@ -232,7 +519,12 @@
           </tbody>
         </table>
       </div>
-      <p>Fíjate en el vínculo con Blanchard: el poder de negociación y los salarios dependen de las condiciones del mercado laboral, que es justo lo que formaliza la ecuación de salarios de la sección 7-3.</p>
+      <p><strong>Por qué van juntos.</strong> Cuando sobran empleos, los desocupados salen rápido del desempleo (menos tiempo en el desempleo), las empresas compiten por trabajadores (suben los salarios reales y el poder de negociación), el que antes migraba por necesidad ya no necesita irse y el que estaba en la informalidad por falta de opciones puede pasar a un empleo formal. Cuando faltan empleos, ocurre lo contrario: la gente espera más, acepta peores condiciones o se va, y la informalidad se vuelve la salida de subsistencia. Fíjate en el vínculo con Blanchard: el poder de negociación y los salarios dependen de las condiciones del mercado laboral, que es justo lo que formaliza la ecuación de salarios de la sección 7-3.</p>
+    </div>
+
+    <div class="recuadro info">
+      <span class="recuadro-tag">Cómo responder un caso con los movimientos</span>
+      <p>Ejemplo de razonamiento: "Llegan al país personas que buscan empleo y no lo encuentran." <strong>Paso 1:</strong> identifica el movimiento (10, resto del mundo a desocupados). <strong>Paso 2:</strong> di qué stock cambia (los desocupados aumentan, y con ellos la PEA). <strong>Paso 3:</strong> di qué pasa con las tasas (sube u, porque suben el numerador y el denominador, pero el numerador proporcionalmente más). <strong>Paso 4:</strong> conecta con el modelo (más desempleo debilita el poder de negociación y presiona a la baja el salario real elegido). <strong>Paso 5:</strong> di cómo se puede resolver (conseguir empleo, movimiento 1, a veces en la informalidad o con emprendimiento; o volver a salir, movimiento 11).</p>
     </div>
   </section>
 
@@ -240,12 +532,51 @@
     <div class="modulo-head"><h2>Movimientos del desempleo</h2></div>
     <div class="modulo-text">Sección 7-2 de Blanchard.</div>
     <div class="bloque">
-      <p>El desempleo en EE. UU. fluctúa mucho (entre 3% y 15% desde 1960), con recesiones y expansiones, pero sin tendencia. Ante una caída de la demanda, las empresas primero <strong>contratan menos</strong> (dejan que renuncias y jubilaciones reduzcan el personal) y, si no basta, <strong>despiden</strong>. Por eso, cuando el desempleo es alto, los trabajadores están peor de dos maneras:</p>
+      <p>El desempleo en EE. UU. fluctúa mucho (entre 3% y 15% desde 1960), con recesiones y expansiones, pero sin tendencia: a fines de 2020 estaba más o menos igual que en 1960. Interesa entender cómo esas fluctuaciones afectan a cada trabajador por dos razones: porque determinan el <strong>bienestar</strong> de los trabajadores individuales y porque determinan el efecto del desempleo agregado sobre los <strong>salarios</strong>. Lo segundo es lo que usaremos en 7-3.</p>
+      <h3>Los dos caminos para reducir el empleo</h3>
+      <p>Ante una caída de la demanda, una empresa puede <strong>contratar menos</strong> (dejar que renuncias y jubilaciones reduzcan su personal) o <strong>despedir</strong>. El libro observa que las empresas suelen preferir primero frenar las contrataciones y, si la caída de demanda es grande y eso no basta, despedir. Una razón económica razonable es que despedir tiene costos (indemnizaciones, pérdida de personal ya capacitado, daño a la moral de los que se quedan), mientras que no reponer una vacante es gratis. Cada camino tiene un efecto distinto sobre los trabajadores:</p>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Si la empresa ajusta por…</th><th>Qué pasa</th><th>Quién sufre</th></tr></thead>
+          <tbody>
+            <tr><td>Contratar menos</td><td>Hay menos vacantes y más solicitantes por vacante.</td><td>Los desempleados: les cuesta más encontrar empleo.</td></tr>
+            <tr><td>Despedir</td><td>Más empleados quedan sin trabajo.</td><td>Los empleados: aumenta el riesgo de perder el suyo.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>En general las empresas hacen ambas cosas, así que cuando el desempleo es alto, los trabajadores están peor de dos maneras:</p>
       <ul>
         <li>Los desempleados tienen <strong>menor probabilidad de encontrar empleo</strong>, es decir, esperan permanecer desempleados más tiempo.</li>
         <li>Los empleados tienen <strong>mayor probabilidad de perder el suyo</strong>.</li>
       </ul>
-      <p>Ejemplo del libro: en 2010, con desempleo cercano a 10%, solo cerca de 15% de los desempleados encontraba empleo en un mes, frente a 31% a fines de 2022, con desempleo de 3.5%. La probabilidad de pasar de empleado a desempleado casi se duplica entre épocas de desempleo bajo y alto.</p>
+    </div>
+
+    <div class="bloque">
+      <h3>Las dos probabilidades, con sus piezas</h3>
+      <div class="anatomia">
+        <div class="ecuacion">Probabilidad de encontrar empleo = flujo de U a E durante el mes / desempleados al inicio del mes</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>Flujo de U a E</dt><dd><p>Personas que estaban desempleadas y consiguen empleo en el mes.</p></dd>
+          <dt>Desempleados al inicio</dt><dd><p>El grupo de partida. Se divide entre ellos porque la pregunta es qué parte del grupo lo logra.</p></dd>
+          <dt>Ejemplo del libro</dt><dd><p>Con desempleo cercano a 10% en 2010, solo cerca de 15% de los desempleados encontraba empleo en un mes; a fines de 2022, con desempleo de 3.5%, era 31%. Con el promedio de la Figura 7-2, 2.0 / 8.4 ≈ 24% (cálculo propio).</p></dd>
+        </dl>
+      </div>
+      <div class="anatomia">
+        <div class="ecuacion">Probabilidad de perder el empleo = flujo de E a U durante el mes / empleados en el mes</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>Flujo de E a U</dt><dd><p>Personas empleadas que pasan al desempleo en el mes.</p></dd>
+          <dt>Empleados</dt><dd><p>El grupo de partida.</p></dd>
+          <dt>Qué enseña</dt><dd><p>Con el promedio de la Figura 7-2, 1.8 / 139.0 ≈ 1.3% por mes (cálculo propio). Según el libro, esta probabilidad casi se duplica entre épocas de desempleo bajo y alto.</p></dd>
+        </dl>
+      </div>
+      <p><strong>Tip para leer las figuras del libro.</strong> En la Figura 7-3 el eje del desempleo está <em>invertido</em> (lo alto significa poco desempleo), para que las dos líneas se muevan juntas. Si no lo notas, parece que el desempleo sube cuando baja.</p>
+    </div>
+
+    <div class="recuadro">
+      <span class="recuadro-tag">Por qué esto importa para los salarios</span>
+      <p>Piensa en qué pasa si un trabajador pide un salario más alto. La empresa puede decir que no. Qué tan costoso es para el trabajador que lo despidan depende de cuántas probabilidades tiene de encontrar otro empleo, y eso lo resume el desempleo. Con desempleo alto, perder el trabajo es mucho peor (poca probabilidad de reemplazarlo), así que el trabajador pide menos. Con desempleo bajo, perder el trabajo es poco grave, así que se atreve a pedir más. Esta es la idea detrás del signo negativo de u en la ecuación de salarios de la sección siguiente.</p>
     </div>
   </section>
 
@@ -254,42 +585,141 @@
     <div class="modulo-text">Sección 7-3 de Blanchard.</div>
 
     <div class="bloque">
-      <p>Los salarios se fijan por <strong>negociación colectiva</strong> (sindicatos y empresas), unilateralmente por la empresa o por negociación individual. En EE. UU., apenas algo más de 10% de los trabajadores tiene su salario fijado por negociación colectiva; en Japón y gran parte de Europa su papel es mucho mayor. Aun así, hay dos hechos comunes:</p>
+      <h3>Cómo se fijan los salarios en la práctica</h3>
+      <p>Los salarios se fijan por <strong>negociación colectiva</strong> (negociación entre sindicatos y empresas), unilateralmente por la empresa o por negociación entre la empresa y cada empleado. En EE. UU., apenas algo más de 10% de los trabajadores tiene su salario fijado por negociación colectiva. Cuanto más calificado es el trabajo, más probable es que haya negociación individual: el empleo de entrada en McDonald's se ofrece "lo tomas o lo dejas"; un recién graduado puede negociar algunos aspectos de su contrato; un director ejecutivo o una estrella del fútbol negocia mucho más. También hay diferencias entre países: en Japón y en la mayoría de los europeos la negociación colectiva pesa mucho, a nivel de empresa, de industria o nacional, y a veces los acuerdos se extienden automáticamente a todas las empresas y trabajadores del sector.</p>
+      <p>Con tanta variedad, ¿es posible una teoría general? Sí, porque hay fuerzas comunes. Dos hechos destacan:</p>
       <ol>
-        <li>Los trabajadores suelen recibir un salario <strong>mayor que su salario de reserva</strong> (el que los dejaría indiferentes entre trabajar o estar desempleados).</li>
+        <li>Los trabajadores suelen recibir un salario <strong>mayor que su salario de reserva</strong>. El salario de reserva es el que los dejaría indiferentes entre trabajar o estar desempleados. Es decir, casi todos están mejor empleados que desempleados.</li>
         <li>Los salarios dependen de las condiciones del mercado laboral: <strong>cuanto menor el desempleo, mayores los salarios</strong>.</li>
       </ol>
+    </div>
+
+    <div class="bloque">
+      <h3>El salario de reserva, con un ejemplo</h3>
+      <p>El salario de reserva es el mínimo que una persona aceptaría para trabajar; por debajo de él prefiere seguir desempleada (por ejemplo, porque su alternativa es cuidar a su familia o vivir de un seguro). Su regla de decisión es sencilla:</p>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Salario ofrecido frente al de reserva</th><th>Decisión</th><th>Situación</th></tr></thead>
+          <tbody>
+            <tr><td>Menor</td><td>Rechaza la oferta</td><td>Prefiere seguir desempleada.</td></tr>
+            <tr><td>Igual</td><td>Le da lo mismo</td><td>Está indiferente entre trabajar y no trabajar.</td></tr>
+            <tr><td>Mayor</td><td>Acepta y prefiere el empleo</td><td>Si no tiene empleo, quisiera uno: desempleo involuntario.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>El primer hecho dice entonces que en la economía real la mayoría está en la tercera fila: ganan más de lo que aceptarían como mínimo. La pregunta es por qué las empresas pagan "de más". El libro ofrece dos explicaciones amplias, una desde el lado del trabajador y otra desde el de la empresa.</p>
     </div>
 
     <div class="bloque bloque-icono">
       <span class="icono"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F08AB2" stroke-width="1.8" aria-hidden="true"><path d="M12 4v16M6 20h12M5 8h14M5 8l-3 6h6zM19 8l-3 6h6z"/></svg></span>
       <div>
         <h3>Explicación 1: poder de negociación</h3>
-        <p>Depende de cuán costoso es para la empresa reemplazar al trabajador y de cuán difícil es para este encontrar otro empleo. Por eso depende de <strong>la naturaleza del trabajo</strong> (reemplazar a un empleado de McDonald's es barato; a un trabajador muy calificado que conoce a fondo la empresa, no) y de <strong>las condiciones del mercado laboral</strong> (con desempleo bajo, a la empresa le cuesta más encontrar reemplazos y al trabajador le es más fácil encontrar otro empleo).</p>
+        <p>Aun sin sindicatos, la mayoría de los trabajadores tiene algún poder de negociación, que usan para obtener salarios por encima del de reserva. Ese poder depende de dos factores: <strong>qué tan costoso es para la empresa encontrar a otros trabajadores si este se va</strong> y <strong>qué tan difícil es para el trabajador encontrar otro empleo si se va</strong>. Mientras más caro sea reemplazarlo y más fácil sea para él encontrar otro empleo, más poder tiene. Eso tiene dos consecuencias:</p>
+        <p><strong>La naturaleza del trabajo.</strong> Reemplazar a un empleado de McDonald's es barato: se enseña rápido y hay muchos solicitantes. Si pide más, lo despiden y contratan a otro, así que casi no tiene poder. En cambio, un trabajador muy calificado que conoce a fondo la empresa es caro de reemplazar, y la empresa puede preferir dar el aumento.</p>
+        <p><strong>Las condiciones del mercado laboral.</strong> Con desempleo bajo, a la empresa le cuesta más encontrar reemplazos aceptables y al trabajador le es más fácil encontrar otro empleo: el poder del trabajador sube, y puede obtener un salario mayor. Con desempleo alto ocurre lo contrario y puede no tener más remedio que aceptar un salario menor.</p>
       </div>
+    </div>
+
+    <div class="bloque">
+      <h3>Poder de negociación: una tabla para ordenar las dos fuerzas</h3>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Caso</th><th>Costo de reemplazarlo para la empresa</th><th>Facilidad de hallar otro empleo</th><th>Poder del trabajador</th></tr></thead>
+          <tbody>
+            <tr><td>Empleo rutinario, desempleo alto</td><td>Bajo</td><td>Baja</td><td>Muy poco</td></tr>
+            <tr><td>Empleo rutinario, desempleo bajo</td><td>Bajo</td><td>Alta</td><td>Algo (sube respecto al caso anterior)</td></tr>
+            <tr><td>Empleo muy calificado, desempleo alto</td><td>Alto</td><td>Baja</td><td>Medio</td></tr>
+            <tr><td>Empleo muy calificado, desempleo bajo</td><td>Alto</td><td>Alta</td><td>Mucho</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>La tabla es una síntesis propia de las dos fuerzas que describe el libro. Fíjate en que cambiar la naturaleza del empleo (filas de arriba a abajo) y cambiar el desempleo (una fila a la otra) mueven el poder en el mismo sentido que dicen los dos hechos de arriba. La ecuación de salarios que verás más adelante se concentra en el segundo canal, el desempleo.</p>
     </div>
 
     <div class="bloque bloque-icono">
       <span class="icono"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F08AB2" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/></svg></span>
       <div>
         <h3>Explicación 2: salarios de eficiencia</h3>
-        <p>Las empresas pueden <em>querer</em> pagar más que el salario de reserva para que sus trabajadores sean productivos, se sientan bien con su trabajo y no renuncien. Las teorías que vinculan productividad y salario se llaman <strong>teorías de salarios de eficiencia</strong>. También implican que el salario depende del tipo de trabajo y del desempleo: con desempleo bajo renunciar es más atractivo, y la empresa debe subir salarios para retener a su gente.</p>
+        <p>Independientemente del poder de negociación, las empresas pueden <em>querer</em> pagar más que el salario de reserva. Quieren que sus trabajadores sean productivos. Si, por ejemplo, un trabajador tarda en aprender bien el oficio, la empresa quiere que se quede un buen tiempo. Pero si le pagan solo su salario de reserva, le da igual quedarse o irse, y muchos se irán: la rotación será alta. Pagar más hace más atractivo quedarse.</p>
+        <p>Hay una idea más general detrás: a la mayoría de las empresas les conviene que sus trabajadores se sientan bien con su trabajo, porque eso promueve el buen desempeño y la productividad. Un salario alto es una herramienta para lograrlo. Las teorías que vinculan la productividad (o eficiencia) de los trabajadores con lo que se les paga se llaman <strong>teorías de salarios de eficiencia</strong>. Como las de negociación, implican que el salario depende del tipo de trabajo y de las condiciones del mercado: las empresas donde la moral y el compromiso de sus empleados son esenciales (por ejemplo, las de alta tecnología) pagan más que aquellas donde el trabajo es rutinario; y con desempleo bajo, renunciar es más atractivo (es fácil hallar otro empleo), así que la empresa debe subir salarios para retener a su gente.</p>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <h3>Las dos explicaciones, lado a lado</h3>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>&nbsp;</th><th>Poder de negociación</th><th>Salarios de eficiencia</th></tr></thead>
+          <tbody>
+            <tr><td>Quién tiene la iniciativa</td><td>El trabajador, que presiona por más.</td><td>La empresa, que decide pagar más por su propio interés.</td></tr>
+            <tr><td>Por qué el salario queda por encima del de reserva</td><td>El trabajador logra capturar parte del valor que genera.</td><td>La empresa gana productividad y retiene personal.</td></tr>
+            <tr><td>Cómo entra el desempleo</td><td>Con desempleo alto, el trabajador tiene menos poder.</td><td>Con desempleo alto, es menos tentador renunciar, así que no hace falta pagar tanto.</td></tr>
+            <tr><td>Resultado común</td><td colspan="2">En ambas, el salario depende de la naturaleza del trabajo y del desempleo: <strong>cuanto menor el desempleo, mayor el salario</strong>.</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
     <div class="recuadro info">
       <span class="recuadro-tag">Recuadro Focus: de Henry Ford a Jeff Bezos</span>
-      <p>En 1914, Ford pagó un mínimo de 5 dólares por una jornada de 8 horas, frente a un promedio previo de 2.30 dólares por 9 horas. La rotación anual cayó de 370% (1913) a 54% (1914) y 16% (1915); los despidos, de 62% a 7% y 0.1%; el ausentismo, de cerca de 10% a 2.5%; la productividad subió entre 30% y 50%. En 2018, Amazon subió su salario mínimo a 15 dólares por hora, en parte para atraer y retener trabajadores con un desempleo muy bajo. Otro ejemplo del libro: la seguridad aeroportuaria de EE. UU. pasó, tras el 11 de septiembre de 2001, de salarios bajos con alta rotación a salarios más altos para tener personal más motivado y competente.</p>
+      <p>En 1914, Ford, constructor del auto más popular de su época (el Modelo T), anunció que pagaría a sus empleados calificados un mínimo de 5 dólares por una jornada de 8 horas, frente a un promedio previo de 2.30 dólares por 9 horas. Era un aumento enorme: cerca de la mitad de las ganancias de la empresa. Por hora, el pago pasó de unos 0.26 a unos 0.63 dólares (cálculo propio), más del doble. El problema de Ford no era hallar trabajadores, sino <em>retenerlos</em>: había alta rotación y alta insatisfacción.</p>
+      <div class="tabla-wrap">
+        <table class="tabla-datos">
+          <thead><tr><th>Tabla 1 del libro</th><th>1913</th><th>1914</th><th>1915</th></tr></thead>
+          <tbody>
+            <tr><td>Rotación anual (%)</td><td class="mono">370</td><td class="mono">54</td><td class="mono">16</td></tr>
+            <tr><td>Tasa de despidos (%)</td><td class="mono">62</td><td class="mono">7</td><td class="mono">0.1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Una rotación anual de 370% significa que en promedio salía 31% de los trabajadores cada mes (31% × 12 ≈ 370%). El ausentismo bajó de cerca de 10% a 2.5% en un año, y las estimaciones de aumento de productividad van de 30% a 50%. Las ganancias de 1914 también fueron mayores, aunque es difícil separar cuánto se debió al cambio de comportamiento de los trabajadores y cuánto al éxito creciente del Modelo T. El libro admite que los efectos apoyan las teorías de salarios de eficiencia, aunque quizá el aumento fue excesivo para maximizar ganancias, y que Ford tenía otros objetivos (mantener fuera a los sindicatos, hacer publicidad).</p>
+      <p>En octubre de 2018, Amazon subió su salario mínimo a 15 dólares por hora (frente a un mínimo federal de 7.50) para sus 250,000 trabajadores regulares y 100,000 estacionales; una razón es atraer y conservar trabajadores con un desempleo muy bajo, otra mejorar la moral y la productividad. Otro ejemplo del libro: antes del 11 de septiembre de 2001, la seguridad aeroportuaria de EE. UU. contrataba con salarios bajos y aceptaba la alta rotación; luego buscó personal más motivado y competente con mejores salarios, y la rotación bajó a un nivel similar al promedio de los servicios.</p>
     </div>
 
     <div class="bloque">
       <h3>La ecuación de fijación de salarios</h3>
-      <div class="ecuacion">W = P<sup>e</sup> · F(<span class="v" data-var="u"><span>u</span></span>, z) &nbsp;&nbsp; con efecto negativo de u y positivo de z &nbsp;&nbsp; (7.1)</div>
-      <ul>
-        <li><strong>P<sup>e</sup>, nivel de precios esperado:</strong> a trabajadores y empresas les importa el salario real W/P. Si ambos esperan que los precios se dupliquen, acuerdan duplicar W. Se usa el precio <em>esperado</em> porque los salarios se fijan en términos nominales y por un período (un año, o hasta tres en algunos contratos sindicales), antes de conocer P.</li>
-        <li><strong><span class="v" data-var="u">u</span>, tasa de desempleo (efecto negativo):</strong> más desempleo debilita el poder de negociación o permite pagar menos y aun así retener trabajadores. Otra medida posible del estado del mercado: la razón de vacantes a desempleo.</li>
-        <li><strong>z, variable que agrupa todo lo demás (efecto positivo):</strong> seguro de desempleo más generoso, salario mínimo más alto, mayor protección del empleo. También influyen la globalización, la demografía, plataformas como Uber o internet.</li>
-      </ul>
+      <p>Todo lo anterior se resume en una ecuación sencilla. Léela con el método de las cinco etapas.</p>
+      <div class="anatomia">
+        <div class="ecuacion">W = P<sup>e</sup> · F(<span class="v" data-var="u"><span>u</span></span>, z) &nbsp;&nbsp; con efecto negativo de u y positivo de z &nbsp;&nbsp; (7.1)</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>W</dt><dd><p>El salario nominal agregado (el salario promedio de la economía, en dinero). Es lo que la ecuación determina.</p></dd>
+          <dt>P<sup>e</sup></dt><dd><p>El nivel de precios que se espera. Entra multiplicando, así que si P<sup>e</sup> sube en cierta proporción, W sube en la misma proporción.</p></dd>
+          <dt>F( , )</dt><dd><p>Una función: una regla que toma u y z y devuelve un número. Como W / P<sup>e</sup> = F, el número que devuelve es el <strong>salario real que se pretende obtener</strong>. No hace falta conocer su forma exacta; basta saber cómo reacciona a u y a z.</p></dd>
+          <dt>u <span class="tag-pill">efecto −</span></dt><dd><p>La tasa de desempleo. El signo menos bajo u dice: más desempleo, menos salario. Con más desempleo se debilita el poder de negociación, o la empresa puede pagar menos y retener igual a su gente.</p></dd>
+          <dt>z <span class="tag-pill">efecto +</span></dt><dd><p>Una variable "cajón de sastre" que agrupa todo lo que afecta el resultado de la fijación salarial dados P<sup>e</sup> y u. Por convención se define de modo que un aumento de z sube el salario (de ahí el signo más).</p></dd>
+        </dl>
+      </div>
+
+      <h4>La mecánica de la ecuación: ¿por qué P<sup>e</sup> multiplica?</h4>
+      <p>Porque a trabajadores y a empresas les importa el <strong>salario real</strong>, no el nominal. Los trabajadores no se fijan en cuántos dólares reciben, sino en cuántos bienes pueden comprar con ellos, o sea W / P. Las empresas tampoco miran el salario nominal que pagan, sino el salario relativo al precio de lo que venden, también W / P.</p>
+      <p>Si ambos esperan que los precios se dupliquen, acuerdan duplicar el salario nominal y el salario real queda igual. Esto es lo que dice la ecuación. <span class="tag-pill">hipotético</span> Supón que F(u, z) = 0.9: el salario que se pretende es 0.9 unidades de producto por trabajador. Si el precio esperado es P<sup>e</sup> = 100, el salario nominal pactado es W = 100 × 0.9 = 90. Si el precio esperado fuera P<sup>e</sup> = 200, sería W = 200 × 0.9 = 180: se duplicó el precio esperado y se duplicó el salario, mientras que W / P<sup>e</sup> = 0.9 no cambió.</p>
+
+      <h4>¿Por qué el precio esperado y no el efectivo?</h4>
+      <p>Porque los salarios se fijan en términos nominales y <em>por un período</em>, antes de que se conozca el nivel de precios. En algunos contratos sindicales de EE. UU., los salarios nominales se fijan por adelantado para tres años; aun cuando los fija la empresa o se negocian individualmente, suelen fijarse por un año. Si durante el período los precios suben inesperadamente, normalmente los salarios nominales no se reajustan. Cómo se forman esas expectativas es tema del capítulo siguiente; por ahora se deja de lado.</p>
+      <div class="mecanismo" role="list" aria-label="Secuencia temporal de fijación de salarios">
+        <span class="mecanismo-step" role="listitem">1. Se esperan precios P<sup>e</sup></span><span class="mecanismo-arrow" aria-hidden="true">→</span>
+        <span class="mecanismo-step" role="listitem">2. Se fija W = P<sup>e</sup>F(u, z)</span><span class="mecanismo-arrow" aria-hidden="true">→</span>
+        <span class="mecanismo-step" role="listitem">3. Pasa el período y se conoce P</span><span class="mecanismo-arrow" aria-hidden="true">→</span>
+        <span class="mecanismo-step" role="listitem">4. El salario real efectivo es W / P</span>
+      </div>
+      <p><span class="tag-pill">hipotético</span> Continuando el ejemplo, con W = 90 pactado esperando P<sup>e</sup> = 100: si al final el nivel de precios resulta P = 110, el salario real efectivo es 90 / 110 ≈ 0.82, menor que el 0.9 pretendido. Si resulta P = 90, el salario real es 1.0, mayor que lo pretendido. Cuando P es distinto de P<sup>e</sup>, el salario real efectivo no coincide con el que se buscaba. Esa posibilidad es la clave del corto plazo (sección 7-6).</p>
+
+      <h4>Cómo entra el desempleo</h4>
+      <p>Lo que vimos en la sección anterior: si el salario se determina por negociación, más desempleo debilita el poder de los trabajadores y los obliga a aceptar salarios menores; si lo determinan consideraciones de eficiencia, más desempleo permite a las empresas pagar menos y aun así mantener dispuestos a trabajar a sus empleados. El desempleo no es la única medida posible del estado del mercado, ni quizá la mejor. Otra es la <strong>razón de vacantes a desempleo</strong>: más vacantes significan más empresas que buscan trabajadores, y más desempleo significa más trabajadores que buscan empleo; cuantas más vacantes y menos desempleo, más fuertes están los trabajadores. El libro usa el desempleo.</p>
+
+      <h4>Qué entra en z</h4>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Factor</th><th>Efecto en z</th><th>Por qué</th></tr></thead>
+          <tbody>
+            <tr><td>Seguro de desempleo más generoso</td><td>z sube</td><td>Estar desempleado es menos penoso: sin seguro, algunos trabajadores aceptarían salarios bajos para evitarlo; con seguro, pueden esperar mejores ofertas. A cada tasa de desempleo, el salario es más alto.</td></tr>
+            <tr><td>Salario mínimo más alto</td><td>z sube</td><td>Puede subir los salarios que están justo por encima del mínimo y, con ello, el salario promedio W a un desempleo dado.</td></tr>
+            <tr><td>Mayor protección del empleo</td><td>z sube</td><td>Despedir y reemplazar al trabajador es más caro para la empresa, lo que aumenta el poder de negociación de los trabajadores cubiertos y su salario.</td></tr>
+            <tr><td>Globalización, demografía, plataformas como Uber, internet</td><td>Sin signo único</td><td>La competencia con otros países afecta los salarios; los jóvenes cambian de empleo más que los mayores y una sociedad que envejece tiene trabajadores menos móviles; internet facilita la búsqueda tanto a empresas como a trabajadores. El libro advierte que los efectos sobre la tasa natural suelen ser complejos.</td></tr>
+          </tbody>
+        </table>
+      </div>
       <p>Dato del libro: Peter Diamond, Dale Mortensen y Christopher Pissarides recibieron el Nobel de Economía 2010 por estudiar mercados laborales con grandes flujos y negociación salarial.</p>
     </div>
   </section>
@@ -297,12 +727,65 @@
   <section class="modulo" id="precios">
     <div class="modulo-head"><h2>Determinación de precios</h2></div>
     <div class="modulo-text">Sección 7-4 de Blanchard.</div>
+
     <div class="bloque">
-      <p>Los precios dependen de los costos, y estos de la <strong>función de producción</strong> y de los precios de los insumos. Supuesto simplificador: el trabajo es el único factor y la productividad del trabajo A es constante.</p>
-      <div class="ecuacion">Y = A · N &nbsp;&nbsp; y, eligiendo unidades con A = 1: &nbsp;&nbsp; Y = N &nbsp;&nbsp; (7.2)</div>
-      <p>Con Y = N, producir una unidad más cuesta contratar un trabajador más: el <strong>costo marginal es W</strong>. Con competencia perfecta, P = W; como muchos mercados no son competitivos, las empresas fijan el precio con un <strong>margen (markup) m</strong> sobre el costo:</p>
-      <div class="ecuacion">P = (1 + m) · W &nbsp;&nbsp; (7.3)</div>
-      <p>Y = N implica rendimientos constantes del trabajo. En la realidad hay capital, materias primas (el petróleo aparece en el capítulo 8) y progreso tecnológico (capítulos de largo plazo).</p>
+      <p>Los precios que fijan las empresas dependen de sus costos, y estos de la <strong>función de producción</strong> (la relación entre los insumos y el producto) y de los precios de los insumos. Para empezar, el libro supone que el trabajo es el único factor y que la productividad del trabajo A es constante.</p>
+      <div class="anatomia">
+        <div class="ecuacion">Y = A · N &nbsp;&nbsp; y, eligiendo unidades con A = 1: &nbsp;&nbsp; Y = N &nbsp;&nbsp; (7.2)</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>Y</dt><dd><p>El producto: cuántas unidades de bienes se producen.</p></dd>
+          <dt>A</dt><dd><p>La productividad del trabajo, es decir, el producto por trabajador (A = Y / N). Aquí es una constante: un trabajador siempre produce lo mismo.</p></dd>
+          <dt>N</dt><dd><p>El empleo, o sea el número de trabajadores empleados.</p></dd>
+          <dt>A = 1</dt><dd><p>Es una elección de unidades, no un supuesto económico. Si decimos que "una unidad de producto" es lo que produce un trabajador, entonces cada trabajador produce exactamente una unidad y nos ahorramos arrastrar la letra A.</p></dd>
+          <dt>Qué enseña</dt><dd><p>Rendimientos constantes del trabajo: si la empresa duplica sus trabajadores, duplica el producto. Es una simplificación fuerte, porque en la realidad hay capital, materias primas (el petróleo entra en el capítulo 8) y progreso tecnológico (capítulos de largo plazo, 10 a 13).</p></dd>
+        </dl>
+      </div>
+
+      <h3>De la función de producción al costo marginal</h3>
+      <ol class="pasos">
+        <li><b class="paso-tt">Producir una unidad más.</b><div>Quiero aumentar Y en 1.</div></li>
+        <li><b class="paso-tt">Cuántos trabajadores hacen falta.</b><div>Con Y = N, necesito un trabajador más (ΔN = 1).</div></li>
+        <li><b class="paso-tt">Cuánto cuesta.</b><div>Un trabajador más cuesta W. Ese es el <strong>costo marginal</strong>: el costo de producir una unidad más. En este modelo, costo marginal = W.</div></li>
+      </ol>
+      <p>Con competencia perfecta en el mercado de bienes, el precio de una unidad sería igual al costo marginal: P = W. Pero muchos mercados no son competitivos y las empresas cobran un precio mayor que su costo marginal. Una manera sencilla de captarlo es suponer que fijan el precio con un margen sobre el costo:</p>
+
+      <div class="anatomia">
+        <div class="ecuacion">P = (1 + m) · W &nbsp;&nbsp; (7.3)</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>P</dt><dd><p>El precio de una unidad de producto (el nivel de precios). Lo que la ecuación determina.</p></dd>
+          <dt>W</dt><dd><p>El salario nominal, que aquí es también el costo marginal de producir.</p></dd>
+          <dt>m</dt><dd><p>El markup: cuánto por encima del costo cobra la empresa, como fracción del costo. Si m = 0.25, el precio es 25% mayor que el costo. Mide el poder de mercado: cuanto menos competencia, mayor m.</p></dd>
+          <dt>(1 + m)</dt><dd><p>El factor por el que se multiplica el costo para obtener el precio. Con m = 0 vale 1 (P = W, competencia perfecta); con m positivo, vale más que 1.</p></dd>
+        </dl>
+      </div>
+
+      <h3>Qué dice el markup sobre el reparto del producto</h3>
+      <p><span class="tag-pill">hipotético</span> Supón que el salario es W = 80 y el markup es m = 0.25. Entonces P = 1.25 × 80 = 100. De cada unidad que se vende a 100, 80 se van en pagar al trabajador y 20 quedan como margen de la empresa. El salario real es W / P = 80 / 100 = 0.8, o sea que el trabajador recibe el 80% del valor de lo que produce; la empresa se queda con m / (1 + m) = 0.25 / 1.25 = 20%. En general, con Y = N, <strong>el salario real es la parte del producto que se lleva el trabajador</strong> y m / (1 + m) es la parte que se lleva la empresa.</p>
+
+      <figure>
+        <div class="diagrama">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 270" role="img" aria-label="Ejemplo hipotético de reparto de una unidad de producto: con markup 0.25 los trabajadores reciben 0.80 y las empresas 0.20; con markup 0.50 los trabajadores reciben 0.667 y las empresas 0.333">
+            <rect width="720" height="270" fill="#1A1B1D"/>
+            <text x="60" y="34" font-size="15" font-weight="700" fill="#F2F2F0">Una unidad de producto (con A = 1), ejemplo hipotético</text>
+            <text x="60" y="68" font-size="14" fill="#A9ABAE" font-family="Azeret Mono, monospace">m = 0.25</text>
+            <rect x="60" y="78" width="480" height="48" fill="#F08AB2"/>
+            <rect x="540" y="78" width="120" height="48" fill="#A9ABAE"/>
+            <text x="300" y="108" text-anchor="middle" font-size="15" font-weight="700" fill="#140C00">Trabajadores: W/P = 0.80</text>
+            <text x="600" y="108" text-anchor="middle" font-size="14" font-weight="700" fill="#140C00">Empresas 0.20</text>
+            <text x="60" y="164" font-size="14" fill="#A9ABAE" font-family="Azeret Mono, monospace">m = 0.50</text>
+            <rect x="60" y="174" width="400" height="48" fill="#F08AB2"/>
+            <rect x="460" y="174" width="200" height="48" fill="#A9ABAE"/>
+            <text x="260" y="204" text-anchor="middle" font-size="15" font-weight="700" fill="#140C00">Trabajadores: W/P = 0.667</text>
+            <text x="560" y="204" text-anchor="middle" font-size="14" font-weight="700" fill="#140C00">Empresas 0.333</text>
+            <text x="60" y="254" font-size="13" fill="#A9ABAE">Si todas las empresas suben su markup, el salario real de equilibrio por precios baja</text>
+          </svg>
+        </div>
+        <figcaption>Fig. propia con números hipotéticos. Los trabajadores reciben W / P = 1 / (1 + m) y las empresas m / (1 + m): suman 1.</figcaption>
+      </figure>
+
+      <p>Este reparto es justo lo que usaremos en la sección siguiente: la decisión de precios de las empresas "concede" a los trabajadores un salario real de 1 / (1 + m), ni más ni menos.</p>
     </div>
   </section>
 
@@ -311,15 +794,71 @@
     <div class="modulo-text">Sección 7-5 de Blanchard. Supuesto clave del resto del capítulo, igual que en la clase: P<sup>e</sup> = P.</div>
 
     <div class="bloque">
-      <h3>Relación de fijación de salarios (WS)</h3>
-      <div class="ecuacion">W / P = F(<span class="v" data-var="u"><span>u</span></span>, z) &nbsp;&nbsp; (7.4)</div>
-      <p>Pendiente negativa: con más desempleo, menor poder de negociación y menor salario real elegido por quienes fijan salarios.</p>
-      <h3>Relación de fijación de precios (PS)</h3>
-      <div class="ecuacion">P / W = 1 + m &nbsp;&nbsp; (7.5) &nbsp;&nbsp;&nbsp;&nbsp; W / P = 1 / (1 + m) &nbsp;&nbsp; (7.6)</div>
-      <p>Horizontal: el salario real implícito en la fijación de precios no depende del desempleo. Intuición: si solo tu empresa sube su markup, tu salario real casi no cambia; si <em>todas</em> lo hacen, todos los precios suben y, con el mismo salario nominal, tu salario real cae.</p>
-      <h3>Equilibrio</h3>
-      <div class="ecuacion">F(<span class="v" data-var="u"><span>u<sub>n</sub></span></span>, z) = 1 / (1 + m) &nbsp;&nbsp; (7.7)</div>
-      <p>La tasa natural <span class="v" data-var="u">u<sub>n</sub></span> es la tasa de desempleo a la que el salario real elegido en la fijación de salarios es igual al salario real implícito en la fijación de precios. Es exactamente el equilibrio planteado en clase: F(u, z) = 1/(1 + m).</p>
+      <h3>De dos ecuaciones a una condición de equilibrio, paso a paso</h3>
+      <p>Para el resto del capítulo se supone que los salarios nominales dependen del nivel de precios <em>efectivo</em> P y no del esperado P<sup>e</sup>. Por qué se hace esto se aclarará en 7-6; por ahora, es el supuesto que nos permite encontrar un equilibrio.</p>
+      <ol class="pasos">
+        <li><b class="paso-tt">Parte de la ecuación de salarios.</b><div>W = P<sup>e</sup> · F(u, z).</div></li>
+        <li><b class="paso-tt">Impón P<sup>e</sup> = P.</b><div>Queda W = P · F(u, z).</div></li>
+        <li><b class="paso-tt">Divide ambos lados entre P.</b><div>Obtienes la <strong>relación de fijación de salarios (WS)</strong>:<div class="ecuacion">W / P = F(<span class="v" data-var="u"><span>u</span></span>, z) &nbsp;&nbsp; (7.4)</div></div></li>
+        <li><b class="paso-tt">Parte ahora de la ecuación de precios.</b><div>P = (1 + m) · W. Divide ambos lados entre W:<div class="ecuacion">P / W = 1 + m &nbsp;&nbsp; (7.5)</div></div></li>
+        <li><b class="paso-tt">Invierte ambos lados.</b><div>Obtienes la <strong>relación de fijación de precios (PS)</strong>:<div class="ecuacion">W / P = 1 / (1 + m) &nbsp;&nbsp; (7.6)</div></div></li>
+        <li><b class="paso-tt">Exige consistencia.</b><div>El equilibrio del mercado laboral requiere que el salario real elegido por quienes fijan salarios (7.4) sea igual al salario real que implica la fijación de precios (7.6). Igualas los lados derechos:<div class="ecuacion">F(<span class="v" data-var="u"><span>u<sub>n</sub></span></span>, z) = 1 / (1 + m) &nbsp;&nbsp; (7.7)</div></div></li>
+      </ol>
+      <p>La solución de (7.7) para u se llama u<sub>n</sub>, la <strong>tasa natural de desempleo</strong> (la n viene de natural). Es exactamente el equilibrio planteado en clase: F(u, z) = 1 / (1 + m).</p>
+    </div>
+
+    <div class="bloque">
+      <h3>Las tres relaciones y sus piezas</h3>
+      <div class="anatomia">
+        <div class="ecuacion">WS: W / P = F(<span class="v" data-var="u"><span>u</span></span>, z) &nbsp;&nbsp; (7.4)</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>W / P</dt><dd><p>El salario real que eligen quienes fijan los salarios (sindicatos, empresas o trabajadores individuales). En el eje vertical.</p></dd>
+          <dt>F(u, z)</dt><dd><p>La regla que sale de la ecuación de salarios con P<sup>e</sup> = P.</p></dd>
+          <dt>Pendiente negativa</dt><dd><p>Con más desempleo, los trabajadores están en peor posición para negociar y el salario real elegido es menor. Es el signo menos bajo u. Se dibuja como una curva inclinada hacia abajo.</p></dd>
+          <dt>Cuando cambia z</dt><dd><p>Toda la curva se desplaza: si z sube, WS sube (a cada desempleo, el salario real elegido es mayor).</p></dd>
+        </dl>
+      </div>
+
+      <div class="anatomia">
+        <div class="ecuacion">PS: W / P = 1 / (1 + m) &nbsp;&nbsp; (7.6)</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>W / P</dt><dd><p>El salario real que resulta de las decisiones de precios de las empresas.</p></dd>
+          <dt>1 / (1 + m)</dt><dd><p>Es una constante: depende solo del markup. No depende de u, así que PS es una <strong>línea horizontal</strong>.</p></dd>
+          <dt>Cuando cambia m</dt><dd><p>Toda la línea se desplaza: si m sube, 1 / (1 + m) baja, y PS baja.</p></dd>
+          <dt>Intuición del libro</dt><dd><p>Si solo <em>tu</em> empresa sube su markup y su precio, tu salario real casi no cambia, porque el producto de tu empresa es una parte pequeña de lo que consumes. Pero si <em>todas</em> las empresas lo hacen, todos los precios suben y, con el mismo salario nominal, tu salario real baja. Una subida de m en toda la economía baja el salario real que las empresas "pagan".</p></dd>
+        </dl>
+      </div>
+
+      <div class="anatomia">
+        <div class="ecuacion">F(<span class="v" data-var="u"><span>u<sub>n</sub></span></span>, z) = 1 / (1 + m) &nbsp;&nbsp; (7.7)</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>Lado izquierdo</dt><dd><p>El salario real que eligen los fijadores de salarios cuando el desempleo es u<sub>n</sub> (es WS evaluada en u<sub>n</sub>).</p></dd>
+          <dt>Lado derecho</dt><dd><p>El salario real implícito en la fijación de precios (es PS).</p></dd>
+          <dt>u<sub>n</sub></dt><dd><p>El desempleo al que ambos coinciden. Es la solución de una ecuación con una incógnita: depende de lo que hay en las dos relaciones, es decir, de z y de m.</p></dd>
+          <dt>Dónde se ve</dt><dd><p>En el gráfico, es el punto A donde la curva WS cruza la línea PS, y u<sub>n</sub> es su coordenada horizontal.</p></dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <h3>Dos maneras de entender el equilibrio</h3>
+      <p><strong>La tira y afloja.</strong> Imagina dos fuerzas que reclaman un salario real. Los trabajadores, a través de WS, reclaman W / P = F(u, z), que depende del desempleo: reclaman más cuando hay poco desempleo. Las empresas, a través de PS, "conceden" solo 1 / (1 + m) porque así fijan sus precios. Solo hay una tasa de desempleo a la que el reclamo de unos coincide con lo que conceden los otros: u<sub>n</sub>. El desempleo es la variable que hace que los dos reclamos sean compatibles.</p>
+      <p><strong>El reparto del pastel.</strong> Con Y = N, cada trabajador produce una unidad. La parte que se lleva el trabajador es el salario real; el resto es margen de la empresa. Los precios (m) fijan cuánto de la unidad se reservan las empresas; los salarios (F) fijan cuánto reclaman los trabajadores. Si los reclamos suman más que la unidad disponible, algo tiene que ceder.</p>
+
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Situación</th><th>WS frente a PS</th><th>Lectura</th></tr></thead>
+          <tbody>
+            <tr><td>u &lt; u<sub>n</sub></td><td>WS está por encima de PS</td><td>Los trabajadores reclaman un salario real mayor que el que las empresas están dispuestas a pagar con sus precios. Los reclamos son inconsistentes.</td></tr>
+            <tr><td>u = u<sub>n</sub></td><td>WS y PS se cruzan (punto A)</td><td>El salario real elegido es igual al salario real implícito en los precios. Los reclamos son consistentes: es el equilibrio.</td></tr>
+            <tr><td>u &gt; u<sub>n</sub></td><td>WS está por debajo de PS</td><td>Los trabajadores reclaman menos de lo que las empresas estarían dispuestas a conceder. Tampoco es consistente con los precios que fijan las empresas.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Por eso Blanchard dice que el equilibrio es "el desempleo al que las decisiones de salarios y de precios son consistentes entre sí". La lectura de cómo se resuelve la inconsistencia fuera de u<sub>n</sub> es el comienzo de la curva de Phillips (semana 8); aquí basta con entender que solo en u<sub>n</sub> los dos reclamos coinciden.</p>
     </div>
 
     <div class="simulador-panel" id="sim-wsps">
@@ -338,37 +877,147 @@
     </div>
 
     <div class="bloque">
+      <h3>Qué probar en el laboratorio, y qué deberías ver</h3>
+      <p>Con la forma ilustrativa F(u, z) = 1 − u + z, la ecuación (7.7) queda 1 − u<sub>n</sub> + z = 1 / (1 + m), y despejando:</p>
+      <div class="anatomia">
+        <div class="ecuacion">u<sub>n</sub> = z + [1 − 1 / (1 + m)] = z + m / (1 + m)<small>Válida solo para esta forma ilustrativa de F.</small></div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>z</dt><dd><p>Entra uno a uno: cada 0.01 que sube z suma 0.01 a la tasa natural (1 punto porcentual).</p></dd>
+          <dt>m / (1 + m)</dt><dd><p>Es la parte del producto que se queda la empresa (la del gráfico de reparto). Cuanto mayor es el margen, mayor es la tasa natural.</p></dd>
+          <dt>Lectura</dt><dd><p>La tasa natural es mayor cuando los trabajadores reclaman más (z alta) y cuando las empresas se reservan más (m alto). Aparece como la brecha entre ambos reclamos que el desempleo tiene que cerrar.</p></dd>
+        </dl>
+      </div>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Experimento (parte de m = 0.05, z = 0)</th><th>Qué se mueve</th><th>Resultado esperado</th></tr></thead>
+          <tbody>
+            <tr><td>Sube m a 0.15, deja z = 0</td><td>PS baja; te mueves a lo largo de WS</td><td>Salario real ≈ 0.870; u<sub>n</sub> ≈ 13.0%</td></tr>
+            <tr><td>Sube z a 0.04, deja m = 0.05</td><td>WS sube; te mueves a lo largo de PS</td><td>Salario real sigue en ≈ 0.952; u<sub>n</sub> ≈ 8.8%</td></tr>
+            <tr><td>Sube a la vez m a 0.15 y z a 0.04</td><td>Se mueven las dos curvas</td><td>Salario real ≈ 0.870; u<sub>n</sub> ≈ 17.0%</td></tr>
+            <tr><td>Baja m a 0 y deja z = 0</td><td>PS sube hasta 1</td><td>Salario real = 1; u<sub>n</sub> = 0%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Observa algo no obvio en el segundo experimento: un aumento de z <strong>no cambia el salario real de equilibrio</strong>, solo sube el desempleo. Los trabajadores reclaman más, pero como las empresas no conceden más (m no cambió), el desempleo sube hasta que el reclamo se ajusta a lo concedido. El salario real de equilibrio lo fija PS. Cálculos propios con la forma ilustrativa.</p>
+    </div>
+
+    <div class="bloque">
       <h3>Dos ejemplos del libro</h3>
-      <ul>
-        <li><strong>Aumento del seguro de desempleo (sube z):</strong> estar desempleado es menos penoso, así que a cada nivel de desempleo se fija un salario mayor. <strong>WS sube</strong>, la economía se mueve a lo largo de PS y <strong><span class="v" data-var="u">u<sub>n</sub></span> aumenta</strong>. Un desempleo más alto es lo que devuelve el salario real a lo que las empresas están dispuestas a pagar.</li>
-        <li><strong>Aplicación menos estricta de las leyes antimonopolio (sube m):</strong> las empresas coluden con más facilidad y suben su markup, lo que baja el salario real. <strong>PS baja</strong>, la economía se mueve a lo largo de WS y <strong><span class="v" data-var="u">u<sub>n</sub></span> aumenta</strong>.</li>
-      </ul>
+      <div class="mecanismo" role="list" aria-label="Efecto de un mayor seguro de desempleo">
+        <span class="mecanismo-step" role="listitem">Más seguro de desempleo</span><span class="mecanismo-arrow" aria-hidden="true">→</span>
+        <span class="mecanismo-step" role="listitem">z sube</span><span class="mecanismo-arrow" aria-hidden="true">→</span>
+        <span class="mecanismo-step" role="listitem">WS sube</span><span class="mecanismo-arrow" aria-hidden="true">→</span>
+        <span class="mecanismo-step" role="listitem">A se mueve a A′ a lo largo de PS</span><span class="mecanismo-arrow" aria-hidden="true">→</span>
+        <span class="mecanismo-step" role="listitem">u<sub>n</sub> sube</span>
+      </div>
+      <p><strong>Aumento del seguro de desempleo (sube z):</strong> estar desempleado es menos penoso, así que a cada nivel de desempleo se fija un salario mayor. <strong>WS sube</strong>, la economía se mueve a lo largo de PS y <strong>u<sub>n</sub> aumenta</strong>. Un desempleo más alto es lo que devuelve el salario real a lo que las empresas están dispuestas a pagar. (Pregunta que plantea el libro: ¿esto significa que el seguro de desempleo es necesariamente malo? No; tiene efectos secundarios, pero también beneficios.)</p>
+      <div class="mecanismo" role="list" aria-label="Efecto de una aplicación menos estricta de las leyes antimonopolio">
+        <span class="mecanismo-step" role="listitem">Leyes antimonopolio menos estrictas</span><span class="mecanismo-arrow" aria-hidden="true">→</span>
+        <span class="mecanismo-step" role="listitem">m sube</span><span class="mecanismo-arrow" aria-hidden="true">→</span>
+        <span class="mecanismo-step" role="listitem">PS baja</span><span class="mecanismo-arrow" aria-hidden="true">→</span>
+        <span class="mecanismo-step" role="listitem">A se mueve a A′ a lo largo de WS</span><span class="mecanismo-arrow" aria-hidden="true">→</span>
+        <span class="mecanismo-step" role="listitem">u<sub>n</sub> sube</span>
+      </div>
+      <p><strong>Aplicación menos estricta de las leyes antimonopolio (sube m):</strong> las empresas coluden con más facilidad y suben su markup, lo que baja el salario real. <strong>PS baja</strong>, la economía se mueve a lo largo de WS y <strong>u<sub>n</sub> aumenta</strong>. Un desempleo más alto es lo que hace que los trabajadores acepten el salario real menor.</p>
+      <h3>Resumen de estática comparativa</h3>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Cambio</th><th>Curva que se mueve</th><th>Efecto en u<sub>n</sub></th><th>Efecto en el salario real de equilibrio</th></tr></thead>
+          <tbody>
+            <tr><td>z sube (por ejemplo, mayor seguro de desempleo)</td><td>WS sube</td><td>Sube</td><td>No cambia (lo fija PS)</td></tr>
+            <tr><td>z baja (por ejemplo, menor protección del empleo)</td><td>WS baja</td><td>Baja</td><td>No cambia</td></tr>
+            <tr><td>m sube (menos competencia)</td><td>PS baja</td><td>Sube</td><td>Baja</td></tr>
+            <tr><td>m baja (más competencia)</td><td>PS sube</td><td>Baja</td><td>Sube</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Truco para recordarlo: <strong>z mueve WS, m mueve PS</strong>. Si el cambio viene de WS, el salario real no cambia y u<sub>n</sub> se mueve en el mismo sentido que z. Si viene de PS, el salario real y u<sub>n</sub> se mueven en sentidos opuestos entre sí (cuando m sube, u<sub>n</sub> sube y el salario real baja).</p>
     </div>
 
     <div class="recuadro">
       <span class="recuadro-tag">"Natural" es un mal nombre</span>
-      <p>La palabra sugiere una constante de la naturaleza, pero <span class="v" data-var="u">u<sub>n</sub></span> depende de instituciones y políticas (z y m). Un nombre mejor sería <strong>tasa estructural de desempleo</strong> (sugerido por Edmund Phelps), aunque no se ha popularizado. Algunos economistas llaman al desempleo un "mecanismo disciplinador": es el mecanismo por el que los salarios vuelven a alinearse con lo que las empresas están dispuestas a pagar. Como el desempleo fluctúa, <span class="v" data-var="u">u<sub>n</sub></span> no se observa directamente; el desempleo promedio en períodos largos es una buena aproximación.</p>
+      <p>La palabra "natural" sugiere una constante de la naturaleza, no afectada por instituciones ni políticas. Pero, como muestra su deducción, <span class="v" data-var="u">u<sub>n</sub></span> depende de la posición de WS y PS, es decir, de z y de m: del seguro de desempleo, la protección del empleo, el salario mínimo, la competencia en los mercados de bienes. Un nombre mejor sería <strong>tasa estructural de desempleo</strong> (sugerido por Edmund Phelps, Nobel 2006), aunque no se ha popularizado. Algunos economistas llaman al desempleo un "mecanismo disciplinador": suena duro, pero es el mecanismo económico por el que los salarios vuelven a alinearse con lo que las empresas están dispuestas a pagar. Como el desempleo fluctúa con el ciclo, <span class="v" data-var="u">u<sub>n</sub></span> no se observa directamente; si se mira un período suficientemente largo, el desempleo promedio es una buena aproximación.</p>
     </div>
 
     <div class="recuadro info">
       <span class="recuadro-tag">Recuadro Focus: ¿qué explica el desempleo europeo?</span>
-      <p>Entre 2000 y 2020, el desempleo promedio fue 9.4% en la zona euro frente a 6.0% en EE. UU. Muchos culpan a las "rigideces del mercado laboral": seguro de desempleo generoso, alta protección del empleo (no necesariamente sube el desempleo, pero reduce los flujos y alarga la duración), salarios mínimos altos y reglas de negociación que extienden los contratos a todo el sector.</p>
-      <p>Pero el caso no es tan simple. En los años sesenta, el desempleo en Francia, Alemania, Italia y España era de 2% a 3%, menor que en EE. UU., aunque sus instituciones ya eran distintas; hoy su tasa natural ronda 8% a 9%. La explicación más convincente es la <strong>interacción entre instituciones y shocks</strong>. Además hay grandes diferencias entre países europeos: España tiene una red de protección fuerte y desempleo alto; los Países Bajos también la tienen, con desempleo bajo. Consenso emergente: "el diablo está en los detalles".</p>
+      <p>Entre 2000 y 2020, el desempleo promedio fue 9.4% en la zona euro frente a 6.0% en EE. UU. Muchos culpan a las "rigideces del mercado laboral". Con el modelo en la mano, cada una se puede ubicar en una de las dos curvas:</p>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Institución</th><th>Cómo actúa según el libro</th><th>Dónde entra en el modelo</th></tr></thead>
+          <tbody>
+            <tr><td>Seguro de desempleo generoso (alta tasa de reemplazo y larga duración)</td><td>Reduce el incentivo de los desempleados a buscar empleo y puede subir el salario que las empresas deben pagar (salarios de eficiencia).</td><td>Sube z (WS sube).</td></tr>
+            <tr><td>Alta protección del empleo (indemnizaciones altas, justificar despidos, apelar)</td><td>Protege del riesgo de perder el trabajo, pero hace a las empresas más reacias a contratar. No necesariamente sube el desempleo, pero reduce los flujos y alarga la duración, con riesgo de perder habilidades y moral.</td><td>Sube z (WS sube) y cambia la naturaleza del desempleo.</td></tr>
+            <tr><td>Salarios mínimos altos</td><td>Pueden limitar el empleo de los trabajadores menos calificados.</td><td>Sube z.</td></tr>
+            <tr><td>Reglas de negociación que extienden contratos a todo el sector</td><td>Refuerzan el poder de los sindicatos al reducir la competencia de empresas no sindicalizadas.</td><td>Sube z (más poder de negociación).</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Pero el caso no está cerrado. <strong>Hecho 1:</strong> en los años sesenta, el desempleo en Francia, Alemania, Italia y España era de 2% a 3%, menor que en EE. UU. (los economistas estadounidenses cruzaban el océano para estudiar el "milagro del desempleo europeo"), aunque sus instituciones ya eran muy distintas; hoy su tasa natural ronda 8% a 9%. En respuesta a los shocks adversos de los setenta (dos recesiones tras fuertes alzas del precio del petróleo), muchos gobiernos aumentaron el seguro y la protección, pero aun en los sesenta las instituciones europeas no se parecían a las de EE. UU. <strong>Hecho 2:</strong> hay grandes diferencias entre países europeos. España tiene una red de protección fuerte y desempleo alto; los Países Bajos también la tienen, con desempleo bajo.</p>
+      <p>La explicación más convincente es la <strong>interacción entre instituciones y shocks</strong>: algunas instituciones son benignas en ciertos entornos y costosas en otros. Con la protección del empleo: si la competencia entre empresas es limitada, la necesidad de ajustar el empleo en cada una también lo es y el costo de la protección es bajo; si la competencia aumenta, el costo se vuelve alto, porque las empresas que no pueden ajustar su personal rápido no compiten y quiebran. Consenso emergente: "el diablo está en los detalles". Una protección social generosa es compatible con bajo desempleo si se diseña bien: seguros generosos que inducen a tomar empleos cuando los hay, e indemnizaciones sin largas incertidumbres judiciales. Noruega parece haberlo logrado mejor.</p>
     </div>
   </section>
 
   <section class="modulo" id="plazos">
     <div class="modulo-head"><h2>Hacia dónde vamos y apéndice</h2></div>
     <div class="modulo-text">Sección 7-6 y apéndice del capítulo 7.</div>
+
     <div class="bloque">
-      <p>Dada la fuerza laboral, <span class="v" data-var="u">u<sub>n</sub></span> determina el empleo y, por la función de producción, un <strong>nivel natural de producto</strong>. ¿Entonces para qué sirvió el IS-LM? Hay que distinguir plazos:</p>
+      <h3>De la tasa natural al producto natural</h3>
+      <p>Dada la fuerza laboral, u<sub>n</sub> determina el empleo y, por la función de producción, un <strong>nivel natural de producto</strong>. La derivación precisa es del capítulo 9, pero con lo que ya tienes se ve el camino:</p>
+      <ol class="pasos">
+        <li><b class="paso-tt">Desempleo natural.</b><div>Ya tienes u<sub>n</sub> = U / L, de la ecuación (7.7).</div></li>
+        <li><b class="paso-tt">Empleo natural.</b><div>Como N = L − U = L (1 − u), el empleo en la tasa natural es:<div class="ecuacion">N<sub>n</sub> = L (1 − <span class="v" data-var="u"><span>u<sub>n</sub></span></span>)</div></div></li>
+        <li><b class="paso-tt">Producto natural.</b><div>Con Y = N (A = 1), el producto en el empleo natural es:<div class="ecuacion">Y<sub>n</sub> = N<sub>n</sub> = L (1 − <span class="v" data-var="u"><span>u<sub>n</sub></span></span>)</div></div></li>
+      </ol>
+      <div class="anatomia">
+        <div class="ecuacion">Y<sub>n</sub> = L (1 − u<sub>n</sub>)</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>Y<sub>n</sub></dt><dd><p>El nivel natural de producto: lo que se produce cuando el desempleo está en su tasa natural.</p></dd>
+          <dt>L</dt><dd><p>La fuerza laboral. Un L mayor aumenta Y<sub>n</sub> en la misma proporción.</p></dd>
+          <dt>(1 − u<sub>n</sub>)</dt><dd><p>La fracción de la fuerza laboral que tiene empleo. Mayor u<sub>n</sub> implica menor Y<sub>n</sub>.</p></dd>
+          <dt>Ejemplo</dt><dd><p><span class="tag-pill">hipotético</span> Con L = 100 (unidades de personas) y u<sub>n</sub> = 5%, Y<sub>n</sub> = 100 × 0.95 = 95. Si un cambio de z o de m lleva u<sub>n</sub> a 10%, Y<sub>n</sub> = 90. El producto natural cayó, y no por falta de demanda sino por un cambio estructural.</p></dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <h3>Entonces, ¿para qué sirvió el IS-LM?</h3>
+      <p>Si el equilibrio del mercado laboral determina la tasa de desempleo y, por implicación, el producto, ¿por qué dedicamos tanto tiempo a los mercados de bienes y financieros? ¿Y las conclusiones de que el producto lo determinan la política monetaria, la fiscal y la confianza del consumidor, factores que no aparecen en (7.7)? La respuesta está en distinguir plazos:</p>
       <div class="tabla-wrap">
-        <table class="tabla-datos">
-          <thead><tr><th>Corto plazo</th><th>Mediano plazo</th></tr></thead>
-          <tbody><tr><td>El nivel de precios puede diferir del esperado al fijar salarios (P distinto de P<sup>e</sup>), así que el desempleo no tiene por qué ser <span class="v" data-var="u">u<sub>n</sub></span>. El producto lo determinan la política monetaria, la fiscal, la confianza del consumidor: lo visto en IS-LM.</td><td>Las expectativas no pueden estar sistemáticamente equivocadas para siempre, así que el producto tiende a volver a su nivel natural, determinado por los factores de la ecuación (7.7): z y m.</td></tr></tbody>
+        <table class="tabla-datos texto">
+          <thead><tr><th>&nbsp;</th><th>Corto plazo</th><th>Mediano plazo</th></tr></thead>
+          <tbody>
+            <tr><td>Supuesto sobre los precios</td><td>El nivel de precios puede diferir del esperado al fijar salarios (P distinto de P<sup>e</sup>), así que no hay razón para que el desempleo sea u<sub>n</sub>.</td><td>Las expectativas no pueden estar sistemáticamente equivocadas (siempre demasiado altas o bajas) para siempre.</td></tr>
+            <tr><td>Qué determina el producto</td><td>La política monetaria, la fiscal, la confianza del consumidor: lo visto en IS-LM.</td><td>El producto tiende a volver a su nivel natural, determinado por los factores de la ecuación (7.7): z y m.</td></tr>
+            <tr><td>Herramienta</td><td>IS-LM (capítulos 3 a 6).</td><td>WS y PS (este capítulo).</td></tr>
+          </tbody>
         </table>
       </div>
-      <p>El capítulo 8 relaja el supuesto P = P<sup>e</sup> y deriva la curva de Phillips (semana 8).</p>
+      <p>El tiempo no fue en vano: el IS-LM sigue explicando los movimientos de corto plazo. El capítulo 8 relaja el supuesto P = P<sup>e</sup> y deriva la curva de Phillips (semana 8); el capítulo 9 junta todas las piezas.</p>
+    </div>
+
+    <div class="bloque">
+      <h3>Apéndice: WS y PS frente a oferta y demanda de trabajo</h3>
+      <p>Si viste microeconomía, quizá representaste el mercado laboral con oferta y demanda de trabajo. En un sentido importante, las dos representaciones se parecen. Para verlo, se redibuja la Figura 7-6 con el salario real en el eje vertical y el <strong>nivel de empleo N</strong> (en vez de la tasa de desempleo) en el eje horizontal.</p>
+      <ol class="pasos">
+        <li><b class="paso-tt">Define el eje.</b><div>El empleo N va de 0 a L, la fuerza laboral: no puede superar la cantidad de personas disponibles.</div></li>
+        <li><b class="paso-tt">Mide el desempleo como una distancia.</b><div>Para cualquier N, el desempleo es U = L − N, la distancia entre L y N. Menos empleo es más desempleo, y la tasa es u = U / L = (L − N) / L.</div></li>
+        <li><b class="paso-tt">Reorienta WS.</b><div>Más empleo implica menos desempleo, y por tanto un salario real mayor en la fijación de salarios. Así, WS ahora tiene <strong>pendiente positiva</strong>.</div></li>
+        <li><b class="paso-tt">PS no cambia.</b><div>Sigue siendo la línea horizontal W / P = 1 / (1 + m).</div></li>
+        <li><b class="paso-tt">Equilibrio.</b><div>El punto A tiene empleo natural N<sub>n</sub> y desempleo natural u<sub>n</sub> = (L − N<sub>n</sub>) / L.</div></li>
+      </ol>
+      <div class="anatomia">
+        <div class="ecuacion">U = L − N &nbsp;&nbsp;&nbsp; u = U / L = (L − N) / L</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>L</dt><dd><p>El máximo de empleo posible: toda la fuerza laboral trabajando.</p></dd>
+          <dt>N</dt><dd><p>El empleo efectivo, en el eje horizontal.</p></dd>
+          <dt>U = L − N</dt><dd><p>La brecha entre quienes quieren trabajar y quienes trabajan. En el gráfico es la flecha entre N y L.</p></dd>
+        </dl>
+      </div>
     </div>
 
     <figure>
@@ -399,12 +1048,75 @@
     </figure>
 
     <div class="bloque">
+      <h3>Parecidos con la oferta y la demanda de trabajo</h3>
+      <ul>
+        <li><strong>WS parece una oferta de trabajo.</strong> A mayor empleo, mayor salario real pagado. Por eso a veces se la llama la relación de "oferta de trabajo" (entre comillas).</li>
+        <li><strong>PS parece una demanda de trabajo, pero plana.</strong> Es plana por el supuesto de rendimientos constantes del trabajo. Con rendimientos decrecientes (lo más convencional), el costo marginal subiría al aumentar el empleo, las empresas tendrían que subir los precios dados los salarios, y el salario real implícito en PS bajaría con el empleo: PS tendría pendiente negativa, como la demanda de trabajo estándar.</li>
+      </ul>
       <h3>¿Por qué WS y PS en vez de oferta y demanda de trabajo?</h3>
-      <ol>
-        <li>WS refleja <strong>negociación</strong> o fijación unilateral (estructura de negociación colectiva, salarios para evitar renuncias), factores ausentes en la oferta de trabajo estándar.</li>
-        <li>PS reconoce que las empresas <strong>fijan precios</strong> (el grado de competencia afecta el markup), mientras la demanda de trabajo estándar supone mercados competitivos.</li>
-        <li>En oferta y demanda, los desempleados lo son <strong>voluntariamente</strong>; con salarios de eficiencia, el desempleo es <strong>involuntario</strong>: los desempleados preferirían trabajar.</li>
-      </ol>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>&nbsp;</th><th>Oferta y demanda de trabajo</th><th>WS y PS</th></tr></thead>
+          <tbody>
+            <tr><td>Lado de los trabajadores</td><td>La oferta da el salario al que cierto número de trabajadores está dispuesto a trabajar: a más salario, más gente dispuesta.</td><td>WS da el salario resultante de una negociación o de una fijación unilateral por parte de la empresa. Factores como la estructura de la negociación colectiva o el uso de salarios para evitar renuncias importan; en la oferta estándar no aparecen.</td></tr>
+            <tr><td>Lado de las empresas</td><td>La demanda da el empleo que eligen las empresas a un salario real dado; supone mercados de bienes y de trabajo competitivos, en los que las empresas toman salarios y precios como dados.</td><td>PS reconoce que en la mayoría de los mercados las empresas fijan precios. El grado de competencia afecta el markup; la demanda estándar no lo considera.</td></tr>
+            <tr><td>Naturaleza del desempleo</td><td>Los desempleados lo son <strong>voluntariamente</strong>: al salario de equilibrio prefieren no trabajar.</td><td>El desempleo suele ser <strong>involuntario</strong>. Con un salario de eficiencia (por encima del de reserva), los trabajadores prefieren estar empleados, así que los desempleados preferirían trabajar. Esto parece reflejar mejor la realidad.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Esas son las tres razones por las que el capítulo usa WS y PS en lugar de oferta y demanda de trabajo.</p>
+    </div>
+  </section>
+
+  <section class="modulo" id="formulas">
+    <div class="modulo-head"><h2>Hoja de fórmulas de la semana 7</h2></div>
+    <div class="modulo-text">Todas las fórmulas del capítulo en un solo lugar, con lo que dice cada una y cuándo usarla.</div>
+    <div class="bloque">
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Fórmula</th><th>Qué dice</th><th>Cuándo usarla</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">Participación = L / población civil no inst.</td><td>Qué parte de los disponibles está en el mercado.</td><td>Para medir qué tanta gente participa.</td></tr>
+            <tr><td class="mono">u = U / L</td><td>Qué parte de la fuerza laboral busca empleo y no lo tiene.</td><td>Para medir el desempleo; es la variable de las ecuaciones de salarios.</td></tr>
+            <tr><td class="mono">Tasa de empleo = N / población civil no inst.</td><td>Qué parte de los disponibles tiene empleo.</td><td>Cuando hay desalentados y u engaña.</td></tr>
+            <tr><td class="mono">Tasa de empleo = participación × (1 − u)</td><td>Une las tres tasas.</td><td>Para ver por qué no suman 1 y qué pasa al moverse una.</td></tr>
+            <tr><td class="mono">Duración = 1 / proporción que sale cada mes</td><td>Cuánto dura en promedio el desempleo.</td><td>A partir de flujos y stocks de la Figura 7-2.</td></tr>
+            <tr><td class="mono">W = P<sup>e</sup> F(u, z)  (7.1)</td><td>El salario nominal depende del precio esperado, del desempleo (−) y de z (+).</td><td>Para explicar la fijación de salarios.</td></tr>
+            <tr><td class="mono">Y = A N, con A = 1: Y = N  (7.2)</td><td>Cada trabajador produce una unidad.</td><td>Para derivar el costo marginal y Y<sub>n</sub>.</td></tr>
+            <tr><td class="mono">P = (1 + m) W  (7.3)</td><td>El precio es el costo más un margen.</td><td>Para explicar la fijación de precios.</td></tr>
+            <tr><td class="mono">W / P = F(u, z)  (7.4), WS</td><td>Salario real elegido por quienes fijan salarios, decreciente en u.</td><td>Curva inclinada hacia abajo en el plano (u, W/P).</td></tr>
+            <tr><td class="mono">P / W = 1 + m  (7.5)</td><td>El precio relativo al salario es 1 más el markup.</td><td>Paso intermedio.</td></tr>
+            <tr><td class="mono">W / P = 1 / (1 + m)  (7.6), PS</td><td>Salario real implícito en los precios, independiente de u.</td><td>Línea horizontal en el plano (u, W/P).</td></tr>
+            <tr><td class="mono">F(u<sub>n</sub>, z) = 1 / (1 + m)  (7.7)</td><td>La tasa natural es donde coinciden los dos salarios reales.</td><td>Para hallar u<sub>n</sub> y hacer estática comparativa.</td></tr>
+            <tr><td class="mono">N<sub>n</sub> = L (1 − u<sub>n</sub>), Y<sub>n</sub> = N<sub>n</sub></td><td>Del desempleo natural al empleo y al producto naturales.</td><td>Para ligar el mercado laboral con el producto.</td></tr>
+            <tr><td class="mono">U = L − N</td><td>El desempleo es la distancia entre la fuerza laboral y el empleo.</td><td>Para leer el apéndice con N en el eje horizontal.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo" id="errores">
+    <div class="modulo-head"><h2>Errores frecuentes y cómo evitarlos</h2></div>
+    <div class="modulo-text">Equivocaciones típicas al estudiar este capítulo.</div>
+    <div class="bloque">
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Error</th><th>Por qué está mal</th><th>Cómo corregirlo</th></tr></thead>
+          <tbody>
+            <tr><td>Sumar la tasa de empleo y la de desempleo y esperar 1.</td><td>Tienen denominadores distintos (población disponible frente a fuerza laboral).</td><td>Usa tasa de empleo = participación × (1 − u).</td></tr>
+            <tr><td>Calcular u dividiendo entre la población total.</td><td>El desempleo se mide sobre la fuerza laboral, no sobre toda la población.</td><td>Denominador: L = N + U.</td></tr>
+            <tr><td>Creer que "fuera de la fuerza laboral" equivale a desempleado.</td><td>El desempleado busca activamente empleo; el inactivo no.</td><td>Revisa la caja de cada grupo en el diagrama.</td></tr>
+            <tr><td>Tratar un flujo como si fuera un stock.</td><td>El flujo se mide por período; el stock, en un momento.</td><td>Pregúntate "¿por mes o en este momento?".</td></tr>
+            <tr><td>Confundir salario nominal W con salario real W / P en WS y PS.</td><td>Los ejes de WS y PS están en términos reales.</td><td>Divide siempre entre P.</td></tr>
+            <tr><td>Dibujar PS inclinada.</td><td>Con Y = N, PS es horizontal; solo se inclinaría con rendimientos decrecientes.</td><td>Recuerda 1 / (1 + m): no depende de u.</td></tr>
+            <tr><td>Decir que un aumento de z sube el salario real de equilibrio.</td><td>Sube WS, pero el equilibrio sube a lo largo de PS: el salario real queda igual y sube u<sub>n</sub>.</td><td>z mueve WS; el salario real lo fija PS.</td></tr>
+            <tr><td>Tomar "natural" como "fijo".</td><td>u<sub>n</sub> depende de instituciones y políticas (z y m).</td><td>Piensa "estructural".</td></tr>
+            <tr><td>Usar P<sup>e</sup> y P como si fueran lo mismo siempre.</td><td>Son iguales solo por el supuesto de 7-5. En el corto plazo pueden diferir.</td><td>Escribe qué supuesto estás usando.</td></tr>
+            <tr><td>Concluir que el IS-LM ya no sirve.</td><td>Explica el corto plazo; WS y PS explican el mediano plazo.</td><td>Distingue plazos.</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 
@@ -412,19 +1124,33 @@
     <div class="modulo-head"><h2>Glosario de la semana 7</h2></div>
     <div class="bezel"><div class="bezel-in">
       <dl class="glosario">
+        <dt>Población civil no institucional</dt><dd>Población potencialmente disponible para un empleo civil: excluye a menores de 16, fuerzas armadas y personas en prisión.</dd>
         <dt>Fuerza laboral (PEA)</dt><dd>Empleados (ocupados) más desempleados (desocupados).</dd>
         <dt>PEI</dt><dd>Población económicamente inactiva: en edad de trabajar, pero fuera de la fuerza laboral.</dd>
+        <dt>PET y PNET</dt><dd>Población en edad de trabajar y población en no edad de trabajar (términos de clase).</dd>
         <dt>Tasa de participación</dt><dd>Fuerza laboral entre población civil no institucional (o PET).</dd>
         <dt>Tasa de desempleo (u)</dt><dd>Desempleados entre fuerza laboral.</dd>
-        <dt>Tasa de empleo</dt><dd>Empleados entre población disponible para trabajar.</dd>
-        <dt>Separaciones</dt><dd>Renuncias (quits) más despidos (layoffs).</dd>
+        <dt>Tasa de empleo</dt><dd>Empleados entre población disponible para trabajar. También llamada razón empleo-población.</dd>
+        <dt>Current Population Survey (CPS)</dt><dd>Encuesta mensual de unos 60,000 hogares de EE. UU., fuente principal de estadísticas laborales.</dd>
+        <dt>Stock y flujo</dt><dd>Un stock se mide en un momento (desempleados); un flujo, durante un período (personas que salen del desempleo en un mes).</dd>
+        <dt>Separaciones</dt><dd>Renuncias (quits) más despidos (layoffs), incluidos los cambios de empleo.</dd>
+        <dt>Contrataciones (hires)</dt><dd>Entradas al empleo.</dd>
         <dt>Duración del desempleo</dt><dd>Inverso de la proporción de desempleados que sale cada mes.</dd>
+        <dt>Mercado esclerótico</dt><dd>Mercado con pocas transacciones y un grupo estancado de desempleados.</dd>
         <dt>Trabajadores desalentados</dt><dd>No buscan empleo, pero aceptarían uno.</dd>
+        <dt>Negociación colectiva</dt><dd>Negociación entre un sindicato (o varios) y una empresa (o varias).</dd>
         <dt>Salario de reserva</dt><dd>El que deja indiferente entre trabajar o estar desempleado.</dd>
+        <dt>Poder de negociación</dt><dd>Capacidad del trabajador de obtener un salario superior al de reserva; depende del costo de reemplazarlo y de cuán fácil le es hallar otro empleo.</dd>
         <dt>Salario de eficiencia</dt><dd>Salario por encima del de reserva para elevar productividad y retener trabajadores.</dd>
-        <dt>Markup (m)</dt><dd>Margen del precio sobre el costo: P = (1 + m)W.</dd>
-        <dt>Tasa natural (uₙ)</dt><dd>Desempleo al que WS y PS son consistentes, con P = P<sup>e</sup>. También llamada tasa estructural.</dd>
+        <dt>Seguro de desempleo</dt><dd>Pago a los trabajadores que pierden su empleo.</dd>
         <dt>Protección del empleo</dt><dd>Reglas que encarecen despedir.</dd>
+        <dt>Función de producción</dt><dd>Relación entre los insumos usados y el producto obtenido.</dd>
+        <dt>Productividad del trabajo (A)</dt><dd>Producto por trabajador.</dd>
+        <dt>Markup (m)</dt><dd>Margen del precio sobre el costo: P = (1 + m)W.</dd>
+        <dt>Relación WS</dt><dd>W / P = F(u, z): salario real elegido en la fijación de salarios; decreciente en u.</dd>
+        <dt>Relación PS</dt><dd>W / P = 1 / (1 + m): salario real implícito en la fijación de precios; horizontal.</dd>
+        <dt>Tasa natural (uₙ)</dt><dd>Desempleo al que WS y PS son consistentes, con P = P<sup>e</sup>. También llamada tasa estructural.</dd>
+        <dt>Desempleo involuntario</dt><dd>Los desempleados preferirían estar empleados al salario vigente.</dd>
       </dl>
     </div></div>
   </section>
@@ -445,11 +1171,47 @@
     </div>
     <div class="pregunta" data-abierta="false">
       <button class="disparador" aria-expanded="false"><span>4. Se reduce la protección del empleo. ¿Qué curva se desplaza y qué pasa con uₙ?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
-      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Baja z (menos poder de negociación a cada nivel de desempleo): WS se desplaza hacia abajo, la economía se mueve a lo largo de PS y la tasa natural disminuye.</p></div>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Baja z (menos poder de negociación a cada nivel de desempleo): WS se desplaza hacia abajo, la economía se mueve a lo largo de PS y la tasa natural disminuye. El salario real de equilibrio no cambia.</p></div>
     </div>
     <div class="pregunta" data-abierta="false">
       <button class="disparador" aria-expanded="false"><span>5. Si el mediano plazo lo determinan m y z, ¿el IS-LM ya no sirve?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
       <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Sí sirve: en el corto plazo P puede diferir de P<sup>e</sup> y el producto lo determina la demanda (política monetaria, fiscal, confianza). En el mediano plazo, el producto tiende a su nivel natural, ligado a uₙ.</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false"><span>6. ¿Por qué la tasa de empleo y la tasa de desempleo no suman 1? ¿Qué identidad las une?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Porque el denominador de la tasa de empleo es la población disponible para trabajar y el del desempleo es la fuerza laboral, que es más pequeña. La identidad es: tasa de empleo = participación × (1 − u). Con las cifras del libro, 0.6224 × 0.9635 ≈ 0.5996.</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false"><span>7. Si cierto número de desempleados deja de buscar empleo, ¿qué pasa con u, con la participación y con la tasa de empleo?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Baja u (porque disminuyen el numerador y el denominador, pero el numerador proporcionalmente más), baja la participación (sale gente de la fuerza laboral) y la tasa de empleo no cambia, porque nadie consiguió trabajo. Es el caso del trabajador desalentado, y por eso a veces se mira la tasa de empleo.</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false"><span>8. Explica con tus palabras por qué, cuando el desempleo es alto, los trabajadores están peor de dos maneras.</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Porque las empresas ajustan el empleo contratando menos y despidiendo. Con menos contrataciones, hay menos vacantes y los desempleados tienen menor probabilidad de encontrar empleo (esperan más). Con más despidos, los empleados tienen mayor probabilidad de perder el suyo. Según el libro, la probabilidad de encontrar empleo en un mes fue cerca de 15% en 2010 (desempleo cercano a 10%) y 31% a fines de 2022 (desempleo de 3.5%).</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false"><span>9. ¿En qué se diferencian las explicaciones de poder de negociación y de salarios de eficiencia? ¿Qué tienen en común?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>En la de negociación, el trabajador usa su poder (que depende del costo de reemplazarlo y de lo fácil que le sea hallar otro empleo) para obtener un salario mayor que el de reserva. En la de eficiencia, es la empresa la que decide pagar más para elevar la productividad y reducir la rotación. En común: ambas implican que el salario depende de la naturaleza del trabajo y que, cuanto menor el desempleo, mayor el salario.</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false"><span>10. En la ecuación W = P<sup>e</sup> F(u, z), ¿qué significan los signos menos y más y por qué P<sup>e</sup> multiplica?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>El signo menos bajo u dice que más desempleo reduce el salario; el más bajo z dice que más z (más seguro de desempleo, salario mínimo o protección) lo aumenta. P<sup>e</sup> multiplica porque a trabajadores y a empresas les importa el salario real: si ambos esperan que los precios se dupliquen, acuerdan duplicar el nominal para mantener el real igual.</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false"><span>11. ¿Por qué PS es horizontal? ¿Cuándo dejaría de serlo?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Porque el salario real implícito en la fijación de precios es 1 / (1 + m), que solo depende del markup y no del desempleo. Dejaría de serlo si hubiera rendimientos decrecientes del trabajo: el costo marginal subiría con el empleo y el salario real implícito bajaría al aumentar el empleo (en el plano del apéndice, PS tendría pendiente negativa).</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false"><span>12. Un aumento de z: ¿qué hace con el salario real de equilibrio y con la tasa natural? ¿Y un aumento de m?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Si z sube, WS sube, la economía se mueve a lo largo de PS: el salario real de equilibrio no cambia y u<sub>n</sub> sube. Si m sube, PS baja, la economía se mueve a lo largo de WS: el salario real baja y u<sub>n</sub> sube. En ambos casos sube la tasa natural.</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false"><span>13. ¿Cómo se pasa de la tasa natural al producto natural?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Dada la fuerza laboral L, el empleo natural es N<sub>n</sub> = L (1 − u<sub>n</sub>). Con la función de producción Y = N, el producto natural es Y<sub>n</sub> = L (1 − u<sub>n</sub>). Una tasa natural más alta implica un producto natural más bajo.</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false"><span>14. ¿Por qué se llama "mecanismo disciplinador" al desempleo en este modelo?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Porque es el mecanismo por el cual las demandas salariales de los trabajadores se reconcilian con lo que las empresas están dispuestas a pagar. Cuando los reclamos de los trabajadores exceden lo que permiten los precios, un desempleo mayor los lleva de vuelta al nivel consistente. Suena duro, pero describe el ajuste del modelo.</p></div>
     </div>
   </section>
 
@@ -459,7 +1221,7 @@
   <p class="panel-tt">Tema 5<small>En esta página</small></p>
   <svg class="panel-svg" aria-hidden="true" focusable="false"></svg>
   <ol class="panel-lista" id="panel-lista">
-    <li><a href="#alcance">Alcance</a></li>
+    <li><a href="#alcance">Alcance y método</a></li>
     <li><a href="#recorrido">7-1 Recorrido</a></li>
     <li><a href="#movimientos">13 movimientos (clase)</a></li>
     <li><a href="#desempleo">7-2 Desempleo</a></li>
@@ -467,6 +1229,8 @@
     <li><a href="#precios">7-4 Precios</a></li>
     <li><a href="#natural">7-5 Tasa natural</a></li>
     <li><a href="#plazos">7-6 y apéndice</a></li>
+    <li><a href="#formulas">Hoja de fórmulas</a></li>
+    <li><a href="#errores">Errores frecuentes</a></li>
     <li><a href="#glosario">Glosario</a></li>
     <li><a href="#autoeval">Autoevaluación</a></li>
   </ol>
@@ -476,9 +1240,9 @@
 
 <footer>
   <div>
-    <span class="badge">Fuente</span>Blanchard, Olivier (2023), <em>Macroeconomics</em>, 9ª ed., Pearson, Cap. 7 "The Labor Market", secc. 7-1 a 7-6, recuadros Focus y apéndice (pp. 135–156); apuntes de clase del Prof. Luis Morera, "Clase 2 El Mercado Laboral"
+    <span class="badge">Fuente</span>Blanchard, Olivier (2023), <em>Macroeconomics</em>, 9ª ed., Pearson, Cap. 7 "The Labor Market", secc. 7-1 a 7-6, recuadros Focus y apéndice (pp. 135 a 156); apuntes de clase del Prof. Luis Morera, "Clase 2 El Mercado Laboral". Los ejemplos marcados como hipotéticos y los cálculos marcados como propios son ilustraciones del autor de la guía, no datos de las fuentes.
   </div>
-  <p>Guía de estudio: Semana 7, Tema 5. Material de repaso del propio estudiante (no es Tarea ni Control). &middot; <a href="../index.html">Volver al sitio</a></p>
+  <p>Guía de estudio: Semana 7, Tema 5, versión ampliada. Material de repaso del propio estudiante (no es Tarea ni Control). &middot; <a href="../index.html">Volver al sitio</a></p>
 </footer>
 
 <script src="../assets/guia.js?v=32433dd8fe07"></script>
@@ -492,6 +1256,43 @@
       btn.setAttribute('aria-expanded', abierta ? 'false' : 'true');
     });
   });
+
+  // Calculadora de tasas (cifras de la Figura 7-1 de Blanchard, millones)
+  var E0 = 158.3, U0 = 6.0, POP = 264.0;
+  var tx = document.getElementById('tx'), th = document.getElementById('th');
+  function pct(x, d){ return (x * 100).toFixed(d == null ? 1 : d) + '%'; }
+  function tasas(x, h){
+    var E = E0 + h * x, U = U0 - x, L = E + U;
+    return { E: E, U: U, u: U / L, p: L / POP, e: E / POP };
+  }
+  var base = tasas(0, 1);
+  function calc(){
+    var x = +tx.value, h = (+th.value) / 100, r = tasas(x, h);
+    document.getElementById('vtx').textContent = x.toFixed(1);
+    document.getElementById('vth').textContent = Math.round(h * 100) + '%';
+    document.getElementById('te').textContent = r.E.toFixed(1);
+    document.getElementById('tu').textContent = r.U.toFixed(1);
+    document.getElementById('tru').textContent = pct(r.u, 2);
+    document.getElementById('trp').textContent = pct(r.p, 1);
+    document.getElementById('tre').textContent = pct(r.e, 1);
+    document.getElementById('tbe').textContent = 'Base: ' + base.E.toFixed(1);
+    document.getElementById('tbu').textContent = 'Base: ' + base.U.toFixed(1);
+    document.getElementById('tbru').textContent = 'Base: ' + pct(base.u, 2);
+    document.getElementById('tbrp').textContent = 'Base: ' + pct(base.p, 1);
+    document.getElementById('tbre').textContent = 'Base: ' + pct(base.e, 1);
+    var nota;
+    if (x === 0) nota = 'Con las cifras del libro, nada se ha movido todavía.';
+    else if (h === 0) nota = 'Todos los que dejan el desempleo salen de la fuerza laboral: baja u, baja la participación y la tasa de empleo no cambia.';
+    else if (h === 1) nota = 'Todos los que dejan el desempleo consiguen empleo: baja u y suben el empleo y la tasa de empleo; la participación no cambia.';
+    else nota = 'Parte consigue empleo y parte sale de la fuerza laboral: compara qué tasas se mueven y cuáles no.';
+    document.getElementById('tnota').textContent = nota;
+  }
+  function fijar(x, h){ tx.value = x; th.value = h; calc(); }
+  tx.addEventListener('input', calc); th.addEventListener('input', calc);
+  document.getElementById('esc-base').addEventListener('click', function(){ fijar(0, 100); });
+  document.getElementById('esc-desalentados').addEventListener('click', function(){ fijar(1, 0); });
+  document.getElementById('esc-empleo').addEventListener('click', function(){ fijar(1, 100); });
+  calc();
 
   // Laboratorio WS y PS (forma ilustrativa F(u,z) = 1 − u + z); colores de lámina
   var svg = document.getElementById('wsps'), NS = 'http://www.w3.org/2000/svg';

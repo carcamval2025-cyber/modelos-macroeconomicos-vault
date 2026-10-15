@@ -37,6 +37,18 @@ riesgo x, Tema 4 la paridad de tasas con el exterior. Esa idea se ve en:
 - Componente nuevo `.campos-num` / `.campo-num` (respuesta numérica con verificación, estados `data-estado="ok|mal"`) para actividades con ejercicios numéricos.
 - Logo y favicon pasan a 5 barras (una por Tema publicado).
 
+## Guías profundas (2026-10-15)
+
+Componentes nuevos en `guia.css` (al final del archivo) para guías con fórmulas explicadas:
+
+- `.anatomia`: caja que envuelve una `.ecuacion` y debajo `span.anatomia-tt` ("Qué significa cada pieza") + `dl.simbolos` (símbolo en mono y color de la capa, explicación a la derecha; en celular se apila). Las ecuaciones siguen usando `.v[data-var]`.
+- `ol.pasos`: derivación o procedimiento numerado; cada `li` lleva `b.paso-tt` y un `div` con el contenido (puede incluir `.ecuacion`). El número usa `--k`/`--k-txt`.
+- `.tabla-datos.texto`: tabla con texto alineado a la izquierda (`.tabla-datos` normal alinea a la derecha para cifras).
+- `.btn-escenarios` y `.sim-nota`: botones de escenario y nota bajo un simulador.
+- Etiqueta `.tag-pill` con el texto "hipotético" para ejemplos con números inventados.
+
+Ejemplo de uso: `docs/tema-05/index.html`.
+
 ## Archivos compartidos (no escribir CSS suelto por página)
 
 Antes de publicar, ejecutar `python3 scripts/versionar-assets.py`. El script actualiza el

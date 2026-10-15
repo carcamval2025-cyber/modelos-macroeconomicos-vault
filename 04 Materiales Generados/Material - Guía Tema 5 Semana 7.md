@@ -4,10 +4,14 @@ tipo: "Guía HTML"
 tema: 5
 semana: 7
 fecha: 2026-10-14
+actualizado: 2026-10-15
 archivo: "tema-05/index.html"
 retro: "pendiente"
 ---
+Guía de estudio HTML de la semana 7 (Tema 5, Mercado laboral): capítulo 7 de Blanchard completo (7-1 a 7-6, recuadros Focus y apéndice) más los apuntes de clase "Clase 2 El Mercado Laboral" (13 movimientos con PET/PEA/PEI/PNET y resto del mundo, escenarios favorable y desfavorable, modelo de salarios y precios). Publicada en `docs/tema-05/index.html`.
 
-Guía de estudio HTML de la semana 7 (Tema 5, Mercado laboral): capítulo 7 de Blanchard completo (7-1 a 7-6, recuadros Focus y apéndice) más los apuntes de clase "Clase 2 El Mercado Laboral" (13 movimientos con PET/PEA/PEI/PNET y resto del mundo, escenarios favorable y desfavorable, modelo de salarios y precios). Incluye láminas SVG (poblaciones de la Fig. 7-1, flujos de la Fig. 7-2, 13 movimientos, apéndice WS/PS en función del empleo), laboratorio interactivo WS y PS (forma ilustrativa hipotética F(u,z) = 1 − u + z), glosario y autoevaluación. Publicada en `docs/tema-05/index.html`.
+**Versión ampliada (2026-10-15), a pedido de Navas:** explicaciones a fondo, con una caja "Qué significa cada pieza" para cada fórmula (componente `.anatomia` + `.simbolos`), deducciones paso a paso (`.pasos`: identidad de las tres tasas, 7.4 a 7.7, costo marginal, Yₙ = L(1 − uₙ), apéndice), mapa de símbolos, método de lectura de fórmulas, calculadora de tasas interactiva (participación, u y tasa de empleo), láminas nuevas (bañera del desempleo, reparto del producto), contabilidad de los 13 movimientos, tablas de poder de negociación vs salarios de eficiencia, estática comparativa con experimentos guiados para el laboratorio WS y PS, hoja de fórmulas, errores frecuentes, glosario ampliado y autoevaluación de 14 preguntas.
+
+Decisiones de contenido: los ejemplos numéricos propios llevan la etiqueta "hipotético" y los cálculos derivados de cifras del libro "cálculo propio"; no se resolvieron problemas de fin de capítulo (por si coinciden con la Tarea 2). Se señalan dos erratas del libro: salidas de la fuerza laboral 5.8 (3.9 + 1.9) y no 5.7, y 46% (no 4%) del resumen.
 
 Ver [[Tema 5 - Mercado Laboral]].
