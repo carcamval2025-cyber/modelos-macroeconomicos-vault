@@ -16,6 +16,8 @@ Gráfico añadido en 7-5 (2026-10-15): W/P contra u con WS, PS (W/P = 1/(1 + m))
 
 Sección "La estructura de cada país entra en las ecuaciones" añadida en 7-5 (2026-10-15): cómo las características de un país entran por z (WS) y por m (PS), tabla de qué rasgo entra por dónde, gráfico hipotético de dos países (X e Y) y casos reales del libro (Europa y EE. UU.).
 
+Añadido en 7-5 (2026-10-15): recuadro "El equilibrio determina dos valores a la vez" (W/P y uₙ, con los nombres natural y estructural) y bloque "Qué variables desplazan cada curva" (productividad A, otros factores productivos, competencia y protección del trabajador) con derivación de PS con A (W/P = A/(1 + m), marcada como extensión porque el libro fija A = 1), mapa de desplazamientos y tabla.
+
 Decisiones de contenido: los ejemplos numéricos propios llevan la etiqueta "hipotético" y los cálculos derivados de cifras del libro "cálculo propio"; no se resolvieron problemas de fin de capítulo (por si coinciden con la Tarea 2). Se señalan dos erratas del libro: salidas de la fuerza laboral 5.8 (3.9 + 1.9) y no 5.7, y 46% (no 4%) del resumen.
 
 Ver [[Tema 5 - Mercado Laboral]].
