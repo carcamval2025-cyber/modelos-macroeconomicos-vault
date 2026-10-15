@@ -12,6 +12,8 @@ Guía de estudio HTML de la semana 7 (Tema 5, Mercado laboral): capítulo 7 de B
 
 **Versión ampliada (2026-10-15), a pedido de Navas:** explicaciones a fondo, con una caja "Qué significa cada pieza" para cada fórmula (componente `.anatomia` + `.simbolos`), deducciones paso a paso (`.pasos`: identidad de las tres tasas, 7.4 a 7.7, costo marginal, Yₙ = L(1 − uₙ), apéndice), mapa de símbolos, método de lectura de fórmulas, calculadora de tasas interactiva (participación, u y tasa de empleo), láminas nuevas (bañera del desempleo, reparto del producto), contabilidad de los 13 movimientos, tablas de poder de negociación vs salarios de eficiencia, estática comparativa con experimentos guiados para el laboratorio WS y PS, hoja de fórmulas, errores frecuentes, glosario ampliado y autoevaluación de 14 preguntas.
 
+Gráfico añadido en 7-5 (2026-10-15): W/P contra u con WS, PS (W/P = 1/(1 + m)), el equilibrio A y los puntos B (u bajo) y C (u alto), con una tabla de qué le pasa al trabajador en cada caso.
+
 Decisiones de contenido: los ejemplos numéricos propios llevan la etiqueta "hipotético" y los cálculos derivados de cifras del libro "cálculo propio"; no se resolvieron problemas de fin de capítulo (por si coinciden con la Tarea 2). Se señalan dos erratas del libro: salidas de la fuerza laboral 5.8 (3.9 + 1.9) y no 5.7, y 46% (no 4%) del resumen.
 
 Ver [[Tema 5 - Mercado Laboral]].
