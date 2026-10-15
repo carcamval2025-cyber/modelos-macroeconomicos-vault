@@ -14,6 +14,8 @@ Guía de estudio HTML de la semana 7 (Tema 5, Mercado laboral): capítulo 7 de B
 
 Gráfico añadido en 7-5 (2026-10-15): W/P contra u con WS, PS (W/P = 1/(1 + m)), el equilibrio A y los puntos B (u bajo) y C (u alto), con una tabla de qué le pasa al trabajador en cada caso.
 
+Sección "La estructura de cada país entra en las ecuaciones" añadida en 7-5 (2026-10-15): cómo las características de un país entran por z (WS) y por m (PS), tabla de qué rasgo entra por dónde, gráfico hipotético de dos países (X e Y) y casos reales del libro (Europa y EE. UU.).
+
 Decisiones de contenido: los ejemplos numéricos propios llevan la etiqueta "hipotético" y los cálculos derivados de cifras del libro "cálculo propio"; no se resolvieron problemas de fin de capítulo (por si coinciden con la Tarea 2). Se señalan dos erratas del libro: salidas de la fuerza laboral 5.8 (3.9 + 1.9) y no 5.7, y 46% (no 4%) del resumen.
 
 Ver [[Tema 5 - Mercado Laboral]].
