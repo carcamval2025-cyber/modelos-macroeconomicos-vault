@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="es" data-k="ext">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tema 4 · Guía de balanza de pagos | Macro II</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg?v=945dfb6041af">
+<script>try{var t=localStorage.getItem('mm-tema');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/guia.css?v=3f35d585a726">
+</head>
+<body>
+
+<a class="salto" href="#contenido">Saltar al contenido</a>
+<header class="cab">
+  <div class="cab-barra">
+    <a class="cab-marca" href="../index.html"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect x="6" y="6" width="52" height="8" fill="#F0B429"/><rect x="6" y="18" width="43" height="8" fill="#F2552C"/><rect x="6" y="30" width="34" height="8" fill="#C65BD6"/><rect x="6" y="42" width="25" height="8" fill="#22B8A0"/><rect x="6" y="54" width="16" height="8" fill="#EC6FA0"/></svg><span><b>Macro II</b><small>Modelos Macroeconómicos · ESEN</small></span></a>
+    <button class="btn-tema" type="button" data-btn-tema>Tema oscuro</button>
+  </div>
+  <div class="cab-banda">
+    <div class="cab-in">
+      <p class="cab-kicker"><a href="../index.html">Inicio</a> / Tema 4 · Guía de balanza de pagos</p>
+      <h1>Balanza de pagos, INBD y ahorro del sector externo</h1>
+      <p class="sub">Guía de estudio con el enfoque de las guías de Moodle del profesor: las cuentas de la balanza de pagos, la identidad que las une, el paso del PIB al ingreso nacional bruto disponible (INBD), el ahorro del sector externo y ejercicios resueltos con datos de El Salvador. Cada fórmula viene con la explicación de sus piezas.</p>
+      <ul class="cab-meta"><li>Blanchard, cap. 17 (balanza de pagos, PIB y PNB)</li><li>Guías de Moodle del profesor</li><li>Prof. Luis Morera</li></ul>
+      <nav class="cab-mats" aria-label="Materiales del Tema 4"><span>Materiales del Tema 4:</span><a href="index.html">Guía de estudio</a><a href="guia-balanza-de-pagos.html" aria-current="page">Guía de balanza de pagos</a><a href="actividad-tema4-apertura.html">Actividad de práctica</a><a href="repaso-control2-tema4-apertura.html">Repaso para el Control 2</a></nav>
+    </div>
+  </div>
+</header>
+
+<div class="pagina">
+<main id="contenido">
+  <div class="recuadro">
+    <span class="recuadro-tag">Para qué sirve esta guía</span>
+    <p>La guía de estudio del Tema 4 explica la balanza de pagos con el nivel de Blanchard (cuenta corriente y cuenta financiera de EE. UU.). Las guías de Moodle del profesor trabajan con un enfoque más detallado, el del Manual de Balanza de Pagos (con bienes, servicios, ingreso primario y secundario, cuenta de capital, errores y omisiones y activos de reserva) y conectan esas cuentas con el paso del <strong>PIB al INBD</strong>. Esta guía cubre ese enfoque y lo practica con ejercicios resueltos.</p>
+  </div>
+
+  <section class="modulo" id="alcance">
+    <div class="modulo-head"><h2>Qué cubre esta guía y cómo usarla</h2></div>
+    <div class="bloque">
+      <p><strong>Cubre:</strong> estructura de la balanza de pagos; la identidad SCC + SCK + EyO = SCF y cómo leer sus signos; el paso del PIB al PNB, al INBD, al ahorro nacional y a la inversión; el ahorro del sector externo; lectura de la balanza de pagos de El Salvador; y los ejercicios de balanza de pagos de la guía de Moodle, resueltos y explicados.</p>
+      <p><strong>No cubre</strong> (son otros bloques de las guías de Moodle): coeficiente técnico y efectos de una depreciación sobre una empresa, riesgo país, riesgo cambiario y eurobonos, capacidad de compra con depreciación real y la tabla IS-LM de economía abierta con noticias del exterior. El tipo de cambio real y el riesgo cambiario están en la <a href="index.html">guía de estudio del Tema 4</a>. Si quieres que arme también esos bloques, pídelo.</p>
+      <p><strong>Sobre las fuentes y las cifras:</strong> la estructura de las cuentas y el paso del PIB al INBD vienen de las guías de Moodle y de las identidades de contabilidad nacional; Blanchard (cap. 17) presenta la balanza de pagos y la diferencia entre PIB y PNB con otra convención de signos, que se compara más abajo. Los datos de El Salvador son los de las tablas de Moodle y de la hoja de balanza de pagos anual de la carpeta del curso (cifras en millones de dólares, 2024 y 2025 preliminares). Los ejemplos con la etiqueta <span class="tag-pill">hipotético</span> usan números inventados para practicar; los cálculos derivados están marcados como cálculo propio.</p>
+    </div>
+    <div class="bloque">
+      <h3>Mapa de símbolos y siglas</h3>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Sigla</th><th>Qué es</th><th>Cómo se lee</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">SCC</td><td>Saldo de la cuenta corriente: suma de las balanzas de bienes, servicios, ingreso primario e ingreso secundario.</td><td>Negativo: déficit; positivo: superávit.</td></tr>
+            <tr><td class="mono">SCK</td><td>Saldo de la cuenta de capital: transferencias de capital (condonaciones, donaciones para inversión) y activos no producidos. Suele ser pequeño.</td><td>Pequeño frente a la cuenta corriente.</td></tr>
+            <tr><td class="mono">EyO</td><td>Errores y omisiones: lo que hace falta para que las cuentas cuadren, porque se miden con fuentes distintas.</td><td>Puede ser positivo o negativo.</td></tr>
+            <tr><td class="mono">SCF</td><td>Saldo de la cuenta financiera: adquisición neta de activos financieros menos pasivos netos contraídos con el resto del mundo.</td><td>Negativo: endeudamiento neto; positivo: préstamo neto.</td></tr>
+            <tr><td class="mono">IED</td><td>Inversión extranjera directa (inversión directa de la cuenta financiera).</td><td>Con este signo, negativo es más IED recibida que enviada.</td></tr>
+            <tr><td class="mono">RIN</td><td>Reservas internacionales netas (activos de reserva del banco central).</td><td>Positivo en la cuenta financiera: aumentaron.</td></tr>
+            <tr><td class="mono">PFE</td><td>Pago a factores del extranjero. En la hoja de clase aparece como el saldo de la balanza de ingreso primario (negativo si el país paga más de lo que recibe).</td><td>Se suma al PIB para llegar al PNB.</td></tr>
+            <tr><td class="mono">TR</td><td>Transferencias externas netas: saldo de la balanza de ingreso secundario (remesas y otras transferencias corrientes).</td><td>Se suma al PNB para llegar al INBD.</td></tr>
+            <tr><td class="mono">PNB, INB</td><td>Producto o ingreso nacional bruto: lo que generan los factores de producción del país, estén donde estén.</td><td>PNB = PIB + PFE.</td></tr>
+            <tr><td class="mono">INBD</td><td>Ingreso nacional bruto disponible: el ingreso del que dispone el país, después de los ingresos primarios y de las transferencias con el exterior.</td><td>INBD = PNB + TR.</td></tr>
+            <tr><td class="mono">C + G</td><td>Consumo (privado) más gasto del gobierno.</td><td>Parte del ingreso que no se ahorra.</td></tr>
+            <tr><td class="mono">ANB</td><td>Ahorro nacional bruto: lo que el país ahorra de su ingreso disponible.</td><td>ANB = INBD − (C + G).</td></tr>
+            <tr><td class="mono">AIB</td><td>Ahorro interno bruto: lo que sobra del PIB después de consumo y gasto público.</td><td>AIB = PIB − (C + G).</td></tr>
+            <tr><td class="mono">I</td><td>Inversión.</td><td>Se financia con ahorro nacional y externo.</td></tr>
+            <tr><td class="mono">Absorción</td><td>Gasto interno total: consumo, inversión y gasto del gobierno.</td><td>C + I + G.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo" id="estructura">
+    <div class="modulo-head"><h2>La estructura de la balanza de pagos</h2></div>
+    <div class="modulo-text">Blanchard, sección 17-2, y guías de Moodle.</div>
+    <div class="bloque">
+      <p>La balanza de pagos resume las transacciones de un país con el resto del mundo, comerciales y financieras. Blanchard la divide en dos partes separadas por una línea: las transacciones <strong>arriba de la línea</strong> (cuenta corriente) y las que están <strong>debajo de la línea</strong> (cuenta financiera). El enfoque del Manual, que usa el profesor, separa además la cuenta de capital y agrega los errores y omisiones.</p>
+    </div>
+
+    <figure>
+      <div class="diagrama">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" role="img" aria-label="Estructura de la balanza de pagos. Arriba de la línea: cuenta corriente con bienes, servicios, ingreso primario e ingreso secundario, más cuenta de capital y errores y omisiones. Debajo de la línea: cuenta financiera con inversión directa, de cartera, derivados, otra inversión y activos de reserva. La suma de los saldos de arriba es igual al saldo de la cuenta financiera.">
+          <rect width="900" height="430" fill="#1A1B1D"/>
+          <text x="40" y="30" font-size="15" font-weight="700" fill="#F2F2F0">Arriba de la línea</text>
+          <text x="860" y="30" font-size="15" font-weight="700" text-anchor="end" fill="#F2F2F0">Debajo de la línea</text>
+          <rect x="40" y="46" width="380" height="226" fill="#202124" stroke="#22B8A0" stroke-width="2"/>
+          <text x="56" y="72" font-size="15" font-weight="700" fill="#22B8A0">Cuenta corriente (SCC)</text>
+          <g font-size="14" fill="#F2F2F0">
+            <text x="56" y="102">Balanza de bienes (exportaciones menos importaciones)</text>
+            <text x="56" y="132">Balanza de servicios (viajes, transporte y otros)</text>
+            <text x="56" y="162">Balanza de ingreso primario (renta de inversión: PFE)</text>
+            <text x="56" y="192">Balanza de ingreso secundario (transferencias: TR)</text>
+            <text x="56" y="222" fill="#A9ABAE">incluye las remesas de los trabajadores</text>
+            <text x="56" y="256" font-weight="700">SCC = bienes + servicios + primario + secundario</text>
+          </g>
+          <rect x="40" y="286" width="380" height="56" fill="#202124" stroke="#A9ABAE" stroke-width="2"/>
+          <text x="56" y="310" font-size="15" font-weight="700" fill="#F2F2F0">Cuenta de capital (SCK)</text>
+          <text x="56" y="330" font-size="13" fill="#A9ABAE">transferencias de capital, usualmente pequeñas</text>
+          <rect x="40" y="356" width="380" height="56" fill="#202124" stroke="#A9ABAE" stroke-width="2"/>
+          <text x="56" y="380" font-size="15" font-weight="700" fill="#F2F2F0">Errores y omisiones (EyO)</text>
+          <text x="56" y="400" font-size="13" fill="#A9ABAE">ajuste por diferencias de medición</text>
+          <rect x="480" y="46" width="380" height="366" fill="#202124" stroke="#F08AB2" stroke-width="2"/>
+          <text x="496" y="72" font-size="15" font-weight="700" fill="#F08AB2">Cuenta financiera (SCF)</text>
+          <g font-size="14" fill="#F2F2F0">
+            <text x="496" y="108">Inversión directa (IED)</text>
+            <text x="496" y="142">Inversión de cartera (bonos y acciones)</text>
+            <text x="496" y="176">Derivados financieros</text>
+            <text x="496" y="210">Otra inversión (préstamos, depósitos)</text>
+            <text x="496" y="244">Activos de reserva (RIN)</text>
+          </g>
+          <text x="496" y="290" font-size="14" font-weight="700" fill="#F2F2F0">SCF = suma de las cinco partidas</text>
+          <text x="496" y="318" font-size="13" fill="#A9ABAE">Cada partida es adquisición neta de activos</text>
+          <text x="496" y="338" font-size="13" fill="#A9ABAE">menos pasivos contraídos con el exterior</text>
+          <text x="496" y="378" font-size="13" fill="#A9ABAE">Los activos de reserva están dentro de la cuenta</text>
+          <text x="496" y="398" font-size="13" fill="#A9ABAE">financiera, por eso el saldo final es siempre cero</text>
+          <rect x="426" y="160" width="48" height="90" fill="#1A1B1D"/>
+          <text x="450" y="212" font-size="34" font-weight="700" text-anchor="middle" fill="#F2F2F0">=</text>
+        </svg>
+      </div>
+      <figcaption>Fig. propia. La suma de los saldos de arriba de la línea (SCC + SCK + EyO) es igual al saldo de la cuenta financiera (SCF).</figcaption>
+    </figure>
+
+    <div class="bloque">
+      <h3>Qué registra cada cuenta</h3>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Cuenta</th><th>Qué registra</th><th>Ejemplos</th></tr></thead>
+          <tbody>
+            <tr><td>Balanza de bienes</td><td>Comercio de mercancías.</td><td>Exportar café o confección; importar combustibles, maquinaria o alimentos.</td></tr>
+            <tr><td>Balanza de servicios</td><td>Comercio de servicios.</td><td>Viajes (turismo), transporte, servicios empresariales y de telecomunicaciones.</td></tr>
+            <tr><td>Balanza de ingreso primario</td><td>Ingresos de los factores de producción entre el país y el exterior.</td><td>Intereses y utilidades sobre inversiones; remuneración de empleados que trabajan en el extranjero.</td></tr>
+            <tr><td>Balanza de ingreso secundario</td><td>Transferencias corrientes sin contrapartida: se da o se recibe algo sin recibir o dar a cambio.</td><td>Remesas de trabajadores, donaciones, transferencias entre gobiernos.</td></tr>
+            <tr><td>Cuenta de capital</td><td>Transferencias de capital y activos no producidos y no financieros.</td><td>Condonaciones de deuda, donaciones para inversión.</td></tr>
+            <tr><td>Cuenta financiera</td><td>Cambios en los activos y pasivos financieros frente al exterior.</td><td>Llegada de IED, compra de bonos, préstamos, acumulación de reservas.</td></tr>
+            <tr><td>Errores y omisiones</td><td>La diferencia que resulta de medir las cuentas con fuentes distintas.</td><td>Transacciones no registradas o mal valoradas.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="matiz"><b class="t">El nombre "cuenta de capital" confunde</b><p>Blanchard lo advierte: hasta hace poco la cuenta financiera se llamaba "cuenta de capital", y todavía se la llama así en muchos países y en la prensa. Técnicamente, la cuenta de capital se refiere solo a las transferencias de capital, que son muy pequeñas (en EE. UU. fueron 4 mil millones de dólares en 2022). En esta guía, como en el Manual, son dos cuentas distintas.</p></div>
+    </div>
+
+    <div class="bloque">
+      <h3>Créditos y débitos</h3>
+      <p>Cada cuenta se registra en dos columnas, y su saldo es la diferencia:</p>
+      <div class="anatomia">
+        <div class="ecuacion">Saldo de una cuenta = créditos − débitos</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>Créditos</dt><dd><p>Lo que el país <strong>recibe</strong> del resto del mundo: exportaciones, ingresos primarios recibidos, transferencias recibidas (remesas).</p></dd>
+          <dt>Débitos</dt><dd><p>Lo que el país <strong>paga</strong> al resto del mundo: importaciones, ingresos primarios pagados, transferencias enviadas.</p></dd>
+          <dt>Saldo</dt><dd><p>Positivo si los créditos superan a los débitos (superávit de esa balanza) y negativo si los débitos superan a los créditos (déficit).</p></dd>
+          <dt>Ejemplo</dt><dd><p><span class="tag-pill">hipotético</span> Servicios: créditos 400 y débitos 280. Saldo = 400 − 280 = +120, un superávit de servicios.</p></dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo" id="identidad">
+    <div class="modulo-head"><h2>La identidad de la balanza de pagos y cómo leer sus signos</h2></div>
+    <div class="modulo-text">Guías de Moodle y Blanchard, sección 17-2.</div>
+
+    <div class="bloque">
+      <div class="anatomia">
+        <div class="ecuacion">SCC + SCK + EyO = SCF</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>SCC + SCK</dt><dd><p>El resultado de todas las transacciones reales y de capital del país con el exterior. Si es negativo, el país gastó más de lo que recibió: necesita financiamiento. Si es positivo, le sobró y presta al exterior.</p></dd>
+          <dt>EyO</dt><dd><p>El ajuste estadístico que hace que ambos lados cuadren.</p></dd>
+          <dt>SCF</dt><dd><p>Cómo se financió o dónde se colocó ese resultado: adquisición neta de activos financieros menos pasivos contraídos con el resto del mundo.</p></dd>
+          <dt>Idea de fondo</dt><dd><p>Es el mismo principio de un hogar: si gastas más de lo que ganas, debes financiar la diferencia, ya sea endeudándote (más pasivos) o usando tus ahorros (menos activos). Un país con SCC + SCK + EyO negativo debe tener un SCF negativo.</p></dd>
+        </dl>
+      </div>
+
+      <h3>Cómo leer el signo de la cuenta financiera</h3>
+      <p>En esta convención, <strong>SCF = variación de activos − variación de pasivos</strong>. Un SCF negativo significa que los pasivos con el exterior crecieron más que los activos: es endeudamiento neto. Cada partida de la cuenta financiera se lee igual:</p>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Partida</th><th>Signo positivo</th><th>Signo negativo</th></tr></thead>
+          <tbody>
+            <tr><td>SCF total</td><td>Préstamo neto al exterior: el país acumuló activos netos.</td><td>Endeudamiento neto: aumentaron los pasivos netos con el exterior (o se redujeron los activos).</td></tr>
+            <tr><td>Inversión directa (IED)</td><td>Salió más inversión de residentes al exterior que la que entró.</td><td>Entró más IED de la que salió.</td></tr>
+            <tr><td>Activos de reserva (RIN)</td><td>Aumentaron las reservas del banco central.</td><td>Disminuyeron las reservas.</td></tr>
+            <tr><td>Cartera y otra inversión</td><td>Más activos que pasivos frente al exterior en ese instrumento.</td><td>Más pasivos que activos.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Qué implica cada signo de SCC + SCK + EyO</h3>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>SCC + SCK + EyO</th><th>SCF</th><th>Qué pasó con el exterior</th></tr></thead>
+          <tbody>
+            <tr><td>Negativo</td><td>Negativo</td><td>El país se endeudó con el exterior o usó activos externos: aumentaron los pasivos netos (o se redujeron los activos).</td></tr>
+            <tr><td>Positivo</td><td>Positivo</td><td>El país prestó al exterior o acumuló activos: aumentaron los activos netos (o se redujeron los pasivos).</td></tr>
+            <tr><td>Cero</td><td>Cero</td><td>No hubo financiamiento neto.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>El saldo final de la balanza de pagos es cero por construcción</h3>
+      <div class="anatomia">
+        <div class="ecuacion">Saldo de la balanza de pagos = SCC + SCK + EyO − SCF = 0</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>Por qué es siempre cero</dt><dd><p>Porque los activos de reserva están dentro de la cuenta financiera. Si la suma de las cuentas de arriba no cuadra con las demás partidas de la cuenta financiera, la diferencia se absorbe en las reservas (más reservas si sobra, menos si falta).</p></dd>
+          <dt>No es una casualidad</dt><dd><p>Es una identidad contable, no un resultado que dependa del año. Lo que sí cambia de año a año es la composición: cuántas reservas se acumulan o se pierden.</p></dd>
+        </dl>
+      </div>
+      <p><span class="tag-pill">hipotético</span> Si SCC + SCK + EyO = −95 y las partidas IED = −60 y otra inversión = −50, la suma es −110. Para que SCF sea −95, los activos de reserva deben ser −95 − (−110) = +15: el banco central acumuló 15 de reservas.</p>
+    </div>
+
+    <div class="bloque">
+      <h3>Blanchard y las guías de Moodle usan signos opuestos en la cuenta financiera</h3>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>&nbsp;</th><th>Blanchard (Tabla 17-3)</th><th>Guías de Moodle (Manual)</th></tr></thead>
+          <tbody>
+            <tr><td>Cuenta financiera</td><td>Aumento de tenencias extranjeras de activos del país menos aumento de tenencias del país de activos extranjeros: flujos netos de capital hacia el país.</td><td>Adquisición neta de activos menos pasivos contraídos: préstamo (+) o endeudamiento (−).</td></tr>
+            <tr><td>Un país que se endeuda</td><td>Superávit de la cuenta financiera (positivo).</td><td>SCF negativo.</td></tr>
+            <tr><td>Identidad</td><td>Cuenta corriente + cuenta financiera + discrepancia estadística = 0 (la tabla define la discrepancia como la suma de ambas).</td><td>SCC + SCK + EyO = SCF.</td></tr>
+            <tr><td>EE. UU., 2022</td><td>Cuenta corriente −993; cuenta financiera +804; la suma de ambas es −189.</td><td>SCF = −804 y EyO = −804 − (−993) = +189 (ignorando la pequeña cuenta de capital). Cálculo propio.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>La relación entre ambas convenciones es simplemente SCF (Moodle) = − cuenta financiera (Blanchard). En los ejercicios del curso se usa la del Manual. Si al estudiar con Blanchard te confunde que un país que se endeuda tenga "superávit" financiero, recuerda que mide lo contrario: capital que <em>entra</em>.</p>
+    </div>
+  </section>
+
+  <section class="modulo" id="inbd">
+    <div class="modulo-head"><h2>Del PIB al INBD y el ahorro del sector externo</h2></div>
+    <div class="modulo-text">Guías de Moodle; Blanchard, sección 17-2, para PIB y PNB.</div>
+
+    <div class="bloque">
+      <p>La balanza de pagos no solo dice cómo se financia un país: sus partidas del ingreso primario y secundario son las mismas que se necesitan para pasar del <strong>PIB</strong> (lo que se produce dentro del país) al <strong>INBD</strong> (el ingreso del que dispone el país). Esa es la equivalencia que pide la pista de la guía: las balanzas de ingreso de la balanza de pagos son las variables PFE y TR del paso del PIB al INBD.</p>
+      <ol class="pasos">
+        <li><b class="paso-tt">Del PIB al PNB.</b><div>El PIB mide el valor agregado producido dentro del país; el PNB, el valor agregado por los factores de producción del país, estén donde estén. Para pasar de uno a otro se suma el ingreso primario neto con el exterior:<div class="ecuacion">PNB = PIB + PFE</div>Blanchard lo escribe como GNP = GDP + NI, con NI el ingreso neto desde el exterior.</div></li>
+        <li><b class="paso-tt">Del PNB al INBD.</b><div>Se suman las transferencias externas netas (remesas y otras):<div class="ecuacion">INBD = PNB + TR</div></div></li>
+        <li><b class="paso-tt">Del INBD al ahorro nacional.</b><div>Lo que no se consume (privado y gobierno) es ahorro:<div class="ecuacion">ANB = INBD − (C + G)</div></div></li>
+        <li><b class="paso-tt">Del ahorro a la inversión.</b><div>La inversión se financia con ahorro nacional y con ahorro del exterior:<div class="ecuacion">I = ANB + ahorro del sector externo</div></div></li>
+      </ol>
+    </div>
+
+    <figure>
+      <div class="diagrama">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 250" role="img" aria-label="Ejemplo hipotético del paso del PIB al INBD: PIB 2000, más PFE de menos 80 da PNB 1920, más TR de 160 da INBD 2080, menos consumo y gasto 1700 da ahorro nacional bruto 380, más ahorro externo de 100 da inversión de 480">
+          <rect width="900" height="250" fill="#1A1B1D"/>
+          <defs><marker id="f4a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F2F2F0"/></marker></defs>
+          <text x="20" y="26" font-size="14" font-weight="700" fill="#F2F2F0">Ejemplo hipotético (unidades monetarias)</text>
+          <g text-anchor="middle">
+            <rect x="20" y="100" width="130" height="64" fill="#202124" stroke="#A9ABAE" stroke-width="2"/>
+            <text x="85" y="128" font-size="15" font-weight="700" fill="#F2F2F0">PIB</text>
+            <text x="85" y="150" font-size="15" fill="#A9ABAE" font-family="Azeret Mono, monospace">2000</text>
+            <rect x="210" y="100" width="130" height="64" fill="#202124" stroke="#A9ABAE" stroke-width="2"/>
+            <text x="275" y="128" font-size="15" font-weight="700" fill="#F2F2F0">PNB</text>
+            <text x="275" y="150" font-size="15" fill="#A9ABAE" font-family="Azeret Mono, monospace">1920</text>
+            <rect x="400" y="100" width="130" height="64" fill="#202124" stroke="#22B8A0" stroke-width="3"/>
+            <text x="465" y="128" font-size="15" font-weight="700" fill="#F2F2F0">INBD</text>
+            <text x="465" y="150" font-size="15" fill="#22B8A0" font-family="Azeret Mono, monospace">2080</text>
+            <rect x="590" y="100" width="130" height="64" fill="#202124" stroke="#A9ABAE" stroke-width="2"/>
+            <text x="655" y="128" font-size="15" font-weight="700" fill="#F2F2F0">ANB</text>
+            <text x="655" y="150" font-size="15" fill="#A9ABAE" font-family="Azeret Mono, monospace">380</text>
+            <rect x="780" y="100" width="110" height="64" fill="#202124" stroke="#F08AB2" stroke-width="3"/>
+            <text x="835" y="128" font-size="15" font-weight="700" fill="#F2F2F0">Inversión I</text>
+            <text x="835" y="150" font-size="15" fill="#F08AB2" font-family="Azeret Mono, monospace">480</text>
+          </g>
+          <g stroke="#F2F2F0" stroke-width="2.5" fill="none" marker-end="url(#f4a)">
+            <line x1="154" y1="132" x2="204" y2="132"/>
+            <line x1="344" y1="132" x2="394" y2="132"/>
+            <line x1="534" y1="132" x2="584" y2="132"/>
+            <line x1="724" y1="132" x2="774" y2="132"/>
+          </g>
+          <g font-size="13" text-anchor="middle" fill="#F2F2F0">
+            <text x="179" y="86">+ PFE</text>
+            <text x="179" y="186" fill="#A9ABAE" font-family="Azeret Mono, monospace">−80</text>
+            <text x="369" y="86">+ TR</text>
+            <text x="369" y="186" fill="#A9ABAE" font-family="Azeret Mono, monospace">+160</text>
+            <text x="559" y="86">− (C + G)</text>
+            <text x="559" y="186" fill="#A9ABAE" font-family="Azeret Mono, monospace">1700</text>
+            <text x="749" y="86">+ ahorro externo</text>
+            <text x="749" y="186" fill="#A9ABAE" font-family="Azeret Mono, monospace">+100</text>
+          </g>
+          <text x="20" y="232" font-size="13" fill="#A9ABAE">El ahorro externo es igual a menos el saldo de la cuenta corriente: aquí SCC = −100.</text>
+        </svg>
+      </div>
+      <figcaption>Fig. propia con números hipotéticos. La inversión se financia con el ahorro nacional (380) y con el ahorro del sector externo (100).</figcaption>
+    </figure>
+
+    <div class="bloque">
+      <h3>Cada fórmula, con sus piezas</h3>
+
+      <div class="anatomia">
+        <div class="ecuacion">PNB = PIB + PFE</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>PIB</dt><dd><p>Valor agregado producido dentro del territorio, sin importar de quién sean los factores.</p></dd>
+          <dt>PFE</dt><dd><p>Saldo de la balanza de ingreso primario: lo que los residentes reciben del exterior por sus factores (intereses, utilidades, salarios) menos lo que pagan a factores del exterior. Si es negativo, el país paga más de lo que recibe.</p></dd>
+          <dt>PNB</dt><dd><p>Lo producido por los factores del país. Es mayor que el PIB si el país recibe más de lo que paga; menor si paga más. Ejemplos del libro: Kuwait (PNB mayor que el PIB por sus activos en el exterior) y EE. UU. 2022 (ingreso neto de −21, PNB menor que el PIB en alrededor de 0.1%).</p></dd>
+        </dl>
+      </div>
+
+      <div class="anatomia">
+        <div class="ecuacion">INBD = PNB + TR = PIB + PFE + TR</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>TR</dt><dd><p>Saldo de la balanza de ingreso secundario: transferencias corrientes que se reciben menos las que se envían. Las remesas son su componente principal en muchos países.</p></dd>
+          <dt>INBD</dt><dd><p>El ingreso del que realmente dispone el país para consumir o ahorrar. Puede ser mayor que el PIB si las transferencias netas son muy grandes, aunque el PNB sea menor.</p></dd>
+          <dt>INBD frente al PIB</dt><dd><p>INBD − PIB = PFE + TR. Es positivo si el ingreso primario neto más las transferencias netas suman positivo.</p></dd>
+        </dl>
+      </div>
+
+      <div class="anatomia">
+        <div class="ecuacion">ANB = INBD − (C + G) &nbsp;&nbsp;&nbsp; AIB = PIB − (C + G)</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>C + G</dt><dd><p>Consumo privado y gasto del gobierno: la parte del ingreso que se gasta en consumo.</p></dd>
+          <dt>ANB</dt><dd><p>Ahorro del ingreso disponible. Incluye el efecto del exterior sobre el ingreso (PFE y TR).</p></dd>
+          <dt>AIB</dt><dd><p>Ahorro medido desde el PIB. La diferencia con el ANB es exactamente PFE + TR.</p></dd>
+        </dl>
+      </div>
+
+      <div class="anatomia">
+        <div class="ecuacion">Absorción = C + I + G &nbsp;&nbsp;&nbsp; PIB = Absorción + (X − M)</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>Absorción</dt><dd><p>El gasto interno total en consumo, inversión y gasto público, venga la producción de donde venga.</p></dd>
+          <dt>X − M</dt><dd><p>Exportaciones menos importaciones de bienes y servicios: la suma de las balanzas de bienes y de servicios.</p></dd>
+          <dt>Qué enseña</dt><dd><p>Si la absorción supera al PIB, el país gasta más de lo que produce, y la diferencia es el déficit de bienes y servicios (X − M negativa), que se financia con el exterior.</p></dd>
+        </dl>
+      </div>
+
+      <div class="anatomia">
+        <div class="ecuacion">Ahorro del sector externo = − SCC &nbsp;&nbsp;&nbsp; I = ANB + ahorro externo</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>Ahorro externo</dt><dd><p>Lo que el resto del mundo ahorra en favor del país, o sea el financiamiento externo que recibe. Es positivo cuando el país tiene déficit de cuenta corriente.</p></dd>
+          <dt>Por qué es − SCC</dt><dd><p>Del PIB = C + I + G + (X − M) sale I = (PIB − C − G) − (X − M). Como ANB = PIB + PFE + TR − C − G y SCC = (X − M) + PFE + TR, queda I = ANB − SCC. Por eso el ahorro externo es −SCC.</p></dd>
+          <dt>Atención</dt><dd><p>El ahorro del sector externo (−SCC) no es lo mismo que el saldo de la cuenta financiera: tienen relación (SCC + SCK + EyO = SCF) pero no son iguales si SCK y EyO no son cero.</p></dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="simulador-panel" id="bp-calc">
+      <h3>Calculadora: de las cuentas de la balanza de pagos al INBD y a la inversión</h3>
+      <p>Economía hipotética con PIB = 2000. Mueve las partidas de la balanza de pagos y el gasto en consumo y gobierno, y mira cómo cambian el saldo de la cuenta corriente, el SCF, el INBD, el ahorro y la inversión.</p>
+      <div class="sim-grid">
+        <div class="control-item"><div class="control-top"><label class="control-label" for="bb">Balanza de bienes</label><span class="control-val" id="vbb">-300</span></div><input class="control-slider" type="range" id="bb" min="-600" max="100" step="10" value="-300"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="bs">Balanza de servicios</label><span class="control-val" id="vbs">120</span></div><input class="control-slider" type="range" id="bs" min="-100" max="300" step="10" value="120"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="bp">Ingreso primario (PFE)</label><span class="control-val" id="vbp">-80</span></div><input class="control-slider" type="range" id="bp" min="-200" max="100" step="10" value="-80"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="bt">Ingreso secundario (TR)</label><span class="control-val" id="vbt">160</span></div><input class="control-slider" type="range" id="bt" min="-50" max="400" step="10" value="160"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="bk">Cuenta de capital (SCK)</label><span class="control-val" id="vbk">10</span></div><input class="control-slider" type="range" id="bk" min="-20" max="40" step="5" value="10"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="be">Errores y omisiones</label><span class="control-val" id="vbe">-5</span></div><input class="control-slider" type="range" id="be" min="-50" max="50" step="5" value="-5"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="bg">Consumo + gasto C + G</label><span class="control-val" id="vbg">1700</span></div><input class="control-slider" type="range" id="bg" min="1500" max="2000" step="25" value="1700"></div>
+      </div>
+      <div class="kpis-grid" aria-live="polite">
+        <div class="kpi-card"><div class="kpi-title">SCC</div><div class="kpi-num" id="oc">-100</div></div>
+        <div class="kpi-card"><div class="kpi-title">SCF = SCC + SCK + EyO</div><div class="kpi-num" id="of">-95</div></div>
+        <div class="kpi-card"><div class="kpi-title">Ahorro externo = −SCC</div><div class="kpi-num" id="oa">100</div></div>
+        <div class="kpi-card"><div class="kpi-title">PNB = PIB + PFE</div><div class="kpi-num" id="opn">1920</div></div>
+        <div class="kpi-card"><div class="kpi-title">INBD = PNB + TR</div><div class="kpi-num" id="oi">2080</div></div>
+        <div class="kpi-card"><div class="kpi-title">ANB = INBD − (C + G)</div><div class="kpi-num" id="oan">380</div></div>
+        <div class="kpi-card"><div class="kpi-title">AIB = PIB − (C + G)</div><div class="kpi-num" id="oai">300</div></div>
+        <div class="kpi-card"><div class="kpi-title">Inversión I</div><div class="kpi-num" id="oinv">480</div></div>
+        <div class="kpi-card"><div class="kpi-title">Absorción = C + I + G</div><div class="kpi-num" id="oab">2180</div></div>
+      </div>
+      <p class="sim-nota" id="bnota">Con SCC negativo el país tiene ahorro externo positivo.</p>
+    </div>
+
+    <div class="recuadro">
+      <span class="recuadro-tag">Qué probar en la calculadora</span>
+      <p>(1) Pon el ingreso secundario (TR) en 0: el INBD baja, el ahorro nacional baja, el déficit de la cuenta corriente aumenta y, para la misma inversión, el ahorro externo sube. (2) Haz que el ingreso primario sea positivo: el PNB supera al PIB. (3) Deja las balanzas de bienes y servicios de modo que su suma sea 0 y pon C + G = 1700: la absorción es igual al PIB. (4) Verifica siempre que I = ANB + ahorro externo: es una identidad, se cumple con cualquier valor. Los números son hipotéticos.</p>
+    </div>
+  </section>
+
+  <section class="modulo" id="ejemplo">
+    <div class="modulo-head"><h2>Ejercicio resuelto: completar las partidas que faltan</h2></div>
+    <div class="modulo-text">Ejercicio propio con números hipotéticos, en el estilo de la guía de Moodle: de la balanza de pagos al INBD.</div>
+    <div class="bloque">
+      <p><span class="tag-pill">hipotético</span> Un país tiene los siguientes datos. Encuentra los valores que faltan.</p>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Dato</th><th>Valor</th></tr></thead>
+          <tbody>
+            <tr><td>PIB</td><td class="mono">1500</td></tr>
+            <tr><td>Balanza de bienes</td><td class="mono">−200</td></tr>
+            <tr><td>Balanza de servicios</td><td class="mono">90</td></tr>
+            <tr><td>Balanza de ingreso primario (PFE)</td><td class="mono">−60</td></tr>
+            <tr><td>Balanza de ingreso secundario (TR)</td><td class="mono">110</td></tr>
+            <tr><td>Saldo de la cuenta de capital</td><td class="mono">8</td></tr>
+            <tr><td>Errores y omisiones</td><td class="mono">0</td></tr>
+            <tr><td>Consumo + gasto del gobierno</td><td class="mono">1250</td></tr>
+            <tr><td>Inversión directa (IED) y otra inversión</td><td class="mono">−40 y −42</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Calcula: SCC, SCF, activos de reserva, PNB, INBD, ANB, AIB, inversión, absorción y ahorro del sector externo. Después compara con la solución.</p>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false"><span>Ver la solución paso a paso</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta">
+        <ol class="pasos">
+          <li><b class="paso-tt">Saldo de la cuenta corriente.</b><div>SCC = −200 + 90 − 60 + 110 = <strong>−60</strong>. Es un déficit.</div></li>
+          <li><b class="paso-tt">Saldo de la cuenta financiera.</b><div>SCF = SCC + SCK + EyO = −60 + 8 + 0 = <strong>−52</strong>. El país tiene endeudamiento neto de 52.</div></li>
+          <li><b class="paso-tt">Activos de reserva.</b><div>SCF es la suma de sus partidas: −52 = (−40) + (−42) + reservas, así que reservas = −52 + 82 = <strong>+30</strong>. Aumentaron las RIN en 30.</div></li>
+          <li><b class="paso-tt">PNB.</b><div>PNB = PIB + PFE = 1500 − 60 = <strong>1440</strong>. Es menor que el PIB porque el país paga más ingreso primario del que recibe.</div></li>
+          <li><b class="paso-tt">INBD.</b><div>INBD = PNB + TR = 1440 + 110 = <strong>1550</strong>. Es mayor que el PIB (1500) gracias a las transferencias.</div></li>
+          <li><b class="paso-tt">Ahorro nacional bruto.</b><div>ANB = INBD − (C + G) = 1550 − 1250 = <strong>300</strong>.</div></li>
+          <li><b class="paso-tt">Ahorro interno bruto.</b><div>AIB = PIB − (C + G) = 1500 − 1250 = <strong>250</strong>. Se diferencia del ANB en PFE + TR = 50.</div></li>
+          <li><b class="paso-tt">Ahorro del sector externo.</b><div>Es −SCC = <strong>60</strong>.</div></li>
+          <li><b class="paso-tt">Inversión.</b><div>I = ANB + ahorro externo = 300 + 60 = <strong>360</strong>. Comprobación por otro camino: X − M = −200 + 90 = −110, y I = PIB − (C + G) − (X − M) = 1500 − 1250 + 110 = 360. Coincide.</div></li>
+          <li><b class="paso-tt">Absorción.</b><div>C + I + G = 1250 + 360 = <strong>1610</strong>. Comprobación: PIB − (X − M) = 1500 + 110 = 1610.</div></li>
+        </ol>
+        <p><strong>Lectura:</strong> el país gasta más de lo que produce (absorción 1610 frente a PIB 1500), con déficit de bienes mayor que el superávit de servicios, y lo financia con ahorro externo (60). Sin embargo, tiene un INBD mayor que el PIB por las transferencias netas (110) y acumula reservas (+30). Recibe más IED de la que envía (IED negativa). Cálculos propios.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo" id="datos-es">
+    <div class="modulo-head"><h2>Lectura de la balanza de pagos de El Salvador</h2></div>
+    <div class="modulo-text">Hoja de balanza de pagos anual de la carpeta del curso (millones de US$; 2024 y 2025 preliminares).</div>
+    <div class="bloque">
+      <div class="tabla-wrap">
+        <table class="tabla-datos">
+          <thead><tr><th>Millones de US$</th><th>2022</th><th>2023</th><th>2024 (p)</th><th>2025 (p)</th></tr></thead>
+          <tbody>
+            <tr><td>Bienes y servicios</td><td class="mono">−8,017.1</td><td class="mono">−6,587.7</td><td class="mono">−7,102.5</td><td class="mono">−8,833.8</td></tr>
+            <tr><td>Ingreso primario</td><td class="mono">−1,947.3</td><td class="mono">−2,173.5</td><td class="mono">−2,257.9</td><td class="mono">−2,496.7</td></tr>
+            <tr><td>Ingreso secundario</td><td class="mono">7,820.7</td><td class="mono">8,176.5</td><td class="mono">8,396.0</td><td class="mono">10,030.4</td></tr>
+            <tr class="total"><td>Saldo de la cuenta corriente</td><td class="mono">−2,143.7</td><td class="mono">−584.7</td><td class="mono">−964.4</td><td class="mono">−1,300.1</td></tr>
+            <tr><td>Cuenta de capital</td><td class="mono">241.8</td><td class="mono">336.5</td><td class="mono">286.3</td><td class="mono">181.4</td></tr>
+            <tr><td>SCC + SCK</td><td class="mono">−1,902.0</td><td class="mono">−248.2</td><td class="mono">−678.1</td><td class="mono">−1,118.7</td></tr>
+            <tr><td>Errores y omisiones</td><td class="mono">647.5</td><td class="mono">−1,253.4</td><td class="mono">−560.5</td><td class="mono">953.1</td></tr>
+            <tr class="total"><td>Saldo de la cuenta financiera</td><td class="mono">−1,254.5</td><td class="mono">−1,501.6</td><td class="mono">−1,238.6</td><td class="mono">−165.6</td></tr>
+            <tr><td>&nbsp;&nbsp;Inversión directa</td><td class="mono">−143.2</td><td class="mono">−808.5</td><td class="mono">−741.4</td><td class="mono">−445.4</td></tr>
+            <tr><td>&nbsp;&nbsp;Inversión de cartera</td><td class="mono">502.9</td><td class="mono">−247.0</td><td class="mono">−1,524.9</td><td class="mono">654.4</td></tr>
+            <tr><td>&nbsp;&nbsp;Otra inversión</td><td class="mono">−922.2</td><td class="mono">−832.6</td><td class="mono">405.0</td><td class="mono">−1,403.8</td></tr>
+            <tr><td>&nbsp;&nbsp;Activos de reserva</td><td class="mono">−691.9</td><td class="mono">398.9</td><td class="mono">633.8</td><td class="mono">1,028.7</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Se omiten los derivados financieros (montos menores a 13) y por eso las partidas no suman exactamente el saldo. Comprobación con 2024: SCC + SCK + EyO = −964.4 + 286.3 − 560.5 = −1,238.6, igual al SCF. Cálculo propio.</p>
+    </div>
+
+    <div class="bloque">
+      <h3>Qué patrón se lee</h3>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Rasgo</th><th>Qué muestran los datos</th><th>Qué significa</th></tr></thead>
+          <tbody>
+            <tr><td>Déficit grande de bienes y servicios</td><td>Entre −6,600 y −8,800 en 2022 a 2025.</td><td>Se importa mucho más de lo que se exporta.</td></tr>
+            <tr><td>Ingreso primario negativo</td><td>Entre −1,900 y −2,500.</td><td>Se paga más renta al exterior de la que se recibe: el PNB es menor que el PIB.</td></tr>
+            <tr><td>Ingreso secundario muy alto</td><td>Entre 7,800 y 10,030.</td><td>Las transferencias, principalmente las remesas, compensan buena parte del déficit de bienes: el INBD es mayor que el PIB (con +7,533.7 en 2025 de ingreso primario más secundario netos, cálculo propio).</td></tr>
+            <tr><td>Déficit moderado de cuenta corriente</td><td>Entre −585 y −2,144.</td><td>Ahorro externo positivo: la inversión se financia en parte con el exterior.</td></tr>
+            <tr><td>Cuenta financiera negativa</td><td>Entre −166 y −1,502.</td><td>Endeudamiento neto: los pasivos con el exterior crecen más que los activos.</td></tr>
+            <tr><td>Inversión directa negativa todos los años</td><td>Entre −143 y −808.</td><td>Entra más inversión extranjera directa de la que sale.</td></tr>
+            <tr><td>Reservas</td><td>Cambian de signo: −691.9 en 2022 y +633.8 en 2024.</td><td>Las RIN se acumulan en unos años y se reducen en otros.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Sirve para contestar preguntas del tipo "semejanzas y diferencias con la economía salvadoreña": compara, partida por partida, el signo y el tamaño de cada balanza del país hipotético con estos rasgos (por ejemplo, ¿el ingreso secundario es tan grande?, ¿hay déficit de bienes?, ¿el PNB supera al PIB?).</p>
+    </div>
+  </section>
+
+  <section class="modulo" id="moodle">
+    <div class="modulo-head"><h2>Ejercicios de las guías de Moodle, resueltos</h2></div>
+    <div class="modulo-text">Enunciados resumidos; las respuestas coinciden con las de la guía y se justifican con las cifras.</div>
+
+    <div class="bloque">
+      <h3>Bloque 1: conceptos de la balanza de pagos (verdadero o falso)</h3>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Afirmación (resumida)</th><th>Respuesta</th><th>Por qué</th></tr></thead>
+          <tbody>
+            <tr><td>Si el ahorro del sector externo es positivo, el saldo de la cuenta financiera también es positivo (con SCK = 0 y EyO = 0).</td><td>Falso</td><td>Ahorro externo = −SCC, así que ahorro externo positivo significa SCC negativo. Con SCK = EyO = 0, SCF = SCC, que es negativo.</td></tr>
+            <tr><td>Si un país tiene balanza de bienes positiva, entonces el saldo de la cuenta corriente también es positivo.</td><td>Falso</td><td>La cuenta corriente suma también servicios, ingreso primario e ingreso secundario. Ejemplo hipotético: bienes +50, servicios −20, primario −60 y secundario +0 dan SCC = −30.</td></tr>
+            <tr><td>Si la suma SCC + SCK + EyO es negativa, el SCF también lo es, lo que indica que el país redujo sus pasivos o aumentó sus activos.</td><td>Falso</td><td>La primera parte es cierta (SCF negativo), pero SCF negativo significa lo contrario: aumentaron los pasivos netos con el exterior (o se redujeron los activos).</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <h3>Bloque 2: El Salvador, primer semestre de 2022 y 2023 (millones de US$)</h3>
+      <div class="tabla-wrap">
+        <table class="tabla-datos">
+          <thead><tr><th>Partida</th><th>2022</th><th>2023</th></tr></thead>
+          <tbody>
+            <tr><td>Saldo de la cuenta corriente</td><td class="mono">−1,273.3</td><td class="mono">−365.4</td></tr>
+            <tr><td>&nbsp;&nbsp;Balanza de bienes</td><td class="mono">−4,747.6</td><td class="mono">−4,227.4</td></tr>
+            <tr><td>&nbsp;&nbsp;Balanza de servicios</td><td class="mono">685.7</td><td class="mono">1,027.7</td></tr>
+            <tr><td>&nbsp;&nbsp;Balanza de ingreso primario</td><td class="mono">−924.8</td><td class="mono">−1,071.1</td></tr>
+            <tr><td>&nbsp;&nbsp;Balanza de ingreso secundario</td><td class="mono">3,713.4</td><td class="mono">3,905.4</td></tr>
+            <tr><td>Saldo de la cuenta de capital</td><td class="mono">173.4</td><td class="mono">126.2</td></tr>
+            <tr><td>Errores y omisiones</td><td class="mono">819.4</td><td class="mono">−223.8</td></tr>
+            <tr class="total"><td>Saldo de la cuenta financiera</td><td class="mono">−280.6</td><td class="mono">−463.0</td></tr>
+            <tr><td>&nbsp;&nbsp;Inversión directa</td><td class="mono">284.3</td><td class="mono">−262.5</td></tr>
+            <tr><td>&nbsp;&nbsp;Otras entradas y salidas financieras (cartera, derivados y otra inversión)</td><td class="mono">−1,153.9</td><td class="mono">−345.6</td></tr>
+            <tr><td>&nbsp;&nbsp;Activos de reserva</td><td class="mono">589.1</td><td class="mono">145.1</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Afirmación (resumida)</th><th>Respuesta</th><th>Por qué</th></tr></thead>
+          <tbody>
+            <tr><td>En ambos semestres las exportaciones de bienes y servicios superan a las importaciones.</td><td>Falso</td><td>Bienes + servicios: −4,747.6 + 685.7 = −4,061.9 en 2022 y −4,227.4 + 1,027.7 = −3,199.7 en 2023. Son negativos: las importaciones superan a las exportaciones. Cálculo propio.</td></tr>
+            <tr><td>Los créditos de la balanza de ingreso secundario superan a los débitos.</td><td>Verdadero</td><td>El saldo (créditos − débitos) es positivo en ambos semestres (3,713.4 y 3,905.4).</td></tr>
+            <tr><td>El país aumentó sus pasivos con el resto del mundo.</td><td>Verdadero</td><td>SCF es negativo en ambos semestres (−280.6 y −463.0): los pasivos crecieron más que los activos. Como además aumentaron los activos de reserva, los pasivos subieron aún más.</td></tr>
+            <tr><td>El país incrementó sus RIN.</td><td>Verdadero</td><td>Activos de reserva positivos (589.1 y 145.1): en esta convención, positivo es aumento.</td></tr>
+            <tr><td>En el primer semestre de 2022 recibió más IED que la que salió.</td><td>Falso</td><td>La inversión directa fue +284.3: salió más de la que entró. Negativo sería más entrada.</td></tr>
+            <tr><td>En el primer semestre de 2023 recibió más IED que la que salió.</td><td>Verdadero</td><td>La inversión directa fue −262.5: entró más de la que salió.</td></tr>
+            <tr><td>La balanza de servicios fue superavitaria en ambos semestres (con turismo y reparaciones positivos).</td><td>Verdadero</td><td>Saldos de +685.7 y +1,027.7. Los componentes mencionados (viajes y mantenimiento y reparaciones) son los que suelen aportar saldos positivos.</td></tr>
+            <tr><td>Con la balanza de ingreso primario se puede determinar que el PNB es mayor que el PIB.</td><td>Falso</td><td>El saldo es negativo (−924.8 y −1,071.1), y PNB = PIB + PFE: el PNB es menor que el PIB.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Comprobaciones de las identidades (cálculos propios): SCC en 2022 = −4,747.6 + 685.7 − 924.8 + 3,713.4 = −1,273.3; SCC + SCK + EyO = −1,273.3 + 173.4 + 819.4 = −280.5, igual al SCF (la diferencia de 0.1 es de redondeo); y el SCF 2022 se compone de 284.3 − 1,153.9 + 589.1 = −280.5.</p>
+    </div>
+
+    <div class="bloque">
+      <h3>Bloque 3: El Salvador, 2022 y 2023, en porcentaje del PIB</h3>
+      <div class="tabla-wrap">
+        <table class="tabla-datos">
+          <thead><tr><th>% del PIB</th><th>2022</th><th>2023</th></tr></thead>
+          <tbody>
+            <tr><td>Saldo de la cuenta corriente</td><td class="mono">−6.82</td><td class="mono">−1.37</td></tr>
+            <tr><td>&nbsp;&nbsp;Balanza de bienes</td><td class="mono">−29.91</td><td class="mono">−26.06</td></tr>
+            <tr><td>&nbsp;&nbsp;Balanza de servicios</td><td class="mono">4.84</td><td class="mono">7.24</td></tr>
+            <tr><td>&nbsp;&nbsp;Balanza de ingreso primario</td><td class="mono">−6.20</td><td class="mono">−6.30</td></tr>
+            <tr><td>&nbsp;&nbsp;Balanza de ingreso secundario</td><td class="mono">24.45</td><td class="mono">23.75</td></tr>
+            <tr><td>Saldo de la cuenta de capital</td><td class="mono">0.76</td><td class="mono">0.99</td></tr>
+            <tr><td>Errores y omisiones</td><td class="mono">2.16</td><td class="mono">−1.54</td></tr>
+            <tr class="total"><td>Saldo de la cuenta financiera</td><td class="mono">−3.90</td><td class="mono">−1.92</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Afirmación (resumida)</th><th>Respuesta</th><th>Por qué</th></tr></thead>
+          <tbody>
+            <tr><td>Por casualidad el saldo de la balanza de pagos es cero esos años; no siempre sucede.</td><td>Falso</td><td>Es una identidad: los activos de reserva están dentro de la cuenta financiera, así que SCC + SCK + EyO − SCF es siempre cero.</td></tr>
+            <tr><td>El monto total de remesas recibidas se redujo en 2023.</td><td>Falso</td><td>La tabla muestra el saldo del ingreso secundario como porcentaje del PIB (24.45 a 23.75), no el monto de remesas. Ese saldo incluye todas las transferencias corrientes, y como porcentaje depende también del PIB. No se puede concluir que el monto recibido se redujo.</td></tr>
+            <tr><td>La acumulación de activos externos fue menor que la de pasivos externos.</td><td>Verdadero</td><td>SCF negativo en ambos años (−3.90 y −1.92): variación de activos menos variación de pasivos es negativa.</td></tr>
+            <tr><td>El superávit de la balanza de servicios aumentó en el período.</td><td>Verdadero</td><td>Pasó de 4.84% a 7.24% del PIB.</td></tr>
+            <tr><td>El déficit de la cuenta corriente se redujo porque aumentó la llegada de IED.</td><td>Falso</td><td>El déficit pasó de −6.82% a −1.37% por cambios en las balanzas de la propia cuenta corriente: el déficit de bienes bajó de −29.91% a −26.06% (3.85 puntos) y el superávit de servicios subió 2.40 puntos. La IED es una partida de la cuenta financiera: financia el déficit, no lo explica. Cálculos propios.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Comprobación (cálculo propio): −29.91 + 4.84 − 6.20 + 24.45 = −6.82; y −6.82 + 0.76 + 2.16 = −3.90, igual al SCF. Además, el ahorro del sector externo (−SCC) fue 6.82% del PIB en 2022 y 1.37% en 2023, y el INBD superó al PIB por PFE + TR = −6.20 + 24.45 = 18.25% del PIB en 2022 y −6.30 + 23.75 = 17.45% en 2023.</p>
+    </div>
+
+    <div class="bloque">
+      <h3>Bloque 4: tres países de América Central, 2022 (% del PIB, Manual V)</h3>
+      <div class="tabla-wrap">
+        <table class="tabla-datos">
+          <thead><tr><th>% del PIB</th><th>A</th><th>B</th><th>C</th></tr></thead>
+          <tbody>
+            <tr><td>Balance en cuenta corriente</td><td class="mono">−3.9</td><td class="mono">1.4</td><td class="mono">−3.9</td></tr>
+            <tr><td>Balance de bienes</td><td class="mono">−15.4</td><td class="mono">−14.9</td><td class="mono">−5.5</td></tr>
+            <tr><td>Balance de servicios</td><td class="mono">15.4</td><td class="mono">−1.7</td><td class="mono">9.2</td></tr>
+            <tr><td>Balance de renta</td><td class="mono">−3.9</td><td class="mono">−2.0</td><td class="mono">−8.4</td></tr>
+            <tr><td>Balance de transferencias corrientes</td><td class="mono">−0.1</td><td class="mono">20.0</td><td class="mono">0.8</td></tr>
+            <tr><td>Balance cuenta capital y financiera</td><td class="mono">6.6</td><td class="mono">−0.9</td><td class="mono">5.9</td></tr>
+            <tr><td>Errores y omisiones</td><td class="mono">−5.2</td><td class="mono">−0.5</td><td class="mono">0.7</td></tr>
+            <tr><td>Activos de reserva</td><td class="mono">2.5</td><td class="mono">0.0</td><td class="mono">−2.6</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="matiz"><b class="t">Esta tabla usa el signo del Manual V</b><p>La cuenta de capital y financiera aparece junta y los activos de reserva van con el signo contrario al de los otros bloques: <strong>negativo es aumento de reservas</strong> y positivo, disminución. Comprobación con el país A: −3.9 + 6.6 − 5.2 + 2.5 = 0.0; con el B: 1.4 − 0.9 − 0.5 + 0.0 = 0.0; con el C: −3.9 + 5.9 + 0.7 − 2.6 = 0.1 (redondeo). Las cuentas cuadran en cero, con las reservas incluidas.</p></div>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Pregunta</th><th>Respuesta</th><th>Por qué</th></tr></thead>
+          <tbody>
+            <tr><td>¿Qué país es cada letra (Costa Rica, Guatemala, Panamá)?</td><td>A = Panamá, B = Guatemala, C = Costa Rica</td><td>Según la clave de la guía. Las cifras orientan: B recibe transferencias corrientes de 20.0% del PIB, un nivel típico de economías muy receptoras de remesas, y es el único con superávit de cuenta corriente; A tiene un superávit de servicios de 15.4% del PIB, que compensa su gran déficit de bienes; C tiene un superávit de servicios menor (9.2%) y el mayor pago de renta (−8.4%).</td></tr>
+            <tr><td>Solo en el país C aumentan las RIN.</td><td>Verdadero</td><td>En este signo, reservas negativas significan aumento: solo C tiene un valor negativo (−2.6). A tiene +2.5 (disminución) y B, 0.0.</td></tr>
+            <tr><td>El país B tiene el mayor ingreso per cápita porque es el único con superávit de cuenta corriente.</td><td>Falso</td><td>El saldo de la cuenta corriente no mide el ingreso per cápita; el superávit de B se debe a las transferencias (remesas), no a un mayor nivel de ingreso. Con los datos no hay información sobre ingreso per cápita.</td></tr>
+            <tr><td>El país B es el único con INBD mayor que el PIB.</td><td>Verdadero</td><td>INBD − PIB = renta + transferencias: A: −3.9 − 0.1 = −4.0; B: −2.0 + 20.0 = +18.0; C: −8.4 + 0.8 = −7.6. Solo B es positivo. Cálculo propio.</td></tr>
+            <tr><td>En el país A, en la balanza de transferencias los créditos son menores que los débitos.</td><td>Verdadero</td><td>Su saldo es −0.1: los débitos superan ligeramente a los créditos.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo" id="formulas">
+    <div class="modulo-head"><h2>Hoja de fórmulas</h2></div>
+    <div class="bloque">
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Fórmula</th><th>Qué dice</th><th>Cuándo usarla</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">Saldo = créditos − débitos</td><td>El saldo de cada cuenta.</td><td>Cualquier balanza.</td></tr>
+            <tr><td class="mono">SCC = bienes + servicios + primario + secundario</td><td>Saldo de la cuenta corriente.</td><td>Hallar el déficit o superávit.</td></tr>
+            <tr><td class="mono">SCC + SCK + EyO = SCF</td><td>Identidad de la balanza de pagos.</td><td>Hallar el SCF o un dato faltante.</td></tr>
+            <tr><td class="mono">SCF = IED + cartera + derivados + otra inversión + reservas</td><td>Composición del SCF.</td><td>Hallar los activos de reserva por diferencia.</td></tr>
+            <tr><td class="mono">SCC + SCK + EyO − SCF = 0</td><td>Saldo de la balanza de pagos.</td><td>Siempre es cero.</td></tr>
+            <tr><td class="mono">PNB = PIB + PFE</td><td>Del PIB al PNB.</td><td>Con el saldo del ingreso primario.</td></tr>
+            <tr><td class="mono">INBD = PNB + TR</td><td>Del PNB al INBD.</td><td>Con el saldo del ingreso secundario.</td></tr>
+            <tr><td class="mono">ANB = INBD − (C + G)</td><td>Ahorro nacional bruto.</td><td>Con consumo y gasto público.</td></tr>
+            <tr><td class="mono">AIB = PIB − (C + G)</td><td>Ahorro interno bruto.</td><td>Ahorro medido desde el PIB.</td></tr>
+            <tr><td class="mono">Absorción = C + I + G = PIB − (X − M)</td><td>Gasto interno total.</td><td>Comparar con el PIB.</td></tr>
+            <tr><td class="mono">Ahorro externo = −SCC</td><td>Financiamiento del exterior.</td><td>Con el saldo de la cuenta corriente.</td></tr>
+            <tr><td class="mono">I = ANB + ahorro externo</td><td>La inversión se financia con ahorro nacional y externo.</td><td>Hallar la inversión.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo" id="errores">
+    <div class="modulo-head"><h2>Errores frecuentes y cómo evitarlos</h2></div>
+    <div class="bloque">
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Error</th><th>Por qué está mal</th><th>Cómo corregirlo</th></tr></thead>
+          <tbody>
+            <tr><td>Creer que superávit de bienes implica superávit de cuenta corriente.</td><td>La cuenta corriente incluye servicios, ingreso primario e ingreso secundario.</td><td>Suma las cuatro balanzas.</td></tr>
+            <tr><td>Interpretar SCF negativo como "salen capitales".</td><td>En esta convención, SCF negativo es endeudamiento neto: aumentan los pasivos con el exterior.</td><td>SCF = activos − pasivos.</td></tr>
+            <tr><td>Leer una IED negativa como inversión que sale.</td><td>Negativa es más IED recibida que enviada.</td><td>Aplica el mismo criterio de activos menos pasivos.</td></tr>
+            <tr><td>Mezclar el signo de los activos de reserva entre tablas.</td><td>En la convención de BP actual, positivo es aumento; en el Manual V, negativo es aumento.</td><td>Verifica con la identidad: todo debe sumar cero.</td></tr>
+            <tr><td>Pensar que el saldo de la balanza de pagos puede ser distinto de cero.</td><td>Las reservas van dentro de la cuenta financiera y cierran la identidad.</td><td>SCC + SCK + EyO − SCF = 0.</td></tr>
+            <tr><td>Confundir ahorro del sector externo con el saldo de la cuenta financiera.</td><td>El primero es −SCC; el segundo, SCF, difiere si SCK y EyO no son cero.</td><td>Usa −SCC para el ahorro externo.</td></tr>
+            <tr><td>Decir que el PNB es mayor que el PIB porque hay remesas.</td><td>Las remesas son ingreso secundario (TR) y llevan al INBD, no al PNB.</td><td>PNB = PIB + PFE; INBD = PNB + TR.</td></tr>
+            <tr><td>Concluir que el déficit corriente bajó por la IED.</td><td>La IED es parte de la cuenta financiera.</td><td>Explica el déficit con las balanzas de la cuenta corriente.</td></tr>
+            <tr><td>Usar el signo de Blanchard sin avisar.</td><td>En Blanchard un país que se endeuda tiene superávit financiero.</td><td>SCF (Moodle) = − cuenta financiera (Blanchard).</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo" id="glosario">
+    <div class="modulo-head"><h2>Glosario</h2></div>
+    <div class="bezel"><div class="bezel-in">
+      <dl class="glosario">
+        <dt>Balanza de pagos</dt><dd>Registro de las transacciones de un país con el resto del mundo.</dd>
+        <dt>Cuenta corriente</dt><dd>Bienes, servicios, ingreso primario e ingreso secundario.</dd>
+        <dt>Balanza de ingreso primario</dt><dd>Renta de factores (intereses, utilidades, remuneración de empleados) con el exterior.</dd>
+        <dt>Balanza de ingreso secundario</dt><dd>Transferencias corrientes, incluidas las remesas.</dd>
+        <dt>Cuenta de capital</dt><dd>Transferencias de capital y activos no producidos.</dd>
+        <dt>Cuenta financiera</dt><dd>Activos y pasivos financieros frente al exterior.</dd>
+        <dt>Errores y omisiones</dt><dd>Diferencia por medición que cierra la identidad.</dd>
+        <dt>Activos de reserva (RIN)</dt><dd>Reservas del banco central, dentro de la cuenta financiera.</dd>
+        <dt>Inversión extranjera directa (IED)</dt><dd>Inversión con control o influencia duradera en una empresa del exterior.</dd>
+        <dt>Crédito y débito</dt><dd>Entradas y salidas de recursos en cada cuenta.</dd>
+        <dt>PFE y TR</dt><dd>Saldos del ingreso primario y del secundario.</dd>
+        <dt>PNB (INB)</dt><dd>PIB más el ingreso primario neto con el exterior.</dd>
+        <dt>INBD</dt><dd>PNB más las transferencias netas.</dd>
+        <dt>ANB y AIB</dt><dd>Ahorro nacional bruto (desde el INBD) y ahorro interno bruto (desde el PIB).</dd>
+        <dt>Absorción</dt><dd>Gasto interno total: C + I + G.</dd>
+        <dt>Ahorro del sector externo</dt><dd>Financiamiento que aporta el exterior; es igual a −SCC.</dd>
+        <dt>Endeudamiento neto</dt><dd>SCF negativo: los pasivos con el exterior crecen más que los activos.</dd>
+      </dl>
+    </div></div>
+  </section>
+
+  <section class="modulo" id="autoeval">
+    <div class="modulo-head"><h2>Autoevaluación rápida</h2></div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false"><span>1. Si SCC = −40, SCK = 5 y EyO = 10, ¿cuánto vale el SCF y qué significa?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>SCF = −40 + 5 + 10 = −25. Es negativo: endeudamiento neto de 25, es decir, los pasivos con el exterior aumentaron más que los activos. (Ejemplo hipotético.)</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false"><span>2. Un país tiene PFE = +30 y TR = −10. ¿El PNB es mayor o menor que el PIB? ¿Y el INBD?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>PNB = PIB + 30, mayor que el PIB. INBD = PNB − 10 = PIB + 20, también mayor que el PIB. (Ejemplo hipotético.)</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false"><span>3. Si la inversión es 500 y el ahorro nacional bruto es 420, ¿cuál es el ahorro del sector externo y qué dice del saldo de la cuenta corriente?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Ahorro externo = I − ANB = 80. Como ahorro externo = −SCC, el saldo de la cuenta corriente es −80: un déficit financiado con ahorro del resto del mundo. (Ejemplo hipotético.)</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false"><span>4. ¿Por qué el saldo final de la balanza de pagos es siempre cero?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Porque los activos de reserva forman parte de la cuenta financiera y absorben cualquier diferencia: lo que no se financia con las demás partidas se financia con reservas. Es una identidad contable.</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false"><span>5. Si la inversión directa (IED) en la cuenta financiera es negativa, ¿qué pasó?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>En la convención del Manual, los pasivos de inversión directa (IED recibida) fueron mayores que los activos (inversión de residentes en el exterior): entró más IED de la que salió.</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false"><span>6. ¿Cómo se relacionan los signos de la cuenta financiera en Blanchard y en las guías de Moodle?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Son opuestos: SCF (Moodle) = − cuenta financiera (Blanchard). Blanchard mide el capital que entra (positivo cuando el país se endeuda); el Manual mide activos menos pasivos (negativo cuando el país se endeuda).</p></div>
+    </div>
+  </section>
+
+</main>
+<nav class="panel" data-nav-eq aria-label="Índice de esta página">
+  <button class="panel-boton" type="button" aria-expanded="false" aria-controls="panel-lista"><i><svg aria-hidden="true" focusable="false"></svg></i><span class="sr">Índice. Estás en: </span><span data-nav-actual>Índice</span></button>
+  <p class="panel-tt">Tema 4<small>En esta página</small></p>
+  <svg class="panel-svg" aria-hidden="true" focusable="false"></svg>
+  <ol class="panel-lista" id="panel-lista">
+    <li><a href="#alcance">Alcance y siglas</a></li>
+    <li><a href="#estructura">Estructura</a></li>
+    <li><a href="#identidad">Identidad y signos</a></li>
+    <li><a href="#inbd">Del PIB al INBD</a></li>
+    <li><a href="#ejemplo">Ejercicio resuelto</a></li>
+    <li><a href="#datos-es">El Salvador</a></li>
+    <li><a href="#moodle">Ejercicios de Moodle</a></li>
+    <li><a href="#formulas">Hoja de fórmulas</a></li>
+    <li><a href="#errores">Errores frecuentes</a></li>
+    <li><a href="#glosario">Glosario</a></li>
+    <li><a href="#autoeval">Autoevaluación</a></li>
+  </ol>
+  <p class="panel-ayuda">El punto marca dónde vas leyendo. Con el foco en el índice, las flechas lo recorren.</p>
+</nav>
+</div>
+
+<footer>
+  <div>
+    <span class="badge">Fuente</span>Blanchard, Olivier (2023), <em>Macroeconomics</em>, 9ª ed., Pearson, Cap. 17, sección sobre la balanza de pagos y Tabla 17-3 (pp. 363 a 365); guías de ejercicios de Moodle del Prof. Luis Morera; hoja "Balanza de Pagos Anual" de la carpeta del curso. Los ejemplos marcados como hipotéticos y los cálculos marcados como propios son ilustraciones del autor de la guía, no datos de la fuente.
+  </div>
+  <p>Guía de estudio: Tema 4, balanza de pagos. Material de repaso del propio estudiante (no es Tarea ni Control). &middot; <a href="../index.html">Volver al sitio</a></p>
+</footer>
+
+<script src="../assets/guia.js?v=32433dd8fe07"></script>
+
+<script>
+(function(){
+  document.querySelectorAll('.pregunta .disparador').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var p = btn.closest('.pregunta'), abierta = p.getAttribute('data-abierta') === 'true';
+      p.setAttribute('data-abierta', abierta ? 'false' : 'true');
+      btn.setAttribute('aria-expanded', abierta ? 'false' : 'true');
+    });
+  });
+
+  // Calculadora: balanza de pagos, INBD e inversión (números hipotéticos, PIB = 2000)
+  var PIB = 2000;
+  var ids = { bb: 'vbb', bs: 'vbs', bp: 'vbp', bt: 'vbt', bk: 'vbk', be: 'vbe', bg: 'vbg' };
+  var el = {}; Object.keys(ids).forEach(function(k){ el[k] = document.getElementById(k); });
+  function set(id, v){ document.getElementById(id).textContent = v; }
+  function calc(){
+    var bb = +el.bb.value, bs = +el.bs.value, bp = +el.bp.value, bt = +el.bt.value, bk = +el.bk.value, be = +el.be.value, cg = +el.bg.value;
+    Object.keys(ids).forEach(function(k){ set(ids[k], el[k].value); });
+    var scc = bb + bs + bp + bt, scf = scc + bk + be, aext = -scc;
+    var pnb = PIB + bp, inbd = pnb + bt, anb = inbd - cg, aib = PIB - cg;
+    var nx = bb + bs, inv = PIB - cg - nx, abs = cg + inv;
+    set('oc', scc); set('of', scf); set('oa', aext); set('opn', pnb); set('oi', inbd);
+    set('oan', anb); set('oai', aib); set('oinv', inv); set('oab', abs);
+    var t = [];
+    t.push(scc < 0 ? 'SCC negativo: el país tiene ahorro externo positivo y SCF negativo (endeudamiento neto si SCK y EyO son pequeños).' : (scc > 0 ? 'SCC positivo: el ahorro externo es negativo y el país presta al exterior.' : 'SCC igual a cero: no hay ahorro externo.'));
+    t.push(inbd > PIB ? 'El INBD supera al PIB.' : (inbd < PIB ? 'El INBD es menor que el PIB.' : 'El INBD es igual al PIB.'));
+    t.push(anb + aext === inv ? 'Se cumple I = ANB + ahorro externo.' : 'Revisa: no se cumple I = ANB + ahorro externo.');
+    document.getElementById('bnota').textContent = t.join(' ');
+  }
+  Object.keys(el).forEach(function(k){ el[k].addEventListener('input', calc); }); calc();
+})();
+</script>
+
+</body>
+</html>
