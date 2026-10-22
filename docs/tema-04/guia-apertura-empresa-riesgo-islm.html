@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es" data-k="ext">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tema 4 · Guía de apertura: empresa, riesgo e IS-LM abierta | Macro II</title>
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg?v=945dfb6041af">
+<script>try{var t=localStorage.getItem('mm-tema');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/guia.css?v=3f35d585a726">
+</head>
+<body>
+
+<a class="salto" href="#contenido">Saltar al contenido</a>
+<header class="cab">
+  <div class="cab-barra">
+    <a class="cab-marca" href="../index.html"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect x="6" y="6" width="52" height="8" fill="#F0B429"/><rect x="6" y="18" width="43" height="8" fill="#F2552C"/><rect x="6" y="30" width="34" height="8" fill="#C65BD6"/><rect x="6" y="42" width="25" height="8" fill="#22B8A0"/><rect x="6" y="54" width="16" height="8" fill="#EC6FA0"/></svg><span><b>Macro II</b><small>Modelos Macroeconómicos · ESEN</small></span></a>
+    <button class="btn-tema" type="button" data-btn-tema>Tema oscuro</button>
+  </div>
+  <div class="cab-banda">
+    <div class="cab-in">
+      <p class="cab-kicker"><a href="../index.html">Inicio</a> / Tema 4 · Guía de apertura (Moodle)</p>
+      <h1>Apertura: empresa, poder de compra, riesgo e IS-LM abierta</h1>
+      <p class="sub">Segunda guía del Tema 4 con el enfoque de las guías de Moodle del profesor: efectos de una depreciación sobre un asalariado y sobre una empresa (coeficiente técnico), riesgo país, riesgo cambiario y eurobonos, dolarización, y la tabla IS-LM de economía abierta con noticias del exterior. Cada fórmula viene con la explicación de sus piezas y los ejercicios están resueltos.</p>
+      <ul class="cab-meta"><li>Blanchard, cap. 17 y capítulos 5 y 6</li><li>Guías de Moodle del profesor</li><li>Prof. Luis Morera</li></ul>
+      <nav class="cab-mats" aria-label="Materiales del Tema 4"><span>Materiales del Tema 4:</span><a href="index.html">Guía de estudio</a><a href="guia-balanza-de-pagos.html">Guía de balanza de pagos</a><a href="guia-apertura-empresa-riesgo-islm.html" aria-current="page">Guía de apertura</a><a href="actividad-tema4-apertura.html">Actividad de práctica</a><a href="repaso-control2-tema4-apertura.html">Repaso para el Control 2</a></nav>
+    </div>
+  </div>
+</header>
+
+<div class="pagina">
+<main id="contenido">
+  <div class="recuadro">
+    <span class="recuadro-tag">Para qué sirve esta guía</span>
+    <p>Completa el Tema 4. La <a href="index.html">guía de estudio</a> explica el tipo de cambio real y la paridad de tasas; la <a href="guia-balanza-de-pagos.html">guía de balanza de pagos</a> cubre las cuentas, el INBD y el ahorro externo. Esta cubre los bloques restantes de las guías de Moodle: <strong>coeficiente técnico y depreciación sobre una empresa</strong>, <strong>capacidad de compra con depreciación real</strong>, <strong>riesgo país, riesgo cambiario y eurobonos</strong>, <strong>dolarización</strong> y la <strong>tabla IS-LM de economía abierta</strong> con noticias del exterior.</p>
+  </div>
+
+  <section class="modulo" id="alcance">
+    <div class="modulo-head"><h2>Convenciones y cómo usar la guía</h2></div>
+    <div class="bloque">
+      <p><strong>Una advertencia sobre el tipo de cambio.</strong> Las guías de Moodle expresan el tipo de cambio como <strong>unidades de moneda local por dólar</strong> (por ejemplo, 10 pesos por dólar). Por eso una <em>depreciación nominal</em> es que ese número sube (de 10 a 20 pesos por dólar) y una <em>apreciación nominal</em> es que baja. Blanchard, en la guía de estudio del Tema 4, define E como el precio de la moneda local en moneda extranjera, que se mueve en sentido contrario (E sube cuando la moneda local se aprecia). Para evitar confusiones, aquí uso la letra <strong>e</strong> para "unidades de moneda local por dólar" y escribo siempre la palabra depreciación o apreciación.</p>
+      <div class="anatomia">
+        <div class="ecuacion">ε = P / (e · P*) &nbsp;&nbsp; (equivalente a ε = E · P / P* con E = 1/e)</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>ε</dt><dd><p>El tipo de cambio real: el precio relativo de los bienes locales frente a los extranjeros. Si ε baja, los bienes locales se abaratan respecto a los extranjeros: es una <strong>depreciación real</strong>. Si sube, es una apreciación real.</p></dd>
+          <dt>P</dt><dd><p>El nivel de precios local, en moneda local.</p></dd>
+          <dt>P*</dt><dd><p>El nivel de precios extranjero, en dólares.</p></dd>
+          <dt>e</dt><dd><p>Unidades de moneda local por dólar. Multiplicado por P* da el precio extranjero expresado en moneda local.</p></dd>
+          <dt>Tres caminos a una depreciación real</dt><dd><p>ε baja si (1) sube e (depreciación nominal), (2) baja P (se reduce el nivel de precios local) o (3) sube P* (aumentan los precios extranjeros). Los tres abaratan los bienes locales respecto a los extranjeros, pero tienen <strong>efectos muy distintos</strong> sobre un asalariado, como se ve enseguida.</p></dd>
+        </dl>
+      </div>
+      <p>Los ejercicios de Moodle de esta guía se resumen y se explican, y las respuestas coinciden con las de la guía del profesor. Los ejemplos con la etiqueta <span class="tag-pill">hipotético</span> usan números inventados para practicar. Para el bloque IS-LM la explicación sigue el modelo de los capítulos 5, 6 y 17.</p>
+    </div>
+  </section>
+
+  <section class="modulo" id="poder-compra">
+    <div class="modulo-head"><h2>Depreciación y capacidad de compra del asalariado</h2></div>
+    <div class="modulo-text">Guías de Moodle; tipo de cambio real (Blanchard, sección 17-1).</div>
+    <div class="bloque">
+      <h3>El salario real de quien consume bienes locales e importados</h3>
+      <p>Un asalariado recibe un salario nominal W en moneda local y compra una canasta con una parte de bienes locales y otra de bienes importados. Su capacidad de compra es su salario real: W dividido entre el costo de su canasta.</p>
+      <div class="anatomia">
+        <div class="ecuacion">Costo de la canasta = α · P + (1 − α) · e · P* &nbsp;&nbsp;&nbsp; Salario real = W / costo de la canasta</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>α</dt><dd><p>La proporción de la canasta que son bienes locales (en los ejercicios, 50%). El resto, (1 − α), son bienes importados.</p></dd>
+          <dt>P</dt><dd><p>El precio de los bienes locales, en moneda local.</p></dd>
+          <dt>e · P*</dt><dd><p>El precio de los bienes importados expresado en moneda local: precio en dólares por el número de unidades de moneda local por dólar.</p></dd>
+          <dt>W</dt><dd><p>El salario nominal, en moneda local. En los ejercicios se supone que no cambia.</p></dd>
+          <dt>Qué enseña</dt><dd><p>El salario real baja si sube el costo de la canasta, y sube si baja. Cada precio pesa según su participación en la canasta.</p></dd>
+        </dl>
+      </div>
+
+      <h3>Ejercicio: el salario después de una depreciación nominal</h3>
+      <p><span class="tag-pill">hipotético</span> Un trabajador mantiene su salario nominal. La moneda se deprecia de 10 a 20 pesos por dólar. Su canasta es 50% de bienes locales y 50% de importados. Supón que el precio de los bienes locales y el precio extranjero en dólares no cambian (análisis parcial: solo cambia el tipo de cambio).</p>
+      <ol class="pasos">
+        <li><b class="paso-tt">Normaliza los precios iniciales.</b><div>P = 1 (peso) y P* = 0.10 dólares, de modo que e · P* = 10 × 0.10 = 1 peso. Ambos tipos de bienes cuestan 1 peso al inicio y el costo de la canasta es 0.5 × 1 + 0.5 × 1 = 1.</div></li>
+        <li><b class="paso-tt">Calcula el precio de lo importado después.</b><div>e · P* = 20 × 0.10 = 2 pesos: se duplicó. Los bienes locales siguen en 1 peso.</div></li>
+        <li><b class="paso-tt">Costo de la canasta después.</b><div>0.5 × 1 + 0.5 × 2 = 1.5.</div></li>
+        <li><b class="paso-tt">Salario real.</b><div>Antes: W / 1 = W. Después: W / 1.5 ≈ 0.667 W. El salario real <strong>bajó cerca de 33%</strong>.</div></li>
+      </ol>
+      <p>La razón: con el mismo salario nominal, el trabajador puede comprar la mitad de bienes importados (el precio se duplicó) y las mismas cantidades de bienes locales; como compra de ambos, su capacidad de compra total disminuye. Cuanto mayor sea la proporción de importados en su canasta, mayor es la caída. Cálculo propio.</p>
+    </div>
+
+    <div class="bloque">
+      <h3>Tres maneras de llegar a la depreciación real y qué le pasa al asalariado</h3>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Origen de la depreciación real (ε baja)</th><th>Bienes locales</th><th>Bienes importados</th><th>Capacidad de compra del asalariado (mismo W)</th></tr></thead>
+          <tbody>
+            <tr><td>Sube e (depreciación nominal)</td><td>Mismo precio</td><td>Más caros en moneda local</td><td>Baja: puede comprar menos importados y lo mismo de locales.</td></tr>
+            <tr><td>Sube P* (suben los precios extranjeros)</td><td>Mismo precio</td><td>Más caros en moneda local</td><td>Baja, por la misma razón.</td></tr>
+            <tr><td>Baja P (se reduce el nivel de precios local)</td><td>Más baratos</td><td>Mismo precio</td><td>Sube: puede comprar lo mismo de importados y más de locales.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><span class="tag-pill">hipotético</span> Con el tercer camino: P baja de 1 a 0.8 (−20%), con e y P* sin cambios. Costo de la canasta = 0.5 × 0.8 + 0.5 × 1 = 0.9. El salario real pasa de W a W / 0.9 ≈ 1.11 W: <strong>sube cerca de 11%</strong>. Medido en bienes importados, la capacidad de compra no cambia (siguen costando 1 peso); medido en bienes locales, sube 25% (de 1/1 a 1/0.8). Si consume ambos, su capacidad de compra total mejora. Cálculo propio.</p>
+    </div>
+
+    <div class="bloque">
+      <h3>Ejercicios de Moodle: depreciación real por una baja del nivel de precios local</h3>
+      <p>El país A tiene una depreciación real porque su nivel de precios local se redujo, sin cambios en el precio externo ni en el tipo de cambio nominal.</p>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Afirmación (resumida)</th><th>Respuesta</th><th>Por qué</th></tr></thead>
+          <tbody>
+            <tr><td>Los asalariados (con consumo en partes iguales de locales e importados) tienen mayor capacidad de compra.</td><td>Verdadero</td><td>Los bienes locales se abarataron y los importados no cambiaron: el costo de la canasta baja (ejemplo de arriba).</td></tr>
+            <tr><td>Aumenta la rentabilidad del sector importador.</td><td>Falso</td><td>El importador compra a un costo que no cambió (e · P* igual) y vende en un mercado donde los precios locales bajaron: su margen se reduce o su competitividad frente a los bienes locales empeora, no mejora.</td></tr>
+            <tr><td>Los asalariados endeudados en dólares tienen más carga financiera porque necesitan más moneda local para pagar.</td><td>Falso</td><td>Para pagar una deuda en dólares importa e (moneda local por dólar), que no cambió. Su carga solo aumentaría si subiera e (depreciación nominal). Además, con precios locales menores, su salario real es mayor.</td></tr>
+            <tr><td>Los exportadores pueden aumentar sus ventas en el exterior.</td><td>Verdadero</td><td>El producto local es ahora relativamente más barato para los extranjeros.</td></tr>
+            <tr><td>Los productores con insumos importados ven aumentar su coeficiente técnico.</td><td>Falso</td><td>El coeficiente técnico (próxima sección) sube cuando sube el costo en moneda local de los insumos importados, que depende de e y de P*. Aquí no cambiaron.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="matiz"><b class="t">Cuidado con el último ítem</b><p>La guía lo marca como falso. Su razonamiento es que lo que encarece los insumos importados es e o P*, que aquí no cambian. Si además el precio de venta del propio producto bajara, el cociente de valores en moneda local podría moverse, así que conviene leer el enunciado en equilibrio parcial: solo cambia lo que el enunciado dice que cambia.</p></div>
+
+      <h3>Ejercicios de Moodle: tipo de cambio real y compra</h3>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Afirmación (resumida)</th><th>Respuesta</th><th>Por qué</th></tr></thead>
+          <tbody>
+            <tr><td>Una depreciación real por una reducción de P no cambia la capacidad de compra en importados, pero aumenta la de bienes locales; si consume ambos, tiene mayor capacidad de compra.</td><td>Verdadero</td><td>Es el ejemplo de arriba: importados igual, locales más baratos.</td></tr>
+            <tr><td>Una depreciación real por baja de P aumenta la capacidad de compra, a diferencia de una por depreciación nominal o por alza de P*.</td><td>Verdadero</td><td>Las otras dos encarecen los importados en moneda local, y bajan el salario real.</td></tr>
+            <tr><td>En un país dolarizado no tiene sentido analizar la depreciación o apreciación real.</td><td>Falso</td><td>Aunque e sea fijo (1), ε = P / (e · P*) cambia cuando cambian P o P*. Una depreciación real ocurre si P baja o P* sube.</td></tr>
+            <tr><td>En El Salvador, por estar dolarizado, no se puede estimar el tipo de cambio real.</td><td>Falso</td><td>Se puede: con e = 1 frente al dólar, el tipo de cambio real con EE. UU. depende de P / P*, y con otros socios también influye cómo se mueve su moneda frente al dólar.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo" id="empresa">
+    <div class="modulo-head"><h2>Depreciación y coeficiente técnico de una empresa</h2></div>
+    <div class="modulo-text">Guías de Moodle. Análisis de equilibrio parcial: solo cambia una variable a la vez.</div>
+    <div class="bloque">
+      <p>El <strong>coeficiente técnico</strong> mide cuánto de cada peso de producción se gasta en insumos. Aquí se calcula comparando valores en moneda local. Para entender cómo se afecta una empresa que importa sus insumos, conviene mirar su estructura de valor.</p>
+      <div class="anatomia">
+        <div class="ecuacion">Valor de producción = Insumos intermedios + Valor agregado &nbsp;&nbsp; con &nbsp;&nbsp; Valor agregado = Pago al trabajo + Pago al capital</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>Valor de producción (VP)</dt><dd><p>Lo que vende la empresa, en moneda local.</p></dd>
+          <dt>Insumos intermedios (II)</dt><dd><p>Lo que la empresa compra para producir. Si los importa, su costo en moneda local es e · P* por la cantidad.</p></dd>
+          <dt>Valor agregado</dt><dd><p>Lo que queda después de pagar los insumos. Se reparte entre el trabajo (salarios) y el capital (excedente o utilidades).</p></dd>
+          <dt>Pago al capital</dt><dd><p>Es el residuo: VP − II − pago al trabajo.</p></dd>
+        </dl>
+      </div>
+      <div class="anatomia">
+        <div class="ecuacion">Coeficiente técnico = Insumos intermedios / Valor de producción</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>Insumos intermedios / VP</dt><dd><p>La fracción de la producción que se va en insumos. Con coeficiente 0.5, la mitad del valor de lo producido es costo de insumos.</p></dd>
+          <dt>Cuando sube</dt><dd><p>Quedan menos recursos para el valor agregado (trabajo y capital).</p></dd>
+          <dt>Cuando baja</dt><dd><p>Queda más para el valor agregado.</p></dd>
+        </dl>
+      </div>
+
+      <h3>Ejercicio resuelto con números hipotéticos</h3>
+      <p><span class="tag-pill">hipotético</span> Una empresa importa todos sus insumos y vende toda su producción en el mercado interno, a un precio que no cambia. Valor de producción = 100, insumos = 50 (coeficiente técnico 0.5), pago al trabajo = 30 y pago al capital = 20.</p>
+      <div class="tabla-wrap">
+        <table class="tabla-datos">
+          <thead><tr><th>&nbsp;</th><th>Inicio (e = 10)</th><th>Depreciación nominal (e = 12)</th><th>Apreciación nominal (e = 8)</th></tr></thead>
+          <tbody>
+            <tr><td>Valor de producción</td><td class="mono">100</td><td class="mono">100</td><td class="mono">100</td></tr>
+            <tr><td>Insumos importados (en moneda local)</td><td class="mono">50</td><td class="mono">60</td><td class="mono">40</td></tr>
+            <tr><td>Coeficiente técnico</td><td class="mono">0.50</td><td class="mono">0.60</td><td class="mono">0.40</td></tr>
+            <tr><td>Valor agregado</td><td class="mono">50</td><td class="mono">40</td><td class="mono">60</td></tr>
+            <tr><td>Pago al trabajo (sin cambio)</td><td class="mono">30</td><td class="mono">30</td><td class="mono">30</td></tr>
+            <tr class="total"><td>Pago al capital</td><td class="mono">20</td><td class="mono">10</td><td class="mono">30</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Los insumos cuestan e · P* · cantidad. Con e de 10 a 12 (20% más), el costo en moneda local de los insumos sube 20% (de 50 a 60). Con e de 10 a 8 (20% menos), baja 20% (de 50 a 40). Cálculo propio.</p>
+
+      <h3>Ejercicios de Moodle resueltos</h3>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Afirmación (resumida)</th><th>Respuesta</th><th>Por qué</th></tr></thead>
+          <tbody>
+            <tr><td>Si hay depreciación nominal, la empresa no se ve afectada.</td><td>Falso</td><td>Sus insumos importados cuestan más en moneda local: se afecta (en el ejemplo, de 50 a 60).</td></tr>
+            <tr><td>Si hay depreciación nominal, el coeficiente técnico se reduce.</td><td>Falso</td><td>Aumenta: los insumos suben y el valor de producción no cambia (de 0.50 a 0.60).</td></tr>
+            <tr><td>Si hay apreciación nominal, el coeficiente técnico se reduce.</td><td>Verdadero</td><td>Los insumos importados se abaratan en moneda local (de 0.50 a 0.40).</td></tr>
+            <tr><td>Si hay apreciación nominal, la empresa no se ve afectada.</td><td>Falso</td><td>Sus costos bajan: sí se ve afectada, favorablemente.</td></tr>
+            <tr><td>Con depreciación nominal y el pago al trabajo sin cambio, se reduce el pago al capital.</td><td>Verdadero</td><td>El valor agregado baja de 50 a 40 y, con el trabajo fijo en 30, todo el ajuste cae en el capital (de 20 a 10).</td></tr>
+            <tr><td>Con apreciación nominal y el pago al trabajo sin cambio, aumenta el pago al capital.</td><td>Verdadero</td><td>El valor agregado sube de 50 a 60 y el capital pasa de 20 a 30.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="recuadro info">
+        <span class="recuadro-tag">La idea de fondo</span>
+        <p>Para una empresa que importa sus insumos y vende localmente, una depreciación nominal es un shock de costos: encarece los insumos y reduce el valor agregado, que se reparte entre trabajo y capital. Si el pago al trabajo no cambia, la caída la absorbe el capital. Una apreciación hace lo contrario. En cambio, una empresa exportadora que paga sus costos en moneda local ganaría con una depreciación (sus ventas valen más en moneda local). Lo que decide quién gana o pierde es de dónde vienen los costos y dónde se vende la producción.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo" id="riesgo">
+    <div class="modulo-head"><h2>Riesgo país, riesgo cambiario, eurobonos y dolarización</h2></div>
+    <div class="modulo-text">Guías de Moodle; paridad de tasas (Blanchard, 17-2) y prima de riesgo x (Tema 3).</div>
+    <div class="bloque">
+      <p>Un gobierno que emite bonos paga una tasa que depende de dos cosas: de una <strong>tasa de referencia</strong> (en dólares, la del gobierno de EE. UU. al mismo plazo) y de una compensación por el <strong>riesgo</strong> que el inversionista asume. La paridad de tasas del Tema 4 y la prima de riesgo x del Tema 3 dan el marco.</p>
+      <div class="anatomia">
+        <div class="ecuacion">i ≈ i* + x + riesgo cambiario &nbsp;&nbsp; con &nbsp;&nbsp; riesgo cambiario = depreciación esperada (Δe<sup>e</sup>/e)</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>i</dt><dd><p>La tasa que paga el bono del país (o su tasa de interés doméstica).</p></dd>
+          <dt>i*</dt><dd><p>La tasa de referencia: lo que paga un activo sin riesgo de incumplimiento en la moneda de referencia, por ejemplo un bono del gobierno de EE. UU. al mismo plazo.</p></dd>
+          <dt>x</dt><dd><p>La prima de <strong>riesgo país</strong>: la compensación por el riesgo de incumplimiento del emisor (de que no pague). Es la misma prima x del Tema 3.</p></dd>
+          <dt>Riesgo cambiario</dt><dd><p>La compensación por la pérdida esperada de valor de la moneda local frente al dólar: es la <strong>depreciación esperada</strong>. Solo existe si el bono está en moneda local.</p></dd>
+          <dt>Cómo se lee</dt><dd><p>Un riesgo cambiario <strong>positivo</strong> significa que se espera una <strong>depreciación</strong> de la moneda local (no una apreciación). Si se esperara una apreciación, el riesgo cambiario sería negativo.</p></dd>
+        </dl>
+      </div>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Tipo de bono</th><th>Qué se suma a la tasa de referencia</th><th>Ejemplo</th></tr></thead>
+          <tbody>
+            <tr><td>Eurobono (en dólares, de un gobierno)</td><td>Solo el riesgo país: ya está en dólares, así que no hay riesgo cambiario.</td><td>Bono en dólares de un gobierno latinoamericano.</td></tr>
+            <tr><td>Bono en moneda local</td><td>Riesgo país más riesgo cambiario (depreciación esperada).</td><td>Bono en pesos de un gobierno con moneda propia.</td></tr>
+            <tr><td>Bono del Tesoro de EE. UU.</td><td>Es la tasa de referencia: sin riesgo país en este análisis.</td><td>Bono a 10 años del gobierno de EE. UU.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><span class="tag-pill">hipotético</span> Tasa de referencia a 10 años: 4%. El gobierno A coloca un eurobono a 8% y el B a 7%, con el mismo plazo y precio. Riesgo país de A = 8 − 4 = 4 puntos; de B = 7 − 4 = 3 puntos. La diferencia de 1 punto es de <strong>riesgo país</strong> (mayor percepción de incumplimiento en A), no de riesgo cambiario, porque ambos bonos están en dólares.</p>
+
+      <h3>Ejercicios de Moodle resueltos</h3>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Afirmación (resumida)</th><th>Respuesta</th><th>Por qué</th></tr></thead>
+          <tbody>
+            <tr><td>La tasa que ofrece un bono del gobierno depende de una tasa de referencia y de la estimación del riesgo de incumplimiento del país.</td><td>Verdadero</td><td>Es i = i* + x (más riesgo cambiario si el bono es en moneda local).</td></tr>
+            <tr><td>Con eurobonos al 8% (país A) y al 7% (país B), al mismo plazo y precio, la diferencia indica que A tiene un riesgo cambiario de un punto.</td><td>Falso</td><td>Los eurobonos están en dólares: no hay riesgo cambiario. La diferencia refleja riesgo país.</td></tr>
+            <tr><td>Una reducción del riesgo país y de la tasa mundial de referencia puede llevar a que un país coloque eurobonos a una menor tasa.</td><td>Verdadero</td><td>Bajan los dos componentes de i = i* + x.</td></tr>
+            <tr><td>Si el riesgo cambiario es positivo, se espera una apreciación de la moneda local.</td><td>Falso</td><td>Positivo significa que se espera una depreciación.</td></tr>
+            <tr><td>En un país con moneda propia y tasa de política monetaria, los cambios en la tasa mundial (como la tasa de la Fed) no afectan su tasa de política.</td><td>Falso</td><td>Con movilidad de capitales, la paridad de tasas vincula i con i*. Si la tasa mundial cambia y la local no, hay entradas o salidas de capital y presión sobre el tipo de cambio, así que el banco central suele tener que seguirla.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="matiz"><b class="t">Dolarización</b><p>En una economía dolarizada, como El Salvador, no hay moneda local ni tipo de cambio nominal que se mueva (e = 1), así que <strong>no existe riesgo cambiario</strong> frente al dólar. Sigue existiendo el riesgo país, que se refleja en la tasa a la que el gobierno y las empresas se endeudan. Y el tipo de cambio real sigue siendo calculable y puede cambiar por P y P* (ver arriba).</p></div>
+    </div>
+  </section>
+
+  <section class="modulo" id="islm">
+    <div class="modulo-head"><h2>IS-LM de economía abierta: noticias del exterior</h2></div>
+    <div class="modulo-text">Modelo IS-LM de los capítulos 5, 6 y 17. Perspectiva de un país latinoamericano con moneda propia, tasa de política monetaria y movilidad de capitales.</div>
+    <div class="bloque">
+      <p><strong>La pregunta de Moodle:</strong> en un año, el país recibe dos noticias del resto del mundo: <strong>se reduce la tasa de interés mundial</strong> y <strong>aumenta el ingreso del resto del mundo</strong>. ¿Qué pasa con producción, consumo, inversión, ahorros, exportaciones, importaciones, balanza comercial, ahorro del sector externo, demanda y oferta de saldos reales, tasa de interés real, tipo de cambio real y desempleo?</p>
+      <h3>Las piezas del modelo</h3>
+      <div class="anatomia">
+        <div class="ecuacion">IS: Y = C(Y − T) + I(Y, r + x) + G + NX(Y, Y*, ε)</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>C(Y − T)</dt><dd><p>Consumo: sube con el ingreso disponible Y − T.</p></dd>
+          <dt>I(Y, r + x)</dt><dd><p>Inversión: sube con el producto Y y baja con el costo de endeudarse r + x (tasa real más prima de riesgo).</p></dd>
+          <dt>G, T</dt><dd><p>Gasto y impuestos del gobierno. Se toman como dados (no cambian con las noticias).</p></dd>
+          <dt>NX(Y, Y*, ε)</dt><dd><p>Exportaciones netas: bajan si sube el ingreso local Y (se importa más), suben si sube el ingreso extranjero Y* (se exporta más) y bajan si hay una apreciación real (ε sube).</p></dd>
+        </dl>
+      </div>
+      <div class="anatomia">
+        <div class="ecuacion">r = i − π<sup>e</sup> &nbsp;&nbsp;&nbsp; i ≈ i* + x + riesgo cambiario &nbsp;&nbsp;&nbsp; M/P = Y · L(i)</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>r = i − π<sup>e</sup></dt><dd><p>La tasa de interés real: la nominal menos la inflación esperada. Es la que aparece en el intercepto de la LM.</p></dd>
+          <dt>i ≈ i* + x + riesgo cambiario</dt><dd><p>La paridad de tasas. Si i* baja y x y el riesgo cambiario no cambian, la tasa local debe bajar lo mismo para no generar presión sobre el tipo de cambio.</p></dd>
+          <dt>M/P = Y · L(i)</dt><dd><p>El equilibrio de saldos reales: la demanda sube con el producto y baja con la tasa. El banco central ajusta la oferta real M/P para lograr su tasa i.</p></dd>
+        </dl>
+      </div>
+      <div class="anatomia">
+        <div class="ecuacion">S<sub>privado</sub> = Y − T − C &nbsp;&nbsp; S<sub>gobierno</sub> = T − G &nbsp;&nbsp; I = S<sub>privado</sub> + S<sub>gobierno</sub> + S<sub>externo</sub> &nbsp;&nbsp; S<sub>externo</sub> = −NX</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>S<sub>privado</sub></dt><dd><p>Lo que las personas y empresas no consumen de su ingreso disponible.</p></dd>
+          <dt>S<sub>gobierno</sub></dt><dd><p>Ahorro público: impuestos menos gasto. No cambia si T y G no cambian.</p></dd>
+          <dt>S<sub>externo</sub></dt><dd><p>El ahorro del sector externo (guía de balanza de pagos): es −SCC. Si las demás partidas de la cuenta corriente no cambian, es −NX.</p></dd>
+          <dt>Idea</dt><dd><p>La inversión se financia con ahorro privado, público y externo. Si la balanza comercial mejora (NX sube), el ahorro externo baja.</p></dd>
+        </dl>
+      </div>
+
+      <h3>El razonamiento en cinco pasos</h3>
+      <ol class="pasos">
+        <li><b class="paso-tt">Baja la tasa mundial i*.</b><div>Por la paridad de tasas, i baja lo mismo (con x y la depreciación esperada sin cambio). El banco central aumenta la oferta real de saldos para lograrlo: la LM baja. Como π<sup>e</sup> no cambia, la tasa real r baja.</div></li>
+        <li><b class="paso-tt">El tipo de cambio real no se mueve.</b><div>La tasa local acompañó a la mundial, así que no hay presión sobre el tipo de cambio; con P y P* dadas, ε no cambia.</div></li>
+        <li><b class="paso-tt">Sube el ingreso del resto del mundo Y*.</b><div>Aumentan las exportaciones: la IS se desplaza a la derecha.</div></li>
+        <li><b class="paso-tt">Producto.</b><div>Baja r (la inversión sube) y sube X: ambos empujan la demanda. El producto Y aumenta. Con Y mayor, sube el consumo y el empleo, y baja el desempleo.</div></li>
+        <li><b class="paso-tt">Ahorros, importaciones y saldos.</b><div>El mayor Y aumenta el ahorro privado y las importaciones; también aumenta la demanda de saldos reales (más Y y menos i), que es igual a la oferta real porque el banco central la ajustó.</div></li>
+      </ol>
+    </div>
+
+    <figure>
+      <div class="diagrama">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img" aria-label="Diagrama IS-LM con la tasa de interés en el eje vertical y el producto en el horizontal. La LM horizontal baja de i inicial a i menor porque baja la tasa mundial. La IS se desplaza a la derecha porque sube el ingreso del resto del mundo. El equilibrio pasa de A a B con mayor producto y menor tasa.">
+          <rect width="900" height="360" fill="#1A1B1D"/>
+          <defs><marker id="f4b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F2F2F0"/></marker><marker id="f4c" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F08AB2"/></marker></defs>
+          <line x1="85" y1="320" x2="540" y2="320" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#f4b)"/>
+          <line x1="85" y1="320" x2="85" y2="24" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#f4b)"/>
+          <text x="95" y="30" font-size="14" fill="#F2F2F0">Tasa de interés, i</text>
+          <text x="540" y="348" font-size="14" text-anchor="end" fill="#F2F2F0">Producto, Y</text>
+          <line x1="100" y1="60" x2="480" y2="300" stroke="#F2552C" stroke-width="4"/>
+          <text x="492" y="296" font-size="14" font-weight="700" fill="#F2552C">IS</text>
+          <line x1="170" y1="60" x2="530" y2="287" stroke="#FF9B7D" stroke-width="3" stroke-dasharray="9 6"/>
+          <text x="470" y="236" font-size="14" font-weight="700" fill="#FF9B7D">IS′</text>
+          <line x1="85" y1="150" x2="520" y2="150" stroke="#5C9DFF" stroke-width="4"/>
+          <text x="95" y="140" font-size="14" font-weight="700" fill="#5C9DFF">LM</text>
+          <line x1="85" y1="205" x2="520" y2="205" stroke="#5C9DFF" stroke-width="3" stroke-dasharray="9 6"/>
+          <text x="95" y="224" font-size="14" font-weight="700" fill="#5C9DFF">LM′</text>
+          <g stroke="#A9ABAE" stroke-width="1.2" stroke-dasharray="2 5">
+            <line x1="242.5" y1="150" x2="242.5" y2="320"/>
+            <line x1="399.6" y1="205" x2="399.6" y2="320"/>
+          </g>
+          <circle cx="242.5" cy="150" r="7.5" fill="#F08AB2" stroke="#1A1B1D" stroke-width="2"/>
+          <text x="254" y="142" font-size="15" font-weight="700" fill="#F08AB2">A</text>
+          <circle cx="399.6" cy="205" r="7.5" fill="#F08AB2" stroke="#1A1B1D" stroke-width="2"/>
+          <text x="411" y="197" font-size="15" font-weight="700" fill="#F08AB2">B</text>
+          <line x1="256" y1="157" x2="388" y2="200" stroke="#F08AB2" stroke-width="2.5" marker-end="url(#f4c)"/>
+          <text x="242.5" y="340" font-size="13" text-anchor="middle" fill="#A9ABAE" font-family="Azeret Mono, monospace">Y</text>
+          <text x="399.6" y="340" font-size="13" text-anchor="middle" fill="#A9ABAE" font-family="Azeret Mono, monospace">Y′</text>
+          <rect x="580" y="30" width="300" height="290" fill="#202124" stroke="#A9ABAE" stroke-width="2"/>
+          <text x="596" y="56" font-size="15" font-weight="700" fill="#F2F2F0">Dos noticias, dos desplazamientos</text>
+          <g font-size="13" fill="#F2F2F0">
+            <text x="596" y="88" font-weight="700" fill="#5C9DFF">Baja la tasa mundial i*</text>
+            <text x="596" y="108">La tasa local baja con ella:</text>
+            <text x="596" y="128">la LM baja (LM′) y sube la inversión.</text>
+            <text x="596" y="164" font-weight="700" fill="#FF9B7D">Sube el ingreso mundial Y*</text>
+            <text x="596" y="184">Suben las exportaciones:</text>
+            <text x="596" y="204">la IS se desplaza a la derecha (IS′).</text>
+            <text x="596" y="240" font-weight="700" fill="#F08AB2">Resultado: de A a B</text>
+            <text x="596" y="260">El producto aumenta con certeza.</text>
+            <text x="596" y="280">La tasa baja porque el banco central</text>
+            <text x="596" y="300">la fija siguiendo a la mundial.</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>Fig. propia, esquema cualitativo (sin cifras). La LM se dibuja horizontal porque el banco central fija la tasa de interés.</figcaption>
+    </figure>
+
+    <div class="bloque">
+      <h3>Practica: predice cada variable antes de ver la respuesta</h3>
+      <p>Elige para cada variable si aumenta, se reduce, no cambia o no se puede saber. El resultado te dice si coincidiste con la guía.</p>
+      <div id="practica-islm">
+        <div class="fila-var" data-ok="a"><span class="nombre-var">Producción e ingreso (Y)</span><div class="opciones" role="group"><button class="opcion-btn" type="button" data-v="a" aria-pressed="false">Aumenta</button><button class="opcion-btn" type="button" data-v="r" aria-pressed="false">Se reduce</button><button class="opcion-btn" type="button" data-v="n" aria-pressed="false">No cambia</button><button class="opcion-btn" type="button" data-v="s" aria-pressed="false">No se sabe</button></div></div>
+        <div class="fila-var" data-ok="a"><span class="nombre-var">Consumo</span><div class="opciones" role="group"><button class="opcion-btn" type="button" data-v="a" aria-pressed="false">Aumenta</button><button class="opcion-btn" type="button" data-v="r" aria-pressed="false">Se reduce</button><button class="opcion-btn" type="button" data-v="n" aria-pressed="false">No cambia</button><button class="opcion-btn" type="button" data-v="s" aria-pressed="false">No se sabe</button></div></div>
+        <div class="fila-var" data-ok="a"><span class="nombre-var">Inversión</span><div class="opciones" role="group"><button class="opcion-btn" type="button" data-v="a" aria-pressed="false">Aumenta</button><button class="opcion-btn" type="button" data-v="r" aria-pressed="false">Se reduce</button><button class="opcion-btn" type="button" data-v="n" aria-pressed="false">No cambia</button><button class="opcion-btn" type="button" data-v="s" aria-pressed="false">No se sabe</button></div></div>
+        <div class="fila-var" data-ok="a"><span class="nombre-var">Ahorro privado</span><div class="opciones" role="group"><button class="opcion-btn" type="button" data-v="a" aria-pressed="false">Aumenta</button><button class="opcion-btn" type="button" data-v="r" aria-pressed="false">Se reduce</button><button class="opcion-btn" type="button" data-v="n" aria-pressed="false">No cambia</button><button class="opcion-btn" type="button" data-v="s" aria-pressed="false">No se sabe</button></div></div>
+        <div class="fila-var" data-ok="n"><span class="nombre-var">Ahorro del gobierno</span><div class="opciones" role="group"><button class="opcion-btn" type="button" data-v="a" aria-pressed="false">Aumenta</button><button class="opcion-btn" type="button" data-v="r" aria-pressed="false">Se reduce</button><button class="opcion-btn" type="button" data-v="n" aria-pressed="false">No cambia</button><button class="opcion-btn" type="button" data-v="s" aria-pressed="false">No se sabe</button></div></div>
+        <div class="fila-var" data-ok="a"><span class="nombre-var">Exportaciones</span><div class="opciones" role="group"><button class="opcion-btn" type="button" data-v="a" aria-pressed="false">Aumenta</button><button class="opcion-btn" type="button" data-v="r" aria-pressed="false">Se reduce</button><button class="opcion-btn" type="button" data-v="n" aria-pressed="false">No cambia</button><button class="opcion-btn" type="button" data-v="s" aria-pressed="false">No se sabe</button></div></div>
+        <div class="fila-var" data-ok="a"><span class="nombre-var">Importaciones</span><div class="opciones" role="group"><button class="opcion-btn" type="button" data-v="a" aria-pressed="false">Aumenta</button><button class="opcion-btn" type="button" data-v="r" aria-pressed="false">Se reduce</button><button class="opcion-btn" type="button" data-v="n" aria-pressed="false">No cambia</button><button class="opcion-btn" type="button" data-v="s" aria-pressed="false">No se sabe</button></div></div>
+        <div class="fila-var" data-ok="a"><span class="nombre-var">Balanza comercial</span><div class="opciones" role="group"><button class="opcion-btn" type="button" data-v="a" aria-pressed="false">Aumenta</button><button class="opcion-btn" type="button" data-v="r" aria-pressed="false">Se reduce</button><button class="opcion-btn" type="button" data-v="n" aria-pressed="false">No cambia</button><button class="opcion-btn" type="button" data-v="s" aria-pressed="false">No se sabe</button></div></div>
+        <div class="fila-var" data-ok="r"><span class="nombre-var">Ahorro del sector externo</span><div class="opciones" role="group"><button class="opcion-btn" type="button" data-v="a" aria-pressed="false">Aumenta</button><button class="opcion-btn" type="button" data-v="r" aria-pressed="false">Se reduce</button><button class="opcion-btn" type="button" data-v="n" aria-pressed="false">No cambia</button><button class="opcion-btn" type="button" data-v="s" aria-pressed="false">No se sabe</button></div></div>
+        <div class="fila-var" data-ok="a"><span class="nombre-var">Demanda por saldos reales</span><div class="opciones" role="group"><button class="opcion-btn" type="button" data-v="a" aria-pressed="false">Aumenta</button><button class="opcion-btn" type="button" data-v="r" aria-pressed="false">Se reduce</button><button class="opcion-btn" type="button" data-v="n" aria-pressed="false">No cambia</button><button class="opcion-btn" type="button" data-v="s" aria-pressed="false">No se sabe</button></div></div>
+        <div class="fila-var" data-ok="a"><span class="nombre-var">Oferta monetaria real</span><div class="opciones" role="group"><button class="opcion-btn" type="button" data-v="a" aria-pressed="false">Aumenta</button><button class="opcion-btn" type="button" data-v="r" aria-pressed="false">Se reduce</button><button class="opcion-btn" type="button" data-v="n" aria-pressed="false">No cambia</button><button class="opcion-btn" type="button" data-v="s" aria-pressed="false">No se sabe</button></div></div>
+        <div class="fila-var" data-ok="r"><span class="nombre-var">Tasa de interés real (intercepto de la LM)</span><div class="opciones" role="group"><button class="opcion-btn" type="button" data-v="a" aria-pressed="false">Aumenta</button><button class="opcion-btn" type="button" data-v="r" aria-pressed="false">Se reduce</button><button class="opcion-btn" type="button" data-v="n" aria-pressed="false">No cambia</button><button class="opcion-btn" type="button" data-v="s" aria-pressed="false">No se sabe</button></div></div>
+        <div class="fila-var" data-ok="n"><span class="nombre-var">Tipo de cambio real</span><div class="opciones" role="group"><button class="opcion-btn" type="button" data-v="a" aria-pressed="false">Aumenta</button><button class="opcion-btn" type="button" data-v="r" aria-pressed="false">Se reduce</button><button class="opcion-btn" type="button" data-v="n" aria-pressed="false">No cambia</button><button class="opcion-btn" type="button" data-v="s" aria-pressed="false">No se sabe</button></div></div>
+        <div class="fila-var" data-ok="r"><span class="nombre-var">Tasa de desempleo</span><div class="opciones" role="group"><button class="opcion-btn" type="button" data-v="a" aria-pressed="false">Aumenta</button><button class="opcion-btn" type="button" data-v="r" aria-pressed="false">Se reduce</button><button class="opcion-btn" type="button" data-v="n" aria-pressed="false">No cambia</button><button class="opcion-btn" type="button" data-v="s" aria-pressed="false">No se sabe</button></div></div>
+      </div>
+      <p class="sim-nota" id="practica-res" aria-live="polite">Aún no has respondido ninguna variable.</p>
+    </div>
+
+    <div class="bloque">
+      <h3>Por qué cada respuesta</h3>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Variable</th><th>Respuesta</th><th>Razonamiento</th></tr></thead>
+          <tbody>
+            <tr><td>Producción e ingreso (Y)</td><td>Aumenta</td><td>La tasa real baja (más inversión) y suben las exportaciones: la demanda agregada aumenta.</td></tr>
+            <tr><td>Consumo</td><td>Aumenta</td><td>C depende del ingreso disponible Y − T, y Y aumenta.</td></tr>
+            <tr><td>Inversión</td><td>Aumenta</td><td>Baja el costo r + x y sube el producto.</td></tr>
+            <tr><td>Ahorro privado</td><td>Aumenta</td><td>S = Y − T − C: con Y mayor, una parte del aumento se ahorra (la propensión a consumir es menor que 1).</td></tr>
+            <tr><td>Ahorro del gobierno</td><td>No cambia</td><td>S = T − G, y T y G no cambian con las noticias (impuestos y gasto dados).</td></tr>
+            <tr><td>Exportaciones</td><td>Aumenta</td><td>Sube el ingreso del resto del mundo, que compra más bienes del país.</td></tr>
+            <tr><td>Importaciones</td><td>Aumenta</td><td>Suben con el ingreso local Y, y el tipo de cambio real no cambió.</td></tr>
+            <tr><td>Balanza comercial</td><td>Aumenta</td><td>Según la guía. Las exportaciones suben por el ingreso extranjero completo y las importaciones solo por una fracción del aumento inducido del ingreso local. Ver el matiz abajo.</td></tr>
+            <tr><td>Ahorro del sector externo</td><td>Se reduce</td><td>Es −NX (aquí, −SCC): si mejora la balanza comercial, el país necesita menos ahorro del exterior.</td></tr>
+            <tr><td>Demanda por saldos reales</td><td>Aumenta</td><td>Depende de Y (sube) y de i (baja): ambos aumentan la demanda de saldos.</td></tr>
+            <tr><td>Oferta monetaria real</td><td>Aumenta</td><td>El banco central la aumenta para bajar la tasa de interés siguiendo a la mundial; en equilibrio iguala a la demanda.</td></tr>
+            <tr><td>Tasa de interés real</td><td>Se reduce</td><td>Baja i con i*, y la inflación esperada no cambia.</td></tr>
+            <tr><td>Tipo de cambio real</td><td>No cambia</td><td>La tasa local acompaña a la mundial, no hay presión sobre el tipo de cambio nominal, y P y P* están dados: ε = P / (e · P*) no cambia.</td></tr>
+            <tr><td>Tasa de desempleo</td><td>Se reduce</td><td>Con mayor producción se contrata más (relación entre producto y empleo): baja el desempleo.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="matiz"><b class="t">El caso difícil: la balanza comercial</b><p>En el modelo lineal, el cambio en las exportaciones netas es ΔNX = Δ(exportaciones) − m · ΔY, donde m es la propensión a importar. Las exportaciones suben por el aumento del ingreso extranjero, pero las importaciones también suben porque Y sube por <em>dos</em> motivos: la mayor demanda externa y la mayor inversión por la tasa más baja. Si el efecto de la inversión fuera muy fuerte, la balanza comercial podría empeorar. La guía marca "aumenta" porque supone que domina el efecto de las exportaciones: es la respuesta que debes dar, pero conviene saber que en rigor depende de la magnitud de los efectos. Y hay un vínculo útil: <strong>balanza comercial sube ⇔ ahorro externo baja ⇔ el ahorro (privado más público) sube más que la inversión</strong>, porque S<sub>externo</sub> = I − S<sub>privado</sub> − S<sub>gobierno</sub>.</p></div>
+    </div>
+  </section>
+
+  <section class="modulo" id="formulas">
+    <div class="modulo-head"><h2>Hoja de fórmulas</h2></div>
+    <div class="bloque">
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Fórmula</th><th>Qué dice</th><th>Cuándo usarla</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">ε = P / (e · P*)</td><td>Tipo de cambio real (e = moneda local por dólar).</td><td>Saber si hay depreciación o apreciación real.</td></tr>
+            <tr><td class="mono">Costo canasta = α P + (1 − α) e P*</td><td>Costo de una canasta de locales e importados.</td><td>Efecto de una depreciación en el salario real.</td></tr>
+            <tr><td class="mono">Salario real = W / costo de la canasta</td><td>Capacidad de compra.</td><td>Comparar antes y después.</td></tr>
+            <tr><td class="mono">VP = II + valor agregado</td><td>Estructura de valor de la empresa.</td><td>Efecto de e sobre costos y utilidades.</td></tr>
+            <tr><td class="mono">Coef. técnico = II / VP</td><td>Parte de la producción que se va en insumos.</td><td>Efecto de depreciación y apreciación.</td></tr>
+            <tr><td class="mono">i ≈ i* + x + riesgo cambiario</td><td>Descomposición de la tasa de un bono.</td><td>Eurobonos y bonos locales.</td></tr>
+            <tr><td class="mono">IS: Y = C + I + G + NX(Y, Y*, ε)</td><td>Equilibrio del mercado de bienes abierto.</td><td>Noticias del exterior.</td></tr>
+            <tr><td class="mono">S<sub>externo</sub> = −NX = −SCC</td><td>Ahorro del sector externo.</td><td>Relacionar balanza y ahorro.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo" id="errores">
+    <div class="modulo-head"><h2>Errores frecuentes y cómo evitarlos</h2></div>
+    <div class="bloque">
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Error</th><th>Por qué está mal</th><th>Cómo corregirlo</th></tr></thead>
+          <tbody>
+            <tr><td>Creer que toda depreciación real beneficia al asalariado.</td><td>Solo si viene de una baja de P; si viene de e o de P* encarece los importados.</td><td>Identifica el origen de la depreciación real.</td></tr>
+            <tr><td>Confundir depreciación nominal con real.</td><td>La nominal es e; la real es ε, que incluye P y P*.</td><td>Escribe ε = P / (e P*).</td></tr>
+            <tr><td>Decir que una empresa que importa insumos no se afecta por e.</td><td>Sus costos en moneda local dependen de e.</td><td>Calcula insumos, coeficiente y valor agregado.</td></tr>
+            <tr><td>Atribuir la diferencia entre dos eurobonos al riesgo cambiario.</td><td>Ambos están en dólares: es riesgo país.</td><td>Riesgo cambiario solo si el bono es en moneda local.</td></tr>
+            <tr><td>Leer riesgo cambiario positivo como apreciación esperada.</td><td>Positivo es depreciación esperada.</td><td>Riesgo cambiario = depreciación esperada.</td></tr>
+            <tr><td>Pensar que la dolarización elimina el análisis del tipo de cambio real.</td><td>ε cambia por P y P* aunque e sea fijo.</td><td>ε = P / (e P*) con e = 1.</td></tr>
+            <tr><td>Olvidar el vínculo entre la tasa local y la mundial.</td><td>Con movilidad de capitales, la paridad de tasas los une.</td><td>i ≈ i* + x + riesgo cambiario.</td></tr>
+            <tr><td>Mezclar ahorro del sector externo con el saldo de la cuenta financiera.</td><td>El ahorro externo es −SCC.</td><td>Revisa la guía de balanza de pagos.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo" id="glosario">
+    <div class="modulo-head"><h2>Glosario</h2></div>
+    <div class="bezel"><div class="bezel-in">
+      <dl class="glosario">
+        <dt>Depreciación nominal</dt><dd>Sube la cantidad de moneda local por dólar (de 10 a 20 pesos por dólar).</dd>
+        <dt>Apreciación nominal</dt><dd>Baja la cantidad de moneda local por dólar.</dd>
+        <dt>Depreciación real</dt><dd>Baja ε: los bienes locales se abaratan frente a los extranjeros.</dd>
+        <dt>Capacidad de compra</dt><dd>Salario real: salario nominal entre el costo de la canasta.</dd>
+        <dt>Coeficiente técnico</dt><dd>Insumos intermedios entre valor de producción, en moneda local.</dd>
+        <dt>Valor agregado</dt><dd>Valor de producción menos insumos; se reparte entre trabajo y capital.</dd>
+        <dt>Riesgo país</dt><dd>Prima por el riesgo de incumplimiento del emisor (la x del Tema 3).</dd>
+        <dt>Riesgo cambiario</dt><dd>Compensación por la depreciación esperada de la moneda local.</dd>
+        <dt>Eurobono</dt><dd>Bono emitido en dólares por un gobierno o empresa fuera de EE. UU.</dd>
+        <dt>Dolarización</dt><dd>Uso del dólar como moneda: no hay tipo de cambio nominal frente a él.</dd>
+        <dt>Paridad de tasas</dt><dd>Vínculo entre la tasa local, la mundial, el riesgo y la depreciación esperada.</dd>
+        <dt>Ahorro del sector externo</dt><dd>−SCC: financiamiento que aporta el exterior.</dd>
+      </dl>
+    </div></div>
+  </section>
+
+  <section class="modulo" id="autoeval">
+    <div class="modulo-head"><h2>Autoevaluación rápida</h2></div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false"><span>1. Un asalariado compra 50% de locales y 50% de importados. La moneda se deprecia de 5 a 6 pesos por dólar. ¿Qué pasa con su salario real?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Los importados suben 20% en moneda local y los locales no cambian. El costo de la canasta es 0.5 × 1 + 0.5 × 1.2 = 1.1, así que el salario real baja a 1/1.1 ≈ 0.91: cae cerca de 9%. (Ejemplo hipotético.)</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false"><span>2. Una empresa importa todos sus insumos (coeficiente técnico 0.4). Si hay apreciación nominal de 10%, ¿qué pasa con el coeficiente y con el pago al capital (con trabajo fijo)?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Los insumos cuestan 10% menos en moneda local: el coeficiente baja a 0.36. El valor agregado sube y, con el pago al trabajo fijo, el pago al capital aumenta. (Ejemplo hipotético.)</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false"><span>3. Un eurobono de un gobierno rinde 7.5% y el bono del Tesoro de EE. UU. al mismo plazo 4%. ¿Cuánto es el riesgo país y cuánto el cambiario?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Riesgo país = 7.5 − 4 = 3.5 puntos. El riesgo cambiario es cero: el bono está en dólares. (Ejemplo hipotético.)</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" aria-expanded="false"><span>4. Baja la tasa mundial y sube el ingreso del exterior. ¿Qué pasa con el producto y con el tipo de cambio real?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>El producto aumenta (la LM baja y la IS se desplaza a la derecha). El tipo de cambio real no cambia, porque la tasa local acompaña a la mundial y P y P* están dados.</p></div>
+    </div>
+  </section>
+
+</main>
+<nav class="panel" data-nav-eq aria-label="Índice de esta página">
+  <button class="panel-boton" type="button" aria-expanded="false" aria-controls="panel-lista"><i><svg aria-hidden="true" focusable="false"></svg></i><span class="sr">Índice. Estás en: </span><span data-nav-actual>Índice</span></button>
+  <p class="panel-tt">Tema 4<small>En esta página</small></p>
+  <svg class="panel-svg" aria-hidden="true" focusable="false"></svg>
+  <ol class="panel-lista" id="panel-lista">
+    <li><a href="#alcance">Convenciones</a></li>
+    <li><a href="#poder-compra">Poder de compra</a></li>
+    <li><a href="#empresa">Empresa y coeficiente</a></li>
+    <li><a href="#riesgo">Riesgo y eurobonos</a></li>
+    <li><a href="#islm">IS-LM abierta</a></li>
+    <li><a href="#formulas">Hoja de fórmulas</a></li>
+    <li><a href="#errores">Errores frecuentes</a></li>
+    <li><a href="#glosario">Glosario</a></li>
+    <li><a href="#autoeval">Autoevaluación</a></li>
+  </ol>
+  <p class="panel-ayuda">El punto marca dónde vas leyendo. Con el foco en el índice, las flechas lo recorren.</p>
+</nav>
+</div>
+
+<footer>
+  <div>
+    <span class="badge">Fuente</span>Blanchard, Olivier (2023), <em>Macroeconomics</em>, 9ª ed., Pearson, Cap. 17 (secc. 17-1 y 17-2) y capítulos 5 y 6; guías de ejercicios de Moodle del Prof. Luis Morera. Los ejemplos marcados como hipotéticos y los cálculos marcados como propios son ilustraciones del autor de la guía, no datos de las fuentes.
+  </div>
+  <p>Guía de estudio: Tema 4, apertura (Moodle). Material de repaso del propio estudiante (no es Tarea ni Control). &middot; <a href="../index.html">Volver al sitio</a></p>
+</footer>
+
+<script src="../assets/guia.js?v=32433dd8fe07"></script>
+
+<script>
+(function(){
+  document.querySelectorAll('.pregunta .disparador').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var p = btn.closest('.pregunta'), abierta = p.getAttribute('data-abierta') === 'true';
+      p.setAttribute('data-abierta', abierta ? 'false' : 'true');
+      btn.setAttribute('aria-expanded', abierta ? 'false' : 'true');
+    });
+  });
+
+  // Practica IS-LM abierta: predice cada variable y compara con la clave
+  var NOM = { a: 'Aumenta', r: 'Se reduce', n: 'No cambia', s: 'No se puede saber' };
+  var filas = document.querySelectorAll('#practica-islm .fila-var'), res = document.getElementById('practica-res');
+  function resumen(){
+    var resp = 0, ok = 0;
+    filas.forEach(function(f){ if (f.classList.contains('correcta')) { resp++; ok++; } else if (f.classList.contains('incorrecta')) resp++; });
+    res.textContent = resp === 0 ? 'Aún no has respondido ninguna variable.' : 'Respondidas: ' + resp + ' de ' + filas.length + '. Correctas: ' + ok + '.';
+  }
+  filas.forEach(function(f){
+    f.querySelectorAll('.opcion-btn').forEach(function(b){
+      b.addEventListener('click', function(){
+        if (f.classList.contains('correcta') || f.classList.contains('incorrecta')) return;
+        var v = b.getAttribute('data-v'), ok = f.getAttribute('data-ok');
+        b.setAttribute('aria-pressed', 'true');
+        f.classList.add(v === ok ? 'correcta' : 'incorrecta');
+        if (v !== ok) f.querySelectorAll('.opcion-btn').forEach(function(x){ if (x.getAttribute('data-v') === ok) x.classList.add('era-correcta'); });
+        resumen();
+      });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
