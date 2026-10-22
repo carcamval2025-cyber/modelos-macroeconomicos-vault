@@ -265,6 +265,40 @@
     </div>
   </section>
 
+  <section class="modulo" id="ajuste">
+    <div class="modulo-head"><h2>Gráfico: la recta Δπ = (m + z) − αu sobre los cambios observados</h2></div>
+    <div class="modulo-text">Con θ = 1 la curva de Phillips queda como <strong>π − π₋₁ = (m + z) − αu</strong>. Los <strong>puntos</strong> son los cambios observados de la inflación (Δπ de cada año) contra el desempleo de ese año; la <strong>recta</strong> es la ecuación, con intercepto m + z, pendiente −α y cruce con cero en u<sub>n</sub> = (m + z)/α. Mueve los dos parámetros para acercar la recta a los puntos, o usa mínimos cuadrados. La muestra es la que elegiste arriba.</div>
+    <div class="ecuacion">
+      <div class="ecuacion-bar"><span>Curva aceleracionista (θ = 1)</span></div>
+      <p>Δπ = π − π<sub>−1</sub> = (m + z) − α<span class="v" data-var="u"><span>u</span></span></p>
+    </div>
+    <div class="simulador-panel">
+      <div class="sim-grid">
+        <div class="control-item"><div class="control-top"><label class="control-label" for="aj-mz">Intercepto m + z (pp)</label><span class="control-val" id="v-aj-mz">0.0</span></div><input class="control-slider" type="range" id="aj-mz" min="-60" max="60" step="0.1" value="0"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="aj-al">Sensibilidad α (pendiente = −α)</label><span class="control-val" id="v-aj-al">0.00</span></div><input class="control-slider" type="range" id="aj-al" min="-8" max="8" step="0.05" value="0"></div>
+      </div>
+      <div class="fila-var"><span class="nombre-var">Atajos</span><div class="opciones" role="group" aria-label="Atajos de la recta">
+        <button class="opcion-btn" type="button" id="aj-mco" aria-pressed="false">Usar mínimos cuadrados</button>
+        <button class="opcion-btn" type="button" id="aj-cero" aria-pressed="false">Recta en cero (m + z = 0, α = 0)</button>
+      </div></div>
+      <div class="kpis-grid" aria-live="polite">
+        <div class="kpi-card"><div class="kpi-title">Tu recta</div><div class="kpi-num" id="aj-eq">Δπ = 0</div></div>
+        <div class="kpi-card"><div class="kpi-title">Tasa natural u<sub>n</sub> = (m + z)/α</div><div class="kpi-num" id="aj-un">n.d.</div></div>
+        <div class="kpi-card"><div class="kpi-title">Suma de errores al cuadrado</div><div class="kpi-num" id="aj-ssr">0</div><div class="kpi-sub" id="aj-ssr2">mínimos cuadrados</div></div>
+        <div class="kpi-card"><div class="kpi-title">R² de tu recta</div><div class="kpi-num" id="aj-r2">0</div></div>
+      </div>
+      <figure>
+        <div class="diagrama-wrap"><div class="diagrama"><svg id="svg-aj" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-label="Cambios observados de la inflación contra el desempleo y la recta Δπ = (m + z) − αu"><title>Recta de Phillips aceleracionista sobre los datos</title><desc>Cada punto es un año de El Salvador con su cambio de inflación; la recta es Δπ = (m + z) − αu con los parámetros de los controles; los segmentos finos son los errores de la recta.</desc></svg></div></div>
+        <figcaption>Puntos: Δπ observado de cada año (con su año en la etiqueta cuando está resaltado). Recta: Δπ = (m + z) − αu. Segmentos finos: error de la recta en cada año. La línea vertical marca la tasa natural implícita, donde la recta cruza cero. Fuente: base del FMI.</figcaption>
+      </figure>
+      <p class="sim-nota" id="aj-lec">Lectura aquí.</p>
+    </div>
+    <div class="recuadro">
+      <span class="recuadro-tag">Qué probar</span>
+      <p>(1) Pulsa "Usar mínimos cuadrados": la recta resultante es la mejor en el sentido de errores al cuadrado, pero eso no la hace una curva de Phillips; fíjate en el signo de α. (2) Pon α = 2 y mueve m + z hasta pasar por la nube: el R² suele quedar cerca de cero o negativo, es decir, la recta de Phillips no explica mejor los Δπ que su promedio. (3) Cambia de muestra arriba y mira cómo cambian m + z, α y u<sub>n</sub>. (4) Quita el Covid y compara.</p>
+    </div>
+  </section>
+
   <section class="modulo" id="ventanas">
     <div class="modulo-head"><h2>Dividir la serie larga en ventanas de 10 años</h2></div>
     <div class="modulo-text">Una sola regresión de 38 años mezcla regímenes de política, de expectativas y de estructura del mercado laboral. Por eso se divide la serie en ventanas de unos 10 años y se repite la prueba en cada una. Aquí se respeta la opción de quitar el Covid del módulo de la Prueba 1.</div>
@@ -349,6 +383,27 @@
       <p id="ver-texto">Veredicto.</p>
     </div>
     <div class="bloque">
+      <h3>La advertencia de Blanchard: la curva depende del nivel de inflación</h3>
+      <p>Blanchard (sección 8-4) advierte que la curva de Phillips no se comporta igual en todas las economías, porque la relación entre inflación y desempleo cambia con el <em>nivel</em> y la persistencia de la inflación:</p>
+      <ul>
+        <li><strong>Inflación muy alta.</strong> Como no se sabe qué nivel de precios habrá en uno o dos años, trabajadores y empresas evitan fijar salarios nominales por mucho tiempo. Los contratos se acortan (de un año a un mes o menos) y se generaliza la indexación, una cláusula que sube el salario según la inflación efectiva. Con una proporción λ de contratos indexados, el coeficiente del desempleo pasa de α a α/(1 − λ): la relación se vuelve inestable y, si λ se acerca a 1, tenue o inexistente.</li>
+        <li><strong>Inflación baja y estable.</strong> Hay certidumbre sobre los precios, así que son posibles contratos salariales largos sin indexación y las expectativas pueden estar ancladas. Es el terreno donde la curva se parece más a la original.</li>
+        <li><strong>Inflación cercana a cero o deflación.</strong> Si la inflación es muy baja o negativa, los trabajadores no aceptan que se les reduzca el salario nominal, aunque un recorte proporcional a la caída de precios dejaría su salario real igual. Les duele menos que el salario nominal suba más lento que la inflación (salario real que cae sin que lo noten, ilusión monetaria) que una baja explícita del nominal. Por eso los salarios nominales rara vez bajan y, con desempleo alto, la inflación no cae tanto como la curva predice. Blanchard lo ilustra con Portugal: en 1984 (inflación de 27 %) los cambios salariales eran casi simétricos, pero en 2012 (inflación de 2.1 %) se amontonaban en cero, casi sin recortes. Así, cerca de la inflación cero la relación puede debilitarse o desaparecer.</li>
+      </ul>
+      <p><strong>La curva tiene un rango de funcionamiento.</strong> Con inflación muy alta no se aplica bien (indexación, contratos cortos, relación inestable) y con inflación muy baja o negativa tampoco (rigidez del salario nominal a la baja). Funciona mejor en un rango intermedio de inflación baja y estable, con expectativas ancladas. Por eso la teoría no se aplica por igual en todas las economías ni en todos los periodos de una misma economía. Blanchard no fija umbrales numéricos exactos: da ejemplos (2 % frente a 30 %), así que dónde empieza y termina ese rango es una pregunta empírica de cada país.</p>
+      <p><strong>Qué implica para El Salvador (lectura para discutir):</strong> la base muestra inflación de 28.3 % en 1990 y de dos dígitos hasta 1995, y de un solo dígito desde 1996, con valores cercanos a cero o negativos en 2015, 2019 y 2020. Son regímenes distintos, y es una razón más para no mezclarlos en una sola regresión y para dividir la serie por periodos. La base no trae datos de contratos ni de indexación salarial, así que lo anterior es una hipótesis sobre por qué la pendiente podría diferir entre periodos, no un resultado.</p>
+    </div>
+    <div class="bloque">
+      <h3>Si los datos no muestran lo que dice la teoría: dos lecturas posibles</h3>
+      <p>Al contrastar la curva de Phillips con los datos de un país, no siempre se encuentra lo que se espera (una pendiente negativa y significativa). Eso admite al menos dos interpretaciones, y los datos de esta actividad no bastan para decidir entre ellas:</p>
+      <ol>
+        <li><strong>La curva no explica esa economía.</strong> La inflación depende más de otros factores (precios importados, tipo de cambio o dolarización, expectativas fijadas fuera del país) que del desempleo interno. La pendiente es cercana a cero en casi cualquier muestra.</li>
+        <li><strong>Hay varias curvas de Phillips a lo largo del tiempo.</strong> Cada subperiodo tiene sus propios m + z, π<sup>e</sup>, α y θ, así que la curva se desplaza o cambia de forma entre regímenes. Una sola regresión sobre toda la serie mezcla curvas distintas y la pendiente promedio se diluye o cambia de signo. Por eso conviene dividir la serie: las ventanas de 10 años y la recta de la sección anterior, calculada por muestra, muestran cómo cambian el intercepto (m + z) y la pendiente (−α) de un periodo a otro.</li>
+      </ol>
+      <p><strong>La realidad no siempre sigue la teoría.</strong> La curva de Phillips es un modelo: simplifica una economía real con instituciones, shocks y regímenes propios. Por eso no se puede predecir que todos los años se muevan a lo largo de la curva (cuadrantes A y B). La clasificación por cuadrantes lo muestra: en una parte importante de los años la economía se desplaza (cuadrantes C y D) por factores que el modelo trata como parámetros fijos. Esa distancia entre teoría y realidad no invalida el modelo; indica en qué condiciones sirve y qué debe agregarse para un país concreto.</p>
+      <p>Para distinguir entre ambas haría falta controlar por shocks de oferta y por expectativas, y contar con más observaciones. Mientras tanto, la conclusión prudente es que <strong>la curva no se demuestra, pero tampoco se descarta</strong>: lo que sí aportan los datos es entender cómo cambió la relación entre inflación y desempleo de un periodo a otro.</p>
+    </div>
+    <div class="bloque">
       <h3>El papel del banco central: volver a la curva tradicional</h3>
       <p>La curva original (θ = 0) y la aceleracionista (θ = 1) no son dos economías distintas: son dos formas de formar expectativas. Cuando el banco central es creíble y las expectativas quedan ancladas a su meta, θ baja hacia 0 y la inflación se relaciona con el <em>nivel</em> del desempleo, no con su efecto acumulado año tras año. Es el régimen más favorable para la estabilidad macro:</p>
       <ul>
@@ -420,6 +475,7 @@
     <li><a href="#datos">Datos</a></li>
     <li><a href="#prueba1">Prueba 1: π y u</a></li>
     <li><a href="#prueba2">Prueba 2: Δπ y u</a></li>
+    <li><a href="#ajuste">Recta Δπ = (m+z) − αu</a></li>
     <li><a href="#ventanas">Ventanas de 10 años</a></li>
     <li><a href="#choques">Demanda y oferta</a></li>
     <li><a href="#veredicto">Veredicto</a></li>
@@ -491,7 +547,7 @@
   function obsD(lo, hi){
     var l = lim(), r = []; if (lo == null){ lo = l[0]; hi = l[1]; }
     for (var y = lo; y <= hi; y++){
-      if (!D[y] || !D[y-1] || D[y].u == null || D[y-1].u == null || excluido(y) || excluido(y-1)) continue;
+      if (!D[y] || !D[y-1] || D[y].u == null || excluido(y) || excluido(y-1)) continue;
       r.push(y);
     }
     return r;
@@ -512,11 +568,13 @@
     var ey = escala(Math.min.apply(null, ys.concat(o.cero || o.ceroY ? [0] : [])), Math.max.apply(null, ys.concat(o.cero || o.ceroY ? [0] : [])), 6);
     function px(v){ return L + (v - ex.lo) / (ex.hi - ex.lo) * (W - L - R); }
     function py(v){ return H - B - (v - ey.lo) / (ey.hi - ey.lo) * (H - B - T); }
+    var cid = 'cp-' + svg.id, defs = el(svg, 'defs', {}), cp = document.createElementNS(NS, 'clipPath'), cr = document.createElementNS(NS, 'rect');
+    cp.setAttribute('id', cid); cr.setAttribute('x', L); cr.setAttribute('y', T); cr.setAttribute('width', W - L - R); cr.setAttribute('height', H - B - T); cp.appendChild(cr); defs.appendChild(cp);
     ey.ticks.forEach(function(v){ el(svg, 'line', { x1:L, y1:py(v), x2:W-R, y2:py(v), stroke:C.linea, 'stroke-width':((o.cero || o.ceroY) && v === 0) ? 2 : 1 }); texto(svg, L-8, py(v)+4, String(+v.toFixed(2)), { anchor:'end', mono:true, size:12 }); });
     ex.ticks.forEach(function(v){ el(svg, 'line', { x1:px(v), y1:T, x2:px(v), y2:H-B, stroke:C.linea, 'stroke-width':(o.cero && v === 0) ? 2 : 1 }); texto(svg, px(v), H-B+20, String(+v.toFixed(2)), { anchor:'middle', mono:true, size:12 }); });
     texto(svg, (L + W - R) / 2, H - 10, o.xlab, { anchor:'middle', color:C.tinta, size:14 });
     var yl = texto(svg, 16, (T + H - B) / 2, o.ylab, { anchor:'middle', color:C.tinta, size:14 }); yl.setAttribute('transform', 'rotate(-90 16 ' + ((T + H - B) / 2) + ')');
-    if (o.recta){ el(svg, 'line', { x1:px(ex.lo), y1:py(o.recta.a + o.recta.b * ex.lo), x2:px(ex.hi), y2:py(o.recta.a + o.recta.b * ex.hi), stroke:C.tinta, 'stroke-width':3, 'stroke-dasharray':'8 6' }); }
+    if (o.recta){ el(svg, 'line', { x1:px(ex.lo), y1:py(o.recta.a + o.recta.b * ex.lo), x2:px(ex.hi), y2:py(o.recta.a + o.recta.b * ex.hi), stroke:C.tinta, 'stroke-width':3, 'stroke-dasharray':'8 6', 'clip-path':'url(#' + cid + ')' }); }
     if (o.extra) o.extra(svg, px, py, ex, ey, W, H, L, R, T, B);
     pts.forEach(function(p){
       var c = el(svg, 'circle', { cx:px(p.x), cy:py(p.y), r:p.hueco ? 6 : 5.5, fill:p.hueco ? 'none' : C.u, stroke:p.hueco ? C.tinta : C.fondo, 'stroke-width':p.hueco ? 2.2 : 1.2 });
@@ -600,6 +658,7 @@
     Q = { A:[], B:[], C:[], D:[] };
     var pts = [];
     obsD().forEach(function(y){
+      if (D[y-1].u == null) return;
       var du = D[y].u - D[y-1].u, di = D[y].pi - D[y-1].pi;
       if (Math.abs(du) < 1e-9 || Math.abs(di) < 1e-9) return;
       var q = cuad(du, di); Q[q].push(y);
@@ -648,6 +707,37 @@
     document.getElementById('ver-texto').textContent = txt;
   }
 
+  // Recta Δπ = (m + z) - α u sobre los cambios observados
+  var ajMz = document.getElementById('aj-mz'), ajAl = document.getElementById('aj-al');
+  function limitar(x, s){ return Math.max(+s.min, Math.min(+s.max, x)); }
+  function ajuste(reiniciar){
+    var ys = obsD(), pts = ys.map(function(y){ return { x:D[y].u, y:D[y].pi - D[y-1].pi, year:y }; });
+    var xs = pts.map(function(p){ return p.x; }), dy = pts.map(function(p){ return p.y; });
+    var O = reg(xs, dy);
+    if (reiniciar){ ajMz.value = limitar(Math.round(O.a * 10) / 10, ajMz); ajAl.value = limitar(Math.round(-O.b * 20) / 20, ajAl); }
+    var mz = +ajMz.value, al = +ajAl.value, ssr = 0, sst = 0, ssro = 0, media = 0, i;
+    dy.forEach(function(v){ media += v; }); media /= dy.length;
+    for (i = 0; i < pts.length; i++){ var e = dy[i] - (mz - al * xs[i]), eo = dy[i] - (O.a + O.b * xs[i]); ssr += e * e; ssro += eo * eo; sst += (dy[i] - media) * (dy[i] - media); }
+    document.getElementById('v-aj-mz').textContent = f1(mz);
+    document.getElementById('v-aj-al').textContent = f2(al);
+    document.getElementById('aj-eq').textContent = 'Δπ = ' + f1(mz) + (al >= 0 ? ' - ' : ' + ') + Math.abs(al).toFixed(2) + 'u';
+    document.getElementById('aj-un').textContent = al > 0 ? f1(mz / al) + ' %' : 'no definida (α ≤ 0)';
+    document.getElementById('aj-ssr').textContent = f1(ssr);
+    document.getElementById('aj-ssr2').textContent = 'mínimos cuadrados: ' + f1(ssro);
+    document.getElementById('aj-r2').textContent = f2(1 - ssr / sst);
+    var un = al > 0 ? mz / al : null;
+    document.getElementById('aj-lec').textContent = NOMBRE[estado.m] + (estado.covid ? ' sin 2020 y 2021' : '') + ': la recta de mínimos cuadrados tiene m + z = ' + f1(O.a) + ' y α = ' + f2(-O.b) + (O.b < 0 ? ' (pendiente negativa, como Phillips)' : ' (pendiente positiva: α negativa, contraria a Phillips)') + '; ' + (O.sig && O.b < 0 ? 'es significativa al 5 %.' : 'no es significativa al 5 %, así que no se puede afirmar que el desempleo explique los cambios de la inflación.') + ' Tu recta deja una suma de errores al cuadrado de ' + f1(ssr) + ' frente a ' + f1(ssro) + ' de mínimos cuadrados.';
+    dispersion(document.getElementById('svg-aj'), pts, { xlab:'Desempleo u (%)', ylab:'Cambio de la inflación, Δπ (pp)', recta:{ a:mz, b:-al }, xn:'u', yn:'Δπ', alto:420,
+      extra:function(svg, px, py, ex, ey, W, H, L, R, T, B){
+        pts.forEach(function(p){ el(svg, 'line', { x1:px(p.x), y1:py(p.y), x2:px(p.x), y2:py(mz - al * p.x), stroke:C.tenue, 'stroke-width':1, 'clip-path':'url(#cp-svg-aj)' }); });
+        if (un != null && un >= ex.lo && un <= ex.hi){ el(svg, 'line', { x1:px(un), y1:T, x2:px(un), y2:H - B, stroke:C.u, 'stroke-width':1.5, 'stroke-dasharray':'4 5' }); texto(svg, px(un) + 5, T + 14, 'uₙ = ' + f1(un) + ' %', { size:12, color:C.u }); }
+      } });
+  }
+  ajMz.addEventListener('input', function(){ ajuste(false); });
+  ajAl.addEventListener('input', function(){ ajuste(false); });
+  document.getElementById('aj-mco').addEventListener('click', function(){ ajuste(true); });
+  document.getElementById('aj-cero').addEventListener('click', function(){ ajAl.value = 0; ajMz.value = 0; ajuste(false); });
+
   // Ventanas de 10 años
   function veredictoCorto(R){ if (!R) return 'sin datos'; if (R.sig && R.b < 0) return 'negativa y significativa'; if (R.sig && R.b > 0) return 'positiva y significativa'; return 'no significativa'; }
   function ventanas(){
@@ -678,7 +768,7 @@
     document.querySelectorAll('[data-grupo="muestra"] .opcion-btn').forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-m') === estado.m ? 'true' : 'false'); });
     document.querySelectorAll('[data-grupo="covid"] .opcion-btn').forEach(function(b){ b.setAttribute('aria-pressed', (b.getAttribute('data-c') === '1') === estado.covid ? 'true' : 'false'); });
   }
-  function todo(){ sincBotones(); prueba1(); prueba2(); ventanas(); choques(); veredictoFinal(); }
+  function todo(){ sincBotones(); prueba1(); prueba2(); ajuste(true); ventanas(); choques(); veredictoFinal(); }
   document.querySelectorAll('[data-grupo="muestra"] .opcion-btn').forEach(function(b){ b.addEventListener('click', function(){ estado.m = b.getAttribute('data-m'); todo(); }); });
   document.querySelectorAll('[data-grupo="covid"] .opcion-btn').forEach(function(b){ b.addEventListener('click', function(){ estado.covid = b.getAttribute('data-c') === '1'; todo(); }); });
 
