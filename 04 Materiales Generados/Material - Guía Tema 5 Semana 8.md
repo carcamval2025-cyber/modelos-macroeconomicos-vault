@@ -17,3 +17,5 @@ Guía de estudio HTML de la semana 8 (Tema 5, continuación): capítulo 8 de Bla
 Ver [[Tema 5 - Mercado Laboral]].
 
 Animación por pasos (2026-10-21): curva de Phillips (A, B, C, cambio de la inflación esperada y θ = 1).
+
+Animaciones añadidas (2026-10-21, segunda tanda): shock de oferta y trayectoria de la inflación con θ = 0 y θ = 1.

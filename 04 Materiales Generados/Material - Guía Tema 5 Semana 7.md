@@ -23,3 +23,5 @@ Decisiones de contenido: los ejemplos numéricos propios llevan la etiqueta "hip
 Ver [[Tema 5 - Mercado Laboral]].
 
 Animaciones por pasos (2026-10-21): flujos del desempleo (bañera) y WS y PS con desplazamientos de z y m, con play, pausa y pasos.
+
+Animaciones añadidas (2026-10-21, segunda tanda): tasas con trabajadores desalentados y los 13 movimientos.

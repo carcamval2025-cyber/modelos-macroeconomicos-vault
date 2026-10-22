@@ -15,3 +15,5 @@ Decisiones: no se resolvió el ejercicio con puntaje del archivo `partidas del I
 Ver [[Tema 4 - IS-LM + Apertura Comercial-Financiera]].
 
 Animaciones por pasos (2026-10-21): suma de las cuentas hasta SCC y SCF, y del PIB al INBD a la inversión.
+
+Animación añadida (2026-10-21, segunda tanda): por qué el saldo final de la balanza de pagos es cero (las reservas cierran la cuenta financiera).

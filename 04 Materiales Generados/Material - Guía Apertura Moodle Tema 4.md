@@ -15,3 +15,5 @@ Notas: usa e = unidades de moneda local por dólar (convención de Moodle), opue
 Ver [[Tema 4 - IS-LM + Apertura Comercial-Financiera]].
 
 Animaciones por pasos (2026-10-21): depreciación y poder de compra, empresa y coeficiente técnico, IS-LM abierta con las dos noticias.
+
+Animación añadida (2026-10-21, segunda tanda): riesgo país, riesgo cambiario y eurobonos.
