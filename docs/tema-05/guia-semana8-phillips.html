@@ -6,7 +6,7 @@
 <title>Tema 5 · Semana 8 · Curva de Phillips | Macro II</title>
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg?v=945dfb6041af">
 <script>try{var t=localStorage.getItem('mm-tema');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
-<link rel="stylesheet" href="../assets/guia.css?v=3f35d585a726">
+<link rel="stylesheet" href="../assets/guia.css?v=0148e4554888">
 </head>
 <body>
 
@@ -336,6 +336,74 @@
         </svg>
       </div>
       <figcaption>Fig. propia con números hipotéticos, según la ecuación (8.5): π = π<sup>e</sup> − α(u − u<sub>n</sub>). La curva pasa siempre por el punto donde u = u<sub>n</sub> y π = π<sup>e</sup>.</figcaption>
+    </figure>
+
+    <figure class="anim">
+      <div class="anim-escena diagrama">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" role="img" aria-label="Animación por pasos de la curva de Phillips: con inflación esperada de 2%, desempleo natural de 5% y alfa de 1, la curva pasa por A; con desempleo de 4% la inflación es 3% y con 6% es 1%; si sube la inflación esperada a 4%, toda la curva sube">
+          <rect width="900" height="380" fill="#1A1B1D"/>
+          <defs><marker id="f8p" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F2F2F0"/></marker><marker id="f8q" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F08AB2"/></marker></defs>
+          <line x1="85" y1="330" x2="545" y2="330" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#f8p)"/>
+          <line x1="85" y1="330" x2="85" y2="26" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#f8p)"/>
+          <text x="95" y="30" font-size="14" fill="#F2F2F0">Inflación, π</text>
+          <text x="545" y="362" font-size="14" text-anchor="end" fill="#F2F2F0">Tasa de desempleo, u</text>
+          <line x1="85" y1="260" x2="535" y2="260" stroke="#3A3C41" stroke-width="1.5"/>
+          <text x="77" y="264" font-size="12" text-anchor="end" fill="#A9ABAE">0%</text>
+          <line data-v="4-" x1="100" y1="80" x2="500" y2="320" stroke="#A9ABAE" stroke-width="2" stroke-dasharray="7 6"/>
+          <g data-m="0:0,0 4:0,-54">
+            <line data-draw data-v="1-" x1="100" y1="80" x2="500" y2="320" stroke="#F2F2F0" stroke-width="4"/>
+            <text data-v="1-" x="500" y="344" font-size="13" font-weight="700" text-anchor="end" fill="#F2F2F0">Curva de Phillips</text>
+          </g>
+          <g stroke="#A9ABAE" stroke-width="1.2" stroke-dasharray="2 5">
+            <line data-v="1-3" x1="85" y1="206" x2="310" y2="206"/><line data-v="1-3" x1="310" y1="206" x2="310" y2="330"/>
+            <line data-v="4-" x1="85" y1="152" x2="310" y2="152"/><line data-v="4-" x1="310" y1="152" x2="310" y2="330"/>
+            <line data-v="2-3" x1="85" y1="179" x2="265" y2="179"/><line data-v="2-3" x1="265" y1="179" x2="265" y2="330"/>
+            <line data-v="3" x1="85" y1="233" x2="355" y2="233"/><line data-v="3" x1="355" y1="233" x2="355" y2="330"/>
+          </g>
+          <circle data-v="4-" cx="310" cy="206" r="6" fill="#1A1B1D" stroke="#F08AB2" stroke-width="2.5"/>
+          <g data-m="0:0,0 4:0,-54">
+            <circle data-v="1-" cx="310" cy="206" r="7.5" fill="#F08AB2" stroke="#1A1B1D" stroke-width="2"/>
+            <text data-v="1-" x="322" y="198" font-size="15" font-weight="700" fill="#F08AB2">A</text>
+          </g>
+          <circle data-v="2-3" cx="265" cy="179" r="6.5" fill="#1A1B1D" stroke="#F2F2F0" stroke-width="3.5"/><text data-v="2-3" x="253" y="170" font-size="14" font-weight="700" text-anchor="end" fill="#F2F2F0">B</text>
+          <circle data-v="3" cx="355" cy="233" r="6.5" fill="#1A1B1D" stroke="#F2F2F0" stroke-width="3.5"/><text data-v="3" x="367" y="224" font-size="14" font-weight="700" fill="#F2F2F0">C</text>
+          <g font-size="12" fill="#A9ABAE" text-anchor="end">
+            <text data-v="1-3" x="77" y="210">2%</text><text data-v="4-" x="77" y="156">4%</text>
+            <text data-v="2-3" x="77" y="183">3%</text><text data-v="3" x="77" y="237">1%</text>
+          </g>
+          <g font-size="12" fill="#A9ABAE" text-anchor="middle">
+            <text data-v="2-3" x="265" y="348">u = 4%</text><text data-v="3" x="355" y="348">u = 6%</text>
+          </g>
+          <text data-v="1-" x="310" y="348" font-size="12" text-anchor="middle" fill="#F08AB2">uₙ = 5%</text>
+          <line data-v="5" class="a-flow" x1="450" y1="300" x2="450" y2="130" stroke="#F08AB2" stroke-width="2.5" marker-end="url(#f8q)"/>
+          <text data-v="5" x="462" y="215" font-size="13" font-weight="700" fill="#F08AB2">cada año</text>
+          <rect x="580" y="30" width="300" height="300" fill="#202124" stroke="#A9ABAE" stroke-width="2"/>
+          <g font-size="14" fill="#F2F2F0">
+            <text x="596" y="58" font-size="13" fill="#A9ABAE">Hipotético: πᵉ = 2%, uₙ = 5%, α = 1</text>
+            <text data-v="1" x="596" y="96" font-weight="700" fill="#F08AB2">A: u = uₙ</text>
+            <text data-v="1" x="596" y="120">La inflación es igual a la esperada: 2%.</text>
+            <text data-v="2" x="596" y="96" font-weight="700">B: u = 4% (menor que uₙ)</text>
+            <text data-v="2" x="596" y="120">π = 2% + 1 × (5% − 4%) = 3%</text>
+            <text data-v="3" x="596" y="96" font-weight="700">C: u = 6% (mayor que uₙ)</text>
+            <text data-v="3" x="596" y="120">π = 2% − 1 × (6% − 5%) = 1%</text>
+            <text data-v="4" x="596" y="96" font-weight="700" fill="#F08AB2">Sube πᵉ a 4%</text>
+            <text data-v="4" x="596" y="120">Toda la curva sube.</text>
+            <text data-v="4" x="596" y="144">En uₙ la inflación es 4%; uₙ no cambia.</text>
+            <text data-v="5" x="596" y="96" font-weight="700" fill="#F08AB2">Con θ = 1, πᵉ sigue a π(t−1)</text>
+            <text data-v="5" x="596" y="120">Si u &lt; uₙ, la inflación sube cada</text>
+            <text data-v="5" x="596" y="144">año (curva aceleracionista).</text>
+          </g>
+        </svg>
+      </div>
+      <ol class="anim-pasos">
+        <li>Ejes: inflación π en el vertical y desempleo u en el horizontal (economía hipotética: inflación esperada 2%, tasa natural 5%, α = 1).</li>
+        <li>Con expectativas ancladas, la curva de Phillips pasa por A: cuando u = uₙ, la inflación es igual a la esperada.</li>
+        <li>Con desempleo menor que el natural (u = 4%), la inflación es mayor que la esperada: 3%.</li>
+        <li>Con desempleo mayor que el natural (u = 6%), la inflación es menor que la esperada: 1%.</li>
+        <li>Si sube la inflación esperada a 4%, toda la curva sube: en uₙ la inflación es igual a la nueva inflación esperada.</li>
+        <li>Si las expectativas siguen a la inflación pasada (θ = 1), mantener u por debajo de uₙ hace subir la inflación año tras año.</li>
+      </ol>
+      <figcaption>Animación propia con números hipotéticos, según la ecuación (8.5): π = πᵉ − α(u − uₙ).</figcaption>
     </figure>
 
     <div class="simulador-panel" id="calc-phillips">
@@ -786,7 +854,7 @@
   <p>Guía de estudio: Semana 8, Tema 5, versión ampliada. Material de repaso del propio estudiante (no es Tarea ni Control). &middot; <a href="../index.html">Volver al sitio</a></p>
 </footer>
 
-<script src="../assets/guia.js?v=32433dd8fe07"></script>
+<script src="../assets/guia.js?v=90d1ba464f0f"></script>
 
 <script>
 (function(){

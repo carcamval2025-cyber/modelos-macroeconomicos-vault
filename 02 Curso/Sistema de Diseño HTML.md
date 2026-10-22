@@ -263,3 +263,9 @@ de Cowork nunca ejecuta `git` vía el puente de archivos — Navas hace el commi
 ## Ver también
 
 [[Errores Comunes a Evitar]] · [[Lecciones Aprendidas]] · `AGENTS.md` · `docs/Pedidos de Imagen - Sitio.md`
+
+## Animaciones por pasos (2026-10-21)
+
+Componente `figure.anim` (motor `MM.anim` en `guia.js`, estilos al final de `guia.css`): un `<svg>` dentro de `.anim-escena.diagrama` y un `<ol class="anim-pasos">` cuyo `<li>` es el texto de cada paso. El script agrega los botones (Anterior, Reproducir/Pausa, Siguiente, Reiniciar), puntos para saltar a un paso y una leyenda con `aria-live`. En el svg: `data-v="2-4"` muestra el elemento en esos pasos (`"3"`, `"2-"`, `"1-3"`), `data-m="0:0,0 3:80,20"` lo desplaza (x,y) desde el paso indicado, `data-draw` lo dibuja como trazo, y las clases `a-gx`, `a-gxr`, `a-gy` hacen crecer barras (desde la izquierda, la derecha o abajo) y `a-flow` anima un flujo con trazos. Sin JavaScript todo el svg queda visible y la lista de pasos se lee como texto; con movimiento reducido no hay transiciones. La reproducción se pausa si la figura sale de pantalla.
+
+Animaciones publicadas: Tema 4 (depreciación y poder de compra, empresa y coeficiente técnico, IS-LM abierta, cuentas de la balanza de pagos, del PIB al INBD) y Tema 5 (flujos del desempleo, WS y PS, curva de Phillips).

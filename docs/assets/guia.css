@@ -845,3 +845,27 @@ textarea.open-in:focus-visible{border-color:var(--tinta)}
   .pasos > li::before{grid-row:auto;margin-bottom:4px}
   .pasos > li > *{grid-column:1}
 }
+
+/* ---------- Animaciones por pasos (2026-10-21) ---------- */
+.anim{margin:32px 0}
+.anim-ctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px}
+.anim-ctl .btn:disabled{opacity:.45;cursor:default}
+.anim-dots{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
+.anim-dots button{width:2rem;height:2rem;border:2px solid var(--tinta);background:transparent;color:var(--tinta);font-family:var(--mono);font-size:.8rem;font-weight:700;padding:0}
+.anim-dots button[aria-current="step"]{background:var(--tinta);color:var(--bg)}
+.anim-cap{margin-top:12px;min-height:4.2em;font-weight:600;max-width:var(--lectura)}
+.anim-pasos{margin:14px 0 0 22px}
+.anim-js [data-v]{opacity:0;transition:opacity .5s var(--ease)}
+.anim-js [data-v].a-on{opacity:1}
+.anim-js [data-m]{transition:transform .9s var(--ease)}
+.anim-js .a-gx{transform-box:fill-box;transform-origin:left center;transform:scaleX(0);transition:opacity .3s,transform .7s var(--ease)}
+.anim-js .a-gx.a-on{transform:scaleX(1)}
+.anim-js .a-gy{transform-box:fill-box;transform-origin:center bottom;transform:scaleY(0);transition:opacity .3s,transform .7s var(--ease)}
+.anim-js .a-gy.a-on{transform:scaleY(1)}
+.anim-js [data-draw]{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1s var(--ease),opacity .2s}
+@keyframes anim-flujo{to{stroke-dashoffset:-32}}
+.anim-js .a-flow{stroke-dasharray:10 6;animation:anim-flujo 1.2s linear infinite}
+@media (prefers-reduced-motion:reduce){.anim-js .a-flow{animation:none}}
+@media (max-width:640px){.anim-dots{margin-left:0}}
+.anim-js .a-gxr{transform-box:fill-box;transform-origin:right center;transform:scaleX(0);transition:opacity .3s,transform .7s var(--ease)}
+.anim-js .a-gxr.a-on{transform:scaleX(1)}

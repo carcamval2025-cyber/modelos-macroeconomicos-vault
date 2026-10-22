@@ -571,6 +571,81 @@
     pintar();
   };
 
+  /* ---------- Animaciones por pasos ----------
+     <figure class="anim"> con un <svg> y un <ol class="anim-pasos"> (un <li> por paso, es el texto de cada paso).
+     En el svg: data-v="2-4" muestra el elemento en esos pasos ("3", "2-", "1-3", "1 5-"); data-m="0:0,0 3:80,20"
+     lo desplaza (x,y) desde el paso indicado; data-draw lo dibuja como trazo (pathLength 1).
+     Sin JavaScript todo el svg queda visible y la lista de pasos se lee como texto. */
+  MM.anim = function (fig) {
+    var svg = fig.querySelector('svg'), lista = fig.querySelector('.anim-pasos');
+    if (!svg || !lista) return;
+    var textos = [].map.call(lista.querySelectorAll('li'), function (li) { return li.textContent.trim(); });
+    var n = textos.length, paso = 0, reloj = null;
+    if (!n) return;
+    function visible(v, s) {
+      return v.split(/\s+/).some(function (t) {
+        var m = t.match(/^(\d+)(-)?(\d+)?$/);
+        if (!m) return false;
+        var a = +m[1];
+        if (!m[2]) return s === a;
+        return m[3] === undefined ? s >= a : (s >= a && s <= +m[3]);
+      });
+    }
+    function mover(m, s) {
+      var mejor = null;
+      m.split(/\s+/).forEach(function (t) {
+        var p = t.split(':'), k = +p[0];
+        if (k <= s && (!mejor || k >= mejor.k)) { var xy = p[1].split(','); mejor = { k: k, x: +xy[0], y: +xy[1] }; }
+      });
+      return mejor ? 'translate(' + mejor.x + 'px,' + mejor.y + 'px)' : '';
+    }
+    fig.classList.add('anim-js');
+    lista.hidden = true;
+    cada('[data-draw]', function (e) { e.setAttribute('pathLength', '1'); }, svg);
+
+    var ctl = document.createElement('div'); ctl.className = 'anim-ctl'; ctl.setAttribute('role', 'group'); ctl.setAttribute('aria-label', 'Controles de la animación');
+    function boton(txt, etiqueta, fn) { var b = document.createElement('button'); b.type = 'button'; b.className = 'btn'; b.textContent = txt; if (etiqueta) b.setAttribute('aria-label', etiqueta); b.addEventListener('click', fn); ctl.appendChild(b); return b; }
+    var bAnt = boton('Anterior', 'Paso anterior', function () { parar(); ir(paso - 1); });
+    var bPlay = boton('Reproducir', null, function () { if (reloj) parar(); else jugar(); });
+    var bSig = boton('Siguiente', 'Paso siguiente', function () { parar(); ir(paso + 1); });
+    boton('Reiniciar', 'Volver al primer paso', function () { parar(); ir(0); });
+    var puntos = document.createElement('div'); puntos.className = 'anim-dots'; puntos.setAttribute('role', 'group'); puntos.setAttribute('aria-label', 'Ir a un paso');
+    textos.forEach(function (t, i) {
+      var b = document.createElement('button'); b.type = 'button'; b.textContent = i + 1; b.setAttribute('aria-label', 'Paso ' + (i + 1));
+      b.addEventListener('click', function () { parar(); ir(i); }); puntos.appendChild(b);
+    });
+    ctl.appendChild(puntos);
+    var cap = document.createElement('p'); cap.className = 'anim-cap'; cap.setAttribute('aria-live', 'polite');
+    var escena = fig.querySelector('.anim-escena') || svg.parentNode;
+    escena.parentNode.insertBefore(ctl, escena.nextSibling);
+    ctl.parentNode.insertBefore(cap, ctl.nextSibling);
+
+    function pintar() {
+      cada('[data-v]', function (e) {
+        var on = visible(e.getAttribute('data-v'), paso);
+        e.classList.toggle('a-on', on);
+        if (e.hasAttribute('data-draw')) e.style.strokeDashoffset = on ? '0' : '1';
+      }, svg);
+      cada('[data-m]', function (e) { e.style.transform = mover(e.getAttribute('data-m'), paso); }, svg);
+      cap.textContent = 'Paso ' + (paso + 1) + ' de ' + n + '. ' + textos[paso];
+      [].forEach.call(puntos.children, function (b, i) { if (i === paso) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current'); });
+      bAnt.disabled = paso === 0; bSig.disabled = paso === n - 1;
+      bPlay.textContent = reloj ? 'Pausa' : (paso === n - 1 ? 'Repetir' : 'Reproducir');
+    }
+    function ir(i) { paso = Math.max(0, Math.min(n - 1, i)); pintar(); }
+    function parar() { if (reloj) { clearInterval(reloj); reloj = null; } pintar(); }
+    function jugar() {
+      if (paso === n - 1) paso = 0;
+      pintar();
+      reloj = setInterval(function () { if (paso < n - 1) { paso++; if (paso === n - 1) { clearInterval(reloj); reloj = null; } pintar(); } }, 3800);
+      pintar();
+    }
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) { if (!es[0].isIntersecting && reloj) parar(); }, { threshold: 0.1 }).observe(fig);
+    }
+    pintar();
+  };
+
   /* desplazamiento respetando prefers-reduced-motion */
   MM.irA = function (el) { if (el) el.scrollIntoView({ behavior: reducido ? 'auto' : 'smooth', block: 'start' }); };
 
@@ -579,6 +654,7 @@
     cada('[data-btn-tema]', MM.botonTema);
     cada('nav[data-nav-eq]', MM.navEq);
     cada('[data-predice]', MM.predice);
+    cada('figure.anim', MM.anim);
     MM.vivas();
     MM.pintarProgreso();
   }

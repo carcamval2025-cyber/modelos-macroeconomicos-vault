@@ -21,3 +21,5 @@ Añadido en 7-5 (2026-10-15): recuadro "El equilibrio determina dos valores a la
 Decisiones de contenido: los ejemplos numéricos propios llevan la etiqueta "hipotético" y los cálculos derivados de cifras del libro "cálculo propio"; no se resolvieron problemas de fin de capítulo (por si coinciden con la Tarea 2). Se señalan dos erratas del libro: salidas de la fuerza laboral 5.8 (3.9 + 1.9) y no 5.7, y 46% (no 4%) del resumen.
 
 Ver [[Tema 5 - Mercado Laboral]].
+
+Animaciones por pasos (2026-10-21): flujos del desempleo (bañera) y WS y PS con desplazamientos de z y m, con play, pausa y pasos.

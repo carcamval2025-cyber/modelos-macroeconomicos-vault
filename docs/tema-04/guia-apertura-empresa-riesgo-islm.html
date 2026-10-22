@@ -6,7 +6,7 @@
 <title>Tema 4 · Guía de apertura: empresa, riesgo e IS-LM abierta | Macro II</title>
 <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg?v=945dfb6041af">
 <script>try{var t=localStorage.getItem('mm-tema');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
-<link rel="stylesheet" href="../assets/guia.css?v=3f35d585a726">
+<link rel="stylesheet" href="../assets/guia.css?v=0148e4554888">
 </head>
 <body>
 
@@ -81,6 +81,47 @@
       </ol>
       <p>La razón: con el mismo salario nominal, el trabajador puede comprar la mitad de bienes importados (el precio se duplicó) y las mismas cantidades de bienes locales; como compra de ambos, su capacidad de compra total disminuye. Cuanto mayor sea la proporción de importados en su canasta, mayor es la caída. Cálculo propio.</p>
     </div>
+
+    <figure class="anim">
+      <div class="anim-escena diagrama">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img" aria-label="Animación por pasos: una depreciación nominal de 10 a 20 pesos por dólar duplica el precio del bien importado, sube el costo de la canasta de 1 a 1.5 y baja el salario real de 1 a 0.67">
+          <rect width="900" height="340" fill="#1A1B1D"/>
+          <text x="40" y="36" font-size="15" font-weight="700" fill="#F2F2F0">Depreciación nominal y poder de compra (hipotético)</text>
+          <rect x="40" y="70" width="170" height="100" fill="#202124" stroke="#A9ABAE" stroke-width="2"/>
+          <text x="125" y="102" text-anchor="middle" font-size="15" font-weight="700" fill="#F2F2F0">Bien local</text>
+          <text x="125" y="146" text-anchor="middle" font-size="22" fill="#F2F2F0">1 peso</text>
+          <rect x="230" y="70" width="170" height="100" fill="#202124" stroke="#22B8A0" stroke-width="2"/>
+          <text x="315" y="102" text-anchor="middle" font-size="15" font-weight="700" fill="#F2F2F0">Bien importado</text>
+          <text data-v="0-2" x="315" y="146" text-anchor="middle" font-size="22" fill="#F2F2F0">1 peso</text>
+          <text data-v="3-" x="315" y="146" text-anchor="middle" font-size="22" font-weight="700" fill="#F08AB2">2 pesos</text>
+          <rect x="40" y="196" width="360" height="56" fill="#202124" stroke="#A9ABAE" stroke-width="2"/>
+          <text data-v="0-1" x="220" y="232" text-anchor="middle" font-size="18" fill="#F2F2F0">e = 10 pesos por dólar</text>
+          <text data-v="2-" x="220" y="232" text-anchor="middle" font-size="18" font-weight="700" fill="#F08AB2">e = 20 pesos por dólar</text>
+          <text data-v="0-1" x="40" y="286" font-size="13" fill="#A9ABAE">Precio extranjero P* = 0.10 dólares: e · P* = 10 × 0.10 = 1 peso</text>
+          <text data-v="2-" x="40" y="286" font-size="13" fill="#A9ABAE">Con e = 20: e · P* = 20 × 0.10 = 2 pesos</text>
+          <text data-v="1-" x="470" y="84" font-size="14" font-weight="700" fill="#F2F2F0">Costo de la canasta (50% local y 50% importado)</text>
+          <rect data-v="1-3" class="a-gx" x="470" y="96" width="200" height="34" fill="#A9ABAE"/>
+          <text data-v="1-3" x="680" y="120" font-size="15" fill="#F2F2F0">1.0</text>
+          <rect data-v="4-" class="a-gx" x="470" y="96" width="300" height="34" fill="#FF7382"/>
+          <text data-v="4-" x="780" y="120" font-size="15" font-weight="700" fill="#FF7382">1.5</text>
+          <text data-v="1-" x="470" y="190" font-size="14" font-weight="700" fill="#F2F2F0">Salario real (mismo W, dividido entre el costo de la canasta)</text>
+          <rect data-v="1-4" class="a-gx" x="470" y="202" width="200" height="34" fill="#55C975"/>
+          <text data-v="1-4" x="680" y="226" font-size="15" fill="#F2F2F0">1.0</text>
+          <rect data-v="5-" class="a-gx" x="470" y="202" width="133" height="34" fill="#FF7382"/>
+          <text data-v="5-" x="613" y="226" font-size="15" font-weight="700" fill="#FF7382">0.67</text>
+          <text data-v="5-" x="470" y="276" font-size="15" font-weight="700" fill="#F08AB2">Baja cerca de 33%: compra menos importados</text>
+        </svg>
+      </div>
+      <ol class="anim-pasos">
+        <li>Punto de partida: 10 pesos por dólar. Un bien local y un bien importado cuestan 1 peso cada uno.</li>
+        <li>El trabajador compra 50% de cada tipo. Su canasta cuesta 1 y su salario real, normalizado, es 1.</li>
+        <li>La moneda se deprecia: ahora hacen falta 20 pesos por dólar.</li>
+        <li>El bien importado cuesta ahora 2 pesos; el bien local sigue en 1.</li>
+        <li>La canasta cuesta 0.5 × 1 + 0.5 × 2 = 1.5.</li>
+        <li>Con el mismo salario nominal, el salario real baja a 1 / 1.5 ≈ 0.67: pierde cerca de un tercio de su capacidad de compra.</li>
+      </ol>
+      <figcaption>Animación propia con números hipotéticos. Usa los botones para avanzar paso a paso o reproducirla.</figcaption>
+    </figure>
 
     <div class="bloque">
       <h3>Tres maneras de llegar a la depreciación real y qué le pasa al asalariado</h3>
@@ -170,6 +211,41 @@
         </table>
       </div>
       <p>Los insumos cuestan e · P* · cantidad. Con e de 10 a 12 (20% más), el costo en moneda local de los insumos sube 20% (de 50 a 60). Con e de 10 a 8 (20% menos), baja 20% (de 50 a 40). Cálculo propio.</p>
+
+      <figure class="anim">
+        <div class="anim-escena diagrama">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img" aria-label="Animación por pasos: una empresa que importa sus insumos. Con depreciación nominal los insumos pasan de 50 a 60 y el pago al capital de 20 a 10. Con apreciación los insumos bajan a 40 y el capital sube a 30">
+            <rect width="900" height="340" fill="#1A1B1D"/>
+            <rect x="40" y="22" width="14" height="14" fill="#A9ABAE"/><text x="60" y="34" font-size="13" fill="#F2F2F0">Insumos importados</text>
+            <rect x="230" y="22" width="14" height="14" fill="#F2F2F0"/><text x="250" y="34" font-size="13" fill="#F2F2F0">Pago al trabajo</text>
+            <rect x="390" y="22" width="14" height="14" fill="#F08AB2"/><text x="410" y="34" font-size="13" fill="#F2F2F0">Pago al capital</text>
+            <text x="40" y="116" font-size="14" font-weight="700" fill="#F2F2F0">Inicio (e = 10)</text>
+            <rect x="220" y="84" width="250" height="52" fill="#A9ABAE"/><text x="345" y="116" text-anchor="middle" font-size="16" font-weight="700" fill="#140C00">50</text>
+            <rect x="470" y="84" width="150" height="52" fill="#F2F2F0"/><text x="545" y="116" text-anchor="middle" font-size="16" font-weight="700" fill="#140C00">30</text>
+            <rect x="620" y="84" width="100" height="52" fill="#F08AB2"/><text x="670" y="116" text-anchor="middle" font-size="16" font-weight="700" fill="#140C00">20</text>
+            <text x="740" y="116" font-size="14" fill="#A9ABAE">coef. 0.50</text>
+            <text data-v="1-" x="40" y="202" font-size="14" font-weight="700" fill="#F2F2F0">Depreciación (e = 12)</text>
+            <rect data-v="1-" class="a-gx" x="220" y="170" width="300" height="52" fill="#A9ABAE"/><text data-v="1-" x="370" y="202" text-anchor="middle" font-size="16" font-weight="700" fill="#140C00">60</text>
+            <rect data-v="2-" class="a-gx" x="520" y="170" width="150" height="52" fill="#F2F2F0"/><text data-v="2-" x="595" y="202" text-anchor="middle" font-size="16" font-weight="700" fill="#140C00">30</text>
+            <rect data-v="3-" class="a-gx" x="670" y="170" width="50" height="52" fill="#F08AB2"/><text data-v="3-" x="695" y="202" text-anchor="middle" font-size="16" font-weight="700" fill="#140C00">10</text>
+            <text data-v="3-" x="740" y="202" font-size="14" font-weight="700" fill="#FF7382">coef. 0.60</text>
+            <text data-v="4-" x="40" y="288" font-size="14" font-weight="700" fill="#F2F2F0">Apreciación (e = 8)</text>
+            <rect data-v="4-" class="a-gx" x="220" y="256" width="200" height="52" fill="#A9ABAE"/><text data-v="4-" x="320" y="288" text-anchor="middle" font-size="16" font-weight="700" fill="#140C00">40</text>
+            <rect data-v="5-" class="a-gx" x="420" y="256" width="150" height="52" fill="#F2F2F0"/><text data-v="5-" x="495" y="288" text-anchor="middle" font-size="16" font-weight="700" fill="#140C00">30</text>
+            <rect data-v="5-" class="a-gx" x="570" y="256" width="150" height="52" fill="#F08AB2"/><text data-v="5-" x="645" y="288" text-anchor="middle" font-size="16" font-weight="700" fill="#140C00">30</text>
+            <text data-v="5-" x="740" y="288" font-size="14" font-weight="700" fill="#55C975">coef. 0.40</text>
+          </svg>
+        </div>
+        <ol class="anim-pasos">
+          <li>Una empresa que importa todos sus insumos: de 100 de producción, 50 son insumos (coeficiente técnico 0.5), 30 pago al trabajo y 20 pago al capital.</li>
+          <li>Depreciación nominal: e pasa de 10 a 12 pesos por dólar (20% más). Los insumos importados cuestan 20% más en pesos: 60.</li>
+          <li>El pago al trabajo no cambia: 30.</li>
+          <li>El capital absorbe el ajuste: baja de 20 a 10. El coeficiente técnico sube a 0.60.</li>
+          <li>Apreciación nominal: e baja de 10 a 8. Los insumos cuestan 20% menos en pesos: 40.</li>
+          <li>Con el trabajo fijo en 30, el pago al capital sube a 30 y el coeficiente técnico baja a 0.40.</li>
+        </ol>
+        <figcaption>Animación propia con números hipotéticos: valor de producción = 100, ventas internas a precio fijo.</figcaption>
+      </figure>
 
       <h3>Ejercicios de Moodle resueltos</h3>
       <div class="tabla-wrap">
@@ -282,6 +358,62 @@
         <li><b class="paso-tt">Ahorros, importaciones y saldos.</b><div>El mayor Y aumenta el ahorro privado y las importaciones; también aumenta la demanda de saldos reales (más Y y menos i), que es igual a la oferta real porque el banco central la ajustó.</div></li>
       </ol>
     </div>
+
+    <figure class="anim">
+      <div class="anim-escena diagrama">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" role="img" aria-label="Animación por pasos del IS-LM abierto: baja la tasa mundial y la LM baja; sube el ingreso mundial y la IS se desplaza a la derecha; el equilibrio pasa de A a B con más producto y menor tasa">
+          <rect width="900" height="340" fill="#1A1B1D"/>
+          <defs><marker id="f4m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F2F2F0"/></marker></defs>
+          <line x1="85" y1="310" x2="540" y2="310" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#f4m)"/>
+          <line x1="85" y1="310" x2="85" y2="22" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#f4m)"/>
+          <text x="95" y="28" font-size="14" fill="#F2F2F0">Tasa de interés, i</text>
+          <text x="540" y="334" font-size="14" text-anchor="end" fill="#F2F2F0">Producto, Y</text>
+          <line data-v="3-" x1="100" y1="60" x2="480" y2="300" stroke="#A9ABAE" stroke-width="2" stroke-dasharray="7 6"/>
+          <line data-v="2-" x1="85" y1="150" x2="520" y2="150" stroke="#A9ABAE" stroke-width="2" stroke-dasharray="7 6"/>
+          <g data-m="0:0,0 3:70,0">
+            <line x1="100" y1="60" x2="480" y2="300" stroke="#F2552C" stroke-width="4"/>
+            <text data-v="0-2" x="108" y="52" font-size="14" font-weight="700" fill="#F2552C">IS</text>
+            <text data-v="3-" x="108" y="52" font-size="14" font-weight="700" fill="#FF9B7D">IS′</text>
+          </g>
+          <g data-m="0:0,0 2:0,55">
+            <line x1="85" y1="150" x2="520" y2="150" stroke="#5C9DFF" stroke-width="4"/>
+            <text data-v="0-1" x="95" y="140" font-size="14" font-weight="700" fill="#5C9DFF">LM</text>
+            <text data-v="2-" x="95" y="140" font-size="14" font-weight="700" fill="#5C9DFF">LM′</text>
+          </g>
+          <line data-v="0-3" x1="242.5" y1="150" x2="242.5" y2="310" stroke="#A9ABAE" stroke-width="1.2" stroke-dasharray="2 5"/>
+          <line data-v="4-" x1="399.6" y1="205" x2="399.6" y2="310" stroke="#A9ABAE" stroke-width="1.2" stroke-dasharray="2 5"/>
+          <circle data-v="4-" cx="242.5" cy="150" r="6" fill="#1A1B1D" stroke="#F08AB2" stroke-width="2.5"/>
+          <g data-m="0:0,0 4:157.1,55">
+            <circle cx="242.5" cy="150" r="7.5" fill="#F08AB2" stroke="#1A1B1D" stroke-width="2"/>
+            <text data-v="0-3" x="254" y="142" font-size="15" font-weight="700" fill="#F08AB2">A</text>
+            <text data-v="4-" x="254" y="142" font-size="15" font-weight="700" fill="#F08AB2">B</text>
+          </g>
+          <text x="242.5" y="328" font-size="13" text-anchor="middle" fill="#A9ABAE">Y</text>
+          <text data-v="4-" x="399.6" y="328" font-size="13" text-anchor="middle" fill="#A9ABAE">Y′</text>
+          <rect x="580" y="30" width="300" height="276" fill="#202124" stroke="#A9ABAE" stroke-width="2"/>
+          <g font-size="13" fill="#F2F2F0">
+            <text data-v="1-" x="596" y="60" font-weight="700" fill="#5C9DFF">Noticia 1: baja la tasa mundial i*</text>
+            <text data-v="2-" x="596" y="80">La tasa local la sigue: la LM baja a LM′.</text>
+            <text data-v="3-" x="596" y="116" font-weight="700" fill="#FF9B7D">Noticia 2: sube el ingreso mundial Y*</text>
+            <text data-v="3-" x="596" y="136">Suben las exportaciones: la IS pasa a IS′.</text>
+            <text data-v="4-" x="596" y="172" font-weight="700" fill="#F08AB2">Equilibrio B: sube Y y baja i</text>
+            <text data-v="5-" x="596" y="208">Suben: consumo, inversión, exportaciones,</text>
+            <text data-v="5-" x="596" y="228">importaciones y ahorro privado.</text>
+            <text data-v="5-" x="596" y="252">Baja: el desempleo.</text>
+            <text data-v="5-" x="596" y="276">Sin cambio: ε y el ahorro del gobierno.</text>
+          </g>
+        </svg>
+      </div>
+      <ol class="anim-pasos">
+        <li>Punto de partida: equilibrio A con la IS y la LM (el banco central fija la tasa de interés).</li>
+        <li>Primera noticia: baja la tasa de interés mundial i*.</li>
+        <li>Por la paridad de tasas, el banco central baja su tasa i: la LM baja a LM′ y sube la inversión. El tipo de cambio real no se mueve.</li>
+        <li>Segunda noticia: sube el ingreso del resto del mundo Y*. Las exportaciones aumentan y la IS se desplaza a la derecha.</li>
+        <li>Nuevo equilibrio B: aumenta el producto Y y la tasa de interés es menor.</li>
+        <li>Efectos: suben consumo, inversión, exportaciones, importaciones y ahorro privado; baja el desempleo; el ahorro del sector externo se reduce si la balanza comercial mejora.</li>
+      </ol>
+      <figcaption>Animación propia, esquema cualitativo (sin cifras). La LM es horizontal porque el banco central fija la tasa.</figcaption>
+    </figure>
 
     <figure>
       <div class="diagrama">
@@ -488,7 +620,7 @@
   <p>Guía de estudio: Tema 4, apertura (Moodle). Material de repaso del propio estudiante (no es Tarea ni Control). &middot; <a href="../index.html">Volver al sitio</a></p>
 </footer>
 
-<script src="../assets/guia.js?v=32433dd8fe07"></script>
+<script src="../assets/guia.js?v=90d1ba464f0f"></script>
 
 <script>
 (function(){

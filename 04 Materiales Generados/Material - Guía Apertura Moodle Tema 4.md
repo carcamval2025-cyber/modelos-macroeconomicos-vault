@@ -13,3 +13,5 @@ Segunda guía de Moodle del Tema 4 (pedida por Navas el 2026-10-21, a partir de 
 Notas: usa e = unidades de moneda local por dólar (convención de Moodle), opuesta a la E de Blanchard; se explica en la guía. Se señala que el signo de la balanza comercial en la tabla IS-LM depende de la magnitud relativa de los efectos y que la guía asume predominio de las exportaciones. Cálculos y ejemplos propios llevan etiqueta.
 
 Ver [[Tema 4 - IS-LM + Apertura Comercial-Financiera]].
+
+Animaciones por pasos (2026-10-21): depreciación y poder de compra, empresa y coeficiente técnico, IS-LM abierta con las dos noticias.

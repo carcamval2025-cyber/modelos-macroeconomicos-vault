@@ -13,3 +13,5 @@ Guía de estudio HTML de balanza de pagos con el enfoque de las guías de Moodle
 Decisiones: no se resolvió el ejercicio con puntaje del archivo `partidas del INBD y bapa.docx` (parece material evaluable); se creó uno propio con otros números. Quedan fuera de esta guía los demás bloques de las guías de Moodle (coeficiente técnico, riesgo país y eurobonos, capacidad de compra con depreciación real, tabla IS-LM abierta).
 
 Ver [[Tema 4 - IS-LM + Apertura Comercial-Financiera]].
+
+Animaciones por pasos (2026-10-21): suma de las cuentas hasta SCC y SCF, y del PIB al INBD a la inversión.
