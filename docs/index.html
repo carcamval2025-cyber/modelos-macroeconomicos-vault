@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Modelos Macroeconómicos · Macro II | ESEN</title>
 <meta name="description" content="Guías, actividades y repasos de Modelos Macroeconómicos (Macro II, ESEN 2026), organizados como capas del mismo modelo.">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=832e3da39b4e">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=bfb3b9e79865">
 <script>try{var t=localStorage.getItem('mm-tema');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
-<link rel="stylesheet" href="assets/guia.css?v=3bb8d4f4eab3">
+<link rel="stylesheet" href="assets/guia.css?v=4009190d8141">
 </head>
 <body>
 <a class="salto" href="#contenido">Saltar al contenido</a>
 <header class="cab">
   <div class="cab-barra">
-    <a class="cab-marca" href="index.html" aria-current="page"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect x="6" y="5" width="52" height="7" fill="#F0B429"/><rect x="6" y="15" width="44" height="7" fill="#F2552C"/><rect x="6" y="25" width="36" height="7" fill="#C65BD6"/><rect x="6" y="35" width="28" height="7" fill="#22B8A0"/><rect x="6" y="45" width="20" height="7" fill="#EC6FA0"/><rect x="6" y="55" width="12" height="7" fill="#A6D13A"/></svg><span><b>Macro II</b><small>Modelos Macroeconómicos · ESEN</small></span></a>
+    <a class="cab-marca" href="index.html" aria-current="page"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect x="6" y="4" width="52" height="6" fill="#F0B429"/><rect x="6" y="12" width="45" height="6" fill="#F2552C"/><rect x="6" y="20" width="38" height="6" fill="#C65BD6"/><rect x="6" y="28" width="31" height="6" fill="#22B8A0"/><rect x="6" y="36" width="24" height="6" fill="#EC6FA0"/><rect x="6" y="44" width="17" height="6" fill="#9B8CFF"/><rect x="6" y="52" width="10" height="6" fill="#A6D13A"/></svg><span><b>Macro II</b><small>Modelos Macroeconómicos · ESEN</small></span></a>
     <a class="cab-salto" href="#herramientas">Repasos y práctica</a>
     <button class="btn-tema" type="button" data-btn-tema>Tema oscuro</button>
   </div>
@@ -70,17 +70,17 @@
   <p>Vault de Modelos Macroeconómicos, generado y mantenido junto con Claude. <a href="https://github.com/carcamval2025-cyber/modelos-macroeconomicos-vault">Repositorio en GitHub</a>.</p>
 </footer>
 
-<script src="assets/guia.js?v=873e69662f72"></script>
+<script src="assets/guia.js?v=e66490edf93e"></script>
 <script>
 /* Para publicar un Tema: cambiar disponible:false a disponible:true (ver AGENTS.md, sección GitHub Pages).
-   k es la variable que colorea su capa: Y, IS, x, ext, u o g. */
+   k es la variable que colorea su capa: Y, IS, x, ext, u, pi o g. */
 const TEMAS = [
   {n:1, nombre:'Repaso de Macro I', capitulo:'Cap. 4 (secc. 4.3 en adelante)', semana:'Semana 1', disponible:true, href:'tema-01/', k:'Y', pieza:'Y = Z', materiales:[['tema-01/','Guía']]},
   {n:2, nombre:'Modelo IS-LM', capitulo:'Cap. 5', semana:'Semana 2', disponible:true, href:'tema-02/', k:'IS', pieza:'IS y LM', materiales:[['tema-02/','Repaso Control 1'],['tema-02/simulador-islm.html','Simulador'],['tema-02/simulacro-control1.html','Simulacro']]},
   {n:3, nombre:'IS-LM + Temas Financieros', capitulo:'Cap. 6', semana:'Semana 3', disponible:true, href:'tema-03/', k:'x', pieza:'r + x', materiales:[['tema-03/','Guía y laboratorio']]},
   {n:4, nombre:'IS-LM + Apertura Comercial/Financiera', capitulo:'Cap. 17 (partes seleccionadas)', semana:'Semana 4', disponible:true, href:'tema-04/', k:'ext', pieza:'ε y UIP', materiales:[['tema-04/','Guía'],['tema-04/guia-balanza-de-pagos.html','Balanza de pagos'],['tema-04/guia-apertura-empresa-riesgo-islm.html','Apertura (Moodle)'],['tema-04/actividad-tema4-apertura.html','Actividad'],['tema-04/repaso-control2-tema4-apertura.html','Repaso Control 2']]},
   {n:5, nombre:'Mercado laboral y curva de Phillips', capitulo:'Caps. 7 y 8', semana:'Semanas 7 y 8', disponible:true, href:'tema-05/', k:'u', pieza:'uₙ y Yₙ', materiales:[['tema-05/','Guía S7'],['tema-05/actividad-semana7-mercado-laboral.html','Actividad S7'],['tema-05/guia-semana8-phillips.html','Guía S8'],['tema-05/actividad-semana8-phillips.html','Actividad S8'],['tema-05/actividad-phillips-el-salvador.html','Phillips en El Salvador']]},
-  {n:6, nombre:'IS-LM-PC', capitulo:'Cap. 9', semana:'Semanas 9 y 10', disponible:false, href:'tema-06/'},
+  {n:6, nombre:'Modelo IS-LM-PC', capitulo:'Cap. 9', semana:'Semanas 9 y 10', disponible:true, href:'tema-06/', k:'pi', pieza:'rₙ y π', materiales:[['tema-06/','Guía'],['tema-06/ejercicios-papel.html','Ejercicios en papel'],['tema-06/actividad-is-lm-pc.html','Actividad']]},
   {n:7, nombre:'Crecimiento económico', capitulo:'Caps. 10 y 11', semana:'Semana 11', disponible:true, href:'tema-07/', k:'g', pieza:'Yₙ crece', materiales:[['tema-07/','Guía'],['tema-07/ejercicios-papel.html','Ejercicios en papel'],['tema-07/actividad-crecimiento.html','Actividad']]},
 ];
 
@@ -101,6 +101,8 @@ const HERRAMIENTAS = [
   {tema:5, nombre:'Actividad de curva de Phillips (semana 8)', descripcion:'21 ítems y 3 ejercicios numéricos: la ecuación, expectativas, shocks de oferta, indexación y deflación.', href:'tema-05/actividad-semana8-phillips.html'},
   {tema:5, nombre:'Phillips en El Salvador (semana 8)', descripcion:'Prueba con datos del FMI: pendiente de la curva por periodos y ventanas de 10 años, shocks de demanda y de oferta, y el papel de las expectativas.', href:'tema-05/actividad-phillips-el-salvador.html'},
   {tema:5, nombre:'Simulador de la curva de Phillips', descripcion:'Mantén el desempleo bajo la tasa natural y compara la inflación con expectativas ancladas, desancladas e indexación.', href:'tema-05/guia-semana8-phillips.html#simulador'},
+  {tema:6, nombre:'Ejercicios IS-LM-PC en papel', descripcion:'Toda la guía del mediano plazo resuelta paso a paso: Phillips, Okun, las cuatro tablas de signos, los quince verdadero o falso y los despejes.', href:'tema-06/ejercicios-papel.html'},
+  {tema:6, nombre:'Actividad IS-LM-PC', descripcion:'Verdadero o falso, selección y tablas de signos fila por fila con retroalimentación inmediata, más ejercicios numéricos.', href:'tema-06/actividad-is-lm-pc.html'},
   {tema:7, nombre:'Ejercicios de crecimiento en papel', descripcion:'Guía de ejercicios y tarea con PWT del profesor, resueltas paso a paso, con todos los despejes del tema (contabilidad del crecimiento, convergencia, Cobb-Douglas y Solow).', href:'tema-07/ejercicios-papel.html'},
   {tema:7, nombre:'Actividad de crecimiento económico', descripcion:'Ítems con retroalimentación inmediata y ejercicios numéricos: guía del profesor, tarea con PWT, cinco países en PPC, Cobb-Douglas y Solow.', href:'tema-07/actividad-crecimiento.html'},
   {tema:7, nombre:'Simuladores de convergencia y de Solow', descripcion:'PIB real per cápita de los países A y B en el tiempo, años para alcanzar, y el efecto de subir la tasa de ahorro sobre el producto y el consumo.', href:'tema-07/#sim-conv'},

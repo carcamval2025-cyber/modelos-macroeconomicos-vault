@@ -15,7 +15,7 @@ otras_lecturas: "—"
 
 _(Actualizar conforme avanza — este tema se cubre en dos semanas.)_
 
-- [ ]
+- [x] Material generado el 2026-11-05 con alcance: cap. 9 completo + ley de Okun de la clase (Δu = a − βg), a pedido de Navas ("haz el tema 6 también", mismo formato que el Tema 7). Fuente principal: `Guía de ejercicios del mediano plazo.docx` (caps. 7, 8 y 9).
 
 ## Materiales generados para este tema
 

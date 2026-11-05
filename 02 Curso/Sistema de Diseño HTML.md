@@ -37,6 +37,12 @@ riesgo x, Tema 4 la paridad de tasas con el exterior. Esa idea se ve en:
 - Componente nuevo `.campos-num` / `.campo-num` (respuesta numérica con verificación, estados `data-estado="ok|mal"`) para actividades con ejercicios numéricos.
 - Logo y favicon pasan a 5 barras (una por Tema publicado).
 
+## Tema 6 (2026-11-05)
+
+- Capa `data-k="pi"` (inflación y mediano plazo): banda `--k-pi` `#9B8CFF` (7.0:1 con `#140C00`), `--c-pi` claro `#5B45D6` (≥5.4:1) y oscuro/lámina `#ADA2FF` (≥7.2:1). Variable viva `data-var="pi"`.
+- Pieza en `MM.plano`: capa `data-capa="6"`, recta punteada en la tasa natural rₙ donde la IS corta a Yₙ, punto A″.
+- Logo y favicon pasan a 7 barras (los 7 Temas publicados).
+
 ## Tema 7 (2026-11-05)
 
 - Capa nueva `data-k="g"` (crecimiento y largo plazo: A, K, N, y = Y/N): tokens `--k-g` `#A6D13A` (banda, 10.9:1 con `#140C00`), `--c-g` claro `#4E6B00` (≥5.1:1 sobre `--s1`, `--s2`, `--bg`) y oscuro/lámina `#B4DC4E` (≥10:1). Variable viva `data-var="g"`.

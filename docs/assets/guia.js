@@ -299,6 +299,13 @@
     txt('Yₙ', { x: f.X(yN), y: f.Yc(0) + 32, class: 'pl-lbl pl-lbl-u', 'data-var': 'u', 'text-anchor': 'middle' }, g5);
     txt('uₙ → Yₙ', { x: f.X(yN) + 8, y: f.Yc(0.96) + 4, class: 'pl-lbl pl-lbl-u', 'data-var': 'u' }, g5);
 
+    // Tema 6: en el mediano plazo el banco central lleva la tasa a la tasa natural rₙ, donde la IS corta a Yₙ (geometría cualitativa)
+    var g6 = el('g', { 'data-capa': '6' }, svg), rN = M.a - M.s * yN;
+    el('line', { x1: f.X(0), y1: f.Yc(rN), x2: f.X(yN), y2: f.Yc(rN), class: 'pl-rn', 'data-var': 'pi' }, g6);
+    el('circle', { cx: f.X(yN), cy: f.Yc(rN), r: 6, class: 'pl-eq-pi', 'data-var': 'pi' }, g6);
+    txt('rₙ', { x: f.X(0) - 12, y: f.Yc(rN) + 6, class: 'pl-lbl pl-lbl-pi', 'data-var': 'pi', 'text-anchor': 'end' }, g6);
+    txt('A″', { x: f.X(yN) - 10, y: f.Yc(rN) + 22, class: 'pl-lbl pl-lbl-pi', 'data-var': 'pi', 'text-anchor': 'end' }, g6);
+
     // Tema 7: en el largo plazo el producto natural crece con A, K y N (geometría cualitativa)
     var g7 = el('g', { 'data-capa': '7' }, svg), yN2 = yN + 0.17;
     el('line', { x1: f.X(yN2), y1: f.Yc(0.8), x2: f.X(yN2), y2: f.Yc(0), class: 'pl-yn2', 'data-var': 'g' }, g7);
@@ -444,7 +451,7 @@
       primera.appendChild(nota);
     }
   };
-  var NOMBRES = { Y: 'producto', i: 'tasa de interés', IS: 'curva IS', x: 'prima de riesgo', ext: 'sector externo', u: 'desempleo y mercado laboral', g: 'crecimiento y largo plazo' };
+  var NOMBRES = { Y: 'producto', i: 'tasa de interés', IS: 'curva IS', x: 'prima de riesgo', ext: 'sector externo', u: 'desempleo y mercado laboral', g: 'crecimiento y largo plazo', pi: 'inflación y mediano plazo' };
 
   /* ---------- Índice como diagrama: el punto es la posición de lectura ---------- */
   MM.navEq = function (nav) {

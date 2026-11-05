@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="es" data-k="pi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tema 6 · Modelo IS-LM-PC | Macro II</title>
+<meta name="description" content="Guía de estudio del Tema 6 de Modelos Macroeconómicos: el modelo IS-LM-PC, la ley de Okun, el paso del corto al mediano plazo, desanclaje, shocks de oferta, trampa deflacionaria y consolidación fiscal (Blanchard, cap. 9).">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg?v=bfb3b9e79865">
+<script>try{var t=localStorage.getItem('mm-tema');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/guia.css?v=4009190d8141">
+</head>
+<body>
+
+<a class="salto" href="#contenido">Saltar al contenido</a>
+<header class="cab">
+  <div class="cab-barra">
+    <a class="cab-marca" href="../index.html"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect x="6" y="4" width="52" height="6" fill="#F0B429"/><rect x="6" y="12" width="45" height="6" fill="#F2552C"/><rect x="6" y="20" width="38" height="6" fill="#C65BD6"/><rect x="6" y="28" width="31" height="6" fill="#22B8A0"/><rect x="6" y="36" width="24" height="6" fill="#EC6FA0"/><rect x="6" y="44" width="17" height="6" fill="#9B8CFF"/><rect x="6" y="52" width="10" height="6" fill="#A6D13A"/></svg><span><b>Macro II</b><small>Modelos Macroeconómicos · ESEN</small></span></a>
+    <button class="btn-tema" type="button" data-btn-tema>Tema oscuro</button>
+  </div>
+  <div class="cab-banda">
+    <div class="cab-in">
+      <p class="cab-kicker"><a href="../index.html">Inicio</a> / Tema 6 · Semanas 9 y 10 · Guía de estudio</p>
+      <h1>El modelo IS-LM-PC: del corto al mediano plazo</h1>
+      <p class="sub">Cómo se juntan los mercados de bienes y financieros (IS-LM) con el mercado laboral (curva de Phillips): la brecha del producto, la ley de Okun, el ajuste hacia el mediano plazo, el desanclaje, los shocks de oferta, la trampa deflacionaria y la consolidación fiscal. Con un método para resolver tablas de signos.</p>
+      <ul class="cab-meta"><li>Blanchard, cap. 9 (secc. 9-1 a 9-5)</li><li>Guía de ejercicios del mediano plazo</li><li>Semanas 9 y 10 · Examen final</li></ul>
+      <nav class="cab-mats" aria-label="Materiales del Tema 6"><span>Materiales del Tema 6:</span><a href="index.html" aria-current="page">Guía</a><a href="ejercicios-papel.html">Ejercicios en papel</a><a href="actividad-is-lm-pc.html">Actividad</a></nav>
+    </div>
+  </div>
+</header>
+
+<div class="pagina">
+<main id="contenido">
+  <div class="recuadro">
+    <span class="recuadro-tag">Mensaje central del capítulo</span>
+    <p>En el corto plazo, la demanda determina el producto. En el mediano plazo, con ayuda de la política, el producto vuelve a su nivel potencial. Practica con los <a href="ejercicios-papel.html">ejercicios en papel paso a paso</a> (con todos los despejes) y con la <a href="actividad-is-lm-pc.html">Actividad del Tema 6</a>.</p>
+  </div>
+
+  <section class="modulo" id="alcance">
+    <div class="modulo-head"><h2>Qué cubre esta guía y cómo usarla</h2></div>
+    <div class="bloque">
+      <p>Alcance: el capítulo 9 de Blanchard completo (9-1 a 9-5, con los recuadros de la ley de Okun, el petróleo y la Gran Depresión) y la ley de Okun en la forma de la clase y de la <em>Guía de ejercicios del mediano plazo</em> del profesor. Usa piezas de los Temas 2 a 5 (IS, LM, prima de riesgo x, paridad de tasas, WS y PS, curva de Phillips).</p>
+      <p><strong>Sobre las cifras:</strong> los datos reales son los del libro. Los ejemplos con la etiqueta <span class="tag-pill">hipotético</span> usan números inventados para practicar.</p>
+    </div>
+    <div class="bloque">
+      <h3>Mapa del tema en cinco ideas</h3>
+      <ol>
+        <li><strong>El modelo (9-1).</strong> La IS y la LM dan el producto; la curva de Phillips, escrita en función del producto, da la inflación.</li>
+        <li><strong>El ajuste (9-2).</strong> Si hay brecha del producto, el banco central mueve la tasa real hasta que Y = Yₙ y π = π̄. Esa tasa es la tasa natural de interés.</li>
+        <li><strong>Lo que puede salir mal (9-3).</strong> Incertidumbre, desanclaje de expectativas, shocks de oferta y la trampa deflacionaria con tasa nominal en cero.</li>
+        <li><strong>Consolidación fiscal (9-4).</strong> Recesión en el corto plazo; en el mediano plazo, menos consumo y más inversión.</li>
+        <li><strong>Conclusiones (9-5).</strong> Los efectos de corto y mediano plazo difieren; las fluctuaciones son shocks con mecanismos de propagación.</li>
+      </ol>
+    </div>
+    <div class="bloque">
+      <h3>Mapa de símbolos</h3>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Símbolo</th><th>Qué es</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">Y, Yₙ</td><td>Producto y producto natural (potencial).</td></tr>
+            <tr><td class="mono">Y − Yₙ</td><td>Brecha del producto: positiva si la economía se recalienta, negativa en recesión.</td></tr>
+            <tr><td class="mono">u, uₙ</td><td>Desempleo y tasa natural de desempleo.</td></tr>
+            <tr><td class="mono">L, N</td><td>Fuerza laboral y empleo (ocupados): u = 1 − N/L.</td></tr>
+            <tr><td class="mono">π, πᵉ, π̄</td><td>Inflación, inflación esperada y meta de inflación del banco central.</td></tr>
+            <tr><td class="mono">α</td><td>Efecto del desempleo sobre la inflación (pendiente de la curva de Phillips).</td></tr>
+            <tr><td class="mono">θ</td><td>Peso de la inflación pasada en las expectativas (0: ancladas; 1: desancladas).</td></tr>
+            <tr><td class="mono">r, i, rₙ</td><td>Tasa real (la que fija el banco central en la LM), tasa nominal y tasa natural de interés.</td></tr>
+            <tr><td class="mono">x</td><td>Prima de riesgo: la inversión depende de r + x.</td></tr>
+            <tr><td class="mono">m, z</td><td>Markup de precios y factores que afectan los salarios (Tema 5).</td></tr>
+            <tr><td class="mono">g, β (Okun)</td><td>Crecimiento del producto y coeficiente de Okun.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo" id="modelo">
+    <div class="modulo-head"><h2>El modelo IS-LM-PC</h2></div>
+    <div class="modulo-text">Sección 9-1.</div>
+    <div class="bloque">
+      <h3>Parte de arriba: IS y LM (Temas 2 a 4)</h3>
+      <div class="anatomia">
+        <div class="ecuacion"><span class="v" data-var="Y"><span>Y</span></span> = C(<span class="v" data-var="Y"><span>Y</span></span> − T) + I(<span class="v" data-var="Y"><span>Y</span></span>, <span class="v" data-var="i"><span>r</span></span> + x) + G &nbsp;&nbsp; (9.1)</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>C(Y − T)</dt><dd><p>Consumo: sube con el ingreso disponible.</p></dd>
+          <dt>I(Y, r + x)</dt><dd><p>Inversión: sube con el producto y baja con la tasa real de endeudamiento, la tasa del banco central más la prima de riesgo.</p></dd>
+          <dt>G</dt><dd><p>Gasto público, exógeno.</p></dd>
+          <dt>LM</dt><dd><p>Recta horizontal en la tasa real r que elige el banco central (ajusta la oferta de dinero para lograrla).</p></dd>
+        </dl>
+      </div>
+      <p>La IS tiene pendiente negativa: menor r, más inversión, más demanda, más producto (y el multiplicador). El cruce con la LM da el producto de corto plazo.</p>
+    </div>
+    <div class="bloque">
+      <h3>Parte de abajo: la curva de Phillips en función del producto</h3>
+      <p>Del Tema 5: π − πᵉ = −α(u − uₙ) (9.2). Hay que pasar del desempleo al producto. Se supone, como en el capítulo 7, que Y = N (una unidad de trabajo produce una de producto).</p>
+      <ol class="pasos">
+        <li><b class="paso-tt">Definición de la tasa de desempleo</b><div><div class="ecuacion">u = U/L = (L − N)/L = 1 − N/L</div></div></li>
+        <li><b class="paso-tt">Despejar el empleo</b><div>Pasa N/L a la izquierda y u a la derecha, luego multiplica por L:<div class="ecuacion">N = L(1 − u)</div></div></li>
+        <li><b class="paso-tt">Producto y producto natural</b><div>Con Y = N: Y = L(1 − u). Con u = uₙ: Yₙ = L(1 − uₙ).</div></li>
+        <li><b class="paso-tt">Restar</b><div><div class="ecuacion"><span class="v" data-var="Y"><span>Y</span></span> − <span class="v" data-var="Y"><span>Yₙ</span></span> = L(1 − u) − L(1 − uₙ) = −L(<span class="v" data-var="u"><span>u</span></span> − <span class="v" data-var="u"><span>uₙ</span></span>)</div>Desempleo bajo la tasa natural equivale a brecha del producto positiva.</div></li>
+        <li><b class="paso-tt">Despejar (u − uₙ) y sustituir en (9.2)</b><div>u − uₙ = −(Y − Yₙ)/L, así que −α(u − uₙ) = (α/L)(Y − Yₙ):<div class="ecuacion"><span class="v" data-var="pi"><span>π</span></span> − <span class="v" data-var="pi"><span>πᵉ</span></span> = (α/L)(<span class="v" data-var="Y"><span>Y</span></span> − <span class="v" data-var="Y"><span>Yₙ</span></span>) &nbsp;&nbsp; (9.3)</div></div></li>
+        <li><b class="paso-tt">Con expectativas ancladas en la meta (πᵉ = π̄)</b><div><div class="ecuacion"><span class="v" data-var="pi"><span>π</span></span> − <span class="v" data-var="pi"><span>π̄</span></span> = (α/L)(<span class="v" data-var="Y"><span>Y</span></span> − <span class="v" data-var="Y"><span>Yₙ</span></span>) &nbsp;&nbsp; (9.4)</div></div></li>
+      </ol>
+      <div class="anatomia">
+        <div class="ecuacion">Y &gt; Yₙ ⇒ π &gt; π̄ &nbsp;·&nbsp; Y = Yₙ ⇒ π = π̄ &nbsp;·&nbsp; Y &lt; Yₙ ⇒ π &lt; π̄</div>
+        <span class="anatomia-tt">Cómo se lee la curva PC</span>
+        <dl class="simbolos">
+          <dt>Eje vertical</dt><dd><p>π − π̄: la inflación menos la meta (con expectativas ancladas). Si las expectativas se desanclan (πᵉ = π<sub>−1</sub>), el eje es π − π<sub>−1</sub>, el cambio de la inflación.</p></dd>
+          <dt>Eje horizontal</dt><dd><p>El producto Y. La PC corta el eje horizontal en Yₙ.</p></dd>
+          <dt>Pendiente α/L</dt><dd><p>Positiva: más producto, menos desempleo, más inflación.</p></dd>
+          <dt>Ojo</dt><dd><p>Un punto de la PC puede estar bajo el eje (π &lt; π̄) aunque la inflación sea positiva: el eje mide la distancia a la meta, no el nivel.</p></dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo" id="okun">
+    <div class="modulo-head"><h2>La ley de Okun</h2></div>
+    <div class="modulo-text">Recuadro "Okun's Law across Time and Countries" y versión de la clase.</div>
+    <div class="bloque">
+      <p>De la relación del texto, con fuerza laboral constante, se llega a una versión teórica: el cambio del desempleo es aproximadamente menos el crecimiento del producto.</p>
+      <ol class="pasos">
+        <li><b class="paso-tt">Escribir N = L(1 − u) para dos años y restar</b><div>N − N<sub>−1</sub> = −L(u − u<sub>−1</sub>).</div></li>
+        <li><b class="paso-tt">Dividir entre N<sub>−1</sub></b><div>(N − N<sub>−1</sub>)/N<sub>−1</sub> = −(L/N<sub>−1</sub>)(u − u<sub>−1</sub>). La izquierda es g<sub>N</sub> = g<sub>Y</sub> (porque Y = N), y L/N<sub>−1</sub> ≈ 1 (con u = 5%, vale 1.05).</div></li>
+        <li><b class="paso-tt">Resultado teórico</b><div><div class="ecuacion">u − u<sub>−1</sub> ≈ −g<sub>Y</sub> &nbsp;&nbsp; (9B.1)</div></div></li>
+      </ol>
+      <p>Los datos de EE. UU. (trimestrales desde 1960) dan en cambio:</p>
+      <div class="ecuacion">u − u<sub>−1</sub> = −0.47(g<sub>Y</sub> − 0.76%) &nbsp;&nbsp; (9B.2)</div>
+      <ul>
+        <li><strong>El umbral:</strong> hace falta crecer al menos 0.76% trimestral (unos 3% anuales) para que el desempleo no suba, porque crecen la fuerza laboral (por ejemplo 1.7%) y la productividad (1.3%): 1.7% + 1.3% = 3%. Hoy ese crecimiento necesario estaría más cerca de 2%.</li>
+        <li><strong>El coeficiente de Okun (0.47 en lugar de 1):</strong> las empresas ajustan el empleo menos que uno a uno (atesoramiento de trabajo o <em>labor hoarding</em>: hay puestos que se necesitan igual y capacitar es caro): 1% más de crecimiento sube la tasa de empleo solo 0.63%. Y el desempleo baja menos que lo que sube el empleo, porque aumenta la participación: parte de los nuevos empleos los toman personas fuera de la fuerza laboral. En Japón, con tradición de empleo de por vida, el coeficiente es solo 0.1.</li>
+      </ul>
+    </div>
+    <div class="bloque">
+      <h3>La versión de la clase: la recta de Excel</h3>
+      <div class="anatomia">
+        <div class="ecuacion">Δu = a − β·g &nbsp;&nbsp; ⇔ &nbsp;&nbsp; Δu = −β(g − g<sub>meta</sub>), &nbsp; con g<sub>meta</sub> = a/β</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>Δu</dt><dd><p>Cambio de la tasa de desempleo de un periodo a otro, en puntos porcentuales (la "y" del gráfico de Excel).</p></dd>
+          <dt>g</dt><dd><p>Crecimiento observado del producto (la "x").</p></dd>
+          <dt>a</dt><dd><p>Intercepto: el cambio del desempleo si la economía no crece (g = 0).</p></dd>
+          <dt>−β</dt><dd><p>La pendiente; β en valor absoluto es el coeficiente de Okun.</p></dd>
+          <dt>g<sub>meta</sub> = a/β</dt><dd><p>El crecimiento que deja el desempleo sin cambio: sale de igualar Δu = 0 y despejar g. Es el crecimiento de la PEA más el de la productividad.</p></dd>
+        </dl>
+      </div>
+      <p><strong>Cómo leerla:</strong> si g &gt; g<sub>meta</sub>, el desempleo baja (Δu &lt; 0); si g = g<sub>meta</sub>, no cambia; si g &lt; g<sub>meta</sub>, sube. Ojo: Δu negativo significa que el desempleo bajó, no que la tasa de desempleo sea negativa.</p>
+    </div>
+    <div class="simulador-panel" id="sim-okun">
+      <h3>Calculadora de la ley de Okun <span class="tag-pill">hipotético</span></h3>
+      <div class="sim-grid">
+        <div class="control-item"><div class="control-top"><label class="control-label" for="oa">Intercepto a (pp)</label><span class="control-val" id="voa">1.5</span></div><input class="control-slider" type="range" id="oa" min="0.2" max="3" step="0.1" value="1.5"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="ob">Coeficiente β</label><span class="control-val" id="vob">0.50</span></div><input class="control-slider" type="range" id="ob" min="0.1" max="1" step="0.05" value="0.5"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="og">Crecimiento observado g</label><span class="control-val" id="vog">5.0%</span></div><input class="control-slider" type="range" id="og" min="-4" max="10" step="0.1" value="5"></div>
+      </div>
+      <div class="kpis-grid" aria-live="polite">
+        <div class="kpi-card"><div class="kpi-title">Crecimiento meta a/β</div><div class="kpi-num" id="kmeta">3.0%</div></div>
+        <div class="kpi-card"><div class="kpi-title">Cambio del desempleo Δu</div><div class="kpi-num" id="kdu">−1.0 pp</div></div>
+      </div>
+      <p class="sim-nota" id="okunTxt"></p>
+    </div>
+  </section>
+
+  <section class="modulo" id="ajuste">
+    <div class="modulo-head"><h2>Del corto al mediano plazo</h2></div>
+    <div class="modulo-text">Sección 9-2, Figuras 9-1 y 9-2.</div>
+    <figure class="anim">
+      <div class="anim-escena diagrama">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-label="Animación del modelo IS-LM-PC: arriba la IS y la LM, abajo la curva de Phillips. En A el producto supera al potencial y la inflación supera la meta; el banco central sube la tasa, la LM sube, el producto baja hacia Yn y la inflación vuelve a la meta en A prima.">
+          <rect width="900" height="620" fill="#1A1B1D"/>
+<defs><marker id="a6m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F2F2F0"/></marker></defs>
+<line x1="90" y1="290" x2="860" y2="290" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#a6m)"/>
+<line x1="90" y1="290" x2="90" y2="22" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#a6m)"/>
+<text x="100" y="26" font-size="14" fill="#F2F2F0">Tasa de interés real, r</text>
+<text x="860" y="312" font-size="14" text-anchor="end" fill="#F2F2F0">Producto, Y</text>
+<line x1="90" y1="600" x2="90" y2="340" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#a6m)"/>
+<line x1="90" y1="470" x2="860" y2="470" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#a6m)"/>
+<text x="100" y="344" font-size="14" fill="#F2F2F0">Inflación menos meta, π − π̄</text>
+<text x="860" y="492" font-size="14" text-anchor="end" fill="#F2F2F0">Producto, Y</text>
+<text x="80" y="475" font-size="13" text-anchor="end" fill="#A9ABAE">0</text>
+<line x1="500" y1="40" x2="500" y2="600" stroke="#A9ABAE" stroke-width="1.5" stroke-dasharray="7 6"/>
+<text x="500" y="612" font-size="13" text-anchor="middle" fill="#A9ABAE">Yₙ</text>
+<line x1="150" y1="561.5" x2="820" y2="386.3" stroke="#ADA2FF" stroke-width="4"/>
+<text x="828" y="380.3" font-size="13" font-weight="700" fill="#ADA2FF">PC</text>
+<line x1="150" y1="50" x2="820" y2="266.5" stroke="#F2552C" stroke-width="4"/>
+<text x="828" y="270.5" font-size="13" font-weight="700" fill="#F2552C">IS</text>
+<g data-m="0:0,0 2:0,-36.9">
+<line x1="90" y1="200" x2="840" y2="200" stroke="#5C9DFF" stroke-width="4"/>
+<text x="845" y="196" font-size="13" font-weight="700" fill="#5C9DFF">LM</text>
+</g>
+<g data-v="1-2"><circle cx="614.3" cy="200" r="7" fill="#F2F2F0"/><text x="626.3" y="192" font-size="14" font-weight="700" fill="#F2F2F0">A</text>
+<line x1="614.3" y1="200" x2="614.3" y2="440.1" stroke="#A9ABAE" stroke-width="1.3" stroke-dasharray="3 5"/>
+<circle cx="614.3" cy="440.1" r="7" fill="#F2F2F0"/><text x="626.3" y="432.1" font-size="14" font-weight="700" fill="#F2F2F0">A</text>
+<text x="614.3" y="612" font-size="13" text-anchor="middle" fill="#F2F2F0">Y</text>
+<text x="520" y="412.1" font-size="13" fill="#F0B429">brecha positiva: π &gt; π̄</text></g>
+<g data-v="3"><path d="M604.3 192.8 L510 162.3" stroke="#F2F2F0" stroke-width="2.5" fill="none" marker-end="url(#a6m)"/>
+<path d="M604.3 446.7 L510 471.4" stroke="#F2F2F0" stroke-width="2.5" fill="none" marker-end="url(#a6m)"/></g>
+<g data-v="4"><circle cx="500" cy="163.1" r="7" fill="#ADA2FF"/><text x="488" y="153.1" font-size="14" font-weight="700" text-anchor="end" fill="#ADA2FF">A′</text>
+<text x="82" y="168.1" font-size="13" font-weight="700" text-anchor="end" fill="#ADA2FF">rₙ</text>
+<circle cx="500" cy="470" r="7" fill="#ADA2FF"/><text x="488" y="460" font-size="14" font-weight="700" text-anchor="end" fill="#ADA2FF">A′</text></g>
+        </svg>
+      </div>
+      <ol class="anim-pasos">
+        <li>Arriba, la IS y la LM en la tasa real r que fija el banco central. Abajo, la curva de Phillips: corta el eje en Yₙ.</li>
+        <li>Corto plazo en A: la demanda determina Y, mayor que Yₙ. Brecha positiva: la economía se recalienta y la inflación supera la meta.</li>
+        <li>Para devolver la inflación a la meta, el banco central sube la tasa real: la LM sube.</li>
+        <li>La economía se mueve por la IS hacia arriba y por la PC hacia abajo: el producto baja y la brecha se cierra.</li>
+        <li>Mediano plazo en A′: Y = Yₙ, u = uₙ, π = π̄ y la tasa real es la tasa natural de interés rₙ.</li>
+      </ol>
+      <figcaption>Animación propia de las Figuras 9-1 y 9-2 (geometría cualitativa).</figcaption>
+    </figure>
+    <div class="bloque">
+      <h3>El equilibrio de mediano plazo</h3>
+      <div class="anatomia">
+        <div class="ecuacion">Y = Yₙ, &nbsp; u = uₙ, &nbsp; π = π̄ = g<sub>M</sub>, &nbsp; r = rₙ, &nbsp; i = rₙ + π̄ = rₙ + g<sub>M</sub></div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>rₙ</dt><dd><p><strong>Tasa natural de interés</strong> (neutral o wickselliana, por Knut Wicksell): la tasa real a la que la demanda es igual al producto potencial. La tasa de endeudamiento es rₙ + x.</p></dd>
+          <dt>i = rₙ + π̄</dt><dd><p>La tasa nominal es la real más la inflación esperada, que en el mediano plazo es la meta. Más meta de inflación, más tasa nominal.</p></dd>
+          <dt>π = g<sub>M</sub></dt><dd><p>Con M/P = Yₙ L(rₙ + π̄) constante, los precios crecen al ritmo del dinero.</p></dd>
+          <dt>Neutralidad del dinero</dt><dd><p>En el mediano plazo, las variables reales (producto, desempleo, tasa real) no dependen de la política monetaria; esta solo determina la inflación y la tasa nominal.</p></dd>
+        </dl>
+      </div>
+    </div>
+    <div class="simulador-panel" id="sim-islmpc">
+      <h3>Simulador IS-LM-PC <span class="tag-pill">hipotético</span></h3>
+      <p>Economía con Yₙ = 1,000, meta π̄ = 2% y tasa natural inicial de 2%. En el periodo 1 llega un shock de demanda. Elige si el banco central mantiene la tasa o la ajusta, y si las expectativas están ancladas o desancladas.</p>
+      <div class="sim-grid">
+        <div class="control-item"><div class="control-top"><label class="control-label" for="xd">Shock de demanda (desplazamiento de la IS)</label><span class="control-val" id="vxd">+50</span></div><input class="control-slider" type="range" id="xd" min="-100" max="100" step="10" value="50"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="xt">θ: expectativas (0 ancladas, 1 desancladas)</label><span class="control-val" id="vxt">0.0</span></div><input class="control-slider" type="range" id="xt" min="0" max="1" step="0.1" value="0"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="xr">Reacción del banco central (0 mantiene r, 1 ajusta rápido)</label><span class="control-val" id="vxr">0.40</span></div><input class="control-slider" type="range" id="xr" min="0" max="1" step="0.05" value="0.4"></div>
+      </div>
+      <div class="kpis-grid" aria-live="polite">
+        <div class="kpi-card"><div class="kpi-title">Nueva tasa natural rₙ</div><div class="kpi-num" id="krn">4.0%</div></div>
+        <div class="kpi-card"><div class="kpi-title">Brecha en el periodo 1</div><div class="kpi-num" id="kgap1">+50</div></div>
+        <div class="kpi-card"><div class="kpi-title">Inflación en el periodo 1</div><div class="kpi-num" id="kpi1">3.0%</div></div>
+        <div class="kpi-card"><div class="kpi-title">Inflación en el periodo 12</div><div class="kpi-num" id="kpi12">2.0%</div></div>
+      </div>
+      <div class="diagrama"><svg id="svgPC" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" role="img" aria-label="Trayectorias de la brecha del producto y de la inflación durante 12 periodos"></svg></div>
+      <p class="sim-nota">Supuestos propios: IS con Y = 1,000 + shock − 25 × (r − 2) (r en puntos), α/L = 0.02 (50 unidades de brecha suben la inflación 1 punto sobre la esperada) y el banco central cierra cada periodo esa fracción de la distancia entre r y rₙ. Pruebas: (1) shock +50, θ = 0, sin reacción: inflación alta pero estable. (2) Igual con θ = 1: la inflación sube sin parar. (3) θ = 1 con reacción: la brecha se cierra, pero la inflación queda por encima de la meta (Figura 9-3).</p>
+    </div>
+  </section>
+
+  <section class="modulo" id="complicaciones">
+    <div class="modulo-head"><h2>Complicaciones: lo que puede salir mal</h2></div>
+    <div class="modulo-text">Sección 9-3.</div>
+    <div class="bloque">
+      <h3>Incertidumbre</h3>
+      <p>¿Por qué el banco central no sube la tasa a rₙ de una vez? Porque (1) no sabe con exactitud dónde está el producto potencial, y la señal de la inflación es ruidosa; y (2) la economía tarda en responder. En diciembre de 2022 el desempleo de EE. UU. era 3.5%, probablemente bajo la tasa natural, pero ¿cuánto? La Fed empezó a subir la tasa en febrero de 2022 con desempleo de 3.8%, y diez meses después el desempleo seguía bajando.</p>
+      <h3>Desanclaje de las expectativas (Figura 9-3)</h3>
+      <p>Si el banco central va lento, la inflación se queda sobre la meta y las expectativas pueden desanclarse: πᵉ = (1 − θ)π̄ + θπ<sub>−1</sub>, con θ que sube hacia 1. Con θ = 1:</p>
+      <div class="ecuacion"><span class="v" data-var="pi"><span>π</span></span> − <span class="v" data-var="pi"><span>π<sub>−1</sub></span></span> = (α/L)(<span class="v" data-var="Y"><span>Y</span></span> − <span class="v" data-var="Y"><span>Yₙ</span></span>)</div>
+      <p>Ahora el eje vertical es el <strong>cambio</strong> de la inflación: mientras Y &gt; Yₙ, la inflación sigue subiendo. Cuando el producto vuelve al potencial, la inflación quedó por encima de la meta, y para bajarla hay que provocar un periodo de producto bajo el potencial (desempleo sobre la tasa natural). Dos conclusiones: la credibilidad del banco central facilita su trabajo, y hay que encontrar el camino entre ir muy lento y muy rápido.</p>
+      <div class="aviso">
+        <span class="aviso-tag">Conexión con la guía del profesor: ¿qué va en el eje vertical?</span>
+        <p>Cuando la inflación es predecible y lleva años en, por ejemplo, 2%, es razonable usar una inflación esperada constante: el eje es π (o π − π̄). Cuando la inflación es poco predecible y ha ido subiendo, sería un error que los trabajadores usaran un valor constante: se usa la inflación pasada y el eje es π − π<sub>−1</sub>.</p>
+      </div>
+      <h3>Shocks de oferta: un aumento de m (petróleo)</h3>
+      <p>Un aumento del precio de la energía es como un aumento del markup m: sube uₙ y baja Yₙ. Si el producto no cambia pero el potencial baja, aparece una brecha positiva y sube la inflación, aunque la brecha venga de la oferta y no de la demanda.</p>
+      <ul>
+        <li>El banco central podría no subir la tasa y aceptar la inflación mientras dura el shock si cree que (1) el shock no durará, (2) los trabajadores aceptarán la caída del salario real (una baja de z compensa la subida de m) y (3) las expectativas no se desanclarán.</li>
+        <li>Si falla alguno de los tres supuestos, la inflación dura más, es más fuerte y puede desanclar expectativas; al final habrá que provocar desempleo para bajarla.</li>
+        <li><strong>Recuadro del petróleo:</strong> los aumentos de los setenta (de 4.3 a 10.1 dólares en 1973 a 1974; de 17 a 39 dólares en 1979 a 1980) tuvieron fuertes efectos; los de los 2000 (de 19 a 73 dólares entre 2002 y 2006) tuvieron cerca de la mitad del efecto sobre el IPC y el PIB. Razones: en los 2000 los aumentos vinieron de demanda y fueron graduales, los trabajadores tenían menos poder de negociación y había menos indexación, y la política monetaria era más creíble (expectativas ancladas).</li>
+      </ul>
+    </div>
+    <div class="bloque">
+      <h3>El límite inferior cero y la espiral deflacionaria (Figura 9-4)</h3>
+      <p>En una recesión fuerte, la brecha negativa lleva la inflación bajo la meta y quizá a deflación. El banco central debería bajar la tasa real hasta rₙ, que puede ser negativa. Pero la tasa nominal no baja de 0%: con deflación, la tasa real mínima es <strong>positiva</strong> e igual a la tasa de deflación (r = i − π = 0 − (−2%) = 2%).</p>
+      <div class="mecanismo" role="list" aria-label="Espiral deflacionaria">
+        <span class="mecanismo-step" role="listitem">Brecha negativa</span><span class="mecanismo-arrow" aria-hidden="true">→</span>
+        <span class="mecanismo-step" role="listitem">Más deflación</span><span class="mecanismo-arrow" aria-hidden="true">→</span>
+        <span class="mecanismo-step" role="listitem">Con i = 0, sube r</span><span class="mecanismo-arrow" aria-hidden="true">→</span>
+        <span class="mecanismo-step" role="listitem">Baja la demanda y Y</span><span class="mecanismo-arrow" aria-hidden="true">→</span>
+        <span class="mecanismo-step" role="listitem">Brecha más negativa</span>
+      </div>
+      <div class="tabla-wrap">
+        <table class="tabla-datos">
+          <caption>Deflación en la Gran Depresión (recuadro de Blanchard)</caption>
+          <thead><tr><th>Año</th><th>Desempleo (%)</th><th>Crecimiento (%)</th><th>Tasa nominal i (%)</th><th>Inflación π (%)</th><th>Tasa real r (%)</th></tr></thead>
+          <tbody>
+            <tr><td>1929</td><td>3.2</td><td>−9.8</td><td>5.3</td><td>0.0</td><td>5.3</td></tr>
+            <tr><td>1930</td><td>8.7</td><td>−7.6</td><td>4.4</td><td>−2.5</td><td>6.9</td></tr>
+            <tr><td>1931</td><td>15.9</td><td>−14.7</td><td>3.1</td><td>−9.2</td><td>12.3</td></tr>
+            <tr><td>1932</td><td>23.6</td><td>−1.8</td><td>4.0</td><td>−10.8</td><td>14.8</td></tr>
+            <tr><td>1933</td><td>24.9</td><td>9.1</td><td>2.6</td><td>−5.2</td><td>7.8</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Con r = i − π (suponiendo deflación esperada igual a la efectiva), la tasa real llegó a 14.8% en 1932 aunque la Fed bajó la nominal. Desde 1934 la deflación dio paso a inflación y empezó la recuperación (se debate si por la política monetaria o por el New Deal y el salario mínimo). En la Crisis Financiera Global se temió lo mismo, pero las expectativas siguieron ancladas y no hubo espiral.</p>
+    </div>
+  </section>
+
+  <section class="modulo" id="consolidacion">
+    <div class="modulo-head"><h2>La consolidación fiscal, revisitada</h2></div>
+    <div class="modulo-text">Sección 9-4, Figura 9-5.</div>
+    <figure class="anim">
+      <div class="anim-escena diagrama">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-label="Animación de la consolidación fiscal: la economía parte de A con producto potencial; suben los impuestos y la IS se desplaza a la izquierda, el producto cae y la inflación queda bajo la meta en A prima; el banco central baja la tasa y en A doble prima el producto vuelve al potencial con una tasa natural menor.">
+          <rect width="900" height="620" fill="#1A1B1D"/>
+<defs><marker id="a7m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F2F2F0"/></marker></defs>
+<line x1="90" y1="290" x2="860" y2="290" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#a7m)"/>
+<line x1="90" y1="290" x2="90" y2="22" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#a7m)"/>
+<text x="100" y="26" font-size="14" fill="#F2F2F0">Tasa de interés real, r</text>
+<text x="860" y="312" font-size="14" text-anchor="end" fill="#F2F2F0">Producto, Y</text>
+<line x1="90" y1="600" x2="90" y2="340" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#a7m)"/>
+<line x1="90" y1="470" x2="860" y2="470" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#a7m)"/>
+<text x="100" y="344" font-size="14" fill="#F2F2F0">Inflación menos meta, π − π̄</text>
+<text x="860" y="492" font-size="14" text-anchor="end" fill="#F2F2F0">Producto, Y</text>
+<text x="80" y="475" font-size="13" text-anchor="end" fill="#A9ABAE">0</text>
+<line x1="500" y1="40" x2="500" y2="600" stroke="#A9ABAE" stroke-width="1.5" stroke-dasharray="7 6"/>
+<text x="500" y="612" font-size="13" text-anchor="middle" fill="#A9ABAE">Yₙ</text>
+<line x1="150" y1="561.5" x2="820" y2="386.3" stroke="#ADA2FF" stroke-width="4"/>
+<text x="828" y="380.3" font-size="13" font-weight="700" fill="#ADA2FF">PC</text>
+<line data-v="0-1" x1="150" y1="50" x2="820" y2="266.5" stroke="#F2552C" stroke-width="4"/>
+<line data-v="2-" x1="150" y1="50" x2="820" y2="266.5" stroke="#F2552C" stroke-width="2" stroke-dasharray="7 6" opacity="0.6"/>
+<g data-m="0:0,0 1:-120,0"><line x1="150" y1="50" x2="820" y2="266.5" stroke="#F2552C" stroke-width="4"/>
+<text x="828" y="270.5" font-size="13" font-weight="700" fill="#F2552C">IS</text></g>
+<g data-m="0:0,0 3:0,38.8"><line x1="90" y1="163.1" x2="840" y2="163.1" stroke="#5C9DFF" stroke-width="4"/>
+<text x="845" y="159.1" font-size="13" font-weight="700" fill="#5C9DFF">LM</text></g>
+<g data-v="0-1"><circle cx="500" cy="163.1" r="7" fill="#F2F2F0"/><text x="512" y="155.1" font-size="14" font-weight="700" fill="#F2F2F0">A</text>
+<circle cx="500" cy="470" r="7" fill="#F2F2F0"/><text x="512" y="462" font-size="14" font-weight="700" fill="#F2F2F0">A</text></g>
+<g data-v="2"><circle cx="380" cy="163.1" r="7" fill="#F2F2F0"/><text x="368" y="155.1" font-size="14" font-weight="700" text-anchor="end" fill="#F2F2F0">A′</text>
+<line x1="380" y1="163.1" x2="380" y2="501.4" stroke="#A9ABAE" stroke-width="1.3" stroke-dasharray="3 5"/>
+<circle cx="380" cy="501.4" r="7" fill="#F2F2F0"/><text x="368" y="521.4" font-size="14" font-weight="700" text-anchor="end" fill="#F2F2F0">A′</text>
+<text x="380" y="612" font-size="13" text-anchor="middle" fill="#F2F2F0">Y′</text>
+<text x="200" y="560" font-size="13" fill="#F0B429">brecha negativa: π &lt; π̄</text></g>
+<g data-v="4"><circle cx="500" cy="201.8" r="7" fill="#ADA2FF"/><text x="512" y="221.8" font-size="14" font-weight="700" fill="#ADA2FF">A″</text>
+<text x="82" y="206.8" font-size="13" font-weight="700" text-anchor="end" fill="#ADA2FF">r′ₙ</text>
+<circle cx="500" cy="470" r="7" fill="#ADA2FF"/><text x="512" y="462" font-size="14" font-weight="700" fill="#ADA2FF">A″</text></g>
+<text data-v="0-" x="82" y="168.1" font-size="13" text-anchor="end" fill="#A9ABAE">rₙ</text>
+        </svg>
+      </div>
+      <ol class="anim-pasos">
+        <li>Punto de partida A: Y = Yₙ, r = rₙ, π = π̄.</li>
+        <li>El gobierno sube los impuestos para reducir el déficit: la IS se desplaza a la izquierda.</li>
+        <li>Corto plazo en A′ (con r sin cambio): el producto cae, brecha negativa, la inflación queda bajo la meta. Bajan el consumo (menos ingreso y más impuestos) y la inversión (menos ventas).</li>
+        <li>El banco central baja la tasa real: la LM baja y la economía se mueve por la nueva IS.</li>
+        <li>Mediano plazo en A″: Y = Yₙ, π = π̄ y una tasa natural menor, r′ₙ. El consumo es menor que al inicio y la inversión mayor.</li>
+      </ol>
+      <figcaption>Animación propia de la Figura 9-5 (geometría cualitativa).</figcaption>
+    </figure>
+    <div class="bloque">
+      <ul>
+        <li>Si el banco central bajara la tasa a la vez que sube el impuesto, se podría evitar la recesión: así ocurrió en EE. UU. en los noventa. No siempre es posible: en la zona euro durante la Crisis Financiera Global, con la tasa en cero, la política monetaria no pudo compensar la austeridad.</li>
+        <li>Lo mismo vale para un aumento del ahorro privado: baja la inversión en el corto plazo y la sube en el mediano plazo.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="modulo" id="conclusiones">
+    <div class="modulo-head"><h2>Conclusiones del capítulo</h2></div>
+    <div class="modulo-text">Sección 9-5.</div>
+    <div class="bloque">
+      <ul>
+        <li><strong>Corto frente a mediano plazo:</strong> muchos desacuerdos entre economistas vienen del horizonte que tienen en mente. Quien cree que la economía se ajusta lento mira el corto plazo; quien cree que se ajusta rápido, el mediano.</li>
+        <li><strong>Shocks y mecanismos de propagación:</strong> la economía recibe shocks continuos (confianza, inversión, prima de riesgo, energía, cambios de política). Sus efectos dinámicos son el <strong>mecanismo de propagación</strong>. Las fluctuaciones (ciclos económicos) son la suma de shocks y propagación.</li>
+        <li><strong>Política activa:</strong> Blanchard cree que la economía no se estabiliza sola: en todos los ejemplos, la reacción del banco central fue el mecanismo que devolvió el producto al potencial.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="modulo" id="signos">
+    <div class="modulo-head"><h2>Método para las tablas de signos</h2></div>
+    <div class="modulo-text">Como las de la guía de ejercicios del mediano plazo.</div>
+    <div class="bloque">
+      <ol class="pasos">
+        <li><b class="paso-tt">¿Corto o mediano plazo?</b><div>En el corto plazo, Yₙ y uₙ solo cambian si el shock es de oferta (m, z). En el mediano plazo, Y = Yₙ y u = uₙ.</div></li>
+        <li><b class="paso-tt">¿Qué curva se mueve?</b><div>Demanda (C autónomo, remesas, G, T, Y*, x): la IS. Política monetaria o tasa mundial i*: la LM. Oferta (m, z): Yₙ y uₙ, y con ellas la PC.</div></li>
+        <li><b class="paso-tt">Producto y mercado laboral</b><div>Y sube ⇒ suben los ocupados N, baja u. La brecha Y − Yₙ decide la inflación (con πᵉ dada).</div></li>
+        <li><b class="paso-tt">Componentes</b><div>C sube con Y − T. I sube con Y y baja con r + x. M (importaciones) sube con Y. X (exportaciones) depende de Y* y del tipo de cambio real; si no cambian, no cambian. S privado = Y − T − C sube con Y.</div></li>
+        <li><b class="paso-tt">Salario real</b><div>De la ecuación de precios (PS): W/P = 1/(1 + m). Solo cambia si cambia m.</div></li>
+        <li><b class="paso-tt">Mediano plazo</b><div>¿Qué tasa real hace falta para que la demanda iguale al nuevo Yₙ? Esa es la nueva rₙ; de ella dependen I (y, por la paridad de tasas, el tipo de cambio).</div></li>
+      </ol>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <caption>Resumen de los casos típicos</caption>
+          <thead><tr><th>Shock</th><th>Corto plazo (r sin cambio)</th><th>Mediano plazo</th></tr></thead>
+          <tbody>
+            <tr><td>Más demanda (consumo autónomo, remesas, G, Y*)</td><td>IS a la derecha: Y↑, N↑, u↓, π↑; Yₙ y uₙ sin cambio.</td><td>El banco central sube r hasta Y = Yₙ: rₙ mayor, I menor que al inicio.</td></tr>
+            <tr><td>Política monetaria expansiva</td><td>LM abajo: Y↑, I↑, C↑, brecha positiva, π↑.</td><td>Neutralidad: Y = Yₙ; solo cambian inflación y tasa nominal.</td></tr>
+            <tr><td>Aumento de m (petróleo, menos competencia)</td><td>Yₙ↓, uₙ↑: brecha positiva con el mismo Y, π↑.</td><td>Y = Yₙ menor, u = uₙ mayor, W/P menor; r más alta: C, I, M, N menores.</td></tr>
+            <tr><td>Reducción de m</td><td>Yₙ↑, uₙ↓: brecha negativa, π↓.</td><td>Y = Yₙ mayor, u = uₙ menor, W/P mayor; el banco central baja r: C, I mayores.</td></tr>
+            <tr><td>Consolidación fiscal (T↑)</td><td>IS a la izquierda: Y↓, C↓, I↓, π↓.</td><td>r baja a r′ₙ: Y = Yₙ, C menor, I mayor.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo" id="formulas">
+    <div class="modulo-head"><h2>Hoja de fórmulas</h2></div>
+    <div class="bloque">
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Fórmula</th><th>Para qué sirve</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">Y = C(Y − T) + I(Y, r + x) + G</td><td>IS (9.1).</td></tr>
+            <tr><td class="mono">u = 1 − N/L, &nbsp; N = L(1 − u)</td><td>Empleo y desempleo.</td></tr>
+            <tr><td class="mono">Y − Yₙ = −L(u − uₙ)</td><td>Brecha del producto y del desempleo.</td></tr>
+            <tr><td class="mono">π − πᵉ = −α(u − uₙ) = (α/L)(Y − Yₙ)</td><td>Curva de Phillips (9.2 y 9.3).</td></tr>
+            <tr><td class="mono">uₙ = (m + z)/α</td><td>Tasa natural (de π = πᵉ + (m + z) − αu, Tema 5).</td></tr>
+            <tr><td class="mono">πᵉ = (1 − θ)π̄ + θπ<sub>−1</sub></td><td>Expectativas: θ = 0 ancladas, θ = 1 desancladas.</td></tr>
+            <tr><td class="mono">u − u<sub>−1</sub> = −0.47(g − 0.76%)</td><td>Okun en EE. UU. (trimestral; 9B.2).</td></tr>
+            <tr><td class="mono">Δu = a − βg, &nbsp; g<sub>meta</sub> = a/β</td><td>Okun en la forma de la clase.</td></tr>
+            <tr><td class="mono">r = i − πᵉ, &nbsp; i = rₙ + π̄</td><td>Tasa real y nominal en el mediano plazo.</td></tr>
+            <tr><td class="mono">π = g<sub>M</sub>, &nbsp; i = rₙ + g<sub>M</sub></td><td>Dinero e inflación en el mediano plazo.</td></tr>
+            <tr><td class="mono">W/P = 1/(1 + m)</td><td>Salario real (PS).</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo" id="errores">
+    <div class="modulo-head"><h2>Errores frecuentes</h2></div>
+    <div class="bloque">
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Error</th><th>Por qué está mal</th></tr></thead>
+          <tbody>
+            <tr><td>"Si Y = Yₙ, la inflación es cero."</td><td>Si Y = Yₙ, la inflación es igual a la esperada (o a la meta), que puede ser 2%.</td></tr>
+            <tr><td>"Si Y = Yₙ, el desempleo es cero."</td><td>Si Y = Yₙ, el desempleo es igual a la tasa natural uₙ, que es positiva.</td></tr>
+            <tr><td>"Δu negativo significa desempleo negativo."</td><td>Δu es el cambio: negativo significa que el desempleo bajó.</td></tr>
+            <tr><td>"Más desempleados en número implica mayor tasa de desempleo."</td><td>u = U/L: si la fuerza laboral crece más que el desempleo, la tasa puede bajar.</td></tr>
+            <tr><td>"La política monetaria cambia el producto en el mediano plazo."</td><td>Neutralidad: en el mediano plazo solo cambia la inflación y la tasa nominal.</td></tr>
+            <tr><td>"Un aumento de z sube el desempleo natural y baja el salario real."</td><td>Sube uₙ, pero el salario real lo fija la PS: W/P = 1/(1 + m), no cambia.</td></tr>
+            <tr><td>Olvidar que en la PC con expectativas desancladas el eje es π − π<sub>−1</sub>.</td><td>Entonces mientras haya brecha positiva la inflación sigue subiendo.</td></tr>
+            <tr><td>Confundir la tasa natural de interés con la tasa de política.</td><td>rₙ es la tasa real que lleva la demanda a Yₙ; el banco central la busca, pero puede fijar otra en el corto plazo.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo" id="glosario">
+    <div class="modulo-head"><h2>Glosario del Tema 6</h2></div>
+    <div class="bezel"><div class="bezel-in">
+      <dl class="glosario">
+        <dt>Producto potencial</dt><dd>El producto natural Yₙ = L(1 − uₙ).</dd>
+        <dt>Brecha del producto</dt><dd>Y − Yₙ.</dd>
+        <dt>Atesoramiento de trabajo</dt><dd>Las empresas mantienen trabajadores en tiempos malos para no recontratar y capacitar después.</dd>
+        <dt>Coeficiente de Okun</dt><dd>Cuánto baja el desempleo por cada punto de crecimiento sobre el normal (0.47 en EE. UU., 0.1 en Japón).</dd>
+        <dt>Tasa natural de interés</dt><dd>Tasa real que iguala la demanda con el producto potencial (neutral o wickselliana).</dd>
+        <dt>Neutralidad del dinero</dt><dd>En el mediano plazo la política monetaria no afecta las variables reales.</dd>
+        <dt>Desanclaje</dt><dd>Las expectativas dejan de estar en la meta y siguen a la inflación pasada (θ sube).</dd>
+        <dt>Límite inferior cero</dt><dd>La tasa nominal no puede bajar de 0%.</dd>
+        <dt>Espiral o trampa deflacionaria</dt><dd>Más deflación sube la tasa real, baja el producto y causa más deflación.</dd>
+        <dt>Mecanismo de propagación</dt><dd>Los efectos dinámicos de un shock sobre el producto y sus componentes.</dd>
+        <dt>Ciclos económicos</dt><dd>Fluctuaciones del producto alrededor de su tendencia.</dd>
+      </dl>
+    </div></div>
+  </section>
+
+  <section class="modulo" id="autoeval">
+    <div class="modulo-head"><h2>Autoevaluación</h2></div>
+    <div class="modulo-text">Responde y luego abre la respuesta. Para ejercicios con calificación, usa la <a href="actividad-is-lm-pc.html">Actividad</a>.</div>
+    <div class="pregunta" data-abierta="false"><button class="disparador" type="button" aria-expanded="false"><span>1. ¿Por qué Y − Yₙ = −L(u − uₙ)?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Porque Y = N = L(1 − u) y Yₙ = L(1 − uₙ); al restar, Y − Yₙ = L(uₙ − u) = −L(u − uₙ). Desempleo bajo la tasa natural es producto sobre el potencial.</p></div></div>
+<div class="pregunta" data-abierta="false"><button class="disparador" type="button" aria-expanded="false"><span>2. Con πₜ = πₜᵉ + 0.08 − 2uₜ, ¿cuál es la tasa natural de desempleo?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Iguala π = πᵉ: 0.08 − 2uₙ = 0, así que uₙ = 0.08/2 = 0.04 (4%).</p></div></div>
+<div class="pregunta" data-abierta="false"><button class="disparador" type="button" aria-expanded="false"><span>3. Okun: y = 1.5 − 0.5x. ¿Cuál es el crecimiento meta y qué pasa si la economía crece 5%?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Meta: Δu = 0 ⇒ g = 1.5/0.5 = 3%. Con 5%: Δu = 1.5 − 2.5 = −1: el desempleo baja 1 punto (no es una tasa negativa).</p></div></div>
+<div class="pregunta" data-abierta="false"><button class="disparador" type="button" aria-expanded="false"><span>4. ¿Qué hace el banco central si la economía está en A con Y > Yₙ?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Sube la tasa real (la LM sube) hasta que Y = Yₙ y π vuelve a la meta; la tasa final es la tasa natural de interés rₙ.</p></div></div>
+<div class="pregunta" data-abierta="false"><button class="disparador" type="button" aria-expanded="false"><span>5. ¿Qué significa la neutralidad del dinero?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Que en el mediano plazo la política monetaria no afecta el producto, el desempleo ni la tasa real; solo la inflación (π = g_M) y la tasa nominal (i = rₙ + g_M).</p></div></div>
+<div class="pregunta" data-abierta="false"><button class="disparador" type="button" aria-expanded="false"><span>6. ¿Por qué con expectativas desancladas la inflación queda sobre la meta aunque la brecha se cierre?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Porque con πᵉ = π₋₁ la PC relaciona el cambio de la inflación con la brecha: mientras Y > Yₙ la inflación sube, y al cerrar la brecha deja de subir pero se queda alta. Bajarla exige un periodo con Y < Yₙ.</p></div></div>
+<div class="pregunta" data-abierta="false"><button class="disparador" type="button" aria-expanded="false"><span>7. ¿Cómo puede la deflación subir la tasa real si el banco central ya bajó la nominal a cero?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>r = i − π: con i = 0 y π = −2%, r = 2%. Más deflación, más tasa real, menos demanda y producto, más deflación: la espiral.</p></div></div>
+<div class="pregunta" data-abierta="false"><button class="disparador" type="button" aria-expanded="false"><span>8. Efectos de una consolidación fiscal (más impuestos) en el corto y en el mediano plazo.</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Corto plazo (r dada): IS a la izquierda, Y, C e I bajan, π bajo la meta. Mediano plazo: el banco central baja r, Y = Yₙ, C menor e I mayor que al inicio, con una tasa natural menor.</p></div></div>
+<div class="pregunta" data-abierta="false"><button class="disparador" type="button" aria-expanded="false"><span>9. Un aumento de m, ¿qué hace con uₙ, Yₙ y el salario real en el mediano plazo?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>uₙ = (m + z)/α sube, Yₙ = L(1 − uₙ) baja y W/P = 1/(1 + m) baja.</p></div></div>
+<div class="pregunta" data-abierta="false"><button class="disparador" type="button" aria-expanded="false"><span>10. ¿Por qué el coeficiente de Okun de EE. UU. es 0.47 y no 1?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Por el atesoramiento de trabajo (el empleo responde menos que el producto) y porque sube la participación (parte de los nuevos empleos los toman personas que estaban fuera de la fuerza laboral).</p></div></div>
+
+  </section>
+
+</main>
+<nav class="panel" data-nav-eq aria-label="Índice de esta página">
+  <button class="panel-boton" type="button" aria-expanded="false" aria-controls="panel-lista"><i><svg aria-hidden="true" focusable="false"></svg></i><span class="sr">Índice. Estás en: </span><span data-nav-actual>Índice</span></button>
+  <p class="panel-tt">Tema 6<small>En esta página</small></p>
+  <svg class="panel-svg" aria-hidden="true" focusable="false"></svg>
+  <ol class="panel-lista" id="panel-lista">
+    <li><a href="#alcance">Alcance y símbolos</a></li>
+    <li><a href="#modelo">9-1 El modelo</a></li>
+    <li><a href="#okun">Ley de Okun</a></li>
+    <li><a href="#ajuste">9-2 Corto a mediano plazo</a></li>
+    <li><a href="#complicaciones">9-3 Complicaciones</a></li>
+    <li><a href="#consolidacion">9-4 Consolidación fiscal</a></li>
+    <li><a href="#conclusiones">9-5 Conclusiones</a></li>
+    <li><a href="#signos">Tablas de signos</a></li>
+    <li><a href="#formulas">Hoja de fórmulas</a></li>
+    <li><a href="#errores">Errores frecuentes</a></li>
+    <li><a href="#glosario">Glosario</a></li>
+    <li><a href="#autoeval">Autoevaluación</a></li>
+  </ol>
+  <p class="panel-ayuda">El punto marca dónde vas leyendo. Con el foco en el índice, las flechas lo recorren.</p>
+</nav>
+</div>
+
+<footer>
+  <div>
+    <span class="badge">Fuente</span>Blanchard, Olivier (2023), <em>Macroeconomics</em>, 9ª ed., Pearson, cap. 9 "From the Short to the Medium Run: The IS-LM-PC Model" (pp. 177 a 195). Guía de ejercicios del mediano plazo (caps. 7, 8 y 9) del profesor Luis Morera (2026). Los ejemplos marcados como hipotéticos son ilustraciones del autor de la guía, no datos de la fuente.
+  </div>
+  <p>Guía de estudio: Semanas 9 y 10, Tema 6. Material de repaso del propio estudiante (no es Tarea ni Control). &middot; <a href="../index.html">Volver al sitio</a></p>
+</footer>
+
+<script src="../assets/guia.js?v=e66490edf93e"></script>
+<script>
+(function(){
+  document.querySelectorAll('.pregunta .disparador').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var p = btn.closest('.pregunta'), abierta = p.getAttribute('data-abierta') === 'true';
+      p.setAttribute('data-abierta', abierta ? 'false' : 'true');
+      btn.setAttribute('aria-expanded', abierta ? 'false' : 'true');
+    });
+  });
+  var NS = 'http://www.w3.org/2000/svg';
+  var C = { fondo:'#1A1B1D', tinta:'#F2F2F0', tenue:'#A9ABAE', linea:'#34363A', pi:'#ADA2FF', y:'#F0B429' };
+  function $(id){ return document.getElementById(id); }
+  function el(svg, t, a, txt){ var e = document.createElementNS(NS, t); for (var k in a) e.setAttribute(k, a[k]); if (txt != null) e.textContent = txt; svg.appendChild(e); return e; }
+  function enlazar(ids, fn){ ids.forEach(function(id){ $(id).addEventListener('input', fn); }); fn(); }
+  function signo(x, d){ return (x > 0 ? '+' : x < 0 ? '−' : '') + Math.abs(x).toFixed(d); }
+
+  // Okun (hipotético)
+  enlazar(['oa','ob','og'], function(){
+    var a = +$('oa').value, b = +$('ob').value, g = +$('og').value, du = a - b * g, meta = a / b;
+    $('voa').textContent = a.toFixed(1); $('vob').textContent = b.toFixed(2); $('vog').textContent = g.toFixed(1) + '%';
+    $('kmeta').textContent = meta.toFixed(1) + '%'; $('kdu').textContent = signo(du, 2) + ' pp';
+    $('okunTxt').textContent = 'Δu = ' + a.toFixed(1) + ' − ' + b.toFixed(2) + ' × ' + g.toFixed(1) + ' = ' + signo(du, 2) + ' pp. ' + (Math.abs(du) < 1e-9 ? 'La economía crece justo a la meta: el desempleo no cambia.' : du < 0 ? 'Crece más que la meta (' + meta.toFixed(1) + '%): el desempleo baja.' : 'Crece menos que la meta (' + meta.toFixed(1) + '%): el desempleo sube.');
+  });
+
+  // IS-LM-PC (hipotético)
+  enlazar(['xd','xt','xr'], function(){
+    var D = +$('xd').value, th = +$('xt').value, lam = +$('xr').value, b = 25, k = 0.02, pib = 2, T = 12;
+    $('vxd').textContent = (D > 0 ? '+' : '') + D; $('vxt').textContent = th.toFixed(1); $('vxr').textContent = lam.toFixed(2);
+    var rn = 2 + D / b, r = 2, pi = [2], gap = [0];
+    for (var t = 1; t <= T; t++){
+      var Y = 1000 + D - b * (r - 2), g = Y - 1000, pe = (1 - th) * pib + th * pi[t - 1];
+      gap.push(g); pi.push(pe + k * g); r = r + lam * (rn - r);
+    }
+    $('krn').textContent = rn.toFixed(1) + '%'; $('kgap1').textContent = signo(gap[1], 0); $('kpi1').textContent = pi[1].toFixed(1) + '%'; $('kpi12').textContent = pi[T].toFixed(1) + '%';
+    var svg = $('svgPC'); while (svg.firstChild) svg.removeChild(svg.firstChild);
+    el(svg, 'rect', { width: 640, height: 320, fill: C.fondo });
+    var X0 = 60, X1 = 600, Y0 = 280, Y1 = 30;
+    var lo = Math.min.apply(null, pi.concat([0])), hi = Math.max.apply(null, pi.concat([4])); if (hi - lo < 1) hi = lo + 1;
+    function px(t){ return X0 + t / T * (X1 - X0); } function py(v){ return Y0 - (v - lo) / (hi - lo) * (Y0 - Y1); }
+    [lo, (lo + hi) / 2, hi].forEach(function(v){ el(svg, 'line', { x1: X0, y1: py(v), x2: X1, y2: py(v), stroke: C.linea }); el(svg, 'text', { x: X0 - 8, y: py(v) + 4, 'font-size': 12, 'text-anchor': 'end', fill: C.tenue, 'font-family': 'Azeret Mono, monospace' }, v.toFixed(1) + '%'); });
+    el(svg, 'line', { x1: X0, y1: py(2), x2: X1, y2: py(2), stroke: C.tenue, 'stroke-dasharray': '7 6', 'stroke-width': 1.5 });
+    el(svg, 'text', { x: X1, y: py(2) - 6, 'font-size': 12, 'text-anchor': 'end', fill: C.tenue }, 'meta π̄ = 2%');
+    for (var t2 = 0; t2 <= T; t2 += 2) el(svg, 'text', { x: px(t2), y: Y0 + 20, 'font-size': 12, 'text-anchor': 'middle', fill: C.tenue, 'font-family': 'Azeret Mono, monospace' }, t2);
+    el(svg, 'text', { x: X1, y: Y0 + 36, 'font-size': 13, 'text-anchor': 'end', fill: C.tinta }, 'Periodo');
+    el(svg, 'text', { x: X0, y: Y1 - 12, 'font-size': 13, fill: C.tinta }, 'Inflación (línea) y brecha del producto (barras, escala propia)');
+    el(svg, 'line', { x1: X0, y1: Y0 - 70, x2: X1, y2: Y0 - 70, stroke: C.tenue, 'stroke-width': 1 });
+    var gmax = Math.max(1, Math.max.apply(null, gap.map(Math.abs)));
+    gap.forEach(function(g, t){ if (!g) return; var h = g / gmax * 55, z = Y0 - 70; el(svg, 'rect', { x: px(t) - 8, y: g > 0 ? z - h : z, width: 16, height: Math.abs(h), fill: C.y, opacity: 0.85 }); });
+    el(svg, 'polyline', { points: pi.map(function(v, t){ return px(t) + ',' + py(v); }).join(' '), fill: 'none', stroke: C.pi, 'stroke-width': 3.5 });
+  });
+})();
+</script>
+</body>
+</html>

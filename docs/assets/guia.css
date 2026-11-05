@@ -16,10 +16,10 @@
   color-scheme:light;
   --bg:#F4F5F6; --s1:#FFFFFF; --s2:#E9EBEE; --linea:#C9CCD1; --tinta:#111214; --tenue:#4D5157;
   /* color de cada variable como texto o trazo sobre el fondo */
-  --c-y:#855B00; --c-is:#B8330F; --c-x:#8E2FA3; --c-ext:#08735F; --c-i:#1F5FD1; --c-u:#AD2A62; --c-g:#4E6B00;
+  --c-y:#855B00; --c-is:#B8330F; --c-x:#8E2FA3; --c-ext:#08735F; --c-i:#1F5FD1; --c-u:#AD2A62; --c-g:#4E6B00; --c-pi:#5B45D6;
   --ok:#1A7F3C; --mal:#C0263A; --base:#A3A7AD;
   /* capas: el color sólido de cada variable, igual en ambos temas, siempre con texto oscuro */
-  --k-y:#F0B429; --k-is:#F2552C; --k-x:#C65BD6; --k-ext:#22B8A0; --k-i:#3D8BFD; --k-u:#EC6FA0; --k-g:#A6D13A; --k-txt:#140C00;
+  --k-y:#F0B429; --k-is:#F2552C; --k-x:#C65BD6; --k-ext:#22B8A0; --k-i:#3D8BFD; --k-u:#EC6FA0; --k-g:#A6D13A; --k-pi:#9B8CFF; --k-txt:#140C00;
   /* lámina: fondo fijo de los diagramas SVG heredados (su fondo va dentro del dibujo) */
   --lamina:#1A1B1D; --lamina-linea:#34363A;
   --k:var(--k-is); --c-k:var(--c-is);
@@ -36,14 +36,14 @@
   :root:not([data-theme="light"]){
     color-scheme:dark;
     --bg:#101112; --s1:#1A1B1D; --s2:#202124; --linea:#3A3C41; --tinta:#F2F2F0; --tenue:#A9ABAE;
-    --c-y:#F0B429; --c-is:#F2552C; --c-x:#D27AE0; --c-ext:#22B8A0; --c-i:#5C9DFF; --c-u:#F08AB2; --c-g:#B4DC4E;
+    --c-y:#F0B429; --c-is:#F2552C; --c-x:#D27AE0; --c-ext:#22B8A0; --c-i:#5C9DFF; --c-u:#F08AB2; --c-g:#B4DC4E; --c-pi:#ADA2FF;
     --ok:#55C975; --mal:#FF7382; --base:#55585D;
   }
 }
 :root[data-theme="dark"]{
   color-scheme:dark;
   --bg:#101112; --s1:#1A1B1D; --s2:#202124; --linea:#3A3C41; --tinta:#F2F2F0; --tenue:#A9ABAE;
-  --c-y:#F0B429; --c-is:#F2552C; --c-x:#D27AE0; --c-ext:#22B8A0; --c-i:#5C9DFF; --c-u:#F08AB2; --c-g:#B4DC4E;
+  --c-y:#F0B429; --c-is:#F2552C; --c-x:#D27AE0; --c-ext:#22B8A0; --c-i:#5C9DFF; --c-u:#F08AB2; --c-g:#B4DC4E; --c-pi:#ADA2FF;
   --ok:#55C975; --mal:#FF7382; --base:#55585D;
 }
 /* color de la capa de cada Tema */
@@ -58,6 +58,8 @@
 [data-k="u"]{--k:var(--k-u); --c-k:var(--c-u)}
 /* Tema 7: crecimiento y largo plazo (A, K, N, y = Y/N) */
 [data-k="g"]{--k:var(--k-g); --c-k:var(--c-g)}
+/* Tema 6: IS-LM-PC, inflación y mediano plazo (π, rₙ) */
+[data-k="pi"]{--k:var(--k-pi); --c-k:var(--c-pi)}
 
 /* ---------- Base ---------- */
 *,*::before,*::after{box-sizing:border-box}
@@ -87,7 +89,7 @@ button:disabled{cursor:not-allowed}
 /* ---------- Variables con color fijo ---------- */
 .v{font-weight:700;font-style:normal}
 .v[data-var~="Y"]{color:var(--c-y)} .v[data-var~="i"]{color:var(--c-i)} .v[data-var~="IS"]{color:var(--c-is)}
-.v[data-var~="x"]{color:var(--c-x)} .v[data-var~="ext"]{color:var(--c-ext)} .v[data-var~="u"]{color:var(--c-u)} .v[data-var~="g"]{color:var(--c-g)}
+.v[data-var~="x"]{color:var(--c-x)} .v[data-var~="ext"]{color:var(--c-ext)} .v[data-var~="u"]{color:var(--c-u)} .v[data-var~="g"]{color:var(--c-g)} .v[data-var~="pi"]{color:var(--c-pi)}
 .ecuacion .v,.ecuacion-body .v,.ec .v{cursor:help;padding:0 1px}
 .vivo .ecuacion .v.es-viva,.vivo .ecuacion-body .v.es-viva,.vivo .ec .v.es-viva{background:currentColor;outline:2px solid currentColor}
 .vivo .ecuacion .v.es-viva > span,.vivo .ecuacion-body .v.es-viva > span,.vivo .ec .v.es-viva > span{color:var(--bg)}
@@ -110,9 +112,10 @@ button:disabled{cursor:not-allowed}
 .pl-tuya{stroke-dasharray:7 7}
 .pl-lbl{fill:var(--tinta);font-family:var(--mono);font-size:15px;font-weight:700}
 .pl-lbl-eje{font-size:18px}
-.pl-lbl-is{fill:var(--c-is)}.pl-lbl-lm{fill:var(--c-i)}.pl-lbl-x{fill:var(--c-x)}.pl-lbl-ext{fill:var(--c-ext)}.pl-lbl-u{fill:var(--c-u)}.pl-lbl-g{fill:var(--c-g)}
+.pl-lbl-is{fill:var(--c-is)}.pl-lbl-lm{fill:var(--c-i)}.pl-lbl-x{fill:var(--c-x)}.pl-lbl-ext{fill:var(--c-ext)}.pl-lbl-u{fill:var(--c-u)}.pl-lbl-g{fill:var(--c-g)}.pl-lbl-pi{fill:var(--c-pi)}
 .pl-yn{stroke:var(--c-u);stroke-width:3;stroke-dasharray:9 7}
 .pl-yn2{stroke:var(--c-g);stroke-width:3;stroke-dasharray:9 7}.pl-flecha-g{stroke:var(--c-g);stroke-width:2.5}.pl-punta-g{fill:var(--c-g)}
+.pl-rn{stroke:var(--c-pi);stroke-width:3;stroke-dasharray:9 7}.pl-eq-pi{fill:var(--c-pi)}
 [data-capa]{transition:opacity .3s var(--ease)}
 
 /* =====================================================================
