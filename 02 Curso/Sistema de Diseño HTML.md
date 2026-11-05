@@ -37,6 +37,12 @@ riesgo x, Tema 4 la paridad de tasas con el exterior. Esa idea se ve en:
 - Componente nuevo `.campos-num` / `.campo-num` (respuesta numérica con verificación, estados `data-estado="ok|mal"`) para actividades con ejercicios numéricos.
 - Logo y favicon pasan a 5 barras (una por Tema publicado).
 
+## Tema 7 (2026-11-05)
+
+- Capa nueva `data-k="g"` (crecimiento y largo plazo: A, K, N, y = Y/N): tokens `--k-g` `#A6D13A` (banda, 10.9:1 con `#140C00`), `--c-g` claro `#4E6B00` (≥5.1:1 sobre `--s1`, `--s2`, `--bg`) y oscuro/lámina `#B4DC4E` (≥10:1). Variable viva `data-var="g"`.
+- Pieza del Tema 7 en `MM.plano`: capa `data-capa="7"`, Yₙ′ punteada a la derecha de Yₙ con flecha "A, K, N ↑" (el producto natural crece a largo plazo; geometría cualitativa).
+- Logo y favicon pasan a 6 barras (Temas publicados 1 a 5 y 7; el Tema 6 aún no tiene página).
+
 ## Guías profundas (2026-10-15)
 
 Componentes nuevos en `guia.css` (al final del archivo) para guías con fórmulas explicadas:

@@ -299,9 +299,18 @@
     txt('Yₙ', { x: f.X(yN), y: f.Yc(0) + 32, class: 'pl-lbl pl-lbl-u', 'data-var': 'u', 'text-anchor': 'middle' }, g5);
     txt('uₙ → Yₙ', { x: f.X(yN) + 8, y: f.Yc(0.96) + 4, class: 'pl-lbl pl-lbl-u', 'data-var': 'u' }, g5);
 
+    // Tema 7: en el largo plazo el producto natural crece con A, K y N (geometría cualitativa)
+    var g7 = el('g', { 'data-capa': '7' }, svg), yN2 = yN + 0.17;
+    el('line', { x1: f.X(yN2), y1: f.Yc(0.8), x2: f.X(yN2), y2: f.Yc(0), class: 'pl-yn2', 'data-var': 'g' }, g7);
+    el('line', { x1: f.X(yN) + 6, y1: f.Yc(0.84), x2: f.X(yN2) - 4, y2: f.Yc(0.84), class: 'pl-flecha-g', 'data-var': 'g', 'marker-end': 'url(#' + svgId(svg) + '-mg)' }, g7);
+    txt('A, K, N ↑', { x: (f.X(yN) + f.X(yN2)) / 2, y: f.Yc(0.84) + 24, class: 'pl-lbl pl-lbl-g', 'data-var': 'g', 'text-anchor': 'middle' }, g7);
+    txt('Yₙ′', { x: f.X(yN2), y: f.Yc(0) + 32, class: 'pl-lbl pl-lbl-g', 'data-var': 'g', 'text-anchor': 'middle' }, g7);
+
     var defs = el('defs', {}, svg);
     var m = el('marker', { id: svgId(svg) + '-m', viewBox: '0 0 10 10', refX: 8, refY: 5, markerWidth: 7, markerHeight: 7, orient: 'auto-start-reverse' }, defs);
     el('path', { d: 'M0 0L10 5L0 10z', class: 'pl-punta' }, m);
+    var mg = el('marker', { id: svgId(svg) + '-mg', viewBox: '0 0 10 10', refX: 8, refY: 5, markerWidth: 7, markerHeight: 7, orient: 'auto-start-reverse' }, defs);
+    el('path', { d: 'M0 0L10 5L0 10z', class: 'pl-punta-g' }, mg);
     MM.capas(svg, o.capas || [1, 2, 3, 4]);
     return svg;
   };
@@ -435,7 +444,7 @@
       primera.appendChild(nota);
     }
   };
-  var NOMBRES = { Y: 'producto', i: 'tasa de interés', IS: 'curva IS', x: 'prima de riesgo', ext: 'sector externo', u: 'desempleo y mercado laboral' };
+  var NOMBRES = { Y: 'producto', i: 'tasa de interés', IS: 'curva IS', x: 'prima de riesgo', ext: 'sector externo', u: 'desempleo y mercado laboral', g: 'crecimiento y largo plazo' };
 
   /* ---------- Índice como diagrama: el punto es la posición de lectura ---------- */
   MM.navEq = function (nav) {

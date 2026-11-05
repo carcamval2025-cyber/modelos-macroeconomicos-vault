@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="es" data-k="g">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tema 7 · Crecimiento económico | Macro II</title>
+<meta name="description" content="Guía de estudio del Tema 7 de Modelos Macroeconómicos: hechos del crecimiento, bienestar, PPC, desglose del PIB per cápita, convergencia, contabilidad del crecimiento y modelo de Solow (Blanchard, caps. 10 y 11).">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg?v=832e3da39b4e">
+<script>try{var t=localStorage.getItem('mm-tema');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="../assets/guia.css?v=3bb8d4f4eab3">
+</head>
+<body>
+
+<a class="salto" href="#contenido">Saltar al contenido</a>
+<header class="cab">
+  <div class="cab-barra">
+    <a class="cab-marca" href="../index.html"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect x="6" y="5" width="52" height="7" fill="#F0B429"/><rect x="6" y="15" width="44" height="7" fill="#F2552C"/><rect x="6" y="25" width="36" height="7" fill="#C65BD6"/><rect x="6" y="35" width="28" height="7" fill="#22B8A0"/><rect x="6" y="45" width="20" height="7" fill="#EC6FA0"/><rect x="6" y="55" width="12" height="7" fill="#A6D13A"/></svg><span><b>Macro II</b><small>Modelos Macroeconómicos · ESEN</small></span></a>
+    <button class="btn-tema" type="button" data-btn-tema>Tema oscuro</button>
+  </div>
+  <div class="cab-banda">
+    <div class="cab-in">
+      <p class="cab-kicker"><a href="../index.html">Inicio</a> / Tema 7 · Semana 11 · Guía de estudio</p>
+      <h1>Crecimiento económico: el largo plazo</h1>
+      <p class="sub">Por qué unos países pasan de ingresos bajos a altos y otros no. Bienestar, comparación entre países con PPC, desglose del PIB per cápita, convergencia, contabilidad del crecimiento y el modelo de Solow, con cada fórmula explicada pieza por pieza.</p>
+      <ul class="cab-meta"><li>Blanchard, caps. 10 y 11 (con apéndice)</li><li>Clase 1 de crecimiento del profesor</li><li>Semana 11 · 2 a 6 nov · Examen final</li></ul>
+      <nav class="cab-mats" aria-label="Materiales del Tema 7"><span>Materiales del Tema 7:</span><a href="index.html" aria-current="page">Guía</a><a href="ejercicios-papel.html">Ejercicios en papel</a><a href="actividad-crecimiento.html">Actividad</a></nav>
+    </div>
+  </div>
+</header>
+
+<div class="pagina">
+<main id="contenido">
+  <div class="recuadro">
+    <span class="recuadro-tag">Mensaje central del tema</span>
+    <p>En periodos largos, el crecimiento empequeñece a las fluctuaciones. El crecimiento sostenido del producto por trabajador viene, a la larga, del <strong>progreso tecnológico</strong>: acumular capital eleva el nivel del producto, pero por sí solo no sostiene el crecimiento. Practica con los <a href="ejercicios-papel.html">ejercicios en papel paso a paso</a> (con todos los despejes) y con la <a href="actividad-crecimiento.html">Actividad del Tema 7</a>.</p>
+  </div>
+
+  <section class="modulo" id="alcance">
+    <div class="modulo-head"><h2>Qué cubre esta guía y cómo usarla</h2></div>
+    <div class="bloque">
+      <p>Alcance declarado: la Clase 1 de crecimiento del profesor (largo plazo, bienestar e Índice de Progreso Social, desglose del PIB per cápita, convergencia, rendimientos a escala, Cobb-Douglas y contabilidad del crecimiento) y los capítulos 10 y 11 de Blanchard completos, con el apéndice de Cobb-Douglas del capítulo 11. El progreso tecnológico dentro del modelo (trabajadores efectivos, capítulo 12) no se adelanta aquí.</p>
+      <p><strong>Sobre las cifras:</strong> los datos reales son los del libro (Penn World Table 10.01 y otras fuentes que cita) y los del análisis de El Salvador que el profesor hizo en clase con la misma base. Los ejemplos con la etiqueta <span class="tag-pill">hipotético</span> usan números inventados para practicar. Los cálculos derivados se marcan como cálculo propio.</p>
+    </div>
+
+    <div class="bloque">
+      <h3>Mapa del tema en seis ideas</h3>
+      <ol>
+        <li><strong>El largo plazo (10, intro).</strong> Mirando décadas, las recesiones casi desaparecen y domina el crecimiento.</li>
+        <li><strong>Qué medir (10-1 y clase).</strong> El producto por persona en PPC, desglosado en productividad y en indicadores del mercado laboral; y el crecimiento como medio para el bienestar.</li>
+        <li><strong>Los hechos (10-2 y 10-3).</strong> Gran aumento del nivel de vida desde 1950, convergencia entre países ricos, desaceleración reciente; y la convergencia no es mundial.</li>
+        <li><strong>La función de producción (10-4 y clase).</strong> Y depende de A, N y K; con rendimientos constantes a escala, el producto por trabajador depende del capital por trabajador.</li>
+        <li><strong>La contabilidad del crecimiento (clase).</strong> g<sub>Y</sub> = g<sub>A</sub> + αg<sub>N</sub> + βg<sub>K</sub>: inspiración más transpiración.</li>
+        <li><strong>Solow (cap. 11).</strong> El ahorro determina el nivel del producto por trabajador, no su crecimiento a largo plazo.</li>
+      </ol>
+    </div>
+
+    <div class="bloque">
+      <h3>Mapa de símbolos</h3>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Símbolo</th><th>Qué es</th><th>Unidad</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">Y</td><td>Producto (PIB real) agregado.</td><td>Dinero de un año base.</td></tr>
+            <tr><td class="mono">N</td><td>Trabajo: número de trabajadores (ocupados).</td><td>Personas.</td></tr>
+            <tr><td class="mono">K</td><td>Capital físico: máquinas, plantas, edificios de oficinas.</td><td>Dinero de un año base.</td></tr>
+            <tr><td class="mono">A</td><td>Estado de la tecnología: productividad de los factores.</td><td>Índice.</td></tr>
+            <tr><td class="mono">α, β</td><td>Exponentes del trabajo y del capital en Y = AN<sup>α</sup>K<sup>β</sup> (notación de la clase). Con rendimientos constantes, α + β = 1.</td><td>Números entre 0 y 1.</td></tr>
+            <tr><td class="mono">y = Y/N, k = K/N</td><td>Producto y capital por trabajador (minúsculas).</td><td>Por trabajador.</td></tr>
+            <tr><td class="mono">g<sub>X</sub></td><td>Tasa de crecimiento de X: (X<sub>t</sub> − X<sub>t−1</sub>)/X<sub>t−1</sub>.</td><td>Porcentaje anual.</td></tr>
+            <tr><td class="mono">s</td><td>Tasa de ahorro: fracción del ingreso que se ahorra (S = sY).</td><td>Entre 0 y 1.</td></tr>
+            <tr><td class="mono">δ</td><td>Tasa de depreciación: fracción del capital que se desgasta cada año.</td><td>Entre 0 y 1.</td></tr>
+            <tr><td class="mono">K/N*, Y/N*</td><td>Capital y producto por trabajador en el estado estacionario.</td><td>Por trabajador.</td></tr>
+            <tr><td class="mono">PET, PEA</td><td>Población en edad de trabajar y población económicamente activa (Tema 5).</td><td>Personas.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="aviso">
+        <span class="aviso-tag">Ojo con la notación de α</span>
+        <p>En la clase, <strong>α acompaña al trabajo y β al capital</strong>: Y = AN<sup>α</sup>K<sup>β</sup>. En el apéndice del capítulo 11, Blanchard escribe Y = K<sup>α</sup>N<sup>1−α</sup>, donde <strong>α acompaña al capital</strong>. Es la misma función con otra letra. En esta guía se usa la notación de la clase; cuando se cite el apéndice se dirá "la participación del capital (α de Blanchard, β de la clase)".</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo" id="largo-plazo">
+    <div class="modulo-head"><h2>Aparece el largo plazo</h2></div>
+    <div class="modulo-text">Introducción del capítulo 10 y de la Clase 1.</div>
+    <div class="bloque">
+      <p>Hasta el Tema 6 la pregunta era qué determina el producto en el corto y el mediano plazo, donde dominan las fluctuaciones. Ahora la pregunta cambia: <strong>¿por qué algunos países logran pasar de ingresos bajos a medianos y luego altos, y otros no?</strong> La clase lo plantea como aprender de los llamados "milagros económicos" y de los países que encabezan los indicadores de bienestar.</p>
+      <p>Blanchard lo muestra con EE. UU. desde 1890: el producto se multiplicó por 55 y el producto por persona por 10.5 (la población pasó de 63 millones a más de 338 millones). Las cuatro grandes caídas del periodo (la Gran Depresión de 1929 a 1933, la recesión de 1980 a 1982, la Crisis Financiera Global de 2008 a 2010 y el Covid en 2020) se ven pequeñas frente a ese aumento sostenido.</p>
+      <div class="takeaway">
+        <span class="takeaway-tag">Si recuerdas una sola idea del capítulo 10</span>
+        <p>En periodos largos, el crecimiento empequeñece a las fluctuaciones. La clave (compleja) del crecimiento sostenido es el progreso tecnológico.</p>
+      </div>
+    </div>
+    <div class="bloque">
+      <h3>La historia vista como trayectorias de datos</h3>
+      <p>La clase conecta el crecimiento con la historia: eventos con repercusiones profundas y rasgos distintivos de cada país quedan registrados como trayectorias de indicadores. Por eso se trabaja con bases de datos de largo plazo:</p>
+      <ul>
+        <li><strong>Gapminder</strong> (gapminder.org): visualizaciones de indicadores por país en el tiempo.</li>
+        <li><strong>MOxLAD</strong> (Montevideo-Oxford Latin American Economic History Database): historia económica de América Latina.</li>
+        <li><strong>Penn World Table</strong> (rug.nl/ggdc/productivity/pwt): PIB y sus componentes en PPC para casi todos los países desde 1950. Es la base que usa Blanchard (versión 10.01).</li>
+      </ul>
+      <p>Con esos datos se puede evaluar, por ejemplo, si se cumple o no la convergencia.</p>
+    </div>
+  </section>
+
+  <section class="modulo" id="bienestar">
+    <div class="modulo-head"><h2>Crecimiento y bienestar</h2></div>
+    <div class="modulo-text">Clase 1 y recuadro "Does Money Buy Happiness?" (10-1).</div>
+    <div class="bloque">
+      <p>Para la clase, el crecimiento económico <strong>es útil como medio</strong> para que la población tenga más bienestar. El acercamiento va de lo más amplio a lo más cercano a las personas, en dos círculos concéntricos: uno de conceptos y otro de los indicadores que los miden.</p>
+      <figure>
+        <div class="diagrama">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img" aria-label="Dos diagramas de círculos concéntricos. Conceptos: crecimiento económico contiene al crecimiento per cápita, que contiene al crecimiento del consumo per cápita, que contiene a la mejora del bienestar. Indicadores: PIB real contiene al PIB real per cápita en PPC, que contiene al desglose del PIB por ocupado, que contiene al consumo per cápita en PPC, que contiene al bienestar.">
+            <rect width="900" height="400" fill="#1A1B1D"/>
+            <text x="220" y="30" font-size="15" font-weight="700" text-anchor="middle" fill="#F2F2F0">Conceptos</text>
+            <circle cx="220" cy="215" r="170" fill="none" stroke="#B4DC4E" stroke-width="2.5"/>
+            <circle cx="220" cy="248" r="137" fill="none" stroke="#B4DC4E" stroke-width="2"/>
+            <circle cx="220" cy="281" r="104" fill="none" stroke="#B4DC4E" stroke-width="2"/>
+            <circle cx="220" cy="317" r="68" fill="#B4DC4E"/>
+            <text x="220" y="76" font-size="14" text-anchor="middle" fill="#F2F2F0">Crecimiento económico</text>
+            <text x="220" y="140" font-size="14" text-anchor="middle" fill="#F2F2F0">Crecimiento per cápita</text>
+            <text x="220" y="204" font-size="14" text-anchor="middle" fill="#F2F2F0">Crecimiento del consumo</text>
+            <text x="220" y="222" font-size="14" text-anchor="middle" fill="#F2F2F0">per cápita</text>
+            <text x="220" y="312" font-size="14" font-weight="700" text-anchor="middle" fill="#140C00">Mejora del</text>
+            <text x="220" y="330" font-size="14" font-weight="700" text-anchor="middle" fill="#140C00">bienestar</text>
+            <text x="660" y="30" font-size="15" font-weight="700" text-anchor="middle" fill="#F2F2F0">Indicadores</text>
+            <circle cx="660" cy="215" r="170" fill="none" stroke="#F0B429" stroke-width="2.5"/>
+            <circle cx="660" cy="241" r="144" fill="none" stroke="#F0B429" stroke-width="2"/>
+            <circle cx="660" cy="267" r="118" fill="none" stroke="#F0B429" stroke-width="2"/>
+            <circle cx="660" cy="293" r="92" fill="none" stroke="#F0B429" stroke-width="2"/>
+            <circle cx="660" cy="325" r="58" fill="#F0B429"/>
+            <text x="660" y="72" font-size="14" text-anchor="middle" fill="#F2F2F0">PIB real</text>
+            <text x="660" y="124" font-size="14" text-anchor="middle" fill="#F2F2F0">PIB real per cápita PPC</text>
+            <text x="660" y="172" font-size="14" text-anchor="middle" fill="#F2F2F0">Desglose: PIB por ocupado</text>
+            <text x="660" y="232" font-size="14" text-anchor="middle" fill="#F2F2F0">Consumo per cápita PPC</text>
+            <text x="660" y="330" font-size="14" font-weight="700" text-anchor="middle" fill="#140C00">Bienestar</text>
+          </svg>
+        </div>
+        <figcaption>Esquema de la Clase 1: cada círculo es una condición más cercana al bienestar (al menos una de sus dimensiones).</figcaption>
+      </figure>
+    </div>
+    <div class="bloque">
+      <h3>Las dimensiones del bienestar: el Índice de Progreso Social (IPS)</h3>
+      <p>La clase usa el IPS (socialprogress.org) para acercarse a qué significa "bienestar". Tiene tres dimensiones y doce componentes:</p>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Dimensión</th><th>Componentes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Necesidades humanas básicas</strong> (Basic Human Needs)</td><td>Nutrición y cuidados médicos básicos; agua y saneamiento; vivienda; seguridad personal.</td></tr>
+            <tr><td><strong>Fundamentos del bienestar</strong> (Foundations of Wellbeing)</td><td>Acceso a conocimientos básicos; acceso a información y comunicaciones; salud y bienestar; calidad ambiental.</td></tr>
+            <tr><td><strong>Oportunidades</strong> (Opportunity)</td><td>Derechos personales; libertad personal y de elección; inclusión; acceso a educación superior.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>El camino virtuoso y los otros caminos</h3>
+      <ul>
+        <li><strong>Camino virtuoso:</strong> el crecimiento está totalmente ligado a más progreso social. Más ingresos (salarios reales mayores), menos desempleo, mejor seguridad social, mejores servicios del Estado (educación, salud, justicia, seguridad ciudadana), mejor distribución del ingreso, más oportunidades y un ambiente saludable. Y ese crecimiento no reduce los activos del país: capital ambiental, social, cultural e institucional.</li>
+        <li><strong>Otros caminos:</strong> el crecimiento mejora alguna dimensión del bienestar pero retrocede en otras; por ejemplo, se reduce el capital ambiental, cultural, social o institucional, o se reprime la libertad de la población.</li>
+      </ul>
+    </div>
+    <div class="bloque">
+      <h3>¿El dinero compra la felicidad? (recuadro de Blanchard)</h3>
+      <p>La <strong>paradoja de Easterlin</strong> decía tres cosas: entre países, la felicidad sube con el ingreso solo en los pobres; dentro de un país rico, la felicidad no sube en el tiempo con el ingreso; y dentro de un país, los ricos son más felices que los pobres. Si fuera cierto, en países ricos importaría la distribución más que el nivel del ingreso.</p>
+      <p>Con datos de 131 países (encuesta Gallup de 2006, escala de 0 a 10), Stevenson y Wolfers encuentran que la satisfacción con la vida va de cerca de 4 en los países más pobres a cerca de 8 en los más ricos, y que la relación se cumple en países pobres y ricos. Su conclusión: la felicidad depende de mucho más que el ingreso, pero sí aumenta con él; "no es un crimen" que los economistas se fijen primero en el PIB por persona. Deaton y Kahneman distinguen el <strong>bienestar emocional</strong> (que deja de subir alrededor de 75,000 dólares anuales, en un estudio de 2009) de la <strong>satisfacción con la vida</strong> (más ligada al ingreso). El debate sigue abierto: la distribución del ingreso, entre otras cosas, también importa.</p>
+    </div>
+  </section>
+
+  <section class="modulo" id="ppc">
+    <div class="modulo-head"><h2>Cómo comparar países: paridad del poder de compra</h2></div>
+    <div class="modulo-text">Sección 10-1 y recuadro "The Construction of PPP Numbers".</div>
+    <div class="bloque">
+      <p>Nos interesa el nivel de vida promedio, así que la variable es el <strong>producto por persona</strong> (o per cápita), no el producto total. Pero cada país mide su PIB en su moneda. Convertirlo con el tipo de cambio falla por dos razones:</p>
+      <ol>
+        <li><strong>El tipo de cambio fluctúa mucho.</strong> En los ochenta el dólar subió y luego bajó cerca de 50% frente a las monedas de los socios de EE. UU., pero el nivel de vida relativo no subió y bajó 50%.</li>
+        <li><strong>Los precios difieren sistemáticamente entre países.</strong> En 2022, con el tipo de cambio, el PIB por persona era de 2,522 dólares en India y 76,348 en EE. UU. (30.2 veces). Nadie viviría con 2,522 dólares al año en EE. UU., pero en India los bienes básicos son mucho más baratos. En general, cuanto menor es el producto por persona de un país, más baratos son sus alimentos y servicios básicos.</li>
+      </ol>
+      <p>La solución es construir el PIB con <strong>un mismo conjunto de precios para todos los países</strong>: los números en <strong>paridad del poder de compra (PPC)</strong>. Con PPC, la razón EE. UU./India baja de 30.2 a 9. Entre países ricos la diferencia es menor: EE. UU./Alemania pasa de 155% con tipo de cambio a 120% en PPC.</p>
+    </div>
+    <div class="bloque">
+      <h3>El ejemplo del libro, paso a paso</h3>
+      <p>Dos países con carros y alimentos idénticos en calidad. Tipo de cambio: 60 rublos por dólar.</p>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>&nbsp;</th><th>EE. UU.</th><th>Rusia</th></tr></thead>
+          <tbody>
+            <tr><td>Consumo por persona</td><td>20,000 dólares</td><td>120,000 rublos</td></tr>
+            <tr><td>Carro</td><td>1 por año a 10,000 dólares</td><td>1 cada 15 años a 600,000 rublos (40,000 por año)</td></tr>
+            <tr><td>Canasta anual de alimentos</td><td>10,000 dólares</td><td>80,000 rublos</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ol class="pasos">
+        <li><b class="paso-tt">Con el tipo de cambio</b><div>120,000 / 60 = 2,000 dólares. Rusia consumiría solo el 10% de EE. UU.</div></li>
+        <li><b class="paso-tt">Con precios comunes (los de EE. UU.)</b><div>Rusia compra 0.07 carros al año (uno cada 15) y una canasta de alimentos: 0.07 × 10,000 + 1 × 10,000 = 10,700 dólares.</div></li>
+        <li><b class="paso-tt">Comparación en PPC</b><div>10,700 / 20,000 = 53.5%. Una estimación mucho mejor del nivel de vida relativo que el 10% anterior.</div></li>
+      </ol>
+      <p>En la práctica no se usan precios de EE. UU. sino <strong>precios internacionales en dólares</strong> (promedios entre países), el trabajo del proyecto Penn World Table (Kravis, Summers y Heston).</p>
+    </div>
+    <div class="bloque">
+      <h3>Tres advertencias del libro</h3>
+      <ul>
+        <li><strong>Consumo en lugar de producto:</strong> lo que importa al bienestar es el consumo, pero como la razón consumo/producto es parecida entre países, el ranking casi no cambia.</li>
+        <li><strong>Productividad en lugar de nivel de vida:</strong> para comparar productividad conviene el producto por trabajador, o mejor, por hora trabajada. Gran parte de la diferencia entre EE. UU. y Alemania viene de las horas por persona (1,780 frente a 1,360 al año), no de la productividad.</li>
+        <li><strong>Felicidad:</strong> al final nos interesa el bienestar; el recuadro de la sección anterior responde "un sí con matices".</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="modulo" id="desglose">
+    <div class="modulo-head"><h2>Desglose del PIB per cápita</h2></div>
+    <div class="modulo-text">Clase 1: "Desglose del PIB per cápita. Posibilidades de comparación".</div>
+    <div class="bloque">
+      <p>Al comparar países, la clase separa el PIB per cápita en una parte de <strong>productividad</strong> y en indicadores del <strong>mercado laboral</strong> (los del Tema 5). Cada identidad se obtiene multiplicando y dividiendo por la misma variable, así que siempre se cumple:</p>
+      <div class="ecuacion">Y/Población = (Y/Ocupados) × (Ocupados/Población)</div>
+      <div class="ecuacion">Y/Población = (Y/Ocupados) × (Ocupados/PET) × (PET/Población)</div>
+      <div class="ecuacion">Y/Población = (Y/Ocupados) × (Ocupados/PEA) × (PEA/PET) × (PET/Población)</div>
+      <div class="anatomia">
+        <div class="ecuacion"><span class="v" data-var="Y"><span>Y</span></span>/Pob = (<span class="v" data-var="Y"><span>Y</span></span>/Horas) × (Horas/Ocup) × (Ocup/PEA) × (PEA/PET) × (PET/Pob)</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>Y/Horas</dt><dd><p>Producto por hora trabajada: la medida más precisa de la <strong>productividad del trabajo</strong>.</p></dd>
+          <dt>Horas/Ocup</dt><dd><p>Horas anuales trabajadas por ocupado. Explica, por ejemplo, buena parte de la diferencia EE. UU.-Alemania.</p></dd>
+          <dt>Ocup/PEA</dt><dd><p>Tasa de ocupación: 1 menos la tasa de desempleo (1 − u, Tema 5).</p></dd>
+          <dt>PEA/PET</dt><dd><p>Tasa de participación: qué parte de la población en edad de trabajar está en la fuerza laboral.</p></dd>
+          <dt>PET/Pob</dt><dd><p>Porcentaje de la población en edad de trabajar: refleja la estructura por edades (demografía).</p></dd>
+          <dt>Cómo se lee</dt><dd><p>Dos países con igual productividad pueden tener distinto PIB per cápita si difieren en horas, desempleo, participación o demografía. Y al revés: igual PIB per cápita con distinta productividad.</p></dd>
+        </dl>
+      </div>
+      <div class="recuadro">
+        <span class="recuadro-tag">Un ejemplo con datos del libro (cálculo propio)</span>
+        <p>En 2022, en EE. UU., el producto por persona fue de 76,300 dólares y el producto por trabajador de 160,900. Como Y/Pob = (Y/Ocup) × (Ocup/Pob), la razón ocupados a población es 76,300 / 160,900 ≈ 0.474: cerca de 47% de la población está ocupada.</p>
+      </div>
+    </div>
+    <div class="simulador-panel" id="calc-desglose">
+      <h3>Calculadora del desglose <span class="tag-pill">hipotético</span></h3>
+      <p>Cambia los datos de una economía inventada y mira cómo se reparte su PIB per cápita. El producto de las cinco piezas siempre devuelve Y/Pob.</p>
+      <div class="sim-grid">
+        <div class="control-item"><div class="control-top"><label class="control-label" for="dY">PIB real Y (millones de US$)</label><span class="control-val" id="vdY">90,000</span></div><input class="control-slider" type="range" id="dY" min="20000" max="200000" step="1000" value="90000"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="dPob">Población (millones)</label><span class="control-val" id="vdPob">10.0</span></div><input class="control-slider" type="range" id="dPob" min="4" max="20" step="0.5" value="10"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="dPET">PET / Población</label><span class="control-val" id="vdPET">80%</span></div><input class="control-slider" type="range" id="dPET" min="60" max="90" step="1" value="80"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="dPEA">Tasa de participación PEA / PET</label><span class="control-val" id="vdPEA">62.5%</span></div><input class="control-slider" type="range" id="dPEA" min="40" max="80" step="0.5" value="62.5"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="dU">Tasa de desempleo u</label><span class="control-val" id="vdU">10%</span></div><input class="control-slider" type="range" id="dU" min="2" max="20" step="0.5" value="10"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="dH">Horas anuales por ocupado</label><span class="control-val" id="vdH">2,000</span></div><input class="control-slider" type="range" id="dH" min="1300" max="2400" step="20" value="2000"></div>
+      </div>
+      <div class="kpis-grid" aria-live="polite">
+        <div class="kpi-card"><div class="kpi-title">Y / Población</div><div class="kpi-num" id="kYP">9,000</div></div>
+        <div class="kpi-card"><div class="kpi-title">Y / Ocupado</div><div class="kpi-num" id="kYO">20,000</div></div>
+        <div class="kpi-card"><div class="kpi-title">Y / Hora</div><div class="kpi-num" id="kYH">10.0</div></div>
+        <div class="kpi-card"><div class="kpi-title">Ocupados / Población</div><div class="kpi-num" id="kOP">45.0%</div></div>
+      </div>
+      <p class="sim-nota" id="desgloseTxt">Comprobación: 10.0 × 2,000 × 0.900 × 0.625 × 0.800 = 9,000.</p>
+    </div>
+  </section>
+
+  <section class="modulo" id="hechos">
+    <div class="modulo-head"><h2>Los hechos del crecimiento en países ricos</h2></div>
+    <div class="modulo-text">Sección 10-2, Tabla 10-1.</div>
+    <div class="bloque">
+      <div class="tabla-wrap">
+        <table class="tabla-datos">
+          <caption>Tabla 10-1. Producto por persona en cuatro países ricos desde 1950 (dólares de 2017, PPC)</caption>
+          <thead><tr><th>País</th><th>Crecimiento anual 1950 a 2019 (%)</th><th>Crecimiento anual 2000 a 2019 (%)</th><th>1950</th><th>2019</th><th>2019/1950</th></tr></thead>
+          <tbody>
+            <tr><td>Francia</td><td>2.5</td><td>1.4</td><td>7,657</td><td>44,823</td><td>5.9</td></tr>
+            <tr><td>Reino Unido</td><td>2.2</td><td>1.5</td><td>9,967</td><td>51,593</td><td>4.6</td></tr>
+            <tr><td>Estados Unidos</td><td>2.0</td><td>1.3</td><td>15,734</td><td>63,393</td><td>4.0</td></tr>
+            <tr><td>Japón</td><td>3.8</td><td>0.5</td><td>2,879</td><td>39,637</td><td>13.8</td></tr>
+            <tr class="total"><td>Promedio simple</td><td>2.6</td><td>1.2</td><td>9,059</td><td>49,861</td><td>5.5</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="sim-nota">Fuente: Blanchard, Tabla 10-1, con Penn World Table 10.01.</p>
+      <p>La tabla deja tres conclusiones:</p>
+      <ol>
+        <li><strong>Un gran aumento del producto por persona.</strong> Se multiplicó por 4.0 en EE. UU., 5.9 en Francia y 13.8 en Japón. Es la <strong>fuerza del interés compuesto</strong>: crecer 3.8% al año durante 70 años multiplica el nivel por cerca de 13.6.</li>
+        <li><strong>Convergencia.</strong> En 1950, EE. UU. tenía cerca del doble de producto por persona que Francia y más de cinco veces el de Japón. En 2019 estaba solo 45% por encima del promedio de los otros tres.</li>
+        <li><strong>Desaceleración.</strong> El crecimiento promedio desde 2000 es la mitad del de todo el periodo. En Japón cayó de 3.8% a 0.5%, sobre todo por menor crecimiento de la productividad: el crecimiento de la productividad no es automático.</li>
+      </ol>
+    </div>
+    <div class="simulador-panel" id="calc-compuesto">
+      <h3>La fuerza del interés compuesto</h3>
+      <p>Un nivel que crece a la tasa g durante T años se multiplica por (1 + g)<sup>T</sup>. Prueba 3.8% y 70 años (Japón), o compara 1% y 2%: un punto más de crecimiento durante 70 años duplica el nivel de vida.</p>
+      <div class="sim-grid">
+        <div class="control-item"><div class="control-top"><label class="control-label" for="cg">Tasa de crecimiento anual g</label><span class="control-val" id="vcg">3.8%</span></div><input class="control-slider" type="range" id="cg" min="-2" max="8" step="0.1" value="3.8"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="ct">Años T</label><span class="control-val" id="vct">70</span></div><input class="control-slider" type="range" id="ct" min="5" max="100" step="1" value="70"></div>
+      </div>
+      <div class="kpis-grid" aria-live="polite">
+        <div class="kpi-card"><div class="kpi-title">El nivel se multiplica por</div><div class="kpi-num" id="kfac">13.6</div></div>
+        <div class="kpi-card"><div class="kpi-title">Años para duplicar (aprox. 70/g)</div><div class="kpi-num" id="kdup">18.6</div></div>
+      </div>
+    </div>
+    <div class="bloque">
+      <h3>Mirando dos milenios</h3>
+      <ul>
+        <li><strong>Del año 476 a cerca de 1500:</strong> prácticamente sin crecimiento del producto por persona en Europa. Es la <strong>trampa malthusiana</strong>: según Malthus, todo aumento del producto bajaba la mortalidad y subía la población hasta devolver el producto por persona a su nivel inicial.</li>
+        <li><strong>De 1500 a 1700:</strong> cerca de 0.1% anual. <strong>De 1700 a 1820:</strong> 0.2%. <strong>De 1820 a 1950</strong> (Revolución Industrial), EE. UU. creció 1.5% por persona al año.</li>
+        <li>Conclusión: el crecimiento sostenido del producto por persona, sobre todo a las tasas vistas desde 1950, es un fenómeno <strong>reciente</strong> en la historia humana.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="modulo" id="convergencia">
+    <div class="modulo-head"><h2>Convergencia</h2></div>
+    <div class="modulo-text">Clase 1 y secciones 10-2 y 10-3.</div>
+    <div class="bloque">
+      <p>Definición de la clase: la convergencia se cumple cuando los países de ingresos bajos y medios <strong>crecen a una tasa mayor</strong> que los de ingresos altos y <strong>mantienen</strong> ese mayor crecimiento por periodos prolongados; entonces podrían alcanzar el PIB per cápita de los países de mayores ingresos.</p>
+      <figure>
+        <div class="diagrama">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img" aria-label="Ejemplo de convergencia: el país A parte con un PIB per cápita menor que el país B, pero su línea tiene más pendiente y lo alcanza al final del periodo.">
+            <rect width="900" height="360" fill="#1A1B1D"/>
+            <defs><marker id="cvm" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F2F2F0"/></marker></defs>
+            <line x1="120" y1="310" x2="780" y2="310" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#cvm)"/>
+            <line x1="120" y1="310" x2="120" y2="30" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#cvm)"/>
+            <text x="130" y="36" font-size="14" fill="#F2F2F0">PIB per cápita</text>
+            <text x="780" y="340" font-size="14" text-anchor="end" fill="#F2F2F0">Tiempo</text>
+            <line x1="120" y1="170" x2="700" y2="80" stroke="#A9ABAE" stroke-width="3.5"/>
+            <line x1="120" y1="250" x2="700" y2="80" stroke="#B4DC4E" stroke-width="3.5"/>
+            <circle cx="700" cy="80" r="7" fill="#F2F2F0"/>
+            <text x="108" y="175" font-size="14" text-anchor="end" fill="#A9ABAE">PIB pc B</text>
+            <text x="108" y="255" font-size="14" text-anchor="end" fill="#B4DC4E">PIB pc A</text>
+            <text x="560" y="88" font-size="13" text-anchor="end" fill="#A9ABAE">B crece menos</text>
+            <text x="470" y="190" font-size="13" fill="#B4DC4E">A crece más rápido y alcanza a B</text>
+          </svg>
+        </div>
+        <figcaption>Esquema de la Clase 1. Consideraciones: (a) A crece a una tasa mayor y por eso "alcanza" a B; (b) para lograrlo, A debe mejorar su estructura a un ritmo mayor que B; (c) eso implica que en A el crecimiento de factores productivos, las mejoras institucionales y tecnológicas superan a las de B; (d) no siempre ocurre eso.</figcaption>
+      </figure>
+      <div class="anatomia">
+        <div class="ecuacion">r<sub>t</sub> = (PIB pc de A)/(PIB pc de B) &nbsp;⇒&nbsp; r<sub>t+1</sub> = r<sub>t</sub> × (1 + g<sub>A</sub>)/(1 + g<sub>B</sub>)</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>r</dt><dd><p>La razón del PIB per cápita del país que alcanza (numerador) al del país de referencia. Si r tiende a 1, hay convergencia; si tiende a 0, el país se aleja.</p></dd>
+          <dt>g<sub>A</sub>, g<sub>B</sub></dt><dd><p>Crecimiento del PIB per cápita de cada país. La razón sube solo si g<sub>A</sub> &gt; g<sub>B</sub>. Si ambos crecen igual, r no cambia aunque los dos crezcan.</p></dd>
+          <dt>Cómo se lee</dt><dd><p>Crecer no basta: para converger hay que crecer <strong>más</strong> que el país de referencia, y por mucho tiempo.</p></dd>
+        </dl>
+      </div>
+    </div>
+    <div class="simulador-panel" id="sim-conv">
+      <h3>Simulador: ¿cuánto tarda en alcanzar? <span class="tag-pill">hipotético</span></h3>
+      <div class="sim-grid">
+        <div class="control-item"><div class="control-top"><label class="control-label" for="cpb">PIB real per cápita inicial de B (US$ PPC)</label><span class="control-val" id="vcpb">40,000</span></div><input class="control-slider" type="range" id="cpb" min="5000" max="80000" step="1000" value="40000"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="cr0">Razón inicial A/B</label><span class="control-val" id="vcr0">25%</span></div><input class="control-slider" type="range" id="cr0" min="5" max="95" step="1" value="25"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="cga">Crecimiento per cápita de A</label><span class="control-val" id="vcga">4.0%</span></div><input class="control-slider" type="range" id="cga" min="-2" max="8" step="0.1" value="4"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="cgb">Crecimiento per cápita de B</label><span class="control-val" id="vcgb">2.0%</span></div><input class="control-slider" type="range" id="cgb" min="-2" max="6" step="0.1" value="2"></div>
+      </div>
+      <div class="kpis-grid" aria-live="polite">
+        <div class="kpi-card"><div class="kpi-title">PIB real pc hoy: A y B</div><div class="kpi-num" id="kpib0">10,000 · 40,000</div></div>
+        <div class="kpi-card"><div class="kpi-title">PIB real pc en 50 años: A y B</div><div class="kpi-num" id="kpib50">71,067 · 107,666</div></div>
+        <div class="kpi-card"><div class="kpi-title">Razón A/B en 50 años</div><div class="kpi-num" id="kr50">66.0%</div></div>
+        <div class="kpi-card"><div class="kpi-title">Años para alcanzar a B</div><div class="kpi-num" id="kanios">71.4</div></div>
+      </div>
+      <div class="diagrama"><svg id="svgConv" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" role="img" aria-label="Trayectorias del PIB real per cápita de los países A y B en el tiempo, como en el esquema de convergencia de la clase"></svg></div>
+      <p class="sim-nota">El PIB real per cápita de A es la razón inicial por el de B. Pruebas: (1) A crece 4% y B 2%: hay convergencia, pero tarda décadas. (2) A crece 2.1% y B 2.0%: A crece más, pero tardaría muchísimo en alcanzar. (3) A crece menos que B: la razón cae hacia cero, el país se aleja.</p>
+    </div>
+    <div class="bloque">
+      <h3>¿Qué dicen los datos? Depende de qué países se miren</h3>
+      <ul>
+        <li><strong>OECD (Figura 10-2):</strong> relación negativa clara entre el producto por persona de 1950 y su crecimiento posterior: quienes iban atrás crecieron más (no perfecta: Turquía partió como Japón y creció la mitad).</li>
+        <li><strong>Sesgo de selección:</strong> la OECD es en parte un club de ganadores; si se elige a los países por su éxito de hoy, es natural encontrar que los rezagados crecieron rápido. Mejor elegir por su situación en 1950: entre los que tenían al menos un cuarto del producto por persona de EE. UU., la mayoría convergió, pero no todos. Uruguay y Venezuela tenían en 1950 un nivel parecido al de Francia; en 2019, Uruguay estaba en un tercio del nivel francés y Venezuela en un quinto.</li>
+        <li><strong>85 países desde 1960 (Figura 10-3):</strong> no hay un patrón claro. Por grupos: la OECD converge; muchos países de Asia convergen (Japón primero; los cuatro tigres, Singapur, Taiwán, Hong Kong y Corea del Sur, pasaron de cerca de 15% del producto por persona de EE. UU. en 1960 a 85% en 2017; China creció 4.5% al año entre 1960 y 2019 y aun así está en cerca de un cuarto de EE. UU.); la mayoría de África no (cuatro países con crecimiento negativo; la República Centroafricana creció −1.1% al año y en 2017 tenía 52% de su nivel de 1960), aunque África subsahariana crece cerca de 1.7% por persona desde 2000.</li>
+      </ul>
+      <div class="takeaway">
+        <span class="takeaway-tag">Conclusión del libro</span>
+        <p>Ni el crecimiento ni la convergencia son una necesidad histórica.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo" id="el-salvador">
+    <div class="modulo-head"><h2>El Salvador en el largo plazo</h2></div>
+    <div class="modulo-text">Análisis presentado por el profesor con Penn World Table 10.01 (series rgdpna, pop y emp; El Salvador 1950 a 2019, ocupados desde 1975).</div>
+    <div class="bloque">
+      <p>El mismo método de la clase aplicado a El Salvador, en cuatro lecturas. Las cifras son las del análisis del profesor; aquí se resumen sus hallazgos para que practiques cómo se lee una trayectoria.</p>
+      <h3>1. Crecimiento económico (variación de rgdpna)</h3>
+      <ul>
+        <li>Trayectoria <strong>declinante</strong> del crecimiento. Los mejores datos, en los sesenta (la única década con promedio mayor que 5%); en los cincuenta y sesenta se crecía cerca de 5%, en los setenta 4.7% en promedio.</li>
+        <li>La <strong>Guerra Civil</strong>: los ochenta son la década de menor crecimiento.</li>
+        <li>Tras los Acuerdos de Paz, los noventa promediaron 4.75%: un renacer que se fue disipando.</li>
+        <li>En 2009, la Gran Crisis Financiera produjo la primera tasa negativa desde 1982. De 2010 en adelante el promedio ronda 2%, poco alentador frente a las necesidades de reducir pobreza, subir salarios reales y mejorar agua y saneamiento, salud, educación y justicia.</li>
+      </ul>
+      <h3>2. PIB real per cápita (rgdpna / pop)</h3>
+      <ul>
+        <li>Trayectoria positiva con retrocesos. El más fuerte, a fines de los setenta: <strong>el PIB real per cápita de 1978 se superó recién en 1998</strong>. Otros retrocesos (1957, 1967 y 2008) se recuperaron en unos 4 años.</li>
+        <li>Dentro de la tendencia hay tramos: mayor pendiente de 1950 a 1978, retroceso en los ochenta y mayor pendiente después de 1991.</li>
+      </ul>
+      <h3>3. Desglose: PIB por ocupado y ocupados a población (1975 a 2019)</h3>
+      <ul>
+        <li>La razón <strong>ocupados/población sube</strong> en el tiempo: más personas entran a la PEA a buscar trabajo, y se nota la transición demográfica o <strong>bono demográfico</strong> (un mayor porcentaje de la población en edad de trabajar).</li>
+        <li>El <strong>PIB real por ocupado de 2019 todavía no alcanza el de 1978</strong>: cae de 1975 a 1991 y sube de 1992 en adelante.</li>
+        <li>Lectura con la identidad: si Y/Pob subió mientras Y/Ocup no recuperó su nivel, el aumento del PIB per cápita vino sobre todo de Ocup/Pob (los ocupados crecieron más rápido que la población), no de la productividad.</li>
+      </ul>
+      <h3>4. ¿Convergencia con EE. UU.?</h3>
+      <ul>
+        <li>La razón del PIB per cápita de El Salvador al de EE. UU. tiene <strong>trayectoria negativa</strong>: la distancia aumentó. Mejor dato en 1958 (21%), peor en 1989 (10.9%).</li>
+        <li>Tres tramos: cae de 1950 a 1989; sube de 1990 a 1996 (El Salvador creció más por persona que EE. UU.); y se estabiliza desde 1997.</li>
+        <li>Con el PIB por trabajador (1975 a 2019) la razón también cae, con más pendiente hasta 1991: la productividad creció más en EE. UU.</li>
+      </ul>
+      <div class="recuadro">
+        <span class="recuadro-tag">Qué te enseña el caso</span>
+        <p>Crecer no es converger. Con un crecimiento cercano a 2%, recortar la diferencia con EE. UU. luce casi imposible: haría falta crecer por persona mucho más que EE. UU. y durante décadas (pruébalo en el simulador de convergencia).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo" id="produccion">
+    <div class="modulo-head"><h2>La función de producción y los rendimientos</h2></div>
+    <div class="modulo-text">Sección 10-4 y Clase 1.</div>
+    <div class="bloque">
+      <p>El crecimiento económico resulta del crecimiento de los factores productivos y del crecimiento de su productividad. Para pensarlo se usa el marco de <strong>Robert Solow</strong> (MIT, fines de los cincuenta; Nobel 1987). El punto de partida es la <strong>función de producción agregada</strong>:</p>
+      <div class="anatomia">
+        <div class="ecuacion"><span class="v" data-var="Y"><span>Y</span></span> = F(K, N) &nbsp;&nbsp; (10.1)</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>Y</dt><dd><p>Producto agregado.</p></dd>
+          <dt>K</dt><dd><p>Capital: la suma de máquinas, plantas y edificios de oficinas.</p></dd>
+          <dt>N</dt><dd><p>Trabajo: número de trabajadores.</p></dd>
+          <dt>F</dt><dd><p>Cuánto se produce con K y N. Depende del <strong>estado de la tecnología</strong>: con mejor tecnología, más producto con los mismos K y N.</p></dd>
+        </dl>
+      </div>
+      <p>En el capítulo 7 (Tema 5) se usó Y = AN con A = 1 y sin capital. Eso implicaba que el producto por trabajador era constante: no había crecimiento por trabajador. La clase lo corrige como Y = ANK, sin fijar A, N ni K.</p>
+    </div>
+    <div class="bloque">
+      <h3>Rendimientos a escala (tabla de la clase)</h3>
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Tipo</th><th>Condición</th><th>Ejemplo</th><th>Si los factores suben un mismo porcentaje…</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Crecientes</strong></td><td>α + β &gt; 1</td><td class="mono">Y = AN<sup>1</sup>K<sup>1</sup></td><td>la producción sube en un porcentaje mayor. Se parece a la del capítulo 7.</td></tr>
+            <tr><td><strong>Constantes</strong></td><td>α + β = 1</td><td class="mono">Y = AN<sup>0.5</sup>K<sup>0.5</sup></td><td>la producción sube en ese mismo porcentaje. Hay muchas combinaciones; una es 0.5 y 0.5.</td></tr>
+            <tr><td><strong>Decrecientes</strong></td><td>α + β &lt; 1</td><td class="mono">Y = AN<sup>0.25</sup>K<sup>0.25</sup></td><td>la producción sube en un porcentaje menor.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Siguiendo a Solow se usan <strong>rendimientos constantes a escala</strong>: si se duplican capital y trabajo, se "clona" la economía y el producto se duplica, F(xK, xN) = xY (10.2). Cada exponente es mayor que cero; si uno fuera cero, el otro sería 1 (Y = AN o Y = AK, una "solución de esquina").</p>
+      <div class="anatomia">
+        <div class="ecuacion"><span class="v" data-var="Y"><span>Y</span></span> = <span class="v" data-var="g"><span>A</span></span>N<sup>α</sup>K<sup>β</sup>, &nbsp; con α + β = 1 &nbsp;&nbsp; (1)</div>
+        <span class="anatomia-tt">Qué significa cada pieza: la Cobb-Douglas</span>
+        <dl class="simbolos">
+          <dt>A</dt><dd><p>Productividad de los factores: el estado de la tecnología.</p></dd>
+          <dt>N<sup>α</sup></dt><dd><p>El aporte del trabajo; α es la participación del trabajo.</p></dd>
+          <dt>K<sup>β</sup></dt><dd><p>El aporte del capital; β es la participación del capital.</p></dd>
+          <dt>α + β = 1</dt><dd><p>Rendimientos constantes a escala. Lleva el nombre de Charles Cobb (matemático) y Paul Douglas (economista), que en 1928 vieron que describía bien a EE. UU. entre 1899 y 1922.</p></dd>
+        </dl>
+      </div>
+    </div>
+    <div class="bloque">
+      <h3>Rendimientos decrecientes de cada factor</h3>
+      <p>Aun con rendimientos constantes a escala, si solo aumenta un factor, cada aumento adicional rinde menos: <strong>rendimientos decrecientes del capital</strong> (y del trabajo). El ejemplo del libro: un grupo de secretarias y computadoras. La primera computadora sube mucho la producción; cuando cada secretaria ya tiene la suya, más computadoras se quedan en la caja.</p>
+      <p>Con rendimientos constantes, al dividir entre N (x = 1/N en 10.2) queda una relación entre el producto por trabajador y el capital por trabajador:</p>
+      <div class="ecuacion"><span class="v" data-var="Y"><span>Y</span></span>/N = F(K/N, 1) &nbsp;&nbsp; (10.3)</div>
+    </div>
+    <figure class="anim">
+      <div class="anim-escena diagrama">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img" aria-label="Animación de la función de producción por trabajador: curva cóncava; el mismo aumento de capital por trabajador sube mucho el producto cuando el capital es bajo y poco cuando es alto; una mejora tecnológica desplaza la curva hacia arriba.">
+          <rect width="900" height="400" fill="#1A1B1D"/>
+          <defs><marker id="pfm" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F2F2F0"/></marker><marker id="pfg" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#B4DC4E"/></marker></defs>
+          <line x1="90" y1="360" x2="860" y2="360" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#pfm)"/>
+          <line x1="90" y1="360" x2="90" y2="26" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#pfm)"/>
+          <text x="100" y="30" font-size="14" fill="#F2F2F0">Producto por trabajador, Y/N</text>
+          <text x="860" y="390" font-size="14" text-anchor="end" fill="#F2F2F0">Capital por trabajador, K/N</text>
+          <path data-draw data-v="0-" d="M90.0 360.0 L90.5 354.3 L91.9 348.5 L94.2 342.8 L97.5 337.0 L101.7 331.3 L106.9 325.5 L113.0 319.8 L120.0 314.0 L128.0 308.3 L136.9 302.5 L146.7 296.8 L157.5 291.0 L169.2 285.3 L181.9 279.5 L195.5 273.8 L210.0 268.0 L225.5 262.3 L241.9 256.5 L259.2 250.8 L277.5 245.0 L296.7 239.3 L316.9 233.5 L338.0 227.8 L360.0 222.0 L383.0 216.3 L406.9 210.5 L431.7 204.8 L457.5 199.0 L484.2 193.3 L511.9 187.5 L540.5 181.8 L570.0 176.0 L600.5 170.3 L631.9 164.5 L664.2 158.8 L697.5 153.0 L731.7 147.3 L766.9 141.5 L803.0 135.8 L840.0 130.0" fill="none" stroke="#F2F2F0" stroke-width="4"/>
+          <text data-v="0-" x="845" y="152" font-size="13" font-weight="700" text-anchor="end" fill="#F2F2F0">F(K/N, 1)</text>
+          <g stroke="#A9ABAE" stroke-width="1.3" stroke-dasharray="3 5">
+            <line data-v="1-2" x1="165" y1="287.3" x2="165" y2="360"/><line data-v="1-2" x1="315" y1="234" x2="315" y2="360"/>
+            <line data-v="1-2" x1="90" y1="287.3" x2="165" y2="287.3"/><line data-v="1-2" x1="90" y1="234" x2="315" y2="234"/>
+            <line data-v="2" x1="540" y1="181.9" x2="540" y2="360"/><line data-v="2" x1="690" y1="154.3" x2="690" y2="360"/>
+            <line data-v="2" x1="90" y1="181.9" x2="540" y2="181.9"/><line data-v="2" x1="90" y1="154.3" x2="690" y2="154.3"/>
+          </g>
+          <line data-v="1-2" x1="80" y1="287.3" x2="80" y2="236" stroke="#B4DC4E" stroke-width="5"/>
+          <text data-v="1-2" x="72" y="266" font-size="13" font-weight="700" text-anchor="end" fill="#B4DC4E">mucho</text>
+          <line data-v="2" x1="80" y1="181.9" x2="80" y2="156" stroke="#F08AB2" stroke-width="5"/>
+          <text data-v="2" x="72" y="174" font-size="13" font-weight="700" text-anchor="end" fill="#F08AB2">poco</text>
+          <text data-v="1-2" x="240" y="380" font-size="13" text-anchor="middle" fill="#A9ABAE">A → B</text>
+          <text data-v="2" x="615" y="380" font-size="13" text-anchor="middle" fill="#A9ABAE">C → D (igual que AB)</text>
+          <circle data-v="1-2" cx="165" cy="287.3" r="6" fill="#F2F2F0"/><circle data-v="1-2" cx="315" cy="234" r="6" fill="#F2F2F0"/>
+          <circle data-v="2" cx="540" cy="181.9" r="6" fill="#F2F2F0"/><circle data-v="2" cx="690" cy="154.3" r="6" fill="#F2F2F0"/>
+          <path data-draw data-v="3-" d="M90.0 360.0 L90.5 352.5 L91.9 345.1 L94.2 337.6 L97.5 330.1 L101.7 322.6 L106.9 315.2 L113.0 307.7 L120.0 300.2 L128.0 292.7 L136.9 285.3 L146.7 277.8 L157.5 270.3 L169.2 262.8 L181.9 255.4 L195.5 247.9 L210.0 240.4 L225.5 232.9 L241.9 225.5 L259.2 218.0 L277.5 210.5 L296.7 203.0 L316.9 195.6 L338.0 188.1 L360.0 180.6 L383.0 173.1 L406.9 165.7 L431.7 158.2 L457.5 150.7 L484.2 143.2 L511.9 135.8 L540.5 128.3 L570.0 120.8 L600.5 113.3 L631.9 105.9 L664.2 98.4 L697.5 90.9 L731.7 83.4 L766.9 76.0 L803.0 68.5 L840.0 61.0" fill="none" stroke="#B4DC4E" stroke-width="4"/>
+          <text data-v="3-" x="830" y="50" font-size="13" font-weight="700" text-anchor="end" fill="#B4DC4E">F′(K/N, 1): mejor tecnología</text>
+          <line data-v="3-" x1="315" y1="232" x2="315" y2="202" stroke="#B4DC4E" stroke-width="3" marker-end="url(#pfg)"/>
+          <circle data-v="3-" cx="315" cy="196.2" r="6" fill="#B4DC4E"/>
+          <text data-v="3-" x="330" y="222" font-size="13" fill="#B4DC4E">más Y/N con el mismo K/N</text>
+        </svg>
+      </div>
+      <ol class="anim-pasos">
+        <li>La función de producción por trabajador: sube con el capital por trabajador, pero cada vez menos (curva cóncava, Figura 10-4).</li>
+        <li>Con poco capital por trabajador, pasar de A a B sube mucho el producto por trabajador.</li>
+        <li>Con mucho capital, el mismo aumento (de C a D) sube mucho menos el producto: rendimientos decrecientes del capital. Más capital es un movimiento a lo largo de la curva.</li>
+        <li>Una mejora del estado de la tecnología desplaza la curva hacia arriba (Figura 10-5): más producto por trabajador con el mismo capital por trabajador.</li>
+      </ol>
+      <figcaption>Animación propia con la forma Y/N = A√(K/N) y números hipotéticos (A pasa de 1 a 1.3).</figcaption>
+    </figure>
+  </section>
+
+  <section class="modulo" id="contabilidad">
+    <div class="modulo-head"><h2>Contabilidad del crecimiento</h2></div>
+    <div class="modulo-text">Clase 1: de la Cobb-Douglas a una ecuación de tasas de crecimiento.</div>
+    <div class="bloque">
+      <p>Para pasar de niveles a tasas se usa el mismo procedimiento con el que se pasó de la ecuación de precios y salarios a la curva de Phillips moderna (Tema 5): logaritmos y un rezago.</p>
+      <ol class="pasos">
+        <li><b class="paso-tt">Logaritmos de (1)</b><div><div class="ecuacion">ln Y = ln A + α ln N + β ln K &nbsp;&nbsp; (1.1)</div>El logaritmo convierte productos en sumas y exponentes en coeficientes.</div></li>
+        <li><b class="paso-tt">Sumar y restar ln Y con un rezago y reordenar</b><div><div class="ecuacion">ln Y − ln Y<sub>−1</sub> = ln A + α ln N + β ln K − ln Y<sub>−1</sub> &nbsp;&nbsp; (1.2)</div></div></li>
+        <li><b class="paso-tt">Escribir (1) para el periodo anterior</b><div><div class="ecuacion">ln Y<sub>−1</sub> = ln A<sub>−1</sub> + α ln N<sub>−1</sub> + β ln K<sub>−1</sub> &nbsp;&nbsp; (1.3)</div></div></li>
+        <li><b class="paso-tt">Sustituir (1.3) en (1.2) y agrupar</b><div>Los exponentes no cambian de un periodo a otro, así que cada par de logaritmos se junta en un cociente:<div class="ecuacion">ln(Y/Y<sub>−1</sub>) = ln(A/A<sub>−1</sub>) + α ln(N/N<sub>−1</sub>) + β ln(K/K<sub>−1</sub>) &nbsp;&nbsp; (1.5)</div></div></li>
+        <li><b class="paso-tt">Pasar a tasas de crecimiento</b><div>Como X/X<sub>−1</sub> = 1 + g<sub>X</sub>:<div class="ecuacion">ln(1 + g<sub>Y</sub>) = ln(1 + g<sub>A</sub>) + α ln(1 + g<sub>N</sub>) + β ln(1 + g<sub>K</sub>) &nbsp;&nbsp; (1.6)</div></div></li>
+        <li><b class="paso-tt">Simplificar con ln(1 + x) ≈ x</b><div>Para tasas pequeñas se obtiene la ecuación de crecimiento.</div></li>
+      </ol>
+      <div class="anatomia">
+        <div class="ecuacion">g<sub><span class="v" data-var="Y"><span>Y</span></span></sub> = <span class="v" data-var="g"><span>g<sub>A</sub></span></span> + α g<sub>N</sub> + β g<sub>K</sub> &nbsp;&nbsp; (1.7)</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>g<sub>Y</sub></dt><dd><p>Crecimiento económico: tasa de crecimiento del PIB real.</p></dd>
+          <dt>g<sub>A</sub></dt><dd><p>Crecimiento de la productividad de los factores: la <strong>"inspiración"</strong>.</p></dd>
+          <dt>α g<sub>N</sub> + β g<sub>K</sub></dt><dd><p>Crecimiento de la cantidad de factores, ponderado por su participación: la <strong>"acumulación" o "transpiración"</strong>.</p></dd>
+          <dt>Cómo se lee</dt><dd><p>Si los factores crecen 5% y g<sub>A</sub> = 0, con rendimientos constantes el producto crece 5%. Lo que crezca de más viene de la productividad.</p></dd>
+        </dl>
+      </div>
+    </div>
+    <div class="bloque">
+      <h3>El residuo de Solow</h3>
+      <p>La productividad no se observa directamente. Es más fácil medir el crecimiento del trabajo (serie de ocupados), del capital (cuentas nacionales) y los coeficientes α y β (también de cuentas nacionales). Por eso g<sub>A</sub> se obtiene como lo que sobra, el <strong>residuo de Solow</strong>:</p>
+      <div class="ecuacion"><span class="v" data-var="g"><span>g<sub>A</sub></span></span> = g<sub><span class="v" data-var="Y"><span>Y</span></span></sub> − (α g<sub>N</sub> + β g<sub>K</sub>) &nbsp;&nbsp; (1.8)</div>
+    </div>
+    <div class="bloque">
+      <h3>Crecimiento por trabajador</h3>
+      <p>Se resta g<sub>N</sub> a ambos lados de (1.7) y se usa α − 1 = −β:</p>
+      <ol class="pasos">
+        <li><b class="paso-tt">Restar g<sub>N</sub></b><div><div class="ecuacion">g<sub>Y</sub> − g<sub>N</sub> = g<sub>A</sub> + α g<sub>N</sub> + β g<sub>K</sub> − g<sub>N</sub> &nbsp;&nbsp; (1.9)</div></div></li>
+        <li><b class="paso-tt">Agrupar g<sub>N</sub></b><div><div class="ecuacion">g<sub>y</sub> = g<sub>A</sub> + g<sub>N</sub>(α − 1) + β g<sub>K</sub> &nbsp;&nbsp; (1.10)</div></div></li>
+        <li><b class="paso-tt">Usar α + β = 1</b><div><div class="ecuacion">g<sub>y</sub> = g<sub>A</sub> + β(g<sub>K</sub> − g<sub>N</sub>) = <span class="v" data-var="g"><span>g<sub>A</sub></span></span> + β g<sub>k</sub> &nbsp;&nbsp; (1.11)</div></div></li>
+      </ol>
+      <p>Las minúsculas son variables por trabajador: g<sub>y</sub> = g<sub>Y</sub> − g<sub>N</sub> y g<sub>k</sub> = g<sub>K</sub> − g<sub>N</sub>. El producto por trabajador crece por la productividad y por el aumento del capital por trabajador (profundización del capital).</p>
+      <div class="recuadro">
+        <span class="recuadro-tag">La misma regla, en Blanchard</span>
+        <p>El libro usa una aproximación equivalente: si z = x<sup>a</sup>, entonces g<sub>z</sub> ≈ a·g<sub>x</sub>. Con Y = √K y N = 1, g<sub>Y</sub> ≈ 0.5 g<sub>K</sub>: para que el producto crezca 2% al año, el capital tendría que crecer 4%, y la razón capital/producto subiría sin límite. Por eso no se puede sostener ese crecimiento solo acumulando capital.</p>
+      </div>
+    </div>
+    <div class="simulador-panel" id="sim-cuentas">
+      <h3>Calculadora de contabilidad del crecimiento <span class="tag-pill">hipotético</span></h3>
+      <div class="sim-grid">
+        <div class="control-item"><div class="control-top"><label class="control-label" for="ugA">g<sub>A</sub>: productividad</label><span class="control-val" id="vugA">1.0%</span></div><input class="control-slider" type="range" id="ugA" min="-2" max="4" step="0.1" value="1"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="ugN">g<sub>N</sub>: trabajo</label><span class="control-val" id="vugN">2.0%</span></div><input class="control-slider" type="range" id="ugN" min="-1" max="5" step="0.1" value="2"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="ugK">g<sub>K</sub>: capital</label><span class="control-val" id="vugK">4.0%</span></div><input class="control-slider" type="range" id="ugK" min="-1" max="10" step="0.1" value="4"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="ub">β: participación del capital</label><span class="control-val" id="vub">0.40</span></div><input class="control-slider" type="range" id="ub" min="0.1" max="0.9" step="0.05" value="0.4"></div>
+      </div>
+      <div class="kpis-grid" aria-live="polite">
+        <div class="kpi-card"><div class="kpi-title">g<sub>Y</sub>: crecimiento del PIB</div><div class="kpi-num" id="kgY">3.8%</div></div>
+        <div class="kpi-card"><div class="kpi-title">g<sub>y</sub>: por trabajador</div><div class="kpi-num" id="kgy">1.8%</div></div>
+        <div class="kpi-card"><div class="kpi-title">Inspiración (g<sub>A</sub>)</div><div class="kpi-num" id="kins">1.0 pp</div></div>
+        <div class="kpi-card"><div class="kpi-title">Transpiración (αg<sub>N</sub> + βg<sub>K</sub>)</div><div class="kpi-num" id="ktra">2.8 pp</div></div>
+      </div>
+      <div class="diagrama"><svg id="svgCuentas" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 170" role="img" aria-label="Barras con el aporte de la productividad, el trabajo y el capital al crecimiento del PIB"></svg></div>
+      <p class="sim-nota" id="cuentasTxt"></p>
+    </div>
+  </section>
+
+  <section class="modulo" id="fuentes">
+    <div class="modulo-head"><h2>Las fuentes del crecimiento: capital y tecnología</h2></div>
+    <div class="modulo-text">Final de la sección 10-4.</div>
+    <div class="bloque">
+      <p>De (10.3), el producto por trabajador puede subir por dos vías: más <strong>capital por trabajador</strong> (movimiento a lo largo de la función) o <strong>mejor tecnología</strong> (desplazamiento hacia arriba). Pero cumplen papeles distintos:</p>
+      <ul>
+        <li><strong>La acumulación de capital por sí sola no sostiene el crecimiento.</strong> Por los rendimientos decrecientes, sostener un aumento constante del producto por trabajador exigiría aumentos cada vez mayores del capital por trabajador. En algún momento la economía no querrá o no podrá ahorrar e invertir tanto.</li>
+        <li><strong>La tasa de ahorro sí importa, para el nivel.</strong> Dos economías que solo difieren en su tasa de ahorro terminan creciendo a la misma tasa, pero la que ahorra más tiene en todo momento un nivel mayor de producto por persona.</li>
+        <li><strong>El crecimiento sostenido requiere progreso tecnológico sostenido.</strong> A la larga, la economía con mayor progreso tecnológico supera a las demás. Qué tan eficientemente se produce depende de la lista de "planos" disponibles y de cómo se organiza la economía: empresas, leyes y su cumplimiento, sistema político.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="modulo" id="solow">
+    <div class="modulo-head"><h2>El modelo de Solow: ahorro, capital y producto</h2></div>
+    <div class="modulo-text">Sección 11-1.</div>
+    <div class="bloque">
+      <p>Desde 1980 la tasa de ahorro de EE. UU. promedió 19% del PIB, frente a 25% en Alemania y 29% en Japón. ¿Habría crecido más EE. UU. ahorrando más? La respuesta del capítulo: <strong>a largo plazo, la tasa de crecimiento no depende de la tasa de ahorro, pero el nivel del producto sí</strong>.</p>
+      <p>El modelo combina dos relaciones (Figura 11-1):</p>
+      <div class="mecanismo" role="list" aria-label="Las dos relaciones del modelo">
+        <span class="mecanismo-step" role="listitem">Capital</span><span class="mecanismo-arrow" aria-hidden="true">→</span>
+        <span class="mecanismo-step" role="listitem">Producto (función de producción)</span><span class="mecanismo-arrow" aria-hidden="true">→</span>
+        <span class="mecanismo-step" role="listitem">Ahorro = inversión</span><span class="mecanismo-arrow" aria-hidden="true">→</span>
+        <span class="mecanismo-step" role="listitem">Cambio del capital</span>
+      </div>
+      <h3>Supuestos</h3>
+      <ul>
+        <li>Población, participación y desempleo constantes, así que el empleo N es constante. Entonces producto por trabajador, por persona y total se mueven igual.</li>
+        <li>No hay progreso tecnológico: f no cambia (se levanta en el capítulo 12).</li>
+        <li>Economía cerrada y ahorro público cero: I = S + (T − G) = S.</li>
+        <li>El ahorro privado es proporcional al ingreso: S = sY, con 0 &lt; s &lt; 1. La tasa de ahorro no sube ni baja sistemáticamente cuando un país se enriquece.</li>
+        <li>El capital se deprecia a la tasa δ cada año.</li>
+      </ul>
+    </div>
+    <div class="bloque">
+      <h3>De la producción y el ahorro a la ecuación del capital</h3>
+      <ol class="pasos">
+        <li><b class="paso-tt">Producción por trabajador</b><div><div class="ecuacion"><span class="v" data-var="Y"><span>Y<sub>t</sub></span></span>/N = f(K<sub>t</sub>/N) &nbsp;&nbsp; (11.1)</div>Más capital por trabajador, más producto por trabajador (cada vez menos).</div></li>
+        <li><b class="paso-tt">Inversión</b><div><div class="ecuacion">I<sub>t</sub> = s<span class="v" data-var="Y"><span>Y<sub>t</sub></span></span></div>La inversión es un flujo; el capital es un stock.</div></li>
+        <li><b class="paso-tt">Acumulación de capital</b><div><div class="ecuacion">K<sub>t+1</sub> = (1 − δ)K<sub>t</sub> + I<sub>t</sub></div>El capital del próximo año es el que sobrevive a la depreciación más lo invertido este año.</div></li>
+        <li><b class="paso-tt">Dividir entre N y reordenar</b><div><div class="ecuacion">K<sub>t+1</sub>/N − K<sub>t</sub>/N = s<span class="v" data-var="Y"><span>Y<sub>t</sub></span></span>/N − δK<sub>t</sub>/N &nbsp;&nbsp; (11.2)</div></div></li>
+      </ol>
+      <div class="anatomia">
+        <div class="ecuacion">K<sub>t+1</sub>/N − K<sub>t</sub>/N = s f(K<sub>t</sub>/N) − δ K<sub>t</sub>/N &nbsp;&nbsp; (11.3)</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>K<sub>t+1</sub>/N − K<sub>t</sub>/N</dt><dd><p>Cambio del capital por trabajador entre este año y el próximo.</p></dd>
+          <dt>s f(K<sub>t</sub>/N)</dt><dd><p>Inversión por trabajador: el capital determina el producto, y una fracción s del producto se ahorra e invierte.</p></dd>
+          <dt>δ K<sub>t</sub>/N</dt><dd><p>Depreciación por trabajador: proporcional al capital.</p></dd>
+          <dt>Cómo se lee</dt><dd><p>Si la inversión supera a la depreciación, el capital por trabajador sube; si es menor, baja.</p></dd>
+        </dl>
+      </div>
+    </div>
+    <figure class="anim">
+      <div class="anim-escena diagrama">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img" aria-label="Animación del modelo de Solow: curva de producto por trabajador, curva de inversión por trabajador y recta de depreciación. A la izquierda del cruce el capital sube, a la derecha baja; el cruce es el estado estacionario. Con más ahorro la curva de inversión sube y el estado estacionario se mueve a la derecha.">
+          <rect width="900" height="420" fill="#1A1B1D"/>
+          <defs><marker id="som" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F2F2F0"/></marker><marker id="sog" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#B4DC4E"/></marker></defs>
+          <line x1="90" y1="370" x2="860" y2="370" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#som)"/>
+          <line x1="90" y1="370" x2="90" y2="26" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#som)"/>
+          <text x="100" y="30" font-size="14" fill="#F2F2F0">Producto por trabajador, Y/N</text>
+          <text x="860" y="406" font-size="14" text-anchor="end" fill="#F2F2F0">Capital por trabajador, K/N</text>
+          <path data-draw data-v="0-" d="M90.0 370.0 L90.5 362.3 L91.9 354.6 L94.2 346.8 L97.5 339.1 L101.7 331.4 L106.9 323.7 L113.0 316.0 L120.0 308.3 L128.0 300.5 L136.9 292.8 L146.7 285.1 L157.5 277.4 L169.2 269.7 L181.9 262.0 L195.5 254.2 L210.0 246.5 L225.5 238.8 L241.9 231.1 L259.2 223.4 L277.5 215.7 L296.7 207.9 L316.9 200.2 L338.0 192.5 L360.0 184.8 L383.0 177.1 L406.9 169.4 L431.7 161.6 L457.5 153.9 L484.2 146.2 L511.9 138.5 L540.5 130.8 L570.0 123.1 L600.5 115.3 L631.9 107.6 L664.2 99.9 L697.5 92.2 L731.7 84.5 L766.9 76.7 L803.0 69.0 L840.0 61.3" fill="none" stroke="#F2F2F0" stroke-width="3.5"/>
+          <text data-v="0-" x="845" y="54" font-size="13" font-weight="700" text-anchor="end" fill="#F2F2F0">f(K/N)</text>
+          <path data-draw data-v="1-" d="M90.0 370.0 L90.5 367.7 L91.9 365.4 L94.2 363.1 L97.5 360.7 L101.7 358.4 L106.9 356.1 L113.0 353.8 L120.0 351.5 L128.0 349.2 L136.9 346.8 L146.7 344.5 L157.5 342.2 L169.2 339.9 L181.9 337.6 L195.5 335.3 L210.0 333.0 L225.5 330.6 L241.9 328.3 L259.2 326.0 L277.5 323.7 L296.7 321.4 L316.9 319.1 L338.0 316.8 L360.0 314.4 L383.0 312.1 L406.9 309.8 L431.7 307.5 L457.5 305.2 L484.2 302.9 L511.9 300.5 L540.5 298.2 L570.0 295.9 L600.5 293.6 L631.9 291.3 L664.2 289.0 L697.5 286.7 L731.7 284.3 L766.9 282.0 L803.0 279.7 L840.0 277.4" fill="none" stroke="#F0B429" stroke-width="3.5"/>
+          <text data-v="1-" x="845" y="270" font-size="13" font-weight="700" text-anchor="end" fill="#F0B429">s₀f(K/N)</text>
+          <path data-draw data-v="1-" d="M90 370 L840 231.4" fill="none" stroke="#5C9DFF" stroke-width="3.5"/>
+          <text data-v="1-" x="845" y="222" font-size="13" font-weight="700" text-anchor="end" fill="#5C9DFF">δK/N</text>
+          <g data-v="2">
+            <line x1="197.1" y1="335" x2="197.1" y2="350.2" stroke="#B4DC4E" stroke-width="5"/>
+            <circle cx="197.1" cy="335" r="5" fill="#F0B429"/><circle cx="197.1" cy="350.2" r="5" fill="#5C9DFF"/>
+            <text x="210" y="322" font-size="13" fill="#B4DC4E">inversión &gt; depreciación</text>
+            <line x1="205" y1="384" x2="300" y2="384" stroke="#B4DC4E" stroke-width="3" marker-end="url(#sog)"/>
+            <text x="197.1" y="398" font-size="13" text-anchor="middle" fill="#A9ABAE">K₀/N</text>
+          </g>
+          <g data-v="3-">
+            <line x1="424.8" y1="163.8" x2="424.8" y2="370" stroke="#A9ABAE" stroke-width="1.3" stroke-dasharray="3 5"/>
+            <line x1="90" y1="163.8" x2="424.8" y2="163.8" stroke="#A9ABAE" stroke-width="1.3" stroke-dasharray="3 5"/>
+            <circle cx="424.8" cy="308.1" r="7" fill="#F2F2F0"/>
+            <text x="424.8" y="398" font-size="13" font-weight="700" text-anchor="middle" fill="#F2F2F0">K₀*/N</text>
+            <text x="82" y="168" font-size="13" font-weight="700" text-anchor="end" fill="#F2F2F0">Y₀*/N</text>
+          </g>
+          <g data-v="3">
+            <line x1="540" y1="384" x2="445" y2="384" stroke="#F08AB2" stroke-width="3" marker-end="url(#som)"/>
+            <text x="560" y="300" font-size="13" fill="#F08AB2">a la derecha: depreciación &gt; inversión</text>
+          </g>
+          <path data-draw data-v="4-" d="M90.0 370.0 L90.5 366.9 L91.9 363.8 L94.2 360.7 L97.5 357.7 L101.7 354.6 L106.9 351.5 L113.0 348.4 L120.0 345.3 L128.0 342.2 L136.9 339.1 L146.7 336.0 L157.5 333.0 L169.2 329.9 L181.9 326.8 L195.5 323.7 L210.0 320.6 L225.5 317.5 L241.9 314.4 L259.2 311.3 L277.5 308.3 L296.7 305.2 L316.9 302.1 L338.0 299.0 L360.0 295.9 L383.0 292.8 L406.9 289.7 L431.7 286.7 L457.5 283.6 L484.2 280.5 L511.9 277.4 L540.5 274.3 L570.0 271.2 L600.5 268.1 L631.9 265.0 L664.2 262.0 L697.5 258.9 L731.7 255.8 L766.9 252.7 L803.0 249.6 L840.0 246.5" fill="none" stroke="#B4DC4E" stroke-width="3.5"/>
+          <text data-v="4-" x="845" y="242" font-size="13" font-weight="700" text-anchor="end" fill="#B4DC4E">s₁f(K/N), s₁ &gt; s₀</text>
+          <g data-v="5-">
+            <line x1="685.2" y1="95" x2="685.2" y2="370" stroke="#B4DC4E" stroke-width="1.3" stroke-dasharray="3 5"/>
+            <line x1="90" y1="95" x2="685.2" y2="95" stroke="#B4DC4E" stroke-width="1.3" stroke-dasharray="3 5"/>
+            <circle cx="685.2" cy="260" r="7" fill="#B4DC4E"/>
+            <text x="685.2" y="398" font-size="13" font-weight="700" text-anchor="middle" fill="#B4DC4E">K₁*/N</text>
+            <text x="82" y="99" font-size="13" font-weight="700" text-anchor="end" fill="#B4DC4E">Y₁*/N</text>
+            <line x1="440" y1="384" x2="660" y2="384" stroke="#B4DC4E" stroke-width="3" marker-end="url(#sog)"/>
+          </g>
+        </svg>
+      </div>
+      <ol class="anim-pasos">
+        <li>La función de producción por trabajador f(K/N), cóncava por los rendimientos decrecientes del capital.</li>
+        <li>La inversión por trabajador s₀f(K/N) tiene la misma forma, pero más abajo (es una fracción s del producto). La depreciación δK/N es una recta.</li>
+        <li>Con poco capital (K₀/N), la inversión supera a la depreciación: el capital por trabajador sube, y con él el producto.</li>
+        <li>En el cruce, la inversión cubre justo la depreciación: es el estado estacionario K*/N con su producto Y*/N. A la derecha del cruce, el capital baja.</li>
+        <li>Si la tasa de ahorro sube de s₀ a s₁, la curva de inversión sube.</li>
+        <li>El nuevo estado estacionario tiene más capital y más producto por trabajador: el ahorro cambia el nivel, y durante la transición la economía crece.</li>
+      </ol>
+      <figcaption>Animación propia de las Figuras 11-2 y 11-3, con Y/N = √(K/N) y valores hipotéticos (s₀ = 0.30, s₁ = 0.40, δ = 0.12), elegidos altos para que el gráfico se lea, como hace el propio Blanchard.</figcaption>
+    </figure>
+    <div class="bloque">
+      <h3>El estado estacionario</h3>
+      <p>Cuando el capital por trabajador ya no cambia, el lado izquierdo de (11.3) es cero:</p>
+      <div class="anatomia">
+        <div class="ecuacion">s f(K*/N) = δ K*/N &nbsp;&nbsp; (11.4) &nbsp;&nbsp;&nbsp; <span class="v" data-var="Y"><span>Y*</span></span>/N = f(K*/N) &nbsp;&nbsp; (11.5)</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>s f(K*/N)</dt><dd><p>El ahorro (inversión) por trabajador en el estado estacionario.</p></dd>
+          <dt>δ K*/N</dt><dd><p>Lo que hace falta invertir solo para reponer el capital que se desgasta.</p></dd>
+          <dt>Cómo se lee</dt><dd><p>El ahorro alcanza exactamente para cubrir la depreciación; el capital y el producto por trabajador se quedan constantes. Desde cualquier punto de partida, la economía converge ahí.</p></dd>
+        </dl>
+      </div>
+      <div class="recuadro">
+        <span class="recuadro-tag">Francia después de la Segunda Guerra Mundial</span>
+        <p>Francia perdió más de 550,000 vidas de 42 millones, pero proporcionalmente más capital: el stock de 1945 estaba cerca de 30% bajo el de antes de la guerra. El modelo predice que, al quedar a la izquierda de K*/N, crecerá rápido por un tiempo. Así fue: de 1946 a 1950 el PIB real creció 9.6% al año (cerca de 60% en 5 años). No todo fue acumulación: también entró capital y técnica más modernos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo" id="ahorro">
+    <div class="modulo-head"><h2>La tasa de ahorro: tres resultados y la regla de oro</h2></div>
+    <div class="modulo-text">Sección 11-2.</div>
+    <div class="bloque">
+      <ol>
+        <li><strong>La tasa de ahorro no afecta el crecimiento de largo plazo del producto por trabajador, que es cero</strong> (sin progreso tecnológico). Para crecer siempre a una tasa constante, el capital tendría que crecer más rápido que el producto y habría que ahorrar una fracción cada vez mayor, hasta más de 1: imposible. Krugman llamó "crecimiento estalinista" al de la Unión Soviética de 1950 a 1990, que algunos atribuyen a una tasa de ahorro cada vez mayor.</li>
+        <li><strong>La tasa de ahorro determina el nivel del producto por trabajador en el largo plazo.</strong> Con todo lo demás igual, el país que ahorra más alcanza más producto por trabajador (Figura 11-3).</li>
+        <li><strong>Un aumento de la tasa de ahorro produce más crecimiento por un tiempo, pero no para siempre</strong>: la economía crece mientras pasa al nuevo estado estacionario (Figura 11-4). Con progreso tecnológico, la economía pasa a una senda más alta, paralela a la anterior (Figura 11-5).</li>
+      </ol>
+      <figure>
+        <div class="diagrama">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" role="img" aria-label="Dos paneles. Izquierda, sin progreso tecnológico: el producto por trabajador es constante hasta el tiempo t, luego sube y se estabiliza en un nivel mayor. Derecha, con progreso tecnológico y escala logarítmica: el producto sigue la recta AA, tras el aumento del ahorro crece más rápido y llega a la recta BB, paralela y más alta.">
+            <rect width="900" height="330" fill="#1A1B1D"/>
+            <defs><marker id="tsm" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F2F2F0"/></marker></defs>
+            <text x="70" y="26" font-size="14" font-weight="700" fill="#F2F2F0">Sin progreso tecnológico (11-4)</text>
+            <line x1="70" y1="280" x2="420" y2="280" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#tsm)"/>
+            <line x1="70" y1="280" x2="70" y2="40" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#tsm)"/>
+            <text x="420" y="306" font-size="13" text-anchor="end" fill="#F2F2F0">Tiempo</text>
+            <text x="80" y="54" font-size="13" fill="#F2F2F0">Y/N</text>
+            <path d="M70 210 L180 210 C230 210 250 120 330 105 L410 102" fill="none" stroke="#B4DC4E" stroke-width="4"/>
+            <line x1="180" y1="280" x2="180" y2="210" stroke="#A9ABAE" stroke-width="1.3" stroke-dasharray="3 5"/>
+            <text x="180" y="300" font-size="13" text-anchor="middle" fill="#A9ABAE">t: sube s</text>
+            <text x="62" y="214" font-size="13" text-anchor="end" fill="#A9ABAE">Y₀/N</text>
+            <text x="62" y="106" font-size="13" text-anchor="end" fill="#B4DC4E">Y₁/N</text>
+            <text x="500" y="26" font-size="14" font-weight="700" fill="#F2F2F0">Con progreso tecnológico (11-5)</text>
+            <line x1="500" y1="280" x2="860" y2="280" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#tsm)"/>
+            <line x1="500" y1="280" x2="500" y2="40" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#tsm)"/>
+            <text x="860" y="306" font-size="13" text-anchor="end" fill="#F2F2F0">Tiempo</text>
+            <text x="510" y="54" font-size="13" fill="#F2F2F0">Y/N (escala log)</text>
+            <line x1="500" y1="250" x2="850" y2="140" stroke="#A9ABAE" stroke-width="2" stroke-dasharray="7 6"/>
+            <line x1="500" y1="200" x2="850" y2="90" stroke="#A9ABAE" stroke-width="2" stroke-dasharray="7 6"/>
+            <path d="M500 250 L640 206 C690 190 700 155 760 118 L850 90" fill="none" stroke="#B4DC4E" stroke-width="4"/>
+            <line x1="640" y1="280" x2="640" y2="206" stroke="#A9ABAE" stroke-width="1.3" stroke-dasharray="3 5"/>
+            <text x="640" y="300" font-size="13" text-anchor="middle" fill="#A9ABAE">t: sube s</text>
+            <text x="842" y="160" font-size="13" text-anchor="end" fill="#A9ABAE">AA</text>
+            <text x="842" y="82" font-size="13" text-anchor="end" fill="#A9ABAE">BB</text>
+          </svg>
+        </div>
+        <figcaption>Esquema cualitativo de las Figuras 11-4 y 11-5. En el panel derecho, AA y BB tienen la misma pendiente: la tasa de crecimiento de largo plazo no cambia.</figcaption>
+      </figure>
+    </div>
+    <div class="bloque">
+      <h3>La tasa de ahorro y el consumo: la regla de oro</h3>
+      <p>Lo que importa a las personas es el consumo, no el producto. Un aumento del ahorro baja el consumo al inicio (el capital de este año no cambia). ¿Y a largo plazo? Depende:</p>
+      <ul>
+        <li>Con s = 0, no hay capital, ni producto, ni consumo.</li>
+        <li>Con s = 1, hay mucho capital y producto, pero todo se usa para reponer la depreciación: consumo cero.</li>
+        <li>Entre ambos extremos hay una tasa s<sub>G</sub> que <strong>maximiza el consumo de estado estacionario</strong>. Su nivel de capital es el <strong>capital de la regla de oro</strong>. Más capital que ese reduce el consumo de largo plazo: la economía carga demasiado capital.</li>
+      </ul>
+      <figure>
+        <div class="diagrama">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 370" role="img" aria-label="Consumo por trabajador en estado estacionario frente a la tasa de ahorro: es cero con s igual a 0 y con s igual a 1, y alcanza un máximo en la tasa de la regla de oro sG.">
+            <rect width="900" height="370" fill="#1A1B1D"/>
+            <defs><marker id="gom" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F2F2F0"/></marker></defs>
+            <line x1="90" y1="330" x2="860" y2="330" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#gom)"/>
+            <line x1="90" y1="330" x2="90" y2="26" stroke="#F2F2F0" stroke-width="2.5" marker-end="url(#gom)"/>
+            <text x="100" y="30" font-size="14" fill="#F2F2F0">Consumo por trabajador en estado estacionario, C/N</text>
+            <text x="860" y="360" font-size="14" text-anchor="end" fill="#F2F2F0">Tasa de ahorro, s</text>
+            <path d="M90.0 330.0 L108.8 304.8 L127.5 280.8 L146.2 258.1 L165.0 236.8 L183.8 216.7 L202.5 197.9 L221.2 180.5 L240.0 164.3 L258.8 149.4 L277.5 135.8 L296.2 123.5 L315.0 112.5 L333.8 102.8 L352.5 94.4 L371.2 87.3 L390.0 81.4 L408.8 76.9 L427.5 73.7 L446.2 71.7 L465.0 71.1 L483.8 71.7 L502.5 73.7 L521.2 76.9 L540.0 81.4 L558.8 87.3 L577.5 94.4 L596.2 102.8 L615.0 112.5 L633.8 123.5 L652.5 135.8 L671.2 149.4 L690.0 164.3 L708.8 180.5 L727.5 197.9 L746.2 216.7 L765.0 236.8 L783.8 258.1 L802.5 280.8 L821.2 304.8 L840.0 330.0" fill="none" stroke="#B4DC4E" stroke-width="4"/>
+            <line x1="465" y1="71" x2="465" y2="330" stroke="#A9ABAE" stroke-width="1.3" stroke-dasharray="3 5"/>
+            <circle cx="465" cy="71" r="7" fill="#F2F2F0"/>
+            <text x="480" y="62" font-size="13" font-weight="700" fill="#F2F2F0">Consumo máximo</text>
+            <text x="465" y="352" font-size="13" font-weight="700" text-anchor="middle" fill="#F2F2F0">s<tspan font-size="10" dy="3">G</tspan></text>
+            <text x="90" y="352" font-size="13" text-anchor="middle" fill="#A9ABAE">0</text>
+            <text x="840" y="352" font-size="13" text-anchor="middle" fill="#A9ABAE">1</text>
+            <text x="250" y="150" font-size="13" fill="#B4DC4E">más ahorro, más consumo</text>
+            <text x="640" y="150" font-size="13" fill="#F08AB2">más ahorro, menos consumo</text>
+          </svg>
+        </div>
+        <figcaption>Esquema de la Figura 11-6 (forma calculada con Y/N = √(K/N), donde s<sub>G</sub> = 0.5).</figcaption>
+      </figure>
+      <p>La evidencia indica que los países de la OECD suelen estar <strong>por debajo</strong> de la regla de oro: ahorrar más elevaría el consumo futuro. Entonces hay un dilema entre generaciones: menos consumo para las actuales, más para las futuras. Como las generaciones futuras no votan, los gobiernos tienden a pedir pocos sacrificios: es más probable invertir de menos que de más.</p>
+      <div class="recuadro">
+        <span class="recuadro-tag">Seguridad social y ahorro (recuadro de Blanchard)</span>
+        <p>En un sistema <strong>totalmente financiado</strong> (fully funded), lo que aportan los trabajadores se invierte y se les devuelve con intereses: baja el ahorro privado pero sube el del sistema, y el ahorro total casi no cambia. En un sistema de <strong>reparto</strong> (pay-as-you-go), lo aportado se paga a los jubilados actuales: baja el ahorro privado sin compensación, así que bajan el ahorro total y el capital. El de EE. UU. es básicamente de reparto. Pasar a uno financiado haría que los trabajadores actuales pagaran dos veces (su propia jubilación y la de los jubilados actuales), así que el cambio tendría que ser lento. Feldstein estimó que podría subir el capital 34% a largo plazo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo" id="magnitudes">
+    <div class="modulo-head"><h2>Magnitudes: el modelo con números</h2></div>
+    <div class="modulo-text">Sección 11-3 y apéndice del capítulo 11.</div>
+    <div class="bloque">
+      <p>Con Y = √K·√N (11.6), dividir entre N da Y/N = √(K/N). Sustituyendo en (11.3):</p>
+      <div class="ecuacion">K<sub>t+1</sub>/N − K<sub>t</sub>/N = s√(K<sub>t</sub>/N) − δK<sub>t</sub>/N &nbsp;&nbsp; (11.7)</div>
+      <ol class="pasos">
+        <li><b class="paso-tt">Estado estacionario</b><div>El lado izquierdo es cero: s√(K*/N) = δK*/N.</div></li>
+        <li><b class="paso-tt">Elevar al cuadrado y dividir entre K*/N</b><div><div class="ecuacion">K*/N = (s/δ)<sup>2</sup> &nbsp;&nbsp; (11.8)</div></div></li>
+        <li><b class="paso-tt">Producto</b><div><div class="ecuacion"><span class="v" data-var="Y"><span>Y*</span></span>/N = √(K*/N) = s/δ &nbsp;&nbsp; (11.9)</div></div></li>
+      </ol>
+      <p><strong>Ejemplo del libro:</strong> con s = δ = 10%, K*/N = Y*/N = 1. Si el ahorro sube a 20%, K*/N pasa de 1 a 4 y Y*/N de 1 a 2: duplicar el ahorro duplica el producto por trabajador a largo plazo. El primer año, K<sub>1</sub>/N = 1 + 0.2 × 1 − 0.1 × 1 = 1.1.</p>
+      <p><strong>La transición es lenta (Figura 11-7):</strong> el ajuste está completo en 40% después de 10 años y en 63% después de 20. El crecimiento promedio es 3.1% en los primeros 10 años y 1.5% en los 10 siguientes. El ahorro no cambia el crecimiento a largo plazo, pero sí durante mucho tiempo.</p>
+      <div class="anatomia">
+        <div class="ecuacion"><span class="v" data-var="Y"><span>Y*</span></span>/N = (s/δ)<sup>β/(1−β)</sup></div>
+        <span class="anatomia-tt">Qué significa cada pieza: la versión Cobb-Douglas del apéndice</span>
+        <dl class="simbolos">
+          <dt>β</dt><dd><p>La participación del capital (el α del apéndice de Blanchard). Con β = 0.5, el exponente es 1 y se recupera Y*/N = s/δ.</p></dd>
+          <dt>β = 1/3</dt><dd><p>El valor que sugiere la evidencia para el capital físico. El exponente es 0.5: Y*/N = √(s/δ). Duplicar el ahorro multiplica el producto por √2 ≈ 1.4, un efecto menor.</p></dd>
+          <dt>β cerca de 1/2</dt><dd><p>Razonable si "capital" incluye también el capital humano (sección 11-4): entonces los números del texto aplican al ahorro en máquinas y en educación.</p></dd>
+        </dl>
+      </div>
+    </div>
+    <div class="simulador-panel" id="sim-solow">
+      <h3>Simulador de Solow: sube la tasa de ahorro <span class="tag-pill">hipotético</span></h3>
+      <p>La economía parte del estado estacionario con s₀; en el año 0 la tasa de ahorro pasa a s₁ y se queda ahí. Con los valores iniciales reproduces la Figura 11-7.</p>
+      <div class="sim-grid">
+        <div class="control-item"><div class="control-top"><label class="control-label" for="ss0">Ahorro inicial s₀</label><span class="control-val" id="vss0">0.10</span></div><input class="control-slider" type="range" id="ss0" min="0.05" max="0.9" step="0.01" value="0.1"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="ss1">Ahorro nuevo s₁</label><span class="control-val" id="vss1">0.20</span></div><input class="control-slider" type="range" id="ss1" min="0.05" max="0.9" step="0.01" value="0.2"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="sd">Depreciación δ</label><span class="control-val" id="vsd">0.10</span></div><input class="control-slider" type="range" id="sd" min="0.02" max="0.2" step="0.01" value="0.1"></div>
+        <div class="control-item"><div class="control-top"><label class="control-label" for="sb">β: participación del capital</label><span class="control-val" id="vsb">0.50</span></div><input class="control-slider" type="range" id="sb" min="0.2" max="0.7" step="0.01" value="0.5"></div>
+      </div>
+      <div class="kpis-grid" aria-live="polite">
+        <div class="kpi-card"><div class="kpi-title">Y*/N con s₀ y con s₁</div><div class="kpi-num" id="kyss">1.00 → 2.00</div></div>
+        <div class="kpi-card"><div class="kpi-title">C*/N con s₀ y con s₁</div><div class="kpi-num" id="kcss">0.90 → 1.60</div></div>
+        <div class="kpi-card"><div class="kpi-title">Ajuste a 10 y 20 años</div><div class="kpi-num" id="kaj">40% · 64%</div></div>
+        <div class="kpi-card"><div class="kpi-title">Regla de oro s<sub>G</sub></div><div class="kpi-num" id="kgold">0.50</div></div>
+      </div>
+      <div class="diagrama"><svg id="svgSolow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" role="img" aria-label="Trayectoria del producto por trabajador y de su tasa de crecimiento durante 60 años después del cambio en la tasa de ahorro"></svg></div>
+      <p class="sim-nota" id="solowTxt"></p>
+    </div>
+  </section>
+
+  <section class="modulo" id="capital-humano">
+    <div class="modulo-head"><h2>Capital físico y capital humano</h2></div>
+    <div class="modulo-text">Sección 11-4.</div>
+    <div class="bloque">
+      <p>Además de máquinas, las economías tienen <strong>capital humano</strong>: las habilidades de sus trabajadores. Al inicio de la Revolución Industrial solo 30% de la población de los actuales países de la OECD sabía leer; hoy, más de 95%. En la OECD casi 100% de los niños recibe educación primaria, 90% secundaria y 38% superior; en países con PIB por persona menor que 400 dólares, 95%, 32% y 4%.</p>
+      <div class="anatomia">
+        <div class="ecuacion"><span class="v" data-var="Y"><span>Y</span></span>/N = f(K/N, H/N) &nbsp;&nbsp; (11.10)</div>
+        <span class="anatomia-tt">Qué significa cada pieza</span>
+        <dl class="simbolos">
+          <dt>K/N</dt><dd><p>Capital físico por trabajador; sube el producto, con rendimientos decrecientes.</p></dd>
+          <dt>H/N</dt><dd><p>Capital humano por trabajador; también sube el producto con rendimientos decrecientes (hoy el margen relevante en países ricos es la educación superior).</p></dd>
+          <dt>Cómo se mide H</dt><dd><p>Ponderando a cada trabajador por su salario relativo. Ejemplo del libro: 100 trabajadores, 50 no calificados y 50 calificados que ganan el doble: H = 50 × 1 + 50 × 2 = 150; H/N = 1.5.</p></dd>
+        </dl>
+      </div>
+      <p>Las conclusiones se extienden: ahorrar más o gastar más en educación y capacitación eleva el producto por trabajador de estado estacionario. En EE. UU. el gasto en educación formal es cerca de 6.5% del PIB, frente a una inversión física de cerca de 17%; los estudios recientes concluyen que ambos tipos de capital pesan de forma parecida en el producto.</p>
+      <h3>Crecimiento endógeno</h3>
+      <p>Robert Lucas (Nobel 1995) y Paul Romer (Nobel 2018) exploraron si acumular capital físico y humano al mismo tiempo bastaría para crecer siempre, sin progreso tecnológico. El consenso actual: ahorrar o educar más lleva a niveles mucho más altos de producto por trabajador, pero, <strong>dado el ritmo del progreso tecnológico</strong>, no a un crecimiento permanentemente mayor. Queda abierta la pregunta de si una fuerza laboral más educada acelera el progreso tecnológico (capítulo 12).</p>
+    </div>
+  </section>
+
+  <section class="modulo" id="formulas">
+    <div class="modulo-head"><h2>Hoja de fórmulas</h2></div>
+    <div class="bloque">
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Fórmula</th><th>Para qué sirve</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">Y/Pob = (Y/Ocup)(Ocup/PEA)(PEA/PET)(PET/Pob)</td><td>Separar productividad y mercado laboral.</td></tr>
+            <tr><td class="mono">r<sub>t+1</sub> = r<sub>t</sub>(1 + g<sub>A</sub>)/(1 + g<sub>B</sub>)</td><td>Convergencia: la razón sube solo si g<sub>A</sub> &gt; g<sub>B</sub>.</td></tr>
+            <tr><td class="mono">X<sub>T</sub> = X<sub>0</sub>(1 + g)<sup>T</sup></td><td>Interés compuesto; duplicación en cerca de 70/g años.</td></tr>
+            <tr><td class="mono">Y = AN<sup>α</sup>K<sup>β</sup>, α + β = 1</td><td>Cobb-Douglas con rendimientos constantes.</td></tr>
+            <tr><td class="mono">g<sub>Y</sub> = g<sub>A</sub> + αg<sub>N</sub> + βg<sub>K</sub></td><td>Contabilidad del crecimiento (1.7).</td></tr>
+            <tr><td class="mono">g<sub>A</sub> = g<sub>Y</sub> − (αg<sub>N</sub> + βg<sub>K</sub>)</td><td>Residuo de Solow (1.8).</td></tr>
+            <tr><td class="mono">g<sub>y</sub> = g<sub>A</sub> + βg<sub>k</sub></td><td>Crecimiento por trabajador (1.11).</td></tr>
+            <tr><td class="mono">K<sub>t+1</sub>/N − K<sub>t</sub>/N = sf(K<sub>t</sub>/N) − δK<sub>t</sub>/N</td><td>Dinámica del capital (11.3).</td></tr>
+            <tr><td class="mono">sf(K*/N) = δK*/N</td><td>Estado estacionario (11.4).</td></tr>
+            <tr><td class="mono">K*/N = (s/δ)<sup>2</sup>, Y*/N = s/δ</td><td>Con Y = √K√N (11.8 y 11.9).</td></tr>
+            <tr><td class="mono">Y*/N = (s/δ)<sup>β/(1−β)</sup></td><td>Cobb-Douglas general (apéndice; β es el α de Blanchard).</td></tr>
+            <tr><td class="mono">C*/N = (1 − s)Y*/N</td><td>Consumo de estado estacionario (regla de oro).</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo" id="errores">
+    <div class="modulo-head"><h2>Errores frecuentes y cómo evitarlos</h2></div>
+    <div class="bloque">
+      <div class="tabla-wrap">
+        <table class="tabla-datos texto">
+          <thead><tr><th>Error</th><th>Por qué está mal</th><th>Cómo corregirlo</th></tr></thead>
+          <tbody>
+            <tr><td>Comparar PIB per cápita con el tipo de cambio de mercado.</td><td>Fluctúa mucho y no corrige que los bienes básicos son más baratos en países pobres.</td><td>Usa PPC.</td></tr>
+            <tr><td>Creer que crecer implica converger.</td><td>La razón con el país rico sube solo si se crece más que él.</td><td>Compara tasas, no solo el signo.</td></tr>
+            <tr><td>Creer que igual PIB per cápita implica igual productividad.</td><td>Pueden diferir en horas, desempleo, participación o demografía.</td><td>Usa el desglose.</td></tr>
+            <tr><td>Confundir rendimientos a escala con rendimientos de un factor.</td><td>Con rendimientos constantes a escala hay rendimientos decrecientes de cada factor por separado.</td><td>Pregunta: ¿suben todos los factores o solo uno?</td></tr>
+            <tr><td>Mezclar las letras α y β.</td><td>En la clase α es del trabajo; en el apéndice de Blanchard α es del capital.</td><td>Mira a qué factor acompaña el exponente.</td></tr>
+            <tr><td>Olvidar ponderar en g<sub>Y</sub> = g<sub>A</sub> + αg<sub>N</sub> + βg<sub>K</sub>.</td><td>Cada factor aporta según su participación.</td><td>Multiplica cada tasa por su exponente.</td></tr>
+            <tr><td>Decir que más ahorro sube el crecimiento para siempre.</td><td>Sube el nivel; el crecimiento es mayor solo en la transición.</td><td>Separa nivel y tasa de crecimiento.</td></tr>
+            <tr><td>Decir que más ahorro siempre sube el consumo.</td><td>Por encima de la regla de oro, lo baja también a largo plazo.</td><td>Ubica a la economía frente a s<sub>G</sub>.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="modulo" id="glosario">
+    <div class="modulo-head"><h2>Glosario del Tema 7</h2></div>
+    <div class="bezel"><div class="bezel-in">
+      <dl class="glosario">
+        <dt>Crecimiento</dt><dd>Aumento sostenido del producto agregado en el tiempo.</dd>
+        <dt>Escala logarítmica</dt><dd>Un mismo aumento porcentual se ve como una misma distancia vertical.</dd>
+        <dt>Paridad del poder de compra (PPC)</dt><dd>PIB construido con precios comunes para todos los países.</dd>
+        <dt>Paradoja de Easterlin</dt><dd>Hallazgos según los cuales, pasado cierto ingreso, más ingreso no aumentaría la felicidad.</dd>
+        <dt>Índice de Progreso Social</dt><dd>Medida del bienestar con tres dimensiones: necesidades básicas, fundamentos del bienestar y oportunidades.</dd>
+        <dt>Fuerza del interés compuesto</dt><dd>Pequeñas diferencias de crecimiento sostenidas producen grandes diferencias de nivel.</dd>
+        <dt>Convergencia</dt><dd>Los países rezagados crecen más rápido y reducen la brecha con los ricos.</dd>
+        <dt>Trampa malthusiana</dt><dd>Todo aumento del producto sube la población y devuelve el producto por persona a su nivel.</dd>
+        <dt>Cuatro tigres</dt><dd>Singapur, Taiwán, Hong Kong y Corea del Sur.</dd>
+        <dt>Función de producción agregada</dt><dd>Relación entre el producto y los factores, dada la tecnología.</dd>
+        <dt>Rendimientos constantes a escala</dt><dd>Si todos los factores se multiplican por x, el producto se multiplica por x.</dd>
+        <dt>Rendimientos decrecientes del capital</dt><dd>Dado el trabajo, cada aumento de capital sube cada vez menos el producto.</dd>
+        <dt>Cobb-Douglas</dt><dd>Y = AN<sup>α</sup>K<sup>β</sup>; con α + β = 1, rendimientos constantes.</dd>
+        <dt>Residuo de Solow</dt><dd>Crecimiento de la productividad medido como lo que no explican los factores.</dd>
+        <dt>Tasa de ahorro</dt><dd>Fracción del ingreso que se ahorra.</dd>
+        <dt>Estado estacionario</dt><dd>Situación en que el capital y el producto por trabajador ya no cambian.</dd>
+        <dt>Regla de oro</dt><dd>Nivel de capital que maximiza el consumo de estado estacionario.</dd>
+        <dt>Capital humano</dt><dd>Habilidades de los trabajadores, acumuladas con educación y capacitación.</dd>
+        <dt>Crecimiento endógeno</dt><dd>Modelos en que el crecimiento de largo plazo depende de variables como el ahorro o la educación.</dd>
+      </dl>
+    </div></div>
+  </section>
+
+  <section class="modulo" id="autoeval">
+    <div class="modulo-head"><h2>Autoevaluación</h2></div>
+    <div class="modulo-text">Responde primero y luego abre la respuesta. Para preguntas con calificación, usa la <a href="actividad-crecimiento.html">Actividad</a>.</div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" type="button" aria-expanded="false"><span>1. ¿Por qué se compara el producto por persona y no el producto total? ¿Y por qué en PPC?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Porque interesa el nivel de vida promedio, no el tamaño de la economía. En PPC porque el tipo de cambio fluctúa mucho y no corrige que en los países pobres los bienes básicos son más baratos.</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" type="button" aria-expanded="false"><span>2. Dos países tienen el mismo PIB por habitante pero distinto PIB por trabajador. ¿Qué los diferencia?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>La razón ocupados a población: Y/Pob = (Y/Ocup) × (Ocup/Pob). El de mayor PIB por trabajador tiene una proporción menor de ocupados.</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" type="button" aria-expanded="false"><span>3. Un país crece 1% por trabajador durante décadas. ¿Alcanzará a los países ricos?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>No necesariamente: si los ricos crecen 1% o más, la razón no sube y el país podría alejarse (la razón tendería a cero en lugar de a uno).</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" type="button" aria-expanded="false"><span>4. ¿Qué es el sesgo de selección en la Figura 10-2?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Mirar solo a los miembros actuales de la OECD es mirar un club de ganadores: los que venían de atrás y entraron lo lograron precisamente por crecer rápido. Mejor elegir los países por su situación inicial.</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" type="button" aria-expanded="false"><span>5. Con Y = AN<sup>0.5</sup>K<sup>0.5</sup>, A = 1 y N = K = 100, ¿cuánto vale Y y el producto por trabajador?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Y = 1 × 10 × 10 = 100; y = Y/N = 100/100 = 1.</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" type="button" aria-expanded="false"><span>6. Deriva g<sub>y</sub> = g<sub>A</sub> + βg<sub>k</sub> a partir de g<sub>Y</sub> = g<sub>A</sub> + αg<sub>N</sub> + βg<sub>K</sub>.</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Resta g<sub>N</sub>: g<sub>Y</sub> − g<sub>N</sub> = g<sub>A</sub> + (α − 1)g<sub>N</sub> + βg<sub>K</sub>. Con α + β = 1, α − 1 = −β, así que g<sub>y</sub> = g<sub>A</sub> + β(g<sub>K</sub> − g<sub>N</sub>) = g<sub>A</sub> + βg<sub>k</sub>.</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" type="button" aria-expanded="false"><span>7. ¿Por qué la acumulación de capital no puede sostener el crecimiento por sí sola?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Por los rendimientos decrecientes del capital: cada vez haría falta más capital por cada aumento del producto, y la fracción del ingreso ahorrada tendría que crecer hasta superar 1. La economía llega a un estado estacionario donde el ahorro solo repone la depreciación.</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" type="button" aria-expanded="false"><span>8. Con Y = √K√N, s = 0.2 y δ = 0.1, ¿cuánto valen K*/N y Y*/N?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>K*/N = (s/δ)<sup>2</sup> = 2<sup>2</sup> = 4; Y*/N = s/δ = 2.</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" type="button" aria-expanded="false"><span>9. ¿Puede un aumento del ahorro reducir el consumo a largo plazo?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Sí, si la economía ya está por encima de la regla de oro: el mayor capital sube poco el producto y no alcanza para cubrir la mayor depreciación. Los países de la OECD suelen estar por debajo, así que allí ahorrar más subiría el consumo futuro.</p></div>
+    </div>
+    <div class="pregunta" data-abierta="false">
+      <button class="disparador" type="button" aria-expanded="false"><span>10. Con datos de El Salvador, el PIB per cápita superó en 1998 el de 1978, pero el PIB por ocupado de 2019 aún no alcanza el de 1978. ¿Cómo se explica?</span><svg class="flecha" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      <div class="respuesta"><span class="respuesta-tag">Respuesta</span><p>Por el desglose Y/Pob = (Y/Ocup) × (Ocup/Pob): la razón ocupados a población subió (más personas en la PEA, bono demográfico), lo que elevó el PIB per cápita aunque la productividad por ocupado no recuperara su nivel.</p></div>
+    </div>
+  </section>
+
+</main>
+<nav class="panel" data-nav-eq aria-label="Índice de esta página">
+  <button class="panel-boton" type="button" aria-expanded="false" aria-controls="panel-lista"><i><svg aria-hidden="true" focusable="false"></svg></i><span class="sr">Índice. Estás en: </span><span data-nav-actual>Índice</span></button>
+  <p class="panel-tt">Tema 7<small>En esta página</small></p>
+  <svg class="panel-svg" aria-hidden="true" focusable="false"></svg>
+  <ol class="panel-lista" id="panel-lista">
+    <li><a href="#alcance">Alcance y símbolos</a></li>
+    <li><a href="#largo-plazo">El largo plazo</a></li>
+    <li><a href="#bienestar">Crecimiento y bienestar</a></li>
+    <li><a href="#ppc">10-1 PPC</a></li>
+    <li><a href="#desglose">Desglose del PIB pc</a></li>
+    <li><a href="#hechos">10-2 Hechos</a></li>
+    <li><a href="#convergencia">Convergencia</a></li>
+    <li><a href="#el-salvador">El Salvador</a></li>
+    <li><a href="#produccion">10-4 Producción</a></li>
+    <li><a href="#contabilidad">Contabilidad</a></li>
+    <li><a href="#fuentes">Fuentes del crecimiento</a></li>
+    <li><a href="#solow">11-1 Solow</a></li>
+    <li><a href="#ahorro">11-2 Ahorro</a></li>
+    <li><a href="#magnitudes">11-3 Magnitudes</a></li>
+    <li><a href="#capital-humano">11-4 Capital humano</a></li>
+    <li><a href="#formulas">Hoja de fórmulas</a></li>
+    <li><a href="#errores">Errores frecuentes</a></li>
+    <li><a href="#glosario">Glosario</a></li>
+    <li><a href="#autoeval">Autoevaluación</a></li>
+  </ol>
+  <p class="panel-ayuda">El punto marca dónde vas leyendo. Con el foco en el índice, las flechas lo recorren.</p>
+</nav>
+</div>
+
+<footer>
+  <div>
+    <span class="badge">Fuente</span>Blanchard, Olivier (2023), <em>Macroeconomics</em>, 9ª ed., Pearson, cap. 10 "The Facts of Growth" y cap. 11 "Saving, Capital Accumulation, and Output", con su apéndice (pp. 199 a 239). Clase 1 de crecimiento del profesor Luis Morera (2026). Caso de El Salvador: análisis del profesor con Penn World Table 10.01 (Feenstra, Inklaar y Timmer, 2015, <em>American Economic Review</em> 105(10)). Los ejemplos marcados como hipotéticos y los cálculos marcados como propios son ilustraciones del autor de la guía, no datos de la fuente.
+  </div>
+  <p>Guía de estudio: Semana 11, Tema 7. Material de repaso del propio estudiante (no es Tarea ni Control). &middot; <a href="../index.html">Volver al sitio</a></p>
+</footer>
+
+<script src="../assets/guia.js?v=873e69662f72"></script>
+
+<script>
+(function(){
+  document.querySelectorAll('.pregunta .disparador').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var p = btn.closest('.pregunta'), abierta = p.getAttribute('data-abierta') === 'true';
+      p.setAttribute('data-abierta', abierta ? 'false' : 'true');
+      btn.setAttribute('aria-expanded', abierta ? 'false' : 'true');
+    });
+  });
+
+  var NS = 'http://www.w3.org/2000/svg';
+  var C = { fondo:'#1A1B1D', tinta:'#F2F2F0', tenue:'#A9ABAE', linea:'#34363A', g:'#B4DC4E', y:'#F0B429', i:'#5C9DFF', u:'#F08AB2' };
+  function $(id){ return document.getElementById(id); }
+  function el(svg, t, a, txt){ var e = document.createElementNS(NS, t); for (var k in a) e.setAttribute(k, a[k]); if (txt != null) e.textContent = txt; svg.appendChild(e); return e; }
+  function limpiar(svg){ while (svg.firstChild) svg.removeChild(svg.firstChild); }
+  function miles(x, d){ return x.toLocaleString('en-US', { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 }); }
+  function pct(x, d){ return (x * 100).toFixed(d == null ? 1 : d) + '%'; }
+  function enlazar(ids, fn){ ids.forEach(function(id){ $(id).addEventListener('input', fn); }); fn(); }
+
+  // 1. Desglose del PIB per cápita (hipotético)
+  enlazar(['dY','dPob','dPET','dPEA','dU','dH'], function(){
+    var Y = +$('dY').value * 1e6, pob = +$('dPob').value * 1e6, pet = +$('dPET').value / 100, pea = +$('dPEA').value / 100, u = +$('dU').value / 100, h = +$('dH').value;
+    var oc = pob * pet * pea * (1 - u), yp = Y / pob, yo = Y / oc, yh = yo / h;
+    $('vdY').textContent = miles(+$('dY').value); $('vdPob').textContent = (+$('dPob').value).toFixed(1);
+    $('vdPET').textContent = $('dPET').value + '%'; $('vdPEA').textContent = (+$('dPEA').value).toFixed(1) + '%';
+    $('vdU').textContent = (+$('dU').value).toFixed(1) + '%'; $('vdH').textContent = miles(h);
+    $('kYP').textContent = miles(yp); $('kYO').textContent = miles(yo); $('kYH').textContent = yh.toFixed(1); $('kOP').textContent = pct(oc / pob);
+    $('desgloseTxt').textContent = 'Comprobación: ' + yh.toFixed(1) + ' × ' + miles(h) + ' × ' + (1 - u).toFixed(3) + ' × ' + pea.toFixed(3) + ' × ' + pet.toFixed(3) + ' = ' + miles(yh * h * (1 - u) * pea * pet) + ' (Y/Hora × Horas/Ocup × Ocup/PEA × PEA/PET × PET/Pob).';
+  });
+
+  // 2. Interés compuesto
+  enlazar(['cg','ct'], function(){
+    var g = +$('cg').value / 100, T = +$('ct').value;
+    $('vcg').textContent = (g * 100).toFixed(1) + '%'; $('vct').textContent = T;
+    $('kfac').textContent = Math.pow(1 + g, T).toFixed(1);
+    $('kdup').textContent = g > 0 ? (Math.log(2) / Math.log(1 + g)).toFixed(1) + ' años' : 'no se duplica';
+  });
+
+  // 3. Convergencia (hipotético): niveles de PIB real per cápita de A y B y su razón
+  enlazar(['cpb','cr0','cga','cgb'], function(){
+    var pb = +$('cpb').value, r0 = +$('cr0').value / 100, ga = +$('cga').value / 100, gb = +$('cgb').value / 100, q = (1 + ga) / (1 + gb), pa = r0 * pb;
+    $('vcpb').textContent = miles(pb); $('vcr0').textContent = Math.round(r0 * 100) + '%'; $('vcga').textContent = (ga * 100).toFixed(1) + '%'; $('vcgb').textContent = (gb * 100).toFixed(1) + '%';
+    var anios = q > 1 ? Math.log(1 / r0) / Math.log(q) : Infinity;
+    $('kanios').textContent = isFinite(anios) ? anios.toFixed(1) + ' años' : 'nunca';
+    $('kpib0').textContent = miles(pa) + ' · ' + miles(pb);
+    $('kpib50').textContent = miles(pa * Math.pow(1 + ga, 50)) + ' · ' + miles(pb * Math.pow(1 + gb, 50));
+    $('kr50').textContent = pct(r0 * Math.pow(q, 50));
+    var T = isFinite(anios) ? Math.min(100, Math.max(30, Math.ceil(anios * 1.2 / 10) * 10)) : 60;
+    var A = [], B = [], top = 0;
+    for (var t = 0; t <= T; t++){ A.push(pa * Math.pow(1 + ga, t)); B.push(pb * Math.pow(1 + gb, t)); top = Math.max(top, A[t], B[t]); }
+    var svg = $('svgConv'), X0 = 78, X1 = 600, Y0 = 250, Y1 = 30;
+    function px(t){ return X0 + t / T * (X1 - X0); } function py(v){ return Y0 - v / top * (Y0 - Y1); }
+    limpiar(svg); el(svg, 'rect', { width: 640, height: 300, fill: C.fondo });
+    [0, 0.25, 0.5, 0.75, 1].forEach(function(f){ el(svg, 'line', { x1: X0, y1: py(top * f), x2: X1, y2: py(top * f), stroke: C.linea }); el(svg, 'text', { x: X0 - 8, y: py(top * f) + 4, 'font-size': 12, 'text-anchor': 'end', fill: C.tenue, 'font-family': 'Azeret Mono, monospace' }, miles(top * f / 1000) + 'k'); });
+    for (var k = 0; k <= 5; k++){ var tt = Math.round(T * k / 5); el(svg, 'text', { x: px(tt), y: Y0 + 20, 'font-size': 12, 'text-anchor': 'middle', fill: C.tenue, 'font-family': 'Azeret Mono, monospace' }, tt); }
+    el(svg, 'text', { x: X1, y: Y0 + 38, 'font-size': 13, 'text-anchor': 'end', fill: C.tinta }, 'Años');
+    el(svg, 'text', { x: X0, y: Y1 - 12, 'font-size': 13, fill: C.tinta }, 'PIB real per cápita (US$ PPC)');
+    if (isFinite(anios) && anios <= T){ el(svg, 'line', { x1: px(anios), y1: Y1, x2: px(anios), y2: Y0, stroke: C.tenue, 'stroke-width': 1.3, 'stroke-dasharray': '3 5' }); el(svg, 'text', { x: px(anios) - 6, y: Y1 + 14, 'font-size': 12, 'text-anchor': 'end', fill: C.tenue }, 'A alcanza a B'); }
+    el(svg, 'polyline', { points: B.map(function(v, t){ return px(t) + ',' + py(v); }).join(' '), fill: 'none', stroke: C.tenue, 'stroke-width': 3.5 });
+    el(svg, 'polyline', { points: A.map(function(v, t){ return px(t) + ',' + py(v); }).join(' '), fill: 'none', stroke: C.g, 'stroke-width': 3.5 });
+    el(svg, 'text', { x: X1 + 6, y: py(B[T]) + 4, 'font-size': 13, 'font-weight': 700, fill: C.tenue }, 'B');
+    el(svg, 'text', { x: X1 + 6, y: py(A[T]) + (Math.abs(py(A[T]) - py(B[T])) < 14 ? 18 : 4), 'font-size': 13, 'font-weight': 700, fill: C.g }, 'A');
+  });
+
+  // 4. Contabilidad del crecimiento (hipotético)
+  enlazar(['ugA','ugN','ugK','ub'], function(){
+    var gA = +$('ugA').value, gN = +$('ugN').value, gK = +$('ugK').value, b = +$('ub').value, a = 1 - b;
+    var cN = a * gN, cK = b * gK, gY = gA + cN + cK, gy = gY - gN;
+    $('vugA').textContent = gA.toFixed(1) + '%'; $('vugN').textContent = gN.toFixed(1) + '%'; $('vugK').textContent = gK.toFixed(1) + '%'; $('vub').textContent = b.toFixed(2);
+    $('kgY').textContent = gY.toFixed(2) + '%'; $('kgy').textContent = gy.toFixed(2) + '%'; $('kins').textContent = gA.toFixed(2) + ' pp'; $('ktra').textContent = (cN + cK).toFixed(2) + ' pp';
+    $('cuentasTxt').textContent = 'g_Y = ' + gA.toFixed(1) + ' + ' + a.toFixed(2) + ' × ' + gN.toFixed(1) + ' + ' + b.toFixed(2) + ' × ' + gK.toFixed(1) + ' = ' + gY.toFixed(2) + '%. Por trabajador: g_y = g_A + β(g_K − g_N) = ' + gA.toFixed(1) + ' + ' + b.toFixed(2) + ' × ' + (gK - gN).toFixed(1) + ' = ' + gy.toFixed(2) + '%.';
+    var svg = $('svgCuentas'), X0 = 150, esc = 40; limpiar(svg); el(svg, 'rect', { width: 640, height: 170, fill: C.fondo });
+    var filas = [['Productividad g_A', gA, C.g], ['Trabajo αg_N', cN, C.u], ['Capital βg_K', cK, C.i], ['Total g_Y', gY, C.y]];
+    var cero = X0 + 2 * esc; el(svg, 'line', { x1: cero, y1: 10, x2: cero, y2: 160, stroke: C.tenue, 'stroke-width': 1.5 });
+    filas.forEach(function(f, k){ var y = 18 + k * 36, w = f[1] * esc; el(svg, 'text', { x: X0 - 10, y: y + 17, 'font-size': 13, 'text-anchor': 'end', fill: C.tinta }, f[0]); el(svg, 'rect', { x: w >= 0 ? cero : cero + w, y: y, width: Math.abs(w), height: 24, fill: f[2] }); el(svg, 'text', { x: (w >= 0 ? cero + w : cero) + 8, y: y + 17, 'font-size': 13, fill: C.tinta, 'font-family': 'Azeret Mono, monospace' }, f[1].toFixed(2) + ' pp'); });
+  });
+
+  // 5. Simulador de Solow (hipotético): y = k^b, k' = k + s1*y - d*k
+  enlazar(['ss0','ss1','sd','sb'], function(){
+    var s0 = +$('ss0').value, s1 = +$('ss1').value, d = +$('sd').value, b = +$('sb').value;
+    $('vss0').textContent = s0.toFixed(2); $('vss1').textContent = s1.toFixed(2); $('vsd').textContent = d.toFixed(2); $('vsb').textContent = b.toFixed(2);
+    function kss(s){ return Math.pow(s / d, 1 / (1 - b)); }
+    var k = kss(s0), y0 = Math.pow(k, b), y1 = Math.pow(kss(s1), b), ys = [y0], gs = [0];
+    for (var t = 1; t <= 60; t++){ k = k + s1 * Math.pow(k, b) - d * k; ys.push(Math.pow(k, b)); gs.push((ys[t] / ys[t - 1] - 1) * 100); }
+    $('kyss').textContent = y0.toFixed(2) + ' → ' + y1.toFixed(2);
+    $('kcss').textContent = ((1 - s0) * y0).toFixed(2) + ' → ' + ((1 - s1) * y1).toFixed(2);
+    var aj = function(t){ return Math.abs(y1 - y0) < 1e-9 ? 1 : (ys[t] - y0) / (y1 - y0); };
+    $('kaj').textContent = Math.round(aj(10) * 100) + '% · ' + Math.round(aj(20) * 100) + '%';
+    $('kgold').textContent = b.toFixed(2);
+    var cmp = (1 - s1) * y1 - (1 - s0) * y0;
+    $('solowTxt').textContent = 'El producto por trabajador pasa de ' + y0.toFixed(2) + ' a ' + y1.toFixed(2) + '. El consumo de estado estacionario ' + (cmp >= 0 ? 'sube' : 'baja') + ' porque s₁ está ' + (s1 <= b ? 'por debajo o en' : 'por encima de') + ' la regla de oro (con esta función, s_G = β; cálculo propio). El crecimiento del primer año es ' + gs[1].toFixed(1) + '% y se apaga hacia cero.';
+    var svg = $('svgSolow'), X0 = 70, X1 = 610, Y0 = 280, Y1 = 30, T = 60;
+    var lo = Math.min(y0, y1), hi = Math.max(y0, y1), pad = (hi - lo) * 0.15 || 0.2; lo = Math.max(0, lo - pad); hi = hi + pad;
+    function px(t){ return X0 + t / T * (X1 - X0); } function py(v){ return Y0 - (v - lo) / (hi - lo) * (Y0 - Y1); }
+    limpiar(svg); el(svg, 'rect', { width: 640, height: 320, fill: C.fondo });
+    [lo, (lo + hi) / 2, hi].forEach(function(v){ el(svg, 'line', { x1: X0, y1: py(v), x2: X1, y2: py(v), stroke: C.linea }); el(svg, 'text', { x: X0 - 8, y: py(v) + 4, 'font-size': 12, 'text-anchor': 'end', fill: C.tenue, 'font-family': 'Azeret Mono, monospace' }, v.toFixed(2)); });
+    [0, 10, 20, 30, 40, 50, 60].forEach(function(t){ el(svg, 'text', { x: px(t), y: Y0 + 20, 'font-size': 12, 'text-anchor': 'middle', fill: C.tenue, 'font-family': 'Azeret Mono, monospace' }, t); });
+    el(svg, 'text', { x: X1, y: Y0 + 36, 'font-size': 13, 'text-anchor': 'end', fill: C.tinta }, 'Años después del cambio');
+    el(svg, 'text', { x: X0, y: Y1 - 10, 'font-size': 13, fill: C.tinta }, 'Producto por trabajador, Y/N');
+    el(svg, 'line', { x1: X0, y1: py(y1), x2: X1, y2: py(y1), stroke: C.tenue, 'stroke-width': 1.5, 'stroke-dasharray': '7 6' });
+    el(svg, 'text', { x: X1, y: py(y1) + (y1 >= y0 ? -8 : 18), 'font-size': 12, 'text-anchor': 'end', fill: C.tenue }, 'nuevo estado estacionario');
+    el(svg, 'polyline', { points: ys.map(function(v, t){ return px(t) + ',' + py(v); }).join(' '), fill: 'none', stroke: C.g, 'stroke-width': 3.5 });
+  });
+})();
+</script>
+
+</body>
+</html>
