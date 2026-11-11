@@ -875,3 +875,45 @@ textarea.open-in:focus-visible{border-color:var(--tinta)}
 @media (max-width:640px){.anim-dots{margin-left:0}}
 .anim-js .a-gxr{transform-box:fill-box;transform-origin:right center;transform:scaleX(0);transition:opacity .3s,transform .7s var(--ease)}
 .anim-js .a-gxr.a-on{transform:scaleX(1)}
+
+/* =====================================================================
+   Parcial 2 (docs/parcial-t4-t7): opción múltiple, unir y V/F/Incierto
+   ===================================================================== */
+.mc,.unir{background:var(--s1);padding:22px 24px;margin-bottom:18px;border:2px solid transparent}
+.mc-n,.unir-n{display:block;font-weight:800;color:var(--c-k)}
+.mc-enun,.unir-enun{margin:4px 0 12px}
+.mc-opts{display:flex;flex-direction:column;gap:8px}
+.mc-opt{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;background:var(--bg);border:2px solid var(--linea);padding:10px 14px;font-size:.96rem;line-height:1.45;color:var(--tinta)}
+.mc-opt:hover{border-color:var(--tinta)}
+.mc-opt .l{flex-shrink:0;font-family:var(--mono);font-weight:700;min-width:1.4em}
+.mc-opt[aria-checked="true"]{border-color:var(--tinta);background:var(--s2);font-weight:700}
+.mc.ok,.unir.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 8%,var(--s1))}
+.mc.bad,.unir.bad{border-color:var(--mal);background:color-mix(in srgb,var(--mal) 8%,var(--s1))}
+.mc.ok .mc-opt[aria-checked="true"]{border-color:var(--ok)}
+.mc.bad .mc-opt[aria-checked="true"]{border-color:var(--mal)}
+.mc .mc-opt.is-key{border-color:var(--ok);font-weight:800}
+.mc .mc-opt.is-key .l::after{content:" ✓";color:var(--ok)}
+.mc-just{display:none;margin-top:12px}
+.mc.ok .mc-just,.mc.bad .mc-just{display:block}
+.mc-just .v{font-weight:800}.mc.ok .mc-just .v{color:var(--ok)}.mc.bad .mc-just .v{color:var(--mal)}
+.unir-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px 28px;align-items:start}
+.unir-defs{list-style:none;border-top:2px solid var(--tinta)}
+.unir-defs li{display:grid;grid-template-columns:2rem minmax(0,1fr);gap:8px;padding:8px 2px;border-bottom:1px solid var(--linea);font-size:.95rem}
+.unir-defs b{font-family:var(--mono)}
+.unir-filas{border-top:2px solid var(--tinta)}
+.unir-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 12px;align-items:center;padding:8px 2px;border-bottom:1px solid var(--linea)}
+.unir-row .sel{min-width:5.5rem}
+.unir-row.ok .sel{border-color:var(--ok)}.unir-row.bad .sel{border-color:var(--mal)}
+.unir-fb{grid-column:1 / -1;font-size:.9rem;color:var(--tenue);display:none}
+.unir-row.ok .unir-fb,.unir-row.bad .unir-fb{display:block}
+.unir-row.ok .unir-fb b{color:var(--ok)}.unir-row.bad .unir-fb b{color:var(--mal)}
+.unir .btn{margin-top:14px}
+.mm-motion .mc.ok,.mm-motion .unir.ok{animation:mm-pulso .55s var(--ease)}
+.mm-motion .mc.bad,.mm-motion .unir.bad{animation:mm-sacude .45s ease}
+.mm-motion .mc-just{animation:mm-entra .5s var(--ease)}
+@media (max-width:760px){.unir-cols{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.mc,.unir,.mc-just{animation:none!important}}
+/* resolución del parcial 2: afirmaciones largas a todo el ancho, clave a la derecha y porqué debajo */
+.keyrow.larga{grid-template-columns:minmax(0,1fr) 10rem}
+.keyrow.larga .why{grid-column:1 / -1;padding-top:0}
+@media (max-width:640px){.keyrow.larga{grid-template-columns:1fr}}

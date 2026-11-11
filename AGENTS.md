@@ -139,6 +139,10 @@ checklist en `02 Curso/Sistema de Diseño HTML.md`; registro del proceso en
   equivalencias sin mover geometría ni etiquetas.
 - **Parcial (2026-10-01):** `docs/parcial-t1-t4/` ya usa este diseño con la capa integradora
   `data-k="parcial"` (banda de tinta + franja de los 4 colores) y su script `parcial.js`.
+- **Parcial 2 (2026-11-11):** `docs/parcial-t4-t7/` (Temas 4 a 7, semanas 7 a 11) con el mismo paquete
+  de cinco páginas, franja de colores ext/u/pi/g y script `parcial2.js` (progreso `parcial2`; agrega
+  opción múltiple `.mc`, unir `.unir` y V/F/Incierto). Formato pedido por Navas: V/F con datos de El
+  Salvador, ejercicios de varios temas, opción múltiple y unir.
 - **Prompt para material nuevo:** `01 Meta - Aprendizaje/Prompt - Material nuevo con diseño Capas del
   modelo.md` (esqueleto, componentes, interacciones y checklist de publicación).
 - **Accesos y movimiento (2026-10-01):** cada página de Tema enlaza todos los materiales de su
